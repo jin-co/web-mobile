@@ -26,38 +26,37 @@ function countCs(s:string): number {
 }
 
 // classes
-class RegularPloygon {
-    sides: number;
-    sideLength: number;
-    private name: string = "else"; //private: only visible with in the class
+// var RegularPloygon = /** @class */ (function () {
+//     function RegularPloygon(sides, sideLength) {
+//         this.name = "else"; //private: only visible with in the class
+//         this.sides = sides;
+//         this.sideLength = sideLength;
+//         switch (this.sides) {
+//             case 3:
+//                 this.name = "triangle";
+//                 break;
+//             case 4:
+//                 this.name = "square";
+//                 break;
+//             case 5:
+//                 this.name = "pentagon";
+//                 break;
+//             case 6:
+//                 this.name = "hexagon";
+//                 break;
+//             // default:
+//             //     this.name = "else"
+//             //     break;
+//         }
+//     }
+//     RegularPloygon.prototype.getPerimeter = function () {
+//         return (this.sides * this.sideLength);
+//     };
+//     return RegularPloygon;
+// }());
 
-    constructor(sides: number, sideLength: number) {
-        this.sides = sides;
-        this.sideLength = sideLength;
-        
-        switch (this.sides) {
-            case 3:
-                this.name = "triangle";
-                break;
-            case 4:
-                this.name = "square";
-                break;
-            case 5:
-                this.name = "pentagon";
-                break;
-            case 6:
-                this.name = "hexagon";
-                break;
-            // default:
-            //     this.name = "else"
-            //     break;
-        }
-    }
-
-    getPerimeter(): number {
-        return(this.sides * this.sideLength);
-    }
-}
+// using import
+import{ RegularPloygon } from './polygon';  //forward slash not back slash
 
 const square: RegularPloygon = new RegularPloygon(3, 3);
 

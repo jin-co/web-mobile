@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var foa = 7; //don't use any as it defeats the purpose of using typescript
 var fob = [7, 2]; // using array
 var foc = []; // empty array
@@ -23,34 +24,6 @@ function countCs(s) {
     }
     return (count);
 }
-// classes
-var RegularPloygon = /** @class */ (function () {
-    function RegularPloygon(sides, sideLength) {
-        this.name = "else"; //private: only visible with in the class
-        this.sides = sides;
-        this.sideLength = sideLength;
-        switch (this.sides) {
-            case 3:
-                this.name = "triangle";
-                break;
-            case 4:
-                this.name = "square";
-                break;
-            case 5:
-                this.name = "pentagon";
-                break;
-            case 6:
-                this.name = "hexagon";
-                break;
-            // default:
-            //     this.name = "else"
-            //     break;
-        }
-    }
-    RegularPloygon.prototype.getPerimeter = function () {
-        return (this.sides * this.sideLength);
-    };
-    return RegularPloygon;
-}());
-var square = new RegularPloygon(3, 3);
+var polygon_1 = require("./polygon"); //forward slash not back slash
+var square = new polygon_1.RegularPloygon(3, 3);
 console.log(square.getPerimeter());
