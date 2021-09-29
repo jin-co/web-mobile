@@ -29,7 +29,7 @@ function countCs(s:string): number {
 class RegularPloygon {
     sides: number;
     sideLength: number;
-    name: string = "else";
+    private name: string = "else"; //private: only visible with in the class
 
     constructor(sides: number, sideLength: number) {
         this.sides = sides;
@@ -53,6 +53,12 @@ class RegularPloygon {
             //     break;
         }
     }
+
+    getPerimeter(): number {
+        return(this.sides * this.sideLength);
+    }
 }
 
 const square: RegularPloygon = new RegularPloygon(3, 3);
+
+console.log(square.getPerimeter());
