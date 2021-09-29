@@ -3,6 +3,8 @@ let fob: number[] = [7, 2]; // using array
 let foc: number[] = []; // empty array
 let fod: number = 7;
 const FOO: number = 7;
+
+// functions
 function isEven(input:number): boolean {
     if (input % 2 == 0) {
         return true;
@@ -12,3 +14,45 @@ function isEven(input:number): boolean {
 }
 
 let foe: boolean = isEven(fod);
+
+function countCs(s:string): number {
+    let count: number = 0;
+    let i: number = 0;
+    for (i = 0; i < s.length; i++) {
+        if (s.charAt(i) === 'c' || s.charAt(i) === 'C')
+        count++;
+    }
+    return(count);
+}
+
+// classes
+class RegularPloygon {
+    sides: number;
+    sideLength: number;
+    name: string = "else";
+
+    constructor(sides: number, sideLength: number) {
+        this.sides = sides;
+        this.sideLength = sideLength;
+        
+        switch (this.sides) {
+            case 3:
+                this.name = "triangle";
+                break;
+            case 4:
+                this.name = "square";
+                break;
+            case 5:
+                this.name = "pentagon";
+                break;
+            case 6:
+                this.name = "hexagon";
+                break;
+            // default:
+            //     this.name = "else"
+            //     break;
+        }
+    }
+}
+
+const square: RegularPloygon = new RegularPloygon(3, 3);
