@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-root',  // instantiates every element with 'app-root' tag name
+  templateUrl: './app.component.html',  // this will be put inside 'app-root'
+  styleUrls: ['./app.component.css']  // with this style
 })
 export class AppComponent {
-  title = 'barcode-scanner';
+  title: string = 'barcode-scanner';
 }
+
