@@ -1,9 +1,20 @@
 import { Component } from '@angular/core';
 
 @Component({
+  // selector: '[app-root]'
+  // selector: '.app-root'
   selector: 'app-root',
+
+  // template: ``
+  // template: ''
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+
+  // styleUrls: ['./app.component.css']
+  styles: [`
+    h1 {
+      color: blue;
+    }
+  `]
 })
 export class AppComponent {
 }
