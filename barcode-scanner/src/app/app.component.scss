@@ -1,0 +1,30 @@
+// style for 'app-root'
+:host {
+    background-color: black;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    // nesting is possible with 'scss'
+    mat-drawer-container {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        mat-drawer-content {
+            background-color: lavender;
+        }
+    }
+}
+
+// :host mat-drawer-container {
+//     position: absolute;
+//     top: 0;
+//     bottom: 0;
+//     left: 0;
+//     right: 0;
+// }
