@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./service.component.css']
 })
 export class ServiceComponent implements OnInit {
-
+  
   constructor() { }
 
   ngOnInit(): void {
