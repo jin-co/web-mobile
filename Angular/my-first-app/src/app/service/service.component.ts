@@ -26,7 +26,7 @@ export class ServiceComponent implements OnInit {
     this.serverCreationStatus = 'server created'
   }
 
-  onUpdateServer(e) {
-
+  onUpdateServer(e: any) {
+    console.log(e))
   }
 }
