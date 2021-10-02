@@ -30,7 +30,8 @@ export class ServiceComponent implements OnInit {
 
   onUpdateServer(e: any) {
     console.log(e)
-    this.serverName = e.target.value
-    this.serverName = (<HTMLInputElement>e.target).value
+    
+    this.serverName = e.target.value  // both works
+    // this.serverName = (<HTMLInputElement>e.target).value  // both works
   }
 }
