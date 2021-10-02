@@ -9,4 +9,8 @@ import { Component } from "@angular/core";
 export class ServerComponent {
     serverId:number = 10
     status:string = 'great'
+
+    getServerStatus() {
+        return this.status;
+    }
 }
