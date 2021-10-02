@@ -1,4 +1,8 @@
 <p>service works!</p>
 <!-- property bounding -->
 <button class="btn btn-primary" [disabled]="allowNewServer">Add</button>
+<!-- string bounding -->
+<p> {{ allowNewServer }} </p>
+<!-- property bounding -->
+<p [innerText]="allowNewServer" ></p>
 <app-server></app-server>
