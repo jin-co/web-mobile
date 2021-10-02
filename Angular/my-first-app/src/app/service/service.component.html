@@ -18,7 +18,7 @@
 (click)="onCreateServer()" >Add</button>
 <hr>
 
-<!-- two event bounding -->
+<!-- event bounding -->
 <label for=""> {{serverName}} </label>
 
 <!-- $event(give us access to the input data) 
@@ -27,3 +27,9 @@
 <input type="text"
 class="form-control"
 (input)="onUpdateServer($event)">
+<hr>
+
+<!-- two way bounding -->
+<input type="text"
+class="form-control"
+[(ngModel)]="serverName">
