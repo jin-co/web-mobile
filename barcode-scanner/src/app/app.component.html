@@ -1,3 +1,21 @@
+<mat-toolbar>
+  <button 
+    (click)="drawer.toggle()"
+    mat-icon-button 
+    class="example-icon" 
+    aria-label="Example icon-button with menu icon">
+   <mat-icon>menu</mat-icon>
+ </button>
+ <span>My App</span>
+ <span class="example-spacer"></span>
+ <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+   <mat-icon>favorite</mat-icon>
+ </button>
+ <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+  <mat-icon>share</mat-icon>
+</button>
+</mat-toolbar>
+
 <!-- https://material.angular.io/components/sidenav/overview#sidenav-drawer-overview -->
 <mat-drawer-container class="example-container">
   <!-- creating a template variable to store the instance of 
@@ -5,11 +23,13 @@
     so what is dose is to let me use the properties of the component
   -->
   <mat-drawer #drawer mode="side" opened>
-    <a routerLink="entry">Barcode</a>
-    <br>
-    <a routerLink="history">History</a>
+    <mat-nav-list>
+      <a mat-list-item routerLink="entry">Barcode</a>
+      <a mat-list-item routerLink="history">History</a>
+   </mat-nav-list>
   </mat-drawer>
   <mat-drawer-content>Main content
+    
     <!-- calling decleared variable -->
     <p>The drawer is open {{ drawer.opened }}</p>
 

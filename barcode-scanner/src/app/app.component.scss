@@ -1,20 +1,13 @@
 // style for 'app-root'
 :host {
+    height: 100%;
     background-color: black;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    display: flex;
+    flex-direction: column;
 
     // nesting is possible with 'scss'
     mat-drawer-container {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-
+        height: 100%;
         mat-drawer-content {
             background-color: lavender;
         }
