@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BarcodeEntryComponent implements OnInit {
 
+  pageTitle: string = "Barcode Entry"
   constructor() { }
 
   ngOnInit(): void {
