@@ -11,6 +11,11 @@ export class BarcodeEntryComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+    setTimeout(() => {
+      this.pageTitle = "hahaha"
+    }, 2000)
   }
 
+  
 }
