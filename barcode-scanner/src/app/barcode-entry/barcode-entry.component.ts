@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-barcode-entry',
   templateUrl: './barcode-entry.component.html',
-  styleUrls: ['./barcode-entry.component.css']
+  styleUrls: ['./barcode-entry.component.scss']
 })
 export class BarcodeEntryComponent implements OnInit {
 
