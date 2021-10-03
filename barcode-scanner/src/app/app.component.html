@@ -1,12 +1,16 @@
 <!-- https://material.angular.io/components/sidenav/overview#sidenav-drawer-overview -->
 <mat-drawer-container class="example-container">
-  <mat-drawer mode="side" opened>
+  <!-- creating a variable to store the instance of 
+    an Angular component(use '#'') -->
+  <mat-drawer #drawer mode="side" opened>
     <a routerLink="entry">Barcode</a>
     <br>
     <a routerLink="history">History</a>
   </mat-drawer>
   <mat-drawer-content>Main content
-    
+    <!-- calling decleared variable -->
+    <p>The drawer is open {{ drawer.opened }}</p>
+
     <!-- this tag allow me to use url route -->
     <router-outlet></router-outlet>
   </mat-drawer-content>
