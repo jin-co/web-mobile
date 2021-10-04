@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Assignment2';
+
+  changeTitle(pageTitle:string) {
+    console.log(pageTitle)
+    this.title = pageTitle
+  }
 }

@@ -13,5 +13,16 @@
 
             
         }
+
+        mat-drawer {
+            mat-list {
+                mat-list-item {
+                    cursor: pointer;
+                }
+                mat-list-item:hover {
+                    background-color: #333;
+                }
+            }
+        }
     }
 }

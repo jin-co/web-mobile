@@ -1,7 +1,7 @@
-<form>
+<form class="row">
     <div>
-        <mat-form-field appearance="fill">
-            <mat-label>Favorite animal</mat-label>
+        <mat-form-field>
+            <mat-label>Quantity</mat-label>
             <mat-select>
               <mat-option>1</mat-option>
               <mat-option>2</mat-option>
@@ -10,11 +10,12 @@
               <mat-option>5</mat-option>
               
             </mat-select>
-            <mat-error></mat-error>
-            <mat-hint></mat-hint>
-          </mat-form-field>
-        
-          <mat-label>Favorite animal</mat-label>
+            
+        </mat-form-field>
+        <mat-form-field class="item-to-buy">
+            <input matInput value="item to buy" #action>
+        </mat-form-field>
+        <!-- <mat-label>Favorite animal</mat-label> -->
     </div>
     
     <button mat-stroked-button>Add</button>

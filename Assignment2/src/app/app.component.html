@@ -21,6 +21,6 @@
 
   <!-- content -->
   <mat-drawer-content>
-    <router-outlet></router-outlet>
+    <router-outlet (activate)="changeTitle($event.pageTitle)"></router-outlet>
   </mat-drawer-content><!-- /end-content -->
 </mat-drawer-container>
