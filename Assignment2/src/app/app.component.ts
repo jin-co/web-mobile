@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Assignment2';
+  title = 'Grocery List';
 
   changeTitle(pageTitle:string) {
     console.log(pageTitle)
