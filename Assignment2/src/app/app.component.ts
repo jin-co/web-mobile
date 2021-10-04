@@ -7,9 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Grocery List';
-
+  
   changeTitle(pageTitle:string) {
-    console.log(pageTitle)
     this.title = pageTitle
+  }
+
+  checkMenu() {
+    
   }
 }
