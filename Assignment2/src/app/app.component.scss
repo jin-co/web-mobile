@@ -28,5 +28,9 @@
                 }
             }
         }
+
+        .mat-drawer-opened + mat-drawer-content {
+            background-color: blue;
+        }
     }
 }
