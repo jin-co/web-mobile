@@ -1,3 +1,17 @@
 :host {
+    height: 100%;
+    background-color: #000;
+    display: block;
+    color: #fff;
 
+    mat-drawer-container {
+        height: 100%;
+
+        mat-drawer-content {
+            display: flex;
+            justify-content: center;
+
+            
+        }
+    }
 }
