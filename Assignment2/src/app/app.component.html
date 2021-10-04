@@ -12,19 +12,22 @@
 <mat-drawer-container class="example-container">
   <!-- side bar -->
   <mat-drawer #drawer mode="side" opened>
-    <mat-list role="list">
-      <mat-icon>done</mat-icon>
-      <mat-icon>done</mat-icon>
-      <mat-icon>shopping_cart</mat-icon>
-      
+    <mat-list role="list">      
+      <mat-list-item role="listitem"
+        routerLink="grocery-list">
+        <mat-icon>add_shopping_cart</mat-icon>
+        Grocery List</mat-list-item>
 
-
       <mat-list-item role="listitem"
-        routerLink="grocery-list">Grocery List</mat-list-item>
+        routerLink="purchase-history">
+        <mat-icon>shopping_bag</mat-icon>
+        Purchase History</mat-list-item>
+        
+      <mat-divider></mat-divider>
       <mat-list-item role="listitem"
-        routerLink="purchase-history">Purchase History</mat-list-item>
-      <mat-list-item role="listitem"
-        routerLink="about">About</mat-list-item>
+        routerLink="about">
+        <mat-icon>rowing</mat-icon>
+        About</mat-list-item>
     </mat-list>
   </mat-drawer><!-- /end-side bar -->
 

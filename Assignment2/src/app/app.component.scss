@@ -17,9 +17,14 @@
             mat-list {
                 mat-list-item {
                     cursor: pointer;
+                    padding: 0 0 5px 0;
+                    mat-icon {
+                        margin-right: 10px;
+                    }
+
                 }
                 mat-list-item:hover {
-                    background-color: #333;
+                    background-color: #585555;
                 }
             }
         }
