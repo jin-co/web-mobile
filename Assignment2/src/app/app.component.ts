@@ -11,8 +11,4 @@ export class AppComponent {
   changeTitle(pageTitle:string) {
     this.title = pageTitle
   }
-
-  checkMenu() {
-    
-  }
 }
