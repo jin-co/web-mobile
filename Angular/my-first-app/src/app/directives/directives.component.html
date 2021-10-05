@@ -1,0 +1,34 @@
+<hr>
+<!-- **structural directives: add or remove elements -->
+<!-- ngIf: false don't show / true show -->
+<label *ngIf="isTrue" for=""> {{directiveName}} </label>
+
+<!-- two way bounding -->
+<input type="text"
+class="form-control"
+[(ngModel)]="directiveName">
+
+<button class="btn btn-danger form-control"
+(click)="isTrue = !isTrue">Click</button>
+
+
+<!-- ngIf else -->
+<label *ngIf="isTrue; else notTrue" for=""> {{directiveName}} </label>
+
+<!-- two way bounding -->
+<input type="text"
+class="form-control"
+[(ngModel)]="directiveName">
+
+<ng-template #notTrue>
+    <p>Not a word</p>
+</ng-template>
+
+<button class="btn btn-danger form-control"
+(click)="isTrue = !isTrue">Click</button>
+
+<hr>
+<!-- **attribute directives: only change the element -->
+<p [ngStyle]="{'background-color':'red'}"> {{serverStatus}} </p>
+<p [ngStyle]="{'background-color': getColor()}"> {{serverStatus}} </p>
+<p [ngStyle]="{backgroundColor: getColor()}"> {{serverStatus}} </p>
