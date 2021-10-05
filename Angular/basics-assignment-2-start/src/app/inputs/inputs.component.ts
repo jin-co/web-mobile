@@ -5,13 +5,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './inputs.component.html',
   styleUrls: ['./inputs.component.css']
 })
-export class InputsComponent implements OnInit {
-
-  userName = '';
+export class InputsComponent {
+  userName:string = ''
   constructor() { }
-
-  ngOnInit(): void {
+  getWords(e) {
+    this.userName += e
+    console.log(e)
   }
-
-  
 }

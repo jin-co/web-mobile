@@ -1,6 +1,8 @@
-<p class="form-control"></p>
-<input type="text" class="form-control">
+<p class="form-control">{{ userName }}</p>
+<input type="text" class="form-control"
+[(ngModel)]="userName">
 <button 
     class="btn btn-warning form-control"
-    [disabled]='!userName' >Click
+    [disabled]='!userName' 
+    (click)="userName=''">Click
 </button>
