@@ -14,6 +14,11 @@ export class DirectivesComponent implements OnInit {
   isTrue = false
   serverStatus = 'offline'
   servers = ['test server']
+  isVisible:boolean = false
+  count:number = 0
+  numbers = [0]
+  stamps = []
+  
   constructor() {
     this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline'
   }
@@ -31,5 +36,18 @@ export class DirectivesComponent implements OnInit {
 
   createServer() {
     this.servers.push(this.directiveName)
+  }
+
+  incrementCount() {
+    this.count++
+  }
+
+  addNumbers() {
+    this.numbers.push(this.count)
+    console.log(this.count)
+  }
+
+  addTimeStamp() {
+    this.stamps.push(new Date)
   }
 }
