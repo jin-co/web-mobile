@@ -15,6 +15,7 @@ export class AppComponent {
 
   count:number = 0
   numbers = [0]
+  stamps = []
   
   incrementCount() {
     this.count++
@@ -23,5 +24,9 @@ export class AppComponent {
   addNumbers() {
     this.numbers.push(this.count)
     console.log(this.count)
+  }
+
+  addTimeStamp() {
+    this.stamps.push(new Date)
   }
 }

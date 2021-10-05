@@ -12,13 +12,43 @@
     </div>
   </div>
   <div class="row">
-    <button class="btn"
+    <button class="btn form-control"
     (click)="isVisible = !isVisible"
     (click)="incrementCount()"
     (click)="addNumbers()">Display Details</button>
-    <p>{{ count }}</p>
-    <p *ngFor="let i of numbers" 
-    [ngClass]="{para: count >= 5}">{{ i }}</p>
-    <p *ngIf="isVisible">Player</p>    
+
+    <div class="col-xs-4">
+      <p>{{ count }}</p>
+      <p *ngIf="isVisible">Player</p>  
+    </div>
+    
+    <div class="col-xs-4">
+      <p *ngFor="let i of numbers"
+      [ngStyle]="{backgroundColor: count > 5 ? 'blue' : 'white'}"
+      [ngClass]="{para: count >= 5}">{{ i }}</p>
+    </div>
+    
+    <div class="col-xs-4">
+      <p *ngFor="let i of numbers"
+      [ngStyle]="{backgroundColor: i > 5 ? 'blue' : 'white'}"
+      [ngClass]="{para: i >= 5}">{{ i }}</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <button class="btn form-control"
+    (click)="addTimeStamp()">Display Details</button>
+
+    <div class="col-xs-6">
+      <p *ngFor="let i of stamps"
+      [ngStyle]="{backgroundColor: i > 5 ? 'blue' : 'white'}"
+      [ngClass]="{para: i >= 5}">{{ i }}</p>
+    </div>
+
+    <div class="col-xs-6">
+      <p *ngFor="let i of stamps; let j = index"
+      [ngStyle]="{backgroundColor: j >= 5 ? 'blue' : 'white'}"
+      [ngClass]="{para: j >= 5}">{{ j }}</p>
+    </div>
   </div>
 </div>
