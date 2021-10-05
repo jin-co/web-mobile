@@ -1,9 +1,10 @@
 <hr>
-<!-- **structural directives: add or remove elements -->
+<!-- **structural directives: add or remove elements(used with * in front) -->
 <!-- ngIf: false don't show / true show -->
 <label *ngIf="isTrue" for=""> {{directiveName}} </label>
 
 <!-- two way bounding -->
+<h2>ngIf</h2>
 <input type="text"
 class="form-control"
 [(ngModel)]="directiveName">
@@ -13,6 +14,7 @@ class="form-control"
 
 
 <!-- ngIf else -->
+<h2>ngIf else</h2>
 <label *ngIf="isTrue; else notTrue" for=""> {{directiveName}} </label>
 
 <!-- two way bounding -->
@@ -28,7 +30,33 @@ class="form-control"
 (click)="isTrue = !isTrue">Click</button>
 
 <hr>
+
+<!-- ngFor -->
+<h2>ngFor</h2>
+
+<input type="text"
+class="form-control"
+[(ngModel)]="directiveName">
+
+<p *ngFor="let i of servers"> {{i}} </p>
+<app-server *ngFor="let i of servers"></app-server>
+
+<button class="btn btn-primary" 
+(click)="createServer()" >Add</button>
+
+<hr>
 <!-- **attribute directives: only change the element -->
-<p [ngStyle]="{'background-color':'red'}"> {{serverStatus}} </p>
+<!-- *directives that only work with property bounding -->
+<!-- ngStyle -->
+<p [ngStyle]="{'background-color':'red'}"> {{serverStatus}} </p> 
 <p [ngStyle]="{'background-color': getColor()}"> {{serverStatus}} </p>
+<!-- need '' to use with '-' '-->
+
 <p [ngStyle]="{backgroundColor: getColor()}"> {{serverStatus}} </p>
+
+<!-- ngClass -->
+<p [ngStyle]="{backgroundColor: getColor()}"
+[ngClass]="{online: serverStatus === 'online'}"> {{serverStatus}} </p>
+<!-- key(class name):value(condition) -->
+
+
