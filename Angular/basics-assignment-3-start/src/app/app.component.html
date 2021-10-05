@@ -1,3 +1,4 @@
+<div class="jumbotron"></div>
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
@@ -9,5 +10,15 @@
         <li>Starting at the 5th log item, give all future log items a blue background (via ngStyle) and white color (ngClass)</li>
       </ol>
     </div>
+  </div>
+  <div class="row">
+    <button class="btn"
+    (click)="isVisible = !isVisible"
+    (click)="incrementCount()"
+    (click)="addNumbers()">Display Details</button>
+    <p>{{ count }}</p>
+    <p *ngFor="let i of numbers" 
+    [ngClass]="{para: count >= 5}">{{ i }}</p>
+    <p *ngIf="isVisible">Player</p>    
   </div>
 </div>
