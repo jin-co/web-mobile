@@ -6,23 +6,43 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  serverElements = [];
-  newServerName = '';
-  newServerContent = '';
+  // serverElements = [];
+  // newServerName = '';
+  // newServerContent = '';
 
-  onAddServer() {
+  // onAddServer() {
+  //   this.serverElements.push({
+  //     type: 'server',
+  //     name: this.newServerName,
+  //     content: this.newServerContent
+  //   });
+  // }
+
+  // onAddBlueprint() {
+  //   this.serverElements.push({
+  //     type: 'blueprint',
+  //     name: this.newServerName,
+  //     content: this.newServerContent
+  //   });
+  // }
+  serverElements = [{
+    type: 'server', name: 'Test', content: 'a test'
+  }];
+
+  // 2. creating a method with an object
+  onServerAdded(serverDate: {serverName:string, serverContent:string}) {
     this.serverElements.push({
       type: 'server',
-      name: this.newServerName,
-      content: this.newServerContent
+      name: serverDate.serverName,
+      content: serverDate.serverContent
     });
   }
 
-  onAddBlueprint() {
+  onBlueprintAdded(blueprintData: {serverName:string, serverContent:string}) {
     this.serverElements.push({
       type: 'blueprint',
-      name: this.newServerName,
-      content: this.newServerContent
+      name: blueprintData.serverName,
+      content: blueprintData.serverContent
     });
   }
 }

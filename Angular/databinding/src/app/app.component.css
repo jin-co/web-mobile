@@ -2,6 +2,13 @@
   margin-top: 30px;
 }
 
+
+/* view encapsulation
+each component has special attribute attached by Angular so once I move the code to each component this style won't work -> just move it to the appropriate component 
+To remove
+in the component ts file, add 'encapsulation: ViewEncapsulation.None' in the @Component
+
+*/
 p {
   color: blue;
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+
 
 @Component({
   selector: 'app-cockpit',
@@ -6,7 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cockpit.component.css']
 })
 export class CockpitComponent implements OnInit {
-  serverElements = [];
+  /* @Output allow us to get data from outside a component -> this need lots of set up 
+  1. on the parent html: create a event with a method
+  2. on the parent ts: create a method with an object
+  3. on the child component create a variable with 'EventEmitter' 
+  4. on the child component create a method to set the date
+  */
+
+  // 3. creating a variable with 'EventEmitter' 
+  @Output() serverCreated = new EventEmitter<{serverName:string,  serverContent:string}>()
+  @Output() blueprintCreated = new EventEmitter<{serverName:string, serverContent:string}>()
   newServerName = '';
   newServerContent = '';
   
@@ -15,19 +25,18 @@ export class CockpitComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // 4. creating a method to set the date
   onAddServer() {
-    this.serverElements.push({
-      type: 'server',
-      name: this.newServerName,
-      content: this.newServerContent
-    });
+    this.serverCreated.emit({
+      serverName: this.newServerName,
+      serverContent: this.newServerContent
+    })
   }
 
   onAddBlueprint() {
-    this.serverElements.push({
-      type: 'blueprint',
-      name: this.newServerName,
-      content: this.newServerContent
-    });
+    this.blueprintCreated.emit({
+      serverName: this.newServerName,
+      serverContent: this.newServerContent
+    })
   }
 }
