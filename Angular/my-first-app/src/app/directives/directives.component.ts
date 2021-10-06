@@ -38,6 +38,11 @@ export class DirectivesComponent implements OnInit {
     this.servers.push(this.directiveName)
   }
 
+  deleteNumber(id:number) {
+    const position = id
+    this.numbers.splice(position, 1)
+  }
+
   incrementCount() {
     this.count++
   }

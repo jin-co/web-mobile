@@ -50,18 +50,21 @@ class="form-control"
     (click)="incrementCount()"
     (click)="addNumbers()">Display Details</button>
 
-    <div class="col-xs-4">
+    <div class="col-lg-4">
       <p>{{ count }}</p>
       <p *ngIf="isVisible">Player</p>  
     </div>
     
-    <div class="col-xs-4">
-      <p *ngFor="let i of numbers"
+    <div class="col-lg-4">
+      <p 
+      class="btn"
+      *ngFor="let i of numbers"
       [ngStyle]="{backgroundColor: count > 5 ? 'blue' : 'white'}"
-      [ngClass]="{para: count >= 5}">{{ i }}</p>
+      [ngClass]="{para: count >= 5}"
+      (click)="deleteNumber(i)">{{ i }}</p>
     </div>
     
-    <div class="col-xs-4">
+    <div class="col-lg-4">
       <p *ngFor="let i of numbers"
       [ngStyle]="{backgroundColor: i > 5 ? 'blue' : 'white'}"
       [ngClass]="{para: i >= 5}">{{ i }}</p>
