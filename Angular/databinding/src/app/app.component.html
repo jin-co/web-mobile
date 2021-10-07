@@ -9,7 +9,20 @@
     <div class="col-xs-12">
       <app-server-element
       *ngFor="let i of serverElements"
-      [element]="i"></app-server-element>
+      [element]="i"
+      [name]="i.name">
+        <!-- usint hook -->
+        <p #contentPara>
+          <strong *ngIf="i.type === 'server'" style="color: red">{{ i.content }}</strong>
+          <em *ngIf="i.type === 'blueprint'">{{ i.content }}</em>
+        </p><!-- /usint hook -->
+      </app-server-element>
+
+      <!-- testing ngOnChanges -->
+      <button class="btn"
+      (click)="onChangeFirst()">ngOnChangeTest</button>
+      <button class="btn btn-danger"
+      (click)="onDestroyFirst()">ngOnDestoryTest</button>
     </div>
   </div>
 </div>
