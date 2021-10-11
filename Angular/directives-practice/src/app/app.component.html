@@ -44,5 +44,13 @@
         {{ i }}
       </li>
     </div>
+
+    <hr>
+    <div [ngSwitch]="value">
+        <div *ngSwitchCase="3">output1</div>
+        <div *ngSwitchCase="4">output2</div>
+        <div *ngSwitchCase="5">output3</div>
+        <div *ngSwitchDefault>output4</div>
+    </div>
   </div>
 </div>
