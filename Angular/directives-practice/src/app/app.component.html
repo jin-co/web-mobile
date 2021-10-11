@@ -32,5 +32,17 @@
       [defaultColor]="'black'"
       [highlightColor]="'purple'">style</p>
     </div>
+
+    <hr>
+
+    <div *appUnless="onlyOdd">
+      <li
+        class="list-group-item"
+        [ngClass]="{odd: odd % 2 !== 0}"
+        [ngStyle]="{backgroundColor: odd % 2 !== 0 ? 'yellow':''}"
+        *ngFor="let i of oddNumbers">
+        {{ i }}
+      </li>
+    </div>
   </div>
 </div>
