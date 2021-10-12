@@ -6,7 +6,7 @@ import { Logging } from '../loggin.service';
   selector: 'app-new-account',
   templateUrl: './new-account.component.html',
   styleUrls: ['./new-account.component.css'],
-  providers: [Logging, AccountsService]
+  providers: [Logging]
 })
 export class NewAccountComponent {
   @Output() accountAdded = new EventEmitter<{name: string, status: string}>();

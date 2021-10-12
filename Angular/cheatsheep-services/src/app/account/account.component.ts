@@ -5,8 +5,8 @@ import { Logging } from '../loggin.service';
 @Component({
   selector: 'app-account',
   templateUrl: './account.component.html',
-  styleUrls: ['./account.component.css'],
-  providers: [Logging]
+  styleUrls: ['./account.component.css']
+  // providers: [Logging]
 })
 export class AccountComponent {
   @Input() account: {name: string, status: string};
@@ -18,6 +18,6 @@ export class AccountComponent {
   onSetTo(status: string) {
     // this.statusChanged.emit({id: this.id, newStatus: status});
     console.log('A server status changed, new status: ' + status);
-    this.accountService.updateStatus(this.id, status)
+    // this.accountService.updateStatus(this.id, status)
   }
 }
