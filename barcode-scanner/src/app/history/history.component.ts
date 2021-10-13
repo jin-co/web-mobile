@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoryComponent implements OnInit {
   pageTitle: string = "Scan history"
+  histories: string[] = ["h", "hh"]
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  remove() {
+    this.histories.slice()
+    console.log('hh')
   }
 
 }
