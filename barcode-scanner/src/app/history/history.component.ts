@@ -14,7 +14,7 @@ export class HistoryComponent implements OnInit {
   }
 
   remove() {
-    this.histories.slice()
+    this.histories = this.histories.slice(0, -1)
     console.log('hh')
   }
 
