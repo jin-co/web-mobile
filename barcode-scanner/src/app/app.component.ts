@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title: string = 'barcode-scanner';
+  isOpen: boolean = false
 
   changeTitle(activatedComponent: string) {
     this.title = activatedComponent
