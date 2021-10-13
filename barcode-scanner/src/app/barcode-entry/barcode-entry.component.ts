@@ -1,5 +1,5 @@
-import { Component, OnInit, Output } from '@angular/core';
-import { EventEmitter } from 'stream';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-barcode-entry',

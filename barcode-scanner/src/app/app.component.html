@@ -29,7 +29,6 @@
    </mat-nav-list>
   </mat-drawer>
   <mat-drawer-content>Main content
-
     <!-- calling decleared variable -->
     <p>The drawer is open {{ drawer.opened }}</p>
 
@@ -39,5 +38,9 @@
     <router-outlet (activate)="changeTitle($event.pageTitle)"></router-outlet>
 
     <h1>{{ title }}</h1>
+  </mat-drawer-content>
+
+  <mat-drawer-content>Output Demo
+    <app-barcode-entry (onSelfDestruction)="changeTitle"></app-barcode-entry>
   </mat-drawer-content>
 </mat-drawer-container>
