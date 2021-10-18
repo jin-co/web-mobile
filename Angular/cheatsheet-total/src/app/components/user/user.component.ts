@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { User } from "src/app/models/User";
 
 @Component({
@@ -19,7 +19,7 @@ import { User } from "src/app/models/User";
 //     `]
 // })
 
-export class UserComponent {
+export class UserComponent implements OnInit {
     // user: {
     //     firstName: string,
     //     lastName: string,
@@ -35,6 +35,19 @@ export class UserComponent {
     user: User
 
     constructor() {
+        // this.user = {
+        //     firstName: 'John',
+        //     lastName: 'Doe',
+        //     age: 30,
+        //     address: {
+        //         street: '50 main',
+        //         city: 'Boston',
+        //         state: 'MA'
+        //     }
+        // }
+    }
+
+    ngOnInit() {
         this.user = {
             firstName: 'John',
             lastName: 'Doe',
