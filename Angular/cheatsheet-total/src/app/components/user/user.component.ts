@@ -19,7 +19,23 @@ import { Component } from "@angular/core";
 // })
 
 export class UserComponent {
+    // Properties
+    firstName: string = 'John'
+    lastName: string = 'Doe'
+    age: number = 30
 
+    // methods
+    constructor() {
+        
+    }
+
+    sayHello() {
+
+    }
+
+    hasBirthday() {
+        this.age += 1
+    }
 }
 
 
