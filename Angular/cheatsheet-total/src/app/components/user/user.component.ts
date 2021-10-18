@@ -23,10 +23,17 @@ export class UserComponent {
     firstName: string = 'John'
     lastName: string = 'Doe'
     age: number = 30
+    address = {
+        street: '50 main',
+        city: 'Boston',
+        state: 'MA'
+    }
 
-    // methods
+    // **methods
+    // constructor runs first the template is rendered
+    // good for dependencies
     constructor() {
-        
+
     }
 
     sayHello() {
