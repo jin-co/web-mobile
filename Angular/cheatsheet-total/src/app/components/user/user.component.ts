@@ -36,6 +36,10 @@ export class UserComponent {
 
     }
 
+    showAge() {
+        return this.age + 2
+    }
+
     sayHello() {
 
     }
