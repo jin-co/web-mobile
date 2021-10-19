@@ -8,7 +8,39 @@ import { User } from 'src/app/models/User';
 })
 export class UsersComponent implements OnInit {
   users: User[]
-  constructor() { }
+  constructor() {
+    this.users = [
+      {
+        firstName: 'John',
+        lastName: 'Doe',
+        age: 30,
+        address: {
+          street: '50 main',
+          city: 'Boston',
+          state: 'MA'
+        }
+      },
+      {
+        firstName: 'Kevin',
+        lastName: 'Doe',
+        age: 30,
+        address: {
+          street: '50 main',
+          city: 'Boston',
+          state: 'MA'
+        }
+      },
+      {
+        firstName: 'Tom',
+        lastName: 'Doe',
+        age: 30,
+        address: {
+          street: '50 main',
+          city: 'Boston',
+          state: 'MA'
+        }
+      }]
+  }
 
   ngOnInit(): void {
     this.users = [
@@ -42,5 +74,9 @@ export class UsersComponent implements OnInit {
         state: 'MA'
       }
     }]
+  }
+
+  addUser(user: User) {
+    this.users.push(user)
   }
 }
