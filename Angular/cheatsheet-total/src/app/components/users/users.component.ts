@@ -33,7 +33,7 @@ export class UsersComponent implements OnInit {
         }
       },
       {
-        firstName: 'Tom',
+        firstName: 'Tim',
         lastName: 'Doe',
         age: 30,
         address: {
@@ -41,7 +41,22 @@ export class UsersComponent implements OnInit {
           city: 'Boston',
           state: 'MA'
         }
-      }]
+      },
+      {
+        firstName: 'Jill',
+        lastName: 'Doe',
+        age: 30,
+        address: {
+          street: '50 main',
+          city: 'Boston',
+          state: 'MA'
+        }
+      },
+      {
+        firstName: 'Tom',
+        lastName: 'Doe'
+      }
+    ]
   }
 
   ngOnInit(): void {

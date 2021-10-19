@@ -1,10 +1,10 @@
 <ul *ngIf="users.length > 0;else noUsers" >
     <li *ngFor="let i of users">
         <h3>{{i.firstName}} {{i.lastName}}</h3>            
-        <ul *ngIf="showExtended">
-            <li> {{i.address.state}} </li>
-            <li> {{i.address.city}} </li>
-            <li> {{i.address.street}} </li>
+        <ul *ngIf="showExtended && i.age || i.address">
+            <li> {{i.address?.state}} </li>
+            <li> {{i.address?.city}} </li>
+            <li> {{i.address?.street}} </li>
         </ul>
         <ng-template *ngIf="users?.length" ></ng-template>    
     </li>
