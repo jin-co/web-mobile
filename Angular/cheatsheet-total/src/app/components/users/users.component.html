@@ -5,7 +5,8 @@
             <li> {{i.address.state}} </li>
             <li> {{i.address.city}} </li>
             <li> {{i.address.street}} </li>
-        </ul>    
+        </ul>
+        <ng-template *ngIf="users?.length" ></ng-template>    
     </li>
 </ul>
 
