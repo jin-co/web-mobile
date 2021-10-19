@@ -32,19 +32,21 @@ export class UserComponent implements OnInit {
     // }
 
     // using interface
-    user: User
+    // user: {
+    //     firstName: string,
+    //     lastName: string,
+    //     age: number,
+    //     address: {
+    //         street: string,
+    //         city: string,
+    //         state: string
+    //     }
+    // }
+    // using interface
+    user!: User;
 
     constructor() {
-        this.user = {
-            firstName: 'John',
-            lastName: 'Doe',
-            age: 30,
-            address: {
-                street: '50 main',
-                city: 'Boston',
-                state: 'MA'
-            }
-        }
+
     }
     
     ngOnInit() {

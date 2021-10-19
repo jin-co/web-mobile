@@ -11,6 +11,11 @@ export class UsersComponent implements OnInit {
   showExtended: boolean = true
   loaded: boolean = true
   constructor() {
+    this.users = []
+    console.log(this.users)
+  }
+
+  ngOnInit(): void {
     this.users = [
       {
         firstName: 'John',
@@ -57,40 +62,6 @@ export class UsersComponent implements OnInit {
         lastName: 'Doe'
       }
     ]
-  }
-
-  ngOnInit(): void {
-    this.users = [
-    {
-      firstName: 'John',
-      lastName: 'Doe',
-      age: 30,
-      address: {
-        street: '50 main',
-        city: 'Boston',
-        state: 'MA'
-      }
-    },
-    {
-      firstName: 'Kevin',
-      lastName: 'Doe',
-      age: 30,
-      address: {
-        street: '50 main',
-        city: 'Boston',
-        state: 'MA'
-      }
-    },
-    {
-      firstName: 'Tom',
-      lastName: 'Doe',
-      age: 30,
-      address: {
-        street: '50 main',
-        city: 'Boston',
-        state: 'MA'
-      }
-    }]
   }
 
   addUser(user: User) {
