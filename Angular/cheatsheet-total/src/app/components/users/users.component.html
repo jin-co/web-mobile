@@ -1,10 +1,10 @@
-<ul *ngIf="users.length > 0;else noUsers" >
-    <li *ngFor="let i of users">
+<ul class="list-unstyled" *ngIf="users.length > 0;else noUsers" >
+    <li class="card card-body mb-2" *ngFor="let i of users">
         <h3>{{i.firstName}} {{i.lastName}}</h3>            
-        <ul *ngIf="showExtended && i.age || i.address">
-            <li> {{i.address?.state}} </li>
-            <li> {{i.address?.city}} </li>
-            <li> {{i.address?.street}} </li>
+        <ul class="list-group" *ngIf="showExtended && i.age || i.address">
+            <li class="list-group-item"> {{i.address?.state}} </li>
+            <li class="list-group-item"> {{i.address?.city}} </li>
+            <li class="list-group-item"> {{i.address?.street}} </li>
         </ul>
         <ng-template *ngIf="users?.length" ></ng-template>    
     </li>
