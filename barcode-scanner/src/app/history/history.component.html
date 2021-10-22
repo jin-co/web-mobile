@@ -1,3 +1,7 @@
+<!-- <p (click) = "remove()"
+*ngFor="let i of histories; let j = index">{{ i }} {{ j }} </p> -->
+
+<!-- with service -->
 <p (click) = "remove()"
-*ngFor="let i of histories; let j = index">{{ i }} {{ j }} </p>
+*ngFor="let i of datastore.scans; let j = index">{{ i }} </p>
 

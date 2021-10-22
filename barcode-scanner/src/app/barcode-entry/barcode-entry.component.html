@@ -1,22 +1,31 @@
 <hr>
 <p>you are on: {{ "you are on: " + pageTitle }}</p>
-<form action="">
+<form [formGroup]="entryGroup" action="" (ngSubmit)="onSubmit($event)">
     <mat-form-field appearance="fill">
         <mat-label>Favorite food</mat-label>
-        <mat-select>
+        <mat-select [formControl]="quantityCtrl">
           <mat-option value="1">1</mat-option>
           <mat-option value="2">2</mat-option>
           <mat-option value="3">3</mat-option>
           <mat-option value="4">4</mat-option>
-          <mat-option value="5">5</mat-option>
-          
-        </mat-select>
-      </mat-form-field>
+          <mat-option value="5">5</mat-option>          
+        </mat-select>        
+        <mat-error
+        *ngIf="quantityCtrl.hasError('required')"
+        >Quantity is required</mat-error>
+    </mat-form-field>
       
     <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Favorite food</mat-label>
-        <input matInput placeholder="Ex. Pizza" value="">
-      </mat-form-field>
+        <mat-label>Barcode</mat-label>
+        <input matInput placeholder="Ex. Pizza" value=""
+        [formControl]="barcodeCtrl">
+        <mat-error
+        *ngIf="barcodeCtrl.hasError('required')">Barcode required</mat-error>
+        <mat-error
+        *ngIf="barcodeCtrl.hasError('maxLength')">Must less than 14 letters</mat-error>
+        <mat-error
+        *ngIf="barcodeCtrl.hasError('pattern')">Pattern mismatch</mat-error>
+    </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Leave a comment</mat-label>
