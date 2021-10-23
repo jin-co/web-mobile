@@ -1,9 +1,12 @@
 <h2>Users</h2>
+<!-- ng class -->
 <button [disabled]="!enableAdd" class="btn btn-white btn-block mb-3" [ngClass]="currentClasses">Add new user</button>
 
 <ul class="list-unstyled" *ngIf="users.length > 0;else noUsers" >
+    <!-- class binding, style binding -->
     <li class="card card-body mb-2" *ngFor="let i of users"
-    [class.bg-light]="i.isActive">
+    [class.bg-light]="i.isActive"
+    [style.border-color]="i.isActive ? 'green' : ''">
 
         <div class="row">
             <div class="col-sm-4">
@@ -12,11 +15,41 @@
                 <!-- <img class="img-fluid" bind-src="i.image" alt=""> -->
             </div>
             <div class="col-sm-8">
-                <h3>{{i.firstName}} {{i.lastName}}</h3>            
+                <!-- ng style --> 
+                <!-- pipe: something similar to methods
+                     tyntax: target | expression -->
+                <h3
+                [ngStyle]="currentStyles"
+                >{{i.firstName | uppercase}} {{i.lastName | lowercase}}</h3>            
                 <ul class="list-group" *ngIf="showExtended && i.age || i.address">
                     <li class="list-group-item"> {{i.address?.state}} </li>
                     <li class="list-group-item"> {{i.address?.city}} </li>
                     <li class="list-group-item"> {{i.address?.street}} </li>
+
+                    <!-- currency pipe -->
+                    <!-- <li class="list-group-item"> balance: {{i.balance | currency: "GBP": "code"}} </li>
+                    <li class="list-group-item"> balance: {{i.balance | currency: "GBP": "symbol"}} </li>
+                    <li class="list-group-item"> balance: {{i.balance | currency: "GBP"}} </li> -->
+                    <li class="list-group-item"> balance: {{i.balance | currency}} </li>
+                    
+                    <!-- date pipe -->
+                    <li class="list-group-item"> joined: {{i.registered | date}} </li>
+                    <!-- <li class="list-group-item"> joined: {{i.registered | date: "mm/dd/yyyy"}} </li>
+                    <li class="list-group-item"> joined: {{i.registered | date: "yyyy"}} </li>
+                    <li class="list-group-item"> joined: {{i.registered | date: "shortDate"}} </li>
+                    <li class="list-group-item"> joined: {{i.registered | date: "longDate"}} </li>
+                    <li class="list-group-item"> joined: {{i.registered | date: "fullDate"}} </li>
+                    <li class="list-group-item"> joined: {{i.registered | date: "longTime"}} </li>
+                    <li class="list-group-item"> joined: {{i.registered | date: "shortTime"}} </li> -->
+
+                    <!-- number pipe -->
+                    <li class="list-group-item"> joined: {{5 | number: "1.2"}} </li> <!-- numbers of positive(1 -> one spot) . numbers of decimal(2 -> two spots) -->
+
+                    <!-- % pipe -->
+                    <li class="list-group-item"> joined: {{.1 | percent}} <!-- 1 -> 100% -->
+                    
+                    <!-- ngNonBindable: outputs the actual code -->
+                    <li class="list-group-item" ngNonBindable> joined: {{.1 | percent}} <!-- 1 -> 100% -->
                 </ul>
             </div>
         </div>
