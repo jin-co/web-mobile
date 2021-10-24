@@ -19,15 +19,14 @@
         <mat-form-field class="item-to-buy">
             <input matInput placeholder="item-to-buy" #action
             [formControl]="itemCtrl">
-            <mat-error *ngIf="itemCtrl.hasError('maxlength')">
-                Maximum character: 16
-            </mat-error> 
             <mat-error *ngIf="itemCtrl.hasError('required')">
                 Item is required
             </mat-error>
-             
+            <mat-error *ngIf="itemCtrl.hasError('maxlength')">
+                Maximum character: 16
+            </mat-error> 
         </mat-form-field>
     </div>
     
-    <button mat-stroked-button>Add</button>
+    <button class="btn" mat-stroked-button>Add</button>
 </form><!-- /end form -->
