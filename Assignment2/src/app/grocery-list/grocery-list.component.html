@@ -30,3 +30,14 @@
     
     <button class="btn" mat-stroked-button>Add</button>
 </form><!-- /end form -->
+
+<div class="container">
+    <h2 *ngIf="shoppingLists">Nothing to Buy</h2>
+    <p *ngFor="let i of shoppingLists">
+        <input type="checkbox">
+        {{ i.quantity }} 
+        <i class="fa fa-times"></i>
+        {{ i.item }}
+    </p>
+
+</div>
