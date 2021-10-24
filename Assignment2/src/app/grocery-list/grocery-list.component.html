@@ -1,10 +1,10 @@
 <!-- grocery-list component that features a form to select an item -->
 <!-- form -->
-<form class="row" formGroup="inputGroup">
+<form class="row" [formGroup]="inputGroup">
     <div>
         <mat-form-field>
             <mat-label>Quantity</mat-label>
-            <mat-select formControl="quantityCtrl">
+            <mat-select [formControl]="quantityCtrl">
               <mat-option value="1">1</mat-option>
               <mat-option value="2">2</mat-option>
               <mat-option value="3">3</mat-option>
@@ -18,10 +18,13 @@
 
         <mat-form-field class="item-to-buy">
             <input matInput placeholder="item-to-buy" #action
-            fromControl="itemCtrl">
+            [formControl]="itemCtrl">
             <mat-error *ngIf="itemCtrl.hasError('required')">
                 Item is required
-            </mat-error> 
+            </mat-error>
+            <mat-error *ngIf="itemCtrl.hasError('maxLength')">
+                Cannot exceed 16 letters
+            </mat-error>  
         </mat-form-field>
     </div>
     
