@@ -1,6 +1,6 @@
 <!-- grocery-list component that features a form to select an item -->
 <!-- form -->
-<form class="row" [formGroup]="inputGroup">
+<form class="row" [formGroup]="inputGroup" (ngSubmit)="onSubmit($event)">
     <div>
         <mat-form-field>
             <mat-label>Quantity</mat-label>

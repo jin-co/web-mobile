@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { DatastoreService } from '../datastore.service';
 
 @Component({
   selector: 'app-grocery-list',
@@ -21,9 +22,21 @@ export class GroceryListComponent implements OnInit {
     item: this.itemCtrl
   })
 
-  constructor() { }
+  constructor(
+    private datastore: DatastoreService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  // stores data and reset input fields
+  onSubmit(e: Event) {
+    if (this.inputGroup.valid) {
+      this.datastore.items.push(`${this.quantityCtrl.value} x ${this.itemCtrl.value}`);
+
+      // reset input
+      (e.currentTarget as HTMLFormElement).reset()
+    }
   }
 
 }
