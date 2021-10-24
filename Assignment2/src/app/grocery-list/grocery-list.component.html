@@ -34,12 +34,12 @@
 <div class="container">
     <h2 *ngIf="isEmpty">Nothing to Buy</h2>
     <h2 *ngIf="!isEmpty">Things to Buy</h2>
-    <p *ngFor="let i of shoppingLists"
-    (click)="removeItem($event)">
+    <p *ngFor="let item of shoppingLists; let i = index"
+    (click)="removeItem(i)">
         <input type="checkbox">
-        {{ i.quantity }} 
+        {{ item.quantity}} 
         <i class="fa fa-times"></i>
-        {{ i.item }}
+        {{ item.item }}
     </p>
 
 </div>

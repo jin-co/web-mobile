@@ -55,7 +55,9 @@ export class GroceryListComponent implements OnInit {
   }
 
   // remove the item that is being clicked
-  removeItem(e: Event) {
-    this.shoppingLists = this.shoppingLists.slice(0, -1)
+  removeItem(idx: number) {
+    console.log(idx)
+    console.log(this.shoppingLists)
+    // this.shoppingLists = this.shoppingLists.splice(idx, 1)
   }
 }
