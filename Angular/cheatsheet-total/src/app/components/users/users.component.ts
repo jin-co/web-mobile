@@ -8,7 +8,7 @@ import { User } from 'src/app/models/User';
 })
 export class UsersComponent implements OnInit {
   users: User[]
-  showExtended: boolean = false
+  showExtended: boolean = true
   loaded: boolean = true
 
   enableAdd: boolean = true
@@ -36,7 +36,8 @@ export class UsersComponent implements OnInit {
         image: 'http://lorempixel.com/600/600/people/6',
         isActive: true,
         balance: 100,
-        registered: new Date('01/02/2020 08:22:00')
+        registered: new Date('01/02/2020 08:22:00'),
+        hide: true
       },
       {
         firstName: 'Kevin',
@@ -50,7 +51,8 @@ export class UsersComponent implements OnInit {
         image: 'http://lorempixel.com/600/600/people/3',
         isActive: true,
         balance: 100,
-        registered: new Date('01/02/2020 08:22:00')
+        registered: new Date('01/02/2020 08:22:00'),
+        hide: true
       },
       {
         firstName: 'Tim',
@@ -62,7 +64,8 @@ export class UsersComponent implements OnInit {
           state: 'MA'
         },
         image: 'http://lorempixel.com/600/600/people/2',
-        isActive: false
+        isActive: false,
+        hide: true
       },
       {
         firstName: 'Jill',
@@ -76,7 +79,8 @@ export class UsersComponent implements OnInit {
         image: 'http://lorempixel.com/600/600/people/1',
         isActive: true,
         balance: 100,
-        registered: new Date('01/02/2020 08:22:00')
+        registered: new Date('01/02/2020 08:22:00'),
+        hide: true
       },
       {
         firstName: 'Tom',
@@ -84,7 +88,8 @@ export class UsersComponent implements OnInit {
         image: 'http://lorempixel.com/600/600/people/4',
         isActive: true,
         balance: 100,
-        registered: new Date('01/02/2020 08:22:00')
+        registered: new Date('01/02/2020 08:22:00'),
+        hide: true
       }
     ]
 
@@ -111,8 +116,8 @@ export class UsersComponent implements OnInit {
     }
   }
 
-  // click event adding a user
-  onClick(e: Event) {
-    console.log(e)
-  }
+  // hide and show the user with method
+  // toggleHide(user: User) {
+  //   user.hide = !user.hide
+  // }
 }

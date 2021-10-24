@@ -21,8 +21,18 @@
                      tyntax: target | expression -->
                 <h3
                 [ngStyle]="currentStyles"
-                >{{i.firstName | uppercase}} {{i.lastName | lowercase}}</h3>            
-                <ul class="list-group" *ngIf="showExtended && i.age || i.address">
+                >{{i.firstName | uppercase}} {{i.lastName | lowercase}}
+                    <small *ngIf="i.age || i.address">
+                        <!-- <button class="btn btn-dark btn-sm" 
+                        (click)="toggleHide(i)">Toggle</button> -->
+                        <button class="btn btn-dark btn-sm" 
+                        (click)="i.hide = !i.hide">
+                            <i [ngClass]="i.hide ? 'fas fa-plus' : 'fas fa-minus'"></i>
+                        </button>
+                    </small>
+                </h3>            
+                <!-- <ul class="list-group" *ngIf="showExtended && i.age || i.address"> -->
+                <ul class="list-group" *ngIf="!i.hide && (i.age || i.address)">
                     <li class="list-group-item"> {{i.address?.state}} </li>
                     <li class="list-group-item"> {{i.address?.city}} </li>
                     <li class="list-group-item"> {{i.address?.street}} </li>
