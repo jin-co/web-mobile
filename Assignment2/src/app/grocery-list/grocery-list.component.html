@@ -19,12 +19,13 @@
         <mat-form-field class="item-to-buy">
             <input matInput placeholder="item-to-buy" #action
             [formControl]="itemCtrl">
+            <mat-error *ngIf="itemCtrl.hasError('maxLength')">
+                Maximum character: 16
+            </mat-error> 
             <mat-error *ngIf="itemCtrl.hasError('required')">
                 Item is required
             </mat-error>
-            <mat-error *ngIf="itemCtrl.hasError('maxLength')">
-                Cannot exceed 16 letters
-            </mat-error>  
+             
         </mat-form-field>
     </div>
     
