@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-grocery-list',
@@ -15,6 +15,11 @@ export class GroceryListComponent implements OnInit {
     Validators.required,
     Validators.maxLength(16)
   ])
+
+  inputGroup: FormGroup = new FormGroup({
+    quantity: this.quantityCtrl,
+    item: this.itemCtrl
+  })
 
   constructor() { }
 
