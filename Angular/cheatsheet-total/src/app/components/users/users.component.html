@@ -1,6 +1,7 @@
 <h2>Users</h2>
 <!-- ng class -->
-<button [disabled]="!enableAdd" class="btn btn-white btn-block mb-3" [ngClass]="currentClasses">Add new user</button>
+<button [disabled]="!enableAdd" class="btn btn-white btn-block mb-3" [ngClass]="currentClasses"
+(click)="addUser({firstName: 'M', lastName: 'J', isActive: true})">Add new user</button>
 
 <ul class="list-unstyled" *ngIf="users.length > 0;else noUsers" >
     <!-- class binding, style binding -->

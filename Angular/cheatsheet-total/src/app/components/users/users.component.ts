@@ -8,7 +8,7 @@ import { User } from 'src/app/models/User';
 })
 export class UsersComponent implements OnInit {
   users: User[]
-  showExtended: boolean = true
+  showExtended: boolean = false
   loaded: boolean = true
 
   enableAdd: boolean = true
@@ -109,5 +109,10 @@ export class UsersComponent implements OnInit {
       'padding-top': this.showExtended ? '0' : '40px',
       'font-size': this.showExtended ? '' : '40px'
     }
+  }
+
+  // click event adding a user
+  onClick(e: Event) {
+    console.log(e)
   }
 }
