@@ -58,6 +58,6 @@ export class GroceryListComponent implements OnInit {
   removeItem(idx: number) {
     console.log(idx)
     console.log(this.shoppingLists)
-    // this.shoppingLists = this.shoppingLists.splice(idx, 1)
+    this.shoppingLists = this.shoppingLists.splice(idx, 1)
   }
 }
