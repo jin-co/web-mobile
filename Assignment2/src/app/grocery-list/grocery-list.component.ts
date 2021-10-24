@@ -12,11 +12,11 @@ export class GroceryListComponent implements OnInit {
   pageTitle: string = "Grocery List"
 
   // item list
-  // item list
-  shoppingLists: ShoppingList[]
-    // validations
-    = [];
+  shoppingLists: ShoppingList[] = [];
   
+  // test
+  isEmpty: boolean = true
+
   // validations
   quantityCtrl: FormControl = new FormControl(null, Validators.required)
   itemCtrl: FormControl = new FormControl(null, [
@@ -34,6 +34,7 @@ export class GroceryListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    console.log(this.shoppingLists)
   }
 
   // stores data and reset input fields
@@ -45,9 +46,16 @@ export class GroceryListComponent implements OnInit {
       })
       this.datastore.items.push(`${this.quantityCtrl.value} x ${this.itemCtrl.value}`);
 
+      // changes the message on the buy list
+      this.isEmpty = false;
+
       // reset input
       (e.currentTarget as HTMLFormElement).reset()
     }
   }
 
+  // remove the item that is being clicked
+  removeItem(e: Event) {
+    this.shoppingLists = this.shoppingLists.slice(0, -1)
+  }
 }
