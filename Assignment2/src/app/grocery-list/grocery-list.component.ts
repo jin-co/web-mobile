@@ -35,6 +35,27 @@ export class GroceryListComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.shoppingLists)
+
+    //test
+    this.shoppingLists = [
+    {
+      quantity: 1,
+      item: "water"
+    },
+    {
+      quantity: 2,
+      item: "watermelon"
+    },
+    {
+      quantity: 3,
+      item: "waterfall"
+    },
+    {
+      quantity: 4,
+      item: "water who"
+    },
+  
+  ]
   }
 
   // stores data and reset input fields
@@ -55,9 +76,15 @@ export class GroceryListComponent implements OnInit {
   }
 
   // remove the item that is being clicked
-  removeItem(idx: number) {
-    console.log(idx)
+  // removeItem(idx: number) {
+  //   console.log(idx)
+  //   console.log(this.shoppingLists)
+  //   this.shoppingLists = this.shoppingLists.splice(idx, 1)
+    
+  // }
+  removeItem(obj: ShoppingList) {    
     console.log(this.shoppingLists)
-    this.shoppingLists = this.shoppingLists.splice(idx, 1)
+    this.shoppingLists = this.shoppingLists.filter(i => i !== obj)
+    
   }
 }
