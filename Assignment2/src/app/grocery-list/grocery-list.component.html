@@ -31,7 +31,7 @@
     <button class="btn" mat-stroked-button>Add</button>
 </form><!-- /end form -->
 
-<div class="container">
+<div class="container p-2">
     <h2 *ngIf="isEmpty">Nothing to Buy</h2>
     <h2 *ngIf="!isEmpty">Things to Buy</h2>
     <p *ngFor="let item of datastore.items"
@@ -41,5 +41,4 @@
         <i class="fa fa-times"></i>
         {{ item.item }}
     </p>
-
 </div>

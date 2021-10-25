@@ -1,5 +1,5 @@
 <!-- purchase-history component that features a reset button -->
-<div class="container">    
+<div class="container p-2">    
     <p *ngFor="let item of datastore.items; let i = index"
     (click)="removeItem(item)">
         <input type="checkbox">
@@ -9,4 +9,5 @@
     </p>
 </div>
 
-<button class="btn" mat-stroked-button>Reset</button>
+<button class="btn" mat-stroked-button
+(click)="removeAll()">Reset</button>

@@ -17,7 +17,11 @@ export class PurchaseHistoryComponent implements OnInit {
   }
 
   removeItem(obj: ShoppingList) {    
-    console.log(this.datastore.items)
     this.datastore.items = this.datastore.items.filter(i => i !== obj)    
+  }
+
+  removeAll() {
+    this.datastore.items.splice(0)
+    console.log(this.datastore.items)
   }
 }

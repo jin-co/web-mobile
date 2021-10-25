@@ -12,7 +12,7 @@ export class GroceryListComponent implements OnInit {
   pageTitle: string = "Grocery List"
 
   // item list
-  shoppingLists: ShoppingList[] = [];
+  // shoppingLists: ShoppingList[] = [];
 
   // test local
   // localStore: ShoppingList[] = [];
@@ -38,39 +38,19 @@ export class GroceryListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log(this.shoppingLists)
     console.log(localStorage)
     //tes local
     // this.localStore = JSON.parse(localStorage.getItem('list') || '{}')
-    //test
-    this.datastore.items = [
-    {
-      quantity: 1,
-      item: "water"
-    },
-    {
-      quantity: 2,
-      item: "watermelon"
-    },
-    {
-      quantity: 3,
-      item: "waterfall"
-    },
-    {
-      quantity: 4,
-      item: "water who"
-    },
-  
-  ]
+    
   }
 
   // stores data and reset input fields
   onSubmit(e: Event) {
     if (this.inputGroup.valid) {
-      this.shoppingLists.push({
-        quantity: this.quantityCtrl.value,
-        item: this.itemCtrl.value
-      })      
+      // this.shoppingLists.push({
+      //   quantity: this.quantityCtrl.value,
+      //   item: this.itemCtrl.value
+      // })      
 
       // changes the message on the buy list
       this.isEmpty = false;
@@ -89,8 +69,8 @@ export class GroceryListComponent implements OnInit {
     }
   }
   
+  // remove selected item
   removeItem(obj: ShoppingList) {    
-    console.log(this.shoppingLists)
-    this.shoppingLists = this.shoppingLists.filter(i => i !== obj)    
+    this.datastore.items = this.datastore.items.filter(i => i !== obj)    
   }
 }
