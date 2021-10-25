@@ -13,8 +13,11 @@ export class GroceryListComponent implements OnInit {
 
   // item list
   shoppingLists: ShoppingList[] = [];
+
+  // test local
+  // localStore: ShoppingList[] = [];
   
-  // test
+  // check if the shopping list is empty
   isEmpty: boolean = true
 
   // validations
@@ -35,27 +38,29 @@ export class GroceryListComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.shoppingLists)
-
+    console.log(localStorage)
+    //tes local
+    // this.localStore = JSON.parse(localStorage.getItem('list') || '{}')
     //test
-    this.shoppingLists = [
-    {
-      quantity: 1,
-      item: "water"
-    },
-    {
-      quantity: 2,
-      item: "watermelon"
-    },
-    {
-      quantity: 3,
-      item: "waterfall"
-    },
-    {
-      quantity: 4,
-      item: "water who"
-    },
+  //   this.shoppingLists = [
+  //   {
+  //     quantity: 1,
+  //     item: "water"
+  //   },
+  //   {
+  //     quantity: 2,
+  //     item: "watermelon"
+  //   },
+  //   {
+  //     quantity: 3,
+  //     item: "waterfall"
+  //   },
+  //   {
+  //     quantity: 4,
+  //     item: "water who"
+  //   },
   
-  ]
+  // ]
   }
 
   // stores data and reset input fields
@@ -70,21 +75,16 @@ export class GroceryListComponent implements OnInit {
       // changes the message on the buy list
       this.isEmpty = false;
 
+      // test local
+      // localStorage.setItem('list', JSON.stringify(this.shoppingLists));
+            
       // reset input
       (e.currentTarget as HTMLFormElement).reset()
     }
   }
-
-  // remove the item that is being clicked
-  // removeItem(idx: number) {
-  //   console.log(idx)
-  //   console.log(this.shoppingLists)
-  //   this.shoppingLists = this.shoppingLists.splice(idx, 1)
-    
-  // }
+  
   removeItem(obj: ShoppingList) {    
     console.log(this.shoppingLists)
-    this.shoppingLists = this.shoppingLists.filter(i => i !== obj)
-    
+    this.shoppingLists = this.shoppingLists.filter(i => i !== obj)    
   }
 }
