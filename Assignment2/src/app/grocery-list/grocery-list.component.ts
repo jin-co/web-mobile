@@ -39,9 +39,6 @@ export class GroceryListComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(localStorage)
-    //tes local
-    // this.localStore = JSON.parse(localStorage.getItem('list') || '{}')
-    
   }
 
   // stores data and reset input fields
@@ -53,24 +50,28 @@ export class GroceryListComponent implements OnInit {
       // })      
 
       // changes the message on the buy list
-      this.isEmpty = false;
-
-      // test local
-      // localStorage.setItem('list', JSON.stringify(this.shoppingLists));
+      this.isEmpty = false;      
 
       // using service
       this.datastore.items.push({
         quantity: this.quantityCtrl.value,
         item: this.itemCtrl.value
       });
-            
+
+      // test local
+      localStorage.setItem('list', JSON.stringify(this.datastore.items));
+
       // reset input
       (e.currentTarget as HTMLFormElement).reset()
     }
   }
   
-  // remove selected item
+  // remove selected item from the list and add it to the history
   removeItem(obj: ShoppingList) {    
-    this.datastore.items = this.datastore.items.filter(i => i !== obj)    
+    this.datastore.histories.push(obj)
+    localStorage.setItem('purchased', JSON.stringify(this.datastore.histories)); 
+
+    this.datastore.items = this.datastore.items.filter(i => i !== obj)   
+    localStorage.setItem('list', JSON.stringify(this.datastore.items)); 
   }
 }

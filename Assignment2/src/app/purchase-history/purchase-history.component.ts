@@ -16,12 +16,15 @@ export class PurchaseHistoryComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // removes selected item
   removeItem(obj: ShoppingList) {    
-    this.datastore.items = this.datastore.items.filter(i => i !== obj)    
+    this.datastore.histories = this.datastore.histories.filter(i => i !== obj)
+    localStorage.setItem('purchased', JSON.stringify(this.datastore.histories));     
   }
 
+  // removes all the items
   removeAll() {
-    this.datastore.items.splice(0)
-    console.log(this.datastore.items)
+    this.datastore.histories.splice(0)
+    localStorage.setItem('purchased', JSON.stringify(this.datastore.histories)); 
   }
 }

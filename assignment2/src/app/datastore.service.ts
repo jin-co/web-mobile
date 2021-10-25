@@ -6,5 +6,6 @@ import { ShoppingList } from './models/shopping-list';
 })
 export class DatastoreService {
   items: ShoppingList[] = []
+  histories: ShoppingList[] = []
   constructor() { }
 }
