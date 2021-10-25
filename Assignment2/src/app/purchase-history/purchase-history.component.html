@@ -1,13 +1,32 @@
 <!-- purchase-history component that features a reset button -->
-<div class="container p-2">    
-    <p *ngFor="let item of datastore.histories; let i = index"
+<div class="container-fluid p-2 mt-3">    
+    <!-- <p *ngFor="let item of datastore.histories; let i = index"
     (click)="removeItem(item)">
         <input type="checkbox">
         {{ item.quantity}} 
         <i class="fa fa-times"></i>
         {{ item.item }}
-    </p>
+    </p> -->
+    <table class="table table-sm text-light">
+        <thead class="bg-light text-dark border-2">
+            <tr>
+                <th scope="col">Quantity</th>
+                <th scope="col">Item</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of datastore.histories; let i = index"
+            (click)="removeItem(item)">
+                <td>{{ item.quantity}} </td>
+                <td>{{ item.item }}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 
 <button class="btn" mat-stroked-button
 (click)="removeAll()">Reset</button>
+
+
+  
+  
