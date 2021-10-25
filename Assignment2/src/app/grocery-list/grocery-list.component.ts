@@ -34,7 +34,7 @@ export class GroceryListComponent implements OnInit {
 
   // dependency injection to use service
   constructor(
-    private datastore: DatastoreService
+    public datastore: DatastoreService
   ) { }
 
   ngOnInit(): void {
@@ -43,25 +43,25 @@ export class GroceryListComponent implements OnInit {
     //tes local
     // this.localStore = JSON.parse(localStorage.getItem('list') || '{}')
     //test
-  //   this.shoppingLists = [
-  //   {
-  //     quantity: 1,
-  //     item: "water"
-  //   },
-  //   {
-  //     quantity: 2,
-  //     item: "watermelon"
-  //   },
-  //   {
-  //     quantity: 3,
-  //     item: "waterfall"
-  //   },
-  //   {
-  //     quantity: 4,
-  //     item: "water who"
-  //   },
+    this.datastore.items = [
+    {
+      quantity: 1,
+      item: "water"
+    },
+    {
+      quantity: 2,
+      item: "watermelon"
+    },
+    {
+      quantity: 3,
+      item: "waterfall"
+    },
+    {
+      quantity: 4,
+      item: "water who"
+    },
   
-  // ]
+  ]
   }
 
   // stores data and reset input fields
