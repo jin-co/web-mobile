@@ -1,2 +1,14 @@
 <!-- purchase-history component that features a reset button -->
 <button class="btn" mat-stroked-button>Reset</button>
+
+
+<div class="container">    
+    <p *ngFor="let item of datastore.items; let i = index"
+    (click)="removeItem(item)">
+        <input type="checkbox">
+        {{ item.quantity}} 
+        <i class="fa fa-times"></i>
+        {{ item.item }}
+    </p>
+
+</div>

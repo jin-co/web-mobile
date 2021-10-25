@@ -32,6 +32,7 @@ export class GroceryListComponent implements OnInit {
     item: this.itemCtrl
   })
 
+  // dependency injection to use service
   constructor(
     private datastore: DatastoreService
   ) { }
@@ -69,14 +70,19 @@ export class GroceryListComponent implements OnInit {
       this.shoppingLists.push({
         quantity: this.quantityCtrl.value,
         item: this.itemCtrl.value
-      })
-      this.datastore.items.push(`${this.quantityCtrl.value} x ${this.itemCtrl.value}`);
+      })      
 
       // changes the message on the buy list
       this.isEmpty = false;
 
       // test local
       // localStorage.setItem('list', JSON.stringify(this.shoppingLists));
+
+      // using service
+      this.datastore.items.push({
+        quantity: this.quantityCtrl.value,
+        item: this.itemCtrl.value
+      });
             
       // reset input
       (e.currentTarget as HTMLFormElement).reset()

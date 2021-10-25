@@ -26,11 +26,9 @@ export class BarcodeEntryComponent implements OnInit {
     quantity: this.quantityCtrl,
     code: this.barcodeCtrl
   })
-
- 
-
   // validation
 
+  // using service
   constructor(
     private datastore: DatastoreService
   ) { }
