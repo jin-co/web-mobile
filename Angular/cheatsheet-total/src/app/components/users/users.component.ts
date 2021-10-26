@@ -17,6 +17,10 @@ export class UsersComponent implements OnInit {
   // ng style
   currentStyles = {}
 
+  // user collapse
+  showUserForm: boolean = true
+
+
   constructor() {
     this.users = []
     console.log(this.users)
@@ -120,4 +124,13 @@ export class UsersComponent implements OnInit {
   // toggleHide(user: User) {
   //   user.hide = !user.hide
   // }
+
+  onSubmit(e: Event) {
+    e.preventDefault()
+    console.log('heh')
+  }
+
+  fireEvent(e: Event) {
+    console.log(e.target, e.type)
+  }
 }
