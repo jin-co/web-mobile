@@ -67,8 +67,34 @@ export class GroceryListComponent implements OnInit {
   }
   
   // remove selected item from the list and add it to the history
-  removeItem(obj: ShoppingList) {    
-    this.datastore.histories.push(obj)
+  removeItem(obj: ShoppingList) { 
+    /* test */
+
+    // let temp0 = this.datastore.histories
+    // console.log(obj)  
+    // let temp = this.datastore.items.indexOf(obj)
+    // console.log(temp);
+
+    // // let temp2 = this.datastore.histories.indexOf(obj)
+    // let temp2 = this.datastore.histories.find(a => a == obj)
+    // console.log(temp2)
+
+    // console.log(this.datastore.items, '\n', this.datastore.histories)
+    let found = false
+    this.datastore.histories.forEach(history => {
+      if (history.item.toLowerCase() == obj.item.toLowerCase()) {
+        console.log(obj.item, 'found')
+        history.quantity = Number(history.quantity) + Number(obj.quantity)
+        console.log(history.quantity)
+        found = true
+      } 
+    });
+
+    /* test */
+    if (!found) {
+      this.datastore.histories.push(obj)  
+    }
+    
     localStorage.setItem('purchased', JSON.stringify(this.datastore.histories)); 
 
     this.datastore.items = this.datastore.items.filter(i => i !== obj)   
