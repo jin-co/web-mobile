@@ -7,44 +7,44 @@ Add user</button>
     <form (submit)="onSubmit($event)">
         <div class="form-group">
             <label>First name</label>
-            <input 
-            (keydown)="fireEvent($event)"
+            <input [(ngModel)]="user.firstName"
             type="text" class="form-control mb-3" name="firstName">
         </div>
         <div class="form-group">
             <label>Last name</label>
-            <input 
-            (keydown)="fireEvent($event)"
+            <input [(ngModel)]="user.lastName"
             type="text" class="form-control mb-3" name="lastName">
         </div>
         <div class="form-group">
             <label>Age</label>
-            <input 
-            (keydown)="fireEvent($event)"
+            <input [(ngModel)]="user.age"
             type="number" class="form-control mb-3" name="age">
         </div>
         <div class="form-group">
             <label>Street Address</label>
-            <input 
-            (keydown)="fireEvent($event)"
+            <input [(ngModel)]="user.address.street"
             type="text" class="form-control mb-3" name="street">
         </div>
         <div class="form-group">
             <label>City</label>
-            <input 
-            (keydown)="fireEvent($event)"
+            <input [(ngModel)]="user.address.city"
             type="text" class="form-control mb-3" name="city">
         </div>
         <div class="form-group">
             <label>State</label>
-            <input 
-            (keydown)="fireEvent($event)"
+            <input [(ngModel)]="user.address.state"
             type="text" class="form-control mb-3" name="state">
+            <!-- <input 
+            (keydown)="fireEvent($event)"
+            type="text" class="form-control mb-3" name="state"> -->
         </div>
 
         <!-- ng class -->
-        <button [disabled]="!enableAdd" class="btn btn-white w-100 mb-3" [ngClass]="currentClasses"
-        (click)="addUser({firstName: 'M', lastName: 'J', isActive: true})">Add new user</button>
+        <!-- hard coded for a test -->
+        <!-- <button [disabled]="!enableAdd" class="btn btn-white w-100 mb-3" [ngClass]="currentClasses"
+        (click)="addUser({firstName: 'M', lastName: 'J', isActive: true})">Add new user</button> -->
+        <button [disabled]="user.firstName == '' || user.lastName == ''" class="btn btn-white w-100 mb-3" [ngClass]="currentClasses"
+        (click)="addUser()">Add new user</button>
     </form>
 </div>
 

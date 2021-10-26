@@ -7,11 +7,21 @@ import { User } from 'src/app/models/User';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
+  user: User = {
+    firstName: '',
+    lastName: '',
+    age: 0,
+    address: {
+      street: '',
+      city: '',
+      state: ''
+    }
+  }
   users: User[]
   showExtended: boolean = true
   loaded: boolean = true
 
-  enableAdd: boolean = true
+  enableAdd: boolean = false
   currentClasses = {}
 
   // ng style
@@ -101,8 +111,30 @@ export class UsersComponent implements OnInit {
     this.setCurrentStyles()
   }
 
-  addUser(user: User) {
-    this.users.push(user)
+  // addUser(user: User) {
+  //   this.users.push(user)
+  // }
+
+  addUser() {
+    this.user.isActive = true
+
+    // sets the registered date to current day and time
+    this.user.registered = new Date()
+    
+    // adds at the beginning
+    this.users.unshift(this.user)
+
+    // clears out the input 
+    this.user = {
+      firstName: '',
+      lastName: '',
+      age: 0,
+      address: {
+      street: '',
+      city: '',
+      state: ''
+    }
+    }
   }
 
   setCurrentClasses() {

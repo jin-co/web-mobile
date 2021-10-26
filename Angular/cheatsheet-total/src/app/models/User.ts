@@ -3,9 +3,9 @@ export interface User {
     lastName: string,
     age?: number,
     address?: {
-        street: string,
-        city: string,
-        state: string
+        street?: string,
+        city?: string,
+        state?: string
     },
     image?: string,
     isActive?: boolean,
