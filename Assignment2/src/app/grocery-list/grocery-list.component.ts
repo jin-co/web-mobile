@@ -11,15 +11,6 @@ import { ShoppingList } from '../models/shopping-list';
 export class GroceryListComponent implements OnInit {
   pageTitle: string = "Grocery List"
 
-  // item list
-  // shoppingLists: ShoppingList[] = [];
-
-  // test local
-  // localStore: ShoppingList[] = [];
-  
-  // check if the shopping list is empty
-  isEmpty: boolean = true
-
   // validations
   quantityCtrl: FormControl = new FormControl(null, Validators.required)
   itemCtrl: FormControl = new FormControl(null, [
@@ -38,20 +29,11 @@ export class GroceryListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log(localStorage)
   }
 
   // stores data and reset input fields
   onSubmit(e: Event) {
     if (this.inputGroup.valid) {
-      // this.shoppingLists.push({
-      //   quantity: this.quantityCtrl.value,
-      //   item: this.itemCtrl.value
-      // })      
-
-      // changes the message on the buy list
-      this.isEmpty = false;      
-
       // using service
       this.datastore.items.push({
         quantity: this.quantityCtrl.value,
@@ -71,14 +53,11 @@ export class GroceryListComponent implements OnInit {
     let found = false
     this.datastore.histories.forEach(history => {
       if (history.item.toLowerCase() == obj.item.toLowerCase()) {
-        console.log(obj.item, 'found')
         history.quantity = Number(history.quantity) + Number(obj.quantity)
-        console.log(history.quantity)
         found = true
       } 
     });
 
-    /* test */
     if (!found) {
       this.datastore.histories.push(obj)  
     }

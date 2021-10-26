@@ -1,4 +1,5 @@
 <!-- grocery-list component that features a form to select an item -->
+
 <!-- form -->
 <form class="container" [formGroup]="inputGroup" (ngSubmit)="onSubmit($event)">
     <div>
@@ -31,14 +32,18 @@
     <button class="btn" mat-stroked-button>Add</button>
 </form><!-- /end form -->
 
+<!-- note -->
 <div class="container p-2">
-    <h2 *ngIf="isEmpty">Nothing to Buy</h2>
-    <h2 *ngIf="!isEmpty">Things to Buy</h2>
-    <p *ngFor="let item of datastore.items"
+    <h2 *ngIf="datastore.items.length <= 0; else toBuy">Nothing to buy</h2>
+    <ng-template #toBuy>
+        <h2 #tobuy>Things to buy</h2>
+    </ng-template>
+    
+    <p class="text-capitalize" *ngFor="let item of datastore.items"
     (click)="removeItem(item)">
         <input type="checkbox">
         {{ item.quantity}} 
         <i class="fa fa-times"></i>
         {{ item.item }}
     </p>
-</div>
+</div><!-- /end note -->

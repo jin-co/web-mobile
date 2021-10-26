@@ -16,6 +16,16 @@
         
         .history-toggle {
             cursor: pointer;
+            position: relative;
+
+            i {
+                position: absolute;
+                border-radius: 50%;
+                right: 12px;
+                background-color: #1DB9C3;
+                padding: 2px;
+                color: #fff;
+            }
         }
     }
 }

@@ -1,32 +1,25 @@
 <!-- purchase-history component that features a reset button -->
 <div class="container-fluid p-2 mt-3">    
-    <!-- <p *ngFor="let item of datastore.histories; let i = index"
-    (click)="removeItem(item)">
-        <input type="checkbox">
-        {{ item.quantity}} 
-        <i class="fa fa-times"></i>
-        {{ item.item }}
-    </p> -->
     <table class="table table-sm text-light">
         <thead class="bg-light text-dark border-2">
-            <tr>
-                <th class="history-toggle" scope="col"
-                (click)="toggleSort(1)"
-                >Quantity
+            <tr class="row">
+                <th class="history-toggle col-6" scope="col-6"
+                (click)="toggleSort(1)">
+                    Quantity
                     <i [ngClass]="quantityACS ? 'fa fa-arrow-down' : 'fa fa-arrow-up'"></i>
                 </th>
-                <th class="history-toggle" scope="col"
-                (click)="toggleSort(2)"
-                >Item
-                    <i [ngClass]="itemACS ? 'fa fa-arrow-down' : 'fa fa-arrow-up'"></i>
+                <th class="history-toggle col-6" scope="col-6"
+                (click)="toggleSort(2)">
+                    Item
+                    <i [ngClass]="itemACS ? 'fa fa-arrow-up' : 'fa fa-arrow-down'"></i>
                 </th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let item of datastore.histories"
+            <tr class="row py-2" *ngFor="let item of datastore.histories"
             (click)="removeItem(item)">
-                <td>{{ item.quantity }} </td>
-                <td>{{ item.item }}</td>
+                <td class="col-6">{{ item.quantity }} </td>
+                <td class="text-capitalize col-6">{{ item.item }}</td>
             </tr>
         </tbody>
     </table>
