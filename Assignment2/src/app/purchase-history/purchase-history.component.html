@@ -10,14 +10,22 @@
     <table class="table table-sm text-light">
         <thead class="bg-light text-dark border-2">
             <tr>
-                <th scope="col">Quantity</th>
-                <th scope="col">Item</th>
+                <th class="history-toggle" scope="col"
+                (click)="toggleSort(1)"
+                >Quantity
+                    <i [ngClass]="quantityACS ? 'fa fa-arrow-down' : 'fa fa-arrow-up'"></i>
+                </th>
+                <th class="history-toggle" scope="col"
+                (click)="toggleSort(2)"
+                >Item
+                    <i [ngClass]="itemACS ? 'fa fa-arrow-down' : 'fa fa-arrow-up'"></i>
+                </th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let item of datastore.histories; let i = index"
+            <tr *ngFor="let item of datastore.histories"
             (click)="removeItem(item)">
-                <td>{{ item.quantity}} </td>
+                <td>{{ item.quantity }} </td>
                 <td>{{ item.item }}</td>
             </tr>
         </tbody>
