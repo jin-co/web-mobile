@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { User } from 'src/app/models/User';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-users',
@@ -10,6 +11,7 @@ export class UsersComponent implements OnInit {
   user: User = {
     firstName: '',
     lastName: '',
+    email: '',
     age: 0,
     address: {
       street: '',
@@ -30,6 +32,8 @@ export class UsersComponent implements OnInit {
   // user collapse
   showUserForm: boolean = true
 
+  // template driven validation
+  @ViewChild('userForm')form: any  // 'ViewChild'(gives an access to the form directive) must match the variable name in the template
 
   constructor() {
     this.users = []
@@ -41,6 +45,7 @@ export class UsersComponent implements OnInit {
       {
         firstName: 'John',
         lastName: 'Doe',
+        email: 'Doe@woo.com',
         age: 30,
         address: {
           street: '50 main',
@@ -56,6 +61,7 @@ export class UsersComponent implements OnInit {
       {
         firstName: 'Kevin',
         lastName: 'Doe',
+        email: 'Doe@woo.com',
         age: 30,
         address: {
           street: '50 main',
@@ -71,6 +77,7 @@ export class UsersComponent implements OnInit {
       {
         firstName: 'Tim',
         lastName: 'Doe',
+        email: 'Doe@woo.com',
         age: 30,
         address: {
           street: '50 main',
@@ -84,6 +91,7 @@ export class UsersComponent implements OnInit {
       {
         firstName: 'Jill',
         lastName: 'Doe',
+        email: 'Doe@woo.com',
         age: 30,
         address: {
           street: '50 main',
@@ -99,6 +107,7 @@ export class UsersComponent implements OnInit {
       {
         firstName: 'Tom',
         lastName: 'Doe',
+        email: 'Doe@woo.com',
         image: 'http://lorempixel.com/600/600/people/4',
         isActive: true,
         balance: 100,
@@ -115,27 +124,28 @@ export class UsersComponent implements OnInit {
   //   this.users.push(user)
   // }
 
-  addUser() {
-    this.user.isActive = true
+  // addUser() {
+  //   this.user.isActive = true
 
-    // sets the registered date to current day and time
-    this.user.registered = new Date()
+  //   // sets the registered date to current day and time
+  //   this.user.registered = new Date()
     
-    // adds at the beginning
-    this.users.unshift(this.user)
+  //   // adds at the beginning
+  //   this.users.unshift(this.user)
 
-    // clears out the input 
-    this.user = {
-      firstName: '',
-      lastName: '',
-      age: 0,
-      address: {
-      street: '',
-      city: '',
-      state: ''
-    }
-    }
-  }
+  //   // clears out the input 
+  //   this.user = {
+  //     firstName: '',
+  //     lastName: '',
+  //     email: '',
+  //     age: 0,
+  //     address: {
+  //       street: '',
+  //       city: '',
+  //       state: ''
+  //     }
+  //   }
+  // }
 
   setCurrentClasses() {
     this.currentClasses = {
@@ -157,10 +167,27 @@ export class UsersComponent implements OnInit {
   //   user.hide = !user.hide
   // }
 
-  onSubmit(e: Event) {
-    e.preventDefault()
-    console.log('heh')
+  // onSubmit(e: Event) {
+  //   e.preventDefault()
+  //   console.log('heh')
+  // }
+
+  onSubmit({value, valid}: NgForm) {
+    if (!valid) {
+      
+    } else {
+      value.isActive = true
+      value.registered = new Date()
+      value.hide = true
+      this.users.unshift(value)
+
+      // reset form
+      this.form.reset()
+    }
   }
+
+  // legacy
+  // onSubmit({value, valid}: {value: User, valid: boolean}) {}
 
   fireEvent(e: Event) {
     console.log(e.target, e.type)

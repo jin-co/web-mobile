@@ -53,6 +53,7 @@ export class UserComponent implements OnInit {
         this.user = {
             firstName: 'John',
             lastName: 'Doe',
+            email: 'Doe',
             age: 30,
             address: {
                 street: '50 main',
