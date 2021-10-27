@@ -36,6 +36,9 @@ export class UsersComponent implements OnInit {
   // template driven validation
   @ViewChild('userForm')form: any  // 'ViewChild'(gives an access to the form directive) must match the variable name in the template
 
+  // subscribe to observable
+  data: any
+
   constructor(
     private dataService: DataService
   ) {
@@ -47,6 +50,10 @@ export class UsersComponent implements OnInit {
     // using service to get users
     this.users = this.dataService.getUsers()
 
+    // subscribe to observable
+    this.dataService.getDate().subscribe(data => {
+      console.log(data)
+    })
     // this.users = [
     //   {
     //     firstName: 'John',
@@ -187,7 +194,7 @@ export class UsersComponent implements OnInit {
       value.isActive = true
       value.registered = new Date()
       value.hide = true
-      
+
       // adding to the component variable
       // this.users.unshift(value)
 
