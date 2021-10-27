@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { User } from 'src/app/models/User';
 import { NgForm } from '@angular/forms';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-users',
@@ -35,86 +36,93 @@ export class UsersComponent implements OnInit {
   // template driven validation
   @ViewChild('userForm')form: any  // 'ViewChild'(gives an access to the form directive) must match the variable name in the template
 
-  constructor() {
+  constructor(
+    private dataService: DataService
+  ) {
     this.users = []
     console.log(this.users)
   }
 
   ngOnInit(): void {
-    this.users = [
-      {
-        firstName: 'John',
-        lastName: 'Doe',
-        email: 'Doe@woo.com',
-        age: 30,
-        address: {
-          street: '50 main',
-          city: 'Boston',
-          state: 'MA'
-        },
-        image: 'http://lorempixel.com/600/600/people/6',
-        isActive: true,
-        balance: 100,
-        registered: new Date('01/02/2020 08:22:00'),
-        hide: true
-      },
-      {
-        firstName: 'Kevin',
-        lastName: 'Doe',
-        email: 'Doe@woo.com',
-        age: 30,
-        address: {
-          street: '50 main',
-          city: 'Boston',
-          state: 'MA'
-        },
-        image: 'http://lorempixel.com/600/600/people/3',
-        isActive: true,
-        balance: 100,
-        registered: new Date('01/02/2020 08:22:00'),
-        hide: true
-      },
-      {
-        firstName: 'Tim',
-        lastName: 'Doe',
-        email: 'Doe@woo.com',
-        age: 30,
-        address: {
-          street: '50 main',
-          city: 'Boston',
-          state: 'MA'
-        },
-        image: 'http://lorempixel.com/600/600/people/2',
-        isActive: false,
-        hide: true
-      },
-      {
-        firstName: 'Jill',
-        lastName: 'Doe',
-        email: 'Doe@woo.com',
-        age: 30,
-        address: {
-          street: '50 main',
-          city: 'Boston',
-          state: 'MA'
-        },
-        image: 'http://lorempixel.com/600/600/people/1',
-        isActive: true,
-        balance: 100,
-        registered: new Date('01/02/2020 08:22:00'),
-        hide: true
-      },
-      {
-        firstName: 'Tom',
-        lastName: 'Doe',
-        email: 'Doe@woo.com',
-        image: 'http://lorempixel.com/600/600/people/4',
-        isActive: true,
-        balance: 100,
-        registered: new Date('01/02/2020 08:22:00'),
-        hide: true
-      }
-    ]
+    // using service to get users
+    this.users = this.dataService.getUsers()
+
+    // this.users = [
+    //   {
+    //     firstName: 'John',
+    //     lastName: 'Doe',
+    //     email: 'Doe@woo.com',
+    //     age: 30,
+    //     address: {
+    //       street: '50 main',
+    //       city: 'Boston',
+    //       state: 'MA'
+    //     },
+    //     image: 'http://lorempixel.com/600/600/people/6',
+    //     isActive: true,
+    //     balance: 100,
+    //     registered: new Date('01/02/2020 08:22:00'),
+    //     hide: true
+    //   },
+    //   {
+    //     firstName: 'Kevin',
+    //     lastName: 'Doe',
+    //     email: 'Doe@woo.com',
+    //     age: 30,
+    //     address: {
+    //       street: '50 main',
+    //       city: 'Boston',
+    //       state: 'MA'
+    //     },
+    //     image: 'http://lorempixel.com/600/600/people/3',
+    //     isActive: true,
+    //     balance: 100,
+    //     registered: new Date('01/02/2020 08:22:00'),
+    //     hide: true
+    //   },
+    //   {
+    //     firstName: 'Tim',
+    //     lastName: 'Doe',
+    //     email: 'Doe@woo.com',
+    //     age: 30,
+    //     address: {
+    //       street: '50 main',
+    //       city: 'Boston',
+    //       state: 'MA'
+    //     },
+    //     image: 'http://lorempixel.com/600/600/people/2',
+    //     isActive: false,
+    //     hide: true
+    //   },
+    //   {
+    //     firstName: 'Jill',
+    //     lastName: 'Doe',
+    //     email: 'Doe@woo.com',
+    //     age: 30,
+    //     address: {
+    //       street: '50 main',
+    //       city: 'Boston',
+    //       state: 'MA'
+    //     },
+    //     image: 'http://lorempixel.com/600/600/people/1',
+    //     isActive: true,
+    //     balance: 100,
+    //     registered: new Date('01/02/2020 08:22:00'),
+    //     hide: true
+    //   },
+    //   {
+    //     firstName: 'Tom',
+    //     lastName: 'Doe',
+    //     email: 'Doe@woo.com',
+    //     image: 'http://lorempixel.com/600/600/people/4',
+    //     isActive: true,
+    //     balance: 100,
+    //     registered: new Date('01/02/2020 08:22:00'),
+    //     hide: true
+    //   }
+    // ]
+
+    this.loaded = true
 
     this.setCurrentClasses()
     this.setCurrentStyles()
@@ -179,7 +187,12 @@ export class UsersComponent implements OnInit {
       value.isActive = true
       value.registered = new Date()
       value.hide = true
-      this.users.unshift(value)
+      
+      // adding to the component variable
+      // this.users.unshift(value)
+
+      // using service
+      this.dataService.addUser(value)
 
       // reset form
       this.form.reset()
