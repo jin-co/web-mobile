@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { User } from 'src/app/models/User';
 import { NgForm } from '@angular/forms';
-import { DataService } from 'src/app/services/data.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-users',
@@ -40,7 +40,7 @@ export class UsersComponent implements OnInit {
   data: any
 
   constructor(
-    private dataService: DataService
+    private userService: UserService
   ) {
     this.users = []
     console.log(this.users)
@@ -48,13 +48,13 @@ export class UsersComponent implements OnInit {
 
   ngOnInit(): void {
     // using service to get users with observable
-    this.dataService.getUsers().subscribe(users => {
+    this.userService.getUsers().subscribe(users => {
       this.users = users
       this.loaded = true
     })
 
     // subscribe to observable
-    this.dataService.getDate().subscribe(data => {
+    this.userService.getDate().subscribe(data => {
       console.log(data)
     })
     // this.users = [
@@ -202,7 +202,7 @@ export class UsersComponent implements OnInit {
       // this.users.unshift(value)
 
       // using service
-      this.dataService.addUser(value)
+      this.userService.addUser(value)
 
       // reset form
       this.form.reset()

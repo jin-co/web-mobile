@@ -5,7 +5,7 @@ import { User } from '../models/User';
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
+export class UserService {
   users: User[]
 
   // use 'Observable' to fetch data asynchronously
