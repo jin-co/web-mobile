@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { User } from '../models/User';
 
 @Injectable({
@@ -90,8 +90,9 @@ export class DataService {
   }
 
   // getter
-  getUsers(): User[] {
-    return this.users
+  getUsers(): Observable<User[]> {
+    // to return asynchronously use 'of'
+    return of(this.users)
   }
 
   // setter

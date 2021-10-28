@@ -47,8 +47,11 @@ export class UsersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // using service to get users
-    this.users = this.dataService.getUsers()
+    // using service to get users with observable
+    this.dataService.getUsers().subscribe(users => {
+      this.users = users
+      this.loaded = true
+    })
 
     // subscribe to observable
     this.dataService.getDate().subscribe(data => {
@@ -129,7 +132,7 @@ export class UsersComponent implements OnInit {
     //   }
     // ]
 
-    this.loaded = true
+    
 
     this.setCurrentClasses()
     this.setCurrentStyles()
