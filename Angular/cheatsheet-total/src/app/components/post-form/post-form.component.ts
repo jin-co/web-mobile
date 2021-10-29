@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Post } from 'src/app/models/Post';
+import { PostService } from 'src/app/services/post.service';
 
 @Component({
   selector: 'app-post-form',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private postService: PostService
+  ) { }
 
   ngOnInit(): void {
   }
 
+  addPost(title: string, body: string) {
+    if (!title || !body) {
+      alert('nothing')
+    } else {
+      this.postService.savePost({
+      title,
+      body
+     } as Post).subscribe(post => {
+       alert(post)
+     });
+    }
+  }
 }
