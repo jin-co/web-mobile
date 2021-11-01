@@ -34,4 +34,20 @@ export class PostsComponent implements OnInit {
     this.currentPost = post
     this.isEdit = true
   }
+
+  onUpdatedPost(post: Post) {
+    this.posts.forEach((cur, idx) => {
+      if (post.id === cur.id) {
+        this.posts.splice(idx, 1)
+        this.posts.unshift(post)
+        this.isEdit = false
+        // clears the form
+        this.currentPost = {
+          id: 0,
+          title: '',
+          body: ''
+        }
+      }
+    });
+  }
 }
