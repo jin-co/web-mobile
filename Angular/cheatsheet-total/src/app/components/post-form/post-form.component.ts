@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Post } from 'src/app/models/Post';
 import { PostService } from 'src/app/services/post.service';
 
@@ -7,9 +7,9 @@ import { PostService } from 'src/app/services/post.service';
   templateUrl: './post-form.component.html',
   styleUrls: ['./post-form.component.css']
 })
-export class PostFormComponent implements OnInit {
-  post!: Post;
+export class PostFormComponent implements OnInit {  
   @Output() newPost: EventEmitter<Post> = new EventEmitter()
+  @Input() currentPost!: Post;
   constructor(
     private postService: PostService
   ) { }

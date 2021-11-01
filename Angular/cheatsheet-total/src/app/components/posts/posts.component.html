@@ -1,4 +1,5 @@
 <app-post-form
+[currentPost]="currentPost"
 (newPost)="onNewPost($event)"
 ></app-post-form>
 <h2>Posts</h2>
@@ -6,5 +7,15 @@
     <div class="card-body">
         <h3> {{ i.title }} </h3>
         <p> {{ i.body }} </p>
+        <hr>
+        <button class="btn btn-danger">
+            <i class="fa fa-remove"></i>
+        </button>
+
+        <button 
+        (click)="editPost(i)"
+        class="btn btn-light">
+            <i class="fa fa-pencil"></i>
+        </button>
     </div>
 </div>

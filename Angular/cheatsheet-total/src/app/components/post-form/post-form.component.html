@@ -3,12 +3,13 @@
     <form>
         <div class="form-group">
             <label>Title</label>
-            <input type="text" class="form-control" name="title" #title>
+            <input type="text" class="form-control" [(ngModel)]="currentPost.title" name="title" #title>
         </div>
         <div class="form-group">
             <label>Body</label>
-            <input type="text" class="form-control" name="body" #body>
+            <input type="text" class="form-control" [(ngModel)]="currentPost.body" name="body" #body>
         </div>
+        <input type="hidden" [(ngModel)]="currentPost.id" name="id">
         <!-- simplet way to get the input value using button click event: don't even require 'prevent default' -->
         <button 
         (click)="addPost(title.value, body.value)"
