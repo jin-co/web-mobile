@@ -50,4 +50,16 @@ export class PostsComponent implements OnInit {
       }
     });
   }
+
+  removePost(post: Post) {
+    if (confirm('Are you sure?')) {
+      this.postService.removePost(post.id).subscribe(() => {
+        this.posts.forEach((cur, idx) => {
+          if (post.id === cur.id) {
+            this.posts.splice(idx, 1)
+          }
+        }); 
+      });
+    }
+  }
 }

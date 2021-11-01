@@ -10,7 +10,9 @@
         <h3> {{ i.title }} </h3>
         <p> {{ i.body }} </p>
         <hr>
-        <button class="btn btn-danger">
+        <button 
+        (click)="removePost(i)"
+        class="btn btn-danger">
             <i class="fa fa-remove"></i>
         </button>
 
