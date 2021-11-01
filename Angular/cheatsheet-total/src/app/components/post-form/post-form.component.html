@@ -12,7 +12,12 @@
         <input type="hidden" [(ngModel)]="currentPost.id" name="id">
         <!-- simplet way to get the input value using button click event: don't even require 'prevent default' -->
         <button 
+        *ngIf="!isEdit"
         (click)="addPost(title.value, body.value)"
         class="btn btn-dark btn-block">Add post</button>
+        <button 
+        *ngIf="isEdit"
+        (click)="updatePost()"
+        class="btn btn-warning btn-block">Update post</button>
     </form>
 </div>
