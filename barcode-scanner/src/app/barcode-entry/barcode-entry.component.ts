@@ -44,7 +44,7 @@ export class BarcodeEntryComponent implements OnInit {
   // validation
   onSubmit(e: Event) {
     if (this.entryGroup.valid) {
-      this.datastore.scans.push(`user scanned ${this.quantityCtrl.value} of code ${this.barcodeCtrl.value}`);
+      this.datastore.addScan(`user scanned ${this.quantityCtrl.value} of code ${this.barcodeCtrl.value}`);
 
       // resets form input
       (e.currentTarget as HTMLFormElement).reset()

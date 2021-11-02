@@ -23,8 +23,6 @@ export class HistoryComponent implements OnInit {
 
   // with service
   remove() {
-    this.histories = this.datastore.scans.slice(0, -1)
-    console.log('hh')
+    this.datastore.removeItem()
   }
-
 }
