@@ -5,3 +5,7 @@
 <p (click) = "remove()"
 *ngFor="let i of datastore.getScan(); let j = index">{{ i }} </p>
 
+<button
+mat-raised-button
+(click)="clearHistory()">
+clear history</button>

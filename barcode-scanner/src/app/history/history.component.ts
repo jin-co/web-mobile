@@ -25,4 +25,8 @@ export class HistoryComponent implements OnInit {
   remove() {
     this.datastore.removeItem()
   }
+
+  clearHistory() {
+    this.datastore.clear()
+  }
 }
