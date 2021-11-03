@@ -7,7 +7,10 @@
 <h2>Posts</h2>
 <div class="card" *ngFor="let i of posts">
     <div class="card-body">
-        <h3> {{ i.title }} </h3>
+        <h3> 
+            <a routerLink="/post/{{ i.id }}"></a>
+            {{ i.title }} 
+        </h3>
         <p> {{ i.body }} </p>
         <hr>
         <button 
