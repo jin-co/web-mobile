@@ -15,7 +15,7 @@ export class PostDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private postService: PostService,
-    private location: Location
+    // private location: Location
   ) {}
 
   ngOnInit() {
