@@ -1,6 +1,7 @@
-<ul class="list-group">
+<ul class="list-group" *ngIf="loaded && logs.length > 0">
     <li class="list-group-item d-flex justify-content-between align-items-center"
-    *ngFor="let i of logs">
+    *ngFor="let i of logs"
+    [class.list-group-item-secondary]="selectedLog === i"> <!-- for highlighting selected item -->
         <button (click)="onSelect(i)"
          href=""> {{ i.text }} </button>
         <span class="log-date"> {{ i.date | date: 'short' }} </span>
@@ -9,3 +10,10 @@
     </li>
 </ul>
 
+<div *ngIf="loaded && logs.length == 0">
+    <h5>Threre are no logs in the system</h5>
+</div>
+
+<div *ngIf="!loaded">
+    <h5>Loading...</h5>
+</div>
