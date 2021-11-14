@@ -1,11 +1,12 @@
 export const environment = {
   production: true,
   firebase: {
-    apiKey: "AIzaSyAB8N5Bi22whQg6FHziM6cl5Q4-fL9MLb8",
-    authDomain: "clientpanelprod.firebaseapp.com",
-    databaseURL: "https://clientpanelprod.firebaseio.com",
-    projectId: "clientpanelprod",
-    storageBucket: "clientpanelprod.appspot.com",
-    messagingSenderId: "818661613185"
+    apiKey: "AIzaSyDNskP5xX2R3wJixFoTBR05HyXr5d07RrY",
+    authDomain: "clientpanel-eddee.firebaseapp.com",
+    projectId: "clientpanel-eddee",
+    storageBucket: "clientpanel-eddee.appspot.com",
+    messagingSenderId: "133891744726",
+    appId: "1:133891744726:web:df67bfc6950a384c0efa77",
+    measurementId: "G-RX2CMY4YXR"
   }
 };
