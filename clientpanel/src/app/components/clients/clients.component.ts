@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Client } from 'src/app/models/client';
-import { ClientService } from 'src/app/services/client.service';
+import { ClientService } from '../../services/client.service';
+
+import { Client } from '../../models/Client';
 
 @Component({
   selector: 'app-clients',
@@ -8,14 +9,22 @@ import { ClientService } from 'src/app/services/client.service';
   styleUrls: ['./clients.component.css']
 })
 export class ClientsComponent implements OnInit {
-  client!: Client[];
+  clients: Client[];
+  totalOwed: number;
 
-  constructor(
-    private clientService: ClientService
-  ) { }
+  constructor(private clientService: ClientService) { }
 
-  ngOnInit(): void {
-    this.clientService.getClient().subscribe(clients => this.client = clients)
+  ngOnInit() {
+    this.clientService.getClients().subscribe(clients => {
+      this.clients = clients;
+      this.getTotalOwed();
+    });
+  }
+
+  getTotalOwed() {
+    this.totalOwed = this.clients.reduce((total, client) => {
+      return total + client.balance;
+    }, 0);
   }
 
 }
