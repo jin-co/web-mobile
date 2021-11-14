@@ -24,24 +24,26 @@ export class ClientService {
   getClient(): Observable<Client[]> {
     // get clients with the id
 
-    this.client = this.clientDoc.snapshotChanges().pipe(map(action => {
-      if(action.payload.exists === false) {
-        return null;
-      } else {
-        const data = action.payload.data() as Client;
-        data.id = action.payload.id;
-        return data;
-      }
-    }));
+    // this.client = this.clientDoc.snapshotChanges().pipe(map(action => {
+    //   if(action.payload.exists === false) {
+    //     return null;
+    //   } else {
+    //     const data = action.payload.data() as Client;
+    //     data.id = action.payload.id;
+    //     return data;
+    //   }
+    // }));
 
-    this.clients = this.clientsCollection.snapshotChanges()
-    .map((changes: any[]) => {
+    // https://github.com/angular/angularfire/blob/master/docs/firestore/collections.md
+
+    this.clients = this.clientsCollection.snapshotChanges().pipe(
+    map((changes: any[]) => {
       return changes.map(action => {
         const data = action.payload.doc.data() as Client
         data.id = action.payload.doc.id
         return data
       })
-    })
+    }))
     return this.clients;
   }
 }
