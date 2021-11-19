@@ -1,4 +1,6 @@
 import { TestBed } from '@angular/core/testing';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
@@ -6,7 +8,9 @@ describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        MatSidenavModule,
+        BrowserAnimationsModule        
       ],
       declarations: [
         AppComponent
@@ -26,10 +30,21 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('barcode-scanner');
   });
 
-  it('should render title', () => {
+  // it('should render title', () => {
+  //   const fixture = TestBed.createComponent(AppComponent);
+  //   fixture.detectChanges();
+  //   const compiled = fixture.nativeElement as HTMLElement;
+  //   expect(compiled.querySelector('.content span')?.textContent).toContain('barcode-scanner app is running!');
+  // });
+
+  it('should close the drawer after one second', (done) => {
     const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('barcode-scanner app is running!');
+    setTimeout(() => {
+      expect(app.materialDrawer && !app.materialDrawer.opened).toBeTruthy();
+      done()
+    }, 1000)    
   });
 });

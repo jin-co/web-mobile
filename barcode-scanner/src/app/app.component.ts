@@ -7,7 +7,7 @@ import { MatDrawer } from '@angular/material/sidenav';
   styleUrls: ['./app.component.scss']  // with this style
 })
 export class AppComponent {
-  @ViewChild('drawer') private materialDrawer: MatDrawer | null = null
+  @ViewChild('drawer') materialDrawer: MatDrawer | null = null
   title: string = 'barcode-scanner';
   isOpen: boolean = false
 
