@@ -10,3 +10,20 @@ if (environment.production) {
 
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
+
+  // cordova
+  const bootstrap = () => {
+    platformBrowserDynamic()
+      .bootstrapModule(AppModule)
+      .catch(err => console.error(err));  
+  };
+    
+  // @ts-ignore
+  if (typeof window['cordova'] !== 'undefined') {
+    document.addEventListener('deviceready', () => {
+      bootstrap();
+    });
+  } 
+  else {
+    bootstrap();  
+  }
