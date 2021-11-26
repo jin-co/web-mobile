@@ -1,5 +1,6 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { BarcodeScannerLivestreamComponent } from 'ngx-barcode-scanner';
 import { DatastoreService } from '../datastore.service';
 
 
@@ -9,7 +10,9 @@ import { DatastoreService } from '../datastore.service';
   styleUrls: ['./barcode-entry.component.scss']
 })
 export class BarcodeEntryComponent implements OnInit {
-
+  @ViewChild(BarcodeScannerLivestreamComponent)
+  barcodeScanner!: BarcodeScannerLivestreamComponent;
+  
   pageTitle: string = "Barcode Entry"
 
   @Output() onSelfDestruction: EventEmitter<string> = new EventEmitter<string>()
@@ -49,6 +52,16 @@ export class BarcodeEntryComponent implements OnInit {
       // resets form input
       (e.currentTarget as HTMLFormElement).reset()
     }
+
+    // ngAfterViewInit() {
+    //   if (this.barcodeScanner) {
+    //     this.barcodeScanner.start();
+    //   }
+    // }
+  
+    // onValueChanges(result: any) {
+    //   this.barcodeCtrl.setValue(result.codeResult.code);
+    // }
   }
   // validation
 
@@ -56,3 +69,7 @@ export class BarcodeEntryComponent implements OnInit {
 
 
 }
+function ngAfterViewInit() {
+  throw new Error('Function not implemented.');
+}
+
