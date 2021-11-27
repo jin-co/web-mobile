@@ -7,21 +7,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./r-main.component.scss']
 })
 export class RMainComponent implements OnInit {
-  isLinear = false;
-  firstFormGroup!: FormGroup;
-  secondFormGroup!: FormGroup;
-
-  constructor(private _formBuilder: FormBuilder) { }
+  
+  constructor() { }
 
   ngOnInit(): void {
-    this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required],
-    });
-    this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required],
-    });
+
   }
 
 }
 
-// https://www.concretepage.com/angular-2/angular-2-formgroup-example
