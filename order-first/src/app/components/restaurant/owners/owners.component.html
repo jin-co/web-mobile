@@ -1,7 +1,22 @@
 
 <form (ngSubmit)="onSubmit($event)" class="row g-3 mt-3">
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Number</mat-label>
+        <input type="Restauran Id"
+               placeholder="Choose your restaurant"
+               aria-label="Number"
+               matInput
+               [formControl]="myControl"
+               [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+
     <mat-form-field class="example-full-width">
-        <input [(ngModel)]="menu.restaurantName" matInput placeholder="Restaurant Name" value="" name="restaurantName">
+        <input [(ngModel)]="menu.restaurantId" matInput placeholder="Restaurant Name" value="" name="restaurantName">
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
