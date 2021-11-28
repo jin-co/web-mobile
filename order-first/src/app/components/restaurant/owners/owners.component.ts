@@ -24,14 +24,13 @@ export class OwnersComponent implements OnInit {
   onSubmit(e:Event) {
     e.preventDefault()
     console.log(e)
-    this.reservation = {
+    this.menu = {
+      restaurantId: 0,
       restaurantName: '',
-      detail: {
-        date:'',
-        time:'',
-        tel:''
-      },
-      menuSelected: []
+      name: "h",
+      subName: "d",
+      imageURL: "e",
+      description: ""
     };
 
     // resets the input fields

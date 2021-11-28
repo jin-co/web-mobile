@@ -1,19 +1,23 @@
 
 <form (ngSubmit)="onSubmit($event)" class="row g-3 mt-3">
     <mat-form-field class="example-full-width">
-        <input matInput placeholder="Restaurant Name" value="" name="restaurantName">
+        <input [(ngModel)]="menu.restaurantName" matInput placeholder="Restaurant Name" value="" name="restaurantName">
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-        <input matInput placeholder="Dish Name" value="" name="dishName">
+        <input [(ngModel)]="menu.name" matInput placeholder="Dish Name" value="" name="dishName">
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-        <input matInput placeholder="imageURL" value="" name="imageURL">
+        <input [(ngModel)]="menu.subName" matInput placeholder="Dish Name" value="" name="dishName">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input [(ngModel)]="menu.imageURL" matInput placeholder="imageURL" value="" name="imageURL">
     </mat-form-field>    
 
     <mat-form-field class="example-full-width">
-        <textarea rows="10" matInput placeholder="Description" value="" name="description"> </textarea>
+        <textarea [(ngModel)]="menu.description" rows="10" matInput placeholder="Description" value="" name="description"> </textarea>
     </mat-form-field>
   
     <div class="col-12">
