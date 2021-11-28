@@ -1,35 +1,30 @@
 :host {
-    mat-grid-tile {
-        
-        mat-grid-tile-content {
-            
-        }
-        
-        img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
-    }
 
-    .example-ripple-container {
-        /** Necessary until: https://github.com/angular/material2/pull/11913*/
-        position: relative;
-      
-        cursor: pointer;
-        text-align: center;
-      
-        width: 300px;
-        height: 300px;
-        line-height: 300px;
-      }
-      
-      /** Styles to make the demo look better. */
-      .example-ripple-checkbox {
-        margin: 6px 12px 6px 0;
-      }
-      
-      .example-ripple-form-field {
-        margin: 0 12px 0 0;
-      }
+  img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+  }
+
+  .example-ripple-container {
+      /** Necessary until: https://github.com/angular/material2/pull/11913*/
+      position: relative;
+    
+      cursor: pointer;
+      text-align: center;
+    
+      width: 300px;
+      height: 300px;
+      line-height: 300px;
+    }
+    
+    /** Styles to make the demo look better. */
+    .example-ripple-checkbox {
+      margin: 6px 12px 6px 0;
+    }
+    
+    .example-ripple-form-field {
+      margin: 0 12px 0 0;
+    }
 }
