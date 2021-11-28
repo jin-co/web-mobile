@@ -1,7 +1,7 @@
 
-<form class="row g-3 mt-3">
+<form (ngSubmit)="onSubmit($event)" class="row g-3 mt-3">
     <mat-form-field class="example-full-width">
-        <input matInput placeholder="Restaurant Name" value="">
+        <input matInput placeholder="Restaurant Name" value="" name="restaurantName">
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
@@ -13,7 +13,7 @@
     </mat-form-field>    
 
     <mat-form-field class="example-full-width">
-        <input matInput placeholder="Description" value="">
+        <textarea rows="10" matInput placeholder="Description" value=""> </textarea>
     </mat-form-field>
   
     <div class="col-12">

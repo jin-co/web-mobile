@@ -168,4 +168,8 @@ export class DataMenuService {
   getMenus():Menu[] {
     return this.menus
   }
+
+  updateMenu(menu:Menu) {
+   this.menus.push() 
+  }
 }
