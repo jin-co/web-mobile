@@ -10,7 +10,8 @@
             [matRippleUnbounded]="unbounded"
             [matRippleRadius]="radius"
             [matRippleColor]="color">
-            <img src="{{ i.imageURL }}" alt="">
+            <img mat-card-image (click)="onSelect(i)"
+            src="{{ i.imageURL }}" alt="">
         </div>
         <mat-grid-tile-footer class="h-25">
             {{ i.description }}
