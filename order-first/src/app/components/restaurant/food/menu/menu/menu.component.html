@@ -1,7 +1,20 @@
 <!-- restaurant 1 -->
-<mat-card class="example-card">
+<mat-card *ngFor="let i of menus" class="example-card">
 <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{ i.name }}</mat-card-title>
+    <mat-card-subtitle>{{ i.subName }}</mat-card-subtitle>
+</mat-card-header>
+<img mat-card-image src="{{ i.imageURL }}">
+<mat-card-content>
+    <p>{{ i.description }}</p>
+</mat-card-content>
+<mat-card-actions>
+    <button class="btn btn-outline-dark" mat-button>Choose</button>    
+</mat-card-actions>
+</mat-card>
+
+<!-- <mat-card class="example-card">
+<mat-card-header>
     <mat-card-title>Shiba Inu</mat-card-title>
     <mat-card-subtitle>Dog Breed</mat-card-subtitle>
 </mat-card-header>
@@ -18,7 +31,6 @@
 
 <mat-card class="example-card">
 <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>Shiba Inu</mat-card-title>
     <mat-card-subtitle>Dog Breed</mat-card-subtitle>
 </mat-card-header>
@@ -36,7 +48,6 @@
 <!-- restaurant 2 -->
 <mat-card class="example-card">
 <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>Shiba Inu</mat-card-title>
     <mat-card-subtitle>Dog Breed</mat-card-subtitle>
 </mat-card-header>
@@ -53,7 +64,6 @@
 
 <mat-card class="example-card">
 <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>Shiba Inu</mat-card-title>
     <mat-card-subtitle>Dog Breed</mat-card-subtitle>
 </mat-card-header>
@@ -71,7 +81,6 @@
 <!-- restaurant 3 -->
 <mat-card class="example-card">
 <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>Shiba Inu</mat-card-title>
     <mat-card-subtitle>Dog Breed</mat-card-subtitle>
 </mat-card-header>
@@ -89,7 +98,6 @@
 <!-- restaurant 4 -->
 <mat-card class="example-card">
 <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>Shiba Inu</mat-card-title>
     <mat-card-subtitle>Dog Breed</mat-card-subtitle>
 </mat-card-header>
@@ -106,7 +114,6 @@
 
 <mat-card class="example-card">
 <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>Shiba Inu</mat-card-title>
     <mat-card-subtitle>Dog Breed</mat-card-subtitle>
 </mat-card-header>
@@ -124,7 +131,6 @@
 <!-- restaurant 5 -->
 <mat-card class="example-card">
 <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>Shiba Inu</mat-card-title>
     <mat-card-subtitle>Dog Breed</mat-card-subtitle>
 </mat-card-header>
@@ -141,7 +147,6 @@
 
 <mat-card class="example-card">
 <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>Shiba Inu</mat-card-title>
     <mat-card-subtitle>Dog Breed</mat-card-subtitle>
 </mat-card-header>
@@ -159,7 +164,6 @@
 <!-- restaurant 6 -->
 <mat-card class="example-card">
 <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>Shiba Inu</mat-card-title>
     <mat-card-subtitle>Dog Breed</mat-card-subtitle>
 </mat-card-header>
@@ -176,7 +180,6 @@
 
 <mat-card class="example-card">
 <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>Shiba Inu</mat-card-title>
     <mat-card-subtitle>Dog Breed</mat-card-subtitle>
 </mat-card-header>
@@ -194,7 +197,6 @@
 <!-- restaurant 7 -->
 <mat-card class="example-card">
 <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>Shiba Inu</mat-card-title>
     <mat-card-subtitle>Dog Breed</mat-card-subtitle>
 </mat-card-header>
@@ -211,7 +213,6 @@
 
 <mat-card class="example-card">
 <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>Shiba Inu</mat-card-title>
     <mat-card-subtitle>Dog Breed</mat-card-subtitle>
 </mat-card-header>
@@ -229,7 +230,6 @@
 <!-- restaurant 8 -->
 <mat-card class="example-card">
 <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>Shiba Inu</mat-card-title>
     <mat-card-subtitle>Dog Breed</mat-card-subtitle>
 </mat-card-header>
@@ -242,6 +242,6 @@
 <mat-card-actions>
     <button class="btn btn-outline-dark" mat-button>Choose</button>    
 </mat-card-actions>
-</mat-card>
+</mat-card> -->
 
 
