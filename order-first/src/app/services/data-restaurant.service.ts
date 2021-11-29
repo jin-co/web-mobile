@@ -70,11 +70,15 @@ export class DataRestaurantService {
   }
 
   getRestaurantName(id:number):string {
-    this.restaurants.forEach(res => {
-      if (res.id === id) {
-        this.restaurant = res    
-      }
-    });
-    return this.restaurant.name
+    if (id != null) {
+      
+      this.restaurants.forEach(res => {
+        if (res.id === id) {
+          this.restaurant = res    
+        }
+      });
+      return this.restaurant.name
+    }
+    return ''
   }
 }

@@ -28,4 +28,12 @@ export class MenuComponent implements OnInit {
   ngDoCheck() {
     this.menus = this.menuService.getMenus()
   }
+
+  selectMenu() {
+    console.log('s')
+  }
+
+  unselectMenu() {
+    console.log('u')
+  }
 }

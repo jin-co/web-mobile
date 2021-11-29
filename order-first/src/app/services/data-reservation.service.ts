@@ -6,13 +6,27 @@ import { Reservation } from '../models/reservation';
 })
 export class DataReservationService {
   reservations!:Reservation[]
-  constructor() { }
+  constructor() {
+    this.reservations = [
+      {
+        restaurantName:'',
+        reservationName:'',
+        detail: {
+          date:'',
+          time:'',
+          tel:''
+        },
+        numberOfPeople: 0,
+        menuSelected:[]
+      }
+    ]    
+  }
 
   getReservation() {
     return this.reservations
   }
 
-  updateReservation(reservation:Reservation) {
+  addReservation(reservation:Reservation) {
     this.reservations.push(reservation)
   }
 }

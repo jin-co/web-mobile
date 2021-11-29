@@ -9,10 +9,12 @@
         <p>{{ i.description }}</p>
     </mat-card-content>
     <mat-card-actions>
-        <button class="btn btn-outline-dark" mat-button>
+        <button class="btn btn-outline-dark" mat-button
+        (click)="selectMenu()">
             <i class="fa fa-plus"></i>
         </button>    
-        <button class="btn btn-outline-dark" mat-button>
+        <button class="btn btn-outline-dark" mat-button
+        (click)="unselectMenu()">
             <i class="fa fa-minus"></i>
         </button>    
     </mat-card-actions>

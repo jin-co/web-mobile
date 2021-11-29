@@ -20,7 +20,7 @@ export class DetailsComponent implements OnInit {
       tel: ''
     },
     numberOfPeople: 0,
-    menuSelected:[]
+    menuSelected:['']
   }
 
   //validations
@@ -64,7 +64,7 @@ export class DetailsComponent implements OnInit {
 
       console.log(this.reservation)
 
-      this.reservationDataService.updateReservation(this.reservation)
+      this.reservationDataService.addReservation(this.reservation)
       
       this.form.reset()
     }
