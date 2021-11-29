@@ -17,10 +17,10 @@ import { Restaurant } from 'src/app/models/restaurant';
 export class OwnersComponent implements OnInit {  
   menu:Menu = {
     restaurantId: 0,
-    name: "h",
-    subName: "d",
-    imageURL: "e",
-    description: ""
+    name: '',
+    subName: '',
+    imageURL: '',
+    description: ''  
   }
 
   reservation!:Reservation
@@ -34,7 +34,6 @@ export class OwnersComponent implements OnInit {
     private resDataService:DataRestaurantService
     ) { 
       this.restaurants = resDataService.getRestaurants()
-      console.log(this.restaurants)
   }
 
   myControl = new FormControl();
@@ -42,20 +41,14 @@ export class OwnersComponent implements OnInit {
   filteredOptions!: Observable<string[]>;
 
   ngOnInit(): void {
-    console.log(this.restaurants)
-
-
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
       map(value => this._filter(value)),
     );
-  }
-  
-  ngDoCheck() {
+
     this.restaurants.forEach(res => {
       this.restaurantNames.push(res.name)
     });
-    console.log(this.restaurantNames)    
   }
 
   onSubmit(e:Event) {
@@ -73,8 +66,14 @@ export class OwnersComponent implements OnInit {
     (e.currentTarget as HTMLFormElement).reset()
   }
 
+  getRestaurantId(restaurantName:string):number {
+    return this.resDataService.getRestaurantId(restaurantName)
+  }
+
+
+  // material option
   private _filter(value: string): string[] {
-    const filterValue = value.toLowerCase();
+    const filterValue = value;
 
     return this.options.filter(option => option.toLowerCase().includes(filterValue));
   }

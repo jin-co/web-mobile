@@ -6,6 +6,7 @@ import { Restaurant } from '../models/restaurant';
 })
 export class DataRestaurantService {
   restaurants!:Restaurant[]
+
   constructor() {
     this.restaurants = [
       {
@@ -61,5 +62,9 @@ export class DataRestaurantService {
 
   getRestaurants():Restaurant[] {
     return this.restaurants
+  }
+
+  getRestaurantId(restaurantName:string):number {        
+    return this.restaurants[this.restaurants.findIndex(a => a.name == restaurantName)].id
   }
 }
