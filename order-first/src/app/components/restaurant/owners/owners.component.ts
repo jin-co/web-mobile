@@ -83,10 +83,8 @@ export class OwnersComponent implements OnInit {
   onSubmit() {
     console.log(this.menus);
     this.menuDataService.updateMenu(this.menu);
-    console.log(this.menus);
+    console.log(this.menuDataService.getMenus());
     // resets the input fields
-    
-    // (e.currentTarget as HTMLFormElement).reset()
     this.form.reset()
   }
 

@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Menu } from '../models/menu';
+import { DataService } from './data.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataMenuService {
   menus!:Menu[]
-  constructor() {
+
+  constructor(private curResDataService:DataService) {
     this.menus = [
       {
         restaurantId: 1,
@@ -161,15 +163,18 @@ export class DataMenuService {
         subName: 'Dog Breed',
         imageURL: 'https://assets.traveltriangle.com/blog/wp-content/uploads/2019/09/Food-In-Calgary-cover.jpg',
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Est corrupti qui debitis ullam, tenetur natus odit nemo consequatur dolore voluptatem explicabo! Natus incidunt nobis perspiciatis itaque, aperiam iste atque porro a libero, quam dolore quidem dolorem ipsa, ex molestias recusandae!'
-      },
+      }
     ]
   }
 
   getMenus():Menu[] {
+    if (this.curResDataService.getCurrentRestaurant() != null) {
+      return this.menus.filter(a => a.restaurantId === this.curResDataService.getCurrentRestaurant())
+    }
     return this.menus
   }
 
   updateMenu(menu:Menu) {
-   this.menus.push() 
+   this.menus.push(menu) 
   }
 }
