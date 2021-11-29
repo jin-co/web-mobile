@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Menu } from 'src/app/models/menu';
 import { Reservation } from 'src/app/models/reservation';
 import { DataMenuService } from 'src/app/services/data-menu.service';
@@ -28,12 +28,41 @@ export class OwnersComponent implements OnInit {
   restaurants:Restaurant[]
   restaurantNames:string[] = []
 
+  //test
+  menus!:Menu[]
+
+  //form view child
+  @ViewChild('menuForm') form:any
+
+  // validations
+  idCtrl:FormControl = new FormControl(null, [
+    Validators.required,
+    Validators.min(1)  
+  ])
+  dishNameCtrl:FormControl = new FormControl(null, Validators.required)
+  subNameCtrl:FormControl = new FormControl(null, Validators.required)
+  imageURLCtrl:FormControl = new FormControl(null, Validators.required)
+  descriptionCtrl:FormControl = new FormControl(null, [
+    Validators.required,
+    Validators.maxLength(100)
+  ])
+
+  inputGroup:FormGroup = new FormGroup({
+    resId: this.idCtrl,
+    dishName: this.dishNameCtrl,
+    subName: this.subNameCtrl,
+    URL: this.imageURLCtrl,
+    description: this.descriptionCtrl
+  })
+  // validations
+
   constructor(
     private menuDataService:DataMenuService,
     private reservationDataService:DataReservationService,
     private resDataService:DataRestaurantService
     ) { 
       this.restaurants = resDataService.getRestaurants()
+      this.menus = menuDataService.getMenus()
   }
 
   myControl = new FormControl();
@@ -51,19 +80,14 @@ export class OwnersComponent implements OnInit {
     });
   }
 
-  onSubmit(e:Event) {
-    e.preventDefault()
-    console.log(e)
-    this.menu = {
-      restaurantId: 0,
-      name: "h",
-      subName: "d",
-      imageURL: "e",
-      description: ""
-    };
-
+  onSubmit() {
+    console.log(this.menus);
+    this.menuDataService.updateMenu(this.menu);
+    console.log(this.menus);
     // resets the input fields
-    (e.currentTarget as HTMLFormElement).reset()
+    
+    // (e.currentTarget as HTMLFormElement).reset()
+    this.form.reset()
   }
 
   getRestaurantId(restaurantName:string):number {

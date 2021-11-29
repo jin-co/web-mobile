@@ -1,6 +1,9 @@
 
-<form (ngSubmit)="onSubmit($event)" class="row g-3 mt-1">
-    <mat-form-field class="example-full-width" appearance="fill">
+<form #menuForm="ngForm" (ngSubmit)="onSubmit()" class="row g-3 mt-1">
+    <mat-form-field
+    [formGroup]="inputGroup"
+    class="example-full-width" 
+    appearance="fill">
     <mat-label>Restauran Id</mat-label>
     <input type="Restaurant Id"
            placeholder="Choose your restaurant"
@@ -8,28 +11,56 @@
            matInput
            [formControl]="myControl"
            [matAutocomplete]="auto"
-           [(ngModel)]="menu.restaurantId">
+           [(ngModel)]="menu.restaurantId"
+           [formControl]="idCtrl">
     <mat-autocomplete #auto="matAutocomplete">
         <mat-option *ngFor="let option of filteredOptions | async" [value]="getRestaurantId(option)">
         {{option}}
         </mat-option>
     </mat-autocomplete>
+    <mat-error
+        *ngIf="idCtrl.hasError('required')">Restaurant id required
+    </mat-error>
+    <mat-error
+        *ngIf="idCtrl.hasError('min')">Restaurant id cannot be 0
+    </mat-error>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-        <input [(ngModel)]="menu.name" matInput placeholder="Dish Name" value="" name="dishName">
+        <input         
+        [(ngModel)]="menu.name" matInput placeholder="Dish Name" value="" name="dishName"
+        [formControl]="dishNameCtrl">
+        <mat-error
+            *ngIf="dishNameCtrl.hasError('required')">Dish Name required
+        </mat-error>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-        <input [(ngModel)]="menu.subName" matInput placeholder="Dish Name" value="" name="dishName">
+        <input         
+        [(ngModel)]="menu.subName" matInput placeholder="Sub Name" value="" name="subName"
+        [formControl]="subNameCtrl">
+        <mat-error
+            *ngIf="subNameCtrl.hasError('required')">Sub Name required
+        </mat-error>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-        <input [(ngModel)]="menu.imageURL" matInput placeholder="imageURL" value="" name="imageURL">
+        <input         
+        [(ngModel)]="menu.imageURL" matInput placeholder="imageURL" value="" name="imageURL"
+        [formControl]="imageURLCtrl">
+        <mat-error
+            *ngIf="imageURLCtrl.hasError('required')">=ImageURL required
+        </mat-error>
     </mat-form-field>    
 
     <mat-form-field class="example-full-width">
-        <textarea [(ngModel)]="menu.description" rows="10" matInput placeholder="Description" value="" name="description"> </textarea>
+        <textarea 
+        [(ngModel)]="menu.description" rows="9" matInput placeholder="Description" value="" name="description"
+        [formControl]="descriptionCtrl"> 
+        </textarea>
+        <mat-error
+            *ngIf="descriptionCtrl.hasError('required')">Description required
+        </mat-error>
     </mat-form-field>
   
     <div class="col-12">
