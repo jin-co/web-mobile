@@ -32,9 +32,7 @@ export class PlacesComponent implements OnInit {
   }
 
   onSelect(i:Restaurant) {
-    console.log(i)
     this.dataService.setCurrentRestaurant(i.id)
     this.restauranSelected = true //test
-    console.log(this.dataService.getCurrentRestaurant())
   }
 }

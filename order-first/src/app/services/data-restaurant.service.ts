@@ -67,4 +67,8 @@ export class DataRestaurantService {
   getRestaurantId(restaurantName:string):number {        
     return this.restaurants[this.restaurants.findIndex(a => a.name == restaurantName)].id
   }
+
+  getRestaurantName(id:number):string {
+    return this.restaurants[this.restaurants.findIndex(a => a.id == id)].name
+  }
 }

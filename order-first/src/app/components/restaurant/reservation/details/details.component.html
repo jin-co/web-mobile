@@ -1,26 +1,69 @@
-<form class="row g-3 mt-3">
+<form 
+    [formGroup]="inputGroup"
+    #reservationForm="ngForm" (ngSubmit)="onSubmit()" class="row g-3 mt-3">
+    <mat-form-field class="example-full-width">
+        <label for="inputEmail4" class="form-label">Name</label>
+        <input 
+        [formControl]="nameCtrl"
+        matInput type="text" class="form-control" id="inputEmail4">
+        <mat-error
+        *ngIf="nameCtrl.hasError('required')">
+            Name required
+        </mat-error>        
+    </mat-form-field>
+    
     <mat-form-field class="example-full-width">
         <label for="inputEmail4" class="form-label">Date</label>
-        <input matInput type="date" class="form-control" id="inputEmail4">
+        <input 
+        [formControl]="dateCtrl"
+        matInput type="date" class="form-control" id="inputEmail4">
+        <mat-error
+        *ngIf="dateCtrl.hasError('required')">
+            Date required
+        </mat-error>        
     </mat-form-field>
     
     <mat-form-field class="example-full-width">
         <label for="inputAddress" class="form-label">Time</label>
-        <input matInput type="time" class="form-control" id="inputAddress" placeholder="1234 Main St">
+        <input 
+        [formControl]="timeCtrl"
+        matInput type="time" class="form-control" id="inputAddress">
+        <mat-error
+        *ngIf="timeCtrl.hasError('required')">
+            Time required
+        </mat-error>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
         <span matPrefix>+1 &nbsp;</span>
-        <input type="tel" matInput placeholder="Telephone">
+        <input 
+        [formControl]="telCtrl"
+        type="tel" matInput placeholder="000-000-0000">
         <mat-icon matSuffix>mode_edit</mat-icon>
+        <mat-error
+        *ngIf="telCtrl.hasError('required')">
+            Tel required
+        </mat-error>
+        <mat-error
+        *ngIf="telCtrl.hasError('pattern')">
+            wrong date format
+        </mat-error>
     </mat-form-field>
   
     <mat-form-field class="example-full-width">
-        <input type="number" matInput placeholder="Number of people">
+        <input 
+        [formControl]="peopleCtrl"
+        type="number" matInput placeholder="Number of people">
+        <mat-error
+        *ngIf="peopleCtrl.hasError('required')">
+            Number of people required
+        </mat-error>
     </mat-form-field>
 
     <div class="col-12">
-        <button type="submit" class="btn btn-primary w-100 mt-3">Sign in</button>
+        <button type="submit" class="btn btn-primary w-100 mt-3">
+            Save
+        </button>
     </div>
 </form>
   

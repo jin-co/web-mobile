@@ -81,11 +81,11 @@ export class OwnersComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.menus);
-    this.menuDataService.updateMenu(this.menu);
-    console.log(this.menuDataService.getMenus());
-    // resets the input fields
-    this.form.reset()
+    if (this.inputGroup.valid) {
+      this.menuDataService.updateMenu(this.menu);
+      // resets the input fields
+      this.form.reset()
+    }
   }
 
   getRestaurantId(restaurantName:string):number {

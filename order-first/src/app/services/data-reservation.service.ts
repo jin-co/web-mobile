@@ -12,7 +12,7 @@ export class DataReservationService {
     return this.reservations
   }
 
-  updateReservation() {
-    
+  updateReservation(reservation:Reservation) {
+    this.reservations.push(reservation)
   }
 }
