@@ -1,9 +1,7 @@
-<form 
-    [formGroup]="inputGroup"
-    #reservationForm="ngForm" (ngSubmit)="onSubmit()" class="row g-3 mt-3">
+<form #reservationForm="ngForm" (ngSubmit)="onSubmit()" class="row g-3 mt-3" [formGroup]="inputGroup">
     <mat-form-field class="example-full-width">
         <label for="inputEmail4" class="form-label">Name</label>
-        <input 
+        <input [(ngModel)]="reservation.reservationName"
         [formControl]="nameCtrl"
         matInput type="text" class="form-control" id="inputEmail4">
         <mat-error
@@ -14,7 +12,7 @@
     
     <mat-form-field class="example-full-width">
         <label for="inputEmail4" class="form-label">Date</label>
-        <input 
+        <input [(ngModel)]="reservation.detail.date"
         [formControl]="dateCtrl"
         matInput type="date" class="form-control" id="inputEmail4">
         <mat-error
@@ -25,7 +23,7 @@
     
     <mat-form-field class="example-full-width">
         <label for="inputAddress" class="form-label">Time</label>
-        <input 
+        <input [(ngModel)]="reservation.detail.time"
         [formControl]="timeCtrl"
         matInput type="time" class="form-control" id="inputAddress">
         <mat-error
@@ -36,7 +34,7 @@
 
     <mat-form-field class="example-full-width">
         <span matPrefix>+1 &nbsp;</span>
-        <input 
+        <input [(ngModel)]="reservation.detail.tel"
         [formControl]="telCtrl"
         type="tel" matInput placeholder="000-000-0000">
         <mat-icon matSuffix>mode_edit</mat-icon>
@@ -51,7 +49,7 @@
     </mat-form-field>
   
     <mat-form-field class="example-full-width">
-        <input 
+        <input [(ngModel)]="reservation.numberOfPeople"
         [formControl]="peopleCtrl"
         type="number" matInput placeholder="Number of people">
         <mat-error

@@ -19,6 +19,7 @@ export class DetailsComponent implements OnInit {
       time: '',
       tel: ''
     },
+    numberOfPeople: 0,
     menuSelected:[]
   }
 
@@ -52,13 +53,24 @@ export class DetailsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // ngDoCheck() {
+  //   console.log('detail res cur id', this.dataService.getCurrentRestaurant())
+  // }
 
   onSubmit() {
+    console.log('detail res cur id', this.dataService.getCurrentRestaurant())
     if (this.inputGroup.valid) {
-      this.reservation.reservationName = this.resDataService.getRestaurantName(this.dataService.getCurrentRestaurant())
+      this.reservation.restaurantName = this.resDataService.getRestaurantName(this.dataService.getCurrentRestaurant())
+
+      console.log(this.reservation)
+
       this.reservationDataService.updateReservation(this.reservation)
+      
       this.form.reset()
     }
+
+    this.reservation.reservationName = this.resDataService.getRestaurantName(this.dataService.getCurrentRestaurant())
+
     console.log(this.reservation)
   }
 }

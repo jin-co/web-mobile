@@ -6,6 +6,7 @@ import { Restaurant } from '../models/restaurant';
 })
 export class DataRestaurantService {
   restaurants!:Restaurant[]
+  restaurant!:Restaurant
 
   constructor() {
     this.restaurants = [
@@ -69,6 +70,11 @@ export class DataRestaurantService {
   }
 
   getRestaurantName(id:number):string {
-    return this.restaurants[this.restaurants.findIndex(a => a.id == id)].name
+    this.restaurants.forEach(res => {
+      if (res.id === id) {
+        this.restaurant = res    
+      }
+    });
+    return this.restaurant.name
   }
 }

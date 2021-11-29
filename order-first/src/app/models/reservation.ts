@@ -6,5 +6,6 @@ export interface Reservation {
         time:string,
         tel:string
     },
+    numberOfPeople:number,
     menuSelected?:string[]
 }
