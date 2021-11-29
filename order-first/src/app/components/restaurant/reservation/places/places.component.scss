@@ -27,4 +27,12 @@
     .example-ripple-form-field {
       margin: 0 12px 0 0;
     }
+
+    // test
+    .next-btn {
+      z-index: 3;
+      width: 350px;
+      bottom: 10px;
+      left: calc(50vw - 175px);
+    }
 }

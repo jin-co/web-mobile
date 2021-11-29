@@ -16,11 +16,14 @@ export class PlacesComponent implements OnInit {
   //restaurant
   restaurants!: Restaurant[];
 
+  //test
+  restauranSelected:boolean = false
+
   radius!: number;
   color!: string;
   constructor(
     private resDataService:DataRestaurantService,
-    private curResDataService:DataService
+    private dataService:DataService
     ) { 
   }
 
@@ -30,7 +33,8 @@ export class PlacesComponent implements OnInit {
 
   onSelect(i:Restaurant) {
     console.log(i)
-    this.curResDataService.setCurrentRestaurant(i.id)
-    console.log(this.curResDataService.getCurrentRestaurant())
+    this.dataService.setCurrentRestaurant(i.id)
+    this.restauranSelected = true //test
+    console.log(this.dataService.getCurrentRestaurant())
   }
 }
