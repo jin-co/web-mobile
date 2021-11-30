@@ -84,6 +84,7 @@ export class OwnersComponent implements OnInit {
     if (this.inputGroup.valid) {
       this.menuDataService.updateMenu(this.menu);
       // resets the input fields
+      localStorage.setItem('menuList', JSON.stringify(this.menuDataService.getMenus()))
       this.form.reset()
     }
     //test
