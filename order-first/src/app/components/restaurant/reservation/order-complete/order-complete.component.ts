@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Reservation } from 'src/app/models/reservation';
 import { DataReservationService } from 'src/app/services/data-reservation.service';
 import { DataService } from 'src/app/services/data.service';
@@ -14,7 +15,8 @@ export class OrderCompleteComponent implements OnInit {
 
   constructor(
     private dataService:DataService,
-    private reservationService:DataReservationService) { }
+    private reservationService:DataReservationService,
+    private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -25,4 +27,8 @@ export class OrderCompleteComponent implements OnInit {
     console.log('cur reser: ', this.reservation)
   }
 
+  onConfirm() {
+    localStorage.setItem('reservationList', JSON.stringify(this.reservationService.getReservations()))
+    this.router.navigate(['/'])
+  }
 }
