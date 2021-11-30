@@ -1,4 +1,11 @@
-
+<div class="container h-100">
+    <div class="row">
+        <a routerLink="/restaurant/owner/menu" class="btn btn-outline-dark">Menus</a>
+    </div>
+    <div class="row">
+        <a routerLink="/log" class="btn btn-outline-dark">Reservation</a>
+    </div>
+</div>
 <form #menuForm="ngForm" (ngSubmit)="onSubmit()" class="row g-3 mt-1">
     <mat-form-field
     [formGroup]="inputGroup"
@@ -65,7 +72,7 @@
   
     <div class="col-12">
         <button 
-            type="submit" class="btn btn-primary w-100 mt-3">
+            type="submit" class="btn btn-outline-dark w-100 mt-3">
             Add Menu
         </button>
     </div>

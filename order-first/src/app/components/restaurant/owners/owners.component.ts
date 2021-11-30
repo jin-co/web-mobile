@@ -8,6 +8,7 @@ import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 import { DataRestaurantService } from 'src/app/services/data-restaurant.service';
 import { Restaurant } from 'src/app/models/restaurant';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-owners',
@@ -59,7 +60,8 @@ export class OwnersComponent implements OnInit {
   constructor(
     private menuDataService:DataMenuService,
     private reservationDataService:DataReservationService,
-    private resDataService:DataRestaurantService
+    private resDataService:DataRestaurantService,
+    private router:Router
     ) { 
       this.restaurants = resDataService.getRestaurants()
       this.menus = menuDataService.getMenus()
@@ -86,8 +88,8 @@ export class OwnersComponent implements OnInit {
       // resets the input fields
       localStorage.setItem('menuList', JSON.stringify(this.menuDataService.getMenus()))
       this.form.reset()
+      this.router.navigate(['/restaurant'])
     }
-    //test
   }
 
   getRestaurantId(restaurantName:string):number {
