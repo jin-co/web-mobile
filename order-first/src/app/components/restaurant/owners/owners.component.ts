@@ -16,46 +16,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./owners.component.scss']
 })
 export class OwnersComponent implements OnInit {  
-  menu:Menu = {
-    restaurantId: 0,
-    name: '',
-    subName: '',
-    imageURL: '',
-    description: ''  
-  }
-
-  reservation!:Reservation
-
-  restaurants:Restaurant[]
-  restaurantNames:string[] = []
-
-  //test
-  menus!:Menu[]
-
-  //form view child
-  @ViewChild('menuForm') form:any
-
-  // validations
-  idCtrl:FormControl = new FormControl(null, [
-    Validators.required,
-    Validators.min(1)  
-  ])
-  dishNameCtrl:FormControl = new FormControl(null, Validators.required)
-  subNameCtrl:FormControl = new FormControl(null, Validators.required)
-  imageURLCtrl:FormControl = new FormControl(null, Validators.required)
-  descriptionCtrl:FormControl = new FormControl(null, [
-    Validators.required,
-    Validators.maxLength(100)
-  ])
-
-  inputGroup:FormGroup = new FormGroup({
-    resId: this.idCtrl,
-    dishName: this.dishNameCtrl,
-    subName: this.subNameCtrl,
-    URL: this.imageURLCtrl,
-    description: this.descriptionCtrl
-  })
-  // validations
 
   constructor(
     private menuDataService:DataMenuService,
@@ -63,43 +23,8 @@ export class OwnersComponent implements OnInit {
     private resDataService:DataRestaurantService,
     private router:Router
     ) { 
-      this.restaurants = resDataService.getRestaurants()
-      this.menus = menuDataService.getMenus()
   }
-
-  myControl = new FormControl();
-  options: string[] = this.restaurantNames
-  filteredOptions!: Observable<string[]>;
 
   ngOnInit(): void {
-    this.filteredOptions = this.myControl.valueChanges.pipe(
-      startWith(''),
-      map(value => this._filter(value)),
-    );
-
-    this.restaurants.forEach(res => {
-      this.restaurantNames.push(res.name)
-    });
-  }
-
-  onSubmit() {
-    if (this.inputGroup.valid) {
-      this.menuDataService.updateMenu(this.menu);
-      // resets the input fields
-      localStorage.setItem('menuList', JSON.stringify(this.menuDataService.getMenus()))
-      this.form.reset()
-      this.router.navigate(['/restaurant'])
-    }
-  }
-
-  getRestaurantId(restaurantName:string):number {
-    return this.resDataService.getRestaurantId(restaurantName)
-  }
-
-  // material option
-  private _filter(value: string): string[] {
-    const filterValue = value;
-
-    return this.options.filter(option => option.toLowerCase().includes(filterValue));
   }
 }
