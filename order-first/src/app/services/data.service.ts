@@ -28,4 +28,8 @@ export class DataService {
   logIn(validate:boolean) {
     this.loggedIn = validate
   }
+
+  getLogStatus() {
+    return this.loggedIn
+  }
 }

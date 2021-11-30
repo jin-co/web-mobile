@@ -19,14 +19,18 @@ export class DataOwnerService {
   }
 
   validateOwner(email:string, password:string):boolean {
+    let flag = false
     if (email != null && password != null) {
       this.owners.forEach(owner => {
-        if (owner.email == email && owner.password == password) {
-          return true
+        console.log('validate', owner.email, 'entered', email)
+        console.log('validate', owner.password, 'entered', password)
+        if (owner.email === email && owner.password === password) {
+          flag = true
+          return flag
         }
-        return false
+        return flag
       });
     }
-    return false
+    return flag
   }
 }

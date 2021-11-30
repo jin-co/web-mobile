@@ -86,12 +86,12 @@ export class OwnersComponent implements OnInit {
       // resets the input fields
       this.form.reset()
     }
+    //test
   }
 
   getRestaurantId(restaurantName:string):number {
     return this.resDataService.getRestaurantId(restaurantName)
   }
-
 
   // material option
   private _filter(value: string): string[] {
