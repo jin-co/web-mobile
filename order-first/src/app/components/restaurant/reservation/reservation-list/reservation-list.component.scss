@@ -1,0 +1,28 @@
+:host {
+    table {     
+        margin: 10px 0 25px;   
+        border-collapse: collapse;
+        border-radius: 20px;
+        tr {
+            border-bottom: 1px solid #efefef;
+        }
+        
+        th, td {
+        padding: 5px 20px 0;
+        }
+        
+        th {
+            width: 20%;
+        }
+        
+        td {
+            text-align: right;
+        }
+    }
+
+    div.container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

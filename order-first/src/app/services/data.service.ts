@@ -17,7 +17,7 @@ export class DataService {
     this.currentRestaurantId = id
   }
 
-  getCurrentReservation() {
+  getCurrentReservation():string {
     return this.currentReservation
   }
 

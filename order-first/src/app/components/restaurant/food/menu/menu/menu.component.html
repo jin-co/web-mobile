@@ -8,14 +8,14 @@
     <mat-card-content>
         <p>{{ i.description }}</p>
     </mat-card-content>
-    <mat-card-actions>
-        <button class="btn btn-outline-dark" mat-button
-        (click)="selectMenu(i.name)">
-            <i class="fa fa-plus"></i>
-        </button>    
+    <mat-card-actions>            
         <button class="btn btn-outline-dark" mat-button
         (click)="unselectMenu(i.name)">
             <i class="fa fa-minus"></i>
         </button>    
+        <button class="btn btn-outline-dark" mat-button
+        (click)="selectMenu(i.name)">
+            <i class="fa fa-plus"></i>
+        </button>
     </mat-card-actions>
 </mat-card>

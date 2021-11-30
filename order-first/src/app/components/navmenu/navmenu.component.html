@@ -1,6 +1,8 @@
 <p>
   <mat-toolbar color="primary">
-    <span>Order first</span>
+    <span>
+      <a routerLink="/" class="text-light text-decoration-none">Order first</a>
+    </span>
     <span class="example-spacer"></span>
     
     <!-- menu -->
@@ -11,7 +13,11 @@
       <button mat-menu-item>
         <mat-icon>person</mat-icon>
         <span>
-          <a class="btn" routerLink="/log">Log In</a>
+          <a *ngIf="!loggedIn; else notLoggedIn"
+          class="btn" routerLink="/log">Log In</a>
+          <ng-template #notLoggedIn>
+            <a class="btn">Log Out</a>
+          </ng-template>
         </span>
       </button>
 
@@ -22,10 +28,17 @@
         </span>
       </button>
 
-      <button [disabled]="!loggedIn" mat-menu-item>
+      <button [hidden]="!loggedIn" mat-menu-item>
         <mat-icon>add</mat-icon>
         <span>
           <a class="btn" routerLink="/owner">Owners</a>
+        </span>
+      </button>
+
+      <button [hidden]="!loggedIn" mat-menu-item>
+        <mat-icon>list</mat-icon>
+        <span>
+          <a class="btn" routerLink="/restaurant/order/list">Reservations</a>
         </span>
       </button>
     </mat-menu><!-- /end menu -->

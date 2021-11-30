@@ -6,6 +6,7 @@ import { Reservation } from '../models/reservation';
 })
 export class DataReservationService {
   reservations!:Reservation[]
+  reservation!:Reservation
   constructor() {
     this.reservations = [
       {
@@ -22,8 +23,24 @@ export class DataReservationService {
     ]    
   }
 
-  getReservation() {
+  getReservations() {
+    this.reservations.forEach((res, idx) => {
+      if (res.reservationName == '') {
+        this.reservations.splice(idx, 1)
+      }      
+    });
     return this.reservations
+  }
+
+  getCurrentReservation(tel:string):Reservation {
+    if (tel != null) {
+      this.reservations.forEach(res => {
+        if (res.detail.tel === tel) {
+          this.reservation = res          
+        }
+      });    
+    }    
+    return this.reservation
   }
 
   addReservation(reservation:Reservation) {
@@ -52,8 +69,4 @@ export class DataReservationService {
     }
     console.log(this.reservations)
   }
-
-  // updateCurrentReservation() {
-
-  // }
 }
