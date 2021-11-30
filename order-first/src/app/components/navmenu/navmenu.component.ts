@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-navmenu',
@@ -6,12 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navmenu.component.scss']
 })
 export class NavmenuComponent implements OnInit {
-
-  constructor() { 
+  loggedIn:boolean = false
+  constructor(private dataService:DataService) { 
     
   }
 
   ngOnInit(): void {
+    this.loggedIn = this.dataService.getLogStatus()
+  }
+
+  ngDoCheck() {
+    this.loggedIn = this.dataService.getLogStatus()
   }
 
 }

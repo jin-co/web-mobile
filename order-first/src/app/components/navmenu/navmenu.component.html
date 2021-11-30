@@ -22,7 +22,7 @@
         </span>
       </button>
 
-      <button mat-menu-item>
+      <button [disabled]="!loggedIn" mat-menu-item>
         <mat-icon>add</mat-icon>
         <span>
           <a class="btn" routerLink="/owner">Owners</a>
