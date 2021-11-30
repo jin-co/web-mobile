@@ -7,5 +7,5 @@ export interface Reservation {
         tel:string
     },
     numberOfPeople:number,
-    menuSelected?:string[]
+    menuSelected:string[]
 }

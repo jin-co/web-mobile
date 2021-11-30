@@ -60,17 +60,20 @@ export class DetailsComponent implements OnInit {
   onSubmit() {
     console.log('detail res cur id', this.dataService.getCurrentRestaurant())
     if (this.inputGroup.valid) {
+      // gets current restaurant name
       this.reservation.restaurantName = this.resDataService.getRestaurantName(this.dataService.getCurrentRestaurant())
 
-      console.log(this.reservation)
+      // sets current reservation to use to find the reservation t0 store menus later
+      this.dataService.setCurrentReservation(this.reservation.detail.tel)
 
+      //test
+      
       this.reservationDataService.addReservation(this.reservation)
       
-      this.form.reset()
+      console.log(this.reservation)
+      console.log(this.dataService.getCurrentReservation())
+      
+      // this.form.reset()
     }
-
-    this.reservation.reservationName = this.resDataService.getRestaurantName(this.dataService.getCurrentRestaurant())
-
-    console.log(this.reservation)
   }
 }

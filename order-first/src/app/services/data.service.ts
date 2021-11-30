@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class DataService {
   currentRestaurantId!:number
+  currentReservation!:string
   constructor() { }
 
   getCurrentRestaurant() {
@@ -13,5 +14,13 @@ export class DataService {
 
   setCurrentRestaurant(id:number) {
     this.currentRestaurantId = id
+  }
+
+  getCurrentReservation() {
+    return this.currentReservation
+  }
+
+  setCurrentReservation(tel:string) {
+    this.currentReservation = tel
   }
 }

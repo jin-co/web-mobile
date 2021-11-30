@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Menu } from 'src/app/models/menu';
+import { Reservation } from 'src/app/models/reservation';
 import { DataMenuService } from 'src/app/services/data-menu.service';
 import { DataService } from 'src/app/services/data.service';
 
@@ -11,15 +12,16 @@ import { DataService } from 'src/app/services/data.service';
 export class MenuComponent implements OnInit {
   menus!: Menu[]
 
-  //test
+  currentReservation!:Reservation
+
   currentRestaurantId!:number
 
   constructor(
     private menuService:DataMenuService,
-    private curResDataService:DataService
+    private dataService:DataService
     ) { 
     this.menus = this.menuService.getMenus()
-    this.currentRestaurantId = this.curResDataService.getCurrentRestaurant()
+    this.currentRestaurantId = this.dataService.getCurrentRestaurant()
   }
 
   ngOnInit(): void {
@@ -27,10 +29,12 @@ export class MenuComponent implements OnInit {
 
   ngDoCheck() {
     this.menus = this.menuService.getMenus()
+    console.log(this.dataService.getCurrentReservation())
   }
 
   selectMenu() {
     console.log('s')
+
   }
 
   unselectMenu() {
