@@ -10,11 +10,11 @@
     </mat-card-content>
     <mat-card-actions>
         <button class="btn btn-outline-dark" mat-button
-        (click)="selectMenu()">
+        (click)="selectMenu(i.name)">
             <i class="fa fa-plus"></i>
         </button>    
         <button class="btn btn-outline-dark" mat-button
-        (click)="unselectMenu()">
+        (click)="unselectMenu(i.name)">
             <i class="fa fa-minus"></i>
         </button>    
     </mat-card-actions>

@@ -34,10 +34,11 @@ export class DataReservationService {
     if (tel != null) {
       this.reservations.forEach(res => {
         if (res.detail.tel === tel) {
-          res.menuSelected?.push(menu)
+          res.menuSelected.push(menu)
         }
       });
     }
+    console.log(this.reservations)
   }
 
   unselectMenu(tel:string, menu:string) {
@@ -45,10 +46,11 @@ export class DataReservationService {
       this.reservations.forEach(res => {
         if (res.detail.tel === tel) {
           let idx = res.menuSelected.indexOf(menu)
-          res.menuSelected?.splice(idx, 1)
+          res.menuSelected.splice(idx, 1)
         }
       });
     }
+    console.log(this.reservations)
   }
 
   // updateCurrentReservation() {

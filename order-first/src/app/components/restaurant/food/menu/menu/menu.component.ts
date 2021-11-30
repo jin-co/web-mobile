@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Menu } from 'src/app/models/menu';
 import { Reservation } from 'src/app/models/reservation';
 import { DataMenuService } from 'src/app/services/data-menu.service';
+import { DataReservationService } from 'src/app/services/data-reservation.service';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -18,7 +19,8 @@ export class MenuComponent implements OnInit {
 
   constructor(
     private menuService:DataMenuService,
-    private dataService:DataService
+    private dataService:DataService,
+    private reservationService:DataReservationService
     ) { 
     this.menus = this.menuService.getMenus()
     this.currentRestaurantId = this.dataService.getCurrentRestaurant()
@@ -32,12 +34,14 @@ export class MenuComponent implements OnInit {
     console.log(this.dataService.getCurrentReservation())
   }
 
-  selectMenu() {
-    console.log('s')
-
+  selectMenu(i:string) {
+    console.log(i)
+    this.reservationService.addSelectedMenu(this.dataService.getCurrentReservation(), i)
   }
 
-  unselectMenu() {
+  unselectMenu(i:string) {
     console.log('u')
+    console.log(i)
+    this.reservationService.unselectMenu(this.dataService.getCurrentReservation(), i)
   }
 }
