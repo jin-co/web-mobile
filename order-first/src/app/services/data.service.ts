@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class DataService {
   currentRestaurantId!:number
   currentReservation!:string
+  loggedIn!:boolean
   constructor() { }
 
   getCurrentRestaurant() {
@@ -22,5 +23,9 @@ export class DataService {
 
   setCurrentReservation(tel:string) {
     this.currentReservation = tel
+  }
+
+  logIn(validate:boolean) {
+    this.loggedIn = validate
   }
 }

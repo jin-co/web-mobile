@@ -17,4 +17,16 @@ export class DataOwnerService {
   getOwners() {
     return this.owners
   }
+
+  validateOwner(email:string, password:string):boolean {
+    if (email != null && password != null) {
+      this.owners.forEach(owner => {
+        if (owner.email == email && owner.password == password) {
+          return true
+        }
+        return false
+      });
+    }
+    return false
+  }
 }

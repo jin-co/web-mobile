@@ -1,12 +1,37 @@
 <div class="card card-body my-3">
-    <form> <!--(ngSubmit)="onSubmit()"-->
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit()"> 
         <div class="form-group">
-            <input type="email" name="email" class="form-control" placeholder="Email"> <!-- [(ngModel)]="text" -->
+            <input type="email" name="email" class="form-control" placeholder="Email"
+            #emailInput="ngModel"
+            required
+            pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
+            [(ngModel)]="owner.email"[ngClass]="{'is-invalid' : emailInput.errors && emailInput.touched}"> 
+                        
+            <div [hidden]="!emailInput.errors?.required" class="invalid-feedback">
+                Email Required
+            </div>
+            <div [hidden]="!emailInput.errors?.pattern" class="invalid-feedback">
+                Email invalid format
+            </div>
         </div>
+
         <div class="form-group">
-            <input type="password" name="password" class="form-control" placeholder="Password"> <!-- [(ngModel)]="text" -->
+            <input type="password" name="password" class="form-control" placeholder="Password"
+            #passwordInput="ngModel"
+            required
+            minlength="4"
+            [(ngModel)]="owner.password"[ngClass]="{'is-invalid' : passwordInput.errors && passwordInput.touched}"> 
+            
+            <div [hidden]="!passwordInput.errors?.required" class="invalid-feedback">
+                Password Required
+            </div>
+            <div [hidden]="!passwordInput.errors?.minlength" class="invalid-feedback">
+                Password must be more than 3 characters
+            </div>
+
         </div>
-        <input type="submit" value="Log In" class="btn btn-light w-100 mt-2">
+        <input [disabled]="!loginForm.form.valid"
+        type="submit" value="Log In" class="btn btn-outline-dark btn-light w-100 mt-2">
         <!-- [disabled]="!this.text" -->
     </form>
 </div>
