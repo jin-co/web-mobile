@@ -174,6 +174,10 @@ export class DataMenuService {
     return this.menus
   }
 
+  addMenu(menu:Menu) {
+   this.menus.push(menu) 
+  }
+
   updateMenu(menu:Menu) {
    this.menus.push(menu) 
   }

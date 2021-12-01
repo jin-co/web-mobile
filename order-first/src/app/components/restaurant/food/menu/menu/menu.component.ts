@@ -12,6 +12,7 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class MenuComponent implements OnInit {
   menus!: Menu[]
+  loggedIn:boolean = false
 
   currentReservation!:Reservation
 
@@ -31,6 +32,7 @@ export class MenuComponent implements OnInit {
 
   ngDoCheck() {
     this.menus = this.menuService.getMenus()
+    this.loggedIn = this.dataService.getLogStatus()
     console.log(this.dataService.getCurrentReservation())
   }
 

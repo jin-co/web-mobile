@@ -85,7 +85,7 @@ export class AddMenuComponent implements OnInit {
 
   onSubmit() {
     if (this.inputGroup.valid) {
-      this.menuDataService.updateMenu(this.menu);
+      this.menuDataService.addMenu(this.menu);
       // resets the input fields
       localStorage.setItem('menuList', JSON.stringify(this.menuDataService.getMenus()))
       this.form.reset()
