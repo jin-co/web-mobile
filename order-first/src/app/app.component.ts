@@ -18,9 +18,15 @@ export class AppComponent implements OnInit {
   }
 
   // on initialization loads data from localStorage
-  ngOnInit() {   
-    this.reservationService.reservations = JSON.parse(localStorage.getItem("reservationList") || '')
-        
-    this.menuService.menus = JSON.parse(localStorage.getItem('menuList') || '')
+  ngOnInit() { 
+    let reservationList = localStorage.getItem("reservationList")
+    if (reservationList != null) {
+      this.reservationService.reservations = JSON.parse(reservationList)
+    }
+    
+    let menuList = localStorage.getItem('menuList')
+    if (menuList != null) {
+      this.menuService.menus = JSON.parse(menuList)  
+    }
   }
 }
