@@ -46,4 +46,9 @@ export class MenuComponent implements OnInit {
     console.log(i)
     this.reservationService.unselectMenu(this.dataService.getCurrentReservation(), i)
   }
+
+  deleteMenu(i:string) {
+    console.log(i)
+    this.menuService.deleteMenu(i)
+  }
 }

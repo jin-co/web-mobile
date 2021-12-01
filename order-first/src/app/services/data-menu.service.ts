@@ -181,4 +181,12 @@ export class DataMenuService {
   updateMenu(menu:Menu) {
    this.menus.push(menu) 
   }
+
+  deleteMenu(menu:string) {
+    this.menus.forEach((m, idx) => {
+      if (m.name === menu) {
+        this.menus.splice(idx, 1)
+      }      
+    });
+  }
 }

@@ -2,5 +2,9 @@
     .btn-container {
         display: flex;
         justify-content: space-between;
+
+        div button:first-child {
+            margin-right: 3px;
+        }
     }
 }
