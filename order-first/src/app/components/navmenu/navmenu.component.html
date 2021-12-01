@@ -16,7 +16,7 @@
           <a *ngIf="!loggedIn; else notLoggedIn"
           class="btn" routerLink="/log">Log In</a>
           <ng-template #notLoggedIn>
-            <a class="btn">Log Out</a>
+            <a (click)="onLogOut()" class="btn">Log Out</a>
           </ng-template>
         </span>
       </button>

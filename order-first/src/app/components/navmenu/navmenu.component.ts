@@ -20,4 +20,7 @@ export class NavmenuComponent implements OnInit {
     this.loggedIn = this.dataService.getLogStatus()
   }
 
+  onLogOut() {
+    this.dataService.logIn(false)
+  }
 }
