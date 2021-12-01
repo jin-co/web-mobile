@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataMenuService } from './services/data-menu.service';
 import { DataReservationService } from './services/data-reservation.service';
-import { DataService } from './services/data.service';
 
 @Component({
   selector: 'app-root',
@@ -12,18 +11,16 @@ export class AppComponent implements OnInit {
   title = 'order-first';
 
   constructor(
-    private dataService:DataService,
     private reservationService:DataReservationService,
     private menuService:DataMenuService
     ) {
 
   }
 
+  // on initialization loads data from localStorage
   ngOnInit() {   
-    console.log(localStorage.getItem('reservationList')) 
     this.reservationService.reservations = JSON.parse(localStorage.getItem("reservationList") || '')
-    
-    console.log(localStorage.getItem('menuList')) 
+        
     this.menuService.menus = JSON.parse(localStorage.getItem('menuList') || '')
   }
 }

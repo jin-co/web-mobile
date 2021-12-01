@@ -7,6 +7,7 @@ import { DataService } from './data.service';
 })
 export class DataMenuService {
   menus!:Menu[]
+  menu!:Menu
 
   constructor(private curResDataService:DataService) {
     this.menus = [
@@ -167,25 +168,47 @@ export class DataMenuService {
     ]
   }
 
+  // returns entire menu list
   getMenus():Menu[] {
+    // this.menu = JSON.parse(localStorage.getItem('menuList') || '')
     if (this.curResDataService.getCurrentRestaurant() != null) {
       return this.menus.filter(a => a.restaurantId === this.curResDataService.getCurrentRestaurant())
     }
     return this.menus
   }
 
+  // return selected menu name
+  getSelectedMenu(menu:string):Menu {
+    this.menus.forEach((m, idx) => {
+      if (m.name === menu) {
+        this.menu = m
+      }      
+    });
+    return this.menu
+  }    
+
   addMenu(menu:Menu) {
    this.menus.push(menu) 
+    // saves to localStorage
+    localStorage.setItem('menuList', JSON.stringify(this.menus))
   }
 
   updateMenu(menu:Menu) {
-   this.menus.push(menu) 
+    this.menus.forEach((m, idx) => {
+      if (m.name === menu.name) {
+        this.menus[idx] = menu
+        // saves to localStorage
+        localStorage.setItem('menuList', JSON.stringify(this.menus))
+      }
+    });    
   }
 
   deleteMenu(menu:string) {
     this.menus.forEach((m, idx) => {
       if (m.name === menu) {
         this.menus.splice(idx, 1)
+        // saves to localStorage
+        localStorage.setItem('menuList', JSON.stringify(this.menus))
       }      
     });
   }

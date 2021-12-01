@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Menu } from '../models/menu';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,16 @@ export class DataService {
   currentRestaurantId!:number
   currentReservation!:string
   loggedIn!:boolean
-  constructor() { }
+  selectedMenu!:Menu
+  constructor() { 
+    this.selectedMenu = {
+      restaurantId: 0,
+      name: '',
+      subName: '',
+      imageURL: '',
+      description: ''
+    }
+  }
 
   getCurrentRestaurant() {
     return this.currentRestaurantId
@@ -31,5 +41,13 @@ export class DataService {
 
   getLogStatus() {
     return this.loggedIn
+  }
+
+  getSelectedMenu() {
+    return this.selectedMenu
+  }
+
+  setSelectedMenu(menu:Menu) {
+    this.selectedMenu = menu
   }
 }
