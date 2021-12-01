@@ -26,7 +26,6 @@ export class AddMenuComponent implements OnInit {
   }
 
   reservation!:Reservation
-
   restaurants:Restaurant[]
   restaurantNames:string[] = []
 
