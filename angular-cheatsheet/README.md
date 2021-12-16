@@ -27,10 +27,14 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 ## Command
-ng new fileName --no-strict -> creating a project
-ng serve -> starts development server / ng serve --open -> open
-npm start -> compiles
-ng add @angular/material -> like 'npm i' (but specific to angular) -> it automatically modifies files(e.g. angular.json) to accommodate added dependencies
-ng generate component name --skip-tests=true
+ng new `fileName` --no-strict -> creating a project 
+ng serve [--open] -> starts development server [opensAutomatically]
+npm start -> compiles (similar to ng serve)
+ng add `dependencyName` -> like 'npm i' (but specific to angular) -> it automatically modifies files(e.g. angular.json) to accommodate added dependencies
+ng add @angular/material -> adds angular material
+ng g[enerate] c[omponent] `name` [--skip-tests=true] -> generates component [skipTestSpec]
 ng build -> create disk folder to upload
+
+## Guide
+
 
