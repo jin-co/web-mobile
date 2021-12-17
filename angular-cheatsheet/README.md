@@ -36,5 +36,23 @@ ng g[enerate] c[omponent] `name` [--skip-tests=true] -> generates component [ski
 ng build -> create disk folder to upload
 
 ## Guide
+1. adding styles
+npm i `dependency`
+- bootstrap
+- popper.js
+- font-awesome
+- jquery
+-> go to package.json to check (^ : auto update)
+-> go to angular.json and add route: 
+    "styles": [
+        "src/styles.scss",
+        "node_modules/bootstrap/dist/css/bootstrap.css",
+        "node_modules/font-awesome/css/font-awesome.css"
+    ],
+    "scripts": [
+        "node_modules/jquery/dist/jquery.js",
+        "node_modules/popper.js/dist/umd/popper.js",
+        "node_modules/bootstrap/dist/js/bootstrap.js"
+    ]
 
 
