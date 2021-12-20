@@ -101,6 +101,7 @@ import {
         ]))
       ]),
       transition('* => void', [
+        // group runs animations synchronously
         group([
           animate(300, style({
             color: 'red'
