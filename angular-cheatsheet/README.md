@@ -55,4 +55,7 @@ npm i `dependency`
         "node_modules/bootstrap/dist/js/bootstrap.js"
     ]
 
-
+2. adding animation
+- npm install --save @angular/animations -> for angular 6: skip this
+- import { BrowserAnimationsModule } from '@angular/platform-browser/animations'  (in the AppModule!)
+-  import trigger , state , style  etc from @angular/animations  instead of @angular/core
