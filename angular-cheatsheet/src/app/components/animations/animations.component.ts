@@ -81,7 +81,7 @@ import {
           style({
             transform: 'translateX(-100px)',
             opacity: 0,
-            offset: 0
+            offset: 0 // sets starting time
           }),
           style({
             transform: 'translateX(-50px)',
