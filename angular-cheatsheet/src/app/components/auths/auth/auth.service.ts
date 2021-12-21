@@ -70,12 +70,13 @@ export class AuthService {
   }
 
   autoLogin() {
+    let localData:string = localStorage.getItem('userData') || ''
     const userData: {
       email: string;
       id: string;
       _token: string;
       _tokenExpirationDate: string;
-    } = JSON.parse(localStorage.getItem('userData'));
+    } = JSON.parse(localData);
     if (!userData) {
       return;
     }
