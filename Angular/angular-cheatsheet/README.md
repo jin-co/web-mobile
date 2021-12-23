@@ -59,3 +59,9 @@ npm i `dependency`
 - npm install --save @angular/animations -> for angular 6: skip this
 - import { BrowserAnimationsModule } from '@angular/platform-browser/animations'  (in the AppModule!)
 -  import trigger , state , style  etc from @angular/animations  instead of @angular/core
+
+3. Pipe
+- transforms the output in the template
+- syntax: {{ value | pipe expression }}
+
+4. Route
