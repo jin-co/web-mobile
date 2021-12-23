@@ -19,8 +19,8 @@ export interface AuthResponseData {
 @Injectable({ providedIn: 'root' })
 export class AuthService {
 
-  user = new BehaviorSubject<User>(null);
-  // user = new Subject<User>();
+  // user = new BehaviorSubject<User>(null);
+  user = new Subject<User>();
   private tokenExpirationTimer: any;
 
   constructor(private http: HttpClient, private router: Router) {}
@@ -100,7 +100,7 @@ export class AuthService {
   }
 
   logout() {
-    this.user.next(null);
+    // this.user.next(null);
     this.router.navigate(['/auth']);
     localStorage.removeItem('userData');
     if (this.tokenExpirationTimer) {
