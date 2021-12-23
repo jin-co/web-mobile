@@ -62,6 +62,13 @@ npm i `dependency`
 
 3. Pipe
 - transforms the output in the template
-- syntax: {{ value | pipe expression }}
+- syntax: {{ value | pipe expression[:parameter] | ... }}
+- when adding multiple pipes, order matters
+- https://angular.io/api?query=pipe
+- To create custom pipe
+-> create a `name`.pipe.ts file and write a code (or `ng g p`)
+-> add `@pipe` decorator
+-> open `app.module` 
+-> add the file to `decorations`(import it without `.ts` at the end)
 
 4. Route
