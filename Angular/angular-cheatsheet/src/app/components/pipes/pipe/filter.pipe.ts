@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'filter',
-  pure: false
+  pure: false  // option that catches changes on data(without this added data won't show when the filter input is filled)
 })
 export class FilterPipe implements PipeTransform {
 
