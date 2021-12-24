@@ -12,6 +12,7 @@ export class PipeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // async pipe
   appStatus = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve('stable');
