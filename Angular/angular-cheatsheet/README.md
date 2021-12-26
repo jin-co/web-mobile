@@ -72,3 +72,9 @@ npm i `dependency`
 -> add the file to `decorations`(import it without `.ts` at the end)
 
 4. Route
+- to specify routing I can use either 'app.module' or 'app-routing.modules.ts'
+- and add <router-outlet></router-outlet> to load
+- and use <a routerLink=""> instead of <a href=">
+-> routerLink doesn't reload the page so it is much faster and it keeps the current state
+
+5. Directives
