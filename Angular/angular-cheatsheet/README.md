@@ -92,3 +92,4 @@ npm i `dependency`
 --> *ngIf *ngFor
 - custom directive
 -> ng g d `name`
+-> good practice is to make a folder for directives created
