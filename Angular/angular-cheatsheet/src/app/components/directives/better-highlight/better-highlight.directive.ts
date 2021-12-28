@@ -7,7 +7,7 @@ export class BetterHighlightDirective implements OnInit {
   @Input() defaultColor:string = ''
   @Input() highlightColor:string = 'red'
 
-  @HostBinding('style.backgroundColor') backgroundColor:string
+  @HostBinding('style.backgroundColor') backgroundColor:string | undefined
 
   constructor(private elRef:ElementRef, private renderer:Renderer2) { }
 

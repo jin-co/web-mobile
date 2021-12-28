@@ -78,3 +78,17 @@ npm i `dependency`
 -> routerLink doesn't reload the page so it is much faster and it keeps the current state
 
 5. Directives
+- two kinds:
+-> attribute
+--> looks like a normal HTML attribute
+--> only affect/change the element they are added to
+- e.g.
+--> [ngClass], [ngStyle]
+-> structural
+--> has a leading *
+--> affects the whole area in the DOM
+--> cannot have more than one structural directive on the same element
+- e.g.
+--> *ngIf *ngFor
+- custom directive
+-> ng g d `name`

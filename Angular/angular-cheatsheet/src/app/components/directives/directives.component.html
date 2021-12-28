@@ -7,18 +7,20 @@
         <br><br>
         <ul class="list-group">
           <div *ngIf="onlyOdd">
-            <!-- <li
-              class="list-group-item"
-              [ngClass]="{odd: odd % 2 !== 0}"
-              [ngStyle]="{backgroundColor: odd % 2 !== 0 ? 'yellow':''}"
+            <li
+              class="list-group-item"         
+              [ngClass]="{odd: i % 2 !== 0}"   
+              [ngStyle]="{backgroundColor: i % 2 !== 0 ? 'yellow':''}"
               *ngFor="let i of oddNumbers">
               {{ i }}
-            </li> -->
+            </li>
           </div>
           <div *ngIf="!onlyOdd">
             <li
               class="list-group-item"
-              *ngFor="let i of evenNumbers">
+              *ngFor="let i of evenNumbers"
+              [ngClass]="{odd: i % 2 === 0}"   
+              [ngStyle]="{backgroundColor: i % 2 === 0 ? 'blue':''}">
               {{ i }}
             </li>
           </div>
@@ -26,23 +28,23 @@
         <ng-template [ngIf]="onlyOdd">
           <p>Only odd</p>
         </ng-template>
-        <p appHighlight>style</p>
+        <p appBasicHighlight>style</p> <!-- here no need for [] because the attribute name is set in the selector of 'basic-highlight.directive.ts' including [] -->
         <p appBetterHighlight>style</p>
-        <!-- <p appBetterHighlight
+        <p appBetterHighlight
         [defaultColor]="'black'"
-        [highlightColor]="'purple'">style</p> -->
+        [highlightColor]="'purple'">style</p>
       </div>
   
       <hr>
   
       <div *appUnless="onlyOdd">
-        <!-- <li
+        <li
           class="list-group-item"
-          [ngClass]="{odd: odd % 2 !== 0}"
-          [ngStyle]="{backgroundColor: odd % 2 !== 0 ? 'yellow':''}"
+          [ngClass]="{odd: i % 2 !== 0}"
+          [ngStyle]="{backgroundColor: i % 2 !== 0 ? 'yellow':''}"
           *ngFor="let i of oddNumbers">
           {{ i }}
-        </li> -->
+        </li>
       </div>
   
       <hr>

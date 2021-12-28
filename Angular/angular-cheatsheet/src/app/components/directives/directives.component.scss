@@ -1,7 +1,9 @@
-.container {
+:host{
+  .container {
     margin-top: 30px;
   }
   
   .odd {
     color: red;
   }
+}
