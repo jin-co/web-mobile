@@ -28,6 +28,8 @@
         <ng-template [ngIf]="onlyOdd">
           <p>Only odd</p>
         </ng-template>
+
+        <!-- Attribute Directive -->
         <p appBasicHighlight>custom directive</p> <!-- here no need for [] because the attribute name is set in the selector of 'basic-highlight.directive.ts' including [] -->
         <p appBetterHighlight>custom directive - better approach</p>
         <p appBetterHighlight
@@ -36,7 +38,7 @@
       </div>
   
       <hr>
-  
+      <!-- Structural Directive -->
       <div *appUnless="onlyOdd">
         <li
           class="list-group-item"
@@ -48,7 +50,7 @@
       </div>
   
       <hr>
-      <div [ngSwitch]="value">
+      <div [ngSwitch]="value"> <!-- value comes from .ts -->
           <div *ngSwitchCase="3">output1</div>
           <div *ngSwitchCase="4">output2</div>
           <div *ngSwitchCase="5">output3</div>

@@ -86,6 +86,7 @@ npm i `dependency`
 --> [ngClass], [ngStyle]
 -> structural
 --> has a leading *
+---> note: `*ngIf=` is the same as `<ng-template [ngIf]=`
 --> affects the whole area in the DOM
 --> cannot have more than one structural directive on the same element
 - e.g.
