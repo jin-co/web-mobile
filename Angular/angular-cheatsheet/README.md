@@ -94,3 +94,7 @@ npm i `dependency`
 - custom directive
 -> ng g d `name`
 -> good practice is to make a folder for directives created
+
+6. Forms
+- add FormsModule in imports
+- template driven
