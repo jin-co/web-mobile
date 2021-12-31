@@ -96,5 +96,11 @@ npm i `dependency`
 -> good practice is to make a folder for directives created
 
 6. Forms
-- add FormsModule in imports
 - template driven
+-> add `FormsModule` in imports
+-> add `ngModel` to the input that you want to control
+-> add `name` to specify the control above
+-> add `(ngSubmit)` to <form> tag to catch submit event
+-> add local variable(reference) `#name` to <form> tag 
+-> add the local variable as a parameter to `(ngSubmit)` to get hold of the form submitted (but this is not the object created by angular yet)
+-> add `ngModel` as a value to the local variable: `#name = ngModel` and this will give the object
