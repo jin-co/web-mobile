@@ -96,11 +96,21 @@ npm i `dependency`
 -> good practice is to make a folder for directives created
 
 6. Forms
-- template driven
+- template driven: everything is controlled in the template
+- For the template-driven approach, you need the directives. You can find out their names, by searching for "validator" in the official docs: https://angular.io/api?type=directive - everything marked with "D" is a directive and can be added to your template.
+- Additionally, you might also want to enable HTML5 validation (by default, Angular disables it). You can do so by adding the ngNativeValidate  to a control in your template.
 -> add `FormsModule` in imports
 -> add `ngModel` to the input that you want to control
 -> add `name` to specify the control above
 -> add `(ngSubmit)` to <form> tag to catch submit event
+-> to get the angular created form object
+1. using ngForm as a parameter
 -> add local variable(reference) `#name` to <form> tag 
 -> add the local variable as a parameter to `(ngSubmit)` to get hold of the form submitted (but this is not the object created by angular yet)
 -> add `ngModel` as a value to the local variable: `#name = ngModel` and this will give the object
+
+2. using @ViewChild(element controller by local a reference)
+: with this it is possible to control the form even before the submission
+-> add `@ViewChild('name', { static: false }) formName!: NgForm;`
+
+* Check out the Validators class: https://angular.io/api/forms/Validators - these are all built-in validators, though that are the methods which actually get executed (and which you later can add when using the reactive approach).
