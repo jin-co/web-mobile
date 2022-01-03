@@ -113,4 +113,9 @@ npm i `dependency`
 : with this it is possible to control the form even before the submission
 -> add `@ViewChild('name', { static: false }) formName!: NgForm;`
 
+- tips
+-> visual alert for the invalid values, use classes that is add by ng
+-> check the change of attributes
+-> set local variable to ngModel or ngModelGroup then use the local variable to show visual warnings
+
 * Check out the Validators class: https://angular.io/api/forms/Validators - these are all built-in validators, though that are the methods which actually get executed (and which you later can add when using the reactive approach).
