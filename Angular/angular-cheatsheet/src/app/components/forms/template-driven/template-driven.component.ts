@@ -27,6 +27,7 @@ export class TemplateDrivenComponent implements OnInit {
 
   suggestUserName() {
     const suggestedName = 'Superuser';
+    /* method that can populate input values */
     // this.signupForm.setValue({
     //   userData: {
     //     username: suggestedName,
@@ -36,6 +37,8 @@ export class TemplateDrivenComponent implements OnInit {
     //   questionAnswer: '',
     //   gender: 'male'
     // });
+
+    /* method that can override an input value */
     this.signupForm.form.patchValue({
       userData: {
         username: suggestedName
@@ -49,12 +52,15 @@ export class TemplateDrivenComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+    // when group is set access the value through the group name
     this.user.username = this.signupForm.value.userData.username;
     this.user.email = this.signupForm.value.userData.email;
+
     this.user.secretQuestion = this.signupForm.value.secret;
     this.user.answer = this.signupForm.value.questionAnswer;
     this.user.gender = this.signupForm.value.gender;
 
+    // reset form
     this.signupForm.reset();
   }
 }
