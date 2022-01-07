@@ -128,3 +128,7 @@ npm i `dependency`
 -> add `formControlName` to specify the control above 
 (e.g. <input formControlName="username"> or <input [formControlName]="'username'">)
 -> then set validation in the .ts file in side `FormControl`
+* to group fields 
+-> create a `FormGroup` with name in .ts file
+-> add `formGroupName` to the element that wraps the targeted fields
+-> set the value of `formGroupName` with the name above

@@ -81,4 +81,13 @@ export class ReactiveComponent implements OnInit {
     return promise;
   }
 
+  getControls() {
+    return (<FormArray>this.signupForm.get('hobbies')).controls;
+  }
+  // //or
+  // get controls() {
+  //   return (this.signupForm.get('hobbies') as FormArray).controls;
+  // }
+  // // then in the template
+  // *ngFor="let hobbyControl of controls; let i = index"
 }
