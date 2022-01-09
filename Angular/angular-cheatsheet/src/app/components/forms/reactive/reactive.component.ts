@@ -10,6 +10,8 @@ import { Observable } from 'rxjs';
 export class ReactiveComponent implements OnInit {
   genders = ['male', 'female'];
   signupForm!: FormGroup;
+
+  // for a custom validator
   forbiddenUsernames = ['Chris', 'Anna'];
   
   constructor() { }
@@ -23,7 +25,7 @@ export class ReactiveComponent implements OnInit {
         ),
         'email': new FormControl(
           null, 
-          [Validators.required, Validators.email], 
+          [Validators.required, Validators.email],
           // this.forbiddenEmails
         )
       }),
@@ -61,13 +63,15 @@ export class ReactiveComponent implements OnInit {
     (<FormArray>this.signupForm.get('hobbies')).push(control);
   }
 
+  // custom validator
   forbiddenNames(control: FormControl): {[s: string]: boolean} {
     if (this.forbiddenUsernames.indexOf(control.value) !== -1) {
       return {'nameIsForbidden': true};
     }
-    return {'nameIsForbidden': false};
+    return {'nameIsForbidden': false}; //this should be null (but then it throws an error)
   }
 
+  // custom aync validator
   forbiddenEmails(control: FormControl): Promise<any> | Observable<any> {
     const promise = new Promise<any>((resolve, reject) => {
       setTimeout(() => {
