@@ -32,12 +32,16 @@ export class ReactiveComponent implements OnInit {
       'gender': new FormControl('male'),
       'hobbies': new FormArray([])
     });
-    // this.signupForm.valueChanges.subscribe(
-    //   (value) => console.log(value)
-    // );
+
+    // checking update in the form 
+    this.signupForm.valueChanges.subscribe(
+      (value) => console.log(value)
+    );
     this.signupForm.statusChanges.subscribe(
       (status) => console.log(status)
     );
+
+    // setting values manually
     this.signupForm.setValue({
       'userData': {
         'username': 'Max',
@@ -46,6 +50,8 @@ export class ReactiveComponent implements OnInit {
       'gender': 'male',
       'hobbies': []
     });
+
+    // setting a value manually
     this.signupForm.patchValue({
       'userData': {
         'username': 'Anna',
@@ -55,7 +61,12 @@ export class ReactiveComponent implements OnInit {
 
   onSubmit() {
     console.log(this.signupForm);
-    this.signupForm.reset();
+    this.signupForm.reset(); // reset all values
+    // this.signupForm.reset({ // reset only a certain value
+    //   'userData': {
+    //     'username': 'Anna',
+    //   }
+    // });
   }
 
   onAddHobby() {

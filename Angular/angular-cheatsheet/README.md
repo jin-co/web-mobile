@@ -71,7 +71,7 @@ npm i `dependency`
 -> open `app.module` 
 -> add the file to `decorations`(import it without `.ts` at the end)
 
-4. Route
+4. Route - **to be done**
 - to specify routing I can use either 'app.module' or 'app-routing.modules.ts'
 - and add <router-outlet></router-outlet> to load
 - and use <a routerLink=""> instead of <a href=">
@@ -132,3 +132,5 @@ npm i `dependency`
 -> create a `FormGroup` with name in .ts file
 -> add `formGroupName` to the element that wraps the targeted fields
 -> set the value of `formGroupName` with the name above
+
+7. http

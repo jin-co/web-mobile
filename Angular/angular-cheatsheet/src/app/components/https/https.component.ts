@@ -1,25 +1,23 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-
 import { Post } from './post.model';
 import { PostsService } from './posts.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-https',
+  templateUrl: './https.component.html',
+  styleUrls: ['./https.component.scss']
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class HttpsComponent implements OnInit, OnDestroy {
   loadedPosts: Post[] = [];
   isFetching = false;
-  error = null;
-  private errorSub: Subscription;
+  error = '';
+  private errorSub!: Subscription;
+  
+  constructor(private http: HttpClient, private postsService: PostsService) { }
 
-  constructor(private http: HttpClient, private postsService: PostsService) {}
-
-  ngOnInit() {
+  ngOnInit(): void {
     this.errorSub = this.postsService.error.subscribe(errorMessage => {
       this.error = errorMessage;
     });
@@ -66,10 +64,11 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   onHandleError() {
-    this.error = null;
+    this.error = '';
   }
 
   ngOnDestroy() {
     this.errorSub.unsubscribe();
   }
+
 }
