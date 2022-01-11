@@ -134,3 +134,9 @@ npm i `dependency`
 -> set the value of `formGroupName` with the name above
 
 7. http
+[domain.com/posts/1]
+-> anatomy of a Http request
+- Http verb: POST, GET, ...
+- URL (API Endpoint): `/posts/1`
+- Headers(Metadata): {"Content-Type": "application/json"}
+- Body: {title: "New Post"} *a piece of data sent with Http request (used with `POST/PUT/PATCH` request)
