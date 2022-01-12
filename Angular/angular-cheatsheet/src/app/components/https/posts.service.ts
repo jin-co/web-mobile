@@ -20,7 +20,7 @@ export class PostsService {
     const postData: Post = { title: title, content: content };
     this.http
       .post<{ name: string }>(
-        'https://ng-complete-guide-c56d3.firebaseio.com/posts.json',
+        'https://angular-cheatsheet-2b0a3-default-rtdb.firebaseio.com/posts.json',
         postData,
         {
           observe: 'response'

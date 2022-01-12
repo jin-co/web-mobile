@@ -140,3 +140,6 @@ npm i `dependency`
 - URL (API Endpoint): `/posts/1`
 - Headers(Metadata): {"Content-Type": "application/json"}
 - Body: {title: "New Post"} *a piece of data sent with Http request (used with `POST/PUT/PATCH` request)
+-> add `HttpClientModule` in the imports in app.module to use HTTP request
+-> add `HttpClient` as a parameter in the constructor in .ts file
+-> then use http.`methodName` to control http request
