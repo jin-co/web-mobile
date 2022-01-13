@@ -26,7 +26,7 @@ export class PostsService {
           observe: 'response'
         }
       )
-      .subscribe(
+      .subscribe( // no subscription no request
         responseData => {
           console.log(responseData);
         },
@@ -55,6 +55,7 @@ export class PostsService {
           for (const key in responseData) {
             if (responseData.hasOwnProperty(key)) {
               postsArray.push({ ...responseData[key], id: key });
+              // ... -> spread operator: pulls out all the key-value pairs of the nested object we are accessing
             }
           }
           return postsArray;
