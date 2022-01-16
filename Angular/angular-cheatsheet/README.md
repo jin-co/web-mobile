@@ -35,6 +35,14 @@ ng add @angular/material -> adds angular material
 ng g[enerate] c[omponent] `name` [--skip-tests=true] -> generates component [skipTestSpec]
 ng build -> create disk folder to upload
 
+## Updating version
+https://www.tektutorialshub.com/angular/angular-how-to-update-to-latest-version/
+1. Update Node.js: 
+- npm update -g
+2. Install Angular CLI globally & locally:
+- npm install -g @angular/cli@latest   //Global installation
+- npm install @angular/cli@latest --save-dev   //local installation
+
 ## Guide
 1. adding styles
 npm i `dependency`
