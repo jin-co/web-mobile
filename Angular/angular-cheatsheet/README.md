@@ -37,6 +37,10 @@ ng build -> create disk folder to upload
 
 ## Updating version
 https://www.tektutorialshub.com/angular/angular-how-to-update-to-latest-version/
+
+-- to solve dependency conflict
+https://stackoverflow.com/questions/64573177/unable-to-resolve-dependency-tree-error-when-installing-npm-packages
+
 1. Update Node.js: 
 - npm update -g
 2. Install Angular CLI globally & locally:
