@@ -42,7 +42,7 @@ export class PostsService {
     searchParams = searchParams.append('custom', 'key');
     return this.http
       .get<{ [key: string]: Post }>(
-        'https://ng-complete-guide-c56d3.firebaseio.com/posts.json',
+        'https://angular-cheatsheet-2b0a3-default-rtdb.firebaseio.com/posts.json',
         {
           headers: new HttpHeaders({ 'Custom-Header': 'Hello' }),
           params: searchParams,
@@ -69,7 +69,7 @@ export class PostsService {
 
   deletePosts() {
     return this.http
-      .delete('https://ng-complete-guide-c56d3.firebaseio.com/posts.json', {
+      .delete('https://angular-cheatsheet-2b0a3-default-rtdb.firebaseio.com/posts.json', {
         observe: 'events',
         responseType: 'text'
       })
