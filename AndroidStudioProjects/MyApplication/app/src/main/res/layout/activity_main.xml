@@ -23,7 +23,7 @@
         tools:layout_editor_absoluteY="647dp" />
 
     <Button
-        android:id="@+id/nMinus"
+        android:id="@+id/nSub"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="-"
@@ -144,7 +144,7 @@
         tools:layout_editor_absoluteY="582dp" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/et1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
