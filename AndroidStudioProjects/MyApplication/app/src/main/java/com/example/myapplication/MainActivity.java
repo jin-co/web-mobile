@@ -33,5 +33,22 @@ public class MainActivity extends AppCompatActivity {
 
         et1 = (EditText) findViewById(R.id.et1);
 
+        _addition.setOnClickListener(new view.OnClickListener() {
+          @override
+          public void oneClick(view v) {
+              if (n1.getText().toString().equals("") ||
+                  n2.getText().toString().equals("") ||
+              ) {
+
+              } else {
+                  n1.getText().toString();
+                  double a3 = 0;
+                  double a1 = Double.valueOf(n1.getText().toString());
+                  double a2 = Double.valueOf(n1.getText().toString());
+                  a3 = a1 + a2;
+                  n3.setText((String.valueOf(a3)));
+              }
+          }
+        })
     }
 }
