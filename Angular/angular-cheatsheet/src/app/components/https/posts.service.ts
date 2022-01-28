@@ -46,6 +46,7 @@ export class PostsService {
         {
           headers: new HttpHeaders({ 'Custom-Header': 'Hello' }),
           params: searchParams,
+          // params: new HttpParams({'Custom-Header': 'Hello'}),
           responseType: 'json'
         }
       )
