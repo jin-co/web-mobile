@@ -155,3 +155,7 @@ npm i `dependency`
 -> add `HttpClientModule` in the imports in app.module to use HTTP request
 -> add `HttpClient` as a parameter in the constructor in .ts file
 -> then use http.`methodName` to control http request
+
+8. Observable
+- npm i rxjs
+- npm i rxjs-compat
