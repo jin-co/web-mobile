@@ -12,32 +12,74 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    // Fields (class variable)
+    private TextView resultText;
+    private RadioButton radMale;
+    private RadioButton radFemale;
+    private EditText txtAge;
+    private EditText txtFeet;
+    private EditText txtInch;
+    private EditText txtWeight;
+    private Button calculate;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main); // calling xml file
 
-        TextView resultText = findViewById(R.id.txt_result);
-//        resultText.setText("result");
-
-        RadioButton radMale = findViewById(R.id.radio_male);
-        RadioButton radFemale = findViewById(R.id.radio_female);
-        EditText txtAge = findViewById(R.id.txt_age);
-        EditText txtFeet = findViewById(R.id.txt_feet);
-        EditText txtInch = findViewById(R.id.txt_inch);
-        EditText txtWeight = findViewById(R.id.txt_weight);
-        Button calculate = findViewById(R.id.btn_cal);
+        // find views
+//        TextView resultText = findViewById(R.id.txt_result);
+////        resultText.setText("result");
+//        RadioButton radMale = findViewById(R.id.radio_male);
+//        RadioButton radFemale = findViewById(R.id.radio_female);
+//        EditText txtAge = findViewById(R.id.txt_age);
+//        EditText txtFeet = findViewById(R.id.txt_feet);
+//        EditText txtInch = findViewById(R.id.txt_inch);
+//        EditText txtWeight = findViewById(R.id.txt_weight);
+//        Button calculate = findViewById(R.id.btn_cal);
+        findViews();
 
         // event listening
-        calculate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Wow", Toast.LENGTH_LONG).show();
-            }
-        });
+        setupButtonClickListener();
 
 
         // alert
 //        Toast.makeText(this, "Go", Toast.LENGTH_LONG).show();
     }
+
+    // getting items from the screen
+    private void findViews() {
+        resultText = findViewById(R.id.txt_result);
+        radMale = findViewById(R.id.radio_male);
+        radFemale = findViewById(R.id.radio_female);
+        txtAge = findViewById(R.id.txt_age);
+        txtFeet = findViewById(R.id.txt_feet);
+        txtInch = findViewById(R.id.txt_inch);
+        txtWeight = findViewById(R.id.txt_weight);
+        calculate = findViewById(R.id.btn_cal);
+    }
+
+    private void setupButtonClickListener() {
+        calculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                calculateBmi();
+            }
+        });
+    }
+
+    private void calculateBmi() {
+        int age = Integer.parseInt(txtAge.getText().toString());
+        int feet = Integer.parseInt(txtFeet.getText().toString());
+        int inches = Integer.parseInt(txtInch.getText().toString());
+        int weight = Integer.parseInt(txtWeight.getText().toString());
+        int totalInches = (feet * 12) + inches;
+        double heightInMeters = totalInches * 0.0254;
+        double bmi = weight / (heightInMeters * heightInMeters);
+3
+//        String.valueOf(bmi);
+        resultText.setText(
+                "BMI: " + bmi);
+    }
+
 }
