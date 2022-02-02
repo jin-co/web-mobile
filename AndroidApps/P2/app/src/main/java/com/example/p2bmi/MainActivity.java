@@ -3,6 +3,7 @@ package com.example.p2bmi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -26,6 +27,14 @@ public class MainActivity extends AppCompatActivity {
         EditText txtInch = findViewById(R.id.txt_inch);
         EditText txtWeight = findViewById(R.id.txt_weight);
         Button calculate = findViewById(R.id.btn_cal);
+
+        // event listening
+        calculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Wow", Toast.LENGTH_LONG).show();
+            }
+        });
 
 
         // alert
