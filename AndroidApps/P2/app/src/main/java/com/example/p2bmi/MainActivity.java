@@ -10,6 +10,8 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
+
 public class MainActivity extends AppCompatActivity {
 
     // Fields (class variable)
@@ -64,22 +66,51 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 calculateBmi();
+                int age = Integer.parseInt(txtAge.getText().toString());
+                if (age >= 18) {
+                    
+                } else {
+                    displayGuidance();
+                }
             }
         });
     }
 
+    private void displayGuidance() {
+        if (radMale.isChecked()) {
+            // display boy
+        } else if (radFemale.isChecked()) {
+
+        } else {
+
+        }
+    }
+
     private void calculateBmi() {
-        int age = Integer.parseInt(txtAge.getText().toString());
         int feet = Integer.parseInt(txtFeet.getText().toString());
         int inches = Integer.parseInt(txtInch.getText().toString());
         int weight = Integer.parseInt(txtWeight.getText().toString());
         int totalInches = (feet * 12) + inches;
         double heightInMeters = totalInches * 0.0254;
         double bmi = weight / (heightInMeters * heightInMeters);
-3
+
+        // formatting
+        DecimalFormat decimalFomatter = new DecimalFormat("0.00");
+
+        // converting to string
 //        String.valueOf(bmi);
-        resultText.setText(
-                "BMI: " + bmi);
+
+        // if
+        String status;
+        if (bmi < 18.5) {
+            status = decimalFomatter.format(bmi) + "underweight";
+        } else if (bmi > 25) {
+            status = decimalFomatter.format(bmi) + "overweight";
+        } else {
+            status = decimalFomatter.format(bmi) + "normal";
+        }
+
+        resultText.setText("BMI: " + status);
     }
 
 }
