@@ -11,23 +11,23 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     // Fields
-    EditText input;
-    TextView result;
-    Button calculate;
+    private EditText input;
+    private TextView result;
+    private Button calculate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getViews();
+        findViews();
         onCalculatedButtonClick();
     }
 
     // getting views
-    private void getViews () {
-        input.findViewById(R.id.eTxtInput);
-        result.findViewById(R.id.txtResult);
-        calculate.findViewById(R.id.btnCalculate);
+    private void findViews () {
+        input = findViewById(R.id.eTxtInput);
+        result = findViewById(R.id.txtResult);
+        calculate = findViewById(R.id.btnCalculate);
     }
 
     // click listener
@@ -42,6 +42,12 @@ public class MainActivity extends AppCompatActivity {
 
     // calculate
     private void calculate() {
-        Toast.makeText(this, "Go", Toast.LENGTH_LONG).show();
+        if (input.getText().toString().isEmpty()) {
+            Toast.makeText(MainActivity.this, "Enter input", Toast.LENGTH_LONG).show();
+        } else {
+            double value = Double.parseDouble(input.getText().toString());
+            double resultValue = value / 3.3;
+            result.setText(String.valueOf(resultValue));
+        }
     }
 }

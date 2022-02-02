@@ -10,7 +10,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Feet"
-        android:layout_margin="15dp"/>
+        android:layout_margin="15dp"
+        android:inputType="number"/>
 
     <TextView
         android:id="@+id/txtResult"
