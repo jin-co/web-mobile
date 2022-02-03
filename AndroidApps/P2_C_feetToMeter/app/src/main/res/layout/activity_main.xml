@@ -3,7 +3,11 @@
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_gravity="center_horizontal"    >
+    android:gravity="center"    >
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
 
     <EditText
         android:id="@+id/eTxtInput"
