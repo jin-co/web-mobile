@@ -11,7 +11,9 @@
         android:theme="@style/Theme.HungryAngry">
         <activity
             android:name=".DesertActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Desert"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".StarterActivity"
             android:exported="false"
