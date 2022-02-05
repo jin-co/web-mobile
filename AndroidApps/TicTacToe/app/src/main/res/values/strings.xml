@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Tic Tac Toe</string>
+    <string name="mainTitle">Tic Tac Toe</string>
+    <string name="startButton">Start</string>
+
+    <string name="setuptitle">Enter Player</string>
+    <string name="p1">Player 1</string>
+    <string name="p2">Player 2</string>
+    <string name="settingConfirmButton">OK</string>
+    <string name="namePlaceHolder">Enter player</string>
+
+    <string name="gamePlayAgain">Play Again</string>
+    <string name="gameHome">Home</string>
 </resources>
