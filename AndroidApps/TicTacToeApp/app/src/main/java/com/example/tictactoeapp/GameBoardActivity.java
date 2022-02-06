@@ -22,6 +22,7 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_board);
         findViews();
+
     }
 
     // find views
@@ -33,6 +34,7 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
             String buttonId = "btn" + i;
             int resourceId = getResources().getIdentifier(buttonId, "id", getPackageName());
             buttons[i - 1] = findViewById(resourceId);
+            buttons[i - 1].setTag("K");
             buttons[i - 1].setOnClickListener(this);
         }
         btn_reset.setOnClickListener(this);
@@ -41,29 +43,93 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
     @Override
     public void onClick(View view) {
         String btnText = ((Button) view).getText().toString();
-        gameStatus.setText("Player " + turn + "'s turn");
+        if (btnText == "Reset") {
+            gameStatus.setText("hh");
+            resetGame();
+        }
+
         if (!gameOver) {
             if (btnText == "") {
                 if (turn == 1) {
                     ((Button) view).setText("X");
-                    Log.i("test", view.toString());
                     ((Button) view).setTextColor(Color.parseColor("#ff0000"));
+                    ((Button) view).setTag("X");
                     turn = 2;
                 } else {
                     ((Button) view).setText("O");
                     ((Button) view).setTextColor(Color.parseColor("#0000ff"));
+                    ((Button) view).setTag("O");
                     turn = 1;
                 }
             }
             checkWinner();
+            gameStatus.setText("Player " + turn + "'s turn");
         }
     }
 
     private void checkWinner() {
-        if (buttons[0].getText() == buttons[1].getText() &&
-                buttons[1].getText() == buttons[2].getText()) {
-            btn_reset.setText("won");
-            gameOver = true;
+        Log.i("test", "first hi");
+        int[][] winningPattern = {
+                {0, 1, 2},
+                {3, 4, 5},
+                {6, 7, 8},
+                {0, 3, 6},
+                {1, 4, 7},
+                {2, 5, 8},
+                {0, 4, 8},
+                {2, 4, 6}
+        };
+
+        for (int i = 0; i < winningPattern.length; i++) {
+            int value1 = winningPattern[i][0];
+            int value2 = winningPattern[i][1];
+            int value3 = winningPattern[i][2];
+//            Log.i("test",
+//                    " val1: " + value1 +
+//                    " val2: " + value2 +
+//                    " val3: " + value3
+//                    );
+//
+//            Log.i("test",
+//                    " btnVal1: " + buttons[value1].getText().toString() +
+//                            " btnVal2: " + buttons[value2].getText().toString() +
+//                            " btnVal3: " + buttons[value3].getText().toString()
+//            );
+
+//            boolean equalTest = buttons[value1].getText() == buttons[value2].getText() &&
+//                    buttons[value2].getText() == buttons[value3].getText();
+//            Log.i("test",
+//                    "Equal: " + equalTest
+//            );
+
+            boolean te = buttons[value1].getText() == "";
+            Log.i("test",
+                    "ValBtnText: " + value1 + " " + te
+            );
+
+            if (buttons[value1].getText() == buttons[value2].getText() &&
+                    buttons[value2].getText() == buttons[value3].getText()) {
+
+
+                if (buttons[value1].getText() != "") {
+                    btn_reset.setText("X won" );
+//                    if (buttons[value1].getText() == "x") {
+//                        gameStatus.setText("X won" );
+//                    } else {
+//                        gameStatus.setText("Y won" );
+//                    }
+                }
+            } else {
+
+            }
         }
+    }
+
+    private void resetGame() {
+        for (int i = 0; i < buttons.length; i++) {
+            buttons[i].setText("");
+        }
+        turn = 1;
+        gameStatus.setText("Player " + turn + "'s turn");
     }
 }
