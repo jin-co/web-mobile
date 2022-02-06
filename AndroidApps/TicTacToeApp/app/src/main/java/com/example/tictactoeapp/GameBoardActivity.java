@@ -11,8 +11,10 @@ import android.widget.TextView;
 
 public class GameBoardActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button[] buttons;
+    private Button[] buttons = new Button[9];
     private Button btn_reset;
+    int turn = 1;
+    boolean gameOver = false;
     TextView gameStatus;
 
     @Override
@@ -27,34 +29,41 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
         gameStatus = findViewById(R.id.txt_view_status);
         btn_reset = findViewById(R.id.btn_reset);
 
-//        buttons = new Button[] {
-//                findViewById(R.id.btn1),
-//                findViewById(R.id.btn2),
-//                findViewById(R.id.btn3),
-//                findViewById(R.id.btn4),
-//                findViewById(R.id.btn5),
-//                findViewById(R.id.btn6),
-//                findViewById(R.id.btn7),
-//                findViewById(R.id.btn8),
-//                findViewById(R.id.btn9),
-//        };
-//
-//        for (int i = 0; i < buttons.length; i++) {
-//            buttons[i].setOnClickListener(this);
-//        }
-
         for (int i = 1; i < buttons.length + 1; i++) {
             String buttonId = "btn" + i;
             int resourceId = getResources().getIdentifier(buttonId, "id", getPackageName());
             buttons[i - 1] = findViewById(resourceId);
             buttons[i - 1].setOnClickListener(this);
         }
+        btn_reset.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
-        Log.i("test", view + "clicked");
-        ((Button) view).setText("X");
-        ((Button) view).setTextColor(Color.parseColor("#ff0000"));
+        String btnText = ((Button) view).getText().toString();
+        gameStatus.setText("Player " + turn + "'s turn");
+        if (!gameOver) {
+            if (btnText == "") {
+                if (turn == 1) {
+                    ((Button) view).setText("X");
+                    Log.i("test", view.toString());
+                    ((Button) view).setTextColor(Color.parseColor("#ff0000"));
+                    turn = 2;
+                } else {
+                    ((Button) view).setText("O");
+                    ((Button) view).setTextColor(Color.parseColor("#0000ff"));
+                    turn = 1;
+                }
+            }
+            checkWinner();
+        }
+    }
+
+    private void checkWinner() {
+        if (buttons[0].getText() == buttons[1].getText() &&
+                buttons[1].getText() == buttons[2].getText()) {
+            btn_reset.setText("won");
+            gameOver = true;
+        }
     }
 }
