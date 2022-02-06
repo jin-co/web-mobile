@@ -7,6 +7,8 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
@@ -16,6 +18,8 @@ public class GameBoard extends View {
     private final int xColor;
     private final int oColor;
     private final int winningLineColor;
+
+    private boolean winningLine = false;
 
     private final Paint paint = new Paint();
     private int cellSize = getWidth() / 3;
@@ -82,14 +86,23 @@ public class GameBoard extends View {
             int row = (int) Math.ceil(y / cellSize);
             int col = (int) Math.ceil(x / cellSize);
 
-            if (game.updateGameBoard(row, col)) {
-                invalidate();
-                if (game.getPlayer() % 2 == 0) {
-                    game.setPlayer(game.getPlayer() - 1);
-                } else {
-                    game.setPlayer(game.getPlayer() + 1);
+            if (!winningLine) {
+                if (game.updateGameBoard(row, col)) {
+                    invalidate();
+
+                    if (game.winnerCheck()) {
+                        winningLine = true;
+                        invalidate();
+                    }
+
+                    if (game.getPlayer() % 2 == 0) {
+                        game.setPlayer(game.getPlayer() - 1);
+                    } else {
+                        game.setPlayer(game.getPlayer() + 1);
+                    }
                 }
             }
+
             invalidate();
             return true;
         }
@@ -160,5 +173,21 @@ public class GameBoard extends View {
                 (col * cellSize + cellSize),
                 (row * cellSize + cellSize),
                 paint);
+    }
+
+    public void setUpGame(
+            Button playAgain,
+            Button home,
+            TextView display,
+            String[] names) {
+        game.setPlayAgain(playAgain);
+        game.setHome(home);
+        game.setPlayerTurn(display);
+        game.setDefaultPlayerNames(names);
+    }
+
+    public void resetGame() {
+        game.resetGame();
+        winningLine = false;
     }
 }
