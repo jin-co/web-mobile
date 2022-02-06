@@ -12,7 +12,8 @@
         <activity
             android:name=".GameBoardActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity"
+            android:label="Play"/>
         <activity
             android:name=".MainActivity"
             android:exported="true" >
