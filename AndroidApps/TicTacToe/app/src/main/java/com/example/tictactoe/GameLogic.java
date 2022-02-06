@@ -8,6 +8,8 @@ public class GameLogic {
     private int[][] gameBoard;
     private int player = 1;
 
+    private int[] winType = {-1, -1, -1};
+
     private Button playAgain;
     private Button home;
     private TextView playerTurn;
@@ -56,6 +58,7 @@ public class GameLogic {
             if (gameBoard[i][0] == gameBoard[i][1]
                     && gameBoard[i][0] == gameBoard[i][2]
                     && gameBoard[i][0] != 0) {
+                winType = new int[]{i, 0, 1};
                 isWinner = true;
             }
         }
@@ -64,6 +67,7 @@ public class GameLogic {
             if (gameBoard[0][j] == gameBoard[1][j]
                     && gameBoard[0][j] == gameBoard[2][j]
                     && gameBoard[0][j] != 0) {
+                winType = new int[]{0, j, 2};
                 isWinner = true;
             }
         }
@@ -71,12 +75,14 @@ public class GameLogic {
         if (gameBoard[0][0] == gameBoard[1][1]
                 && gameBoard[0][0] == gameBoard[2][2]
                 && gameBoard[0][0] != 0) {
+            winType = new int[]{0, 2, 3};
             isWinner = true;
         }
 
         if (gameBoard[2][0] == gameBoard[1][1]
                 && gameBoard[2][0] == gameBoard[0][2]
                 && gameBoard[2][0] != 0) {
+            winType = new int[]{2, 2, 4};
             isWinner = true;
         }
 
@@ -139,5 +145,9 @@ public class GameLogic {
 
     public void setPlayer(int player) {
         this.player = player;
+    }
+
+    public int[] getWinType() {
+        return winType;
     }
 }
