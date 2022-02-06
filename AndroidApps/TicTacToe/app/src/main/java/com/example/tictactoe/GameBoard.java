@@ -150,17 +150,17 @@ public class GameBoard extends View {
         paint.setColor(xColor);
 
         canvas.drawLine(
-                (col + 1) * cellSize,
-                row * cellSize,
-                col * cellSize,
-                (row + 1) * cellSize,
+                (float)((col + 1) * (cellSize * 0.2)),
+                (float)(row * (cellSize * 0.2)),
+                (float)(col * (cellSize * 0.2)),
+                (float)((row + 1) * (cellSize * 0.2)),
                 paint);
 
         canvas.drawLine(
-                col * cellSize,
-                row * cellSize,
-                (col + 1) * cellSize,
-                (row + 1) * cellSize,
+                (float)(col * (cellSize * 0.2)),
+                (float)(row * (cellSize * 0.2)),
+                (float)((col + 1) * (cellSize * 0.2)),
+                (float)((row + 1) * (cellSize * 0.2)),
                 paint);
     }
 
