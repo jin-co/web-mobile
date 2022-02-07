@@ -17,6 +17,7 @@ import android.widget.TextView;
 public class GameBoardActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button[] buttons = new Button[9];
+    private Button btnReset;
     int turn = 1;
     boolean gameOver = false;
     TextView gameStatus;
@@ -67,6 +68,7 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
         buttons[8].setText(savedInstanceState.getString("btn9", ""));
 
         setButtonColor();
+        setNewGameButtonVisibility();
     }
 
     @Override
@@ -115,20 +117,10 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
 
     /* Custom Methods */
 
-    // sets the color of the button when the activity status is changed
-    private void setButtonColor() {
-        for (Button btn: buttons) {
-            if (btn.getText() == "X") {
-                btn.setTextColor(Color.parseColor("#ff0000"));
-            } else {
-                btn.setTextColor(Color.parseColor("#0000ff"));
-            }
-        }
-    }
-
     // finds views and adds an event to the buttons array
     private void findViews() {
         gameStatus = findViewById(R.id.txt_view_status);
+        btnReset = findViewById(R.id.btn_reset);
 
         for (int i = 1; i < buttons.length + 1; i++) {
             String buttonId = "btn" + i;
@@ -170,6 +162,28 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
                 gameStatus.setText("Tie");
                 gameOver = true;
             }
+
+            setNewGameButtonVisibility();
+        }
+    }
+
+    // sets the color of the button when the activity status is changed
+    private void setButtonColor() {
+        for (Button btn: buttons) {
+            if (btn.getText() == "X") {
+                btn.setTextColor(Color.parseColor("#ff0000"));
+            } else {
+                btn.setTextColor(Color.parseColor("#0000ff"));
+            }
+        }
+    }
+    
+    // hides New Game button during game and shows when the game ends
+    private void setNewGameButtonVisibility() {
+        if (!gameOver) {
+            btnReset.setVisibility(View.INVISIBLE);
+        } else {
+            btnReset.setVisibility(View.VISIBLE);
         }
     }
 
