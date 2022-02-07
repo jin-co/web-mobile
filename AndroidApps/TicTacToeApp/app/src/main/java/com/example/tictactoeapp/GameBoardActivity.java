@@ -177,7 +177,7 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
             }
         }
     }
-    
+
     // hides New Game button during game and shows when the game ends
     private void setNewGameButtonVisibility() {
         if (!gameOver) {
