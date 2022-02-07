@@ -16,6 +16,7 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
     int turn = 1;
     boolean gameOver = false;
     TextView gameStatus;
+    private int gameIndex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,6 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
             String buttonId = "btn" + i;
             int resourceId = getResources().getIdentifier(buttonId, "id", getPackageName());
             buttons[i - 1] = findViewById(resourceId);
-            buttons[i - 1].setTag("K");
             buttons[i - 1].setOnClickListener(this);
         }
         btn_reset.setOnClickListener(this);
@@ -53,17 +53,16 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
                 if (turn == 1) {
                     ((Button) view).setText("X");
                     ((Button) view).setTextColor(Color.parseColor("#ff0000"));
-                    ((Button) view).setTag("X");
-                    turn = 2;
+                    gameIndex++;
                 } else {
                     ((Button) view).setText("O");
                     ((Button) view).setTextColor(Color.parseColor("#0000ff"));
-                    ((Button) view).setTag("O");
-                    turn = 1;
+                    gameIndex++;
                 }
             }
-            checkWinner();
+            turn = (turn == 1) ? 2:1;
             gameStatus.setText("Player " + turn + "'s turn");
+            checkWinner();
         }
     }
 
@@ -102,26 +101,25 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
 //                    "Equal: " + equalTest
 //            );
 
-            boolean te = buttons[value1].getText() == "";
-            Log.i("test",
-                    "ValBtnText: " + value1 + " " + te
-            );
+//            boolean te = buttons[value1].getText() == "";
+//            Log.i("test",
+//                    "ValBtnText: " + value1 + " " + te
+//            );
 
             if (buttons[value1].getText() == buttons[value2].getText() &&
                     buttons[value2].getText() == buttons[value3].getText()) {
-
-
                 if (buttons[value1].getText() != "") {
-                    btn_reset.setText("X won" );
-//                    if (buttons[value1].getText() == "x") {
-//                        gameStatus.setText("X won" );
-//                    } else {
-//                        gameStatus.setText("Y won" );
-//                    }
+                    turn = (turn == 1) ? 2:1;
+                    gameStatus.setText("Player " + turn + " Won");
+                    gameOver = true;
                 }
-            } else {
-
             }
+
+            if (gameIndex > 8) {
+                gameStatus.setText("Tie");
+                gameOver = true;
+            }
+
         }
     }
 
