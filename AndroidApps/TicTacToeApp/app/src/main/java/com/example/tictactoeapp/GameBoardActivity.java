@@ -1,5 +1,6 @@
 package com.example.tictactoeapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
@@ -23,7 +24,54 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_board);
         findViews();
+    }
 
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("test", turn);
+        outState.putBoolean("gameover", gameOver);
+        outState.putString("game_status", gameStatus.getText().toString());
+
+        outState.putString("btn1", buttons[0].getText().toString());
+        outState.putString("btn2", buttons[1].getText().toString());
+        outState.putString("btn3", buttons[2].getText().toString());
+        outState.putString("btn4", buttons[3].getText().toString());
+        outState.putString("btn5", buttons[4].getText().toString());
+        outState.putString("btn6", buttons[5].getText().toString());
+        outState.putString("btn7", buttons[6].getText().toString());
+        outState.putString("btn8", buttons[7].getText().toString());
+        outState.putString("btn9", buttons[8].getText().toString());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        turn = savedInstanceState.getInt("test", 0);
+        gameOver = savedInstanceState.getBoolean("gameover", false);
+        gameStatus.setText(savedInstanceState.getString("game_status", "Player 1 's turn"));
+
+        buttons[0].setText(savedInstanceState.getString("btn1", ""));
+        buttons[1].setText(savedInstanceState.getString("btn2", ""));
+        buttons[2].setText(savedInstanceState.getString("btn3", ""));
+        buttons[3].setText(savedInstanceState.getString("btn4", ""));
+        buttons[4].setText(savedInstanceState.getString("btn5", ""));
+        buttons[5].setText(savedInstanceState.getString("btn6", ""));
+        buttons[6].setText(savedInstanceState.getString("btn7", ""));
+        buttons[7].setText(savedInstanceState.getString("btn8", ""));
+        buttons[8].setText(savedInstanceState.getString("btn9", ""));
+
+        setButtonColor();
+    }
+
+    private void setButtonColor() {
+        for (Button btn: buttons) {
+            if (btn.getText() == "X") {
+                btn.setTextColor(Color.parseColor("#ff0000"));
+            } else {
+                btn.setTextColor(Color.parseColor("#0000ff"));
+            }
+        }
     }
 
     // find views
