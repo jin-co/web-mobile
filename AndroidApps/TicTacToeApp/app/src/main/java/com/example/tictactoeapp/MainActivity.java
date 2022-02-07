@@ -13,6 +13,10 @@ public class MainActivity extends AppCompatActivity {
     * Author: Kwangjin Baek
     * Date: 2022. Feb. 7.
     * Description: Tic Tac Toe game application
+    * Enhancement:
+    * - styling
+    * - go back feature
+    * - separate activities for start game and play game
     * */
 
     @Override
