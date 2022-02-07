@@ -3,9 +3,13 @@ package com.example.tictactoeapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -16,7 +20,7 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
     int turn = 1;
     boolean gameOver = false;
     TextView gameStatus;
-    private int gameIndex;
+    private int gameIndex = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +32,8 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt("test", turn);
+        outState.putInt("turn", turn);
+        outState.putInt("game_index", gameIndex);
         outState.putBoolean("gameover", gameOver);
         outState.putString("game_status", gameStatus.getText().toString());
 
@@ -46,7 +51,8 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        turn = savedInstanceState.getInt("test", 0);
+        turn = savedInstanceState.getInt("turn", 0);
+        gameIndex = savedInstanceState.getInt("game_index", 0);
         gameOver = savedInstanceState.getBoolean("gameover", false);
         gameStatus.setText(savedInstanceState.getString("game_status", "Player 1 's turn"));
 
@@ -83,6 +89,28 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
                 checkWinner();
             }
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.item1:
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.item2:
+                resetGame();
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     /* Custom Methods */
@@ -145,13 +173,19 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
         }
     }
 
+    // handles the New Game button click event
+    public void onNewGameClick(View view) {
+        resetGame();
+    }
+
     // resets game by setting values to the default values
-    public void resetGame(View view) {
+    public void resetGame() {
         for (int i = 0; i < buttons.length; i++) {
             buttons[i].setText("");
         }
         turn = 1;
         gameStatus.setText("Player " + turn + "'s turn");
         gameOver = false;
+        gameIndex = 0;
     }
 }
