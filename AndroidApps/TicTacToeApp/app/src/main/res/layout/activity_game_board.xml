@@ -15,27 +15,28 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:textSize="50sp"
             android:id="@+id/btn1"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:backgroundTint="#99A799" />
+            android:backgroundTint="#99A799"
+            android:textSize="50sp" />
 
         <Button
-            android:textSize="50sp"
             android:id="@+id/btn2"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:backgroundTint="#99A799" />
+            android:backgroundTint="#99A799"
+            android:textSize="50sp" />
 
         <Button
-            android:textSize="50sp"
             android:id="@+id/btn3"
             android:layout_width="100dp"
+
             android:layout_height="100dp"
-            android:backgroundTint="#99A799" />
+            android:backgroundTint="#99A799"
+            android:textSize="50sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -47,27 +48,27 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
         <Button
-            android:textSize="50sp"
             android:id="@+id/btn4"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:backgroundTint="#99A799" />
+            android:backgroundTint="#99A799"
+            android:textSize="50sp" />
 
         <Button
-            android:textSize="50sp"
             android:id="@+id/btn5"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:backgroundTint="#99A799" />
+            android:backgroundTint="#99A799"
+            android:textSize="50sp" />
 
         <Button
-            android:textSize="50sp"
             android:id="@+id/btn6"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:backgroundTint="#99A799" />
+            android:backgroundTint="#99A799"
+            android:textSize="50sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -79,27 +80,27 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
         <Button
-            android:textSize="50sp"
             android:id="@+id/btn7"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:backgroundTint="#99A799" />
+            android:backgroundTint="#99A799"
+            android:textSize="50sp" />
 
         <Button
-            android:textSize="50sp"
             android:id="@+id/btn8"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:backgroundTint="#99A799" />
+            android:backgroundTint="#99A799"
+            android:textSize="50sp" />
 
         <Button
-            android:textSize="50sp"
             android:id="@+id/btn9"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:backgroundTint="#99A799" />
+            android:backgroundTint="#99A799"
+            android:textSize="50sp" />
     </LinearLayout>
 
     <Button
@@ -109,6 +110,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:backgroundTint="#69DADB"
+        android:onClick="resetGame"
         android:text="@string/btn_reset"
         android:textColor="#000"
         android:textSize="30sp"

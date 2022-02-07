@@ -9,6 +9,12 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
+    /*
+    * Author: Kwangjin Baek
+    * Date: 2022. Feb. 7.
+    * Description: Tic Tac Toe game application
+    * */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

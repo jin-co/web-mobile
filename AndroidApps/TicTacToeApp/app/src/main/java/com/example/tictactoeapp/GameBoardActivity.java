@@ -13,7 +13,6 @@ import android.widget.TextView;
 public class GameBoardActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button[] buttons = new Button[9];
-    private Button btn_reset;
     int turn = 1;
     boolean gameOver = false;
     TextView gameStatus;
@@ -64,37 +63,9 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
         setButtonColor();
     }
 
-    private void setButtonColor() {
-        for (Button btn: buttons) {
-            if (btn.getText() == "X") {
-                btn.setTextColor(Color.parseColor("#ff0000"));
-            } else {
-                btn.setTextColor(Color.parseColor("#0000ff"));
-            }
-        }
-    }
-
-    // find views
-    private void findViews() {
-        gameStatus = findViewById(R.id.txt_view_status);
-        btn_reset = findViewById(R.id.btn_reset);
-
-        for (int i = 1; i < buttons.length + 1; i++) {
-            String buttonId = "btn" + i;
-            int resourceId = getResources().getIdentifier(buttonId, "id", getPackageName());
-            buttons[i - 1] = findViewById(resourceId);
-            buttons[i - 1].setOnClickListener(this);
-        }
-        btn_reset.setOnClickListener(this);
-    }
-
     @Override
     public void onClick(View view) {
         String btnText = ((Button) view).getText().toString();
-        if (btnText == "Reset") {
-            gameStatus.setText("hh");
-            resetGame();
-        }
 
         if (!gameOver) {
             if (btnText == "") {
@@ -107,13 +78,39 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
                     ((Button) view).setTextColor(Color.parseColor("#0000ff"));
                     gameIndex++;
                 }
+                turn = (turn == 1) ? 2:1;
+                gameStatus.setText("Player " + turn + "'s turn");
+                checkWinner();
             }
-            turn = (turn == 1) ? 2:1;
-            gameStatus.setText("Player " + turn + "'s turn");
-            checkWinner();
         }
     }
 
+    /* Custom Methods */
+
+    // sets the color of the button when the activity status is changed
+    private void setButtonColor() {
+        for (Button btn: buttons) {
+            if (btn.getText() == "X") {
+                btn.setTextColor(Color.parseColor("#ff0000"));
+            } else {
+                btn.setTextColor(Color.parseColor("#0000ff"));
+            }
+        }
+    }
+
+    // finds views and adds an event to the buttons array
+    private void findViews() {
+        gameStatus = findViewById(R.id.txt_view_status);
+
+        for (int i = 1; i < buttons.length + 1; i++) {
+            String buttonId = "btn" + i;
+            int resourceId = getResources().getIdentifier(buttonId, "id", getPackageName());
+            buttons[i - 1] = findViewById(resourceId);
+            buttons[i - 1].setOnClickListener(this);
+        }
+    }
+
+    // checks if the game is finished
     private void checkWinner() {
         Log.i("test", "first hi");
         int[][] winningPattern = {
@@ -131,28 +128,6 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
             int value1 = winningPattern[i][0];
             int value2 = winningPattern[i][1];
             int value3 = winningPattern[i][2];
-//            Log.i("test",
-//                    " val1: " + value1 +
-//                    " val2: " + value2 +
-//                    " val3: " + value3
-//                    );
-//
-//            Log.i("test",
-//                    " btnVal1: " + buttons[value1].getText().toString() +
-//                            " btnVal2: " + buttons[value2].getText().toString() +
-//                            " btnVal3: " + buttons[value3].getText().toString()
-//            );
-
-//            boolean equalTest = buttons[value1].getText() == buttons[value2].getText() &&
-//                    buttons[value2].getText() == buttons[value3].getText();
-//            Log.i("test",
-//                    "Equal: " + equalTest
-//            );
-
-//            boolean te = buttons[value1].getText() == "";
-//            Log.i("test",
-//                    "ValBtnText: " + value1 + " " + te
-//            );
 
             if (buttons[value1].getText() == buttons[value2].getText() &&
                     buttons[value2].getText() == buttons[value3].getText()) {
@@ -167,15 +142,16 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
                 gameStatus.setText("Tie");
                 gameOver = true;
             }
-
         }
     }
 
-    private void resetGame() {
+    // resets game by setting values to the default values
+    public void resetGame(View view) {
         for (int i = 0; i < buttons.length; i++) {
             buttons[i].setText("");
         }
         turn = 1;
         gameStatus.setText("Player " + turn + "'s turn");
+        gameOver = false;
     }
 }
