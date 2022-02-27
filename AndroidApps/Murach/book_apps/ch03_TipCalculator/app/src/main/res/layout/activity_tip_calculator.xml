@@ -12,29 +12,29 @@
     <!-- The bill amount -->
 
     <TextView
+        android:id="@+id/billAmountLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/bill_amount_label"
-        android:id="@+id/billAmountLabel"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:paddingTop="10dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:paddingTop="10dp"
+        android:text="@string/bill_amount_label"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <EditText
+        android:id="@+id/billAmountEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:ems="8"
-        android:id="@+id/billAmountEditText"
-        android:text="@string/bill_amount"
-        android:textSize="20sp"
         android:layout_alignTop="@+id/billAmountLabel"
-        android:layout_toRightOf="@+id/billAmountLabel"
+        android:layout_marginLeft="16dp"
         android:layout_toEndOf="@+id/billAmountLabel"
-        android:layout_marginLeft="16dp" />
+        android:layout_toRightOf="@+id/billAmountLabel"
+        android:ems="8"
+        android:inputType="numberDecimal"
+        android:text="@string/bill_amount"
+        android:textSize="20sp" />
 
     <!-- The tip percent -->
 
@@ -60,13 +60,13 @@
         android:textSize="20sp" />
 
     <Button
+        android:id="@+id/percentDownButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:text="@string/decrease"
-        android:id="@+id/percentDownButton"
         android:layout_below="@+id/billAmountEditText"
-        android:layout_toLeftOf="@+id/percentUpButton"
         android:layout_toStartOf="@+id/percentUpButton"
+        android:layout_toLeftOf="@+id/percentUpButton"
+        android:text="@string/decrease"
         android:textSize="20sp" />
 
     <Button
