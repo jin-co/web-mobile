@@ -13,11 +13,11 @@ public class MainActivity extends AppCompatActivity {
 
         // Project list
         Project[] projects = {
-                new Project("Start", "Very First", 1);
-                new Project("Vin", "Very First", 2);
-                new Project("BMI", "Very First", 3);
-                new Project("Inches", "Very First", 4);
-                new Project("Angry Hungry", "Very First", 5);
+                new Project("Start", "Very First", R.drawable.getting_started),
+                new Project("Vin", "Very First", R.drawable.quote),
+                new Project("BMI", "Very First", R.drawable.calculator),
+                new Project("Inches", "Very First", R.drawable.tape),
+                new Project("Angry Hungry", "Very First", R.drawable.hungry_developer)
         };
     }
 }
