@@ -24,5 +24,8 @@ public class MainActivity extends AppCompatActivity {
                 new Project("Inches", "Very First", R.drawable.tape),
                 new Project("Angry Hungry", "Very First", R.drawable.hungry_developer)
         };
+
+        ProfileAdapter adapter = new ProfileAdapter(projects);
+        list.setAdapter(adapter);
     }
 }
