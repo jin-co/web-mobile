@@ -14,7 +14,8 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.murach.invoice.InvoiceTotalActivity"
-            android:label="@string/title_activity_invoice_total" >
+            android:label="@string/title_activity_invoice_total"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

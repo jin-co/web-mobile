@@ -1,0 +1,43 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\jin\\Documents\\GitHub\\web-mobile\\AndroidApps\\Murach\\ex_starts\\ch03_ex1_Invoice\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\jin\\Documents\\GitHub\\web-mobile\\AndroidApps\\Murach\\ex_starts\\ch03_ex1_Invoice\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "19",
+                        "endColumns": "77",
+                        "endOffsets": "92"
+                    },
+                    "to": {
+                        "startLines": "13",
+                        "startColumns": "4",
+                        "startOffsets": "640",
+                        "endColumns": "76",
+                        "endOffsets": "712"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\jin\\Documents\\GitHub\\web-mobile\\AndroidApps\\Murach\\ex_starts\\ch03_ex1_Invoice\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "3,14,9,13,8,4,12,7,5,15,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "59,575,363,525,294,111,483,241,163,626,430",
+                        "endColumns": "50,49,65,48,67,50,40,51,70,39,45",
+                        "endOffsets": "105,620,424,569,357,157,519,288,229,661,471"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,106,156,222,271,339,390,431,483,554,594",
+                        "endColumns": "50,49,65,48,67,50,40,51,70,39,45",
+                        "endOffsets": "101,151,217,266,334,385,426,478,549,589,635"
+                    }
+                }
+            ]
+        }
+    ]
+}

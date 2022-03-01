@@ -53,8 +53,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/subtotalLabel"
-        android:layout_alignBottom="@+id/subtotalLabel"
         android:layout_alignLeft="@+id/discountPercentTextView"
+        android:layout_alignBottom="@+id/subtotalLabel"
         android:layout_alignParentRight="true"
         android:ems="10"
         android:inputType="numberDecimal"
@@ -87,8 +87,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/totalLabel"
-        android:layout_alignBottom="@+id/totalLabel"
         android:layout_alignLeft="@+id/discountAmountTextView"
+        android:layout_alignBottom="@+id/totalLabel"
         android:text="@string/total"
         android:textSize="15sp" />
 
