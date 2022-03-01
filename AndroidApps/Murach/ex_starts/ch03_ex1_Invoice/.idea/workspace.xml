@@ -5,49 +5,27 @@
       <config />
     </shared>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c226f02e-d9ee-4467-918f-d0fcd1392f41" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../../book_apps/ch03_TipCalculator/.idea/assetWizardSettings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/app/ch03_ex1_Invoice.app.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/com/murach/invoice/BuildConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../P4Recycle/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../P4Recycle/app/src/main/res/drawable-nodpi/amazon.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../P4Recycle/app/src/main/res/drawable-nodpi/iceland.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../P4Recycle/app/src/main/res/drawable-nodpi/japan.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../P4Recycle/app/src/main/res/drawable-nodpi/kerala.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../P4Recycle/app/src/main/res/drawable-nodpi/kilimanjaro.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../P4Recycle/app/src/main/res/drawable-nodpi/northern_lights.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../P4Recycle/app/src/main/res/drawable-nodpi/road_trip.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../P4Recycle/app/src/main/res/drawable-nodpi/scubadive.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../P4Recycle/app/src/main/res/drawable-nodpi/skydive.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../P4Recycle/app/src/main/res/drawable-nodpi/vietnam.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book_apps/ch03_TipCalculator/.idea/modules/app/ch03_TipCalculator.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../book_apps/ch03_TipCalculator/.idea/modules/app/ch03_TipCalculator.app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book_apps/ch03_TipCalculator/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../book_apps/ch03_TipCalculator/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../book_apps/ch03_TipCalculator/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../book_apps/ch03_TipCalculator/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.2/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.2/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.2/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/murach/invoice/InvoiceTotalActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/murach/invoice/InvoiceTotalActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_invoice_total.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_invoice_total.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ch03_ex1_Invoice.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ch03_ex1_Invoice.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../P4Recycle/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../P4Recycle/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../P4Recycle/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../P4Recycle/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../P4Recycle/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../P4Recycle/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../P4Recycle/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../P4Recycle/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/apk/debug/app-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +35,7 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\jin\.android\avd\Galaxy_Nexus_API_23.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\jin\.android\avd\Pixel_2_API_30.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -2080,6 +2058,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -2091,12 +2070,6 @@
           <url>file://$PROJECT_DIR$/app/src/main/java/com/murach/invoice/InvoiceTotalActivity.java</url>
           <line>38</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-method">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/murach/invoice/InvoiceTotalActivity.java</url>
-          <line>16</line>
-          <properties class="com.murach.invoice.InvoiceTotalActivity" method="onCreate" />
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
