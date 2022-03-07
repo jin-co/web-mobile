@@ -1,0 +1,4 @@
+#Mon Mar 07 10:18:52 EST 2022
+base.0=C\:\\Users\\jin\\Documents\\GitHub\\web-mobile\\AndroidApps\\Murach\\ex_solutions\\ch03_ex1_Invoice_sol\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
