@@ -9,7 +9,8 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".TipCalculatorActivity"
-            android:label="@string/title_activity_tip_calculator" >
+            android:label="@string/title_activity_tip_calculator"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

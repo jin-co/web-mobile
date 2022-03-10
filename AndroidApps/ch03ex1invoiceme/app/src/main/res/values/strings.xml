@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ch03 ex1 invoice me</string>
+    <string name="discount_percent">Discount Percent</string>
 </resources>

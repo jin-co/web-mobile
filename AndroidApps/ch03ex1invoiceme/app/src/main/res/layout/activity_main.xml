@@ -22,7 +22,7 @@
         android:layout_alignLeft="@+id/subtotalLabel"
         android:layout_below="@+id/subtotalLabel"
         android:layout_marginTop="16dp"
-        android:text="Discount Percent"
+        android:text="@string/discount_percent"
         android:textSize="15sp"
         android:textStyle="bold" />
 
