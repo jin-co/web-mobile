@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Murach Layout Me</string>
+    
+    <string-array name="locations">
+        <item>London</item>
+        <item>Paris</item>
+        <item>Tokyo</item>
+        <item>Toronto</item>
+    </string-array>
 </resources>

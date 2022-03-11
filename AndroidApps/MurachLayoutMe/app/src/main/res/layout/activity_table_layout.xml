@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--attributes
+layout_span: specifies the number of cols that the widget should use
+-->
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableRow>
+        <TextView
+            android:text="Bill"
+            />
+        <EditText
+            android:text="bill amount"
+            android:layout_span="3"/>
+
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="What"/>
+        <TextView
+            android:text="What"/>
+        <TextView
+            android:text="What"/>
+        <TextView
+            android:text="What"/>
+    </TableRow>
+
+</TableLayout>

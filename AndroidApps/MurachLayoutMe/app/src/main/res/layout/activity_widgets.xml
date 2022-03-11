@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- attributes
+    inputType: input type -> this determines the type of soft keyboard displayed
+    -> text (any text)
+    -> textPersonName (name)
+    -> textEmailAddress
+    -> textMultiline (multiple line text)
+    -> number (any number)
+    -> numberDecimal
+    -> phone
+    -> date
+    -> time
+    lines: the number of lines displayed by the editable text view
+
+    * to change how the soft keyboard shows
+    -> go to AndroidManifest.xml
+    -> add "windowSoftInputMode"
+    - -> stateHidden (always hidden)
+    - -> stateVisible (always visible)
+    - -> statedUnchanged (only show when it was previously open)
+    -->
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="Check" />
+    <!--    In Java file, use isChecked()-->
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="one" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="two" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="three" />
+    </RadioGroup>
+    <!--    in Java file
+        .setChecked(true) : to check or uncheck
+        .isChecked()
+    -->
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <!--    to add items
+            Add <string-array> and <item> in the String.xml
+            then add the item in the Java file
+    -->
+
+    <!--    attributes
+    max (sets the max value)
+    progress (sets the value of the seek bar)
+    -->
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:max="30"
+        android:progress="15" />
+    <!--    In Java file
+            .setProgress(20);
+            int progress = .getProgress();
+    -->
+
+    <!--    attributes
+    contentDescription (displays a text when the image wasn't able to show
+    src
+    -->
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher_foreground" />
+</LinearLayout>
