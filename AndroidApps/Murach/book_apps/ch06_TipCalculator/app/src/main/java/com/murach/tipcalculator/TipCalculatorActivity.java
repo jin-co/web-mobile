@@ -4,6 +4,7 @@ import java.text.NumberFormat;
 
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnKeyListener;
 import android.view.inputmethod.EditorInfo;
@@ -11,6 +12,8 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -26,7 +29,7 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.widget.Toast;
 
-public class TipCalculatorActivity extends Activity 
+public class TipCalculatorActivity extends Activity
 implements OnEditorActionListener, OnSeekBarChangeListener, 
 OnCheckedChangeListener, OnItemSelectedListener, OnKeyListener {
 
@@ -43,6 +46,8 @@ OnCheckedChangeListener, OnItemSelectedListener, OnKeyListener {
     private Spinner splitSpinner;
     private TextView perPersonLabel;
     private TextView perPersonTextView;
+    private CheckBox remember;
+    private SeekBar seek;
     
     // define the SharedPreferences object
     private SharedPreferences savedValues;
@@ -80,6 +85,8 @@ OnCheckedChangeListener, OnItemSelectedListener, OnKeyListener {
         splitSpinner = (Spinner) findViewById(R.id.splitSpinner);
         perPersonLabel = (TextView) findViewById(R.id.perPersonLabel);
         perPersonTextView = (TextView) findViewById(R.id.perPersonTextView);
+        remember = (CheckBox) findViewById(R.id.checkBox_remember);
+        seek = (SeekBar) findViewById(R.id.seek_bar);
 
         // set array adapter for spinner
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
@@ -96,6 +103,10 @@ OnCheckedChangeListener, OnItemSelectedListener, OnKeyListener {
         roundingRadioGroup.setOnCheckedChangeListener(this);
         roundingRadioGroup.setOnKeyListener(this);
         splitSpinner.setOnItemSelectedListener(this);
+//        ButtonListner buttonListner = new ButtonListener(); // using custom class
+//        percentUpButton.setOnClickListener(buttonListner);
+
+
         
         // get SharedPreferences object
         savedValues = getSharedPreferences("SavedValues", MODE_PRIVATE);
@@ -204,7 +215,9 @@ OnCheckedChangeListener, OnItemSelectedListener, OnKeyListener {
         NumberFormat percent = NumberFormat.getPercentInstance();
         percentTextView.setText(percent.format(tipPercent));
     }
-    
+
+    /************************* high level *************************/
+
     //*****************************************************
     // Event handler for the EditText
     //*****************************************************
@@ -244,16 +257,33 @@ OnCheckedChangeListener, OnItemSelectedListener, OnKeyListener {
         switch (checkedId) {
             case R.id.roundNoneRadioButton:
                 rounding = ROUND_NONE;
-                break;                        
+                break;
             case R.id.roundTipRadioButton:
                 rounding = ROUND_TIP;
-                break;                        
+                break;
             case R.id.roundTotalRadioButton:
                 rounding = ROUND_TOTAL;
-                break;                        
+                break;
         }
         calculateAndDisplay();
     }
+
+    //*****************************************************
+    // Event handler for the check box
+    //*****************************************************
+//    @Override
+//    public void onCheckedChanged(CompoundButton widget, boolean isChecked) {
+//        switch (widget.getId()) {
+//            case R.id.checkBox_remember:
+//                if (isChecked) {
+//                    remember = true;
+//                } else {
+//                    remember = false;
+//                }
+//                break;
+//        }
+//        calculateAndDisplay();
+//    }
 
     //*****************************************************
     // Event handler for the Spinner
@@ -263,13 +293,20 @@ OnCheckedChangeListener, OnItemSelectedListener, OnKeyListener {
             long id) {
         split = position + 1;
         calculateAndDisplay();
-    }
+    } // onItemSelected: executed when the spinner is first displayed or new item is selected (not for already selected one)
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
         // Do nothing
-    }
-    
+    } // onNothingSelected: executed when the selection disappears
+
+
+    //*****************************************************
+    // Event handler for the seek bar
+    //*****************************************************
+
+    /************************* low level *************************/
+
     //*****************************************************
     // Event handler for the keyboard and DPad
     //*****************************************************
@@ -298,5 +335,13 @@ OnCheckedChangeListener, OnItemSelectedListener, OnKeyListener {
         }
         // don't consume the event
         return false;
+    }
+
+    //*****************************************************
+    // Event handler for the touch
+    //*****************************************************
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return super.onTouchEvent(event);
     }
 }

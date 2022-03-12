@@ -1,12 +1,12 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="10dp" >
+        android:padding="10dp">
 
         <!-- The bill amount -->
 
@@ -29,7 +29,7 @@
             android:ems="8"
             android:inputType="numberDecimal"
             android:text="@string/bill_amount"
-            android:textSize="20sp" >
+            android:textSize="20sp">
 
             <requestFocus />
         </EditText>
@@ -40,8 +40,8 @@
             android:id="@+id/percentLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/billAmountLabel"
             android:layout_below="@+id/billAmountLabel"
+            android:layout_alignLeft="@+id/billAmountLabel"
             android:padding="10dp"
             android:text="@string/tip_percent_label"
             android:textSize="20sp"
@@ -61,8 +61,8 @@
             android:id="@+id/percentSeekBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
             android:layout_alignTop="@+id/percentLabel"
+            android:layout_alignParentRight="true"
             android:layout_toRightOf="@+id/percentTextView"
             android:max="30"
             android:padding="10dp"
@@ -74,8 +74,8 @@
             android:id="@+id/tipLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/percentLabel"
             android:layout_below="@+id/percentLabel"
+            android:layout_alignLeft="@+id/percentLabel"
             android:padding="10dp"
             android:text="@string/tip_amount_label"
             android:textSize="20sp"
@@ -97,8 +97,8 @@
             android:id="@+id/totalLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/tipLabel"
             android:layout_below="@+id/tipLabel"
+            android:layout_alignLeft="@+id/tipLabel"
             android:padding="10dp"
             android:text="@string/total_amount_label"
             android:textSize="20sp"
@@ -120,8 +120,8 @@
             android:id="@+id/separatorLine"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_alignLeft="@+id/totalLabel"
             android:layout_below="@+id/totalLabel"
+            android:layout_alignLeft="@+id/totalLabel"
             android:background="@android:color/black"
             android:padding="5dp" />
 
@@ -131,8 +131,8 @@
             android:id="@+id/roundingLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/separatorLine"
             android:layout_below="@+id/separatorLine"
+            android:layout_alignLeft="@+id/separatorLine"
             android:padding="10dp"
             android:text="@string/round_label"
             android:textSize="20sp"
@@ -144,7 +144,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/totalLabel"
             android:layout_toRightOf="@+id/billAmountLabel"
-            android:padding="10dp" >
+            android:padding="10dp">
 
             <RadioButton
                 android:id="@+id/roundNoneRadioButton"
@@ -172,8 +172,8 @@
             android:id="@+id/splitLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/roundingLabel"
             android:layout_below="@+id/roundingRadioGroup"
+            android:layout_alignLeft="@+id/roundingLabel"
             android:padding="10dp"
             android:text="@string/split_label"
             android:textSize="20sp"
@@ -190,8 +190,8 @@
             android:id="@+id/perPersonLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/splitLabel"
             android:layout_below="@+id/splitLabel"
+            android:layout_alignLeft="@+id/splitLabel"
             android:padding="10dp"
             android:text="@string/per_person_label"
             android:textSize="20sp"
@@ -206,6 +206,21 @@
             android:padding="5dp"
             android:text="@string/per_person"
             android:textSize="20sp" />
+
+        <CheckBox
+            android:id="@+id/checkBox_remember"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/perPersonTextView"
+            android:text="Remember Tip %" />
+
+        <SeekBar
+            android:id="@+id/seek_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/checkBox_remember"
+            android:max="200"
+            android:progress="100" />
     </RelativeLayout>
 
 </ScrollView>
