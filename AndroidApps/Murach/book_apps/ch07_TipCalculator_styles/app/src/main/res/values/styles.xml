@@ -1,24 +1,58 @@
 <resources>
+
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar" />
+
+<!--    customizing Appcompat theme-->
+<!--    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar" >-->
+<!--        <item name="android:textViewStyle">@style/TextView</item>-->
+<!--        <item name="editTextStyle">@style/TextView</item>-->
+<!--        <item name="buttonStyle">@style/TextView</item>-->
+<!--    </style>-->
+
+    <!--    attribute
+    name (required / style)
+    parent (optional / the name of the style to inherit from)
+    -->
 
     <!-- Five custom styles -->
     <style name="TextView">
         <item name="android:textSize">20sp</item>
     </style>
-    
+
+<!--    <style name="TextView" parent="@android:style/Widget.TextView">-->
+<!--        <item name="android:textSize">20sp</item>-->
+<!--    </style>-->
+
     <style name="EditText" parent="@style/TextView" />
-    
+
+<!--    <style name="EditText" parent="@android:style/Widget.EditText">-->
+<!--        <item name="android:textSize">20sp</item>-->
+<!--    </style>-->
+
     <style name="Button" parent="@style/TextView">
         <item name="android:textStyle">bold</item>
     </style>
-    
+
+<!--    <style name="Button" parent="@android:style/Widget.Button">-->
+<!--        <item name="android:textSize">20sp</item>-->
+<!--        <item name="android:textStyle">bold</item>-->
+<!--    </style>-->
+
+<!--    this needs to be applied manually-->
     <style name="TextView.Label">
         <item name="android:textStyle">bold</item>
         <item name="android:padding">10dp</item>
     </style>
-    
+
     <style name="TextView.Label.Indent">
         <item name="android:layout_marginLeft">10dp</item>
     </style>
-    
+
+<!--    customizing bulit in styles-->
+    <style name="AppTheme." parent="android:Theme.Holo.Light.DarkActionBar">
+<!--        set new styles for three widgets in the theme-->
+        <item name="android:textViewStyle">@style/TextView</item>
+        <item name="android:editTextStyle">@style/TextView</item>
+        <item name="android:buttonStyle">@style/TextView</item>
+    </style>
 </resources>

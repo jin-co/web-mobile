@@ -13,67 +13,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5e1ef6a-e06d-4451-81d6-e720598cbaa0" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/libraries/Gradle__android_arch_core_common_1_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/libraries/Gradle__android_arch_core_runtime_1_1_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/libraries/Gradle__android_arch_lifecycle_common_1_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/libraries/Gradle__android_arch_lifecycle_livedata_1_1_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/libraries/Gradle__android_arch_lifecycle_livedata_core_1_1_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_1_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/libraries/Gradle__android_arch_lifecycle_viewmodel_1_1_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/libraries/Gradle__com_android_support_appcompat_v7_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/libraries/Gradle__com_android_support_asynclayoutinflater_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/libraries/Gradle__com_android_support_collections_28_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/libraries/Gradle__com_android_support_coordinatorlayout_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/libraries/Gradle__com_android_support_cursoradapter_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/libraries/Gradle__com_android_support_customview_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/libraries/Gradle__com_android_support_documentfile_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/libraries/Gradle__com_android_support_drawerlayout_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/libraries/Gradle__com_android_support_interpolator_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/libraries/Gradle__com_android_support_loader_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/libraries/Gradle__com_android_support_localbroadcastmanager_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/libraries/Gradle__com_android_support_print_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/libraries/Gradle__com_android_support_slidingpanelayout_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/libraries/Gradle__com_android_support_support_annotations_28_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/libraries/Gradle__com_android_support_support_compat_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/libraries/Gradle__com_android_support_support_core_ui_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/libraries/Gradle__com_android_support_support_core_utils_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/libraries/Gradle__com_android_support_support_fragment_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/libraries/Gradle__com_android_support_support_vector_drawable_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/libraries/Gradle__com_android_support_swiperefreshlayout_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/libraries/Gradle__com_android_support_versionedparcelable_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/libraries/Gradle__com_android_support_viewpager_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/modules/app/ch06_TipCalculator.app.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/app/ch07_TipCalculator_styles.app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch06_TipCalculator/app/app.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch06_TipCalculator/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../ch06_TipCalculator/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch06_TipCalculator/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch06_TipCalculator/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch06_TipCalculator/app/src/main/java/com/murach/tipcalculator/TipCalculatorActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ch06_TipCalculator/app/src/main/java/com/murach/tipcalculator/TipCalculatorActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch06_TipCalculator/app/src/main/res/layout/activity_tip_calculator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch06_TipCalculator/app/src/main/res/layout/activity_tip_calculator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch06_TipCalculator/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../ch06_TipCalculator/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch06_TipCalculator/ch06_TipCalculator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch06_TipCalculator/ch06_TipCalculator.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch06_TipCalculator/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../ch06_TipCalculator/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ch07_TipCalculator_styles.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ch07_TipCalculator_styles.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -2103,6 +2045,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
