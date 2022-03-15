@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background">#A6D39D</color>
+    <color name="dark">#000000</color>
+    <color name="light">#FFFFFF</color>
+    <color name="primary">#141315</color>
+    <color name="secondary">#736C6B</color>
+    <color name="tertiary">#DDE0CE</color>
+    <string name="app_name">Tip Calculator</string>
+    <string name="bill_amount">32.60</string>
+    <string name="bill_amount_label">Bill Amount</string>
+    <string name="decrease">-</string>
+    <string name="increase">+</string>
+    <string name="menu_settings">Settings</string>
+    <string name="tip_amount">$0.00</string>
+    <string name="tip_amount_label">Tip</string>
+    <string name="tip_percent">15%</string>
+    <string name="tip_percent_label">Percent</string>
+    <string name="title_activity_tip_calculator">Tip Calculator</string>
+    <string name="total_amount">$0.00</string>
+    <string name="total_amount_label">Total</string>
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <!-- API 15-20 theme customizations go here -->
+    </style>
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- Theme customizations NOT specific to a particular API -->
+
+        <!-- Set new styles for three widgets in the theme -->
+        <item name="android:textViewStyle">@style/TextView</item>
+        <item name="android:editTextStyle">@style/EditText</item>
+        <item name="android:buttonStyle">@style/Button</item>
+    </style>
+    <style name="Button" parent="@android:style/Widget.Button">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="EditText" parent="@android:style/Widget.EditText">
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="TextView" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="TextView.Label">  
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">10dp</item>
+    </style>
+</resources>

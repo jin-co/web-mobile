@@ -1,0 +1,30 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar" />
+
+    <style name="TextView">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="EditText" parent="@style/TextView" />
+
+
+    <style name="Button" parent="@style/TextView">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextView.Label">
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="TextView.Label.Indent">
+        <item name="android:layout_marginLeft">10dp</item>
+    </style>
+
+    <style name="AppTheme." parent="android:Theme.Holo.Light.DarkActionBar">
+        <item name="android:textViewStyle">@style/TextView</item>
+        <item name="android:editTextStyle">@style/TextView</item>
+        <item name="android:buttonStyle">@style/TextView</item>
+    </style>
+</resources>

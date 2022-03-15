@@ -1,0 +1,4 @@
+#Tue Mar 15 17:04:27 EDT 2022
+base.0=C\:\\Users\\jin\\Documents\\GitHub\\web-mobile\\AndroidApps\\Murach\\book_apps\\ch07_TipCalculator_themes1\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
