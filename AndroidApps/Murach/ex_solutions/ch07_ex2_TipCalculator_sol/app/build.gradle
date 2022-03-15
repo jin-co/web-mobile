@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
+    compileSdkVersion 32
 
     defaultConfig {
         applicationId "com.murach.tipcalculator"
         minSdkVersion 15
-        targetSdkVersion 23
+        targetSdkVersion 32
     }
 
     buildTypes {
@@ -17,5 +17,8 @@ android {
     }
 }
 dependencies {
-    compile 'com.android.support:appcompat-v7:23.0.1'
+    implementation 'androidx.appcompat:appcompat:1.6.0-alpha01'
+
+    //noinspection GradleCompatible
+//    compile 'com.android.support:appcompat-v7:23.0.1'
 }

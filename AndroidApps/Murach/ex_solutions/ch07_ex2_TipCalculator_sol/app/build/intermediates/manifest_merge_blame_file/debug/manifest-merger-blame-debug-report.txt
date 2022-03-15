@@ -1,0 +1,72 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.murach.tipcalculator"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="15"
+8-->C:\Users\jin\Documents\GitHub\web-mobile\AndroidApps\Murach\ex_solutions\ch07_ex2_TipCalculator_sol\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="32" />
+9-->C:\Users\jin\Documents\GitHub\web-mobile\AndroidApps\Murach\ex_solutions\ch07_ex2_TipCalculator_sol\app\src\main\AndroidManifest.xml
+10
+11    <application
+11-->C:\Users\jin\Documents\GitHub\web-mobile\AndroidApps\Murach\ex_solutions\ch07_ex2_TipCalculator_sol\app\src\main\AndroidManifest.xml:6:5-21:19
+12        android:allowBackup="true"
+12-->C:\Users\jin\Documents\GitHub\web-mobile\AndroidApps\Murach\ex_solutions\ch07_ex2_TipCalculator_sol\app\src\main\AndroidManifest.xml:10:9-35
+13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+13-->[androidx.core:core:1.9.0-alpha01] C:\Users\jin\.gradle\caches\transforms-3\58581fd82e5c613edc874fc6eb4f3a13\transformed\core-1.9.0-alpha01\AndroidManifest.xml:24:18-86
+14        android:debuggable="true"
+15        android:icon="@drawable/ic_launcher"
+15-->C:\Users\jin\Documents\GitHub\web-mobile\AndroidApps\Murach\ex_solutions\ch07_ex2_TipCalculator_sol\app\src\main\AndroidManifest.xml:7:9-45
+16        android:label="@string/app_name"
+16-->C:\Users\jin\Documents\GitHub\web-mobile\AndroidApps\Murach\ex_solutions\ch07_ex2_TipCalculator_sol\app\src\main\AndroidManifest.xml:8:9-41
+17        android:testOnly="true"
+18        android:theme="@style/AppTheme" >
+18-->C:\Users\jin\Documents\GitHub\web-mobile\AndroidApps\Murach\ex_solutions\ch07_ex2_TipCalculator_sol\app\src\main\AndroidManifest.xml:9:9-40
+19        <activity
+19-->C:\Users\jin\Documents\GitHub\web-mobile\AndroidApps\Murach\ex_solutions\ch07_ex2_TipCalculator_sol\app\src\main\AndroidManifest.xml:11:9-20:20
+20            android:name="com.murach.tipcalculator.TipCalculatorActivity"
+20-->C:\Users\jin\Documents\GitHub\web-mobile\AndroidApps\Murach\ex_solutions\ch07_ex2_TipCalculator_sol\app\src\main\AndroidManifest.xml:12:13-50
+21            android:exported="true"
+21-->C:\Users\jin\Documents\GitHub\web-mobile\AndroidApps\Murach\ex_solutions\ch07_ex2_TipCalculator_sol\app\src\main\AndroidManifest.xml:15:13-36
+22            android:label="@string/app_name"
+22-->C:\Users\jin\Documents\GitHub\web-mobile\AndroidApps\Murach\ex_solutions\ch07_ex2_TipCalculator_sol\app\src\main\AndroidManifest.xml:13:13-45
+23            android:windowSoftInputMode="stateUnchanged" >
+23-->C:\Users\jin\Documents\GitHub\web-mobile\AndroidApps\Murach\ex_solutions\ch07_ex2_TipCalculator_sol\app\src\main\AndroidManifest.xml:14:13-57
+24            <intent-filter>
+24-->C:\Users\jin\Documents\GitHub\web-mobile\AndroidApps\Murach\ex_solutions\ch07_ex2_TipCalculator_sol\app\src\main\AndroidManifest.xml:16:13-19:29
+25                <action android:name="android.intent.action.MAIN" />
+25-->C:\Users\jin\Documents\GitHub\web-mobile\AndroidApps\Murach\ex_solutions\ch07_ex2_TipCalculator_sol\app\src\main\AndroidManifest.xml:17:17-69
+25-->C:\Users\jin\Documents\GitHub\web-mobile\AndroidApps\Murach\ex_solutions\ch07_ex2_TipCalculator_sol\app\src\main\AndroidManifest.xml:17:25-66
+26
+27                <category android:name="android.intent.category.LAUNCHER" />
+27-->C:\Users\jin\Documents\GitHub\web-mobile\AndroidApps\Murach\ex_solutions\ch07_ex2_TipCalculator_sol\app\src\main\AndroidManifest.xml:18:17-77
+27-->C:\Users\jin\Documents\GitHub\web-mobile\AndroidApps\Murach\ex_solutions\ch07_ex2_TipCalculator_sol\app\src\main\AndroidManifest.xml:18:27-74
+28            </intent-filter>
+29        </activity>
+30
+31        <provider
+31-->[androidx.emoji2:emoji2:1.2.0-alpha01] C:\Users\jin\.gradle\caches\transforms-3\7257e3d87025e7d135ca94f013c80b5b\transformed\emoji2-1.2.0-alpha01\AndroidManifest.xml:26:9-34:20
+32            android:name="androidx.startup.InitializationProvider"
+32-->[androidx.emoji2:emoji2:1.2.0-alpha01] C:\Users\jin\.gradle\caches\transforms-3\7257e3d87025e7d135ca94f013c80b5b\transformed\emoji2-1.2.0-alpha01\AndroidManifest.xml:27:13-67
+33            android:authorities="com.murach.tipcalculator.androidx-startup"
+33-->[androidx.emoji2:emoji2:1.2.0-alpha01] C:\Users\jin\.gradle\caches\transforms-3\7257e3d87025e7d135ca94f013c80b5b\transformed\emoji2-1.2.0-alpha01\AndroidManifest.xml:28:13-68
+34            android:exported="false" >
+34-->[androidx.emoji2:emoji2:1.2.0-alpha01] C:\Users\jin\.gradle\caches\transforms-3\7257e3d87025e7d135ca94f013c80b5b\transformed\emoji2-1.2.0-alpha01\AndroidManifest.xml:29:13-37
+35            <meta-data
+35-->[androidx.emoji2:emoji2:1.2.0-alpha01] C:\Users\jin\.gradle\caches\transforms-3\7257e3d87025e7d135ca94f013c80b5b\transformed\emoji2-1.2.0-alpha01\AndroidManifest.xml:31:13-33:52
+36                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+36-->[androidx.emoji2:emoji2:1.2.0-alpha01] C:\Users\jin\.gradle\caches\transforms-3\7257e3d87025e7d135ca94f013c80b5b\transformed\emoji2-1.2.0-alpha01\AndroidManifest.xml:32:17-75
+37                android:value="androidx.startup" />
+37-->[androidx.emoji2:emoji2:1.2.0-alpha01] C:\Users\jin\.gradle\caches\transforms-3\7257e3d87025e7d135ca94f013c80b5b\transformed\emoji2-1.2.0-alpha01\AndroidManifest.xml:33:17-49
+38            <meta-data
+38-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\jin\.gradle\caches\transforms-3\30d54f463dd29bfb0e1a99d2b7654f72\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+39                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+39-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\jin\.gradle\caches\transforms-3\30d54f463dd29bfb0e1a99d2b7654f72\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+40                android:value="androidx.startup" />
+40-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\jin\.gradle\caches\transforms-3\30d54f463dd29bfb0e1a99d2b7654f72\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+41        </provider>
+42    </application>
+43
+44</manifest>

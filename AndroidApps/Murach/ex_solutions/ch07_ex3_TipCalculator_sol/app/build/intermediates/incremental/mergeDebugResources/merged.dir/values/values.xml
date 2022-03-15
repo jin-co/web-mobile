@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#000000</color>
+    <color name="orange_bg">#F7BE81</color>
+    <color name="orange_btn_btm">#FA8258</color>
+    <color name="orange_btn_pressed">#FF8000</color>
+    <color name="orange_btn_top">#FAAC58</color>
+    <color name="white">#FFFFFF</color>
+    <string name="app_name">Tip Calculator</string>
+    <string name="bill_amount">32.60</string>
+    <string name="bill_amount_label">Bill Amount</string>
+    <string name="decrease">-</string>
+    <string name="increase">+</string>
+    <string name="menu_settings">Settings</string>
+    <string name="tip_amount">$0.00</string>
+    <string name="tip_amount_label">Tip</string>
+    <string name="tip_percent">15%</string>
+    <string name="tip_percent_label">Percent</string>
+    <string name="title_activity_tip_calculator">Tip Calculator</string>
+    <string name="total_amount">$0.00</string>
+    <string name="total_amount_label">Total</string>
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <!-- Theme customizations NOT specific to a particular API -->
+        
+        <!-- Set new styles for the theme text appearance -->
+        <item name="android:textAppearanceSmall">
+                     @style/TextAppearanceSmall</item>
+        <item name="android:textAppearanceSmallInverse">
+                     @style/TextAppearanceSmallInverse</item>
+        <item name="android:textAppearanceMedium">
+                     @style/TextAppearanceMedium</item>
+        <item name="android:textAppearanceMediumInverse">
+                     @style/TextAppearanceMediumInverse</item>
+        <item name="android:textAppearance">
+                     @style/TextAppearance</item>
+    </style>
+    <style name="TextAppearance" parent="@android:style/TextAppearance">
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="TextAppearanceMedium" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="TextAppearanceMediumInverse" parent="@android:style/TextAppearance.Medium.Inverse">
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="TextAppearanceSmall" parent="@android:style/TextAppearance.Small">
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="TextAppearanceSmallInverse" parent="@android:style/TextAppearance.Small.Inverse">
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="TextView" parent="@android:style/Widget.TextView"/>
+    <style name="TextView.Label">  
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">10dp</item>
+    </style>
+</resources>

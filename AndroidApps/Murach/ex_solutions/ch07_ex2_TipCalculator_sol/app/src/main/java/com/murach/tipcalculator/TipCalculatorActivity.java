@@ -11,9 +11,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
-import android.support.v7.app.AppCompatActivity;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class TipCalculatorActivity extends AppCompatActivity
 implements OnEditorActionListener, OnClickListener {
