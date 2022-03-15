@@ -13,45 +13,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5e1ef6a-e06d-4451-81d6-e720598cbaa0" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../MidCalculator/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch07_TipCalculator_themes1/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch07_TipCalculator_themes1/.idea/modules/app/ch07_TipCalculator_themes1.app.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch17_TipCalculator/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ch17_TipCalculator/.idea/modules/app/ch17_TipCalculator.app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MidCalculator/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MidCalculator/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MidCalculator/app/src/main/java/com/example/midcalculator/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MidCalculator/app/src/main/java/com/example/midcalculator/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MidCalculator/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MidCalculator/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MidCalculator/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MidCalculator/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MidCalculator/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MidCalculator/app/src/main/res/values/themes.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch06_TipCalculator/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch07_TipCalculator_themes1/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch07_TipCalculator_themes1/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch07_TipCalculator_themes1/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch07_TipCalculator_themes1/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch07_TipCalculator_themes1/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch07_TipCalculator_themes1/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch07_TipCalculator_themes1/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch07_TipCalculator_themes1/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch07_TipCalculator_themes1/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch07_TipCalculator_themes1/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch07_TipCalculator_themes1/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch07_TipCalculator_themes1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch07_TipCalculator_themes1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch07_TipCalculator_themes1/app/app.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch07_TipCalculator_themes1/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../ch07_TipCalculator_themes1/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch07_TipCalculator_themes1/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch07_TipCalculator_themes1/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch07_TipCalculator_themes1/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../ch07_TipCalculator_themes1/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch07_TipCalculator_themes1/ch07_TipCalculator_themes1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch07_TipCalculator_themes1/ch07_TipCalculator_themes1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch07_TipCalculator_themes1/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../ch07_TipCalculator_themes1/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch07_TipCalculator_themes1/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../ch07_TipCalculator_themes1/local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch17_TipCalculator/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch17_TipCalculator/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch17_TipCalculator/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch17_TipCalculator/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch17_TipCalculator/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch17_TipCalculator/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch17_TipCalculator/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch17_TipCalculator/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch17_TipCalculator/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch17_TipCalculator/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch17_TipCalculator/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch17_TipCalculator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch17_TipCalculator/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch17_TipCalculator/app/app.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch17_TipCalculator/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../ch17_TipCalculator/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch17_TipCalculator/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch17_TipCalculator/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch17_TipCalculator/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../ch17_TipCalculator/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch17_TipCalculator/ch17_TipCalculator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch17_TipCalculator/ch17_TipCalculator.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch17_TipCalculator/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../ch17_TipCalculator/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ch17_TipCalculator/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../ch17_TipCalculator/local.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ex_solutions/ch07_ex3_TipCalculator_sol/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../ex_solutions/ch07_ex3_TipCalculator_sol/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

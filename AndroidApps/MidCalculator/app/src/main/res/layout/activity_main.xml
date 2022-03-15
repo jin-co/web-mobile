@@ -51,7 +51,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/billAmountLabel"
-            android:max="100"
+            android:max="30"
+            android:progress="15"
             android:outlineSpotShadowColor="#ff0000"
             android:outlineAmbientShadowColor="#ff0000"/>
     </LinearLayout>
