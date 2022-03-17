@@ -1,16 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--attributes
+key: specifies the ID to access the preference
+title
+summary
+defaultValue
+dependency: specifies the key of the preference that the current preference depends upon
+************
+For ListPreference element
+dialogTitle: title of the dialog box
+entries
+entryValues
+-->
+
+<!--Save changes in setting are automatically saved-->
+
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <CheckBoxPreference
+        android:defaultValue="true"
         android:key="pref_remember_percent"
-        android:title="@string/remember_percent_title"
         android:summary="@string/remember_percent_summary"
-        android:defaultValue="true" />
+        android:title="@string/remember_percent_title" />
     <ListPreference
-        android:key="pref_rounding"
-        android:title="@string/rounding_title"
-        android:summary="@string/rounding_summary"
+        android:defaultValue="0"
         android:dialogTitle="@string/rounding_title"
         android:entries="@array/rounding_keys"
         android:entryValues="@array/rounding_values"
-        android:defaultValue="0" />
+        android:key="pref_rounding"
+        android:summary="@string/rounding_summary"
+        android:title="@string/rounding_title" />
+    <PreferenceCategory
+        android:key="category"
+        android:title="test">
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="percent"
+            android:summary="summary"
+            android:title="c title" />
+        <ListPreference
+            android:defaultValue="default"
+            android:dialogTitle="dialog"
+            android:entries="@array/rounding_keys"
+            android:entryValues="@array/rounding_values"
+            android:key="percent"
+            android:summary="summary"
+            android:title="title" />
+    </PreferenceCategory>
+
 </PreferenceScreen>

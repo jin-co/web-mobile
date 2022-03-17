@@ -1,0 +1,108 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\jin\\Documents\\GitHub\\web-mobile\\AndroidApps\\Murach\\ex_solutions\\ch08_ex2_TipCalculator_sol\\app\\build\\intermediates\\merged_res\\debug\\values-v14_values-v14.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\jin\\Documents\\GitHub\\web-mobile\\AndroidApps\\Murach\\ex_solutions\\ch08_ex2_TipCalculator_sol\\app\\src\\main\\res\\values-v14\\styles.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "19",
+                        "endColumns": "77",
+                        "endOffsets": "92"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "76",
+                        "endOffsets": "127"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\jin\\Documents\\GitHub\\web-mobile\\AndroidApps\\Murach\\ex_solutions\\ch08_ex2_TipCalculator_sol\\app\\build\\intermediates\\merged_res\\debug\\values-v11_values-v11.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\jin\\Documents\\GitHub\\web-mobile\\AndroidApps\\Murach\\ex_solutions\\ch08_ex2_TipCalculator_sol\\app\\src\\main\\res\\values-v11\\styles.xml",
+                    "from": {
+                        "startLines": "1,2",
+                        "startColumns": "4,4",
+                        "startOffsets": "17,82",
+                        "endColumns": "63,73",
+                        "endOffsets": "76,151"
+                    },
+                    "to": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,118",
+                        "endColumns": "62,72",
+                        "endOffsets": "113,186"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\jin\\Documents\\GitHub\\web-mobile\\AndroidApps\\Murach\\ex_solutions\\ch08_ex2_TipCalculator_sol\\app\\build\\intermediates\\merged_res\\debug\\values_values.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\jin\\Documents\\GitHub\\web-mobile\\AndroidApps\\Murach\\ex_solutions\\ch08_ex2_TipCalculator_sol\\app\\src\\main\\res\\values\\strings_activity_settings.xml",
+                    "from": {
+                        "startLines": "15,20,30,38,12,10,27,8,50,53,13,11,51,52,9,28,47,54,2",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "677,843,1177,1435,521,318,1038,168,1797,2016,587,455,1866,1958,225,1105,1664,2073,19",
+                        "endLines": "19,24,37,45,12,10,27,8,50,53,13,11,51,52,9,28,47,54,2",
+                        "endColumns": "19,19,19,19,64,135,65,55,67,55,86,64,90,56,91,68,80,54,60",
+                        "endOffsets": "837,983,1429,1656,581,449,1099,219,1860,2067,669,515,1952,2010,312,1169,1740,2123,75"
+                    },
+                    "to": {
+                        "startLines": "2,7,12,20,47,48,49,50,51,52,53,54,55,56,57,58,59,60,71",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,216,357,607,1584,1649,1785,1851,1907,1975,2031,2118,2183,2274,2331,2423,2492,2573,3250",
+                        "endLines": "6,11,19,27,47,48,49,50,51,52,53,54,55,56,57,58,59,60,71",
+                        "endColumns": "19,19,19,19,64,135,65,55,67,55,86,64,90,56,91,68,80,54,60",
+                        "endOffsets": "211,352,602,821,1644,1780,1846,1902,1970,2026,2113,2178,2269,2326,2418,2487,2568,2623,3306"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\jin\\Documents\\GitHub\\web-mobile\\AndroidApps\\Murach\\ex_solutions\\ch08_ex2_TipCalculator_sol\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "28,33,41,2,6,5,11,10,20,21,19,24,23,38,27,26,14,13,9,8,40,3,17,16",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "1170,1311,1554,56,247,188,434,394,739,785,687,907,834,1445,1079,1025,529,479,349,294,1498,109,634,580",
+                        "endLines": "32,37,41,2,6,5,11,10,20,21,19,24,23,38,27,26,14,13,9,8,40,3,17,16",
+                        "endColumns": "19,19,128,51,40,57,38,38,44,42,50,111,71,46,90,52,44,48,43,53,54,72,46,52",
+                        "endOffsets": "1306,1440,1678,103,283,241,468,428,779,823,733,1014,901,1487,1165,1073,569,523,388,343,1548,177,676,628"
+                    },
+                    "to": {
+                        "startLines": "28,33,38,39,40,41,42,43,44,45,46,61,62,63,64,65,66,67,68,69,70,72,73,74",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "826,964,1095,1224,1276,1309,1367,1406,1445,1490,1533,2628,2740,2812,2859,2950,3003,3048,3097,3141,3195,3311,3384,3431",
+                        "endLines": "32,37,38,39,40,41,42,43,44,45,46,61,62,63,64,65,66,67,68,69,70,72,73,74",
+                        "endColumns": "19,19,128,51,32,57,38,38,44,42,50,111,71,46,90,52,44,48,43,53,54,72,46,52",
+                        "endOffsets": "959,1090,1219,1271,1304,1362,1401,1440,1485,1528,1579,2735,2807,2854,2945,2998,3043,3092,3136,3190,3245,3379,3426,3479"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\jin\\Documents\\GitHub\\web-mobile\\AndroidApps\\Murach\\ex_solutions\\ch08_ex2_TipCalculator_sol\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "1,2",
+                        "startColumns": "4,4",
+                        "startOffsets": "17,77",
+                        "endColumns": "58,62",
+                        "endOffsets": "71,135"
+                    },
+                    "to": {
+                        "startLines": "75,76",
+                        "startColumns": "4,4",
+                        "startOffsets": "3484,3542",
+                        "endColumns": "57,61",
+                        "endOffsets": "3537,3599"
+                    }
+                }
+            ]
+        }
+    ]
+}

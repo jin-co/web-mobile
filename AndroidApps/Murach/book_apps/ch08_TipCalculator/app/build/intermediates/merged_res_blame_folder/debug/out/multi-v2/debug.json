@@ -1,0 +1,89 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\jin\\Documents\\GitHub\\web-mobile\\AndroidApps\\Murach\\book_apps\\ch08_TipCalculator\\app\\build\\intermediates\\merged_res\\debug\\values_values.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\jin\\Documents\\GitHub\\web-mobile\\AndroidApps\\Murach\\book_apps\\ch08_TipCalculator\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "29,34,41,2,6,5,11,10,22,21,25,24,28,27,14,13,9,8,40,19,3,17,16",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "1142,1283,1473,55,239,181,418,379,767,716,885,813,1051,998,507,458,335,281,1418,654,107,606,553",
+                        "endLines": "33,38,41,2,6,5,11,10,22,21,25,24,28,27,14,13,9,8,40,19,3,17,16",
+                        "endColumns": "19,19,128,51,40,57,38,38,44,50,111,71,90,52,44,48,43,53,54,60,72,46,52",
+                        "endOffsets": "1278,1412,1597,102,275,234,452,413,807,762,992,880,1137,1046,547,502,374,330,1468,710,175,648,601"
+                    },
+                    "to": {
+                        "startLines": "2,7,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,193,324,453,505,538,596,635,674,719,770,882,954,1045,1098,1143,1192,1236,1290,1345,1406,1479,1526",
+                        "endLines": "6,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32",
+                        "endColumns": "19,19,128,51,32,57,38,38,44,50,111,71,90,52,44,48,43,53,54,60,72,46,52",
+                        "endOffsets": "188,319,448,500,533,591,630,669,714,765,877,949,1040,1093,1138,1187,1231,1285,1340,1401,1474,1521,1574"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\jin\\Documents\\GitHub\\web-mobile\\AndroidApps\\Murach\\book_apps\\ch08_TipCalculator\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "1,2",
+                        "startColumns": "4,4",
+                        "startOffsets": "17,77",
+                        "endColumns": "58,62",
+                        "endOffsets": "71,135"
+                    },
+                    "to": {
+                        "startLines": "33,34",
+                        "startColumns": "4,4",
+                        "startOffsets": "1579,1637",
+                        "endColumns": "57,61",
+                        "endOffsets": "1632,1694"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\jin\\Documents\\GitHub\\web-mobile\\AndroidApps\\Murach\\book_apps\\ch08_TipCalculator\\app\\build\\intermediates\\merged_res\\debug\\values-v11_values-v11.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\jin\\Documents\\GitHub\\web-mobile\\AndroidApps\\Murach\\book_apps\\ch08_TipCalculator\\app\\src\\main\\res\\values-v11\\styles.xml",
+                    "from": {
+                        "startLines": "1,2",
+                        "startColumns": "4,4",
+                        "startOffsets": "17,82",
+                        "endColumns": "63,73",
+                        "endOffsets": "76,151"
+                    },
+                    "to": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,118",
+                        "endColumns": "62,72",
+                        "endOffsets": "113,186"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\jin\\Documents\\GitHub\\web-mobile\\AndroidApps\\Murach\\book_apps\\ch08_TipCalculator\\app\\build\\intermediates\\merged_res\\debug\\values-v14_values-v14.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\jin\\Documents\\GitHub\\web-mobile\\AndroidApps\\Murach\\book_apps\\ch08_TipCalculator\\app\\src\\main\\res\\values-v14\\styles.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "19",
+                        "endColumns": "77",
+                        "endOffsets": "92"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "76",
+                        "endOffsets": "127"
+                    }
+                }
+            ]
+        }
+    ]
+}

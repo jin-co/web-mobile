@@ -64,15 +64,19 @@ implements OnEditorActionListener, OnClickListener {
         
         // set the default values for the preferences
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
-        
         // get default SharedPreferences object
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
     }
 
+//    displays the menu
+    /*
+    * this runs only the first time the app runs. to update the menu every time
+    * it is displayed, override the onPrepareOptionsMenu
+    */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_tip_calculator, menu);
-        return true;
+        return true; //this must be true to display the menu
     }
     
     @Override
@@ -120,7 +124,7 @@ implements OnEditorActionListener, OnClickListener {
             billAmount = Float.parseFloat(billAmountString);
         }
         
-        // calculate tip and total
+        // calculate tip and total with rounding preference
         float tipAmount = 0;
         float totalAmount = 0;
         float tipPercentToDisplay = 0;
@@ -178,13 +182,14 @@ implements OnEditorActionListener, OnClickListener {
             break;
         }
     }
-    
+
+//    handles the menu item event
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_settings:
                 startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
-                return true;
+                return true; //true: stops the event <-> false: continues
             case R.id.menu_about:
                 startActivity(new Intent(getApplicationContext(), AboutActivity.class));
                 return true;
