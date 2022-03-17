@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "560790017676",
+    "project_id": "auth-3306f",
+    "storage_bucket": "auth-3306f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:560790017676:android:855b7f7b62a440ae488da9",
+        "android_client_info": {
+          "package_name": "com.jinco.chatsappfinal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "560790017676-c4c7livm05kibg4431nj8dmq88u616n5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxj03QD_60cZupBb9hK7MujhQds8_csCU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "560790017676-c4c7livm05kibg4431nj8dmq88u616n5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
