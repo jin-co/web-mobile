@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Chats App Final</string>
+    <string name="user_name">User Name</string>
+    <string name="user_age">Age</string>
+    <string name="user_gender">Gender</string>
+    <string name="save">Save</string>
+    <string name="edit">Edit</string>
+    <string-array name="gender_list">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
 </resources>
