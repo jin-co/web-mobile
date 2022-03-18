@@ -1,0 +1,45 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\jin\\Documents\\GitHub\\web-mobile\\AndroidApps\\Murach\\ex_solutions\\ch09_ex2_TipCalculator_sol\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\jin\\Documents\\GitHub\\web-mobile\\AndroidApps\\Murach\\ex_solutions\\ch09_ex2_TipCalculator_sol\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "1,2",
+                        "startColumns": "4,4",
+                        "startOffsets": "17,77",
+                        "endColumns": "58,62",
+                        "endOffsets": "71,135"
+                    },
+                    "to": {
+                        "startLines": "34,35",
+                        "startColumns": "4,4",
+                        "startOffsets": "1626,1684",
+                        "endColumns": "57,61",
+                        "endOffsets": "1679,1741"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\jin\\Documents\\GitHub\\web-mobile\\AndroidApps\\Murach\\ex_solutions\\ch09_ex2_TipCalculator_sol\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "29,34,42,2,6,5,11,10,20,19,25,24,39,28,27,14,13,9,8,41,22,3,17,16",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "1193,1334,1577,56,247,188,434,394,739,687,930,857,1468,1102,1048,529,479,349,294,1521,791,109,634,580",
+                        "endLines": "33,38,42,2,6,5,11,10,20,19,25,24,39,28,27,14,13,9,8,41,22,3,17,16",
+                        "endColumns": "19,19,128,51,40,57,38,38,44,50,111,71,46,90,52,44,48,43,53,54,60,72,46,52",
+                        "endOffsets": "1329,1463,1701,103,283,241,468,428,779,733,1037,924,1510,1188,1096,569,523,388,343,1571,847,177,676,628"
+                    },
+                    "to": {
+                        "startLines": "2,7,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,193,324,453,505,538,596,635,674,719,770,882,954,1001,1092,1145,1190,1239,1283,1337,1392,1453,1526,1573",
+                        "endLines": "6,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33",
+                        "endColumns": "19,19,128,51,32,57,38,38,44,50,111,71,46,90,52,44,48,43,53,54,60,72,46,52",
+                        "endOffsets": "188,319,448,500,533,591,630,669,714,765,877,949,996,1087,1140,1185,1234,1278,1332,1387,1448,1521,1568,1621"
+                    }
+                }
+            ]
+        }
+    ]
+}

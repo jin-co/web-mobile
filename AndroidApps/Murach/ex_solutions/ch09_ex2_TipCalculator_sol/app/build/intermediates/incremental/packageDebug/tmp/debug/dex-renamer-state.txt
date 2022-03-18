@@ -1,0 +1,4 @@
+#Fri Mar 18 09:31:35 EDT 2022
+base.0=C\:\\Users\\jin\\Documents\\GitHub\\web-mobile\\AndroidApps\\Murach\\ex_solutions\\ch09_ex2_TipCalculator_sol\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

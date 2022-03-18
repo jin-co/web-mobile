@@ -11,7 +11,8 @@
         android:allowBackup="true">
         <activity
             android:name="com.murach.tipcalculator.TipCalculatorActivity"
-            android:label="@string/title_activity_tip_calculator" >
+            android:label="@string/title_activity_tip_calculator"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

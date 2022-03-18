@@ -1,11 +1,255 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e24f431-949b-49f8-be6c-bca40f5415fd" name="Default" comment="" />
-    <ignored path="ch09_ex3_TipCalculator_sol.iws" />
-    <ignored path=".idea/workspace.xml" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
+    <list default="true" id="7e24f431-949b-49f8-be6c-bca40f5415fd" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/.gradle/7.2/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/.gradle/7.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/.idea/modules/app/ch09_ex2_TipCalculator_sol.app.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/generated/source/buildConfig/debug/com/murach/tipcalculator/BuildConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/annotation_processor_list/debug/annotationProcessors.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/apk/debug/app-debug.apk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/apk/debug/output-metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/apk_ide_redirect_file/debug/redirect.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/app_metadata/debug/app-metadata.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/compatible_screen_manifest/debug/output-metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_0/graph.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_1/graph.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_2/graph.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_3/graph.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_4/graph.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_5/graph.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/desugar_graph/debug/out/currentProject/jar_51a1f8c6eed1f83f768a86973349f314cbdf7155b03940572e1ef4f538bf8585_bucket_0/graph.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/desugar_graph/debug/out/currentProject/jar_51a1f8c6eed1f83f768a86973349f314cbdf7155b03940572e1ef4f538bf8585_bucket_1/graph.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/desugar_graph/debug/out/currentProject/jar_51a1f8c6eed1f83f768a86973349f314cbdf7155b03940572e1ef4f538bf8585_bucket_2/graph.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/desugar_graph/debug/out/currentProject/jar_51a1f8c6eed1f83f768a86973349f314cbdf7155b03940572e1ef4f538bf8585_bucket_3/graph.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/desugar_graph/debug/out/currentProject/jar_51a1f8c6eed1f83f768a86973349f314cbdf7155b03940572e1ef4f538bf8585_bucket_4/graph.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/desugar_graph/debug/out/currentProject/jar_51a1f8c6eed1f83f768a86973349f314cbdf7155b03940572e1ef4f538bf8585_bucket_5/graph.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/dex_archive_input_jar_hashes/debug/out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/dex_number_of_buckets_file/debug/out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/incremental/debug-mergeJavaRes/merge-state" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-land-v13/values-sw600dp-land-v13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-port-v13/values-sw600dp-port-v13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v11/values-v11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v14/values-v14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/incremental/mergeDebugShaders/merger.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/javaResources0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/javac/debug/classes/com/murach/tipcalculator/AboutActivity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/javac/debug/classes/com/murach/tipcalculator/AboutFragment.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/javac/debug/classes/com/murach/tipcalculator/BuildConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/javac/debug/classes/com/murach/tipcalculator/SettingsActivity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/javac/debug/classes/com/murach/tipcalculator/SettingsFragment.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/javac/debug/classes/com/murach/tipcalculator/TipCalculatorActivity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/javac/debug/classes/com/murach/tipcalculator/TipCalculatorFragment.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_java_res/debug/base.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_manifest/debug/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_manifests/debug/output-metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_res/debug/drawable-hdpi_ic_action_search.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_res/debug/drawable-hdpi_ic_launcher.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_res/debug/drawable-ldpi_ic_launcher.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_res/debug/drawable-mdpi_ic_action_search.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_res/debug/drawable-mdpi_ic_launcher.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_res/debug/drawable-xhdpi_ic_about.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_res/debug/drawable-xhdpi_ic_action_search.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_res/debug/drawable-xhdpi_ic_launcher.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_res/debug/drawable-xhdpi_ic_settings.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_res/debug/layout_activity_about.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_res/debug/layout_activity_main.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_res/debug/layout_activity_main_twopane_land.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_res/debug/layout_activity_main_twopane_port.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_res/debug/layout_activity_settings.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_res/debug/layout_fragment_about.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_res/debug/layout_fragment_tip_calculator.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_res/debug/menu_fragment_tip_calculator.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_res/debug/menu_fragment_tip_calculator_twopane.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_res/debug/values-sw600dp-land-v13_values-sw600dp-land-v13.arsc.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_res/debug/values-sw600dp-port-v13_values-sw600dp-port-v13.arsc.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_res/debug/values-v11_values-v11.arsc.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_res/debug/values-v14_values-v14.arsc.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_res/debug/values_values.arsc.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_res/debug/xml_preferences.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/debug.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values-sw600dp-land-v13.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values-sw600dp-port-v13.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values-v11.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values-v14.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/merged_res_blame_folder/debug/out/single/debug.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/navigation_json/debug/navigation.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/packaged_manifests/debug/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/packaged_manifests/debug/output-metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/processed_res/debug/out/output-metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/project_dex_archive/debug/out/14f1300cd5c0d9c0f0fb440c878dc8db4d143edd43bfe99edac5c63e8f8ac614_4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/project_dex_archive/debug/out/com/murach/tipcalculator/AboutActivity.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/project_dex_archive/debug/out/com/murach/tipcalculator/AboutFragment.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/project_dex_archive/debug/out/com/murach/tipcalculator/BuildConfig.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/project_dex_archive/debug/out/com/murach/tipcalculator/SettingsActivity.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/project_dex_archive/debug/out/com/murach/tipcalculator/SettingsFragment.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/project_dex_archive/debug/out/com/murach/tipcalculator/TipCalculatorActivity.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/project_dex_archive/debug/out/com/murach/tipcalculator/TipCalculatorFragment.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/runtime_symbol_list/debug/R.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/signing_config_versions/debug/signing-config-versions.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/intermediates/stable_resource_ids_file/debug/stableIds.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.2/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.2/dependencies-accessors/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.2/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.2/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.2/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.2/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.2/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/app/ch09_ex3_TipCalculator_sol.app.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/com/murach/tipcalculator/BuildConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/annotation_processor_list/debug/annotationProcessors.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/apk/debug/app-debug.apk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/apk/debug/output-metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/apk_ide_redirect_file/debug/redirect.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/app_metadata/debug/app-metadata.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/compatible_screen_manifest/debug/output-metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_0/graph.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_1/graph.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_2/graph.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_3/graph.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_4/graph.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/dirs_bucket_5/graph.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/jar_a1b115402fbe7ba44ccebbf9263c2d267c1be32ad2c3ff2e116a42296f48d609_bucket_0/graph.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/jar_a1b115402fbe7ba44ccebbf9263c2d267c1be32ad2c3ff2e116a42296f48d609_bucket_1/graph.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/jar_a1b115402fbe7ba44ccebbf9263c2d267c1be32ad2c3ff2e116a42296f48d609_bucket_2/graph.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/jar_a1b115402fbe7ba44ccebbf9263c2d267c1be32ad2c3ff2e116a42296f48d609_bucket_3/graph.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/jar_a1b115402fbe7ba44ccebbf9263c2d267c1be32ad2c3ff2e116a42296f48d609_bucket_4/graph.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/desugar_graph/debug/out/currentProject/jar_a1b115402fbe7ba44ccebbf9263c2d267c1be32ad2c3ff2e116a42296f48d609_bucket_5/graph.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/dex_archive_input_jar_hashes/debug/out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/dex_number_of_buckets_file/debug/out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/merge-state" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-land-v13/values-sw600dp-land-v13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-port-v13/values-sw600dp-port-v13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v11/values-v11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v14/values-v14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugShaders/merger.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/javaResources0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/murach/tipcalculator/AboutActivity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/murach/tipcalculator/BuildConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/murach/tipcalculator/SettingsActivity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/murach/tipcalculator/SettingsFragment.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/murach/tipcalculator/TipCalculatorActivity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/murach/tipcalculator/TipCalculatorFragment.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_java_res/debug/base.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_manifest/debug/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/debug/output-metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/drawable-hdpi_ic_action_search.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/drawable-hdpi_ic_launcher.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/drawable-ldpi_ic_launcher.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/drawable-mdpi_ic_action_search.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/drawable-mdpi_ic_launcher.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/drawable-xhdpi_ic_about.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/drawable-xhdpi_ic_action_search.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/drawable-xhdpi_ic_launcher.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/drawable-xhdpi_ic_settings.png.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/layout_activity_about.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/layout_activity_main.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/layout_activity_main_twopane_land.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/layout_activity_main_twopane_port.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/layout_activity_settings.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/layout_fragment_tip_calculator.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/menu_fragment_tip_calculator.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/menu_fragment_tip_calculator_twopane.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/values-sw600dp-land-v13_values-sw600dp-land-v13.arsc.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/values-sw600dp-port-v13_values-sw600dp-port-v13.arsc.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/values-v11_values-v11.arsc.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/values-v14_values-v14.arsc.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/values_values.arsc.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/xml_preferences.xml.flat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/debug.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values-sw600dp-land-v13.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values-sw600dp-port-v13.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values-v11.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values-v14.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/single/debug.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/navigation_json/debug/navigation.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debug/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debug/output-metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/output-metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/7fbb719478564be4c1eefe204885fba446eeda6978d266cba912c4aeddf11894_4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/murach/tipcalculator/AboutActivity.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/murach/tipcalculator/BuildConfig.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/murach/tipcalculator/SettingsActivity.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/murach/tipcalculator/SettingsFragment.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/murach/tipcalculator/TipCalculatorActivity.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/murach/tipcalculator/TipCalculatorFragment.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/debug/R.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/signing_config_versions/debug/signing-config-versions.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/stable_resource_ids_file/debug/stableIds.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/app.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/ch09_ex2_TipCalculator_sol.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/ch09_ex2_TipCalculator_sol.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../ch09_ex2_TipCalculator_sol/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ch09_ex3_TipCalculator_sol.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ch09_ex3_TipCalculator_sol.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +258,7 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\jin\.android\avd\Galaxy_Nexus_API_23.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -30,8 +274,8 @@
   <component name="FavoritesManager">
     <favorites_list name="ch09_ex3_TipCalculator_sol" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
   </component>
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
@@ -1687,6 +1931,10 @@
     <option name="width" value="1296" />
     <option name="height" value="1000" />
   </component>
+  <component name="ProjectId" id="26YpKVoGBxJvGT9gWtxgzKwK7IG" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="AndroidView" proportions="" version="1">
       <flattenPackages />
@@ -1722,24 +1970,23 @@
       <pane id="ProjectPane" />
     </panes>
   </component>
-  <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
-    <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ch10_ex2_NewsReader_sol" />
-    <property name="device.picker.selection" value="e46e9baa" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="device.picker.selection" value="e46e9baa" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RunManager" selected="Android App.app">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
@@ -1766,158 +2013,6 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
-      <module name="" />
-      <option name="DEPLOY" value="true" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="PM_INSTALL_OPTIONS" value="" />
-      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="DEBUGGER_TYPE" value="Auto" />
-      <Auto>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Auto>
-      <Hybrid>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Hybrid>
-      <Java />
-      <Native>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Native>
-      <Profilers>
-        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
-      </Profilers>
-      <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <method>
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1518739346992" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-      <method />
-    </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
-    <configuration default="false" name="app" type="AndroidRunConfigurationType" factoryName="Android App">
-      <module name="app" />
-      <option name="DEPLOY" value="true" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="PM_INSTALL_OPTIONS" value="" />
-      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="DEBUGGER_TYPE" value="Auto" />
-      <Auto>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Auto>
-      <Hybrid>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Hybrid>
-      <Java />
-      <Native>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Native>
-      <Profilers>
-        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
-      </Profilers>
-      <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <method>
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1518739346992" />
-      </method>
-    </configuration>
-    <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="Android App.app" />
-    </list>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -1961,6 +2056,124 @@
     <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
     </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1518739346992" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="ch09_ex3_TipCalculator_sol.app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="false" name="app" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="app" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -1992,10 +2205,26 @@
       <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
       <method />
     </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Android App.app" />
+    </list>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="7e24f431-949b-49f8-be6c-bca40f5415fd" name="Default" comment="" />
@@ -2045,12 +2274,19 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager />
-    <watches-manager />
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/build.gradle">

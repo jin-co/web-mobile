@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\jin\\Documents\\GitHub\\web-mobile\\AndroidApps\\Murach\\ex_solutions\\ch09_ex2_TipCalculator_sol\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-land-v13\\values-sw600dp-land-v13.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\jin\\Documents\\GitHub\\web-mobile\\AndroidApps\\Murach\\ex_solutions\\ch09_ex2_TipCalculator_sol\\app\\src\\main\\res\\values-sw600dp-land\\layout.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "11",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        }
+    ]
+}
