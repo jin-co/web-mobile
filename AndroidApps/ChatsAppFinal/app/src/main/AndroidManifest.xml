@@ -10,6 +10,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ChatsAppFinal">
         <activity
+            android:name=".BaseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OneToOneActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OneToOneAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".GoogleSigninActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChatAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".GroupActivity"
+            android:exported="false" />
+        <activity
             android:name=".ProfileActivity"
             android:exported="false" />
         <activity

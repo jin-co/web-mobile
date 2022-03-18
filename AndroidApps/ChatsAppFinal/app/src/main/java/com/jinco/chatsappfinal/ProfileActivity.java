@@ -16,7 +16,7 @@ public class ProfileActivity extends AppCompatActivity {
     private static final FirebaseDatabase database = FirebaseDatabase.getInstance();
     private static final DatabaseReference myErrorRef = database.getReference().child("errors").child(activityName);
     private Error error_class = new Error();
-    private dbService db = new dbService(this);
+    private mydatabase db = new mydatabase(this);
     private EditText txt_userName, txt_userAge;
     private Spinner spnr_gender;
 

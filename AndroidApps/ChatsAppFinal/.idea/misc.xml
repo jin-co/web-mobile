@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/jin/Documents/GitHub/web-mobile/AndroidApps/ChatsAppFinal/app/src/main/res/layout/activity_chat.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/jin/Documents/GitHub/web-mobile/AndroidApps/ChatsAppFinal/app/src/main/res/layout/activity_chat_adapter.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/jin/Documents/GitHub/web-mobile/AndroidApps/ChatsAppFinal/app/src/main/res/layout/activity_google_signin.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/jin/Documents/GitHub/web-mobile/AndroidApps/ChatsAppFinal/app/src/main/res/layout/activity_group.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/jin/Documents/GitHub/web-mobile/AndroidApps/ChatsAppFinal/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/jin/Documents/GitHub/web-mobile/AndroidApps/ChatsAppFinal/app/src/main/res/layout/activity_one_to_one.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/jin/Documents/GitHub/web-mobile/AndroidApps/ChatsAppFinal/app/src/main/res/layout/activity_one_to_one_adapter.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/jin/Documents/GitHub/web-mobile/AndroidApps/ChatsAppFinal/app/src/main/res/layout/activity_profile.xml" value="0.4" />
       </map>
     </option>
