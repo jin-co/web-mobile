@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "370064138058",
+    "project_id": "ecommerce-efdc5",
+    "storage_bucket": "ecommerce-efdc5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:370064138058:android:5774eae8572fa841436bb3",
+        "android_client_info": {
+          "package_name": "com.jinco.ecommerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "370064138058-pvgp0kvv7ppllr6bqacqmtfk0bj9p9kl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARH2yp8OUz1ZoxS2_qg-ahZXnYvkOsRXk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "370064138058-pvgp0kvv7ppllr6bqacqmtfk0bj9p9kl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
