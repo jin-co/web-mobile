@@ -1,42 +1,33 @@
 {
   "project_info": {
-    "project_number": "975717137959",
-    "firebase_url": "https://myshoppal-75a66.firebaseio.com",
-    "project_id": "myshoppal-75a66",
-    "storage_bucket": "myshoppal-75a66.appspot.com"
+    "project_number": "370064138058",
+    "project_id": "ecommerce-efdc5",
+    "storage_bucket": "ecommerce-efdc5.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:975717137959:android:b2835cca2d6b9a38d49802",
+        "mobilesdk_app_id": "1:370064138058:android:5774eae8572fa841436bb3",
         "android_client_info": {
-          "package_name": "com.myshoppal"
+          "package_name": "com.jinco.ecommerce"
         }
       },
       "oauth_client": [
         {
-          "client_id": "975717137959-n0748uohu67kb6npgigk3vav46bodb4f.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.myshoppal",
-            "certificate_hash": "888d88ca3f129065b32ac15021e4d74ef7cbd9bb"
-          }
-        },
-        {
-          "client_id": "975717137959-k4fl8bclp1k4rg7t84v94g94b3sg83lh.apps.googleusercontent.com",
+          "client_id": "370064138058-pvgp0kvv7ppllr6bqacqmtfk0bj9p9kl.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC9UqAWnsN3F7D1NbqmBPmZH2fzUoa694w"
+          "current_key": "AIzaSyARH2yp8OUz1ZoxS2_qg-ahZXnYvkOsRXk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "975717137959-k4fl8bclp1k4rg7t84v94g94b3sg83lh.apps.googleusercontent.com",
+              "client_id": "370064138058-pvgp0kvv7ppllr6bqacqmtfk0bj9p9kl.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
