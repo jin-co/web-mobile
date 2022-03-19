@@ -111,7 +111,7 @@
         android:layout_marginRight="10dp"
         android:backgroundTint="#69DADB"
         android:onClick="onNewGameClick"
-        android:text="@string/btn_reset"
+        android:text="@string/reset"
         android:textColor="#000"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"

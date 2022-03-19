@@ -104,11 +104,15 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.item1:
-                Intent intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
+                Intent mainIntent = new Intent(this, MainActivity.class);
+                startActivity(mainIntent);
                 break;
             case R.id.item2:
                 resetGame();
+                break;
+            case R.id.item3:
+                Intent scoreIntent = new Intent(this, ScoreBoardActivity.class);
+                startActivity(scoreIntent);
                 break;
         }
 

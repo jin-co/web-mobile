@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onStartClick(View view) {
-        Intent intent = new Intent(this, GameBoardActivity.class);
+        Intent intent = new Intent(this, MenuActivity.class);
         startActivity(intent);
     }
 }
