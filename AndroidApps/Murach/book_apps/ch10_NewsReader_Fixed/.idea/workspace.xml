@@ -10,22 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb20b2dc-b884-4f5d-827a-e48d9665b072" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../MyFragment/app/src/main/java/com/jinco/myfragment/FirstFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../MyFragment/app/src/main/java/com/jinco/myfragment/SecondFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../MyFragment/app/src/main/res/layout/fragment_first.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../MyFragment/app/src/main/res/layout/fragment_second.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MyFragment/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MyFragment/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MyFragment/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MyFragment/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MyFragment/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MyFragment/app/src/androidTest/java/com/jinco/myfragment/ExampleInstrumentedTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MyFragment/app/src/main/java/com/jinco/myfragment/MainActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MyFragment/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MyFragment/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MyFragment/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MyFragment/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MyFragment/app/src/test/java/com/jinco/myfragment/ExampleUnitTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MyFragment/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MyFragment/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MyFragment/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MyFragment/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MyFragment/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MyFragment/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MyFragment/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MyFragment/.idea/gradle.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1762,7 +1747,9 @@
     <option name="height" value="1000" />
   </component>
   <component name="ProjectId" id="26eQWUppWtBCuh1vVQNX9z1veij" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="AndroidView" proportions="" version="1">
       <flattenPackages />
@@ -1803,13 +1790,14 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="device.picker.selection" value="e46e9baa" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../MyFragment" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -2049,6 +2037,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/build.gradle">
