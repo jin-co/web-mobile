@@ -10,22 +10,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb20b2dc-b884-4f5d-827a-e48d9665b072" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/app/ch10_NewsReader_Fixed.app.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../MyFragment/app/src/main/java/com/jinco/myfragment/FirstFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../MyFragment/app/src/main/java/com/jinco/myfragment/SecondFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../MyFragment/app/src/main/res/layout/fragment_first.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../MyFragment/app/src/main/res/layout/fragment_second.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ch10_NewsReader_Fixed.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ch10_NewsReader_Fixed.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MyFragment/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MyFragment/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MyFragment/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MyFragment/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MyFragment/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MyFragment/app/src/androidTest/java/com/jinco/myfragment/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MyFragment/app/src/main/java/com/jinco/myfragment/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MyFragment/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MyFragment/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MyFragment/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MyFragment/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MyFragment/app/src/test/java/com/jinco/myfragment/ExampleUnitTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MyFragment/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MyFragment/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MyFragment/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MyFragment/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MyFragment/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MyFragment/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
