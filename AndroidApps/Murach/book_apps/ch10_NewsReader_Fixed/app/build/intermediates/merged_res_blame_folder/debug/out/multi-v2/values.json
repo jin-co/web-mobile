@@ -1,0 +1,60 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\jin\\Documents\\GitHub\\web-mobile\\AndroidApps\\Murach\\book_apps\\ch10_NewsReader_Fixed\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\jin\\Documents\\GitHub\\web-mobile\\AndroidApps\\Murach\\book_apps\\ch10_NewsReader_Fixed\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "3,8,9,6,7,5,4,11,12",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "59,348,411,225,297,165,109,477,527",
+                        "endColumns": "48,61,58,70,49,58,54,48,50",
+                        "endOffsets": "103,405,465,291,342,219,159,521,573"
+                    },
+                    "to": {
+                        "startLines": "3,4,5,6,7,8,9,10,11",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "91,140,202,261,332,382,441,496,545",
+                        "endColumns": "48,61,58,70,49,58,54,48,50",
+                        "endOffsets": "135,197,256,327,377,436,491,540,591"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\jin\\Documents\\GitHub\\web-mobile\\AndroidApps\\Murach\\book_apps\\ch10_NewsReader_Fixed\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "1,2",
+                        "startColumns": "4,4",
+                        "startOffsets": "17,96",
+                        "endColumns": "77,73",
+                        "endOffsets": "90,165"
+                    },
+                    "to": {
+                        "startLines": "12,13",
+                        "startColumns": "4,4",
+                        "startOffsets": "596,673",
+                        "endColumns": "76,72",
+                        "endOffsets": "668,741"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\jin\\Documents\\GitHub\\web-mobile\\AndroidApps\\Murach\\book_apps\\ch10_NewsReader_Fixed\\app\\src\\main\\res\\values\\colors.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "58",
+                        "endColumns": "35",
+                        "endOffsets": "89"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "35",
+                        "endOffsets": "86"
+                    }
+                }
+            ]
+        }
+    ]
+}
