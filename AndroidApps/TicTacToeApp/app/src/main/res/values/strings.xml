@@ -5,7 +5,7 @@
 
     <!--    for menus-->
     <string name="menu">Menu</string>
-    <string name="select_player">Select Player</string>
+    <string name="select_player">Select Players</string>
     <string name="add_player">Add a Player</string>
     <string name="scores">Scores</string>
     <string name="play">Play</string>

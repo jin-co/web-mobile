@@ -16,21 +16,22 @@
         android:id="@+id/button_select_player"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:onClick="onSelectPlayerClick"
         android:text="@string/select_player" />
 
     <Button
         android:id="@+id/button_add_player"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="@string/add_player"
-        android:onClick="onAddPlayerClick"/>
+        android:onClick="onAddPlayerClick"
+        android:text="@string/add_player" />
 
     <Button
         android:id="@+id/button_scores"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="@string/scores"
-        android:onClick="onScoreClick"/>
+        android:onClick="onScoreClick"
+        android:text="@string/scores" />
 
     <Button
         android:id="@+id/button_play_game"

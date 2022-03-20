@@ -10,31 +10,13 @@
         android:layout_height="wrap_content"
         android:background="#FFAC83"
         android:padding="7dp"
-        android:text="@string/add_player"
+        android:text="@string/select_player"
         android:textSize="22sp" />
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
-
-        <EditText
-            android:id="@+id/nameEditText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:layout_weight="1"
-            android:textSize="20sp"
-            />
-
-        <Button
-            android:id="@+id/insertButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/add"
-            android:textSize="20sp"
-            />
     </LinearLayout>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"

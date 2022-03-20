@@ -26,6 +26,11 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void onAddPlayerClick(View view) {
+        Intent intent = new Intent(MenuActivity.this, AddPlayerActivity.class);
+        startActivity(intent);
+    }
+
+    public void onSelectPlayerClick(View view) {
         Intent intent = new Intent(MenuActivity.this, SelectPlayerActivity.class);
         startActivity(intent);
     }

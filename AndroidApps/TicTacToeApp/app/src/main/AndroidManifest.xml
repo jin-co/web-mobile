@@ -10,13 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TicTacToeApp">
         <activity
-            android:name=".SelectPlayerActivity"
+            android:name=".AddPlayerActivity"
             android:exported="false"
             android:parentActivityName=".MenuActivity"/>
         <activity
+            android:name=".SelectPlayerActivity"
+            android:exported="false"
+            android:parentActivityName=".MenuActivity" />
+        <activity
             android:name=".ScoreBoardActivity"
             android:exported="false"
-            android:parentActivityName=".MenuActivity"/>
+            android:parentActivityName=".MenuActivity" />
         <activity
             android:name=".MenuActivity"
             android:exported="false" />
