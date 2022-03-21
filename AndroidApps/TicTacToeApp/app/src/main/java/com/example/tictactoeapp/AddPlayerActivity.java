@@ -11,11 +11,13 @@ import android.widget.Toast;
 public class AddPlayerActivity extends AppCompatActivity {
     Button addPlayer;
     EditText playerName;
+    DBHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_player);
+        db = new DBHelper(AddPlayerActivity.this);
 
         addPlayer = (Button) findViewById(R.id.button_add_player);
         playerName = (EditText) findViewById(R.id.edit_text_name_new);
@@ -28,12 +30,11 @@ public class AddPlayerActivity extends AppCompatActivity {
 
         try {
             player = new Player(newPlaer);
-            Toast.makeText(AddPlayerActivity.this, "New player added", Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             Toast.makeText(AddPlayerActivity.this, "Error", Toast.LENGTH_SHORT).show();
         }
 
         boolean s = dbHelper.addOne(player);
-        Toast.makeText(AddPlayerActivity.this, s + "", Toast.LENGTH_SHORT).show();
+        Toast.makeText(AddPlayerActivity.this, "New player added", Toast.LENGTH_SHORT).show();
     }
 }
