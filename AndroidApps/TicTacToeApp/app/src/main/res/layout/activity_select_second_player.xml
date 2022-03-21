@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:background="#FFAC83"
         android:padding="7dp"
-        android:text="@string/select_player"
+        android:text="@string/select_second_player"
         android:textSize="22sp" />
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -37,5 +37,4 @@
         android:id="@+id/itemsListView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
 </LinearLayout>

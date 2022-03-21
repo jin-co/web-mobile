@@ -10,11 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TicTacToeApp">
         <activity
+            android:name=".SelectSecondPlayerActivity"
+            android:exported="false"
+            android:parentActivityName=".MenuActivity" />
+        <activity
             android:name=".AddPlayerActivity"
             android:exported="false"
-            android:parentActivityName=".MenuActivity"/>
+            android:parentActivityName=".MenuActivity" />
         <activity
-            android:name=".SelectPlayerActivity"
+            android:name=".SelectFirstPlayerActivity"
             android:exported="false"
             android:parentActivityName=".MenuActivity" />
         <activity

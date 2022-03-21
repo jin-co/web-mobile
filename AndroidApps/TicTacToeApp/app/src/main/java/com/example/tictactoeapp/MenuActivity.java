@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -30,8 +29,13 @@ public class MenuActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void onSelectPlayerClick(View view) {
-        Intent intent = new Intent(MenuActivity.this, SelectPlayerActivity.class);
+    public void onSelectFirstPlayerClick(View view) {
+        Intent intent = new Intent(MenuActivity.this, SelectFirstPlayerActivity.class);
+        startActivity(intent);
+    }
+
+    public void onSelectSecondPlayerClick(View view) {
+        Intent intent = new Intent(MenuActivity.this, SelectSecondPlayerActivity.class);
         startActivity(intent);
     }
 }

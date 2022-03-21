@@ -13,18 +13,11 @@
         android:textSize="30sp" />
 
     <Button
-        android:id="@+id/button_select_player"
+        android:id="@+id/button_play_game"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:onClick="onSelectPlayerClick"
-        android:text="@string/select_player" />
-
-    <Button
-        android:id="@+id/button_add_player"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:onClick="onAddPlayerClick"
-        android:text="@string/add_player" />
+        android:onClick="onPlayClick"
+        android:text="@string/play" />
 
     <Button
         android:id="@+id/button_scores"
@@ -34,16 +27,24 @@
         android:text="@string/scores" />
 
     <Button
-        android:id="@+id/button_play_game"
+        android:id="@+id/button_first_select_player"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:onClick="onPlayClick"
-        android:text="@string/play" />
+        android:onClick="onSelectFirstPlayerClick"
+        android:text="@string/select_first_player" />
 
     <Button
-        android:id="@+id/button_what"
+        android:id="@+id/button_second_select_player"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="temp" />
+        android:onClick="onSelectSecondPlayerClick"
+        android:text="@string/select_second_player" />
+
+    <Button
+        android:id="@+id/button_add_player"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:onClick="onAddPlayerClick"
+        android:text="@string/add_player" />
 
 </LinearLayout>

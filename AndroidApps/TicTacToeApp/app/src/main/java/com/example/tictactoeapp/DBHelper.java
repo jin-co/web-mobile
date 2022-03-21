@@ -2,14 +2,19 @@ package com.example.tictactoeapp;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DBHelper extends SQLiteOpenHelper {
 
     private static final String TABLE_PLAYER = "player";
+
     private static final String COL_ID = "id";
     private static final String COL_NAME = "name";
     private static final String COL_WINS = "wins";
@@ -22,12 +27,12 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String createTable = "CREATE TABLE " + TABLE_PLAYER + "(" +
-                COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-                COL_NAME + " TEXT, " +
-                COL_WINS + " INT, " +
-                COL_LOSES + " INT, " +
-                COL_TIES + "s INT)";
+        String createTable = "CREATE TABLE " + TABLE_PLAYER + " (" +
+                COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
+                COL_NAME + " VARCHAR NOT NULL, " +
+                COL_WINS + " INTEGER NOT NULL DEFAULT 0, " +
+                COL_LOSES + " INTEGER NOT NULL DEFAULT 0, " +
+                COL_TIES + " INTEGER NOT NULL DEFAULT 0) ";
 
         db.execSQL(createTable);
     }
@@ -51,5 +56,30 @@ public class DBHelper extends SQLiteOpenHelper {
         } else {
             return true;
         }
+    }
+
+    public List<Player> getPlayers() {
+        List<Player> players = new ArrayList<>();
+        String selectAll = "SELECT * FROM " + TABLE_PLAYER;
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectAll, null);
+        if (cursor.moveToFirst()) {
+            do {
+                int id = cursor.getInt(0);
+                String name = cursor.getString(1);
+                int wins = cursor.getInt(2);
+                int loses = cursor.getInt(3);
+                int ties = cursor.getInt(4);
+
+                Player player = new Player(id, name, wins, loses, ties);
+                players.add(player);
+            } while (cursor.moveToNext());
+        } else {
+
+        }
+        cursor.close();
+        db.close();
+        return players;
     }
 }

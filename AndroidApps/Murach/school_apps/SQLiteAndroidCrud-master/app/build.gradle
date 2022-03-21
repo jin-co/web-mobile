@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 32
 
     defaultConfig {
         applicationId "io.github.rhildred.crud"
         minSdkVersion 15
-        targetSdkVersion 26
+        targetSdkVersion 32
         versionCode 1
         versionName "1.0"
     }
