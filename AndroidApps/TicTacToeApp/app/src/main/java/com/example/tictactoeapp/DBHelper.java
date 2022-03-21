@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class DBHelper extends SQLiteOpenHelper {
@@ -58,10 +59,10 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public List<Player> getPlayers() {
-        List<Player> players = new ArrayList<>();
+    public ArrayList<HashMap<String, String>> getPlayers() {
+        ArrayList<HashMap<String, String>> data =
+                new ArrayList<>();
         String selectAll = "SELECT " +
-                COL_ID + ", " +
                 COL_NAME + ", " +
                 COL_WINS + ", " +
                 COL_LOSES + ", " +
@@ -71,20 +72,48 @@ public class DBHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(selectAll, null);
         if (cursor.moveToFirst()) {
             do {
-                int id = cursor.getInt(0);
-                String name = cursor.getString(1);
-                int wins = cursor.getInt(2);
-                int loses = cursor.getInt(3);
-                int ties = cursor.getInt(4);
-
-                Player player = new Player(id, name, wins, loses, ties);
-                players.add(player);
+                HashMap<String, String> map = new HashMap<>();
+                map.put("name", cursor.getString(0));
+                map.put("wins", cursor.getString(1));
+                map.put("loses", cursor.getString(2));
+                map.put("ties", cursor.getString(3));
+                data.add(map);
             } while (cursor.moveToNext());
         } else {
 
         }
         cursor.close();
         db.close();
-        return players;
+        return data;
     }
+//
+//    public List<Player> getPlayers() {
+//        List<Player> players = new ArrayList<>();
+//        String selectAll = "SELECT " +
+//                COL_ID + ", " +
+//                COL_NAME + ", " +
+//                COL_WINS + ", " +
+//                COL_LOSES + ", " +
+//                COL_TIES + " FROM " + TABLE_PLAYER;
+//
+//        SQLiteDatabase db = this.getReadableDatabase();
+//        Cursor cursor = db.rawQuery(selectAll, null);
+//        if (cursor.moveToFirst()) {
+//            do {
+//                int id = cursor.getInt(0);
+//                String name = cursor.getString(1);
+//                int wins = cursor.getInt(2);
+//                int loses = cursor.getInt(3);
+//                int ties = cursor.getInt(4);
+//
+//                Player player = new Player(id, name, wins, loses, ties);
+//                players.add(player);
+//            } while (cursor.moveToNext());
+//        } else {
+//
+//        }
+//        cursor.close();
+//        db.close();
+//        return players;
+//    }
 }

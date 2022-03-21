@@ -12,11 +12,6 @@
         android:padding="7dp"
         android:text="@string/select_first_player"
         android:textSize="22sp" />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="test"
-        android:onClick="onTestClick"/>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -39,7 +34,7 @@
 
     </LinearLayout>
     <ListView
-        android:id="@+id/itemsListView"
+        android:id="@+id/list_view_player"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

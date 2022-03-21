@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 public class MenuActivity extends AppCompatActivity {
+    boolean playerOneSelected, playerTwoSelected = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,8 +16,16 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void onPlayClick(View view) {
-        Intent intent = new Intent(MenuActivity.this, GameBoardActivity.class);
-        startActivity(intent);
+        if (!playerOneSelected) {
+            Intent intent = new Intent(MenuActivity.this, SelectFirstPlayerActivity.class);
+            startActivity(intent);
+        } else if (!playerTwoSelected) {
+            Intent intent = new Intent(MenuActivity.this, SelectSecondPlayerActivity.class);
+            startActivity(intent);
+        } else {
+            Intent intent = new Intent(MenuActivity.this, GameBoardActivity.class);
+            startActivity(intent);
+        }
     }
 
     public void onScoreClick(View view) {
