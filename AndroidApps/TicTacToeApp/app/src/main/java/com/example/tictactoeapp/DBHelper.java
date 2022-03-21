@@ -60,7 +60,12 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public List<Player> getPlayers() {
         List<Player> players = new ArrayList<>();
-        String selectAll = "SELECT * FROM " + TABLE_PLAYER;
+        String selectAll = "SELECT " +
+                COL_ID + ", " +
+                COL_NAME + ", " +
+                COL_WINS + ", " +
+                COL_LOSES + ", " +
+                COL_TIES + " FROM " + TABLE_PLAYER;
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectAll, null);

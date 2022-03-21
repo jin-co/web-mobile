@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import java.util.List;
@@ -19,5 +20,9 @@ public class SelectFirstPlayerActivity extends AppCompatActivity {
         DBHelper dbHelper = new DBHelper(SelectFirstPlayerActivity.this);
         List<Player> players = dbHelper.getPlayers();
         Log.e("h", players.toString());
+        Toast.makeText(SelectFirstPlayerActivity.this, "test", Toast.LENGTH_SHORT);
+    }
+    public void onTestClick(View view) {
+        Toast.makeText(SelectFirstPlayerActivity.this, "test", Toast.LENGTH_SHORT);
     }
 }
