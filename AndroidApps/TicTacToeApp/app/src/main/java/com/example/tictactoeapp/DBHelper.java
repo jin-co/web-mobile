@@ -60,6 +60,18 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
+    public boolean deletePlayer(Player player) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String delete = "DELETE FROM " + TABLE_PLAYER +
+                " WHERE " + COL_ID + " = " + player.getId();
+        Cursor cursor = db.rawQuery(delete, null);
+        if (cursor.moveToFirst()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public ArrayList<HashMap<String, String>> getPlayers() {
         ArrayList<HashMap<String, String>> data =
                 new ArrayList<>();

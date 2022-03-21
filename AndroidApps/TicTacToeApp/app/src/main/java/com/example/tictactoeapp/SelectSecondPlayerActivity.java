@@ -4,8 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.collection.SimpleArrayMap;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,5 +35,14 @@ public class SelectSecondPlayerActivity extends AppCompatActivity {
         SimpleAdapter adapter =
                 new SimpleAdapter(this, data, resource, from, to);
         list_view_player.setAdapter(adapter);
+
+        // selet a player
+        list_view_player.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getBaseContext(), position + "", Toast.LENGTH_SHORT);
+                Log.e("hh", position + "");
+            }
+        });
     }
 }

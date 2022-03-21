@@ -3,14 +3,20 @@ package com.example.tictactoeapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ScoreBoardActivity extends AppCompatActivity {
     ListView list_view_player_score;
+    DBHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,9 +24,23 @@ public class ScoreBoardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_score_board);
 
         list_view_player_score = findViewById(R.id.list_view_player_score);
+        dbHelper = new DBHelper(ScoreBoardActivity.this);
 
-        DBHelper dbHelper = new DBHelper(ScoreBoardActivity.this);
+        updateView();
 
+        // delete a player
+        list_view_player_score.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Player player = (Player) parent.getItemAtPosition(position);
+                Log.e("hh", position + "");
+                dbHelper.deletePlayer(player);
+                updateView();
+            }
+        });
+    }
+
+    public void updateView() {
         // create a List of Map<String, ?> objects
         ArrayList<HashMap<String, String>> data = dbHelper.getPlayers();
 
