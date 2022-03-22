@@ -59,11 +59,11 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public boolean deletePlayer(Player player) {
+    public boolean deletePlayer(String name) {
         SQLiteDatabase db = this.getWritableDatabase();
         String delete = "DELETE FROM " +
                 TABLE_PLAYER +
-                " WHERE " + COL_ID + " = " + player.getId();
+                " WHERE " + COL_ID + " = " + 1;
         Cursor cursor = db.rawQuery(delete, null);
         if (cursor.moveToFirst()) {
             return true;
@@ -129,4 +129,11 @@ public class DBHelper extends SQLiteOpenHelper {
 //        db.close();
 //        return players;
 //    }
+    public int getPlayerId(String name) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        int id = 0;
+        String findId = "SELECT " + COL_NAME + " FROM " + TABLE_PLAYER + " WHERE " + COL_NAME + " = " + name;
+        Cursor curson = db.rawQuery(findId, null);
+        return id;
+    }
 }

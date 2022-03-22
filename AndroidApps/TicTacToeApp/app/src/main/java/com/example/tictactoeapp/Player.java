@@ -15,6 +15,13 @@ public class Player {
         this.ties = ties;
     }
 
+    public Player(String name, int wins, int loses, int ties) {
+        this.name = name;
+        this.wins = wins;
+        this.loses = loses;
+        this.ties = ties;
+    }
+
     public Player(String name) {
         this.name = name;
     }
