@@ -2,6 +2,7 @@ package com.example.tictactoeapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,17 +25,20 @@ public class AddPlayerActivity extends AppCompatActivity {
     }
 
     public void onAddClick(View view) {
-        String newPlaer = playerName.getText().toString();
+        String newPlayer = playerName.getText().toString();
         Player player = null;
         DBHelper dbHelper = new DBHelper(AddPlayerActivity.this);
 
         try {
-            player = new Player(newPlaer);
+            player = new Player(newPlayer);
         } catch (Exception e) {
             Toast.makeText(AddPlayerActivity.this, "Error", Toast.LENGTH_SHORT).show();
         }
 
         boolean s = dbHelper.addOne(player);
         Toast.makeText(AddPlayerActivity.this, "New player added", Toast.LENGTH_SHORT).show();
+        playerName.setText("");
+        Intent scoreIntent = new Intent(AddPlayerActivity.this, ScoreBoardActivity.class);
+        startActivity(scoreIntent);
     }
 }

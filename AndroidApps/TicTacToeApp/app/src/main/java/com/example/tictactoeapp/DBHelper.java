@@ -16,7 +16,6 @@ import java.util.List;
 public class DBHelper extends SQLiteOpenHelper {
 
     private static final String TABLE_PLAYER = "player";
-
     private static final String COL_ID = "id";
     private static final String COL_NAME = "name";
     private static final String COL_WINS = "wins";
@@ -34,7 +33,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 COL_NAME + " VARCHAR NOT NULL, " +
                 COL_WINS + " INTEGER NOT NULL DEFAULT 0, " +
                 COL_LOSES + " INTEGER NOT NULL DEFAULT 0, " +
-                COL_TIES + " INTEGER NOT NULL DEFAULT 0) ";
+                COL_TIES + " INTEGER NOT NULL DEFAULT 0)";
 
         db.execSQL(createTable);
     }
@@ -62,7 +61,8 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public boolean deletePlayer(Player player) {
         SQLiteDatabase db = this.getWritableDatabase();
-        String delete = "DELETE FROM " + TABLE_PLAYER +
+        String delete = "DELETE FROM " +
+                TABLE_PLAYER +
                 " WHERE " + COL_ID + " = " + player.getId();
         Cursor cursor = db.rawQuery(delete, null);
         if (cursor.moveToFirst()) {

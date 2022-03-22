@@ -40,8 +40,7 @@ public class SelectSecondPlayerActivity extends AppCompatActivity {
         list_view_player.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getBaseContext(), position + "", Toast.LENGTH_SHORT);
-                Log.e("hh", position + "");
+
             }
         });
     }

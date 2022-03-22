@@ -15,11 +15,6 @@ public class Player {
         this.ties = ties;
     }
 
-    public Player(int id, String name) {
-        Id = id;
-        this.name = name;
-    }
-
     public Player(String name) {
         this.name = name;
     }

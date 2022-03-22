@@ -32,9 +32,7 @@ public class ScoreBoardActivity extends AppCompatActivity {
         list_view_player_score.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Player player = (Player) parent.getItemAtPosition(position);
                 Log.e("hh", position + "");
-                dbHelper.deletePlayer(player);
                 updateView();
             }
         });
@@ -45,7 +43,7 @@ public class ScoreBoardActivity extends AppCompatActivity {
         ArrayList<HashMap<String, String>> data = dbHelper.getPlayers();
 
         // create the resource, from, and to variables
-        int resource = R.layout.listview_item;
+        int resource = R.layout.listview_item_with_score;
         String[] from = {"name", "wins", "losses", "ties"};
         int[] to = {R.id.nameTextView, R.id.winsTextView, R.id.lossesTextView, R.id.tiesTextView};
 
