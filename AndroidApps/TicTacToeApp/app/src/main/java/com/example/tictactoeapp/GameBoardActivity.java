@@ -22,16 +22,17 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
     boolean gameOver = false;
     TextView gameStatus;
     private int gameIndex = 0;
-    private String playerOne;
-    private String playerTwo;
+
+    // user info
+    public static String playerOne;
+    public static String playerTwo;
+
+    DBHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_board);
-        Intent intent = getIntent();
-        playerOne = intent.getStringExtra("playerOne");
-        playerTwo = intent.getStringExtra("playerTwo");
         findViews();
     }
 
@@ -141,6 +142,7 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
     // finds views and adds an event to the buttons array
     private void findViews() {
         gameStatus = findViewById(R.id.txt_view_status);
+        gameStatus.setText(playerOne + " 's turn");
         btnReset = findViewById(R.id.btn_reset);
 
         for (int i = 1; i < buttons.length + 1; i++) {
@@ -177,9 +179,21 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
 //                    gameStatus.setText("Player " + turn + " Won");
                     if (turn == 1) {
                         gameStatus.setText(playerOne + " Won");
+                        SelectFirstPlayerActivity.WINS +=1;
+                        SelectSecondPlayerActivity.LOSES +=1;
+                        updateScore(playerOne,
+                                SelectFirstPlayerActivity.WINS,
+                                SelectFirstPlayerActivity.LOSES,
+                                SelectFirstPlayerActivity.TIES);
                     }
                     if (turn == 2) {
                         gameStatus.setText(playerTwo + " Won");
+                        SelectSecondPlayerActivity.WINS +=1;
+                        SelectFirstPlayerActivity.LOSES +=1;
+                        updateScore(playerTwo,
+                                SelectSecondPlayerActivity.WINS,
+                                SelectSecondPlayerActivity.LOSES,
+                                SelectSecondPlayerActivity.TIES);
                     }
                     gameOver = true;
                 }
@@ -187,11 +201,25 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
 
             if (gameIndex > 8) {
                 gameStatus.setText("Tie");
+                SelectSecondPlayerActivity.TIES +=1;
+                SelectFirstPlayerActivity.TIES +=1;
+                updateScore(playerOne,
+                        SelectFirstPlayerActivity.WINS,
+                        SelectFirstPlayerActivity.LOSES,
+                        SelectFirstPlayerActivity.TIES);
+                updateScore(playerTwo,
+                        SelectSecondPlayerActivity.WINS,
+                        SelectSecondPlayerActivity.LOSES,
+                        SelectSecondPlayerActivity.TIES);
                 gameOver = true;
             }
-
             setNewGameButtonVisibility();
         }
+    }
+
+    private void updateScore(String player, int wins, int loses, int ties) {
+        dbHelper = new DBHelper(this);
+        dbHelper.updateScores(player, wins, loses, ties);
     }
 
     // sets the color of the button when the activity status is changed

@@ -58,6 +58,16 @@ public class DBHelper extends SQLiteOpenHelper {
             return true;
         }
     }
+// / update
+    public void updateScores(String playerName, int wins, int loses, int ties) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String updateRecore = "UPDATE " + TABLE_PLAYER + " SET " +
+                COL_WINS + " = " + wins + ", " +
+                COL_LOSES + " = " + loses + ", " +
+                COL_TIES + " = " + ties +
+                " WHERE " + COL_NAME + " = " + "'" + playerName + "'";
+        Cursor cursor = db.rawQuery(updateRecore, null);
+    }
 
     public boolean deletePlayer(String selectedPlayerId) {
         SQLiteDatabase db = this.getWritableDatabase();

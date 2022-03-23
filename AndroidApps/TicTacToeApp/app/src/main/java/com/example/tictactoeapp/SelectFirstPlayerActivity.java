@@ -15,11 +15,16 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Timer;
 import java.util.logging.Logger;
 
 public class SelectFirstPlayerActivity extends AppCompatActivity {
 
     private ListView list_view_player;
+    public static String PLAYER_ONE = "playerOne";
+    public static int WINS;
+    public static int LOSES;
+    public static int TIES;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,10 +56,33 @@ public class SelectFirstPlayerActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String playerOne = parent.getItemAtPosition(position).toString().split(",")[2].substring(6);
-                Log.e("last idx", playerOne + "");
-                Intent intent = new Intent(SelectFirstPlayerActivity.this, SelectSecondPlayerActivity.class);
-                intent.putExtra("playerOne", playerOne);
-                startActivity(intent);
+
+                if (GameBoardActivity.playerTwo == null){
+                    WINS = Integer.parseInt(parent.getItemAtPosition(position).toString().split(",")[0].substring(6));
+                    LOSES = Integer.parseInt(parent.getItemAtPosition(position).toString().split(",")[1].substring(6));
+                    TIES = Integer.parseInt(parent.getItemAtPosition(position).toString().split(",")[3].substring(7));
+
+                    GameBoardActivity.playerOne = playerOne;
+                    MenuActivity.playerOneSelected = true;
+
+                    Intent selectSecondPlayerIntent = new Intent(SelectFirstPlayerActivity.this, SelectSecondPlayerActivity.class);
+                    startActivity(selectSecondPlayerIntent);
+                } else if (GameBoardActivity.playerTwo.equals(playerOne)) {
+                    Toast.makeText(SelectFirstPlayerActivity.this, "Cannot choose the same charactor", Toast.LENGTH_SHORT);
+                } else {
+                    WINS = Integer.parseInt(parent.getItemAtPosition(position).toString().split(",")[0].substring(6));
+                    LOSES = Integer.parseInt(parent.getItemAtPosition(position).toString().split(",")[1].substring(6));
+                    TIES = Integer.parseInt(parent.getItemAtPosition(position).toString().split(",")[3].substring(7));
+
+//                    Log.e ("wins", WINS + "");
+//                    Log.e ("ties", LOSES + "");
+//                    Log.e ("loses", TIES + "");
+
+                    Intent gameIntent = new Intent(SelectFirstPlayerActivity.this, GameBoardActivity.class);
+                    GameBoardActivity.playerOne = playerOne;
+                    MenuActivity.playerOneSelected = true;
+                    startActivity(gameIntent);
+                }
             }
         });
     }

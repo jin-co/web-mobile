@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 public class MenuActivity extends AppCompatActivity {
-    boolean playerOneSelected, playerTwoSelected = false;
+    public static boolean playerOneSelected, playerTwoSelected = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
