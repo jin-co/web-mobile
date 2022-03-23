@@ -32,14 +32,14 @@ public class ScoreBoardActivity extends AppCompatActivity {
         list_view_player_score.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String name = parent.getItemAtPosition(position).toString().split(",")[2].substring(6);
+                Log.e("test", parent.getItemAtPosition(position).toString().split(",")[4] + "");
                 dbHelper = new DBHelper(ScoreBoardActivity.this);
-                boolean result = dbHelper.deletePlayer(name);
-                if (result) {
-                    Toast.makeText(ScoreBoardActivity.this, name + " deleted", Toast.LENGTH_SHORT);
-                } else {
-                    Toast.makeText(ScoreBoardActivity.this, "Delete error", Toast.LENGTH_SHORT);
-                }
+//                boolean result = dbHelper.deletePlayer(id);
+//                if (result) {
+//                    Toast.makeText(ScoreBoardActivity.this, name + " deleted", Toast.LENGTH_SHORT);
+//                } else {
+//                    Toast.makeText(ScoreBoardActivity.this, "Delete error", Toast.LENGTH_SHORT);
+//                }
                 updateView();
             }
         });
@@ -51,8 +51,8 @@ public class ScoreBoardActivity extends AppCompatActivity {
 
         // create the resource, from, and to variables
         int resource = R.layout.listview_item_with_score;
-        String[] from = {"name", "wins", "losses", "ties"};
-        int[] to = {R.id.nameTextView, R.id.winsTextView, R.id.lossesTextView, R.id.tiesTextView};
+        String[] from = {"id", "name", "wins", "losses", "ties"};
+        int[] to = {R.id.idTextView, R.id.nameTextView, R.id.winsTextView, R.id.lossesTextView, R.id.tiesTextView};
 
         // create and set the adapter
         SimpleAdapter adapter =

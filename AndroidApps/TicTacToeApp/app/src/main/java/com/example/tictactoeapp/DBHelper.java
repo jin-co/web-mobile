@@ -76,6 +76,7 @@ public class DBHelper extends SQLiteOpenHelper {
         ArrayList<HashMap<String, String>> data =
                 new ArrayList<>();
         String selectAll = "SELECT " +
+                COL_ID + ", " +
                 COL_NAME + ", " +
                 COL_WINS + ", " +
                 COL_LOSES + ", " +
@@ -86,10 +87,11 @@ public class DBHelper extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 HashMap<String, String> map = new HashMap<>();
-                map.put("name", cursor.getString(0));
-                map.put("wins", cursor.getString(1));
-                map.put("loses", cursor.getString(2));
-                map.put("ties", cursor.getString(3));
+                map.put("id", cursor.getString(0));
+                map.put("name", cursor.getString(1));
+                map.put("wins", cursor.getString(2));
+                map.put("loses", cursor.getString(3));
+                map.put("ties", cursor.getString(4));
                 data.add(map);
             } while (cursor.moveToNext());
         } else {
