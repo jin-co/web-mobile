@@ -32,14 +32,18 @@ public class ScoreBoardActivity extends AppCompatActivity {
         list_view_player_score.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.e("test", parent.getItemAtPosition(position).toString().split(",")[4] + "");
+                Log.e("test", parent.getItemAtPosition(position).toString().split(",")[4].substring(4) + "");
+                int lastIndex = parent.getItemAtPosition(position).toString().split(",")[4].indexOf("}");
+                Log.e("last idx", lastIndex + "");
+                String selectedPlayer = parent.getItemAtPosition(position).toString().split(",")[4].substring(4, lastIndex);
+                Log.e("selected player", selectedPlayer + "");
                 dbHelper = new DBHelper(ScoreBoardActivity.this);
-//                boolean result = dbHelper.deletePlayer(id);
-//                if (result) {
-//                    Toast.makeText(ScoreBoardActivity.this, name + " deleted", Toast.LENGTH_SHORT);
-//                } else {
-//                    Toast.makeText(ScoreBoardActivity.this, "Delete error", Toast.LENGTH_SHORT);
-//                }
+                boolean result = dbHelper.deletePlayer(selectedPlayer);
+                if (result) {
+                    Toast.makeText(ScoreBoardActivity.this, id + " deleted", Toast.LENGTH_SHORT);
+                } else {
+                    Toast.makeText(ScoreBoardActivity.this, "Delete error", Toast.LENGTH_SHORT);
+                }
                 updateView();
             }
         });

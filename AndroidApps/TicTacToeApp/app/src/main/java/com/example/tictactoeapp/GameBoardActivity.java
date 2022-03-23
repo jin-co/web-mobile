@@ -22,11 +22,16 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
     boolean gameOver = false;
     TextView gameStatus;
     private int gameIndex = 0;
+    private String playerOne;
+    private String playerTwo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_board);
+        Intent intent = getIntent();
+        playerOne = intent.getStringExtra("playerOne");
+        playerTwo = intent.getStringExtra("playerTwo");
         findViews();
     }
 
@@ -47,6 +52,9 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
         outState.putString("btn7", buttons[6].getText().toString());
         outState.putString("btn8", buttons[7].getText().toString());
         outState.putString("btn9", buttons[8].getText().toString());
+
+        outState.putString("playerOne", playerOne);
+        outState.putString("playerTwo", playerTwo);
     }
 
     @Override
@@ -66,6 +74,9 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
         buttons[6].setText(savedInstanceState.getString("btn7", ""));
         buttons[7].setText(savedInstanceState.getString("btn8", ""));
         buttons[8].setText(savedInstanceState.getString("btn9", ""));
+
+        playerOne = savedInstanceState.getString("playerOne");
+        playerTwo = savedInstanceState.getString("playerTwo");
 
         setButtonColor();
         setNewGameButtonVisibility();
@@ -87,7 +98,13 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
                     gameIndex++;
                 }
                 turn = (turn == 1) ? 2:1;
-                gameStatus.setText("Player " + turn + "'s turn");
+//                gameStatus.setText("Player " + turn + "'s turn");
+                if (turn == 1) {
+                    gameStatus.setText(playerOne + "'s turn");
+                }
+                if (turn == 2) {
+                    gameStatus.setText(playerTwo + "'s turn");
+                }
                 checkWinner();
             }
         }
@@ -157,7 +174,13 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
                     buttons[value2].getText() == buttons[value3].getText()) {
                 if (buttons[value1].getText() != "") {
                     turn = (turn == 1) ? 2:1;
-                    gameStatus.setText("Player " + turn + " Won");
+//                    gameStatus.setText("Player " + turn + " Won");
+                    if (turn == 1) {
+                        gameStatus.setText(playerOne + " Won");
+                    }
+                    if (turn == 2) {
+                        gameStatus.setText(playerTwo + " Won");
+                    }
                     gameOver = true;
                 }
             }
@@ -202,7 +225,13 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
             buttons[i].setText("");
         }
         turn = 1;
-        gameStatus.setText("Player " + turn + "'s turn");
+//        gameStatus.setText("Player " + turn + "'s turn");
+        if (turn == 1) {
+            gameStatus.setText(playerOne + "'s turn");
+        }
+        if (turn == 2) {
+            gameStatus.setText(playerTwo + "'s turn");
+        }
         gameOver = false;
         gameIndex = 0;
     }

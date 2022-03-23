@@ -2,6 +2,7 @@ package com.example.tictactoeapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -49,8 +50,11 @@ public class SelectFirstPlayerActivity extends AppCompatActivity {
         list_view_player.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getBaseContext(), position + "", Toast.LENGTH_SHORT);
-                Log.e("hh", position + "");
+                String playerOne = parent.getItemAtPosition(position).toString().split(",")[2].substring(6);
+                Log.e("last idx", playerOne + "");
+                Intent intent = new Intent(SelectFirstPlayerActivity.this, SelectSecondPlayerActivity.class);
+                intent.putExtra("playerOne", playerOne);
+                startActivity(intent);
             }
         });
     }

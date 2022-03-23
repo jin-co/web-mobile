@@ -3,6 +3,7 @@ package com.example.tictactoeapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.collection.SimpleArrayMap;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -40,7 +41,17 @@ public class SelectSecondPlayerActivity extends AppCompatActivity {
         list_view_player.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                Intent intent = getIntent();
+                String playerOne = intent.getStringExtra("playerOne");
+                String playerTwo = parent.getItemAtPosition(position).toString().split(",")[2].substring(6);
+                if (playerOne.equals(playerTwo)){
+                    Toast.makeText(SelectSecondPlayerActivity.this, "Cannot choose the same charactor", Toast.LENGTH_SHORT);
+                } else {
+                    Intent gameIntent = new Intent(SelectSecondPlayerActivity.this, GameBoardActivity.class);
+                    intent.putExtra("playerOne", playerOne);
+                    intent.putExtra("playerTwo", playerTwo);
+                    startActivity(gameIntent);
+                }
             }
         });
     }

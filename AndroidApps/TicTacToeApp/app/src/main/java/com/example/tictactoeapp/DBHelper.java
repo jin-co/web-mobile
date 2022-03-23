@@ -59,11 +59,11 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public boolean deletePlayer(String name) {
+    public boolean deletePlayer(String selectedPlayerId) {
         SQLiteDatabase db = this.getWritableDatabase();
         String delete = "DELETE FROM " +
                 TABLE_PLAYER +
-                " WHERE " + COL_ID + " = " + 1;
+                " WHERE " + COL_ID + " = " + selectedPlayerId;
         Cursor cursor = db.rawQuery(delete, null);
         if (cursor.moveToFirst()) {
             return true;
@@ -80,7 +80,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 COL_NAME + ", " +
                 COL_WINS + ", " +
                 COL_LOSES + ", " +
-                COL_TIES + " FROM " + TABLE_PLAYER;
+                COL_TIES + " FROM " + TABLE_PLAYER + " ORDER BY " + COL_WINS + " DESC";
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectAll, null);
@@ -131,11 +131,4 @@ public class DBHelper extends SQLiteOpenHelper {
 //        db.close();
 //        return players;
 //    }
-    public int getPlayerId(String name) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        int id = 0;
-        String findId = "SELECT " + COL_NAME + " FROM " + TABLE_PLAYER + " WHERE " + COL_NAME + " = " + name;
-        Cursor curson = db.rawQuery(findId, null);
-        return id;
-    }
 }
