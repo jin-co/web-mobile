@@ -38,9 +38,9 @@ public class ScoreBoardActivity extends AppCompatActivity {
                 dbHelper = new DBHelper(ScoreBoardActivity.this);
                 boolean result = dbHelper.deletePlayer(selectedPlayer);
                 if (result) {
-                    Toast.makeText(ScoreBoardActivity.this, id + " deleted", Toast.LENGTH_SHORT);
+                    Toast.makeText(getBaseContext(), id + " deleted", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(ScoreBoardActivity.this, "Delete error", Toast.LENGTH_SHORT);
+                    Toast.makeText(ScoreBoardActivity.this, "Delete error", Toast.LENGTH_SHORT).show();
                 }
                 updateView();
             }

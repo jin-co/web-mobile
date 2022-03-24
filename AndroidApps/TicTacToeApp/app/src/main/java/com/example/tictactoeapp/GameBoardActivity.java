@@ -155,7 +155,6 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
 
     // checks if the game is finished
     private void checkWinner() {
-        Log.i("test", "first hi");
         int[][] winningPattern = {
                 {0, 1, 2},
                 {3, 4, 5},
@@ -176,7 +175,7 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
                     buttons[value2].getText() == buttons[value3].getText()) {
                 if (buttons[value1].getText() != "") {
                     turn = (turn == 1) ? 2:1;
-//                    gameStatus.setText("Player " + turn + " Won");
+
                     if (turn == 1) {
                         gameStatus.setText(playerOne + " Won");
                         SelectFirstPlayerActivity.WINS +=1;
@@ -197,22 +196,26 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
                     }
                     gameOver = true;
                 }
+            } else {
+                if (gameIndex > 8) {
+                    gameStatus.setText("Tie");
+                    if (!gameOver) {
+                        SelectSecondPlayerActivity.TIES +=1;
+                        SelectFirstPlayerActivity.TIES +=1;
+                        updateScore(playerOne,
+                                SelectFirstPlayerActivity.WINS,
+                                SelectFirstPlayerActivity.LOSES,
+                                SelectFirstPlayerActivity.TIES);
+                        updateScore(playerTwo,
+                                SelectSecondPlayerActivity.WINS,
+                                SelectSecondPlayerActivity.LOSES,
+                                SelectSecondPlayerActivity.TIES);
+                    }
+                    gameOver = true;
+                }
             }
 
-            if (gameIndex > 8) {
-                gameStatus.setText("Tie");
-                SelectSecondPlayerActivity.TIES +=1;
-                SelectFirstPlayerActivity.TIES +=1;
-                updateScore(playerOne,
-                        SelectFirstPlayerActivity.WINS,
-                        SelectFirstPlayerActivity.LOSES,
-                        SelectFirstPlayerActivity.TIES);
-                updateScore(playerTwo,
-                        SelectSecondPlayerActivity.WINS,
-                        SelectSecondPlayerActivity.LOSES,
-                        SelectSecondPlayerActivity.TIES);
-                gameOver = true;
-            }
+
             setNewGameButtonVisibility();
         }
     }

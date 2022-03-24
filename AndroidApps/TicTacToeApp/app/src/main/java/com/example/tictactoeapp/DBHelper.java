@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -59,14 +60,24 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 // / update
-    public void updateScores(String playerName, int wins, int loses, int ties) {
+    public boolean updateScores(String playerName, int wins, int loses, int ties) {
         SQLiteDatabase db = this.getWritableDatabase();
-        String updateRecore = "UPDATE " + TABLE_PLAYER + " SET " +
-                COL_WINS + " = " + wins + ", " +
-                COL_LOSES + " = " + loses + ", " +
-                COL_TIES + " = " + ties +
-                " WHERE " + COL_NAME + " = " + "'" + playerName + "'";
-        Cursor cursor = db.rawQuery(updateRecore, null);
+//        String updateRecore = "UPDATE " + TABLE_PLAYER + " SET " +
+//                COL_WINS + " = " + wins + ", " +
+//                COL_LOSES + " = " + loses + ", " +
+//                COL_TIES + " = " + ties +
+//                " WHERE " + COL_NAME + " = " + "'" + playerName + "'";
+//        Cursor cursor = db.rawQuery(updateRecore, null);
+//        cursor.close();
+//        db.close();
+
+        ContentValues values = new ContentValues();
+        values.put(COL_NAME, playerName);
+        values.put(COL_WINS, wins);
+        values.put(COL_LOSES, loses);
+        values.put(COL_TIES, ties);
+        db.update(TABLE_PLAYER, values, "name = ?", new String[]{playerName});
+        return true;
     }
 
     public boolean deletePlayer(String selectedPlayerId) {
