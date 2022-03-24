@@ -184,12 +184,20 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
                                 SelectFirstPlayerActivity.WINS,
                                 SelectFirstPlayerActivity.LOSES,
                                 SelectFirstPlayerActivity.TIES);
+                        updateScore(playerTwo,
+                                SelectSecondPlayerActivity.WINS,
+                                SelectSecondPlayerActivity.LOSES,
+                                SelectSecondPlayerActivity.TIES);
                     }
                     if (turn == 2) {
                         gameStatus.setText(playerTwo + " Won");
                         SelectSecondPlayerActivity.WINS +=1;
                         SelectFirstPlayerActivity.LOSES +=1;
                         updateScore(playerTwo,
+                                SelectSecondPlayerActivity.WINS,
+                                SelectSecondPlayerActivity.LOSES,
+                                SelectSecondPlayerActivity.TIES);
+                        updateScore(playerOne,
                                 SelectSecondPlayerActivity.WINS,
                                 SelectSecondPlayerActivity.LOSES,
                                 SelectSecondPlayerActivity.TIES);

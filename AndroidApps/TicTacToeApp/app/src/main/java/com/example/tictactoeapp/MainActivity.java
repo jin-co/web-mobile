@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
     /*
     * Author: Kwangjin Baek
-    * Date: 2022. Feb. 7.
+    * Date: 2022. Mar. 25.
     * Description: Tic Tac Toe game application
     * */
 

@@ -33,11 +33,6 @@ public class SelectFirstPlayerActivity extends AppCompatActivity {
 
         list_view_player = (ListView) findViewById(R.id.list_view_player);
 
-//        DBHelper dbHelper = new DBHelper(SelectFirstPlayerActivity.this);
-//        List<Player> players = dbHelper.getPlayers();
-//        Log.e("h", players.toString());
-
-
         DBHelper dbHelper = new DBHelper(SelectFirstPlayerActivity.this);
         ArrayList<HashMap<String, String>> data = dbHelper.getPlayers();
 

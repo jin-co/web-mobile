@@ -55,7 +55,7 @@ public class ScoreBoardActivity extends AppCompatActivity {
 
         // create the resource, from, and to variables
         int resource = R.layout.listview_item_with_score;
-        String[] from = {"id", "name", "wins", "losses", "ties"};
+        String[] from = {"id", "name", "wins", "loses", "ties"};
         int[] to = {R.id.idTextView, R.id.nameTextView, R.id.winsTextView, R.id.lossesTextView, R.id.tiesTextView};
 
         // create and set the adapter

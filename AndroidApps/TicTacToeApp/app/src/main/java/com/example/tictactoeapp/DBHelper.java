@@ -14,6 +14,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+/*
+* DB helper class that handles storing and getting the data
+* to and from the DB
+* */
 public class DBHelper extends SQLiteOpenHelper {
 
     private static final String TABLE_PLAYER = "player";
