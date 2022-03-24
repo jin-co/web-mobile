@@ -2,6 +2,7 @@ package com.example.tictactoeapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -47,6 +48,7 @@ public class ScoreBoardActivity extends AppCompatActivity {
         });
     }
 
+    // updates the list view with the data from the DB
     public void updateView() {
         // create a List of Map<String, ?> objects
         ArrayList<HashMap<String, String>> data = dbHelper.getPlayers();
@@ -60,5 +62,15 @@ public class ScoreBoardActivity extends AppCompatActivity {
         SimpleAdapter adapter =
                 new SimpleAdapter(this, data, resource, from, to);
         list_view_player_score.setAdapter(adapter);
+    }
+
+    public void onAddMoreClick(View view) {
+        Intent intent = new Intent(ScoreBoardActivity.this, AddPlayerActivity.class);
+        startActivity(intent);
+    }
+
+    public void onGoToMenuClick(View view) {
+        Intent intent = new Intent(ScoreBoardActivity.this, MenuActivity.class);
+        startActivity(intent);
     }
 }

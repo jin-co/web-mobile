@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-
+/*
+* Menu class that shows all the menus and allows users to navigate
+* to each menu
+* */
 public class MenuActivity extends AppCompatActivity {
     public static boolean playerOneSelected, playerTwoSelected = false;
 

@@ -23,7 +23,7 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
     TextView gameStatus;
     private int gameIndex = 0;
 
-    // user info
+    // current players
     public static String playerOne;
     public static String playerTwo;
 
@@ -99,7 +99,7 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
                     gameIndex++;
                 }
                 turn = (turn == 1) ? 2:1;
-//                gameStatus.setText("Player " + turn + "'s turn");
+
                 if (turn == 1) {
                     gameStatus.setText(playerOne + "'s turn");
                 }
@@ -214,8 +214,6 @@ public class GameBoardActivity extends AppCompatActivity implements View.OnClick
                     gameOver = true;
                 }
             }
-
-
             setNewGameButtonVisibility();
         }
     }

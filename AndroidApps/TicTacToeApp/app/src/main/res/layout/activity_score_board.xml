@@ -15,17 +15,36 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onAddMoreClick"
+            android:text="Add more" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onGoToMenuClick"
+            android:text="Go to menu" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <TextView
-            android:visibility="gone"
             android:id="@+id/idTitle"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
             android:text="id"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/nameTitle"
@@ -72,5 +91,4 @@
         android:id="@+id/list_view_player_score"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
 </LinearLayout>

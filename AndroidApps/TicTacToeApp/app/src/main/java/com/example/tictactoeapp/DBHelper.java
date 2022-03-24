@@ -59,17 +59,9 @@ public class DBHelper extends SQLiteOpenHelper {
             return true;
         }
     }
-// / update
+
     public boolean updateScores(String playerName, int wins, int loses, int ties) {
         SQLiteDatabase db = this.getWritableDatabase();
-//        String updateRecore = "UPDATE " + TABLE_PLAYER + " SET " +
-//                COL_WINS + " = " + wins + ", " +
-//                COL_LOSES + " = " + loses + ", " +
-//                COL_TIES + " = " + ties +
-//                " WHERE " + COL_NAME + " = " + "'" + playerName + "'";
-//        Cursor cursor = db.rawQuery(updateRecore, null);
-//        cursor.close();
-//        db.close();
 
         ContentValues values = new ContentValues();
         values.put(COL_NAME, playerName);
@@ -122,34 +114,4 @@ public class DBHelper extends SQLiteOpenHelper {
         db.close();
         return data;
     }
-//
-//    public List<Player> getPlayers() {
-//        List<Player> players = new ArrayList<>();
-//        String selectAll = "SELECT " +
-//                COL_ID + ", " +
-//                COL_NAME + ", " +
-//                COL_WINS + ", " +
-//                COL_LOSES + ", " +
-//                COL_TIES + " FROM " + TABLE_PLAYER;
-//
-//        SQLiteDatabase db = this.getReadableDatabase();
-//        Cursor cursor = db.rawQuery(selectAll, null);
-//        if (cursor.moveToFirst()) {
-//            do {
-//                int id = cursor.getInt(0);
-//                String name = cursor.getString(1);
-//                int wins = cursor.getInt(2);
-//                int loses = cursor.getInt(3);
-//                int ties = cursor.getInt(4);
-//
-//                Player player = new Player(id, name, wins, loses, ties);
-//                players.add(player);
-//            } while (cursor.moveToNext());
-//        } else {
-//
-//        }
-//        cursor.close();
-//        db.close();
-//        return players;
-//    }
 }
