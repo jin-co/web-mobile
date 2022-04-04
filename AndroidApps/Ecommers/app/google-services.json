@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "269841017801",
+    "project_id": "ecommerce-e39a7",
+    "storage_bucket": "ecommerce-e39a7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:269841017801:android:16719d3b499cba24f11618",
+        "android_client_info": {
+          "package_name": "com.jinco.ecommers"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "269841017801-bo5hq0dpkojo0o5tdv31jie37q7l5vma.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jinco.ecommers",
+            "certificate_hash": "085901822078ae130b6f04b42d069b772e51371f"
+          }
+        },
+        {
+          "client_id": "269841017801-ifk4256mr078084scqdtjgbsla5aq9kf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjmPoiMbzytU-2eaU-2-ouQRynJnnmycY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "269841017801-ifk4256mr078084scqdtjgbsla5aq9kf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
