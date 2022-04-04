@@ -3,10 +3,10 @@ package com.jinco.ecommerce.widgets
 import android.content.Context
 import android.graphics.Typeface
 import android.util.AttributeSet
-import androidx.appcompat.widget.AppCompatTextView
+import androidx.appcompat.widget.AppCompatButton
 
-class TextViewBold(context:Context , attributeSet: AttributeSet)
-    : AppCompatTextView(context, attributeSet) {
+class ECButton (context: Context, attributeSet: AttributeSet)
+    : AppCompatButton(context, attributeSet) {
 
     init {
         makeBold()

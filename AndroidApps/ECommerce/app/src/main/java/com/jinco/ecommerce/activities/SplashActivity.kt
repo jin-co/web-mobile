@@ -1,14 +1,13 @@
-package com.jinco.ecommerce
+package com.jinco.ecommerce.activities
 
 import android.content.Intent
-import android.graphics.Typeface
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.WindowInsets
 import android.view.WindowManager
-import kotlinx.android.synthetic.main.activity_splash.*
+import com.jinco.ecommerce.R
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,8 +33,5 @@ class SplashActivity : AppCompatActivity() {
             },
             2500
         )
-
-        val typeface: Typeface = Typeface.createFromAsset(assets, "Montserrat-Bold.ttf")
-        text_view_splash_app_name.typeface = typeface
     }
 }
