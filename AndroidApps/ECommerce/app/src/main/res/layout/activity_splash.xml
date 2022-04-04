@@ -7,4 +7,9 @@
     android:background="@drawable/splash"
     tools:context=".SplashActivity">
 
+    <TextView
+        android:id="@+id/text_view_splash_app_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
