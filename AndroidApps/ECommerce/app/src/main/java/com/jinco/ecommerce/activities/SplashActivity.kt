@@ -25,6 +25,7 @@ class SplashActivity : AppCompatActivity() {
             )
         }
 
+        // move to other screen after a certain delay
         @Suppress("DEPRECATION")
         Handler().postDelayed(
             {
