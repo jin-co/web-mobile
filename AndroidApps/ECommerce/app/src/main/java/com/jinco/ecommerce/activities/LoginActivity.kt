@@ -11,6 +11,8 @@ import android.view.WindowManager
 import com.google.firebase.auth.FirebaseAuth
 import com.jinco.ecommerce.R
 import com.jinco.ecommerce.firestore.FirestoreClass
+import com.jinco.ecommerce.widgets.Constants
+import com.myshoppal.models.User
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : BaseActivity(), View.OnClickListener {
@@ -100,7 +102,7 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
                 .addOnCompleteListener { task ->
 
                     if (task.isSuccessful) {
-//                        FirestoreClass().getUserDetails(this@LoginActivity)
+                        FirestoreClass().getUserDetails(this@LoginActivity)
                     } else {
                         // Hide the progress dialog
                         hideProgressDialog()
@@ -113,20 +115,20 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
     /**
      * A function to notify user that logged in success and get the user details from the FireStore database after authentication.
      */
-//    fun userLoggedInSuccess(user: User) {
-//
-//        // Hide the progress dialog.
-//        hideProgressDialog()
-//
-//        if (user.profileCompleted == 0) {
-//            // If the user profile is incomplete then launch the UserProfileActivity.
-//            val intent = Intent(this@LoginActivity, UserProfileActivity::class.java)
-//            intent.putExtra(Constants.EXTRA_USER_DETAILS, user)
-//            startActivity(intent)
-//        } else {
-//            // Redirect the user to Dashboard Screen after log in.
-//            startActivity(Intent(this@LoginActivity, DashboardActivity::class.java))
-//        }
-//        finish()
-//    }
+    fun userLoggedInSuccess(user: User) {
+
+        // Hide the progress dialog.
+        hideProgressDialog()
+
+        if (user.profileCompleted == 0) {
+            // If the user profile is incomplete then launch the UserProfileActivity.
+            val intent = Intent(this@LoginActivity, UserProfileActivity::class.java)
+            intent.putExtra(Constants.EXTRA_USER_DETAILS, user)
+            startActivity(intent)
+        } else {
+            // Redirect the user to Dashboard Screen after log in.
+            startActivity(Intent(this@LoginActivity, DashboardActivity::class.java))
+        }
+        finish()
+    }
 }
