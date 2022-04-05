@@ -7,12 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.myshoppal.R
-import com.myshoppal.firestore.FirestoreClass
+import com.jinco.ecommerce.R
+import com.jinco.ecommerce.firestore.FirestoreClass
+import com.jinco.ecommerce.ui.activities.CartListActivity
+import com.jinco.ecommerce.widgets.GlideLoader
 import com.myshoppal.models.Cart
-import com.myshoppal.ui.activities.CartListActivity
-import com.myshoppal.utils.Constants
-import com.myshoppal.utils.GlideLoader
 import kotlinx.android.synthetic.main.item_cart_layout.view.*
 
 /**

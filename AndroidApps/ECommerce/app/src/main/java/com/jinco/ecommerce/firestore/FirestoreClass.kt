@@ -557,36 +557,36 @@ class FirestoreClass {
      * @param activity activity class.
      * @param cart_id cart id of the item.
      */
-//    fun removeItemFromCart(context: Context, cart_id: String) {
-//
-//        // Cart items collection name
-//        mFireStore.collection(Constants.CART_ITEMS)
-//            .document(cart_id) // cart id
-//            .delete()
-//            .addOnSuccessListener {
-//
-//                // Notify the success result of the removed cart item from the list to the base class.
-//                when (context) {
-//                    is CartListActivity -> {
-//                        context.itemRemovedSuccess()
-//                    }
-//                }
-//            }
-//            .addOnFailureListener { e ->
-//
-//                // Hide the progress dialog if there is any error.
-//                when (context) {
-//                    is CartListActivity -> {
-//                        context.hideProgressDialog()
-//                    }
-//                }
-//                Log.e(
-//                    context.javaClass.simpleName,
-//                    "Error while removing the item from the cart list.",
-//                    e
-//                )
-//            }
-//    }
+    fun removeItemFromCart(context: Context, cart_id: String) {
+
+        // Cart items collection name
+        mFireStore.collection(Constants.CART_ITEMS)
+            .document(cart_id) // cart id
+            .delete()
+            .addOnSuccessListener {
+
+                // Notify the success result of the removed cart item from the list to the base class.
+                when (context) {
+                    is CartListActivity -> {
+                        context.itemRemovedSuccess()
+                    }
+                }
+            }
+            .addOnFailureListener { e ->
+
+                // Hide the progress dialog if there is any error.
+                when (context) {
+                    is CartListActivity -> {
+                        context.hideProgressDialog()
+                    }
+                }
+                Log.e(
+                    context.javaClass.simpleName,
+                    "Error while removing the item from the cart list.",
+                    e
+                )
+            }
+    }
 
     /**
      * A function to update the cart item in the cloud firestore.
@@ -595,37 +595,37 @@ class FirestoreClass {
      * @param id cart id of the item.
      * @param itemHashMap to be updated values.
      */
-//    fun updateMyCart(context: Context, cart_id: String, itemHashMap: HashMap<String, Any>) {
-//
-//        // Cart items collection name
-//        mFireStore.collection(Constants.CART_ITEMS)
-//            .document(cart_id) // cart id
-//            .update(itemHashMap) // A HashMap of fields which are to be updated.
-//            .addOnSuccessListener {
-//
-//                // Notify the success result of the updated cart items list to the base class.
-//                when (context) {
-//                    is CartListActivity -> {
-//                        context.itemUpdateSuccess()
-//                    }
-//                }
-//            }
-//            .addOnFailureListener { e ->
-//
-//                // Hide the progress dialog if there is any error.
-//                when (context) {
-//                    is CartListActivity -> {
-//                        context.hideProgressDialog()
-//                    }
-//                }
-//
-//                Log.e(
-//                    context.javaClass.simpleName,
-//                    "Error while updating the cart item.",
-//                    e
-//                )
-//            }
-//    }
+    fun updateMyCart(context: Context, cart_id: String, itemHashMap: HashMap<String, Any>) {
+
+        // Cart items collection name
+        mFireStore.collection(Constants.CART_ITEMS)
+            .document(cart_id) // cart id
+            .update(itemHashMap) // A HashMap of fields which are to be updated.
+            .addOnSuccessListener {
+
+                // Notify the success result of the updated cart items list to the base class.
+                when (context) {
+                    is CartListActivity -> {
+                        context.itemUpdateSuccess()
+                    }
+                }
+            }
+            .addOnFailureListener { e ->
+
+                // Hide the progress dialog if there is any error.
+                when (context) {
+                    is CartListActivity -> {
+                        context.hideProgressDialog()
+                    }
+                }
+
+                Log.e(
+                    context.javaClass.simpleName,
+                    "Error while updating the cart item.",
+                    e
+                )
+            }
+    }
 
     /**
      * A function to add address to the cloud firestore.
