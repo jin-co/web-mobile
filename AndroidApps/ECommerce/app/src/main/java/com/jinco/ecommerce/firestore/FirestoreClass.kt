@@ -11,9 +11,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import com.jinco.ecommerce.activities.*
 import com.jinco.ecommerce.ui.fragments.OrdersFragment
-import com.jinco.ecommerce.activities.ui.fragments.activities.*
 import com.jinco.ecommerce.ui.activities.*
 import com.jinco.ecommerce.ui.fragments.DashboardFragment
 import com.jinco.ecommerce.ui.fragments.ProductsFragment
@@ -388,28 +386,28 @@ class FirestoreClass {
     /**
      * A function to delete the product from the cloud firestore.
      */
-//    fun deleteProduct(fragment: ProductsFragment, productId: String) {
-//
-//        mFireStore.collection(Constants.PRODUCTS)
-//            .document(productId)
-//            .delete()
-//            .addOnSuccessListener {
-//
-//                // Notify the success result to the base class.
-//                fragment.productDeleteSuccess()
-//            }
-//            .addOnFailureListener { e ->
-//
-//                // Hide the progress dialog if there is an error.
-//                fragment.hideProgressDialog()
-//
-//                Log.e(
-//                    fragment.requireActivity().javaClass.simpleName,
-//                    "Error while deleting the product.",
-//                    e
-//                )
-//            }
-//    }
+    fun deleteProduct(fragment: ProductsFragment, productId: String) {
+
+        mFireStore.collection(Constants.PRODUCTS)
+            .document(productId)
+            .delete()
+            .addOnSuccessListener {
+
+                // Notify the success result to the base class.
+                fragment.productDeleteSuccess()
+            }
+            .addOnFailureListener { e ->
+
+                // Hide the progress dialog if there is an error.
+                fragment.hideProgressDialog()
+
+                Log.e(
+                    fragment.requireActivity().javaClass.simpleName,
+                    "Error while deleting the product.",
+                    e
+                )
+            }
+    }
 
     /**
      * A function to get the product details based on the product id.

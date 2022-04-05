@@ -12,7 +12,9 @@ import com.jinco.ecommerce.R
 import com.jinco.ecommerce.firestore.FirestoreClass
 import com.jinco.ecommerce.ui.activities.AddProductActivity
 import com.myshoppal.models.Product
+import com.myshoppal.ui.adapters.MyProductsListAdapter
 import kotlinx.android.synthetic.main.dialog_progress.*
+import kotlinx.android.synthetic.main.fragment_products.*
 
 class ProductsFragment : BaseFragment() {
 
