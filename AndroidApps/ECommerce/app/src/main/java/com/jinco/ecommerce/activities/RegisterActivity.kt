@@ -13,6 +13,8 @@ import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.jinco.ecommerce.R
+import com.jinco.ecommerce.firestore.FirestoreClass
+import com.myshoppal.models.User
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_register.*
 
@@ -35,8 +37,7 @@ class RegisterActivity : BaseActivity() {
         displayActionBar()
 
         text_view_login.setOnClickListener {
-            val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
-            startActivity(intent)
+            onBackPressed()
         }
 
         btn_register.setOnClickListener {
@@ -138,15 +139,15 @@ class RegisterActivity : BaseActivity() {
                             val firebaseUser: FirebaseUser = task.result!!.user!!
 
                             // Instance of User data model class.
-//                            val user = User(
-//                                firebaseUser.uid,
-//                                et_first_name.text.toString().trim { it <= ' ' },
-//                                et_last_name.text.toString().trim { it <= ' ' },
-//                                et_email.text.toString().trim { it <= ' ' }
-//                            )
+                            val user = User(
+                                firebaseUser.uid,
+                                et_first_name.text.toString().trim { it <= ' ' },
+                                et_last_name.text.toString().trim { it <= ' ' },
+                                et_email.text.toString().trim { it <= ' ' }
+                            )
 
                             // Pass the required values in the constructor.
-//                            FirestoreClass().registerUser(this@RegisterActivity, user)
+                            FirestoreClass().registerUser(this@RegisterActivity, user)
                         } else {
 
                             // Hide the progress dialog
@@ -162,24 +163,24 @@ class RegisterActivity : BaseActivity() {
     /**
      * A function to notify the success result of Firestore entry when the user is registered successfully.
      */
-//    fun userRegistrationSuccess() {
-//
-//        // Hide the progress dialog
-//        hideProgressDialog()
-//
-//        Toast.makeText(
-//            this@RegisterActivity,
-//            resources.getString(R.string.register_success),
-//            Toast.LENGTH_SHORT
-//        ).show()
-//
-//
-//        /**
-//         * Here the new user registered is automatically signed-in so we just sign-out the user from firebase
-//         * and send him to Intro Screen for Sign-In
-//         */
-//        FirebaseAuth.getInstance().signOut()
-//        // Finish the Register Screen
-//        finish()
-//    }
+    fun userRegistrationSuccess() {
+
+        // Hide the progress dialog
+        hideProgressDialog()
+
+        Toast.makeText(
+            this@RegisterActivity,
+            resources.getString(R.string.register_success),
+            Toast.LENGTH_SHORT
+        ).show()
+
+
+        /**
+         * Here the new user registered is automatically signed-in so we just sign-out the user from firebase
+         * and send him to Intro Screen for Sign-In
+         */
+        FirebaseAuth.getInstance().signOut()
+        // Finish the Register Screen
+        finish()
+    }
 }
