@@ -16,6 +16,7 @@ import androidx.core.content.ContextCompat
 import com.jinco.ecommerce.R
 import com.jinco.ecommerce.firestore.FirestoreClass
 import com.jinco.ecommerce.widgets.Constants
+import com.jinco.ecommerce.widgets.GlideLoader
 import com.myshoppal.models.User
 import kotlinx.android.synthetic.main.activity_register.*
 import kotlinx.android.synthetic.main.activity_register.et_email
@@ -25,7 +26,7 @@ import kotlinx.android.synthetic.main.activity_register.tv_title
 import kotlinx.android.synthetic.main.activity_user_profile.*
 import java.io.IOException
 
-class UserProfileActivity : BaseActivity() {
+class UserProfileActivity : BaseActivity(),View.OnClickListener {
     // Instance of User data model class. We will initialize it later on.
     private lateinit var mUserDetails: User
     // Add a global variable for URI of a selected image from phone storage.
@@ -188,6 +189,9 @@ class UserProfileActivity : BaseActivity() {
                     try {
 
                         // The uri of selected image from phone storage.
+
+//                        val selectedImageUri = data.data!!
+//                        iv_user_photo.setImageURI(selectedImageUri)
                         mSelectedImageFileUri = data.data!!
 
                         GlideLoader(this@UserProfileActivity).loadUserPicture(
@@ -221,7 +225,7 @@ class UserProfileActivity : BaseActivity() {
         val actionBar = supportActionBar
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true)
-            actionBar.setHomeAsUpIndicator(R.drawable.ic_white_color_back_24dp)
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24)
         }
 
         toolbar_user_profile_activity.setNavigationOnClickListener { onBackPressed() }
