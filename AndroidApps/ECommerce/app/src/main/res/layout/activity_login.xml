@@ -151,7 +151,7 @@
             android:textSize="@dimen/lbl_text_view_textSize" />
 
         <com.jinco.ecommerce.widgets.ECTextViewBold
-            android:id="@+id/tv_register"
+            android:id="@+id/text_view_register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:foreground="?attr/selectableItemBackground"

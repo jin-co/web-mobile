@@ -5,7 +5,9 @@
       <map>
         <entry key="..\:/Users/jin/Documents/GitHub/web-mobile/AndroidApps/ECommerce/app/src/main/res/drawable/button_background.xml" value="0.205" />
         <entry key="..\:/Users/jin/Documents/GitHub/web-mobile/AndroidApps/ECommerce/app/src/main/res/layout/activity_login.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/jin/Documents/GitHub/web-mobile/AndroidApps/ECommerce/app/src/main/res/layout/activity_register.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/jin/Documents/GitHub/web-mobile/AndroidApps/ECommerce/app/src/main/res/layout/activity_splash.xml" value="0.17028985507246377" />
+        <entry key="..\:/Users/jin/Documents/GitHub/web-mobile/AndroidApps/ECommerce/app/src/main/res/layout/dialog_progress.xml" value="0.1" />
       </map>
     </option>
   </component>
