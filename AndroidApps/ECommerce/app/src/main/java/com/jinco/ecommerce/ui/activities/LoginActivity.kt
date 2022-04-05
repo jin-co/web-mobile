@@ -1,8 +1,7 @@
-package com.jinco.ecommerce.activities
+package com.jinco.ecommerce.ui.activities
 
 import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View

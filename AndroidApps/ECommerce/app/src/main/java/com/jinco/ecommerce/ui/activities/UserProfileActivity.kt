@@ -1,11 +1,10 @@
-package com.jinco.ecommerce.activities
+package com.jinco.ecommerce.ui.activities
 
 import android.Manifest
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
@@ -18,7 +17,6 @@ import com.jinco.ecommerce.firestore.FirestoreClass
 import com.jinco.ecommerce.widgets.Constants
 import com.jinco.ecommerce.widgets.GlideLoader
 import com.myshoppal.models.User
-import kotlinx.android.synthetic.main.activity_register.*
 import kotlinx.android.synthetic.main.activity_register.et_email
 import kotlinx.android.synthetic.main.activity_register.et_first_name
 import kotlinx.android.synthetic.main.activity_register.et_last_name

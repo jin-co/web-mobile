@@ -1,6 +1,5 @@
-package com.jinco.ecommerce.activities
+package com.jinco.ecommerce.ui.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth

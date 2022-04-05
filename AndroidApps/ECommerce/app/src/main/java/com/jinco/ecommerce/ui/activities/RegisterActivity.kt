@@ -1,8 +1,6 @@
-package com.jinco.ecommerce.activities
+package com.jinco.ecommerce.ui.activities
 
-import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.WindowInsets
@@ -15,7 +13,6 @@ import com.google.firebase.auth.FirebaseUser
 import com.jinco.ecommerce.R
 import com.jinco.ecommerce.firestore.FirestoreClass
 import com.myshoppal.models.User
-import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_register.*
 
 class RegisterActivity : BaseActivity() {

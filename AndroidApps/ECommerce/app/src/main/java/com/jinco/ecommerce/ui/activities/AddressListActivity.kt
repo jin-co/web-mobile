@@ -1,4 +1,4 @@
-package com.jinco.ecommerce.activities
+package com.jinco.ecommerce.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

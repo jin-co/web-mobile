@@ -12,39 +12,39 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ECommerce">
         <activity
-            android:name=".activities.AddressListActivity"
+            android:name=".ui.activities.AddressListActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.DashboardActivity"
+            android:name=".ui.activities.DashboardActivity"
             android:exported="false"
             android:label="@string/title_activity_dashboard" />
         <activity
-            android:name=".activities.AddProductActivity"
+            android:name=".ui.activities.AddProductActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.SettingsActivity"
+            android:name=".ui.activities.SettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.UserProfileActivity"
+            android:name=".ui.activities.UserProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.ForgotPasswordActivity"
+            android:name=".ui.activities.ForgotPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.BaseActivity"
+            android:name=".ui.activities.BaseActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.RegisterActivity"
+            android:name=".ui.activities.RegisterActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activities.LoginActivity"
+            android:name=".ui.activities.LoginActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activities.SplashActivity"
+            android:name=".ui.activities.SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
@@ -55,7 +55,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.MainActivity"
+            android:name=".ui.activities.MainActivity"
             android:exported="false" />
     </application>
 

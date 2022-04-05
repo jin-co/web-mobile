@@ -1,4 +1,4 @@
-package com.jinco.ecommerce.activities
+package com.jinco.ecommerce.ui.activities
 
 import android.content.Intent
 import android.os.Build

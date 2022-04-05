@@ -1,4 +1,4 @@
-package com.jinco.ecommerce.activities
+package com.jinco.ecommerce.ui.activities
 
 import android.Manifest
 import android.app.Activity
@@ -6,7 +6,6 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
@@ -19,7 +18,6 @@ import com.jinco.ecommerce.widgets.Constants
 import com.jinco.ecommerce.widgets.GlideLoader
 import com.myshoppal.models.Product
 import kotlinx.android.synthetic.main.activity_add_product.*
-import kotlinx.android.synthetic.main.activity_forgot_password.*
 import kotlinx.android.synthetic.main.activity_forgot_password.btn_submit
 import java.io.IOException
 

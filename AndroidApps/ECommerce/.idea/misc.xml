@@ -20,6 +20,11 @@
         <entry key="..\:/Users/jin/Documents/GitHub/web-mobile/AndroidApps/ECommerce/app/src/main/res/layout/activity_splash.xml" value="0.17028985507246377" />
         <entry key="..\:/Users/jin/Documents/GitHub/web-mobile/AndroidApps/ECommerce/app/src/main/res/layout/activity_user_profile.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/jin/Documents/GitHub/web-mobile/AndroidApps/ECommerce/app/src/main/res/layout/dialog_progress.xml" value="0.1" />
+        <entry key="..\:/Users/jin/Documents/GitHub/web-mobile/AndroidApps/ECommerce/app/src/main/res/layout/fragment_dashboard.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/jin/Documents/GitHub/web-mobile/AndroidApps/ECommerce/app/src/main/res/layout/fragment_orders.xml" value="0.1" />
+        <entry key="..\:/Users/jin/Documents/GitHub/web-mobile/AndroidApps/ECommerce/app/src/main/res/layout/fragment_products.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/jin/Documents/GitHub/web-mobile/AndroidApps/ECommerce/app/src/main/res/menu/add_product_menu.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/jin/Documents/GitHub/web-mobile/AndroidApps/ECommerce/app/src/main/res/menu/bottom_nav_menu.xml" value="0.18854166666666666" />
       </map>
     </option>
   </component>

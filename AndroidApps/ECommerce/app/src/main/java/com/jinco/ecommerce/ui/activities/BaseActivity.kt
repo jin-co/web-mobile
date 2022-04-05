@@ -1,4 +1,4 @@
-package com.jinco.ecommerce.activities
+package com.jinco.ecommerce.ui.activities
 
 import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +11,10 @@ import com.jinco.ecommerce.R
 import kotlinx.android.synthetic.main.dialog_progress.*
 
 open class BaseActivity : AppCompatActivity() {
+
+    // A global variable for double back press feature.
+    private var doubleBackToExitPressedOnce = false
+
     private lateinit var mProgressDialog: Dialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -73,22 +77,22 @@ open class BaseActivity : AppCompatActivity() {
     /**
      * A function to implement the double back press feature to exit the app.
      */
-//    fun doubleBackToExit() {
-//
-//        if (doubleBackToExitPressedOnce) {
-//            super.onBackPressed()
-//            return
-//        }
-//
-//        this.doubleBackToExitPressedOnce = true
-//
-//        Toast.makeText(
-//            this,
-//            resources.getString(R.string.please_click_back_again_to_exit),
-//            Toast.LENGTH_SHORT
-//        ).show()
-//
-//        @Suppress("DEPRECATION")
-//        Handler().postDelayed({ doubleBackToExitPressedOnce = false }, 2000)
-//    }
+    fun doubleBackToExit() {
+
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed()
+            return
+        }
+
+        this.doubleBackToExitPressedOnce = true
+
+        Toast.makeText(
+            this,
+            resources.getString(R.string.please_click_back_again_to_exit),
+            Toast.LENGTH_SHORT
+        ).show()
+
+        @Suppress("DEPRECATION")
+        Handler().postDelayed({ doubleBackToExitPressedOnce = false }, 2000)
+    }
 }
