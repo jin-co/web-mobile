@@ -10,8 +10,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.jinco.ecommerce.R
+import com.jinco.ecommerce.ui.activities.AddEditAddressActivity
+import com.jinco.ecommerce.ui.activities.CheckoutActivity
 import com.jinco.ecommerce.widgets.Constants
 import com.myshoppal.models.Address
+import kotlinx.android.synthetic.main.item_address_layout.view.*
 
 /**
  * An adapter class for AddressList adapter.

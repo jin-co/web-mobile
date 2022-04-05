@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.jinco.ecommerce.R
 import com.jinco.ecommerce.firestore.FirestoreClass
 import com.myshoppal.models.Order
+import com.myshoppal.ui.adapters.MyOrdersListAdapter
 import kotlinx.android.synthetic.main.fragment_orders.*
 
 class OrdersFragment : BaseFragment() {

@@ -16,6 +16,7 @@ import com.jinco.ecommerce.ui.activities.*
 import com.jinco.ecommerce.ui.fragments.DashboardFragment
 import com.jinco.ecommerce.ui.fragments.ProductsFragment
 import com.jinco.ecommerce.widgets.Constants
+import com.myshoppal.models.Cart
 import com.myshoppal.models.Order
 import com.myshoppal.models.Product
 import com.myshoppal.models.User
@@ -412,30 +413,30 @@ class FirestoreClass {
     /**
      * A function to get the product details based on the product id.
      */
-//    fun getProductDetails(activity: ProductDetailsActivity, productId: String) {
-//
-//        // The collection name for PRODUCTS
-//        mFireStore.collection(Constants.PRODUCTS)
-//            .document(productId)
-//            .get() // Will get the document snapshots.
-//            .addOnSuccessListener { document ->
-//
-//                // Here we get the product details in the form of document.
-//                Log.e(activity.javaClass.simpleName, document.toString())
-//
-//                // Convert the snapshot to the object of Product data model class.
-//                val product = document.toObject(Product::class.java)!!
-//
-//                activity.productDetailsSuccess(product)
-//            }
-//            .addOnFailureListener { e ->
-//
-//                // Hide the progress dialog if there is an error.
-//                activity.hideProgressDialog()
-//
-//                Log.e(activity.javaClass.simpleName, "Error while getting the product details.", e)
-//            }
-//    }
+    fun getProductDetails(activity: ProductDetailsActivity, productId: String) {
+
+        // The collection name for PRODUCTS
+        mFireStore.collection(Constants.PRODUCTS)
+            .document(productId)
+            .get() // Will get the document snapshots.
+            .addOnSuccessListener { document ->
+
+                // Here we get the product details in the form of document.
+                Log.e(activity.javaClass.simpleName, document.toString())
+
+                // Convert the snapshot to the object of Product data model class.
+                val product = document.toObject(Product::class.java)!!
+
+                activity.productDetailsSuccess(product)
+            }
+            .addOnFailureListener { e ->
+
+                // Hide the progress dialog if there is an error.
+                activity.hideProgressDialog()
+
+                Log.e(activity.javaClass.simpleName, "Error while getting the product details.", e)
+            }
+    }
 
     /**
      * A function to add the item to the cart in the cloud firestore.
@@ -443,60 +444,60 @@ class FirestoreClass {
      * @param activity
      * @param addToCart
      */
-//    fun addCartItems(activity: ProductDetailsActivity, addToCart: Cart) {
-//
-//        mFireStore.collection(Constants.CART_ITEMS)
-//            .document()
-//            // Here the userInfo are Field and the SetOption is set to merge. It is for if we wants to merge
-//            .set(addToCart, SetOptions.merge())
-//            .addOnSuccessListener {
-//
-//                // Here call a function of base activity for transferring the result to it.
-//                activity.addToCartSuccess()
-//            }
-//            .addOnFailureListener { e ->
-//
-//                activity.hideProgressDialog()
-//
-//                Log.e(
-//                    activity.javaClass.simpleName,
-//                    "Error while creating the document for cart item.",
-//                    e
-//                )
-//            }
-//    }
+    fun addCartItems(activity: ProductDetailsActivity, addToCart: Cart) {
+
+        mFireStore.collection(Constants.CART_ITEMS)
+            .document()
+            // Here the userInfo are Field and the SetOption is set to merge. It is for if we wants to merge
+            .set(addToCart, SetOptions.merge())
+            .addOnSuccessListener {
+
+                // Here call a function of base activity for transferring the result to it.
+                activity.addToCartSuccess()
+            }
+            .addOnFailureListener { e ->
+
+                activity.hideProgressDialog()
+
+                Log.e(
+                    activity.javaClass.simpleName,
+                    "Error while creating the document for cart item.",
+                    e
+                )
+            }
+    }
 
     /**
      * A function to check whether the item already exist in the cart or not.
      */
-//    fun checkIfItemExistInCart(activity: ProductDetailsActivity, productId: String) {
-//
-//        mFireStore.collection(Constants.CART_ITEMS)
-//            .whereEqualTo(Constants.USER_ID, getCurrentUserID())
-//            .whereEqualTo(Constants.PRODUCT_ID, productId)
-//            .get()
-//            .addOnSuccessListener { document ->
-//
-//                Log.e(activity.javaClass.simpleName, document.documents.toString())
-//
-//                // If the document size is greater than 1 it means the product is already added to the cart.
-//                if (document.documents.size > 0) {
-//                    activity.productExistsInCart()
-//                } else {
-//                    activity.hideProgressDialog()
-//                }
-//            }
-//            .addOnFailureListener { e ->
-//                // Hide the progress dialog if there is an error.
-//                activity.hideProgressDialog()
-//
-//                Log.e(
-//                    activity.javaClass.simpleName,
-//                    "Error while checking the existing cart list.",
-//                    e
-//                )
-//            }
-//    }
+    fun checkIfItemExistInCart(activity: ProductDetailsActivity, productId: String) {
+
+        mFireStore.collection(Constants.CART_ITEMS)
+            .whereEqualTo(Constants.USER_ID, getCurrentUserID())
+            .whereEqualTo(Constants.PRODUCT_ID, productId)
+            .get()
+            .addOnSuccessListener { document ->
+
+                Log.e(activity.javaClass.simpleName, document.documents.toString())
+
+                // If the document size is greater than 1 it means the product is already added to the cart.
+                if (document.documents.size > 0) {
+                    activity.productExistsInCart()
+                } else {
+                    activity.hideProgressDialog()
+                }
+            }
+            .addOnFailureListener { e ->
+                // Hide the progress dialog if there is an error.
+                activity.hideProgressDialog()
+
+                Log.e(
+                    activity.javaClass.simpleName,
+                    "Error while checking the existing cart list.",
+                    e
+                )
+            }
+    }
 
     /**
      * A function to get the cart items list from the cloud firestore.

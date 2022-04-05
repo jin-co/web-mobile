@@ -6,9 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.myshoppal.R
+import com.jinco.ecommerce.R
+import com.jinco.ecommerce.widgets.GlideLoader
 import com.myshoppal.models.Product
-import com.myshoppal.utils.GlideLoader
 import kotlinx.android.synthetic.main.item_dashboard_layout.view.*
 
 /**
