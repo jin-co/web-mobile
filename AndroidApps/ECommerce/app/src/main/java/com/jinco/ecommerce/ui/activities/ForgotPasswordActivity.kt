@@ -6,12 +6,21 @@ import com.google.firebase.auth.FirebaseAuth
 import com.jinco.ecommerce.R
 import kotlinx.android.synthetic.main.activity_forgot_password.*
 
+/**
+ * Forgot Password Screen of the application.
+ */
 class ForgotPasswordActivity : BaseActivity() {
+
+    /**
+     * This function is auto created by Android when the Activity Class is created.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
+        //This call the parent constructor
         super.onCreate(savedInstanceState)
+        // This is used to align the xml view to this class
         setContentView(R.layout.activity_forgot_password)
 
-        displayActionBar()
+        setupActionBar()
 
         btn_submit.setOnClickListener {
 
@@ -50,14 +59,18 @@ class ForgotPasswordActivity : BaseActivity() {
         }
     }
 
-    private fun displayActionBar() {
+
+    /**
+     * A function for actionBar Setup.
+     */
+    private fun setupActionBar() {
 
         setSupportActionBar(toolbar_forgot_password_activity)
 
         val actionBar = supportActionBar
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true)
-            actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24)
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_white_color_back_24dp)
         }
 
         toolbar_forgot_password_activity.setNavigationOnClickListener { onBackPressed() }

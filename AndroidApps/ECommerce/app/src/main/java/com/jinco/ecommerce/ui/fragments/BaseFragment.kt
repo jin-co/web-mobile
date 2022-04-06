@@ -3,7 +3,6 @@ package com.jinco.ecommerce.ui.fragments
 import android.app.Dialog
 import androidx.fragment.app.Fragment
 import com.jinco.ecommerce.R
-
 import kotlinx.android.synthetic.main.dialog_progress.*
 
 /**

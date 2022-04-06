@@ -1,6 +1,8 @@
-package com.myshoppal.models
+package com.jinco.ecommerce.models
 
 import android.os.Parcelable
+import com.jinco.ecommerce.models.Address
+import com.jinco.ecommerce.models.Cart
 import kotlinx.android.parcel.Parcelize
 
 /**

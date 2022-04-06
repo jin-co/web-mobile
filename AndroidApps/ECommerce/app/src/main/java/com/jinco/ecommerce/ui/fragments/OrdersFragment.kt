@@ -7,10 +7,14 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jinco.ecommerce.R
 import com.jinco.ecommerce.firestore.FirestoreClass
-import com.myshoppal.models.Order
-import com.myshoppal.ui.adapters.MyOrdersListAdapter
+import com.jinco.ecommerce.models.Order
+import com.ecommerce.ui.adapters.MyOrdersListAdapter
+import com.jinco.ecommerce.ui.fragments.BaseFragment
 import kotlinx.android.synthetic.main.fragment_orders.*
 
+/**
+ * Order listing fragment.
+ */
 class OrdersFragment : BaseFragment() {
 
     override fun onCreateView(

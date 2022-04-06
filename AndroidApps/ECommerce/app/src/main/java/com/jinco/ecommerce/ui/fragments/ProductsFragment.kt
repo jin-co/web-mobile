@@ -1,21 +1,21 @@
 package com.jinco.ecommerce.ui.fragments
 
-import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jinco.ecommerce.R
 import com.jinco.ecommerce.firestore.FirestoreClass
+import com.jinco.ecommerce.models.Product
 import com.jinco.ecommerce.ui.activities.AddProductActivity
-import com.myshoppal.models.Product
-import com.myshoppal.ui.adapters.MyProductsListAdapter
-import kotlinx.android.synthetic.main.dialog_progress.*
+import com.ecommerce.ui.adapters.MyProductsListAdapter
 import kotlinx.android.synthetic.main.fragment_products.*
 
+/**
+ * A products fragment.
+ */
 class ProductsFragment : BaseFragment() {
 
     private lateinit var mRootView: View

@@ -14,14 +14,17 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.jinco.ecommerce.R
 import com.jinco.ecommerce.firestore.FirestoreClass
+import com.jinco.ecommerce.models.Product
 import com.jinco.ecommerce.widgets.Constants
 import com.jinco.ecommerce.widgets.GlideLoader
-import com.myshoppal.models.Product
 import kotlinx.android.synthetic.main.activity_add_product.*
-import kotlinx.android.synthetic.main.activity_forgot_password.btn_submit
 import java.io.IOException
 
+/**
+ * Add Product screen of the app.
+ */
 class AddProductActivity : BaseActivity(), View.OnClickListener {
+
     // A global variable for URI of a selected image from phone storage.
     private var mSelectedImageFileUri: Uri? = null
 
@@ -31,6 +34,7 @@ class AddProductActivity : BaseActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_product)
+
         setupActionBar()
 
         // Assign the click event to iv_add_update_product image.
@@ -144,7 +148,7 @@ class AddProductActivity : BaseActivity(), View.OnClickListener {
         val actionBar = supportActionBar
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true)
-            actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24)
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_white_color_back_24dp)
         }
 
         toolbar_add_product_activity.setNavigationOnClickListener { onBackPressed() }

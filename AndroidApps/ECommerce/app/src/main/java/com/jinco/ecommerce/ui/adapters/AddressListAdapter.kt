@@ -1,4 +1,4 @@
-package com.myshoppal.ui.adapters
+package com.ecommerce.ui.adapters
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -7,13 +7,13 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.jinco.ecommerce.R
+
+import com.jinco.ecommerce.models.Address
 import com.jinco.ecommerce.ui.activities.AddEditAddressActivity
 import com.jinco.ecommerce.ui.activities.CheckoutActivity
 import com.jinco.ecommerce.widgets.Constants
-import com.myshoppal.models.Address
 import kotlinx.android.synthetic.main.item_address_layout.view.*
 
 /**

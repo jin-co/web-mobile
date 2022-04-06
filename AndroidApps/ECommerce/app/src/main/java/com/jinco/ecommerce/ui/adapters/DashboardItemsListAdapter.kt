@@ -1,4 +1,4 @@
-package com.myshoppal.ui.adapters
+package com.ecommerce.ui.adapters
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.jinco.ecommerce.R
+import com.jinco.ecommerce.models.Product
 import com.jinco.ecommerce.widgets.GlideLoader
-import com.myshoppal.models.Product
 import kotlinx.android.synthetic.main.item_dashboard_layout.view.*
 
 /**

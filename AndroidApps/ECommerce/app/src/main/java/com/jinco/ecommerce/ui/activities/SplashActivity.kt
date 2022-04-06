@@ -1,38 +1,48 @@
 package com.jinco.ecommerce.ui.activities
 
 import android.content.Intent
-import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.view.WindowInsets
 import android.view.WindowManager
+import androidx.appcompat.app.AppCompatActivity
 import com.jinco.ecommerce.R
+import com.jinco.ecommerce.firestore.FirestoreClass
 
+@Suppress("DEPRECATION")
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        // this hides the top bar
-        @Suppress("DEPRECATION")
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            window.insetsController?.hide(WindowInsets.Type.statusBars())
-        } else {
-            window.setFlags(
-                WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN
-            )
-        }
+        // This is used to hide the status bar and make the splash screen as a full screen activity.
+        // It is deprecated in the API level 30. I will update you with the alternate solution soon.
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        )
 
-        // move to other screen after a certain delay
-        @Suppress("DEPRECATION")
+        // Adding the handler to after the a task after some delay.
+        // It is deprecated in the API level 30.
         Handler().postDelayed(
             {
-                startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
-                finish()
+
+                // If the user is logged in once and did not logged out manually from the app.
+                // So, next time when the user is coming into the app user will be redirected to MainScreen.
+                // If user is not logged in or logout manually then user will  be redirected to the Login screen as usual.
+
+                // Get the current logged in user id
+                val currentUserID = FirestoreClass().getCurrentUserID()
+
+                if (currentUserID.isNotEmpty()) {
+                    // Launch dashboard screen.
+                    startActivity(Intent(this@SplashActivity, DashboardActivity::class.java))
+                } else {
+                    // Launch the Login Activity
+                    startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
+                }
+                finish() // Call this when your activity is done and should be closed.
             },
             2500
-        )
+        ) // Here we pass the delay time in milliSeconds after which the splash activity will disappear.
     }
 }

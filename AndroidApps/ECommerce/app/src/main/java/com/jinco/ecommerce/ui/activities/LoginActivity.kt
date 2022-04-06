@@ -1,41 +1,45 @@
 package com.jinco.ecommerce.ui.activities
 
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
-import android.view.WindowInsets
 import android.view.WindowManager
 import com.google.firebase.auth.FirebaseAuth
 import com.jinco.ecommerce.R
 import com.jinco.ecommerce.firestore.FirestoreClass
+import com.jinco.ecommerce.models.User
 import com.jinco.ecommerce.widgets.Constants
-import com.myshoppal.models.User
 import kotlinx.android.synthetic.main.activity_login.*
 
+/**
+ * Login Screen of the application.
+ */
+@Suppress("DEPRECATION")
 class LoginActivity : BaseActivity(), View.OnClickListener {
+
+    /**
+     * This function is auto created by Android when the Activity Class is created.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
+        //This call the parent constructor
         super.onCreate(savedInstanceState)
+        // This is used to align the xml view to this class
         setContentView(R.layout.activity_login)
 
-        // this hides the top bar
-        @Suppress("DEPRECATION")
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            window.insetsController?.hide(WindowInsets.Type.statusBars())
-        } else {
-            window.setFlags(
-                WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN
-            )
-        }
+        // This is used to hide the status bar and make the login screen as a full screen activity.
+        // It is deprecated in the API level 30. I will update you with the alternate solution soon.
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        )
 
         // Click event assigned to Forgot Password text.
         tv_forgot_password.setOnClickListener(this)
         // Click event assigned to Login button.
         btn_login.setOnClickListener(this)
         // Click event assigned to Register text.
-        text_view_register.setOnClickListener(this)
+        tv_register.setOnClickListener(this)
     }
 
     /**
@@ -44,17 +48,20 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         if (v != null) {
             when (v.id) {
+
                 R.id.tv_forgot_password -> {
+
                     // Launch the forgot password screen when the user clicks on the forgot password text.
                     val intent = Intent(this@LoginActivity, ForgotPasswordActivity::class.java)
                     startActivity(intent)
                 }
 
                 R.id.btn_login -> {
+
                     logInRegisteredUser()
                 }
 
-                R.id.text_view_register -> {
+                R.id.tv_register -> {
                     // Launch the register screen when the user clicks on the text.
                     val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
                     startActivity(intent)
@@ -68,11 +75,11 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
      */
     private fun validateLoginDetails(): Boolean {
         return when {
-            TextUtils.isEmpty(edit_text_email_id.text.toString().trim { it <= ' ' }) -> {
+            TextUtils.isEmpty(et_email.text.toString().trim { it <= ' ' }) -> {
                 showErrorSnackBar(resources.getString(R.string.err_msg_enter_email), true)
                 false
             }
-            TextUtils.isEmpty(edit_text_password.text.toString().trim { it <= ' ' }) -> {
+            TextUtils.isEmpty(et_password.text.toString().trim { it <= ' ' }) -> {
                 showErrorSnackBar(resources.getString(R.string.err_msg_enter_password), true)
                 false
             }
@@ -93,8 +100,8 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
             showProgressDialog(resources.getString(R.string.please_wait))
 
             // Get the text from editText and trim the space
-            val email = edit_text_email_id.text.toString().trim { it <= ' ' }
-            val password = edit_text_password.text.toString().trim { it <= ' ' }
+            val email = et_email.text.toString().trim { it <= ' ' }
+            val password = et_password.text.toString().trim { it <= ' ' }
 
             // Log-In using FirebaseAuth
             FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)

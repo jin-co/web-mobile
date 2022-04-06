@@ -25,7 +25,7 @@
                 android:layout_height="match_parent"
                 android:contentDescription="@string/content_description"
                 android:scaleType="fitXY"
-                android:src="@drawable/login_bg" />
+                android:src="@drawable/auth_screens_background" />
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar_settings_activity"
@@ -62,15 +62,15 @@
                 android:layout_margin="@dimen/settings_user_picture_margin"
                 android:contentDescription="@string/content_description"
                 android:scaleType="fitXY"
-                android:src="@drawable/ic_baseline_person_24" />
+                android:src="@drawable/ic_user_placeholder" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/user_bg" />
+                android:background="@drawable/user_image_background" />
         </FrameLayout>
 
-        <com.jinco.ecommerce.widgets.ECTextView
+        <com.jinco.ecommerce.widgets.MSPTextView
             android:id="@+id/tv_edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -87,7 +87,7 @@
             android:textColor="@color/colorSecondaryText"
             android:textSize="@dimen/settings_edit_label_textSize" />
 
-        <com.jinco.ecommerce.widgets.ECTextViewBold
+        <com.jinco.ecommerce.widgets.MSPTextViewBold
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -98,7 +98,7 @@
             android:textSize="@dimen/settings_name_textSize"
             tools:text="Denis Panjuta" />
 
-        <com.jinco.ecommerce.widgets.ECTextView
+        <com.jinco.ecommerce.widgets.MSPTextView
             android:id="@+id/tv_gender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -109,7 +109,7 @@
             android:textSize="@dimen/settings_info_textSize"
             tools:text="Male" />
 
-        <com.jinco.ecommerce.widgets.ECTextView
+        <com.jinco.ecommerce.widgets.MSPTextView
             android:id="@+id/tv_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -120,7 +120,7 @@
             android:textSize="@dimen/settings_info_textSize"
             tools:text="denis.panjuta@gmail.com" />
 
-        <com.jinco.ecommerce.widgets.ECTextView
+        <com.jinco.ecommerce.widgets.MSPTextView
             android:id="@+id/tv_mobile_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -142,7 +142,7 @@
             android:orientation="horizontal"
             android:padding="@dimen/settings_address_padding">
 
-            <com.jinco.ecommerce.widgets.ECTextView
+            <com.jinco.ecommerce.widgets.MSPTextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/settings_lbl_addresses_margin"
@@ -159,7 +159,7 @@
 
         </LinearLayout>
 
-        <com.jinco.ecommerce.widgets.ECButton
+        <com.jinco.ecommerce.widgets.MSPButton
             android:id="@+id/btn_logout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -1,27 +1,35 @@
 package com.jinco.ecommerce.ui.activities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.jinco.ecommerce.R
 import com.jinco.ecommerce.firestore.FirestoreClass
+import com.jinco.ecommerce.models.Cart
+import com.jinco.ecommerce.models.Product
 import com.jinco.ecommerce.widgets.Constants
 import com.jinco.ecommerce.widgets.GlideLoader
-import com.myshoppal.models.Cart
-import com.myshoppal.models.Product
 import kotlinx.android.synthetic.main.activity_product_details.*
 
+/**
+ * Product Details Screen.
+ */
 class ProductDetailsActivity : BaseActivity(), View.OnClickListener {
+
     private lateinit var mProductDetails: Product
 
     // A global variable for product id.
     private var mProductId: String = ""
 
+    /**
+     * This function is auto created by Android when the Activity Class is created.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
+        //This call the parent constructor
         super.onCreate(savedInstanceState)
+        // This is used to align the xml view to this class
         setContentView(R.layout.activity_product_details)
 
         if (intent.hasExtra(Constants.EXTRA_PRODUCT_ID)) {

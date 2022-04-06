@@ -6,12 +6,12 @@ import android.view.*
 import androidx.recyclerview.widget.GridLayoutManager
 import com.jinco.ecommerce.R
 import com.jinco.ecommerce.firestore.FirestoreClass
+import com.jinco.ecommerce.models.Product
 import com.jinco.ecommerce.ui.activities.CartListActivity
 import com.jinco.ecommerce.ui.activities.ProductDetailsActivity
 import com.jinco.ecommerce.ui.activities.SettingsActivity
+import com.ecommerce.ui.adapters.DashboardItemsListAdapter
 import com.jinco.ecommerce.widgets.Constants
-import com.myshoppal.models.Product
-import com.myshoppal.ui.adapters.DashboardItemsListAdapter
 import kotlinx.android.synthetic.main.fragment_dashboard.*
 
 class DashboardFragment : BaseFragment() {

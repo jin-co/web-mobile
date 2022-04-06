@@ -6,6 +6,9 @@ import com.bumptech.glide.Glide
 import com.jinco.ecommerce.R
 import java.io.IOException
 
+/**
+ * A custom object to create a common functions for Glide which can be used in whole application.
+ */
 class GlideLoader(val context: Context) {
 
     /**
@@ -18,7 +21,7 @@ class GlideLoader(val context: Context) {
                 .with(context)
                 .load(image) // Uri or URL of the image
                 .centerCrop() // Scale type of the image.
-                .placeholder(R.drawable.ic_baseline_person_24) // A default place holder if image is failed to load.
+                .placeholder(R.drawable.ic_user_placeholder) // A default place holder if image is failed to load.
                 .into(imageView) // the view in which the image will be loaded.
         } catch (e: IOException) {
             e.printStackTrace()

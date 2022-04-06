@@ -1,4 +1,4 @@
-package com.myshoppal.ui.adapters
+package com.ecommerce.ui.adapters
 
 import android.content.Context
 import android.content.Intent
@@ -7,11 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.jinco.ecommerce.R
+import com.jinco.ecommerce.models.Product
 import com.jinco.ecommerce.ui.activities.ProductDetailsActivity
 import com.jinco.ecommerce.ui.fragments.ProductsFragment
 import com.jinco.ecommerce.widgets.Constants
 import com.jinco.ecommerce.widgets.GlideLoader
-import com.myshoppal.models.Product
 import kotlinx.android.synthetic.main.item_list_layout.view.*
 
 /**

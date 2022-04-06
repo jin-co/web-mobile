@@ -6,21 +6,29 @@ import android.view.View
 import com.google.firebase.auth.FirebaseAuth
 import com.jinco.ecommerce.R
 import com.jinco.ecommerce.firestore.FirestoreClass
+import com.jinco.ecommerce.models.User
 import com.jinco.ecommerce.widgets.Constants
 import com.jinco.ecommerce.widgets.GlideLoader
-import com.myshoppal.models.User
 import kotlinx.android.synthetic.main.activity_settings.*
 
+/**
+ * Setting screen of the app.
+ */
 class SettingsActivity : BaseActivity(), View.OnClickListener {
+
     // A variable for user details which will be initialized later on.
     private lateinit var mUserDetails: User
 
-
+    /**
+     * This function is auto created by Android when the Activity Class is created.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
+        //This call the parent constructor
         super.onCreate(savedInstanceState)
+        // This is used to align the xml view to this class
         setContentView(R.layout.activity_settings)
 
-//        setupActionBar()
+        setupActionBar()
 
 
         tv_edit.setOnClickListener(this@SettingsActivity)

@@ -1,4 +1,4 @@
-package com.myshoppal.ui.adapters
+package com.ecommerce.ui.adapters
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -9,9 +9,11 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.jinco.ecommerce.R
 import com.jinco.ecommerce.firestore.FirestoreClass
+
+import com.jinco.ecommerce.models.Cart
 import com.jinco.ecommerce.ui.activities.CartListActivity
+import com.jinco.ecommerce.widgets.Constants
 import com.jinco.ecommerce.widgets.GlideLoader
-import com.myshoppal.models.Cart
 import kotlinx.android.synthetic.main.item_cart_layout.view.*
 
 /**
