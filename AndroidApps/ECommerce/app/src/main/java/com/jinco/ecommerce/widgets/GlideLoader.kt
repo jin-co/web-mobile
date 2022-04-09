@@ -14,7 +14,7 @@ class GlideLoader(val context: Context) {
                 .with(context)
                 .load(image)
                 .centerCrop()
-                .placeholder(R.drawable.ic_user_placeholder)
+                .placeholder(R.drawable.ic_baseline_person_24)
                 .into(imageView)
         } catch (e: IOException) {
             e.printStackTrace()
