@@ -3,13 +3,12 @@ package com.jinco.ecommerce.widgets
 import android.content.Context
 import android.graphics.Typeface
 import android.util.AttributeSet
-import androidx.appcompat.widget.AppCompatRadioButton
+import androidx.appcompat.widget.AppCompatButton
 
 /**
- * This class will be used for Custom font text using the Radio Button which inherits the AppCompatRadioButton class.
+ * This class will be used for Custom font text using the Button which inherits the AppCompatButton class.
  */
-class MSPRadioButton(context: Context, attrs: AttributeSet) :
-    AppCompatRadioButton(context, attrs) {
+class ECButton(context: Context, attrs: AttributeSet) : AppCompatButton(context, attrs) {
 
     /**
      * The init block runs every time the class is instantiated.
@@ -20,7 +19,7 @@ class MSPRadioButton(context: Context, attrs: AttributeSet) :
     }
 
     /**
-     * Applies a font to a Radio Button.
+     * Applies a font to a Button.
      */
     private fun applyFont() {
 
@@ -28,5 +27,6 @@ class MSPRadioButton(context: Context, attrs: AttributeSet) :
         val typeface: Typeface =
             Typeface.createFromAsset(context.assets, "Montserrat-Bold.ttf")
         setTypeface(typeface)
+
     }
 }
