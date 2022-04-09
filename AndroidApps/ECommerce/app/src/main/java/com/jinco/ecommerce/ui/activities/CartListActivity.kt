@@ -13,9 +13,6 @@ import com.ecommerce.ui.adapters.CartItemsListAdapter
 import com.jinco.ecommerce.widgets.Constants
 import kotlinx.android.synthetic.main.activity_cart_list.*
 
-/**
- * Cart list activity of the application.
- */
 class CartListActivity : BaseActivity() {
     private lateinit var mProductsList: ArrayList<Product>
     private lateinit var mCartListItems: ArrayList<Cart>

@@ -10,18 +10,10 @@ import kotlinx.android.synthetic.main.activity_sold_product_details.*
 import java.text.SimpleDateFormat
 import java.util.*
 
-/**
- * A detail screen for the sold product item.
- */
 class SoldProductDetailsActivity : BaseActivity() {
 
-    /**
-     * This function is auto created by Android when the Activity Class is created.
-     */
     override fun onCreate(savedInstanceState: Bundle?) {
-        //This call the parent constructor
         super.onCreate(savedInstanceState)
-        // This is used to align the xml view to this class
         setContentView(R.layout.activity_sold_product_details)
 
         var productDetails: SoldProduct = SoldProduct()
@@ -30,27 +22,12 @@ class SoldProductDetailsActivity : BaseActivity() {
             productDetails =
                 intent.getParcelableExtra<SoldProduct>(Constants.EXTRA_SOLD_PRODUCT_DETAILS)!!
         }
-
-        // TODO Step 2: Call the function to setup action bar.
-        // START
         setupActionBar()
-        // END
-
-        // TODO Step 4: Call the function to populate the data in UI.
-        // START
         setupUI(productDetails)
-        // END
     }
 
-    // TODO Step 1: Create a function to setup action bar.
-    // START
-    /**
-     * A function for actionBar Setup.
-     */
     private fun setupActionBar() {
-
         setSupportActionBar(toolbar_sold_product_details_activity)
-
         val actionBar = supportActionBar
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true)
@@ -59,25 +36,14 @@ class SoldProductDetailsActivity : BaseActivity() {
 
         toolbar_sold_product_details_activity.setNavigationOnClickListener { onBackPressed() }
     }
-    // END
 
-    // TODO Step 3: Create a function to setupUI.
-    // START
-    /**
-     * A function to setup UI.
-     *
-     * @param productDetails Order details received through intent.
-     */
     private fun setupUI(productDetails: SoldProduct) {
 
         tv_sold_product_details_id.text = productDetails.order_id
 
-        // Date Format in which the date will be displayed in the UI.
         val dateFormat = "dd MMM yyyy HH:mm"
-        // Create a DateFormatter object for displaying date in specified format.
         val formatter = SimpleDateFormat(dateFormat, Locale.getDefault())
 
-        // Create a calendar object that will convert the date and time value in milliseconds to date.
         val calendar: Calendar = Calendar.getInstance()
         calendar.timeInMillis = productDetails.order_date
         tv_sold_product_details_date.text = formatter.format(calendar.time)
@@ -108,5 +74,4 @@ class SoldProductDetailsActivity : BaseActivity() {
         tv_sold_product_shipping_charge.text = productDetails.shipping_charge
         tv_sold_product_total_amount.text = productDetails.total_amount
     }
-    // END
 }

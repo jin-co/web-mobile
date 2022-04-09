@@ -12,11 +12,7 @@ import com.ecommerce.ui.adapters.MyOrdersListAdapter
 import com.jinco.ecommerce.ui.fragments.BaseFragment
 import kotlinx.android.synthetic.main.fragment_orders.*
 
-/**
- * Order listing fragment.
- */
 class OrdersFragment : BaseFragment() {
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -32,31 +28,17 @@ class OrdersFragment : BaseFragment() {
         getMyOrdersList()
     }
 
-    /**
-     * A function to get the list of my orders.
-     */
     private fun getMyOrdersList() {
-        // Show the progress dialog.
         showProgressDialog(resources.getString(R.string.please_wait))
-
         FirestoreClass().getMyOrdersList(this@OrdersFragment)
     }
 
-    /**
-     * A function to get the success result of the my order list from cloud firestore.
-     *
-     * @param ordersList List of my orders.
-     */
     fun populateOrdersListInUI(ordersList: ArrayList<Order>) {
-
-        // Hide the progress dialog.
         hideProgressDialog()
 
         if (ordersList.size > 0) {
-
             rv_my_order_items.visibility = View.VISIBLE
             tv_no_orders_found.visibility = View.GONE
-
             rv_my_order_items.layoutManager = LinearLayoutManager(activity)
             rv_my_order_items.setHasFixedSize(true)
 

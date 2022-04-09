@@ -18,7 +18,6 @@ class DashboardFragment : BaseFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // If we want to use the option menu in fragment we need to add it.
         setHasOptionsMenu(true)
     }
 
@@ -27,9 +26,7 @@ class DashboardFragment : BaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
-
         return root
     }
 
@@ -42,9 +39,7 @@ class DashboardFragment : BaseFragment() {
         val id = item.itemId
 
         when (id) {
-
             R.id.action_settings -> {
-
                 startActivity(Intent(activity, SettingsActivity::class.java))
                 return true
             }
@@ -59,35 +54,20 @@ class DashboardFragment : BaseFragment() {
 
     override fun onResume() {
         super.onResume()
-
         getDashboardItemsList()
     }
 
-    /**
-     * A function to get the dashboard items list from cloud firestore.
-     */
     private fun getDashboardItemsList() {
-        // Show the progress dialog.
         showProgressDialog(resources.getString(R.string.please_wait))
-
         FirestoreClass().getDashboardItemsList(this@DashboardFragment)
     }
 
-    /**
-     * A function to get the success result of the dashboard items from cloud firestore.
-     *
-     * @param dashboardItemsList
-     */
     fun successDashboardItemsList(dashboardItemsList: ArrayList<Product>) {
-
-        // Hide the progress dialog.
         hideProgressDialog()
 
         if (dashboardItemsList.size > 0) {
-
             rv_dashboard_items.visibility = View.VISIBLE
             tv_no_dashboard_items_found.visibility = View.GONE
-
             rv_dashboard_items.layoutManager = GridLayoutManager(activity, 2)
             rv_dashboard_items.setHasFixedSize(true)
 
@@ -104,7 +84,6 @@ class DashboardFragment : BaseFragment() {
                     startActivity(intent)
                 }
             })
-            // END
         } else {
             rv_dashboard_items.visibility = View.GONE
             tv_no_dashboard_items_found.visibility = View.VISIBLE

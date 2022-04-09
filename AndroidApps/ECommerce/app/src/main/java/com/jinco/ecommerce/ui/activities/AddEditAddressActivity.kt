@@ -10,20 +10,12 @@ import com.jinco.ecommerce.models.Address
 import com.jinco.ecommerce.widgets.Constants
 import kotlinx.android.synthetic.main.activity_add_edit_address.*
 
-/**
- * Add edit address screen.
- */
 class AddEditAddressActivity : BaseActivity() {
 
     private var mAddressDetails: Address? = null
 
-    /**
-     * This function is auto created by Android when the Activity Class is created.
-     */
     override fun onCreate(savedInstanceState: Bundle?) {
-        //This call the parent constructor
         super.onCreate(savedInstanceState)
-        // This is used to align the xml view to this class
         setContentView(R.layout.activity_add_edit_address)
 
         if (intent.hasExtra(Constants.EXTRA_ADDRESS_DETAILS)) {
@@ -74,13 +66,8 @@ class AddEditAddressActivity : BaseActivity() {
         }
     }
 
-    /**
-     * A function for actionBar Setup.
-     */
     private fun setupActionBar() {
-
         setSupportActionBar(toolbar_add_edit_address_activity)
-
         val actionBar = supportActionBar
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true)
@@ -90,13 +77,8 @@ class AddEditAddressActivity : BaseActivity() {
         toolbar_add_edit_address_activity.setNavigationOnClickListener { onBackPressed() }
     }
 
-
-    /**
-     * A function to validate the address input entries.
-     */
     private fun validateData(): Boolean {
         return when {
-
             TextUtils.isEmpty(et_full_name.text.toString().trim { it <= ' ' }) -> {
                 showErrorSnackBar(
                     resources.getString(R.string.err_msg_please_enter_full_name),
@@ -134,12 +116,7 @@ class AddEditAddressActivity : BaseActivity() {
         }
     }
 
-    /**
-     * A function to save the address to the cloud firestore.
-     */
     private fun saveAddressToFirestore() {
-
-        // Here we get the text from editText and trim the space
         val fullName: String = et_full_name.text.toString().trim { it <= ' ' }
         val phoneNumber: String = et_phone_number.text.toString().trim { it <= ' ' }
         val address: String = et_address.text.toString().trim { it <= ' ' }
@@ -148,8 +125,6 @@ class AddEditAddressActivity : BaseActivity() {
         val otherDetails: String = et_other_details.text.toString().trim { it <= ' ' }
 
         if (validateData()) {
-
-            // Show the progress dialog.
             showProgressDialog(resources.getString(R.string.please_wait))
 
             val addressType: String = when {
@@ -187,14 +162,8 @@ class AddEditAddressActivity : BaseActivity() {
         }
     }
 
-    /**
-     * A function to notify the success result of address saved.
-     */
     fun addUpdateAddressSuccess() {
-
-        // Hide progress dialog
         hideProgressDialog()
-
         val notifySuccessMessage: String = if (mAddressDetails != null && mAddressDetails!!.id.isNotEmpty()) {
             resources.getString(R.string.msg_your_address_updated_successfully)
         } else {

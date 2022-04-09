@@ -20,6 +20,7 @@ import com.jinco.ecommerce.widgets.GlideLoader
 import kotlinx.android.synthetic.main.activity_add_product.*
 import java.io.IOException
 
+@Suppress("DEPRECATION")
 class AddProductActivity : BaseActivity(), View.OnClickListener {
     private var mSelectedImageFileUri: Uri? = null
     private var mProductImageURL: String = ""
@@ -81,8 +82,13 @@ class AddProductActivity : BaseActivity(), View.OnClickListener {
         }
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
+        super.onActivityResult(
+            requestCode,
+            resultCode,
+            data
+        )
         if (resultCode == Activity.RESULT_OK
             && requestCode == Constants.PICK_IMAGE_REQUEST_CODE
             && data!!.data != null

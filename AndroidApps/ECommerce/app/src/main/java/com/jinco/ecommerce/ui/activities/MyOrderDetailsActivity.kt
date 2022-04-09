@@ -15,24 +15,14 @@ import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.TimeUnit
 
-/**
- * My Order Details Screen.
- */
 class MyOrderDetailsActivity : AppCompatActivity() {
 
-    /**
-     * This function is auto created by Android when the Activity Class is created.
-     */
     override fun onCreate(savedInstanceState: Bundle?) {
-        //This call the parent constructor
         super.onCreate(savedInstanceState)
-        // This is used to align the xml view to this class
         setContentView(R.layout.activity_my_order_details)
 
         setupActionBar()
-
         var myOrderDetails: Order = Order()
-
         if (intent.hasExtra(Constants.EXTRA_MY_ORDER_DETAILS)) {
             myOrderDetails =
                 intent.getParcelableExtra<Order>(Constants.EXTRA_MY_ORDER_DETAILS)!!
@@ -41,11 +31,7 @@ class MyOrderDetailsActivity : AppCompatActivity() {
         setupUI(myOrderDetails)
     }
 
-    /**
-     * A function for actionBar Setup.
-     */
     private fun setupActionBar() {
-
         setSupportActionBar(toolbar_my_order_details_activity)
 
         val actionBar = supportActionBar
@@ -57,31 +43,15 @@ class MyOrderDetailsActivity : AppCompatActivity() {
         toolbar_my_order_details_activity.setNavigationOnClickListener { onBackPressed() }
     }
 
-    /**
-     * A function to setup UI.
-     *
-     * @param orderDetails Order details received through intent.
-     */
     private fun setupUI(orderDetails: Order) {
-
         tv_order_details_id.text = orderDetails.title
-
-        // Date Format in which the date will be displayed in the UI.
         val dateFormat = "dd MMM yyyy HH:mm"
-        // Create a DateFormatter object for displaying date in specified format.
         val formatter = SimpleDateFormat(dateFormat, Locale.getDefault())
-
-        // Create a calendar object that will convert the date and time value in milliseconds to date.
         val calendar: Calendar = Calendar.getInstance()
         calendar.timeInMillis = orderDetails.order_datetime
 
         val orderDateTime = formatter.format(calendar.time)
         tv_order_details_date.text = orderDateTime
-
-        // Get the difference between the order date time and current date time in hours.
-        // If the difference in hours is 1 or less then the order status will be PENDING.
-        // If the difference in hours is 2 or greater then 1 then the order status will be PROCESSING.
-        // And, if the difference in hours is 3 or greater then the order status will be DELIVERED.
 
         val diffInMilliSeconds: Long = System.currentTimeMillis() - orderDetails.order_datetime
         val diffInHours: Long = TimeUnit.MILLISECONDS.toHours(diffInMilliSeconds)

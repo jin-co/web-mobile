@@ -15,40 +15,18 @@ import com.ecommerce.ui.adapters.CartItemsListAdapter
 import com.jinco.ecommerce.widgets.Constants
 import kotlinx.android.synthetic.main.activity_checkout.*
 
-/**
- * A CheckOut activity screen.
- */
 class CheckoutActivity : BaseActivity() {
-
-    // A global variable for the selected address details.
     private var mAddressDetails: Address? = null
-
-    // A global variable for the product list.
     private lateinit var mProductsList: ArrayList<Product>
-
-    // A global variable for the cart list.
     private lateinit var mCartItemsList: ArrayList<Cart>
-
-    // A global variable for the SubTotal Amount.
     private var mSubTotal: Double = 0.0
-
-    // A global variable for the Total Amount.
     private var mTotalAmount: Double = 0.0
-
-    // A global variable for Order details.
     private lateinit var mOrderDetails: Order
 
-    /**
-     * This function is auto created by Android when the Activity Class is created.
-     */
     override fun onCreate(savedInstanceState: Bundle?) {
-        //This call the parent constructor
         super.onCreate(savedInstanceState)
-        // This is used to align the xml view to this class
         setContentView(R.layout.activity_checkout)
-
         setupActionBar()
-
         if (intent.hasExtra(Constants.EXTRA_SELECTED_ADDRESS)) {
             mAddressDetails =
                 intent.getParcelableExtra<Address>(Constants.EXTRA_SELECTED_ADDRESS)!!
@@ -73,13 +51,8 @@ class CheckoutActivity : BaseActivity() {
         getProductList()
     }
 
-    /**
-     * A function for actionBar Setup.
-     */
     private fun setupActionBar() {
-
         setSupportActionBar(toolbar_checkout_activity)
-
         val actionBar = supportActionBar
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true)
@@ -89,47 +62,22 @@ class CheckoutActivity : BaseActivity() {
         toolbar_checkout_activity.setNavigationOnClickListener { onBackPressed() }
     }
 
-    /**
-     * A function to get product list to compare the current stock with the cart items.
-     */
     private fun getProductList() {
-
-        // Show the progress dialog.
         showProgressDialog(resources.getString(R.string.please_wait))
-
         FirestoreClass().getAllProductsList(this@CheckoutActivity)
     }
 
-    /**
-     * A function to get the success result of product list.
-     *
-     * @param productsList
-     */
     fun successProductsListFromFireStore(productsList: ArrayList<Product>) {
-
         mProductsList = productsList
-
         getCartItemsList()
     }
 
-    /**
-     * A function to get the list of cart items in the activity.
-     */
     private fun getCartItemsList() {
-
         FirestoreClass().getCartList(this@CheckoutActivity)
     }
 
-    /**
-     * A function to notify the success result of the cart items list from cloud firestore.
-     *
-     * @param cartList
-     */
     fun successCartItemsList(cartList: ArrayList<Cart>) {
-
-        // Hide progress dialog.
         hideProgressDialog()
-
         for (product in mProductsList) {
             for (cart in cartList) {
                 if (product.product_id == cart.product_id) {
@@ -147,24 +95,19 @@ class CheckoutActivity : BaseActivity() {
         rv_cart_list_items.adapter = cartListAdapter
 
         for (item in mCartItemsList) {
-
             val availableQuantity = item.stock_quantity.toInt()
-
             if (availableQuantity > 0) {
                 val price = item.price.toDouble()
                 val quantity = item.cart_quantity.toInt()
-
                 mSubTotal += (price * quantity)
             }
         }
 
         tv_checkout_sub_total.text = "$$mSubTotal"
-        // Here we have kept Shipping Charge is fixed as $10 but in your case it may cary. Also, it depends on the location and total amount.
         tv_checkout_shipping_charge.text = "$10.0"
 
         if (mSubTotal > 0) {
             ll_checkout_place_order.visibility = View.VISIBLE
-
             mTotalAmount = mSubTotal + 10.0
             tv_checkout_total_amount.text = "$$mTotalAmount"
         } else {
@@ -172,14 +115,8 @@ class CheckoutActivity : BaseActivity() {
         }
     }
 
-    /**
-     * A function to prepare the Order details to place an order.
-     */
     private fun placeAnOrder() {
-
-        // Show the progress dialog.
         showProgressDialog(resources.getString(R.string.please_wait))
-
         mOrderDetails = Order(
             FirestoreClass().getCurrentUserID(),
             mCartItemsList,
@@ -195,22 +132,12 @@ class CheckoutActivity : BaseActivity() {
         FirestoreClass().placeOrder(this@CheckoutActivity, mOrderDetails)
     }
 
-    /**
-     * A function to notify the success result of the order placed.
-     */
     fun orderPlacedSuccess() {
-
         FirestoreClass().updateAllDetails(this@CheckoutActivity, mCartItemsList, mOrderDetails)
     }
 
-    /**
-     * A function to notify the success result after updating all the required details.
-     */
     fun allDetailsUpdatedSuccessfully() {
-
-        // Hide the progress dialog.
         hideProgressDialog()
-
         Toast.makeText(this@CheckoutActivity, "Your order placed successfully.", Toast.LENGTH_SHORT)
             .show()
 

@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.jinco.ecommerce.R
 import com.jinco.ecommerce.firestore.FirestoreClass
 
-//Splash activity that appears when the starts
 @Suppress("DEPRECATION")
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
