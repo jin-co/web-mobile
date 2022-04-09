@@ -8,32 +8,22 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.jinco.ecommerce.R
-import com.jinco.ecommerce.ui.activities.BaseActivity
 
-
-/**
- *  Dashboard Screen of the app.
- */
 class DashboardActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
 
-        // Update the background color of the action bar as per our design requirement.
         supportActionBar!!.setBackgroundDrawable(
             ContextCompat.getDrawable(
                 this@DashboardActivity,
-                R.drawable.app_gradient_color_background
+                R.drawable.bg_gradient_primary
             )
         )
-        // END
-
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
         val navController = findNavController(R.id.nav_host_fragment)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.navigation_products,
@@ -43,7 +33,6 @@ class DashboardActivity : BaseActivity() {
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
-
         navView.setupWithNavController(navController)
     }
 

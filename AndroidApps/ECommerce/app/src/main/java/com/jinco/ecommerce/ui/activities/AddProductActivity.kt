@@ -101,7 +101,7 @@ class AddProductActivity : BaseActivity(), View.OnClickListener {
                 //Displaying another toast if permission is not granted
                 Toast.makeText(
                     this,
-                    resources.getString(R.string.read_storage_permission_denied),
+                    resources.getString(R.string.storage_permission_denied),
                     Toast.LENGTH_LONG
                 ).show()
             }

@@ -11,7 +11,7 @@
         android:id="@+id/toolbar_add_product_activity"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@drawable/app_gradient_color_background"
+        android:background="@drawable/bg_gradient_primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -68,7 +68,7 @@
                     android:contentDescription="@string/content_description"
                     android:foreground="?attr/selectableItemBackgroundBorderless"
                     android:padding="@dimen/add_update_product_icon_padding"
-                    android:src="@drawable/ic_vector_add_photo" />
+                    android:src="@drawable/ic_baseline_add_photo_alternate_24" />
             </FrameLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -178,7 +178,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="20dp"
-                android:background="@drawable/button_background"
+                android:background="@drawable/bg_gradient_btn_primary"
                 android:foreground="?attr/selectableItemBackground"
                 android:gravity="center"
                 android:paddingTop="@dimen/btn_padding"

@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activities.UserProfileActivity"
-    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar">
+    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+    tools:context=".ui.activities.UserProfileActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_user_profile_activity"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@drawable/app_gradient_color_background"
+        android:background="@drawable/bg_gradient_primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -61,7 +61,7 @@
                     android:background="@color/white2"
                     android:contentDescription="@string/content_description"
                     android:scaleType="fitXY"
-                    android:src="@drawable/ic_user_placeholder" />
+                    android:src="@drawable/ic_baseline_person_24" />
 
                 <View
                     android:layout_width="match_parent"
@@ -168,65 +168,111 @@
             <RadioGroup
                 android:id="@+id/rg_gender"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/profile_radio_button_height"
+                android:layout_height="@dimen/profile_rd_btn_height"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginEnd="16dp"
+                android:gravity="center"
                 android:orientation="horizontal"
-                app:layout_constraintBottom_toTopOf="@id/btn_submit"
+                app:layout_constraintBottom_toTopOf="@id/linear_layout_save_later_btn_box"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/til_mobile_number">
 
-                <com.jinco.ecommerce.widgets.ECRadioButton
-                    android:id="@+id/rb_male"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="@dimen/profile_radio_button_marginStartEnd"
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/drawable_gender_tab_selector"
-                    android:button="@null"
-                    android:checked="true"
-                    android:gravity="center"
-                    android:text="@string/rb_lbl_male"
-                    android:textColor="@drawable/drawable_gender_tab_text_color_selector"
-                    android:textStyle="bold" />
+                    android:gravity="center">
 
-                <com.jinco.ecommerce.widgets.ECRadioButton
-                    android:id="@+id/rb_female"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="@dimen/profile_radio_button_marginStartEnd"
+                    <com.jinco.ecommerce.widgets.ECRadioButton
+                        android:id="@+id/rb_male"
+                        android:layout_width="@dimen/gender_rd_width"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/profile_rd_btn_marginStartEnd"
+                        android:background="@drawable/drawable_gender_tab_selector"
+                        android:button="@null"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:text="@string/rb_lbl_male"
+                        android:textColor="@drawable/drawable_gender_tab_text_color_selector"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/drawable_gender_tab_selector"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:text="@string/rb_lbl_female"
-                    android:textColor="@drawable/drawable_gender_tab_text_color_selector"
-                    android:textStyle="bold" />
+                    android:gravity="center">
+
+                    <com.jinco.ecommerce.widgets.ECRadioButton
+                        android:id="@+id/rb_female"
+                        android:layout_width="@dimen/gender_rd_width"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/profile_rd_btn_marginStartEnd"
+                        android:background="@drawable/drawable_gender_tab_selector"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="@string/rb_lbl_female"
+                        android:textColor="@drawable/drawable_gender_tab_text_color_selector"
+                        android:textStyle="bold" />
+                </LinearLayout>
             </RadioGroup>
 
-            <com.jinco.ecommerce.widgets.ECButton
-                android:id="@+id/btn_save"
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linear_layout_save_later_btn_box"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/button_background"
-                android:foreground="?attr/selectableItemBackground"
                 android:gravity="center"
-                android:paddingTop="@dimen/btn_padding"
-                android:paddingBottom="@dimen/btn_padding"
-                android:text="@string/btn_lbl_save"
-                android:textColor="@android:color/white"
-                android:textSize="@dimen/btn_textSize"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rg_gender" />
+                app:layout_constraintTop_toBottomOf="@+id/rg_gender"
+                tools:ignore="MissingConstraints">
+
+                <com.jinco.ecommerce.widgets.ECButton
+                    android:id="@+id/btn_skip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_gradient_btn_primary"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/btn_padding"
+                    android:paddingBottom="@dimen/btn_padding"
+                    android:text="@string/btn_lbl_skip"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/btn_textSize"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="parent" />
+
+                <com.jinco.ecommerce.widgets.ECButton
+                    android:id="@+id/btn_save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_gradient_btn_primary"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/btn_padding"
+                    android:paddingBottom="@dimen/btn_padding"
+                    android:text="@string/btn_lbl_save"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/btn_textSize"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/btn_skip"
+                    app:layout_constraintTop_toBottomOf="parent" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
