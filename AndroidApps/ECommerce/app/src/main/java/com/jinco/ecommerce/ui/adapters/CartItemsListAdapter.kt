@@ -79,7 +79,7 @@ open class CartItemsListAdapter(
                 holder.itemView.tv_cart_quantity.setTextColor(
                     ContextCompat.getColor(
                         context,
-                        R.color.colorSnackBarError
+                        R.color.red_light
                     )
                 )
             } else {
@@ -98,7 +98,7 @@ open class CartItemsListAdapter(
                 holder.itemView.tv_cart_quantity.setTextColor(
                     ContextCompat.getColor(
                         context,
-                        R.color.colorSecondaryText
+                        R.color.grey
                     )
                 )
             }

@@ -36,14 +36,14 @@ open class BaseActivity : AppCompatActivity() {
             snackBarView.setBackgroundColor(
                 ContextCompat.getColor(
                     this@BaseActivity,
-                    R.color.colorSnackBarError
+                    R.color.red_light
                 )
             )
         }else{
             snackBarView.setBackgroundColor(
                 ContextCompat.getColor(
                     this@BaseActivity,
-                    R.color.colorSnackBarSuccess
+                    R.color.green_light
                 )
             )
         }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorOffWhite"
+    android:background="@color/white4"
     tools:context=".ui.activities.CartListActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -24,7 +24,7 @@
             android:paddingStart="@dimen/toolbar_title_paddingStart"
             android:paddingEnd="0dp"
             android:text="@string/title_my_cart"
-            android:textColor="@color/colorWhite"
+            android:textColor="@color/white"
             android:textSize="@dimen/toolbar_title_text_size"
             android:textStyle="bold" />
 
@@ -50,7 +50,7 @@
         android:layout_marginEnd="8dp"
         android:text="@string/no_cart_item_found"
         android:textAlignment="center"
-        android:textColor="@color/colorSecondaryText"
+        android:textColor="@color/grey"
         android:textSize="@dimen/no_data_found_textSize"
         app:layout_constraintBottom_toTopOf="@id/ll_checkout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,7 +61,7 @@
         android:id="@+id/ll_checkout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorWhite"
+        android:background="@color/white"
         android:orientation="vertical"
         android:padding="@dimen/ll_checkout_padding"
         android:visibility="gone"
@@ -80,7 +80,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/lbl_subtotal"
-                android:textColor="@color/colorDarkGrey"
+                android:textColor="@color/grey_dark"
                 android:textSize="@dimen/checkout_label_value_textSize" />
 
             <com.jinco.ecommerce.widgets.ECTextView
@@ -88,7 +88,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:textColor="@color/colorSecondaryText"
+                android:textColor="@color/grey"
                 android:textSize="@dimen/checkout_label_value_textSize"
                 tools:text="$100" />
         </LinearLayout>
@@ -103,7 +103,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/lbl_shipping_charge"
-                android:textColor="@color/colorDarkGrey"
+                android:textColor="@color/grey_dark"
                 android:textSize="@dimen/checkout_label_value_textSize" />
 
             <com.jinco.ecommerce.widgets.ECTextView
@@ -111,7 +111,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:textColor="@color/colorSecondaryText"
+                android:textColor="@color/grey"
                 android:textSize="@dimen/checkout_label_value_textSize"
                 tools:text="$10" />
         </LinearLayout>
@@ -126,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/lbl_total_amount"
-                android:textColor="@color/colorDarkGrey"
+                android:textColor="@color/grey_dark"
                 android:textSize="@dimen/checkout_label_value_textSize" />
 
             <com.jinco.ecommerce.widgets.ECTextViewBold
@@ -134,7 +134,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:textColor="@color/colorDarkGrey"
+                android:textColor="@color/grey_dark"
                 android:textSize="@dimen/checkout_label_value_textSize"
                 tools:text="$110" />
         </LinearLayout>

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/item_address_marginTop"
-    android:background="@color/colorWhite"
+    android:background="@color/white"
     android:orientation="vertical"
     android:paddingStart="@dimen/item_address_paddingStartEnd"
     android:paddingTop="@dimen/item_address_paddingTopBottom"
@@ -22,7 +22,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="@color/item_value_text_color"
+            android:textColor="@color/black_text_light"
             android:textSize="@dimen/item_address_name_textSize"
             tools:text="Denis Panjuta" />
 
@@ -35,7 +35,7 @@
             android:paddingTop="@dimen/item_address_type_paddingTopBottom"
             android:paddingEnd="@dimen/item_address_type_paddingStartEnd"
             android:paddingBottom="@dimen/item_address_type_paddingTopBottom"
-            android:textColor="@color/colorWhite"
+            android:textColor="@color/white"
             android:textSize="@dimen/address_details_textSize"
             android:textStyle="bold"
             tools:text="Home" />
@@ -46,7 +46,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/address_details_marginTop"
-        android:textColor="@color/item_value_text_color"
+        android:textColor="@color/black_text_light"
         android:textSize="@dimen/address_details_textSize"
         tools:text="XYZ" />
 
@@ -55,7 +55,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/address_details_marginTop"
-        android:textColor="@color/item_value_text_color"
+        android:textColor="@color/black_text_light"
         android:textSize="@dimen/address_details_textSize"
         tools:text="+64 123456789" />
 </LinearLayout>

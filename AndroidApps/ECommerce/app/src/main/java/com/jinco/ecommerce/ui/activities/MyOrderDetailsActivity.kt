@@ -93,7 +93,7 @@ class MyOrderDetailsActivity : AppCompatActivity() {
                 tv_order_status.setTextColor(
                     ContextCompat.getColor(
                         this@MyOrderDetailsActivity,
-                        R.color.colorAccent
+                        R.color.scarlet2
                     )
                 )
             }
@@ -102,7 +102,7 @@ class MyOrderDetailsActivity : AppCompatActivity() {
                 tv_order_status.setTextColor(
                     ContextCompat.getColor(
                         this@MyOrderDetailsActivity,
-                        R.color.colorOrderStatusInProcess
+                        R.color.purple_light
                     )
                 )
             }
@@ -111,7 +111,7 @@ class MyOrderDetailsActivity : AppCompatActivity() {
                 tv_order_status.setTextColor(
                     ContextCompat.getColor(
                         this@MyOrderDetailsActivity,
-                        R.color.colorOrderStatusDelivered
+                        R.color.green_light
                     )
                 )
             }

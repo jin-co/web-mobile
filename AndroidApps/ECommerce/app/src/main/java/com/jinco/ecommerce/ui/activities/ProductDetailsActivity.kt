@@ -157,7 +157,7 @@ class ProductDetailsActivity : BaseActivity(), View.OnClickListener {
             tv_product_details_stock_quantity.setTextColor(
                 ContextCompat.getColor(
                     this@ProductDetailsActivity,
-                    R.color.colorSnackBarError
+                    R.color.red_light
                 )
             )
         }else{

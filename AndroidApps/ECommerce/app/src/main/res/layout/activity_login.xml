@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorWhite"
-    tools:context=".ui.activities.LoginActivity"
-    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar">
+    android:background="@color/white"
+    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+    tools:context=".ui.activities.LoginActivity">
 
     <FrameLayout
         android:id="@+id/fl_header_image"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="@dimen/auth_header_image_height"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,9 +19,14 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:adjustViewBounds="true"
             android:contentDescription="@string/content_description"
-            android:scaleType="fitXY"
-            android:src="@drawable/auth_screens_background" />
+            android:scaleType="centerCrop"
+            android:src="@drawable/login_bg"
+
+            android:tint="@color/browser_actions_divider_color"
+            android:tintMode="screen"
+            tools:ignore="UseAppTint" />
 
         <ImageView
             android:layout_width="@dimen/auth_logo_width_size"
@@ -29,8 +34,8 @@
             android:layout_gravity="center"
             android:contentDescription="@string/app_name"
             android:scaleType="fitCenter"
-            android:src="@drawable/tutorials_eu_logo"
-            app:tint="@color/colorWhite" />
+            android:src="@drawable/ic_baseline_shopping_basket_24"
+            app:tint="@color/white" />
     </FrameLayout>
 
     <com.jinco.ecommerce.widgets.ECTextViewBold
@@ -38,8 +43,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
-        android:text="@string/title_login"
-        android:textColor="@color/colorPrimaryText"
+        android:text="@string/txt_login"
+        android:textColor="@color/black_text"
         android:textSize="@dimen/title_textSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,7 +59,7 @@
         android:layout_marginTop="35dp"
         android:layout_marginEnd="16dp"
         android:hint="@string/et_hint_email_id"
-        android:textColorHint="@color/colorSecondaryText"
+        android:textColorHint="@color/grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_title">
@@ -65,7 +70,7 @@
             android:layout_height="wrap_content"
             android:inputType="text"
             android:padding="@dimen/et_padding"
-            android:textColor="@color/colorPrimaryText"
+            android:textColor="@color/black_text"
             android:textSize="@dimen/et_textSize"
             tools:text="abc@gmail.com" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -79,7 +84,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
         android:hint="@string/et_hint_password"
-        android:textColorHint="@color/colorSecondaryText"
+        android:textColorHint="@color/grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/til_email">
@@ -90,7 +95,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:padding="@dimen/et_padding"
-            android:textColor="@color/colorPrimaryText"
+            android:textColor="@color/black_text"
             android:textSize="@dimen/et_textSize"
             tools:text="123456" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -103,7 +108,7 @@
         android:foreground="?attr/selectableItemBackground"
         android:padding="@dimen/clickable_text_view_padding"
         android:text="@string/lbl_forgot_password"
-        android:textColor="@color/colorSecondaryText"
+        android:textColor="@color/grey"
         android:textSize="@dimen/forgot_password_textSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/til_password" />
@@ -143,8 +148,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/clickable_text_view_padding"
-            android:text="@string/don_t_have_an_account"
-            android:textColor="@color/colorSecondaryText"
+            android:text="@string/lbl_no_account"
+            android:textColor="@color/grey"
             android:textSize="@dimen/lbl_text_view_textSize" />
 
         <com.jinco.ecommerce.widgets.ECTextViewBold
@@ -153,9 +158,8 @@
             android:layout_height="wrap_content"
             android:foreground="?attr/selectableItemBackground"
             android:padding="@dimen/clickable_text_view_padding"
-            android:text="@string/register"
-            android:textColor="@color/colorSecondaryText"
+            android:text="@string/lbl_register"
+            android:textColor="@color/grey"
             android:textSize="@dimen/lbl_text_view_textSize" />
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
-    <!--END-->
+</androidx.constraintlayout.widget.ConstraintLayout><!--END-->

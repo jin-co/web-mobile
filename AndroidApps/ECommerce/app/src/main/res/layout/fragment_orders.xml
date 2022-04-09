@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorOffWhite"
+    android:background="@color/white4"
     tools:context=".ui.fragments.OrdersFragment">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -26,7 +26,7 @@
         android:layout_marginEnd="8dp"
         android:text="@string/no_orders_placed_yet"
         android:textAlignment="center"
-        android:textColor="@color/colorSecondaryText"
+        android:textColor="@color/grey"
         android:textSize="@dimen/no_data_found_textSize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

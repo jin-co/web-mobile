@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/cart_item_marginTop"
-    android:background="@color/colorWhite"
+    android:background="@color/white"
     android:orientation="horizontal"
     android:paddingStart="@dimen/cart_item_paddingStartEnd"
     android:paddingTop="@dimen/cart_item_paddingTopBottom"
@@ -22,7 +22,7 @@
             android:id="@+id/iv_cart_item_image"
             android:layout_width="@dimen/cart_item_image_width"
             android:layout_height="@dimen/cart_item_image_height"
-            android:background="@color/colorImageViewBackground"
+            android:background="@color/white2"
             android:contentDescription="@string/content_description"
             android:scaleType="fitXY" />
     </LinearLayout>
@@ -41,7 +41,7 @@
             android:id="@+id/tv_cart_item_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/item_value_text_color"
+            android:textColor="@color/black_text_light"
             android:textSize="@dimen/cart_item_title_textSize"
             tools:text="Cart Item Title" />
 
@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
-                android:textColor="@color/item_value_text_color"
+                android:textColor="@color/black_text_light"
                 android:textSize="@dimen/cart_item_price_textSize"
                 android:textStyle="bold"
                 tools:text="$100" />
@@ -91,7 +91,7 @@
                     android:paddingTop="@dimen/cart_quantity_paddingTopBottom"
                     android:paddingEnd="@dimen/cart_quantity_paddingStartEnd"
                     android:paddingBottom="@dimen/cart_quantity_paddingTopBottom"
-                    android:textColor="@color/colorSecondaryText"
+                    android:textColor="@color/grey"
                     android:textSize="@dimen/cart_quantity_textSize"
                     android:textStyle="bold"
                     tools:text="1" />
