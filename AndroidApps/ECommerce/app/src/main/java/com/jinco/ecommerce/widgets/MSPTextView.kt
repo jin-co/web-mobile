@@ -3,13 +3,12 @@ package com.jinco.ecommerce.widgets
 import android.content.Context
 import android.graphics.Typeface
 import android.util.AttributeSet
-import androidx.appcompat.widget.AppCompatRadioButton
+import androidx.appcompat.widget.AppCompatTextView
 
 /**
- * This class will be used for Custom font text using the Radio Button which inherits the AppCompatRadioButton class.
+ * This class will be used for Custom font text using the TextView which inherits the AppCompatTextView class.
  */
-class ECRadioButton(context: Context, attrs: AttributeSet) :
-    AppCompatRadioButton(context, attrs) {
+class MSPTextView(context: Context, attrs: AttributeSet) : AppCompatTextView(context, attrs) {
 
     /**
      * The init block runs every time the class is instantiated.
@@ -20,13 +19,14 @@ class ECRadioButton(context: Context, attrs: AttributeSet) :
     }
 
     /**
-     * Applies a font to a Radio Button.
+     * Applies a font to a TextView.
      */
     private fun applyFont() {
 
         // This is used to get the file from the assets folder and set it to the title textView.
         val typeface: Typeface =
-            Typeface.createFromAsset(context.assets, "Montserrat-Bold.ttf")
+            Typeface.createFromAsset(context.assets, "Montserrat-Regular.ttf")
         setTypeface(typeface)
+
     }
 }

@@ -3,12 +3,12 @@ package com.jinco.ecommerce.widgets
 import android.content.Context
 import android.graphics.Typeface
 import android.util.AttributeSet
-import androidx.appcompat.widget.AppCompatTextView
+import androidx.appcompat.widget.AppCompatButton
 
 /**
- * This class will be used for Custom bold text using the TextView which inherits the AppCompactTextView class.
+ * This class will be used for Custom font text using the Button which inherits the AppCompatButton class.
  */
-class ECTextViewBold(context: Context, attrs: AttributeSet) : AppCompatTextView(context, attrs) {
+class MSPButton(context: Context, attrs: AttributeSet) : AppCompatButton(context, attrs) {
 
     /**
      * The init block runs every time the class is instantiated.
@@ -19,7 +19,7 @@ class ECTextViewBold(context: Context, attrs: AttributeSet) : AppCompatTextView(
     }
 
     /**
-     * Applies a font to a TextView.
+     * Applies a font to a Button.
      */
     private fun applyFont() {
 
@@ -27,5 +27,6 @@ class ECTextViewBold(context: Context, attrs: AttributeSet) : AppCompatTextView(
         val typeface: Typeface =
             Typeface.createFromAsset(context.assets, "Montserrat-Bold.ttf")
         setTypeface(typeface)
+
     }
 }
