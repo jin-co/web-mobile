@@ -23,6 +23,8 @@ import com.jinco.ecommerce.widgets.Constants
 
 class FirestoreClass {
     private val mFireStore = FirebaseFirestore.getInstance()
+
+//    user
     fun registerUser(activity: RegisterActivity, userInfo: User) {
         mFireStore.collection(Constants.USERS)
             .document(userInfo.id)
@@ -33,16 +35,6 @@ class FirestoreClass {
             .addOnFailureListener { e ->
                 activity.hideProgressDialog()
             }
-    }
-
-    fun getCurrentUserID(): String {
-        val currentUser = FirebaseAuth.getInstance().currentUser
-        var currentUserID = ""
-        if (currentUser != null) {
-            currentUserID = currentUser.uid
-        }
-
-        return currentUserID
     }
 
     fun getUserDetails(activity: Activity) {
@@ -509,5 +501,13 @@ class FirestoreClass {
             .addOnFailureListener { e ->
                 fragment.hideProgressDialog()
             }
+    }
+
+    fun getCurrentUserID(): String {
+        val currentUser = FirebaseAuth.getInstance().currentUser
+        if (currentUser != null) {
+            return currentUser.uid;
+        }
+        return ""
     }
 }

@@ -113,7 +113,6 @@ class RegisterActivity : BaseActivity() {
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(
                     OnCompleteListener<AuthResult> { task ->
-
                         if (task.isSuccessful) {
                             val firebaseUser: FirebaseUser = task.result!!.user!!
                             val user = User(
@@ -132,7 +131,6 @@ class RegisterActivity : BaseActivity() {
     }
 
     fun userRegistrationSuccess() {
-
         hideProgressDialog()
         Toast.makeText(
             this@RegisterActivity,

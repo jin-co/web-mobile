@@ -137,10 +137,11 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
                 if (data != null) {
                     try {
                         mSelectedImageFileUri = data.data!!
-                        GlideLoader(this@UserProfileActivity).loadUserPicture(
-                            mSelectedImageFileUri!!,
-                            iv_user_photo
-                        )
+//                        GlideLoader(this@UserProfileActivity).loadUserPicture(
+//                            mSelectedImageFileUri!!,
+//                            iv_user_photo
+//                        )
+                        iv_user_photo.setImageURI(mSelectedImageFileUri);
                     } catch (e: IOException) {
                         e.printStackTrace()
                         Toast.makeText(

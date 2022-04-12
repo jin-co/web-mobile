@@ -124,10 +124,10 @@ class AddProductActivity : BaseActivity(), View.OnClickListener {
 
     private fun validateProductDetails(): Boolean {
         return when {
-            mSelectedImageFileUri == null -> {
-                showErrorSnackBar(resources.getString(R.string.err_msg_select_product_image), true)
-                false
-            }
+//            mSelectedImageFileUri == null -> {
+//                showErrorSnackBar(resources.getString(R.string.err_msg_select_product_image), true)
+//                false
+//            }
             TextUtils.isEmpty(et_product_title.text.toString().trim { it <= ' ' }) -> {
                 showErrorSnackBar(resources.getString(R.string.err_msg_enter_product_title), true)
                 false

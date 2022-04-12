@@ -28,14 +28,14 @@ object Constants {
     const val EXTRA_MY_ORDER_DETAILS: String = "extra_my_order_details"
     const val EXTRA_SOLD_PRODUCT_DETAILS: String = "extra_sold_product_details"
 
-    //A unique code for asking the Read Storage Permission
+    // Read Storage Permission
     const val READ_STORAGE_PERMISSION_CODE = 2
 
-    // A unique code of image selection
+    // image selection
     const val PICK_IMAGE_REQUEST_CODE = 2
     const val ADD_ADDRESS_REQUEST_CODE: Int = 121
 
-    // Constant variables for Gender
+    // Gender
     const val MALE: String = "Male"
     const val FEMALE: String = "Female"
 
