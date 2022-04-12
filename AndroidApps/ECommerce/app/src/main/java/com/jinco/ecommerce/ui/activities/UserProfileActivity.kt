@@ -22,43 +22,42 @@ import java.io.IOException
 
 @Suppress("DEPRECATION")
 class UserProfileActivity : BaseActivity(), View.OnClickListener {
-
-    private lateinit var mUserDetails: User
-    private var mSelectedImageFileUri: Uri? = null
-    private var mUserProfileImageURL: String = ""
+    private lateinit var userDetails: User
+    private var selectedImageFileUri: Uri? = null
+    private var userProfileImageURL: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_profile)
 
         if (intent.hasExtra(Constants.EXTRA_USER_DETAILS)) {
-            mUserDetails = intent.getParcelableExtra(Constants.EXTRA_USER_DETAILS)!!
+            userDetails = intent.getParcelableExtra(Constants.EXTRA_USER_DETAILS)!!
         }
 
-        if (mUserDetails.profileCompleted == 0) {
+        if (userDetails.profileCompleted == 0) {
             tv_title.text = resources.getString(R.string.title_complete_profile)
 
             et_first_name.isEnabled = false
-            et_first_name.setText(mUserDetails.firstName)
+            et_first_name.setText(userDetails.firstName)
 
             et_last_name.isEnabled = false
-            et_last_name.setText(mUserDetails.lastName)
+            et_last_name.setText(userDetails.lastName)
 
             et_email.isEnabled = false
-            et_email.setText(mUserDetails.email)
+            et_email.setText(userDetails.email)
         } else {
             setupActionBar()
             tv_title.text = resources.getString(R.string.title_edit_profile)
-            GlideLoader(this@UserProfileActivity).loadUserPicture(mUserDetails.image, iv_user_photo)
-            et_first_name.setText(mUserDetails.firstName)
-            et_last_name.setText(mUserDetails.lastName)
+            GlideLoader(this@UserProfileActivity).loadUserPicture(userDetails.image, iv_user_photo)
+            et_first_name.setText(userDetails.firstName)
+            et_last_name.setText(userDetails.lastName)
             et_email.isEnabled = false
-            et_email.setText(mUserDetails.email)
+            et_email.setText(userDetails.email)
 
-            if (mUserDetails.mobile != 0L) {
-                et_mobile_number.setText(mUserDetails.mobile.toString())
+            if (userDetails.mobile != 0L) {
+                et_mobile_number.setText(userDetails.mobile.toString())
             }
-            if (mUserDetails.gender == Constants.MALE) {
+            if (userDetails.gender == Constants.MALE) {
                 rb_male.isChecked = true
             } else {
                 rb_female.isChecked = true
@@ -96,10 +95,10 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
                 R.id.btn_save -> {
                     if (validateUserProfileDetails()) {
                         showProgressDialog(resources.getString(R.string.please_wait))
-                        if (mSelectedImageFileUri != null) {
-                            FirestoreClass().uploadImageToCloudStorage(
+                        if (selectedImageFileUri != null) {
+                            FirestoreClass().uploadImageToCl oudStorage(
                                 this@UserProfileActivity,
-                                mSelectedImageFileUri,
+                                selectedImageFileUri,
                                 Constants.USER_PROFILE_IMAGE
                             )
                         } else {
@@ -138,25 +137,23 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
             if (requestCode == Constants.PICK_IMAGE_REQUEST_CODE) {
                 if (data != null) {
                     try {
-                        mSelectedImageFileUri = data.data!!
-//                        GlideLoader(this@UserProfileActivity).loadUserPicture(
-//                            mSelectedImageFileUri!!,
-//                            iv_user_photo
-//                        )
-                        iv_user_photo.setImageURI(mSelectedImageFileUri);
+                        selectedImageFileUri = data.data!!
+                        GlideLoader(this@UserProfileActivity).loadUserPicture(
+                            selectedImageFileUri!!,
+                            iv_user_photo
+                        )
+//                        iv_user_photo.setImageURI(selectedImageFileUri)
                     } catch (e: IOException) {
                         e.printStackTrace()
                         Toast.makeText(
                             this@UserProfileActivity,
                             resources.getString(R.string.image_selection_failed),
                             Toast.LENGTH_SHORT
-                        )
-                            .show()
+                        ).show()
                     }
                 }
             }
         } else if (resultCode == Activity.RESULT_CANCELED) {
-            Log.e("Request Cancelled", "Image selection cancelled")
         }
     }
 
@@ -186,11 +183,11 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
     private fun updateUserProfileDetails() {
         val userHashMap = HashMap<String, Any>()
         val firstName = et_first_name.text.toString().trim { it <= ' ' }
-        if (firstName != mUserDetails.firstName) {
+        if (firstName != userDetails.firstName) {
             userHashMap[Constants.FIRST_NAME] = firstName
         }
         val lastName = et_last_name.text.toString().trim { it <= ' ' }
-        if (lastName != mUserDetails.lastName) {
+        if (lastName != userDetails.lastName) {
             userHashMap[Constants.LAST_NAME] = lastName
         }
 
@@ -201,19 +198,19 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
             Constants.FEMALE
         }
 
-        if (mUserProfileImageURL.isNotEmpty()) {
-            userHashMap[Constants.IMAGE] = mUserProfileImageURL
+        if (userProfileImageURL.isNotEmpty()) {
+            userHashMap[Constants.IMAGE] = userProfileImageURL
         }
 
-        if (mobileNumber.isNotEmpty() && mobileNumber != mUserDetails.mobile.toString()) {
+        if (mobileNumber.isNotEmpty() && mobileNumber != userDetails.mobile.toString()) {
             userHashMap[Constants.MOBILE] = mobileNumber.toLong()
         }
 
-        if (gender.isNotEmpty() && gender != mUserDetails.gender) {
+        if (gender.isNotEmpty() && gender != userDetails.gender) {
             userHashMap[Constants.GENDER] = gender
         }
 
-        if (mUserDetails.profileCompleted == 0) {
+        if (userDetails.profileCompleted == 0) {
             userHashMap[Constants.COMPLETE_PROFILE] = 1
         }
 
@@ -236,7 +233,7 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
     }
 
     fun imageUploadSuccess(imageURL: String) {
-        mUserProfileImageURL = imageURL
+        userProfileImageURL = imageURL
         updateUserProfileDetails()
     }
 }
