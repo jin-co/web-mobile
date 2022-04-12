@@ -119,9 +119,10 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == Constants.READ_STORAGE_PERMISSION_CODE) {
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Log.e("okay: " grantResults[0].toString())
+                Log.e("okay: ", grantResults[0].toString())
                 Constants.showImageChooser(this@UserProfileActivity)
             } else {
+                Log.e("no!!: ", grantResults[0].toString())
                 Toast.makeText(
                     this,
                     resources.getString(R.string.storage_permission_denied),
