@@ -72,8 +72,9 @@ object Constants {
         activity.startActivityForResult(galleryIntent, PICK_IMAGE_REQUEST_CODE)
     }
 
-    fun getFileExtension(activity: Activity, uri: Uri?): String? {
-        return MimeTypeMap.getSingleton()
-            .getExtensionFromMimeType(activity.contentResolver.getType(uri!!))
-    }
+//    delete
+//    fun getFileExtension(activity: Activity, uri: Uri?): String? {
+//        return MimeTypeMap.getSingleton()
+//            .getExtensionFromMimeType(activity.contentResolver.getType(uri!!))
+//    }
 }

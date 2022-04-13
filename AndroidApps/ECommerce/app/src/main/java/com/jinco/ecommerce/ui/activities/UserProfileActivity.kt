@@ -234,8 +234,9 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
         finish()
     }
 
-    fun imageUploadSuccess(imageURL: String) {
-        userProfileImageURL = imageURL
-        updateUserProfileDetails()
-    }
+//    delete test
+//    fun imageUploadSuccess(imageURL: String) {
+//        userProfileImageURL = imageURL
+//        updateUserProfileDetails()
+//    }
 }

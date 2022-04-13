@@ -14,15 +14,15 @@ import com.jinco.ecommerce.widgets.GlideLoader
 import kotlinx.android.synthetic.main.activity_product_details.*
 
 class ProductDetailsActivity : BaseActivity(), View.OnClickListener {
-    private lateinit var mProductDetails: Product
-    private var mProductId: String = ""
+    private lateinit var productDetails: Product
+    private var productId: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product_details)
 
         if (intent.hasExtra(Constants.EXTRA_PRODUCT_ID)) {
-            mProductId =
+            productId =
                 intent.getStringExtra(Constants.EXTRA_PRODUCT_ID)!!
         }
 
@@ -66,10 +66,10 @@ class ProductDetailsActivity : BaseActivity(), View.OnClickListener {
     private fun addToCart() {
         val addToCart = Cart(
             FirestoreClass().getCurrentUserID(),
-            mProductId,
-            mProductDetails.title,
-            mProductDetails.price,
-            mProductDetails.image,
+            productId,
+            productDetails.title,
+            productDetails.price,
+            productDetails.image,
             Constants.DEFAULT_CART_QUANTITY
         )
 
@@ -91,11 +91,11 @@ class ProductDetailsActivity : BaseActivity(), View.OnClickListener {
 
     private fun getProductDetails() {
         showProgressDialog(resources.getString(R.string.please_wait))
-        FirestoreClass().getProductDetails(this@ProductDetailsActivity, mProductId)
+        FirestoreClass().getProductDetails(this@ProductDetailsActivity, productId)
     }
 
     fun productDetailsSuccess(product: Product) {
-        mProductDetails = product
+        productDetails = product
         GlideLoader(this@ProductDetailsActivity).loadProductPicture(
             product.image,
             iv_product_detail_image
@@ -122,7 +122,7 @@ class ProductDetailsActivity : BaseActivity(), View.OnClickListener {
             if (FirestoreClass().getCurrentUserID() == product.user_id) {
                 hideProgressDialog()
             } else {
-                FirestoreClass().checkIfItemExistInCart(this@ProductDetailsActivity, mProductId)
+                FirestoreClass().checkIfItemExistInCart(this@ProductDetailsActivity, productId)
             }
         }
     }

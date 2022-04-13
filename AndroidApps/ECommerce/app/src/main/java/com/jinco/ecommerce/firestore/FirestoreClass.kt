@@ -3,8 +3,6 @@ package com.jinco.ecommerce.firestore
 import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
-import android.net.Uri
-import android.util.Log
 import androidx.fragment.app.Fragment
 import com.jinco.ecommerce.ui.activities.RegisterActivity
 import com.jinco.ecommerce.ui.activities.*
@@ -15,18 +13,16 @@ import com.jinco.ecommerce.ui.fragments.SoldProductsFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
-import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.StorageReference
 import com.jinco.ecommerce.models.*
 
 import com.jinco.ecommerce.widgets.Constants
 
 class FirestoreClass {
-    private val mFireStore = FirebaseFirestore.getInstance()
+    private val fireStore = FirebaseFirestore.getInstance()
 
 //    user
     fun registerUser(activity: RegisterActivity, userInfo: User) {
-        mFireStore.collection(Constants.USERS)
+        fireStore.collection(Constants.USERS)
             .document(userInfo.id)
             .set(userInfo, SetOptions.merge())
             .addOnSuccessListener {
@@ -38,7 +34,7 @@ class FirestoreClass {
     }
 
     fun getUserDetails(activity: Activity) {
-        mFireStore.collection(Constants.USERS)
+        fireStore.collection(Constants.USERS)
             .document(getCurrentUserID())
             .get()
             .addOnSuccessListener { document ->
@@ -78,7 +74,7 @@ class FirestoreClass {
     }
 
     fun updateUserProfileData(activity: Activity, userHashMap: HashMap<String, Any>) {
-        mFireStore.collection(Constants.USERS)
+        fireStore.collection(Constants.USERS)
             .document(getCurrentUserID())
             .update(userHashMap)
             .addOnSuccessListener {
@@ -136,8 +132,8 @@ class FirestoreClass {
 //            }
 //    }
 
-    fun uploadProductDetails(activity: AddProductActivity, productInfo: Product) {
-        mFireStore.collection(Constants.PRODUCTS)
+    fun addProductDetails(activity: AddProductActivity, productInfo: Product) {
+        fireStore.collection(Constants.PRODUCTS)
             .document()
             .set(productInfo, SetOptions.merge())
             .addOnSuccessListener {
@@ -149,7 +145,7 @@ class FirestoreClass {
     }
 
     fun getProductsList(fragment: Fragment) {
-        mFireStore.collection(Constants.PRODUCTS)
+        fireStore.collection(Constants.PRODUCTS)
             .whereEqualTo(Constants.USER_ID, getCurrentUserID())
             .get()
             .addOnSuccessListener { document ->
@@ -176,7 +172,7 @@ class FirestoreClass {
     }
 
     fun getAllProductsList(activity: Activity) {
-        mFireStore.collection(Constants.PRODUCTS)
+        fireStore.collection(Constants.PRODUCTS)
             .get()
             .addOnSuccessListener { document ->
                 val productsList: ArrayList<Product> = ArrayList()
@@ -209,7 +205,7 @@ class FirestoreClass {
     }
 
     fun getDashboardItemsList(fragment: DashboardFragment) {
-        mFireStore.collection(Constants.PRODUCTS)
+        fireStore.collection(Constants.PRODUCTS)
             .get()
             .addOnSuccessListener { document ->
                 val productsList: ArrayList<Product> = ArrayList()
@@ -228,7 +224,7 @@ class FirestoreClass {
     }
 
     fun deleteProduct(fragment: ProductsFragment, productId: String) {
-        mFireStore.collection(Constants.PRODUCTS)
+        fireStore.collection(Constants.PRODUCTS)
             .document(productId)
             .delete()
             .addOnSuccessListener {
@@ -240,7 +236,7 @@ class FirestoreClass {
     }
 
     fun getProductDetails(activity: ProductDetailsActivity, productId: String) {
-        mFireStore.collection(Constants.PRODUCTS)
+        fireStore.collection(Constants.PRODUCTS)
             .document(productId)
             .get()
             .addOnSuccessListener { document ->
@@ -253,7 +249,7 @@ class FirestoreClass {
     }
 
     fun addCartItems(activity: ProductDetailsActivity, addToCart: Cart) {
-        mFireStore.collection(Constants.CART_ITEMS)
+        fireStore.collection(Constants.CART_ITEMS)
             .document()
             .set(addToCart, SetOptions.merge())
             .addOnSuccessListener {
@@ -265,7 +261,7 @@ class FirestoreClass {
     }
 
     fun checkIfItemExistInCart(activity: ProductDetailsActivity, productId: String) {
-        mFireStore.collection(Constants.CART_ITEMS)
+        fireStore.collection(Constants.CART_ITEMS)
             .whereEqualTo(Constants.USER_ID, getCurrentUserID())
             .whereEqualTo(Constants.PRODUCT_ID, productId)
             .get()
@@ -282,7 +278,7 @@ class FirestoreClass {
     }
 
     fun getCartList(activity: Activity) {
-        mFireStore.collection(Constants.CART_ITEMS)
+        fireStore.collection(Constants.CART_ITEMS)
             .whereEqualTo(Constants.USER_ID, getCurrentUserID())
             .get()
             .addOnSuccessListener { document ->
@@ -316,7 +312,7 @@ class FirestoreClass {
     }
 
     fun removeItemFromCart(context: Context, cart_id: String) {
-        mFireStore.collection(Constants.CART_ITEMS)
+        fireStore.collection(Constants.CART_ITEMS)
             .document(cart_id) // cart id
             .delete()
             .addOnSuccessListener {
@@ -336,7 +332,7 @@ class FirestoreClass {
     }
 
     fun updateMyCart(context: Context, cart_id: String, itemHashMap: HashMap<String, Any>) {
-        mFireStore.collection(Constants.CART_ITEMS)
+        fireStore.collection(Constants.CART_ITEMS)
             .document(cart_id) // cart id
             .update(itemHashMap) // A HashMap of fields which are to be updated.
             .addOnSuccessListener {
@@ -356,7 +352,7 @@ class FirestoreClass {
     }
 
     fun addAddress(activity: AddEditAddressActivity, addressInfo: Address) {
-        mFireStore.collection(Constants.ADDRESSES)
+        fireStore.collection(Constants.ADDRESSES)
             .document()
             .set(addressInfo, SetOptions.merge())
             .addOnSuccessListener {
@@ -368,7 +364,7 @@ class FirestoreClass {
     }
 
     fun getAddressesList(activity: AddressListActivity) {
-        mFireStore.collection(Constants.ADDRESSES)
+        fireStore.collection(Constants.ADDRESSES)
             .whereEqualTo(Constants.USER_ID, getCurrentUserID())
             .get()
             .addOnSuccessListener { document ->
@@ -387,7 +383,7 @@ class FirestoreClass {
     }
 
     fun updateAddress(activity: AddEditAddressActivity, addressInfo: Address, addressId: String) {
-        mFireStore.collection(Constants.ADDRESSES)
+        fireStore.collection(Constants.ADDRESSES)
             .document(addressId)
             .set(addressInfo, SetOptions.merge())
             .addOnSuccessListener {
@@ -399,7 +395,7 @@ class FirestoreClass {
     }
 
     fun deleteAddress(activity: AddressListActivity, addressId: String) {
-        mFireStore.collection(Constants.ADDRESSES)
+        fireStore.collection(Constants.ADDRESSES)
             .document(addressId)
             .delete()
             .addOnSuccessListener {
@@ -411,7 +407,7 @@ class FirestoreClass {
     }
 
     fun placeOrder(activity: CheckoutActivity, order: Order) {
-        mFireStore.collection(Constants.ORDERS)
+        fireStore.collection(Constants.ORDERS)
             .document()
             .set(order, SetOptions.merge())
             .addOnSuccessListener {
@@ -423,7 +419,7 @@ class FirestoreClass {
     }
 
     fun updateAllDetails(activity: CheckoutActivity, cartList: ArrayList<Cart>, order: Order) {
-        val writeBatch = mFireStore.batch()
+        val writeBatch = fireStore.batch()
         for (cart in cartList) {
 
             val soldProduct = SoldProduct(
@@ -440,7 +436,7 @@ class FirestoreClass {
                 order.address
             )
 
-            val documentReference = mFireStore.collection(Constants.SOLD_PRODUCTS)
+            val documentReference = fireStore.collection(Constants.SOLD_PRODUCTS)
                 .document()
             writeBatch.set(documentReference, soldProduct)
         }
@@ -450,13 +446,13 @@ class FirestoreClass {
             productHashMap[Constants.STOCK_QUANTITY] =
                 (cart.stock_quantity.toInt() - cart.cart_quantity.toInt()).toString()
 
-            val documentReference = mFireStore.collection(Constants.PRODUCTS)
+            val documentReference = fireStore.collection(Constants.PRODUCTS)
                 .document(cart.product_id)
             writeBatch.update(documentReference, productHashMap)
         }
 
         for (cart in cartList) {
-            val documentReference = mFireStore.collection(Constants.CART_ITEMS)
+            val documentReference = fireStore.collection(Constants.CART_ITEMS)
                 .document(cart.id)
             writeBatch.delete(documentReference)
         }
@@ -469,7 +465,7 @@ class FirestoreClass {
     }
 
     fun getMyOrdersList(fragment: OrdersFragment) {
-        mFireStore.collection(Constants.ORDERS)
+        fireStore.collection(Constants.ORDERS)
             .whereEqualTo(Constants.USER_ID, getCurrentUserID())
             .get()
             .addOnSuccessListener { document ->
@@ -487,7 +483,7 @@ class FirestoreClass {
     }
 
     fun getSoldProductsList(fragment: SoldProductsFragment) {
-        mFireStore.collection(Constants.SOLD_PRODUCTS)
+        fireStore.collection(Constants.SOLD_PRODUCTS)
             .whereEqualTo(Constants.USER_ID, getCurrentUserID())
             .get()
             .addOnSuccessListener { document ->

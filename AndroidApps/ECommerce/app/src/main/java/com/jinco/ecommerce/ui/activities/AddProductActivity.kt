@@ -22,8 +22,8 @@ import java.io.IOException
 
 @Suppress("DEPRECATION")
 class AddProductActivity : BaseActivity(), View.OnClickListener {
-    private var mSelectedImageFileUri: Uri? = null
-    private var mProductImageURL: String = ""
+    private var selectedImageFileUri: Uri? = null
+    private var productImageURL: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,7 +56,9 @@ class AddProductActivity : BaseActivity(), View.OnClickListener {
 
                 R.id.btn_submit -> {
                     if (validateProductDetails()) {
-                        uploadProductImage()
+//                        delete test
+//                        uploadProductImage()
+                        uploadProductDetails()
                     }
                 }
             }
@@ -99,11 +101,11 @@ class AddProductActivity : BaseActivity(), View.OnClickListener {
                     R.drawable.ic_vector_edit
                 )
             )
-            mSelectedImageFileUri = data.data!!
+            selectedImageFileUri = data.data!!
 
             try {
                 GlideLoader(this@AddProductActivity).loadProductPicture(
-                    mSelectedImageFileUri!!,
+                    selectedImageFileUri!!,
                     iv_product_image
                 )
             } catch (e: IOException) {
@@ -124,10 +126,10 @@ class AddProductActivity : BaseActivity(), View.OnClickListener {
 
     private fun validateProductDetails(): Boolean {
         return when {
-//            mSelectedImageFileUri == null -> {
-//                showErrorSnackBar(resources.getString(R.string.err_msg_select_product_image), true)
-//                false
-//            }
+            selectedImageFileUri == null -> {
+                showErrorSnackBar(resources.getString(R.string.err_msg_select_product_image), true)
+                false
+            }
             TextUtils.isEmpty(et_product_title.text.toString().trim { it <= ' ' }) -> {
                 showErrorSnackBar(resources.getString(R.string.err_msg_enter_product_title), true)
                 false
@@ -159,9 +161,9 @@ class AddProductActivity : BaseActivity(), View.OnClickListener {
         }
     }
 
+//    delete test
     private fun uploadProductImage() {
         showProgressDialog(resources.getString(R.string.please_wait))
-
 //        delete test
 //        FirestoreClass().uploadImageToCloudStorage(
 //            this@AddProductActivity,
@@ -170,10 +172,10 @@ class AddProductActivity : BaseActivity(), View.OnClickListener {
 //        )
     }
 
-    fun imageUploadSuccess(imageURL: String) {
-        mProductImageURL = imageURL
-        uploadProductDetails()
-    }
+//    fun imageUploadSuccess(imageURL: String) {
+//        productImageURL = imageURL
+//        uploadProductDetails()
+//    }
 
     private fun uploadProductDetails() {
         val username =
@@ -187,15 +189,17 @@ class AddProductActivity : BaseActivity(), View.OnClickListener {
             et_product_price.text.toString().trim { it <= ' ' },
             et_product_description.text.toString().trim { it <= ' ' },
             et_product_quantity.text.toString().trim { it <= ' ' },
-            mProductImageURL
+
+//            delete test
+//            productImageURL
+            selectedImageFileUri.toString()
         )
 
-        FirestoreClass().uploadProductDetails(this@AddProductActivity, product)
+        FirestoreClass().addProductDetails(this@AddProductActivity, product)
     }
 
     fun productUploadSuccess() {
         hideProgressDialog()
-
         Toast.makeText(
             this@AddProductActivity,
             resources.getString(R.string.product_uploaded_success_message),
