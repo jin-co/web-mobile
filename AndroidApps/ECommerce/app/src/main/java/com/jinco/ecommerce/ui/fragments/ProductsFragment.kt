@@ -51,10 +51,7 @@ class ProductsFragment : BaseFragment() {
     }
 
     private fun getProductListFromFireStore() {
-        // Show the progress dialog.
         showProgressDialog(resources.getString(R.string.please_wait))
-
-        // Call the function of Firestore class.
         FirestoreClass().getProductsList(this@ProductsFragment)
     }
 
@@ -77,7 +74,6 @@ class ProductsFragment : BaseFragment() {
     }
 
     fun deleteProduct(productID: String) {
-
         showAlertDialogToDeleteProduct(productID)
     }
 
