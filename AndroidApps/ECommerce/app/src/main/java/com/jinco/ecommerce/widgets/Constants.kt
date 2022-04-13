@@ -43,7 +43,7 @@ object Constants {
     // quantity
     const val DEFAULT_CART_QUANTITY: String = "1"
 
-    // Firebase database field names
+    // profile
     const val MOBILE: String = "mobile"
     const val GENDER: String = "gender"
     const val IMAGE: String = "image"

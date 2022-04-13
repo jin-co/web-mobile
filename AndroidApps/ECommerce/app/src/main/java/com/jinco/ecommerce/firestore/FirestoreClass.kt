@@ -97,43 +97,44 @@ class FirestoreClass {
             }
     }
 
-    fun uploadImageToCloudStorage(activity: Activity, imageFileURI: Uri?, imageType: String) {
-        val sRef: StorageReference = FirebaseStorage.getInstance().reference.child(
-            imageType + System.currentTimeMillis() + "."
-                    + Constants.getFileExtension(
-                activity,
-                imageFileURI
-            )
-        )
-
-        sRef.putFile(imageFileURI!!)
-            .addOnSuccessListener { taskSnapshot ->
-                taskSnapshot.metadata!!.reference!!.downloadUrl
-                    .addOnSuccessListener { uri ->
-                        when (activity) {
-                            is UserProfileActivity -> {
-                                activity.imageUploadSuccess(uri.toString())
-                            }
-
-                            is AddProductActivity -> {
-                                activity.imageUploadSuccess(uri.toString())
-                            }
-                        }
-                    }
-            }
-            .addOnFailureListener { exception ->
-
-                when (activity) {
-                    is UserProfileActivity -> {
-                        activity.hideProgressDialog()
-                    }
-
-                    is AddProductActivity -> {
-                        activity.hideProgressDialog()
-                    }
-                }
-            }
-    }
+//    delete test
+//    fun uploadImageToCloudStorage(activity: Activity, imageFileURI: Uri?, imageType: String) {
+//        val sRef: StorageReference = FirebaseStorage.getInstance().reference.child(
+//            imageType + System.currentTimeMillis() + "."
+//                    + Constants.getFileExtension(
+//                activity,
+//                imageFileURI
+//            )
+//        )
+//
+//        sRef.putFile(imageFileURI!!)
+//            .addOnSuccessListener { taskSnapshot ->
+//                taskSnapshot.metadata!!.reference!!.downloadUrl
+//                    .addOnSuccessListener { uri ->
+//                        when (activity) {
+//                            is UserProfileActivity -> {
+//                                activity.imageUploadSuccess(uri.toString())
+//                            }
+//
+//                            is AddProductActivity -> {
+//                                activity.imageUploadSuccess(uri.toString())
+//                            }
+//                        }
+//                    }
+//            }
+//            .addOnFailureListener { exception ->
+//
+//                when (activity) {
+//                    is UserProfileActivity -> {
+//                        activity.hideProgressDialog()
+//                    }
+//
+//                    is AddProductActivity -> {
+//                        activity.hideProgressDialog()
+//                    }
+//                }
+//            }
+//    }
 
     fun uploadProductDetails(activity: AddProductActivity, productInfo: Product) {
         mFireStore.collection(Constants.PRODUCTS)

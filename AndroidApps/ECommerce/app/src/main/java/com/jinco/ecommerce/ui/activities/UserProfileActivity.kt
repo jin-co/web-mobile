@@ -95,15 +95,17 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
                 R.id.btn_save -> {
                     if (validateUserProfileDetails()) {
                         showProgressDialog(resources.getString(R.string.please_wait))
-                        if (selectedImageFileUri != null) {
-                            FirestoreClass().uploadImageToCl oudStorage(
-                                this@UserProfileActivity,
-                                selectedImageFileUri,
-                                Constants.USER_PROFILE_IMAGE
-                            )
-                        } else {
-                            updateUserProfileDetails()
-                        }
+                        updateUserProfileDetails()
+//                        delete test
+//                        if (selectedImageFileUri != null) {
+//                            FirestoreClass().uploadImageToCloudStorage(
+//                                this@UserProfileActivity,
+//                                selectedImageFileUri,
+//                                Constants.USER_PROFILE_IMAGE
+//                            )
+//                        } else {
+//                            updateUserProfileDetails()
+//                        }
                     }
                 }
             }
@@ -198,8 +200,8 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
             Constants.FEMALE
         }
 
-        if (userProfileImageURL.isNotEmpty()) {
-            userHashMap[Constants.IMAGE] = userProfileImageURL
+        if (selectedImageFileUri.toString().isNotEmpty()) {
+            userHashMap[Constants.IMAGE] = selectedImageFileUri.toString()
         }
 
         if (mobileNumber.isNotEmpty() && mobileNumber != userDetails.mobile.toString()) {
