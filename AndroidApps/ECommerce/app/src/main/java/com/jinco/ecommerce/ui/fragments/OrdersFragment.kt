@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.jinco.ecommerce.R
 import com.jinco.ecommerce.firestore.FirestoreClass
 import com.jinco.ecommerce.models.Order
-import com.ecommerce.ui.adapters.MyOrdersListAdapter
-import com.jinco.ecommerce.ui.fragments.BaseFragment
+import com.jinco.ecommerce.ui.adapters.MyOrdersListAdapter
+
 import kotlinx.android.synthetic.main.fragment_orders.*
 
 class OrdersFragment : BaseFragment() {

@@ -10,7 +10,8 @@ import com.jinco.ecommerce.models.Product
 import com.jinco.ecommerce.ui.activities.CartListActivity
 import com.jinco.ecommerce.ui.activities.ProductDetailsActivity
 import com.jinco.ecommerce.ui.activities.SettingsActivity
-import com.ecommerce.ui.adapters.DashboardItemsListAdapter
+import com.jinco.ecommerce.ui.adapters.DashboardItemsListAdapter
+
 import com.jinco.ecommerce.widgets.Constants
 import kotlinx.android.synthetic.main.fragment_dashboard.*
 

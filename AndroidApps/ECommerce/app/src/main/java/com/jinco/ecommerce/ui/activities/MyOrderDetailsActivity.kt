@@ -8,7 +8,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jinco.ecommerce.R
 import com.jinco.ecommerce.models.Order
-import com.ecommerce.ui.adapters.CartItemsListAdapter
+import com.jinco.ecommerce.ui.adapters.CartItemsListAdapter
 import com.jinco.ecommerce.widgets.Constants
 import kotlinx.android.synthetic.main.activity_my_order_details.*
 import java.text.SimpleDateFormat

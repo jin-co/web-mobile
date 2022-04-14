@@ -1,4 +1,4 @@
-package com.ecommerce.ui.adapters
+package com.jinco.ecommerce.ui.adapters
 
 import android.content.Context
 import android.content.Intent

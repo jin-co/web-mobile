@@ -12,7 +12,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.jinco.ecommerce.R
 import com.jinco.ecommerce.firestore.FirestoreClass
 import com.jinco.ecommerce.models.Address
-import com.ecommerce.ui.adapters.AddressListAdapter
+import com.jinco.ecommerce.ui.adapters.AddressListAdapter
+
 import com.jinco.ecommerce.widgets.Constants
 import com.jinco.ecommerce.widgets.SwipeToDeleteCallback
 import com.jinco.ecommerce.widgets.SwipeToEditCallback

@@ -11,7 +11,7 @@ import com.jinco.ecommerce.models.Address
 import com.jinco.ecommerce.models.Cart
 import com.jinco.ecommerce.models.Order
 import com.jinco.ecommerce.models.Product
-import com.ecommerce.ui.adapters.CartItemsListAdapter
+import com.jinco.ecommerce.ui.adapters.CartItemsListAdapter
 import com.jinco.ecommerce.widgets.Constants
 import kotlinx.android.synthetic.main.activity_checkout.*
 

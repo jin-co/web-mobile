@@ -1,4 +1,4 @@
-package com.ecommerce.ui.adapters
+package com.jinco.ecommerce.ui.adapters
 
 import android.annotation.SuppressLint
 import android.app.Activity

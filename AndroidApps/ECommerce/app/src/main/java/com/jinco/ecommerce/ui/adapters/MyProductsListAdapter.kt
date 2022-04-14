@@ -1,4 +1,4 @@
-package com.ecommerce.ui.adapters
+package com.jinco.ecommerce.ui.fragments
 
 import android.content.Context
 import android.content.Intent
