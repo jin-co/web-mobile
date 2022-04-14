@@ -13,7 +13,7 @@ import com.jinco.ecommerce.widgets.Constants
 import com.jinco.ecommerce.widgets.GlideLoader
 import kotlinx.android.synthetic.main.item_list_layout.view.*
 
-open class MyOrdersListAdapter(
+open class OrdersListAdapter(
     private val context: Context,
     private var list: ArrayList<Order>
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {

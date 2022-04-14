@@ -12,32 +12,32 @@ import kotlinx.android.synthetic.main.activity_add_edit_address.*
 
 class AddEditAddressActivity : BaseActivity() {
 
-    private var mAddressDetails: Address? = null
+    private var addressDetails: Address? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_edit_address)
 
         if (intent.hasExtra(Constants.EXTRA_ADDRESS_DETAILS)) {
-            mAddressDetails =
+            addressDetails =
                 intent.getParcelableExtra(Constants.EXTRA_ADDRESS_DETAILS)!!
         }
 
         setupActionBar()
 
-        if (mAddressDetails != null) {
-            if (mAddressDetails!!.id.isNotEmpty()) {
+        if (addressDetails != null) {
+            if (addressDetails!!.id.isNotEmpty()) {
 
                 tv_title.text = resources.getString(R.string.title_edit_address)
                 btn_submit_address.text = resources.getString(R.string.btn_lbl_update)
 
-                et_full_name.setText(mAddressDetails?.name)
-                et_phone_number.setText(mAddressDetails?.mobileNumber)
-                et_address.setText(mAddressDetails?.address)
-                et_zip_code.setText(mAddressDetails?.zipCode)
-                et_additional_note.setText(mAddressDetails?.additionalNote)
+                et_full_name.setText(addressDetails?.name)
+                et_phone_number.setText(addressDetails?.mobileNumber)
+                et_address.setText(addressDetails?.address)
+                et_zip_code.setText(addressDetails?.zipCode)
+                et_additional_note.setText(addressDetails?.additionalNote)
 
-                when (mAddressDetails?.type) {
+                when (addressDetails?.type) {
                     Constants.HOME -> {
                         rb_home.isChecked = true
                     }
@@ -47,7 +47,7 @@ class AddEditAddressActivity : BaseActivity() {
                     else -> {
                         rb_other.isChecked = true
                         til_other_details.visibility = View.VISIBLE
-                        et_other_details.setText(mAddressDetails?.otherDetails)
+                        et_other_details.setText(addressDetails?.otherDetails)
                     }
                 }
             }
@@ -150,11 +150,11 @@ class AddEditAddressActivity : BaseActivity() {
                 otherDetails
             )
 
-            if (mAddressDetails != null && mAddressDetails!!.id.isNotEmpty()) {
+            if (addressDetails != null && addressDetails!!.id.isNotEmpty()) {
                 FirestoreClass().updateAddress(
                     this@AddEditAddressActivity,
                     addressModel,
-                    mAddressDetails!!.id
+                    addressDetails!!.id
                 )
             } else {
                 FirestoreClass().addAddress(this@AddEditAddressActivity, addressModel)
@@ -164,7 +164,7 @@ class AddEditAddressActivity : BaseActivity() {
 
     fun addUpdateAddressSuccess() {
         hideProgressDialog()
-        val notifySuccessMessage: String = if (mAddressDetails != null && mAddressDetails!!.id.isNotEmpty()) {
+        val notifySuccessMessage: String = if (addressDetails != null && addressDetails!!.id.isNotEmpty()) {
             resources.getString(R.string.msg_your_address_updated_successfully)
         } else {
             resources.getString(R.string.err_your_address_added_successfully)

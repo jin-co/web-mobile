@@ -15,7 +15,7 @@ import com.jinco.ecommerce.widgets.Constants
 import com.jinco.ecommerce.widgets.GlideLoader
 import kotlinx.android.synthetic.main.item_list_layout.view.*
 
-open class MyProductsListAdapter(
+open class ProductsListAdapter(
     private val context: Context,
     private var list: ArrayList<Product>,
     private val fragment: ProductsFragment

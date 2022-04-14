@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.jinco.ecommerce.R
 import com.jinco.ecommerce.firestore.FirestoreClass
 import com.jinco.ecommerce.models.Order
-import com.jinco.ecommerce.ui.adapters.MyOrdersListAdapter
+import com.jinco.ecommerce.ui.adapters.OrdersListAdapter
 
 import kotlinx.android.synthetic.main.fragment_orders.*
 
@@ -42,7 +42,7 @@ class OrdersFragment : BaseFragment() {
             rv_my_order_items.layoutManager = LinearLayoutManager(activity)
             rv_my_order_items.setHasFixedSize(true)
 
-            val myOrdersAdapter = MyOrdersListAdapter(requireActivity(), ordersList)
+            val myOrdersAdapter = OrdersListAdapter(requireActivity(), ordersList)
             rv_my_order_items.adapter = myOrdersAdapter
         } else {
             rv_my_order_items.visibility = View.GONE
