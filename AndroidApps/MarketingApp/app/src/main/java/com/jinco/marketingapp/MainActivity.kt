@@ -43,6 +43,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onPreviewClicked() {
-        Log.e("test", "hh")
+        val etContactName = et_contact_name.text.toString()
+        val etContactNumber = et_contact_number.text.toString()
+        val etDisplayName = et_display_name.text.toString()
+        val etStartDate = et_start_date.text.toString()
+        val cbJuinor = cb_junior.isChecked
+        val cbImmediatedStart = cb_immediate_start.isChecked
+        val spJobTitle = spn_job_title.selectedItem?.toString()
+
+        Toast.makeText(this, "$etContactName", Toast.LENGTH_LONG).show()
     }
 }
