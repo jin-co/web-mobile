@@ -2,11 +2,14 @@ package com.jinco.marketingapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.inputmethod.InputBinding
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.Spinner
 import android.widget.Toast
 import com.google.android.material.textfield.TextInputEditText
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 //    private var etContactName:TextInputEditText? = null
@@ -34,12 +37,12 @@ class MainActivity : AppCompatActivity() {
 //        }
 
 
-
-
-
+        btn_preview.setOnClickListener {
+            onPreviewClicked()
+        }
     }
 
     private fun onPreviewClicked() {
-
+        Log.e("test", "hh")
     }
 }

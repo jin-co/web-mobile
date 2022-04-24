@@ -16,3 +16,11 @@ https://www.freakyjolly.com/change-version-number-of-app-in-android-studio/#:~:t
 
 # Error inflating class com.google.android.material.textfield.TextInputLayout
 https://stackoverflow.com/questions/57134070/error-inflating-class-com-google-android-material-textfield-textinputlayout
+
+
+# Gradle
+-> After around March 2022. syntax for the build gradle changed dramatically
+
+- Adding Kotlin view binding extension
+-> open app gradle (not project one)
+-> add `id 'kotlin-android-extensions'` : this is deprecated https://developer.android.com/topic/libraries/view-binding/migration
