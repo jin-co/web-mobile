@@ -5,10 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.inputmethod.InputBinding
-import android.widget.Button
-import android.widget.CheckBox
-import android.widget.Spinner
-import android.widget.Toast
+import android.widget.*
 import com.google.android.material.textfield.TextInputEditText
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -41,6 +38,15 @@ class MainActivity : AppCompatActivity() {
         btn_preview.setOnClickListener {
             onPreviewClicked()
         }
+
+//        aading values to spinner
+        val spinnerValues: Array<String> = arrayOf("Developer", "Engineer")
+
+        val spinnerAdapter = ArrayAdapter(
+            this,
+            android.R.layout.simple_spinner_dropdown_item, spinnerValues)
+
+        spn_job_title.adapter = spinnerAdapter
     }
 
     private fun onPreviewClicked() {
@@ -53,13 +59,13 @@ class MainActivity : AppCompatActivity() {
         val spJobTitle = spn_job_title.selectedItem?.toString()
 
         val previewActivity = Intent(this, PreviewActivity::class.java)
-        previewActivity.putExtra("etContactName",  etContactName)
-        previewActivity.putExtra("etContactNumber",  etContactNumber)
-        previewActivity.putExtra("etDisplayName",  etDisplayName)
-        previewActivity.putExtra("etStartDate",  etStartDate)
-        previewActivity.putExtra("cbJuinor",  cbJuinor)
-        previewActivity.putExtra("cbImmediatedStart",  cbImmediatedStart)
-        previewActivity.putExtra("spJobTitle",  spJobTitle)
+        previewActivity.putExtra("etContactName", etContactName)
+        previewActivity.putExtra("etContactNumber", etContactNumber)
+        previewActivity.putExtra("etDisplayName", etDisplayName)
+        previewActivity.putExtra("etStartDate", etStartDate)
+        previewActivity.putExtra("cbJuinor", cbJuinor)
+        previewActivity.putExtra("cbImmediatedStart", cbImmediatedStart)
+        previewActivity.putExtra("spJobTitle", spJobTitle)
 
         startActivity(previewActivity)
     }
