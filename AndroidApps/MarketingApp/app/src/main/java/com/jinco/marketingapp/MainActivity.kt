@@ -1,5 +1,6 @@
 package com.jinco.marketingapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -51,6 +52,15 @@ class MainActivity : AppCompatActivity() {
         val cbImmediatedStart = cb_immediate_start.isChecked
         val spJobTitle = spn_job_title.selectedItem?.toString()
 
-        Toast.makeText(this, "$etContactName", Toast.LENGTH_LONG).show()
+        val previewActivity = Intent(this, PreviewActivity::class.java)
+        previewActivity.putExtra("etContactName",  etContactName)
+        previewActivity.putExtra("etContactNumber",  etContactNumber)
+        previewActivity.putExtra("etDisplayName",  etDisplayName)
+        previewActivity.putExtra("etStartDate",  etStartDate)
+        previewActivity.putExtra("cbJuinor",  cbJuinor)
+        previewActivity.putExtra("cbImmediatedStart",  cbImmediatedStart)
+        previewActivity.putExtra("spJobTitle",  spJobTitle)
+
+        startActivity(previewActivity)
     }
 }
