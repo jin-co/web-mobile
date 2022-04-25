@@ -10,6 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MarketingApp">
         <activity
+            android:name=".PreviewActivity"
+            android:exported="false"
+            android:label="Message Preview"
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
