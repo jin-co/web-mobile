@@ -12,4 +12,25 @@ data class Message(
     val startDate: String?
 ) : Serializable {
 
+//    fun getFullJobDescription(): String {
+//        if (includeJunior) {
+//            return "a Joinor $jobTitle"
+//        } else {
+//            return "an $jobTitle"
+//        }
+//    }
+//
+//    fun getFullJobDescription(): String {
+//        return if (includeJunior) {
+//            "a Joinor $jobTitle"
+//        } else {
+//            "an $jobTitle"
+//        }
+//    }
+
+    fun getFullJobDescription() =
+        if (includeJunior) "a Joinor $jobTitle" else "an $jobTitle"
+
+    fun getAvailability() =
+        if (immediateStart) "immediately" else "from $startDate"
 }

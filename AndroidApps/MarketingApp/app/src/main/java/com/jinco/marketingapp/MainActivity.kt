@@ -14,8 +14,8 @@ class MainActivity : AppCompatActivity() {
 //    private var etContactNumber:TextInputEditText? = null
 //    private var etDisplayName:TextInputEditText? = null
 //    private var etStartDate:TextInputEditText? = null
-//    private var cbJuinor:CheckBox? = null
-//    private var cbImmediatedStart:CheckBox? = null
+//    private var cbJunior:CheckBox? = null
+//    private var cbImmediateStart:CheckBox? = null
 //    private var spJobTitle:Spinner? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,8 +26,8 @@ class MainActivity : AppCompatActivity() {
 //        etContactNumber = findViewById(R.id.et_contact_number)
 //        etDisplayName = findViewById(R.id.et_display_name)
 //        etStartDate = findViewById(R.id.et_start_date)
-//        cbJuinor = findViewById(R.id.cb_junior)
-//        cbImmediatedStart = findViewById(R.id.cb_immediate_start)
+//        cbJunior = findViewById(R.id.cb_junior)
+//        cbImmediateStart = findViewById(R.id.cb_immediate_start)
 //        spJobTitle = findViewById(R.id.spn_job_title)
 //
 //        btnPreview.setOnClickListener {
@@ -54,8 +54,8 @@ class MainActivity : AppCompatActivity() {
 //        val etContactNumber = et_contact_number.text.toString()
 //        val etDisplayName = et_display_name.text.toString()
 //        val etStartDate = et_start_date.text.toString()
-//        val cbJuinor = cb_junior.isChecked
-//        val cbImmediatedStart = cb_immediate_start.isChecked
+//        val cbJunior = cb_junior.isChecked
+//        val cbImmediateStart = cb_immediate_start.isChecked
 //        val spJobTitle = spn_job_title.selectedItem?.toString()
 
         val message = Message(
@@ -73,8 +73,8 @@ class MainActivity : AppCompatActivity() {
 //        previewActivity.putExtra("etContactNumber", etContactNumber)
 //        previewActivity.putExtra("etDisplayName", etDisplayName)
 //        previewActivity.putExtra("etStartDate", etStartDate)
-//        previewActivity.putExtra("cbJuinor", cbJuinor)
-//        previewActivity.putExtra("cbImmediatedStart", cbImmediatedStart)
+//        previewActivity.putExtra("cbJunior", cbJunior)
+//        previewActivity.putExtra("cbImmediateStart", cbImmediateStart)
 //        previewActivity.putExtra("spJobTitle", spJobTitle)
         previewActivity.putExtra("Message", message)
         startActivity(previewActivity)
