@@ -50,23 +50,33 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onPreviewClicked() {
-        val etContactName = et_contact_name.text.toString()
-        val etContactNumber = et_contact_number.text.toString()
-        val etDisplayName = et_display_name.text.toString()
-        val etStartDate = et_start_date.text.toString()
-        val cbJuinor = cb_junior.isChecked
-        val cbImmediatedStart = cb_immediate_start.isChecked
-        val spJobTitle = spn_job_title.selectedItem?.toString()
+//        val etContactName = et_contact_name.text.toString()
+//        val etContactNumber = et_contact_number.text.toString()
+//        val etDisplayName = et_display_name.text.toString()
+//        val etStartDate = et_start_date.text.toString()
+//        val cbJuinor = cb_junior.isChecked
+//        val cbImmediatedStart = cb_immediate_start.isChecked
+//        val spJobTitle = spn_job_title.selectedItem?.toString()
+
+        val message = Message(
+            et_contact_name.text.toString(),
+            et_contact_number.text.toString(),
+            et_display_name.text.toString(),
+            cb_junior.isChecked,
+            spn_job_title.selectedItem?.toString(),
+            cb_immediate_start.isChecked,
+            et_start_date.text.toString()
+        )
 
         val previewActivity = Intent(this, PreviewActivity::class.java)
-        previewActivity.putExtra("etContactName", etContactName)
-        previewActivity.putExtra("etContactNumber", etContactNumber)
-        previewActivity.putExtra("etDisplayName", etDisplayName)
-        previewActivity.putExtra("etStartDate", etStartDate)
-        previewActivity.putExtra("cbJuinor", cbJuinor)
-        previewActivity.putExtra("cbImmediatedStart", cbImmediatedStart)
-        previewActivity.putExtra("spJobTitle", spJobTitle)
-
+//        previewActivity.putExtra("etContactName", etContactName)
+//        previewActivity.putExtra("etContactNumber", etContactNumber)
+//        previewActivity.putExtra("etDisplayName", etDisplayName)
+//        previewActivity.putExtra("etStartDate", etStartDate)
+//        previewActivity.putExtra("cbJuinor", cbJuinor)
+//        previewActivity.putExtra("cbImmediatedStart", cbImmediatedStart)
+//        previewActivity.putExtra("spJobTitle", spJobTitle)
+        previewActivity.putExtra("Message", message)
         startActivity(previewActivity)
     }
 }
