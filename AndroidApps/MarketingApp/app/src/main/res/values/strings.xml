@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Marketing App</string>
+    <string name="preview_message">preview message</string>
 </resources>

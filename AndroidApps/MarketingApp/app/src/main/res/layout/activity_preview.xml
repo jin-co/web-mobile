@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="12dp"
             android:fontFamily="sans-serif-light"
-            android:text="preview message"
+            android:text="@string/preview_message"
             android:textColor="#212121"
             android:textSize="18sp" />
     </androidx.cardview.widget.CardView>
