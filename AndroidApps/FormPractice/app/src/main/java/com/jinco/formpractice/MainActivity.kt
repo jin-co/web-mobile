@@ -1,5 +1,6 @@
 package com.jinco.formpractice
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -21,11 +22,20 @@ class MainActivity : AppCompatActivity() {
         email = findViewById(R.id.et_contact_email)
         immediateStart = findViewById(R.id.cb_immediate_start)
         jobTitle = findViewById(R.id.sp_job_title)
-        var btnSubmit:Button = findViewById(R.id.btn_submit)
+        val btnSubmit:Button = findViewById(R.id.btn_submit)
 
         btnSubmit.setOnClickListener {
-            Toast.makeText(this, "hi", Toast.LENGTH_LONG).show()
+            var message:String = """
+                Hi my name is $name
+                You can reach me at $contact or $email
+                I am a $jobTitle 
+                I am available ${immediateStart.toString()}               
+            """.trimIndent()
+            Toast.makeText(this, message, Toast.LENGTH_LONG).show()
             Log.e("test", "hi")
+            var messageIntent = Intent(this, SummaryActivity::class.java)
+            messageIntent.putExtra("message", message)
+            startActivity(messageIntent)
         }
 
     }

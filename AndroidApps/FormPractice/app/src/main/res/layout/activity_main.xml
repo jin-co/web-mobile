@@ -31,24 +31,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="15dp"
-                android:hint="Contact Name"
-                android:text="Contact Name" />
+                android:hint="Contact Name" />
 
             <EditText
                 android:id="@+id/et_contact_number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="15dp"
-                android:hint="Contact Number"
-                android:text="Contact Number" />
+                android:hint="Contact Number" />
 
             <EditText
                 android:id="@+id/et_contact_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="15dp"
-                android:hint="Contact Email"
-                android:text="Contact Email" />
+                android:hint="Contact Email" />
 
             <LinearLayout
                 android:id="@+id/ll_immediate_start_wrapper"
