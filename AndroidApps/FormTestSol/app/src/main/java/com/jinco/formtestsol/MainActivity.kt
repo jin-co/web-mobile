@@ -16,15 +16,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupButton() {
-        val titles = arrayOf("Miss", "Mrs", "Mr", "Ms")
-        val titleAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, titles)
-        spn_title.adapter = titleAdapter
-    }
-
-    private fun setupSpinner() {
         btn_Create.setOnClickListener{
             createAccount()
         }
+    }
+
+    private fun setupSpinner() {
+        val titles = arrayOf("Miss", "Mrs", "Mr", "Ms")
+        val titleAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, titles)
+        spn_title.adapter = titleAdapter
     }
 
     private fun createAccount() {
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
             ti_last_name.text.toString(),
             ti_email.text.toString(),
             ti_phone.text.toString(),
-            ti_password.text.toString(),
+            ti_password.text.toString()
         )
 
         val intent = Intent(this, SummaryActivity::class.java)
