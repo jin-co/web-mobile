@@ -1,5 +1,6 @@
 package com.jinco.formtestsol
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -35,5 +36,8 @@ class MainActivity : AppCompatActivity() {
             ti_phone.text.toString(),
             ti_password.text.toString(),
         )
+
+        val intent = Intent(this, SummaryActivity::class.java)
+        intent.putExtra("user", user)
     }
 }
