@@ -39,5 +39,6 @@ class MainActivity : AppCompatActivity() {
 
         val intent = Intent(this, SummaryActivity::class.java)
         intent.putExtra("user", user)
+        startActivity((intent))
     }
 }

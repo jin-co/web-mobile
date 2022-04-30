@@ -19,16 +19,6 @@ class SummaryActivity : AppCompatActivity() {
     }
 
     private fun setupClickListener() {
-        user = intent.getSerializableExtra("user") as User
-    }
-
-    private fun displayUser() {
-        tv_name.text = user.getFullName()
-        tv_email.text = user.email
-        tv_phone.text = user.phone
-    }
-
-    private fun retireveUser() {
         tv_email.setOnClickListener{
             val intent = Intent(Intent.ACTION_SENDTO)
             intent.data = Uri.parse("mailto:${user.email}")
@@ -39,5 +29,15 @@ class SummaryActivity : AppCompatActivity() {
             intent.data = Uri.parse("tel:${user.phone}")
             startActivity(intent)
         }
+    }
+
+    private fun displayUser() {
+        tv_name.text = user.getFullName()
+        tv_email.text = user.email
+        tv_phone.text = user.phone
+    }
+
+    private fun retireveUser() {
+        user = intent.getSerializableExtra("user") as User
     }
 }
