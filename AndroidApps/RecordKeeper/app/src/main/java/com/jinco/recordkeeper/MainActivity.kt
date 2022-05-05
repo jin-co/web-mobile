@@ -14,9 +14,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        supportFragmentManager.commit {
-            add(R.id.fl_content, RunningFragment())
-        }
+//        supportFragmentManager.commit {
+//            add(R.id.fl_content, RunningFragment())
+//        }
 
         binding.btnRun.setOnClickListener{
             onRunClicked()
@@ -28,10 +28,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onRunClicked() {
-        TODO("Not yet implemented")
+        supportFragmentManager.commit {
+            replace(R.id.fl_content, RunningFragment())
+        }
     }
 
     private fun onCyclingClicked() {
-        TODO("Not yet implemented")
+        supportFragmentManager.commit {
+            replace(R.id.fl_content, RunningFragment())
+        }
     }
 }
