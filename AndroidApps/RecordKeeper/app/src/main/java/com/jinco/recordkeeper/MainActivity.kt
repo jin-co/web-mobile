@@ -3,12 +3,14 @@ package com.jinco.recordkeeper
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.view.View
 import androidx.fragment.app.commit
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.jinco.recordkeeper.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+class MainActivity : AppCompatActivity(),
+    BottomNavigationView.OnNavigationItemSelectedListener {
     private  lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,15 +22,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 //            add(R.id.fl_content, RunningFragment())
 //        }
 
-        binding.btnRun.setOnClickListener{
-            Log.e("btnRun", "run clicked")
-            onRunClicked()
-        }
-
-        binding.btnCycle.setOnClickListener{
-            Log.e("btnCycle", "cycle clicked")
-            onCyclingClicked()
-        }
+//        binding.btnRun.setOnClickListener{
+//            Log.e("btnRun", "run clicked")
+//            onRunClicked()
+//        }
+//
+//        binding.btnCycle.setOnClickListener{
+//            Log.e("btnCycle", "cycle clicked")
+//            onCyclingClicked()
+//        }
 
 //        binding.btnCycle.setOnClickListener(this)
 
@@ -37,6 +39,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 //                TODO("Not yet implemented")
 //            }
 //        })
+
+        binding.bottomNanMenu.setOnNavigationItemSelectedListener (this)
     }
 
     private fun onRunClicked() {
@@ -48,6 +52,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun onCyclingClicked() {
         supportFragmentManager.commit {
             replace(R.id.fl_content, CyclingFragment())
+        }
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == R.id.nav_cycle) {
+            onCyclingClicked()
+            return true
+        } else if (item.itemId == R.id.nav_run) {
+            onRunClicked()
+            return true
+        } else {
+            return false
         }
     }
 
