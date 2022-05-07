@@ -28,24 +28,25 @@ class RunningFragment : Fragment() {
 
     private fun setupClickListeners() {
         binding.con5km.setOnClickListener {
-            launchRunningRecordScreen()
+            launchRunningRecordScreen("5km")
         }
 
         binding.con10km.setOnClickListener {
-            launchRunningRecordScreen()
+            launchRunningRecordScreen("10km")
         }
 
         binding.conHalf.setOnClickListener {
-            launchRunningRecordScreen()
+            launchRunningRecordScreen("half")
         }
 
         binding.conFull.setOnClickListener {
-            launchRunningRecordScreen()
+            launchRunningRecordScreen("full")
         }
     }
 
-    private fun launchRunningRecordScreen() {
+    private fun launchRunningRecordScreen(distance:String) {
         val intent = Intent(context, RunRecordActivity::class.java)
+        intent.putExtra("Distance", distance)
         startActivity(intent)
     }
 }
