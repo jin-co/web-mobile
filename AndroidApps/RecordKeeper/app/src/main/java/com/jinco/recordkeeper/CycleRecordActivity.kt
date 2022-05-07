@@ -12,5 +12,6 @@ class CycleRecordActivity : AppCompatActivity() {
         binding = ActivityCycleRecordBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val distance = intent.getStringExtra("Distance")
+        title = "$distance record"
     }
 }
