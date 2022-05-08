@@ -3,6 +3,7 @@ package com.jinco.recordkeeper
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.fragment.app.commit
@@ -100,4 +101,27 @@ class MainActivity : AppCompatActivity(),
 //    override fun onClick(v: View?) {
 //
 //    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.toolbar, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem) = when(item.itemId) {
+        R.id.reset_run -> {
+            true
+        }
+
+        R.id.reset_cycle -> {
+            true
+        }
+
+        R.id.reset_all -> {
+            true
+        }
+
+        else -> {
+            super.onOptionsItemSelected(item)
+        }
+    }
 }

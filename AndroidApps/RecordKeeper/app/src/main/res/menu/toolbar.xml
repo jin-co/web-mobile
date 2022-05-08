@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/reset_run"
+        android:title="Reset run record" />
+
+    <item
+        android:id="@+id/reset_cycle"
+        android:title="Reset cycle record" />
+    <item
+        android:id="@+id/reset_all"
+        android:title="Reset all" />
+</menu>
