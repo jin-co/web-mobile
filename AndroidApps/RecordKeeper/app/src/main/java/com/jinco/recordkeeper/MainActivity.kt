@@ -56,14 +56,28 @@ class MainActivity : AppCompatActivity(),
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        if(item.itemId == R.id.nav_cycle) {
-            onCyclingClicked()
-            return true
-        } else if (item.itemId == R.id.nav_run) {
-            onRunClicked()
-            return true
-        } else {
-            return false
+//        if(item.itemId == R.id.nav_cycle) {
+//            onCyclingClicked()
+//            return true
+//        } else if (item.itemId == R.id.nav_run) {
+//            onRunClicked()
+//            return true
+//        } else {
+//            return false
+//        }
+
+        return when {
+            item.itemId == R.id.nav_cycle -> {
+                onCyclingClicked()
+                true
+            }
+            item.itemId == R.id.nav_run -> {
+                onRunClicked()
+                true
+            }
+            else -> {
+                false
+            }
         }
     }
 
