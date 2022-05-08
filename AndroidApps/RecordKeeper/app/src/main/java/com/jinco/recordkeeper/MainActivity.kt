@@ -7,10 +7,11 @@ import android.view.MenuItem
 import android.view.View
 import androidx.fragment.app.commit
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationBarView
 import com.jinco.recordkeeper.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(),
-    BottomNavigationView.OnNavigationItemSelectedListener {
+    NavigationBarView.OnItemSelectedListener {
     private  lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,7 +41,8 @@ class MainActivity : AppCompatActivity(),
 //            }
 //        })
 
-        binding.bottomNanMenu.setOnNavigationItemSelectedListener (this)
+//        binding.bottomNanMenu.setOnNavigationItemSelectedListener (this)
+        binding.bottomNanMenu.setOnItemSelectedListener (this)
     }
 
     private fun onRunClicked() {
@@ -66,12 +68,26 @@ class MainActivity : AppCompatActivity(),
 //            return false
 //        }
 
-        return when {
-            item.itemId == R.id.nav_cycle -> {
+//        return when {
+//            item.itemId == R.id.nav_cycle -> {
+//                onCyclingClicked()
+//                true
+//            }
+//            item.itemId == R.id.nav_run -> {
+//                onRunClicked()
+//                true
+//            }
+//            else -> {
+//                false
+//            }
+//        }
+
+        return when (item.itemId) {
+            R.id.nav_cycle -> {
                 onCyclingClicked()
                 true
             }
-            item.itemId == R.id.nav_run -> {
+            R.id.nav_run -> {
                 onRunClicked()
                 true
             }
