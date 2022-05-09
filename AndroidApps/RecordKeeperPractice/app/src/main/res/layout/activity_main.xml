@@ -6,56 +6,91 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="16dp">
+        android:layout_margin="16dp"
+        android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/edit_text_contact_name"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="Contact Name" />
+            android:layout_height="wrap_content">
 
-        <EditText
-            android:id="@+id/edit_text_contact_number"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_text_contact_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Contact Name" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="Contact Number" />
+            android:layout_height="wrap_content">
 
-        <EditText
-            android:id="@+id/edit_text_display_name"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_text_contact_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Contact Number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="Display Name" />
+            android:layout_height="wrap_content">
 
-        <CheckBox
-            android:id="@+id/checkbox_include_senior"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_text_display_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Display Name" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Include Senior" />
+            android:layout_height="wrap_content">
 
-        <CheckBox
-            android:id="@+id/checkbox_immediate_start"
+            <CheckBox
+                android:id="@+id/checkbox_include_senior"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Include Senior" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Immediate start" />
+            android:layout_height="wrap_content">
 
-        <Spinner
-            android:id="@+id/spinner_job"
+            <CheckBox
+                android:id="@+id/checkbox_immediate_start"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Immediate start" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            tools:listitem="@layout/support_simple_spinner_dropdown_item" />
+            android:layout_height="wrap_content">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="26dp"
-            android:text="Submit" />
+            <Spinner
+                android:id="@+id/spinner_job"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                tools:listitem="@layout/support_simple_spinner_dropdown_item" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="26dp"
+                android:text="Submit" />
+        </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 </ScrollView>
