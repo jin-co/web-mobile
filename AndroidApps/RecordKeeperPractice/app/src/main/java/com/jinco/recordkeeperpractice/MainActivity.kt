@@ -22,9 +22,9 @@ class MainActivity : AppCompatActivity() {
         var contactNumber = binding.etContactNumber.text
         var displayName = binding.etDisplayName.text
         var startDate = binding.etStartDate.text
-        var junior = binding.cbJunior.text
+        var junior = binding.cbJunior.isChecked
         var job = binding.spJob.selectedItem
-        var immediate = binding.cbImmediate.text
+        var immediate = binding.cbImmediate.isChecked
 
         var sentence = "Hi, I am $contactName call me $displayName and" +
                 "contact me $contactNumber I am a $junior $job" +
