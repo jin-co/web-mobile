@@ -3,6 +3,7 @@ package com.jinco.recordkeeperpractice
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.Toast
 import com.jinco.recordkeeperpractice.databinding.ActivityMainBinding
@@ -16,6 +17,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         binding.btnSubmit.setOnClickListener { submitForm() }
+        val spinnerValue:Array<String> = arrayOf("developer", "engineer")
+        val spinnerAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, spinnerValue)
+        binding.spJob.adapter = spinnerAdapter
     }
 
     private fun submitForm() {
