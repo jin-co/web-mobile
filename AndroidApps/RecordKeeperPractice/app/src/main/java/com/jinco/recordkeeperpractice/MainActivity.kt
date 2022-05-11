@@ -17,7 +17,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         binding.btnSubmit.setOnClickListener { submitForm() }
-        val spinnerValue:Array<String> = arrayOf("developer", "engineer")
+//        val spinnerValue:Array<String> = arrayOf("developer", "engineer")
+//        val spinnerAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, spinnerValue)
+//        binding.spJob.adapter = spinnerAdapter
+
+        val spinnerValue:Array<String> = arrayOf("w", "h")
         val spinnerAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, spinnerValue)
         binding.spJob.adapter = spinnerAdapter
     }
