@@ -30,7 +30,6 @@ class MainActivity : AppCompatActivity() {
         var sentence = "Hi, I am $contactName call me $displayName and" +
                 "contact me $contactNumber I am a $junior $job" +
                 "I can start $immediate or $startDate"
-        Toast.makeText(this, sentence, Toast.LENGTH_LONG).show()
 
         val intent = Intent(this, PreviewActivity::class.java)
         intent.putExtra("message", sentence)
