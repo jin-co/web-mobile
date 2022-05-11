@@ -1,5 +1,6 @@
 package com.jinco.recordkeeperpractice
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
@@ -30,5 +31,9 @@ class MainActivity : AppCompatActivity() {
                 "contact me $contactNumber I am a $junior $job" +
                 "I can start $immediate or $startDate"
         Toast.makeText(this, sentence, Toast.LENGTH_LONG).show()
+
+        val intent = Intent(this, PreviewActivity::class.java)
+        intent.putExtra("message", sentence)
+        startActivity(intent)
     }
 }
