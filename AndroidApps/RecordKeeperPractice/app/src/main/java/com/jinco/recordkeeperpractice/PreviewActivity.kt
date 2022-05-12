@@ -1,5 +1,7 @@
 package com.jinco.recordkeeperpractice
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -22,5 +24,12 @@ class PreviewActivity : AppCompatActivity() {
         val message = intent.getSerializableExtra("message")
         Log.e("test", message.toString())
         binding.tvMessage.text = message.toString()
+
+        val intent = Intent(Intent.ACTION_SENDTO).apply {
+            data = Uri.parse("smsto: 000")
+            putExtra("sms_body", "ss")
+        }
+
+        startActivity((intent))
     }
 }
