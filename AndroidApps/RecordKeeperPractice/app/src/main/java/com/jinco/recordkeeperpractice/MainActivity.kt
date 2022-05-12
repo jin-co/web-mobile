@@ -21,26 +21,40 @@ class MainActivity : AppCompatActivity() {
 //        val spinnerAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, spinnerValue)
 //        binding.spJob.adapter = spinnerAdapter
 
-        val spinnerValue:Array<String> = arrayOf("w", "h")
-        val spinnerAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, spinnerValue)
+        val spinnerValue: Array<String> = arrayOf("w", "h")
+        val spinnerAdapter =
+            ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, spinnerValue)
         binding.spJob.adapter = spinnerAdapter
     }
 
     private fun submitForm() {
-        var contactName = binding.etContactName.text
-        var contactNumber = binding.etContactNumber.text
-        var displayName = binding.etDisplayName.text
-        var startDate = binding.etStartDate.text
-        var junior = binding.cbJunior.isChecked
-        var job = binding.spJob.selectedItem
-        var immediate = binding.cbImmediate.isChecked
+//        var contactName = binding.etContactName.text
+//        var contactNumber = binding.etContactNumber.text
+//        var displayName = binding.etDisplayName.text
+//        var startDate = binding.etStartDate.text
+//        var junior = binding.cbJunior.isChecked
+//        var job = binding.spJob.selectedItem
+//        var immediate = binding.cbImmediate.isChecked
+//
+//        var sentence = "Hi, I am $contactName call me $displayName and" +
+//                "contact me $contactNumber I am a $junior $job" +
+//                "I can start $immediate or $startDate"
 
-        var sentence = "Hi, I am $contactName call me $displayName and" +
-                "contact me $contactNumber I am a $junior $job" +
-                "I can start $immediate or $startDate"
+        val message = Message(
+            binding.etContactName.text.toString(),
+            binding.etContactNumber.text.toString(),
+            binding.etDisplayName.text.toString(),
+            binding.cbJunior.isChecked,
+            binding.spJob.selectedItem.toString(),
+            binding.cbImmediate.isChecked,
+            binding.etStartDate.text.toString()
+        )
+
+//        val intent = Intent(this, PreviewActivity::class.java)
+//        intent.putExtra("message", sentence)
 
         val intent = Intent(this, PreviewActivity::class.java)
-        intent.putExtra("message", sentence)
+        intent.putExtra("message", message)
         startActivity(intent)
     }
 }

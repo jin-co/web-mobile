@@ -18,8 +18,9 @@ class PreviewActivity : AppCompatActivity() {
     }
 
     private fun showMessage() {
-        val message = intent.getStringExtra("message")
+//        val message = intent.getStringExtra("message")
+        val message = intent.getSerializableExtra("message")
         Log.e("test", message.toString())
-        binding.tvMessage.text = message
+        binding.tvMessage.text = message.toString()
     }
 }
