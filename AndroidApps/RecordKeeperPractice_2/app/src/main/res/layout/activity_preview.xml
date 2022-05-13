@@ -18,54 +18,19 @@
             android:text="Message"
             android:textSize="30sp" />
 
-        <com.google.android.material.textfield.TextInputLayout
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="Contact Name">
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:padding="16dp"
+            tools:text='what' />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_contact_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
+        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="Contact Number">
+            android:layout_marginTop="20dp" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_contact_number"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="Display Name">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_display_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <Spinner
-            android:id="@+id/sp_job"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            tools:listitem="@tools:sample/avatars" />
-
-        <CheckBox
-            android:id="@+id/cb_immediate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Immediate" />
     </LinearLayout>
 </ScrollView>
