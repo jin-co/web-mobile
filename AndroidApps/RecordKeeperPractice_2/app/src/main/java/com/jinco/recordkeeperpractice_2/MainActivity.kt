@@ -1,5 +1,6 @@
 package com.jinco.recordkeeperpractice_2
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -31,5 +32,9 @@ class MainActivity : AppCompatActivity() {
             binding.spJob.selectedItem.toString(),
             binding.cbImmediate.isChecked
         )
+
+        val intent = Intent(this, PreviewActivity::class.java)
+        intent.putExtra("message", message)
+        startActivity(intent)
     }
 }
