@@ -21,9 +21,10 @@ class PreviewActivity : AppCompatActivity() {
 
     private fun sendMessage() {
         val intent = Intent(Intent.ACTION_SENDTO).apply {
-            data = Uri.parse("smsto: ")
-            putExtra("sms_body", "${binding.tvSummary.text}")
+            data = Uri.parse("smsto: 000")
+            putExtra("sms_body", "ss")
         }
+
         startActivity(intent)
     }
 
