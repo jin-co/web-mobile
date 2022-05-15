@@ -16,6 +16,7 @@
             android:text="Register" />
 
         <Spinner
+            android:id="@+id/sp_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:listitem="@android:layout/simple_list_item_1" />
