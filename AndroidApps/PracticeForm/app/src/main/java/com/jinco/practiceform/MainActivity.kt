@@ -9,11 +9,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var binding:ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
-        setSpinner()
-        setupButton()
+
     }
 
     private fun setupButton() {
@@ -28,8 +24,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setSpinner() {
-        val titleSpinner = arrayOf("1","3")
-        val titleAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, titleSpinner)
-        binding.spTitle.adapter = titleAdapter
+
     }
 }
