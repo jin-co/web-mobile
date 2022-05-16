@@ -1,5 +1,6 @@
 package com.jinco.practiceform
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -7,6 +8,7 @@ import com.jinco.practiceform.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding:ActivityMainBinding
+    lateinit var user: User
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -17,14 +19,23 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupButton() {
-        val user = User(
-            firstName = binding.etFirstName.toString(),
-            lastName = binding.etLastName.toString(),
-            title = binding.spTitle.selectedItem.toString(),
-            password = binding.etPassword.toString(),
-            email = binding.etEmail.toString(),
-            phone = binding.etPhone.toString()
+        binding.btnCreate.setOnClickListener {
+            createAccount()
+        }
+    }
+
+    private fun createAccount() {
+        user = User(
+            binding.etFirstName.text.toString(),
+            binding.etLastName.text.toString(),
+            binding.spTitle.selectedItem.toString(),
+            binding.etPassword.text.toString(),
+            binding.etEmail.text.toString(),
+            binding.etPhone.text.toString()
         )
+        val intent = Intent(this, SummaryActivity::class.java)
+        intent.putExtra("user", user)
+        startActivity(intent)
     }
 
     private fun setSpinner() {
