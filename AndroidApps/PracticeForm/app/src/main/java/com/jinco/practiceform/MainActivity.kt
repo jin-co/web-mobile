@@ -41,6 +41,6 @@ class MainActivity : AppCompatActivity() {
     private fun setSpinner() {
         val titleSpinner = arrayOf("1", "2")
         val titleAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, titleSpinner)
-        binding.spTitle.adapter = titleAdapter
+        binding.spTitle.adapter = tit
     }
 }
