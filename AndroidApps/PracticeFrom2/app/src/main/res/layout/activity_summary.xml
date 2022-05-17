@@ -6,4 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".SummaryActivity">
 
+    <TextView
+        android:textSize="30sp"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_send"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_summary"
+        tools:text="what"/>
+
+    <Button
+        app:layout_constraintTop_toTopOf="@id/tv_summary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_send"
+        android:text="Send"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
