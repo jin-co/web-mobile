@@ -25,8 +25,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun goSummary() {
-        val intent = Intent(this, MainActivity::class.java)
-        intent.putExtra("user", "")
+        val user = User(
+            binding.etName.text.toString(),
+            binding.etPhone.text.toString(),
+            binding.spWhat.selectedItem as String,
+            binding.cbGood.isChecked
+        )
+        val intent = Intent(this, SummaryActivity::class.java)
+        intent.putExtra("user", user)
         startActivity(intent)
     }
 
