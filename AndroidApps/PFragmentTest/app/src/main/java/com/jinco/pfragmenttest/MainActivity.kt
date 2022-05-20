@@ -2,6 +2,7 @@ package com.jinco.pfragmenttest
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import androidx.fragment.app.commit
 import com.jinco.pfragmenttest.databinding.ActivityMainBinding
 
@@ -16,5 +17,13 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.commit {
             add(R.id.frame, RunFragment())
         }
+
+        setSpinner()
+    }
+
+    private fun setSpinner() {
+        val titleSpinner = arrayOf("w", "a")
+        val titleAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, titleSpinner)
+        binding.spTitle.adapter = titleAdapter
     }
 }
