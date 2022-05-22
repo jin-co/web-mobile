@@ -1,7 +1,8 @@
-package com.jinco.pfragmenttest2
+package com.jinco.pfragmenttest2.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.jinco.pfragmenttest2.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
