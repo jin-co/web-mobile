@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListen
 
         if (item.itemId == R.id.cycle) {
             supportFragmentManager.commit {
-                replace(R.id.frame, RunFragment())
+                replace(R.id.frame, CycleFragment())
             }
             return true
         }
