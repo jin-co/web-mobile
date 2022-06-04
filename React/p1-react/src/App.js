@@ -1,7 +1,6 @@
 import "./App.css";
 import ExpenseItem from "./components/ExpenseItem";
-import Exp from "./components/Exp";
-
+import NewExp from "./components/NewExp";
 const expenses = [
   {
     id: "e1",
@@ -39,8 +38,7 @@ function App() {
         amout={expenses[0].amount}
       ></ExpenseItem>
 
-
-      <Exp title={expenses[1].title} text={expenses[1].date} sub={expenses[1].amount}></Exp>
+      <NewExp title={expenses[2].title} date={expenses[2].date} amount={expenses[2].amount}></NewExp>
     </div>
   );
 }
