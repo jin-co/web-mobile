@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Expense from "./components/Expense";
+import ExpenseForm from "./components/ExpenseForm";
 
 const expenseData = [
   {
@@ -28,6 +29,7 @@ const expenseData = [
 function App() {
   return (
     <div className="App">
+      <ExpenseForm></ExpenseForm>
       <Expense
         title={expenseData[0].title}
         date={expenseData[0].date}
