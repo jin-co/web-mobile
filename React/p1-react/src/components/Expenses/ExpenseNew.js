@@ -9,7 +9,7 @@ const ExpenseNew = (props) => {
   };
 
   return (
-    <div>
+    <div className="new-expense">
       <ExpenseNewForm></ExpenseNewForm>
       <button onClick={clickHandle}>Click</button>
       <p>{test}</p>
