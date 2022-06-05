@@ -1,27 +1,39 @@
 import "./ExpenseNewForm.css";
 import { useState } from "react";
+import { hasSelectionSupport } from "@testing-library/user-event/dist/utils";
 function ExpenseNewForm() {
   const [title, setTitle] = useState("");
-  const [number, setNumber] = useState("");
+  const [amount, setAmount] = useState("");
   const [date, setDate] = useState("");
 
-  const [input, setInput] = useState({
-    title: "",
-    number: "",
-    date: "",
-  });  
+  //   const [input, setInput] = useState({
+  //     title: "",
+  //     amount: "",
+  //     date: "",
+  //   });
 
   const updateTitleHandler = (e) => {
     setTitle(e.target.value);
     console.log(e.target.value);
-    setInput({
-        ...input,
-        title: e.target.value
-    })
+
+    /** using single operator */
+    /* one way */
+    // setInput({
+    //     ...input,
+    //     title: e.target.value
+    // })
+
+    /* another -> this approach is better as it ensures that the previous state is up to date when one state happens after another */
+    // hasSelectionSupport((prev) => {
+    //   return {
+    //     ...prev,
+    //     title: e.target.value,
+    //   };
+    // });
   };
 
-  const updateNumberHandler = (e) => {
-    setNumber(e.target.value);
+  const updateAmountHandler = (e) => {
+    setAmount(e.target.value);
     console.log(e.target.value);
   };
 
@@ -30,8 +42,19 @@ function ExpenseNewForm() {
     console.log(e.target.value);
   };
 
+  const submitHandler = (e) => {
+      e.preventDefault()
+      const newData = {
+          title: title,
+          date: date,
+          amount: amount
+      }
+
+      console.log(newData)
+  }
+
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
@@ -40,8 +63,8 @@ function ExpenseNewForm() {
         <div className="new-expense__control">
           <label>Amount</label>
           <input
-            onChange={updateNumberHandler}
-            type="number"
+            onChange={updateAmountHandler}
+            type="Amount"
             min="0.01"
             step="0.01"
           />
