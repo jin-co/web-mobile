@@ -8,12 +8,6 @@ const ExpenseForm = () => {
   const [inputDate, setDate] = useState("");
   const [inputAmount, setAmount] = useState("");
 
-  const [input, setData] = useState({
-      inputTitle: '',
-      inputDate: '',
-      inputAmount: '',
-  })  
-
   const onSubmitHandler = (e) => {
     e.preventDefault();
     const newData = {
