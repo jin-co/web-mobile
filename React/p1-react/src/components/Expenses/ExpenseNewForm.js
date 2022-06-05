@@ -43,26 +43,31 @@ function ExpenseNewForm() {
   };
 
   const submitHandler = (e) => {
-      e.preventDefault()
-      const newData = {
-          title: title,
-          date: date,
-          amount: amount
-      }
+    e.preventDefault();
+    const newData = {
+      title: title,
+      date: date,
+      amount: amount,
+    };
 
-      console.log(newData)
-  }
+    setTitle('')
+    setAmount('')
+    setDate('')
+
+    console.log(newData);
+  };
 
   return (
     <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
-          <input onChange={updateTitleHandler} type="text" />
+          <input value={title} onChange={updateTitleHandler} type="text" />
         </div>
         <div className="new-expense__control">
           <label>Amount</label>
           <input
+            value={amount} //add value for two-way binding
             onChange={updateAmountHandler}
             type="Amount"
             min="0.01"
@@ -72,6 +77,7 @@ function ExpenseNewForm() {
         <div className="new-expense__control">
           <label>Date</label>
           <input
+            value={date}
             onChange={updateDateHandler}
             type="date"
             min="2019-01-01"
