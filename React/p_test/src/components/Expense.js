@@ -1,37 +1,14 @@
 import './Expense.css'
 import ExpenseDate from './ExpenseDate';
 
-const expenseData = [
-    {
-        title: 'tom',
-        data: new Date(),
-        amount: 200
-    },
-    {
-        title: 'tom',
-        data: new Date(),
-        amount: 200
-    },
-    {
-        title: 'tom',
-        data: new Date(),
-        amount: 200
-    },
-    {
-        title: 'tom',
-        data: new Date(),
-        amount: 200
-    },
-]
-
-const Expense = () => {
+const Expense = (props) => {
   return (
     <div className="card">
 
-      <ExpenseDate></ExpenseDate>
+      <ExpenseDate date={props.date}></ExpenseDate>
 
-      <div>d</div>
-      <div>d</div>
+      <div>{props.title}</div>
+      <div>${props.amount}</div>
     </div>
   );
 };
