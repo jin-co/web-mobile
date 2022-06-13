@@ -8,9 +8,17 @@ const ExpenseNew = (props) => {
     setText("what");
   };
 
+  const saveExpenseDataHandler = (enteredExpenseData) => {
+    const expenseData = {
+      ...enteredExpenseData,
+      id: Math.random().toString()
+    }
+    console.log(expenseData)
+  }
+
   return (
     <div className="new-expense">
-      <ExpenseNewForm></ExpenseNewForm>
+      <ExpenseNewForm onSaveExpenseData={saveExpenseDataHandler} />
       <button onClick={clickHandle}>Click</button>
       <p>{test}</p>
     </div>

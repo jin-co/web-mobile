@@ -1,7 +1,7 @@
 import "./ExpenseNewForm.css";
 import { useState } from "react";
 import { hasSelectionSupport } from "@testing-library/user-event/dist/utils";
-function ExpenseNewForm() {
+function ExpenseNewForm(props) {
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
   const [date, setDate] = useState("");
@@ -54,7 +54,9 @@ function ExpenseNewForm() {
     setAmount('')
     setDate('')
 
-    console.log(newData);
+    // console.log(newData);
+
+    props.onSaveExpenseData(newData)
   };
 
   return (
