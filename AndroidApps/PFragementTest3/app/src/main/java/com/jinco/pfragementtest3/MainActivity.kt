@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.fragment.app.commit
 import com.google.android.material.navigation.NavigationBarView
 import com.jinco.pfragementtest3.databinding.ActivityMainBinding
 
@@ -15,15 +16,22 @@ class MainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListen
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportFragmentManager.commit {
+            add(R.id.fragment, RunFragment())
+        }
         binding.bottomNav.setOnItemSelectedListener(this)
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.run) {
-            Toast.makeText(this, R.id.run.toString(), Toast.LENGTH_SHORT).show()
+            supportFragmentManager.commit {
+                replace(R.id.fragment, RunFragment())
+            }
             return true
         } else {
-            Log.e("haha", "ahah")
+            supportFragmentManager.commit {
+                replace(R.id.fragment, CycleFragment())
+            }
             return true
         }
     }
