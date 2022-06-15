@@ -1,24 +1,76 @@
-import "./Header.css";
+import PropTypes from "prop-types";
 
-const Header = (props) => {
+// const Header = (props) => {
+//   return (
+//     <header className="header">
+//       <ul>
+//         <li>
+//           <a href="">1</a>
+//         </li>
+//         <li>
+//           <a href="">2</a>
+//         </li>
+//         <li>
+//           <a href="">3</a>
+//         </li>
+//         <li>
+//           <a href="">{props.title}</a>
+//         </li>
+//         <li>
+//           <a href="">{props.what}</a>
+//         </li>
+//       </ul>
+//     </header>
+//   );
+// };
+
+// const Header = ({title, what}) => {
+//   return (
+//     <header className="header">
+//       <ul>
+//         <li>
+//           <a href="">1</a>
+//         </li>
+//         <li>
+//           <a href="">2</a>
+//         </li>
+//         <li>
+//           <a href="">3</a>
+//         </li>
+//         <li style={headingStyle}>
+//           <a href="">{title}</a>
+//         </li>
+//         <li>
+//           <a href="" style={{color: 'blue'}}>{what}</a>
+//         </li>
+//       </ul>
+//     </header>
+//   );
+// };
+
+const Header = ({ title }) => {
   return (
     <header className="header">
-      <ul>
-        <li>
-          <a href="">1</a>
-        </li>
-        <li>
-          <a href="">2</a>
-        </li>
-        <li>
-          <a href="">3</a>
-        </li>
-        <li>
-          <a href="">{props.title}</a>
-        </li>
-      </ul>
+      <h1>{title}</h1>
+      <button className="btn">Add</button>
     </header>
   );
+};
+
+Header.defaultProps = {
+  what: "the",
+};
+
+// setting types
+Header.propTypes = {
+  title: PropTypes.string,
+  what: PropTypes.string.isRequired,
+};
+
+// inline style
+const headingStyle = {
+  color: "red",
+  backgroundColor: "grey",
 };
 
 export default Header;
