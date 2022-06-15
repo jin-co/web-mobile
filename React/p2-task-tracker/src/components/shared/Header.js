@@ -1,4 +1,6 @@
 import PropTypes from "prop-types";
+import Button from "./Button";
+import Tasks from "../Tasks";
 
 // const Header = (props) => {
 //   return (
@@ -49,10 +51,15 @@ import PropTypes from "prop-types";
 // };
 
 const Header = ({ title }) => {
+  const onClick = () => {
+    console.log("heh");
+  };
+
   return (
     <header className="header">
       <h1>{title}</h1>
-      <button className="btn">Add</button>
+      <Button color="green" text="Hello" onClick={onClick}/>
+      <Tasks />
     </header>
   );
 };
