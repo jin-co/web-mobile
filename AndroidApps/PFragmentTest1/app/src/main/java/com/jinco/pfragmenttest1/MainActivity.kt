@@ -25,13 +25,13 @@ class MainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListen
         if(item.itemId == R.id.run) {
             supportFragmentManager.commit {
                 replace(R.id.frame, RunFragment())
-                return true
             }
+            return true
         } else {
             supportFragmentManager.commit {
                 replace(R.id.frame, CycleFragment())
-                return true
             }
+            return true
         }
     }
 }
