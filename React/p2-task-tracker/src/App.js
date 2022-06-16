@@ -1,7 +1,7 @@
-import './App.css';
-import Header from './components/shared/Header';
-import Tasks from './components/Tasks';
-import { useState } from 'react';
+import "./App.css";
+import Header from "./components/shared/Header";
+import Tasks from "./components/Tasks";
+import { useState } from "react";
 
 function App() {
   const [tasks, setTasks] = useState([
@@ -11,14 +11,31 @@ function App() {
     { id: 4, text: "Beverage", day: Date(), reminder: false },
   ]);
 
-  const name = 'brad'
+  const name = "brad";
+
+  //delete
+  const deleteTask = (id) => {
+    console.log("delete");
+    setTasks(tasks.filter((t) => t.id !== id));
+  };
+
+  //toggle
+  const toggleReminder = (id) => {
+    setTasks(
+      tasks.map((t) => (t.id === id ? { ...tasks, reminder: !t.reminder } : t))
+    );
+  };
 
   return (
     <div className="App">
-      <Header title='wow' />
+      <Header title="wow" />
       <h1>hello</h1>
       <p>{name}</p>
-      <Tasks task={tasks} />
+      {tasks.length > 0 ? (
+        <Tasks task={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
+      ) : (
+        "Nothing"
+      )}
     </div>
   );
 }
