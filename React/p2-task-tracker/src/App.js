@@ -2,6 +2,7 @@ import "./App.css";
 import Header from "./components/shared/Header";
 import Tasks from "./components/Tasks";
 import { useState } from "react";
+import AddTask from "./components/AddTask";
 
 function App() {
   const [tasks, setTasks] = useState([
@@ -29,6 +30,8 @@ function App() {
   return (
     <div className="App">
       <Header title="wow" />
+      <AddTask />
+
       <h1>hello</h1>
       <p>{name}</p>
       {tasks.length > 0 ? (
