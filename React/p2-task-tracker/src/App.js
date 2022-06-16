@@ -12,6 +12,8 @@ function App() {
     { id: 4, text: "Beverage", day: Date(), reminder: false },
   ]);
 
+  const [showAddTask, setShowAddTask] = useState(false);
+
   const name = "brad";
 
   //delete
@@ -27,10 +29,17 @@ function App() {
     );
   };
 
+  //add task
+  const addTask = (task) => {
+    const id = Math.floor(Math.random() * 10000) + 1;
+    const newTask = { id, ...task };
+    setTasks([...tasks, newTask]);
+  };
+
   return (
     <div className="App">
-      <Header title="wow" />
-      <AddTask />
+      <Header title="wow" onAdd={() => setShowAddTask(!showAddTask)} />
+      {showAddTask && <AddTask onAdd={addTask} />}
 
       <h1>hello</h1>
       <p>{name}</p>
