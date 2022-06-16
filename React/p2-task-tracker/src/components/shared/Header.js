@@ -49,15 +49,19 @@ import Button from "./Button";
 //   );
 // };
 
-const Header = ({ title, onAdd }) => {
+const Header = ({ title, onAdd, showAdd }) => {
   // const onClick = () => {
-  //   console.log("heh");    
+  //   console.log("heh");
   // };
 
   return (
     <header className="header">
       <h1>{title}</h1>
-      <Button color="green" text="Hello" onClick={onAdd}/>      
+      <Button
+        color={showAdd ? "green" : "red"}
+        text={showAdd ? "Close" : "Add"}
+        onClick={onAdd}
+      />
     </header>
   );
 };
