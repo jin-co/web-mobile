@@ -1,7 +1,12 @@
-import Header from "./components/Header"
-
+import Header from './components/Header'
+import FeedbackItem from './components/FeedbackItem'
+import FeedbackData from './data/FeedbackData'
+import FeedbackList from './components/FeedbackList'
+import { useState } from 'react'
 
 function App() {
+  const [feedback, setFeedback] = useState(FeedbackData)
+
   /** practice*/
   // const title = 'Blog post'
   // const body = 'body'
@@ -24,11 +29,11 @@ function App() {
   //     </ul>
   //   </div>
   // )
-  
+
   // if (loading) return <h1>Loading...</h1>
   /** practice*/
 
-  const styles = {backgroundColor: 'blue'}
+  const styles = { backgroundColor: 'blue' }
 
   return (
     // <div>
@@ -49,9 +54,9 @@ function App() {
     // </div>
 
     <>
-      <Header text={'Hello'}/>
+      <Header text={'Hello'} />
       <div className="container">
-        <h1 style={styles}>App</h1>
+        <FeedbackList feedback={feedback} />
       </div>
     </>
   )
