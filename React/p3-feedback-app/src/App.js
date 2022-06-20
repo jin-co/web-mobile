@@ -3,9 +3,16 @@ import FeedbackItem from './components/FeedbackItem'
 import FeedbackData from './data/FeedbackData'
 import FeedbackList from './components/FeedbackList'
 import { useState } from 'react'
+import FeedbackStats from './components/FeedbackStats'
 
 function App() {
   const [feedback, setFeedback] = useState(FeedbackData)
+
+  const deleteFeedback = (id) => {
+    if (window.confirm('Are you sure? ')) {
+      setFeedback(feedback.filter((item) => item.id !== id))
+    }
+  }
 
   /** practice*/
   // const title = 'Blog post'
@@ -56,7 +63,8 @@ function App() {
     <>
       <Header text={'Hello'} />
       <div className="container">
-        <FeedbackList feedback={feedback} />
+        <FeedbackStats feedback={feedback} />
+        <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
       </div>
     </>
   )
