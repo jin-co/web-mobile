@@ -1,4 +1,5 @@
-import Header from "./components/Header"
+import Header from './components/Header'
+import FeedbackItem from './components/FeedbackItem'
 
 const App = () => {
   const items = [
@@ -9,11 +10,9 @@ const App = () => {
   ]
   return (
     <>
-      <Header text = 'Hello' />
-      <div className="container">    
-        {items.map((item) => (
-          <h4 key={item.id}>{item.text}</h4>
-        ))}
+      <Header text="Hello" />
+      <div className="container">
+        <FeedbackItem />
       </div>
     </>
   )
