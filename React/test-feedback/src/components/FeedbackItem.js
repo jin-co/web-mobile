@@ -1,16 +1,17 @@
 import React from 'react'
 import { useState } from 'react'
+import Card from './shared/Card'
 
-const FeedbackItem = () => {
+const FeedbackItem = ({item}) => {
   const [] = useState()
 
   return (
-    <div className='card'>
-      <div className="num-display">10</div>
+    <Card>
+      <div className="num-display">{item.rating}</div>
       <div className="text-display">
-        eg
+        {item.text}
       </div>
-    </div>
+    </Card>
   )
 }
 
