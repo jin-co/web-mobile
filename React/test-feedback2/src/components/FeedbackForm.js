@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Button from './shared/Button'
 import RatingSelect from './RatingSelect'
 
-const FeedbackForm = () => {
+const FeedbackForm = ({handleAdd}) => {
   const [text, setText] = useState('')
   const [rating, setRating] = useState(10)
   const [btnDisabled, setBtnDisabled] = useState(true)
@@ -25,14 +25,27 @@ const FeedbackForm = () => {
     console.log(text)
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if(text.trim().length > 10) {
+      const newFeedback = {
+        text,
+        rating
+      }
+      console.log(newFeedback)
+      handleAdd(newFeedback)
+      setText('')
+    }
+  }
+
   return (
     <Card>
-      <form>
+      <form onSubmit={handleSubmit}>
         <h2>Survey</h2>
-        <RatingSelect />
+        <RatingSelect select={(rating) => setRating(rating)} />
         <div className="input-group">
           <input type="text" placeholder="Review" onChange={handleTextInput} />
-          <Button isDisabled={btnDisabled}>Send</Button>
+          <Button type='submit' isDisabled={btnDisabled}>Send</Button>
         </div>
         {message && <div className="message">{message}</div>}
       </form>
