@@ -12,7 +12,7 @@ class BoldTextTest(context: Context, attributeSet: AttributeSet) :
         }
 
     private fun addText() {
-        val boldTypeface: Typeface = Typeface.createFromAsset(context.assets, "Montserrat-Bold.ttf")
+        val boldTypeface: Typeface = Typeface.createFromAsset(context.assets, "Mo")
         typeface = boldTypeface
     }
 //    val boldTypeface: Typeface =
