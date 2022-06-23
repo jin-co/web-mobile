@@ -3,17 +3,16 @@ package com.jinco.ecommerceapp.widgets
 import android.content.Context
 import android.graphics.Typeface
 import android.util.AttributeSet
-import androidx.appcompat.widget.AppCompatTextView
+import androidx.appcompat.widget.AppCompatButton
 
-class ECTextViewBold(context: Context, attributeSet: AttributeSet) :
-    AppCompatTextView(context, attributeSet) {
-        init {
-            applyFont()
-        }
+class ECButton(context: Context, attributeSet: AttributeSet) :
+    AppCompatButton(context, attributeSet) {
+    init {
+        applyFont()
+    }
 
     private fun applyFont() {
         val boldTypeface: Typeface = Typeface.createFromAsset(context.assets, "Montserrat-Bold.ttf")
-//        typeface = boldTypeface
         setTypeface(boldTypeface)
     }
 }
