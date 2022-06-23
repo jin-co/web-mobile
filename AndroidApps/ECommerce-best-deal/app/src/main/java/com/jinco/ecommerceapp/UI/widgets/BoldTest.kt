@@ -5,17 +5,14 @@ import android.graphics.Typeface
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatTextView
 
-class BoldTextTest(context: Context, attributeSet: AttributeSet) :
+class BoldTest(context: Context, attributeSet: AttributeSet) :
     AppCompatTextView(context, attributeSet) {
         init {
             addText()
         }
 
     private fun addText() {
-        val boldTypeface: Typeface = Typeface.createFromAsset(context.assets, "Mo")
+        val boldTypeface: Typeface = Typeface.createFromAsset(context.assets, "filenamd")
         typeface = boldTypeface
     }
-//    val boldTypeface: Typeface =
-//        Typeface.createFromAsset(context.assets, "Montserrat-Bold.ttf")
-//    typeface = boldTypeface
 }
