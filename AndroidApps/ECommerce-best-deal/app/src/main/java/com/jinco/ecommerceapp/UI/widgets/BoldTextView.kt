@@ -16,5 +16,6 @@ class BoldTextView(context: Context, attributeSet: AttributeSet) :
         val boldTypeface: Typeface =
             Typeface.createFromAsset(context.assets, "Montserrat-Bold.ttf")
         typeface = boldTypeface
+//        setTypeface(boldTypeface)
     }
 }
