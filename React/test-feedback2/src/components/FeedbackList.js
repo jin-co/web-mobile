@@ -5,10 +5,7 @@ const FeedbackList = ({ feedback, handelDelete }) => {
   return (
     <ul>
       {feedback.map((item) => (
-        <FeedbackItem
-          item={item}
-          handelDelete={handelDelete}          
-        />
+        <FeedbackItem key={item.id} item={item} handelDelete={handelDelete} />
       ))}
     </ul>
   )

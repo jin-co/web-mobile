@@ -5,9 +5,9 @@ import { FaTimes } from 'react-icons/fa'
 const FeedbackItem = ({ item, handelDelete }) => {
   return (
     <Card>
-      <h4>{item.rating}</h4>
+      <h4 className='num-display'>{item.rating}</h4>
       <FaTimes className="close" onClick={() => handelDelete(item.id)} />
-      <h4>{item.text}</h4>
+      <h4 className='text-display'>{item.text}</h4>
     </Card>
   )
 }
