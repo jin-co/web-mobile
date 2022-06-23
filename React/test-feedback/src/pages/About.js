@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from '../components/shared/Card'
+import { Link } from 'react-router-dom'
 
 const About = () => {
   return (
@@ -9,7 +10,7 @@ const About = () => {
       <p>Version: 1.0</p>
 
       <p>
-        <a href="/">Back</a>
+        <Link to="/">Back</Link>
       </p>
     </Card>
   )

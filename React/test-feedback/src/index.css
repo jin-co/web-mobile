@@ -228,3 +228,9 @@ input:focus {
     width: 80%;
   }
 }
+
+/* nav link eg */
+.active {
+  background-color: #333;
+  color: red;
+}
