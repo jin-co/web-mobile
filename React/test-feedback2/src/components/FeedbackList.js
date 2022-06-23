@@ -1,12 +1,13 @@
 import React from 'react'
 import FeedbackItem from './FeedbackItem'
-import Card from './shared/Card'
 
-const FeedbackList = () => {
+const FeedbackList = ({ feedback }) => {
   return (
-    <Card>
-    <FeedbackItem />
-    </Card>
+    <ul>
+      {feedback.map((item) => (
+        <FeedbackItem item={item} />
+      ))}
+    </ul>
   )
 }
 

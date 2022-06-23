@@ -6,11 +6,15 @@ import FeedbackList from "./components/FeedbackList"
 const App = () => {
   const [feedback, setFeedback] = useState(FeedbackData)
 
+  const deleteItem = (id) => {
+
+  }
+
   return (
   <>    
     <Header/>
     <div className="container">
-      <FeedbackList />
+      <FeedbackList feedback={feedback} handelDelete={deleteItem} />
     </div>
   </>
   )
