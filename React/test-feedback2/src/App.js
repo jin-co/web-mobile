@@ -7,6 +7,7 @@ import FeedbackForm from './components/FeedbackForm'
 import { v4 as uuid } from 'uuid'
 import About from './pages/About'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import AboutIconLink from './components/AboutIconLink'
 
 const App = () => {
   const [feedback, setFeedback] = useState(FeedbackData)
@@ -23,9 +24,9 @@ const App = () => {
 
   return (
     <>
-      <Header />
-      <div className="container">
-        <Router>
+      <Router>
+        <Header />
+        <div className="container">
           <Routes>
             <Route
               exact
@@ -40,9 +41,9 @@ const App = () => {
             ></Route>
             <Route path="/about" element={<About />} />
           </Routes>
-        </Router>
-      </div>
-      <About />
+          <AboutIconLink />
+        </div>
+      </Router>
     </>
   )
 }
