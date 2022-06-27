@@ -1,6 +1,7 @@
 import React from 'react'
 import FeedbackItem from './FeedbackItem'
 import { motion, AnimatePresence } from 'framer-motion'
+import PropTypes from 'prop-types'
 
 const FeedbackList = ({ feedback, handleDelete }) => {
   if (!feedback) {
@@ -24,6 +25,17 @@ const FeedbackList = ({ feedback, handleDelete }) => {
       </AnimatePresence>
     </div>
   )
+}
+
+FeedbackList.propTypes = {
+  // feedback: PropTypes.array
+  feedback: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      text: PropTypes.string.isRequired,
+      rating: PropTypes.number.isRequired,
+    })
+  ),
 }
 
 export default FeedbackList
