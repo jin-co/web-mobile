@@ -94,6 +94,4 @@
                 android:text="Register" />
         </LinearLayout>
     </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
