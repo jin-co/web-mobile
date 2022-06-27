@@ -8,7 +8,7 @@ import FeedbackContext from '../context/FeedbackContext'
 
 const FeedbackItem = ({ item }) => {  
   // const [] = useState()  
-  const {deleteFeedback} = useContext(FeedbackContext)
+  const {deleteFeedback, editFeedback} = useContext(FeedbackContext)
 
   // const [rating, setRating] = useState(7)
   // const onClick = () => {
@@ -26,6 +26,11 @@ const FeedbackItem = ({ item }) => {
         onClick={() => deleteFeedback(item.id)}
         color="red"
         className="close"
+      />
+      <FaEdit 
+        className='edit'
+        color='purple'
+        onClick={() => editFeedback(item)}
       />
       <div className="text-display">{item.text}</div>
       {/* <button onClick={onClick}>click</button> */}

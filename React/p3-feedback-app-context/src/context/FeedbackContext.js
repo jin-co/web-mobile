@@ -4,8 +4,12 @@ import { v4 as uuid } from 'uuid'
 
 const FeedbackContext = createContext()
 
-export const FeedackProvider = ({children}) => {
+export const FeedackProvider = ({ children }) => {
   const [feedback, setFeedback] = useState(FeedbackData)
+  const [feedbackEdit, setFeedbackEdit] = useState({
+    item: {},
+    edit: false,
+  })
 
   const deleteFeedback = (id) => {
     if (window.confirm('Sure?')) {
@@ -19,12 +23,21 @@ export const FeedackProvider = ({children}) => {
     console.log(newFeedback)
   }
 
+  const editFeedback = (item) => {
+    setFeedbackEdit({
+      item,
+      edit: true
+    })
+  }
+
   return (
     <FeedbackContext.Provider
       value={{
         feedback,
         deleteFeedback,
-        addFeedback
+        addFeedback,
+        editFeedback,
+        feedbackEdit
       }}
     >
       {children}
