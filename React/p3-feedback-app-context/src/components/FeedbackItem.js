@@ -1,11 +1,14 @@
 import React from 'react'
 import { useState } from 'react'
 import Card from './shared/Card'
-import { FaTimes } from 'react-icons/fa'
+import { FaTimes, FaEdit } from 'react-icons/fa'
 import PropTypes from 'prop-types'
+import { useContext } from 'react'
+import FeedbackContext from '../context/FeedbackContext'
 
-const FeedbackItem = ({ item, handleDelete }) => {
-  const [] = useState()  
+const FeedbackItem = ({ item }) => {  
+  // const [] = useState()  
+  const {deleteFeedback} = useContext(FeedbackContext)
 
   // const [rating, setRating] = useState(7)
   // const onClick = () => {
@@ -20,7 +23,7 @@ const FeedbackItem = ({ item, handleDelete }) => {
     <Card>
       <div className="num-display">{item.rating}</div>
       <FaTimes
-        onClick={() => handleDelete(item.id)}
+        onClick={() => deleteFeedback(item.id)}
         color="red"
         className="close"
       />
