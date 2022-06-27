@@ -15,6 +15,7 @@ import {
 import AboutIconLink from './components/AboutIconLink'
 import Card from './components/shared/Card'
 import Post from './components/Post'
+import { FeedackProvider } from './context/FeedbackContext'
 
 const App = () => {
   /** practice*/
@@ -74,45 +75,46 @@ const App = () => {
     //   )} */}
     //   {showComments && commentBlock}
     // </div>
-    
-    <Router>
-      <Header text="Hello" />
-      <div className="container">
-        <Routes>
-          <Route
-            exact
-            path="/"
-            element={
-              <>
-                <FeedbackForm handleAdd={addFeedback} />
-                <FeedbackStats feedback={feedback} />
-                <FeedbackList
-                  feedback={feedback}
-                  handleDelete={deleteFeedback}
-                />
-              </>
-            }
-          ></Route>
-          <Route path="/about" element={<About />} />
+    <FeedackProvider>
+      <Router>
+        <Header text="Hello" />
+        <div className="container">
+          <Routes>
+            <Route
+              exact
+              path="/"
+              element={
+                <>
+                  <FeedbackForm handleAdd={addFeedback} />
+                  <FeedbackStats feedback={feedback} />
+                  <FeedbackList
+                    feedback={feedback}
+                    handleDelete={deleteFeedback}
+                  />
+                </>
+              }
+            ></Route>
+            <Route path="/about" element={<About />} />
 
-          {/* param eg */}
-          <Route path="/post/:id/:name" element={<Post />} />
-          <Route path="/post/*" element={<Post />} />
-        </Routes>
+            {/* param eg */}
+            <Route path="/post/:id/:name" element={<Post />} />
+            <Route path="/post/*" element={<Post />} />
+          </Routes>
 
-        {/* navlink eg */}
-        <Card>
-          <NavLink to="/" activeClassName="active">
-            Home
-          </NavLink>
-          <NavLink to="/about" activeClassName="active">
-            About
-          </NavLink>
-        </Card>
+          {/* navlink eg */}
+          <Card>
+            <NavLink to="/" activeClassName="active">
+              Home
+            </NavLink>
+            <NavLink to="/about" activeClassName="active">
+              About
+            </NavLink>
+          </Card>
 
-        <AboutIconLink />
-      </div>
-    </Router>
+          <AboutIconLink />
+        </div>
+      </Router>
+    </FeedackProvider>
   )
 }
 
