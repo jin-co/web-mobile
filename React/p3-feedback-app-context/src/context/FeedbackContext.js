@@ -26,8 +26,14 @@ export const FeedackProvider = ({ children }) => {
   const editFeedback = (item) => {
     setFeedbackEdit({
       item,
-      edit: true
+      edit: true,
     })
+  }
+
+  const updateFeedback = (id, updItem) => {
+    setFeedback(
+      feedback.map((item) => (item.id === id ? { ...item, ...updItem } : item))
+    )
   }
 
   return (
@@ -37,7 +43,8 @@ export const FeedackProvider = ({ children }) => {
         deleteFeedback,
         addFeedback,
         editFeedback,
-        feedbackEdit
+        feedbackEdit,
+        updateFeedback,
       }}
     >
       {children}
