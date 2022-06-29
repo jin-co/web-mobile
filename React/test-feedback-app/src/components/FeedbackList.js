@@ -1,11 +1,13 @@
 import React from 'react'
 import FeedbackItem from './FeedbackItem'
 
-const FeedbackList = () => {
+const FeedbackList = ({ feedback }) => {
   return (
-    <div>
-      <FeedbackItem />
-    </div>
+    <ul>
+      {feedback.map((i) => (
+        <FeedbackItem feedback={i} />
+      ))}
+    </ul>
   )
 }
 

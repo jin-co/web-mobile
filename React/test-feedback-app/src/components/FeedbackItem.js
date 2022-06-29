@@ -1,8 +1,11 @@
 import React from 'react'
 
-const FeedbackItem = () => {
+const FeedbackItem = ({feedback}) => {
   return (
-    <div>FeedbackItem</div>
+    <div>
+      <p className='rating'> {feedback.rating} </p>
+      <p> {feedback.text} </p>
+    </div>
   )
 }
 
