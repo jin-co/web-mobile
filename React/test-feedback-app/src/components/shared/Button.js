@@ -1,0 +1,15 @@
+import React from 'react'
+
+const Button = (props) => {
+  return (
+    <button className={`btn $btn-${props.version}`} disabled={props.isDisabled}>
+      {props.children}
+    </button>
+  )
+}
+
+Button.defaultProps = {
+  version: 'secondary',
+}
+
+export default Button
