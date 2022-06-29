@@ -1,21 +1,12 @@
 package com.jinco.ecommerceapp.UI.activites
 
 import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
 import com.jinco.ecommerceapp.R
-import com.jinco.ecommerceapp.databinding.ActivityBaseBinding
 
-class BaseActivity : AppCompatActivity() {
-    lateinit var binding: ActivityBaseBinding
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityBaseBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-    }
-
-    fun shwoErrorSnackBar(message:String, errorMessage:Boolean) {
+open class BaseActivity : AppCompatActivity() {
+    fun showErrorSnackBar(message:String, errorMessage:Boolean) {
         val snackBar = Snackbar.make(findViewById(android.R.id.content), message, Snackbar.LENGTH_LONG)
         val snackBarView = snackBar.view
 
@@ -34,5 +25,6 @@ class BaseActivity : AppCompatActivity() {
                 )
             )
         }
+        snackBar.show()
     }
 }
