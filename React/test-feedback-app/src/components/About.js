@@ -3,8 +3,8 @@ import React from 'react'
 
 const About = () => {
   return (
-    <div>
-      <FaQuestion />
+    <div>    
+      <p>about</p>
     </div>
   )
 }
