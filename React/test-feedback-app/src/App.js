@@ -6,6 +6,8 @@ import { useState } from 'react'
 import FeedbackStats from './components/FeedbackStats'
 import FeedbackForm from './components/FeedbackForm'
 import About from './components/About'
+import { FaQuestion } from 'react-icons/fa'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 const App = () => {
   const [feedback, setFeedback] = useState(FeedbackData)
@@ -20,12 +22,29 @@ const App = () => {
 
   return (
     <>
-      <Header />
-      <div className="container">
-        <FeedbackStats feedback={feedback} />
-        <FeedbackForm feedback={feedback} handleAdd={addFeedback} />
-        <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
-      </div>
+      <Router>
+        <Header />
+        <div className="container">
+          <Routes>
+            <Route
+              exact
+              path="/"
+              element={
+                <>
+                  <FeedbackStats feedback={feedback} />
+                  <FeedbackForm feedback={feedback} handleAdd={addFeedback} />
+                  <FeedbackList
+                    feedback={feedback}
+                    handleDelete={deleteFeedback}
+                  />
+                </>
+              }
+            ></Route>
+            <Route path="/about" element={<About/>}></Route>
+          </Routes>
+        </div>
+        <FaQuestion />
+      </Router>
     </>
   )
 }
