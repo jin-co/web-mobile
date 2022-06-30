@@ -27,11 +27,12 @@ const FeedbackForm = ({ feedback, handleAdd }) => {
     e.preventDefault()
     console.log(rating)
     const newFeedback = {
-      id: uuid,
+      id: uuid(),
       text,
       rating,
     }
     handleAdd(newFeedback)
+    setText('')
   }
 
   return (

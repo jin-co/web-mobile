@@ -5,6 +5,7 @@ import FeedbackData from './data/FeedbackData'
 import { useState } from 'react'
 import FeedbackStats from './components/FeedbackStats'
 import FeedbackForm from './components/FeedbackForm'
+import About from './components/About'
 
 const App = () => {
   const [feedback, setFeedback] = useState(FeedbackData)
@@ -14,7 +15,7 @@ const App = () => {
   }
 
   const addFeedback = (newFeedback) => {
-    setFeedback([...feedback, newFeedback])
+    setFeedback([newFeedback, ...feedback])
   }
 
   return (
