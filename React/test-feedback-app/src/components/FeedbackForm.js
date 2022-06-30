@@ -23,7 +23,9 @@ const FeedbackForm = ({ feedback, handleAdd }) => {
     }
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(rating)
     const newFeedback = {
       id: uuid,
       text,
@@ -34,7 +36,7 @@ const FeedbackForm = ({ feedback, handleAdd }) => {
 
   return (
     <Card>
-      <RatingSelect />
+      <RatingSelect select={setRating} />
       <form action="" onSubmit={handleSubmit}>
         <div className="input-group">
           <input
