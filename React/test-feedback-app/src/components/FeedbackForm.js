@@ -2,9 +2,11 @@ import React from 'react'
 import Card from './shared/Card'
 import Button from './shared/Button'
 import { useState } from 'react'
+import { v4 as uuid } from 'uuid'
 
-const FeedbackForm = ({ feedback }) => {
+const FeedbackForm = ({ feedback, handleAdd }) => {
   const [text, setText] = useState('')
+  const [rating, setRating] = useState(0)
   const [message, setMessage] = useState('')
   const [btnDisabled, setBtnDisabled] = useState(true)
 
@@ -20,7 +22,14 @@ const FeedbackForm = ({ feedback }) => {
     }
   }
 
-  const handleSubmit = () => {}
+  const handleSubmit = () => {
+    const newFeedback = {
+      id: uuid,
+      text,
+      rating,
+    }
+    handleAdd(newFeedback)
+  }
 
   return (
     <Card>
