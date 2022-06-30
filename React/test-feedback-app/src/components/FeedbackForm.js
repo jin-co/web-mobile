@@ -3,6 +3,7 @@ import Card from './shared/Card'
 import Button from './shared/Button'
 import { useState } from 'react'
 import { v4 as uuid } from 'uuid'
+import RatingSelect from './RatingSelect'
 
 const FeedbackForm = ({ feedback, handleAdd }) => {
   const [text, setText] = useState('')
@@ -33,6 +34,7 @@ const FeedbackForm = ({ feedback, handleAdd }) => {
 
   return (
     <Card>
+      <RatingSelect />
       <form action="" onSubmit={handleSubmit}>
         <div className="input-group">
           <input
