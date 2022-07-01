@@ -27,29 +27,19 @@ class RegisterActivity : BaseActivity() {
 
     private fun validate(): Boolean {
         return when {
-            TextUtils.isEmpty(binding.etRegisterFirstName.toString().trim{it <= ' '}) -> {
-                showErrorSnackBar("wrong", true)
+            TextUtils.isEmpty(binding.etRegisterFirstName.text.toString().trim { it <= ' ' }) -> {
+                showErrorSnackBar("resources.getString()", true)
                 false
-            } else -> {
-                showErrorSnackBar("wrong", false)
+            }
+
+            TextUtils.isEmpty(binding.etRegisterLastName.text.toString().trim { it <= ' ' }) -> {
+                showErrorSnackBar("resources.getString()", true)
+                false
+            }
+            else -> {
+                showErrorSnackBar("resources.getString()", false)
                 true
             }
         }
-
-//        return when {
-//            TextUtils.isEmpty(binding.etRegisterFirstName.text.toString().trim { it <= ' ' }) -> {
-//                showErrorSnackBar("resources.getString()", true)
-//                false
-//            }
-//
-//            TextUtils.isEmpty(binding.etRegisterLastName.text.toString().trim { it <= ' ' }) -> {
-//                showErrorSnackBar("resources.getString()", true)
-//                false
-//            }
-//            else -> {
-//                showErrorSnackBar("resources.getString()", false)
-//                true
-//            }
-//        }
     }
 }
