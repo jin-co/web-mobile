@@ -26,6 +26,17 @@ class RegisterActivity : BaseActivity() {
     }
 
     private fun validate(): Boolean {
+        return when {
+
+            TextUtils.isEmpty(binding.etRegisterFirstName.text.toString().trim { it <= ' ' }) -> {
+                showErrorSnackBar("wrong", true)
+                false
+            }
+            else -> {
+                showErrorSnackBar("right", false)
+                true
+            }
+        }
 //        return when {
 //            TextUtils.isEmpty(binding.etRegisterFirstName.text.toString().trim { it <= ' ' }) -> {
 //                showErrorSnackBar("resources.getString()", true)
