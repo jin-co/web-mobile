@@ -26,18 +26,7 @@ class RegisterActivity : BaseActivity() {
     }
 
     private fun validate(): Boolean {
-        var result: Boolean
-        when {
-            TextUtils.isEmpty(binding.etRegisterFirstName.toString().trim { it <= ' ' }) -> {
-                showErrorSnackBar("wrong", true)
-                result = false
-            }
-            else -> {
-                showErrorSnackBar("right", false)
-                result = true
-            }
-        }
-        return result
+        
 
 //        return when {
 //            TextUtils.isEmpty(binding.etRegisterFirstName.text.toString().trim { it <= ' ' }) -> {
