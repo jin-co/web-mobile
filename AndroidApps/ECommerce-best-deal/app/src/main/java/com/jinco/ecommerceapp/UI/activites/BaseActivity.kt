@@ -27,4 +27,14 @@ open class BaseActivity : AppCompatActivity() {
         }
         snackBar.show()
     }
+
+    fun setupActionBar() {
+        setSupportActionBar(toolbar_)
+        val actionBar = supportActionBar
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true)
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_launcher_background)
+        }
+
+    }
 }
