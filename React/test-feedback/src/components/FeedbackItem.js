@@ -1,8 +1,14 @@
 import React from 'react'
+import Card from './shared/Card'
+import { useState } from 'react'
 
-const FeedbackItem = () => {
+const FeedbackItem = ({ feedback }) => {
   return (
-    <div>FeedbackItem</div>
+    <Card>
+      <p className='rating'>{feedback.rating}</p>
+      
+      <p className='text'>{feedback.text}</p>
+    </Card>
   )
 }
 
