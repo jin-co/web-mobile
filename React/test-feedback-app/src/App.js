@@ -18,9 +18,9 @@ const App = () => {
   //   setFeedback(feedback.filter((f) => f.id !== id))
   // }
 
-  const addFeedback = (newFeedback) => {
-    setFeedback([newFeedback, ...feedback])
-  }
+  // const addFeedback = (newFeedback) => {
+  //   setFeedback([newFeedback, ...feedback])
+  // }
 
   return (
     <Provider>
@@ -35,7 +35,7 @@ const App = () => {
                 element={
                   <>
                     <FeedbackStats />
-                    <FeedbackForm handleAdd={addFeedback} />
+                    <FeedbackForm />
                     <FeedbackList />
                   </>
                 }

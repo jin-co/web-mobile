@@ -6,8 +6,8 @@ import { v4 as uuid } from 'uuid'
 import RatingSelect from './RatingSelect'
 import Context from '../context/Context'
 
-const FeedbackForm = ({ handleAdd }) => {
-  const { feedback } = useContext(Context)
+const FeedbackForm = () => {
+  const { feedback, addFeedback } = useContext(Context)
   const [text, setText] = useState('')
   const [rating, setRating] = useState(0)
   const [message, setMessage] = useState('')
@@ -33,7 +33,7 @@ const FeedbackForm = ({ handleAdd }) => {
       text,
       rating,
     }
-    handleAdd(newFeedback)
+    addFeedback(newFeedback)
     setText('')
   }
 

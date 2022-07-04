@@ -9,10 +9,15 @@ export const Provider = (props) => {
     setFeedback(feedback.filter((f) => f.id !== id))
   }
 
+  const addFeedback = (newFeedback) => {
+    setFeedback([newFeedback, ...feedback])
+  }
+
   return (
   <Context.Provider value={{
     feedback,
-    deleteFeedback
+    deleteFeedback,
+    addFeedback
   }}>{Children}</Context.Provider>
   )
 }
