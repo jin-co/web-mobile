@@ -14,9 +14,9 @@ import { Provider } from './context/Context'
 const App = () => {
   const [feedback, setFeedback] = useState(FeedbackData)
 
-  const deleteFeedback = (id) => {
-    setFeedback(feedback.filter((f) => f.id !== id))
-  }
+  // const deleteFeedback = (id) => {
+  //   setFeedback(feedback.filter((f) => f.id !== id))
+  // }
 
   const addFeedback = (newFeedback) => {
     setFeedback([newFeedback, ...feedback])
@@ -34,8 +34,8 @@ const App = () => {
                 path="/"
                 element={
                   <>
-                    <FeedbackStats feedback={feedback} />
-                    <FeedbackForm feedback={feedback} handleAdd={addFeedback} />
+                    <FeedbackStats/>
+                    <FeedbackForm handleAdd={addFeedback} />
                     <FeedbackList
                       handleDelete={deleteFeedback}
                     />
