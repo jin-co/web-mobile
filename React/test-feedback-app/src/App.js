@@ -8,6 +8,7 @@ import FeedbackForm from './components/FeedbackForm'
 import About from './components/About'
 import { FaQuestion } from 'react-icons/fa'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const App = () => {
   const [feedback, setFeedback] = useState(FeedbackData)
@@ -40,10 +41,14 @@ const App = () => {
                 </>
               }
             ></Route>
-            <Route path="/about" element={<About/>}></Route>
+            <Route path="/about" element={<About />}></Route>
           </Routes>
         </div>
-        <FaQuestion />
+        <div className="about-link">
+          <Link to='/about'>
+            <FaQuestion size={30} />
+          </Link>
+        </div>
       </Router>
     </>
   )
