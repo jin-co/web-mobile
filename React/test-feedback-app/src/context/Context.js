@@ -4,9 +4,15 @@ const Context = createContext()
 
 export const Provider = (props) => {
   const [feedback, setFeedback] = useState(FeedbackData)
+  
+  const deleteFeedback = (id) => {
+    setFeedback(feedback.filter((f) => f.id !== id))
+  }
+
   return (
   <Context.Provider value={{
-    feedback
+    feedback,
+    deleteFeedback
   }}>{Children}</Context.Provider>
   )
 }

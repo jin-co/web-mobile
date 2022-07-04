@@ -34,11 +34,9 @@ const App = () => {
                 path="/"
                 element={
                   <>
-                    <FeedbackStats/>
+                    <FeedbackStats />
                     <FeedbackForm handleAdd={addFeedback} />
-                    <FeedbackList
-                      handleDelete={deleteFeedback}
-                    />
+                    <FeedbackList />
                   </>
                 }
               ></Route>

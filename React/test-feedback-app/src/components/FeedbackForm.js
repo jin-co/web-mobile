@@ -7,7 +7,7 @@ import RatingSelect from './RatingSelect'
 import Context from '../context/Context'
 
 const FeedbackForm = ({ handleAdd }) => {
-  const [feedback] = useContext(Context)
+  const { feedback } = useContext(Context)
   const [text, setText] = useState('')
   const [rating, setRating] = useState(0)
   const [message, setMessage] = useState('')
