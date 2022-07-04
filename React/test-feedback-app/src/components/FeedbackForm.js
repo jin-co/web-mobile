@@ -1,11 +1,13 @@
 import React from 'react'
 import Card from './shared/Card'
 import Button from './shared/Button'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { v4 as uuid } from 'uuid'
 import RatingSelect from './RatingSelect'
+import Context from '../context/Context'
 
-const FeedbackForm = ({ feedback, handleAdd }) => {
+const FeedbackForm = ({ handleAdd }) => {
+  const [feedback] = useContext(Context)
   const [text, setText] = useState('')
   const [rating, setRating] = useState(0)
   const [message, setMessage] = useState('')
