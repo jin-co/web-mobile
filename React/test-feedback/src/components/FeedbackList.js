@@ -1,8 +1,15 @@
 import React from 'react'
+import FeedbackItem from './FeedbackItem'
 
-const FeedbackList = () => {
+const FeedbackList = ({ feedback, handleDelete }) => {
   return (
-    <div>FeedbackList</div>
+    <ul>
+      {feedback.map((i) => (
+        <li>
+          <FeedbackItem key={i.id} feedback={i} handleDelete={handleDelete} />
+        </li>
+      ))}
+    </ul>
   )
 }
 
