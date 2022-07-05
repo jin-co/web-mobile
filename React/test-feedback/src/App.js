@@ -7,6 +7,7 @@ import FeedbackForm from './components/FeedbackForm'
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
 import About from './components/About'
 import { FaQuestion } from 'react-icons/fa'
+import { Provider } from './context/Context'
 
 const App = () => {
   const [feedback, setFeedback] = useState(FeedbackData)
@@ -19,35 +20,36 @@ const App = () => {
   }
 
   return (
-    <Router>
-      <>
-        <Header />
-        <div className="container">
-          <Routes>
-            <Route
-              exact
-              path="/"
-              element={
-                <>
-                  <FeedbackStats feedback={feedback} />
-                  <FeedbackForm feedback={feedback} handleAdd={addFeedback} />
-                  <FeedbackList
-                    feedback={feedback}
-                    handleDelete={deleteFeedback}
-                  />
-                </>
-              }
-            />
-            <Route exact path="/about/:id" element={<About />} />
-          </Routes>
-        </div>
-        <div className='about-link'>
-          <Link to="/about/1">
-            <FaQuestion />
-          </Link>
-        </div>
-      </>
-    </Router>
+    <Provider>
+      <Router>
+        <>
+          <Header />
+          <div className="container">
+            <Routes>
+              <Route
+                exact
+                path="/"
+                element={
+                  <>
+                    <FeedbackStats feedback={feedback} />
+                    <FeedbackForm feedback={feedback} handleAdd={addFeedback} />
+                    <FeedbackList                      
+                      handleDelete={deleteFeedback}
+                    />
+                  </>
+                }
+              />
+              <Route exact path="/about/:id" element={<About />} />
+            </Routes>
+          </div>
+          <div className="about-link">
+            <Link to="/about/1">
+              <FaQuestion />
+            </Link>
+          </div>
+        </>
+      </Router>
+    </Provider>
   )
 }
 
