@@ -29,12 +29,12 @@ open class BaseActivity : AppCompatActivity() {
     }
 
     fun setupActionBar() {
-        setSupportActionBar(toolbar_)
-        val actionBar = supportActionBar
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true)
-            actionBar.setHomeAsUpIndicator(R.drawable.ic_launcher_background)
-        }
+//        setSupportActionBar()
+//        val actionBar = supportActionBar
+//        if (actionBar != null) {
+//            actionBar.setDisplayHomeAsUpEnabled(true)
+//            actionBar.setHomeAsUpIndicator(R.drawable.ic_launcher_background)
+//        }
 
     }
 }
