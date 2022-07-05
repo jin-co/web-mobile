@@ -5,7 +5,7 @@ import { useContext } from 'react'
 import Context from '../context/Context'
 
 const FeedbackList = () => {
-  const { feedback, deleteFeedback } = useContext(Context)
+  const { feedback } = useContext(Context)
   return (
     <ul>
       <AnimatePresence>
@@ -19,8 +19,7 @@ const FeedbackList = () => {
             <li>
               <FeedbackItem
                 key={i.id}
-                feedback={i}
-                handleDelete={deleteFeedback}
+                feedback={i}                
               />
             </li>
           </motion.div>
