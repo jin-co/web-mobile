@@ -38,11 +38,11 @@ const App = () => {
                 </>
               }
             />
-            <Route exact path="/about" element={<About />} />
+            <Route exact path="/about/:id" element={<About />} />
           </Routes>
         </div>
         <div className='about-link'>
-          <Link to="/about">
+          <Link to="/about/1">
             <FaQuestion />
           </Link>
         </div>
