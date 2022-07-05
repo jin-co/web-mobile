@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
 import About from './components/About'
 import { FaQuestion } from 'react-icons/fa'
 import { Provider } from './context/Context'
+import { RProvider } from './context/RContext'
 
 const App = () => {
   const [feedback, setFeedback] = useState(FeedbackData)
@@ -20,7 +21,7 @@ const App = () => {
   }
 
   return (
-    <Provider>
+    <RProvider>
       <Router>
         <>
           <Header />
@@ -49,7 +50,7 @@ const App = () => {
           </div>
         </>
       </Router>
-    </Provider>
+    </RProvider>
   )
 }
 
