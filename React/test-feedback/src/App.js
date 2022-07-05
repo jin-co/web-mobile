@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
 import About from './components/About'
 import { FaQuestion } from 'react-icons/fa'
 import { Provider } from './context/Context'
-
+import { TProvider } from './context/TContext'
 const App = () => {
   const [feedback, setFeedback] = useState(FeedbackData)
   const deleteFeedback = (id) => {
@@ -20,7 +20,7 @@ const App = () => {
   }
 
   return (
-    <Provider>
+    <TProvider>
       <Router>
         <>
           <Header />
@@ -49,7 +49,7 @@ const App = () => {
           </div>
         </>
       </Router>
-    </Provider>
+    </TProvider>
   )
 }
 

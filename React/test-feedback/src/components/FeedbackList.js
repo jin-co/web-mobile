@@ -3,9 +3,10 @@ import FeedbackItem from './FeedbackItem'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useContext } from 'react'
 import Context from '../context/Context'
+import TContext from '../context/TContext'
 
 const FeedbackList = ({ handleDelete }) => {
-  const {feedback} = useContext(Context)
+  const {feedback} = useContext(TContext)
   return (
     <ul>
       <AnimatePresence>
