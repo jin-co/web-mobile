@@ -1,10 +1,12 @@
 import React from 'react'
 import { useState } from 'react'
 
-const FeedbackSelect = ({ feedback }) => {
-  const [] = useState()
-  const handleClick = () => {
-
+const FeedbackSelect = ({ feedback, select }) => {
+  const [selected, setSelected] = useState(10)
+  const handleChange = (e) => {
+    console.log(e.target.value)
+    setSelected(+e.target.value)
+    select(e.target.value)
   }
 
   return (
@@ -16,7 +18,8 @@ const FeedbackSelect = ({ feedback }) => {
             id={`rating-${i + 1}`}
             name={`rating-${i + 1}`}
             value={i + 1}
-            onClick={handleClick}
+            onClick={handleChange}
+            checked={selected === i + 1}
           />
           <label htmlFor={`rating-${i + 1}`}>{i + 1}</label>
         </li>

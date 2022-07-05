@@ -2,9 +2,9 @@ import React from 'react'
 
 const Button = ({ children, version, isDisabled }) => {
   return (
-    <div className={`btn btn-${version}`} isDisabled={isDisabled}>
+    <button className={`btn btn-${version}`} disabled={isDisabled}>
       {children}
-    </div>
+    </button>
   )
 }
 

@@ -3,32 +3,56 @@ import FeedbackSelect from './FeedbackSelect'
 import Card from './shared/Card'
 import Button from './shared/Button'
 import { useState } from 'react'
+import {v4 as uuid} from 'uuid'
 
-const FeedbackForm = ({ feedback }) => {
+const FeedbackForm = ({ feedback, handleAdd }) => {
   const [btnDisabled, setBtnDisabled] = useState(false)
   const [text, setText] = useState('')
+  const [rating, setRating] = useState(10)
   const [message, setMessage] = useState('')
 
-  const handleSubmit = () => {}
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    const newFeed = {
+      id: uuid(),
+      text,
+      rating
+    }
+
+    handleAdd(newFeed)
+  }
 
   const handleChange = (e) => {
     console.log(e.target.value)
-    if (text === '') {
-    } else if (+e.target.value.length < 10) {
+
+    if (e.target.value.length < 10) {
+      console.log('less')
       setMessage('Must be more than 10 characters')
       setBtnDisabled(true)
     } else {
       setMessage('')
       setBtnDisabled(false)
     }
+    setText(e.target.value)
+
+    // if (text === '') {
+    // } else if (e.target.value.length < 10) {
+    //   console.log('less')
+    //   setMessage('Must be more than 10 characters')
+    //   setBtnDisabled(true)
+    // } else {
+    //   setMessage('')
+    //   setBtnDisabled(false)
+    // }
   }
 
   return (
     <Card>
-      <FeedbackSelect />
+      <FeedbackSelect select={(rating) => setRating(rating)} />
       <form action="" onSubmit={handleSubmit}>
         <input type="text" onChange={handleChange} />
-        <Button>Save</Button>
+        <Button isDisabled={btnDisabled}>Save</Button>
         <p>{message}</p>
       </form>
     </Card>
