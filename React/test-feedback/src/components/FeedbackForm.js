@@ -4,7 +4,7 @@ import Card from './shared/Card'
 import Button from './shared/Button'
 import { useState } from 'react'
 import { v4 as uuid } from 'uuid'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import Context from '../context/Context'
 
 const FeedbackForm = () => {
@@ -13,6 +13,15 @@ const FeedbackForm = () => {
   const [text, setText] = useState('')
   const [rating, setRating] = useState(10)
   const [message, setMessage] = useState('')
+
+  useEffect(() => {
+    console.log('effect')
+    if(feedbackEdit.edit) {
+      setBtnDisabled(false)
+      setText(feedbackEdit.item.text)
+      setRating(feedbackEdit.item.rating)
+    }
+  }, [feedbackEdit])
 
   const handleSubmit = (e) => {
     e.preventDefault()
