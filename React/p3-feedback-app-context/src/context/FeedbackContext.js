@@ -18,9 +18,9 @@ export const FeedackProvider = ({ children }) => {
   }
 
   const addFeedback = (newFeedback) => {
+    console.log("add feedback")
     newFeedback.id = uuid()
     setFeedback([newFeedback, ...feedback])
-    console.log(newFeedback)
   }
 
   const editFeedback = (item) => {

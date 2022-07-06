@@ -16,7 +16,7 @@ const FeedbackForm = () => {
     if (feedbackEdit.edit) {
       setBtnDisabled(false)
       setText(feedbackEdit.item.text)
-      setRating(feedbackEdit.item.text)
+      setRating(feedbackEdit.item.rating)
     }
   }, [feedbackEdit])
 
