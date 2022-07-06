@@ -24,7 +24,13 @@ export const Provider = (props) => {
 
   return (
     <Context.Provider
-      value={{ feedback, deleteFeedback, addFeedback, editFeedback }}
+      value={{
+        feedback,
+        deleteFeedback,
+        addFeedback,
+        editFeedback,
+        feedbackEdit,
+      }}
     >
       {props.children}
     </Context.Provider>
