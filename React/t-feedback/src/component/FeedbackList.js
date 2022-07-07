@@ -1,8 +1,15 @@
 import React from 'react'
+import FeedbackItem from './FeedbackItem'
 
-const FeedbackList = () => {
+const FeedbackList = ({ feedback }) => {
   return (
-    <div>FeedbackList</div>
+    <ul>
+      {feedback.map((item) => (
+        <li key={item.id}>
+          <FeedbackItem feedback={item} />
+        </li>
+      ))}
+    </ul>
   )
 }
 
