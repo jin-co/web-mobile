@@ -9,10 +9,12 @@ import { useState } from 'react'
 const App = () => {
   const [feedback, setFeedback] = useState(FeedbackData)
 
-  const addFeedback = (newFeed) => {}
+  const addFeedback = (newFeed) => {
+    setFeedback([newFeed, ...feedback])
+  }
 
   const deleteFeedback = (id) => {
-    setFeedback(feedback.filter(f => f.id !== id))
+    setFeedback(feedback.filter((f) => f.id !== id))
   }
 
   const updateFeedback = (newFeed) => {}
@@ -22,7 +24,7 @@ const App = () => {
       <Header />
       <div className="container">
         <FeedbackStats feedback={feedback} />
-        <FeedbackForm />
+        <FeedbackForm handleAdd={addFeedback} />
         <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
       </div>
     </>

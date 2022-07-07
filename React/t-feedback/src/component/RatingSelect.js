@@ -16,7 +16,7 @@ const RatingSelect = () => {
             type="radio"
             id={`rating-${i + 1}`}
             value={i + 1}
-            onClick={handleClick}
+            onChange={handleClick}
             checked={selected === i + 1}
           />
           <label htmlFor={`rating-${i + 1}`}>{i + 1}</label>
