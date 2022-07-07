@@ -12,12 +12,6 @@ import com.jinco.ecommerceapp.databinding.ActivityMainBinding
 
 open class BaseActivity : AppCompatActivity() {
     lateinit var progressDialog: Dialog
-    lateinit var binding: ActivityBase
-    override fun onCreate(savedInstanceState: Bundle?) {
-        binding = ActivityBase.inflate(layoutInflater)
-        super.onCreate(savedInstanceState)
-        setContentView(binding.root)
-    }
 
     fun showErrorSnackBar(message: String, errorMessage: Boolean) {
         val snackBar =
@@ -52,9 +46,12 @@ open class BaseActivity : AppCompatActivity() {
 
     }
 
-    fun showSpinner(text: String) {
+    fun showProgressbar(text: String) {
         progressDialog = Dialog(this)
         progressDialog.setContentView(R.layout.dialog_spinner)
-
+        progressDialog.tv_progress.text = text
+        progressDialog.setCancelable(false)
+        progressDialog.setCanceledOnTouchOutside(false)
+        progressDialog.show()
     }
 }
