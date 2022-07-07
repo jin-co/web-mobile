@@ -13,7 +13,7 @@ const App = () => {
     <>
       <Header />
       <div className="container">
-        <FeedbackStats />
+        <FeedbackStats feedback={feedback} />
         <FeedbackForm />
         <FeedbackList feedback={feedback} />
       </div>
