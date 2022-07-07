@@ -36,7 +36,7 @@ const FeedbackForm = ({ handleAdd }) => {
   return (
     <Card>
       <form action="" onSubmit={handleSubmit}>
-        <RatingSelect select={rating} />
+        <RatingSelect select={(rating) => setRating(rating)} />
         <input type="text" onChange={handleInputChange} />
         <Button type="submit" isDisabled={btnDisabled}>
           Add

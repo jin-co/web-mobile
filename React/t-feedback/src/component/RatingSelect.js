@@ -1,11 +1,12 @@
 import React from 'react'
 import { useState } from 'react'
 
-const RatingSelect = () => {
+const RatingSelect = ({select}) => {
   const [selected, setSelected] = useState(10)
   const handleClick = (e) => {
     console.log(e.target.value)
     setSelected(+e.target.value)
+    select(+e.target.value)
   }
 
   return (
