@@ -1,6 +1,10 @@
 import React from 'react'
+import { useContext } from 'react'
+import Context from '../context/Context'
 
-const FeedbackStats = ({ feedback }) => {
+const FeedbackStats = () => {
+  const {feedback} = useContext(Context)
+
   let average =
     feedback.reduce((acc, cur) => {
       return acc + cur.rating

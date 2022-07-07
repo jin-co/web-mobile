@@ -3,9 +3,13 @@ import Button from './shared/Button'
 import Card from './shared/Card'
 import { useState } from 'react'
 import RatingSelect from './RatingSelect'
-import {v4 as uuid} from 'uuid'
+import { v4 as uuid } from 'uuid'
+import { useContext } from 'react'
+import Context from '../context/Context'
 
-const FeedbackForm = ({ handleAdd }) => {
+const FeedbackForm = () => {
+  const { addFeedback } = useContext(Context)
+
   const [text, setText] = useState('')
   const [message, setMessage] = useState('')
   const [btnDisabled, setBtnDisabled] = useState(true)
@@ -28,9 +32,9 @@ const FeedbackForm = ({ handleAdd }) => {
     const newFeed = {
       id: uuid(),
       text,
-      rating
+      rating,
     }
-    handleAdd(newFeed)
+    addFeedback(newFeed)
   }
 
   return (
