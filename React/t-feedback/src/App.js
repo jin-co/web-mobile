@@ -9,13 +9,21 @@ import { useState } from 'react'
 const App = () => {
   const [feedback, setFeedback] = useState(FeedbackData)
 
+  const addFeedback = (newFeed) => {}
+
+  const deleteFeedback = (id) => {
+    setFeedback(feedback.filter(f => f.id !== id))
+  }
+
+  const updateFeedback = (newFeed) => {}
+
   return (
     <>
       <Header />
       <div className="container">
         <FeedbackStats feedback={feedback} />
         <FeedbackForm />
-        <FeedbackList feedback={feedback} />
+        <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
       </div>
     </>
   )
