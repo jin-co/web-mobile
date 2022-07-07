@@ -5,6 +5,10 @@ const Context = createContext()
 
 export const Provider = (props) => {
   const [feedback, setFeedback] = useState(FeedbackData)
+  const [editFeedback, setEditFeedback] = useState({
+    item: {},
+    isEdit: false,
+  })
 
   const addFeedback = (newFeed) => {
     setFeedback([newFeed, ...feedback])
@@ -14,11 +18,23 @@ export const Provider = (props) => {
     setFeedback(feedback.filter((f) => f.id !== id))
   }
 
-  const updateFeedback = (newFeed) => {}
+  const updateFeedback = (newFeed) => {
+    setEditFeedback({
+      newFeed,
+      isEdit: true
+    })
+  }
 
   return (
     <Context.Provider
-      value={{ feedback, addFeedback, deleteFeedback, updateFeedback }}
+      value={{
+        feedback,
+        editFeedback,
+        addFeedback,
+        deleteFeedback,
+        updateFeedback,
+        setEditFeedback
+      }}
     >
       {props.children}
     </Context.Provider>

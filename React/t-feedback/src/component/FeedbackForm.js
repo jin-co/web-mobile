@@ -1,19 +1,24 @@
 import React from 'react'
 import Button from './shared/Button'
 import Card from './shared/Card'
-import { useState } from 'react'
+
 import RatingSelect from './RatingSelect'
 import { v4 as uuid } from 'uuid'
-import { useContext } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import Context from '../context/Context'
 
+
 const FeedbackForm = () => {
-  const { addFeedback } = useContext(Context)
+  const { addFeedback, editFeedback } = useContext(Context)
 
   const [text, setText] = useState('')
   const [message, setMessage] = useState('')
   const [btnDisabled, setBtnDisabled] = useState(true)
   const [rating, setRating] = useState(10)
+
+  useEffect(() => {
+    console.log('hh')
+  }, [editFeedback])
 
   const handleInputChange = (e) => {
     console.log(e.target.value)
