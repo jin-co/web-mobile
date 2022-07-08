@@ -13,10 +13,6 @@ const RatingSelect = ({select}) => {
     select(+e.target.value)
   }
 
-  useEffect(() => {
-    setSelected(editFeedback.newFeed.rating)
-  }, [editFeedback])
-
   return (
     <ul className="rating">
       {Array.from({ length: 10 }, (_, i) => (

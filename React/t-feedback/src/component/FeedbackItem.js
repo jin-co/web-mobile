@@ -5,7 +5,7 @@ import Context from '../context/Context'
 import { useContext } from 'react'
 
 const FeedbackItem = ({ feedback }) => {
-  const { deleteFeedback, updateFeedback, editFeedback, setEditFeedback } =
+  const { deleteFeedback, updateFeedback } =
     useContext(Context)
 
   return (
@@ -19,7 +19,7 @@ const FeedbackItem = ({ feedback }) => {
       <FaEdit
         className="edit"
         color="blue"
-        onClick={() => updateFeedback(feedback)}
+        
       />
       <p>{feedback.text}</p>
     </Card>
