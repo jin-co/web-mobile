@@ -4,14 +4,20 @@ import { useContext } from 'react'
 import Context from '../context/Context'
 import { useEffect } from 'react'
 
-const RatingSelect = ({select}) => {
-  const {editFeedback} = useContext(Context)
+const RatingSelect = ({ select }) => {
+  const { editFeedback } = useContext(Context)
   const [selected, setSelected] = useState(10)
   const handleClick = (e) => {
     console.log(e.target.value)
     setSelected(+e.target.value)
     select(+e.target.value)
   }
+
+  useEffect(() => {
+    if (editFeedback.edit) {
+      setSelected(editFeedback.feed.rating)
+    }
+  }, [editFeedback])
 
   return (
     <ul className="rating">

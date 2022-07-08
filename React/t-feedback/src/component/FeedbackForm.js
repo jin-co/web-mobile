@@ -15,7 +15,15 @@ const FeedbackForm = () => {
   const [btnDisabled, setBtnDisabled] = useState(true)
   const [rating, setRating] = useState(10)
 
-  
+  useEffect(() => {
+    console.log(editFeedback)
+    if (editFeedback.edit) {
+      setBtnDisabled(false)
+      setText(editFeedback.feed.text)
+      setRating(editFeedback.feed.rating)
+    }
+  }, [editFeedback])
+
   const handleInputChange = (e) => {
     console.log(e.target.value)
     if (+e.target.value.length < 10) {
@@ -36,7 +44,11 @@ const FeedbackForm = () => {
       rating,
     }
 
+    if (editFeedback.edit) {
+      realUpdateFeed(editFeedback.feed.id, newFeed)
+    } else {
       addFeedback(newFeed)
+    }
   }
 
   return (
