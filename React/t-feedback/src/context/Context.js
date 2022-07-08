@@ -21,7 +21,7 @@ export const Provider = (props) => {
   const updateFeedback = (newFeed) => {
     setEditFeedback({
       newFeed,
-      isEdit: true
+      isEdit: true,
     })
   }
 
@@ -33,7 +33,6 @@ export const Provider = (props) => {
         addFeedback,
         deleteFeedback,
         updateFeedback,
-        setEditFeedback
       }}
     >
       {props.children}

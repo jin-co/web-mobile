@@ -8,10 +8,6 @@ const FeedbackItem = ({ feedback }) => {
   const { deleteFeedback, updateFeedback, editFeedback, setEditFeedback } =
     useContext(Context)
 
-  const handleEdit = () => {
-    setEditFeedback()
-  }
-
   return (
     <Card>
       <p className="rating">{feedback.rating}</p>

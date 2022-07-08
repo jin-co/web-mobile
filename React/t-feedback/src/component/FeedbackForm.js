@@ -17,6 +17,12 @@ const FeedbackForm = () => {
   const [rating, setRating] = useState(10)
 
   useEffect(() => {
+    console.log(editFeedback)
+    if(editFeedback.isEdit === true) {
+      setBtnDisabled(false)
+      setText(editFeedback.newFeed.text)
+      setRating(editFeedback.newFeed.rating)
+    }
     console.log('hh')
   }, [editFeedback])
 
@@ -46,7 +52,7 @@ const FeedbackForm = () => {
     <Card>
       <form action="" onSubmit={handleSubmit}>
         <RatingSelect select={(rating) => setRating(rating)} />
-        <input type="text" onChange={handleInputChange} />
+        <input type="text" onChange={handleInputChange} value={text} />
         <Button type="submit" isDisabled={btnDisabled}>
           Add
         </Button>
