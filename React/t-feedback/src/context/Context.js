@@ -25,6 +25,10 @@ export const Provider = (props) => {
     })
   }
 
+  const realUpdateFeed = (id, upd) => {
+    setFeedback(feedback.map((i) => (i.id === id ? { ...i, ...upd } : i)))
+  }
+
   return (
     <Context.Provider
       value={{
@@ -33,6 +37,7 @@ export const Provider = (props) => {
         addFeedback,
         deleteFeedback,
         updateFeedback,
+        realUpdateFeed,
       }}
     >
       {props.children}

@@ -7,9 +7,8 @@ import { v4 as uuid } from 'uuid'
 import { useState, useEffect, useContext } from 'react'
 import Context from '../context/Context'
 
-
 const FeedbackForm = () => {
-  const { addFeedback, editFeedback } = useContext(Context)
+  const { addFeedback, editFeedback, realUpdateFeed } = useContext(Context)
 
   const [text, setText] = useState('')
   const [message, setMessage] = useState('')
@@ -18,7 +17,7 @@ const FeedbackForm = () => {
 
   useEffect(() => {
     console.log(editFeedback)
-    if(editFeedback.isEdit === true) {
+    if (editFeedback.isEdit === true) {
       setBtnDisabled(false)
       setText(editFeedback.newFeed.text)
       setRating(editFeedback.newFeed.rating)
@@ -45,7 +44,12 @@ const FeedbackForm = () => {
       text,
       rating,
     }
-    addFeedback(newFeed)
+
+    if (editFeedback.isEdit === true) {
+      realUpdateFeed(editFeedback.newFeed.id, newFeed)
+    } else {
+      addFeedback(newFeed)
+    }
   }
 
   return (
