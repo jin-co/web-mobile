@@ -45,13 +45,4 @@ open class BaseActivity : AppCompatActivity() {
 //        }
 
     }
-
-    fun showProgressbar(text: String) {
-        progressDialog = Dialog(this)
-        progressDialog.setContentView(R.layout.dialog_spinner)
-        progressDialog.tv_progress.text = text
-        progressDialog.setCancelable(false)
-        progressDialog.setCanceledOnTouchOutside(false)
-        progressDialog.show()
-    }
 }
