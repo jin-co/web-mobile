@@ -1,5 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
+import Spinner from '../layout/Spinner'
 
 const UserResults = () => {
   const [users, setUsers] = useState([])
@@ -25,7 +26,7 @@ const UserResults = () => {
       </div>
     )
   } else {
-    return <h2>loading...</h2>
+    return <Spinner/>
   }  
 }
 
