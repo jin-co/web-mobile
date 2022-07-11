@@ -5,11 +5,13 @@ import Context from '../context/Context'
 import { useContext } from 'react'
 
 const FeedbackList = () => {
-  const {feedback} = useContext(Context)
+  const { feedback, isLoading } = useContext(Context)
 
-  return (
+  return isLoading ? (
+    <h3>Loaind...</h3>
+  ) : (
     <ul>
-    <AnimatePresence>
+      <AnimatePresence>
         {feedback.map((item) => (
           <motion.div
             key={item.id}
@@ -22,8 +24,8 @@ const FeedbackList = () => {
             </li>
           </motion.div>
         ))}
-    </AnimatePresence>
-      </ul>
+      </AnimatePresence>
+    </ul>
   )
 }
 
