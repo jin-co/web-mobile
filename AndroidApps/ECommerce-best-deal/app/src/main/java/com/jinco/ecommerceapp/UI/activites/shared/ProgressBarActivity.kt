@@ -11,5 +11,7 @@ class ProgressBarActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityProgressBarBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.progressBar.max = 10
+
     }
 }
