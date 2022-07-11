@@ -1,12 +1,11 @@
 import React from 'react'
+import UserResults from '../components/users/UserResults'
 
 const Home = () => {
   return (
-    <div>
-      <h1 className="text-6xl">
-        {process.env.REACT_APP_GITHUB_URL}
-      </h1>
-    </div>
+    <>
+      <UserResults />
+    </>
   )
 }
 
