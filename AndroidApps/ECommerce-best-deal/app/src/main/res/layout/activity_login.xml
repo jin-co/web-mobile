@@ -51,25 +51,36 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_login_title">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_login_email"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="email"
-                android:textSize="30sp" />
+                android:hint="Email">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_login_password"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_login_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="30sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="password"
-                android:textSize="30sp" />
+                android:hint="Password">
 
-            <com.google.android.material.textview.MaterialTextView
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_login_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="30sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.jinco.ecommerceapp.widgets.ECTextViewBold
                 android:id="@+id/tv_login_forgot_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="forgot password?"
+                android:layout_marginTop="10dp"
+                android:text="Forgot password?"
                 android:textAlignment="textEnd" />
 
             <com.google.android.material.button.MaterialButton

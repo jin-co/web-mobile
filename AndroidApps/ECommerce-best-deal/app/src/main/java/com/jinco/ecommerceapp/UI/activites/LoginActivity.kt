@@ -17,5 +17,9 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
             startActivity(intent)
         }
+
+        binding.tvLoginForgotPassword.setOnClickListener {
+            val intent = Intent(this@LoginActivity, )
+        }
     }
 }
