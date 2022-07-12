@@ -5,8 +5,8 @@ import Home from './pages/Home'
 import About from './pages/About'
 import NotFound from './pages/NotFound'
 import { GithubProvider } from './context/github/GithubContext'
-import { AlertProvider } from './context/github/alert/AlertContext'
-import AlertContext from './context/github/alert/AlertContext'
+import { AlertProvider } from './context/alert/AlertContext'
+import Alert from './components/layout/Alert'
 
 const App = () => {
   return (
@@ -19,7 +19,8 @@ const App = () => {
               <Navbar />
 
               <main className="container mx-auto px-3 pb-12">
-                <Routes>
+              <Alert/>
+                <Routes>                
                   <Route path="/" element={<Home />} />
                   <Route path="/about" element={<About />} />
                   <Route path="/notfound" element={<NotFound />} />
