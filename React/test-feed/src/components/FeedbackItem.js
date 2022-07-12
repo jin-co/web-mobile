@@ -1,8 +1,12 @@
 import React from 'react'
+import Card from './shared/Card'
 
-const FeedbackItem = () => {
+const FeedbackItem = ({ item }) => {
   return (
-    <div>FeedbackItem</div>
+    <Card>
+      <p className='rating'>{item.rating}</p>
+      <p>{item.text}</p>
+    </Card>
   )
 }
 

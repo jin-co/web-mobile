@@ -6,13 +6,15 @@ import FeedbackStats from './components/FeedbackStats'
 import FeedbackForm from './components/FeedbackForm'
 
 const App = () => {
+  const [feedback, setFeedback] = useState(FeedbackData)
+
   return (
     <>
       <Header />
-      <main className='container'>
+      <main className="container">
         <FeedbackStats />
         <FeedbackForm />
-        <FeedbackList />
+        <FeedbackList feedback={feedback} />
       </main>
     </>
   )
