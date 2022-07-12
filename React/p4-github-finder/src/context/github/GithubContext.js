@@ -34,7 +34,7 @@ export const GithubProvider = (props) => {
       q: text,
     })
     const res = await fetch(
-      `${process.env.REACT_APP_GITHUB_URL}/users/search?${params}`
+      `${process.env.REACT_APP_GITHUB_URL}/search/users?${params}`
     )
     const { items } = await res.json()
     // setUsers(data)

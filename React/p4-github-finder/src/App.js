@@ -5,28 +5,32 @@ import Home from './pages/Home'
 import About from './pages/About'
 import NotFound from './pages/NotFound'
 import { GithubProvider } from './context/github/GithubContext'
+import { AlertProvider } from './context/github/alert/AlertContext'
+import AlertContext from './context/github/alert/AlertContext'
 
 const App = () => {
   return (
     <GithubProvider>
-      <Router>
-        <div>
-          <h1>hh</h1>
-          <div className="flex flex-col justify-between h-screen">
-            <Navbar />
+      <AlertProvider>
+        <Router>
+          <div>
+            <h1>hh</h1>
+            <div className="flex flex-col justify-between h-screen">
+              <Navbar />
 
-            <main className="container mx-auto px-3 pb-12">
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/notfound" element={<NotFound />} />
-                <Route path="/*" element={<NotFound />} />
-              </Routes>
-            </main>
-            <Footer />
+              <main className="container mx-auto px-3 pb-12">
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/notfound" element={<NotFound />} />
+                  <Route path="/*" element={<NotFound />} />
+                </Routes>
+              </main>
+              <Footer />
+            </div>
           </div>
-        </div>
-      </Router>
+        </Router>
+      </AlertProvider>
     </GithubProvider>
   )
 }
