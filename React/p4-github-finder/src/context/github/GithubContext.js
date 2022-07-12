@@ -45,13 +45,17 @@ export const GithubProvider = (props) => {
     })
   }
 
+  const clearUsers = () => {
+    dispatch({type: 'CLEAR_USERS'})
+  }
+
   const setLoading = () => {
     dispatch({ type: 'SET_LOADING' })
   }
 
   return (
     <GithubContext.Provider
-      value={{ users: state.users, isLoading: state.loading, searchUsers }}
+      value={{ users: state.users, isLoading: state.loading, searchUsers, clearUsers }}
     >
       {props.children}
     </GithubContext.Provider>
