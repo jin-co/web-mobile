@@ -4,6 +4,9 @@ import { useState } from 'react'
 import FeedbackList from './components/FeedbackList'
 import FeedbackStats from './components/FeedbackStats'
 import FeedbackForm from './components/FeedbackForm'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import About from './components/About'
+import { FaQuestion } from 'react-icons/fa'
 
 const App = () => {
   const [feedback, setFeedback] = useState(FeedbackData)
@@ -12,22 +15,40 @@ const App = () => {
     setFeedback([newFeed, ...feedback])
   }
 
-  const deleteFeedback = () => {}
-
-  const updateFeedback = (id) => {
-    setFeedback(feedback.filter(f => f.id !== id))
+  const deleteFeedback = (id) => {
+    setFeedback(feedback.filter((f) => f.id !== id))
   }
 
+  const updateFeedback = (id) => {}
 
   return (
-    <>
-      <Header />
-      <main className="container">
-        <FeedbackStats feedback={feedback} />
-        <FeedbackForm feedback={feedback} handleAdd={addFeedback}/>
-        <FeedbackList feedback={feedback} handleDelete={updateFeedback} />
-      </main>
-    </>
+    <Router>
+      <>
+        <Header />
+        <main className="container">
+          <Routes>
+            <Route
+              exact
+              path="/"
+              element={
+                <>
+                  <FeedbackStats feedback={feedback} />
+                  <FeedbackForm feedback={feedback} handleAdd={addFeedback} />
+                  <FeedbackList
+                    feedback={feedback}
+                    handleDelete={deleteFeedback}
+                  />
+                </>
+              }
+            />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </main>
+        <Link to="/about" className='link'>
+          <FaQuestion />
+        </Link>
+      </>
+    </Router>
   )
 }
 
