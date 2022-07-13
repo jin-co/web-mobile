@@ -14,7 +14,9 @@ const App = () => {
 
   const deleteFeedback = () => {}
 
-  const updateFeedback = () => {}
+  const updateFeedback = (id) => {
+    setFeedback(feedback.filter(f => f.id !== id))
+  }
 
 
   return (
@@ -23,7 +25,7 @@ const App = () => {
       <main className="container">
         <FeedbackStats feedback={feedback} />
         <FeedbackForm feedback={feedback} handleAdd={addFeedback}/>
-        <FeedbackList feedback={feedback} />
+        <FeedbackList feedback={feedback} handleDelete={updateFeedback} />
       </main>
     </>
   )
