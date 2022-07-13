@@ -11,6 +11,8 @@ export const GithubProvider = (props) => {
 
   const initialState = {
     users: [],
+    user: {},
+    repos: [],
     loading: false,
   }
 
@@ -45,8 +47,40 @@ export const GithubProvider = (props) => {
     })
   }
 
+  const getUserRepos = async (login) => {
+    setLoading()
+
+    const res = await fetch(
+      `${process.env.REACT_APP_GITHUB_URL}/search/users?${login}/repos`
+    )
+    const data = await res.json()
+    // setUsers(data)
+    // setIsLoading(false)
+    dispatch({
+      type: 'GET_REPOS',
+      payload: data,
+    })
+  }
+
+  const getUser = async (login) => {
+    setLoading()
+    const res = await fetch(
+      `${process.env.REACT_APP_GITHUB_URL}/users?${login}`
+    )
+
+    if (res.status === 404) {
+      window.location = '/notfound'
+    } else {
+      const data = await res.json()
+      dispatch({
+        type: 'GET_USER',
+        payload: data,
+      })
+    }
+  }
+
   const clearUsers = () => {
-    dispatch({type: 'CLEAR_USERS'})
+    dispatch({ type: 'CLEAR_USERS' })
   }
 
   const setLoading = () => {
@@ -55,7 +89,15 @@ export const GithubProvider = (props) => {
 
   return (
     <GithubContext.Provider
-      value={{ users: state.users, isLoading: state.loading, searchUsers, clearUsers }}
+      value={{
+        users: state.users,
+        user: state.user,
+        repos: state.repos,
+        isLoading: state.loading,
+        searchUsers,
+        clearUsers,
+        getUser,
+      }}
     >
       {props.children}
     </GithubContext.Provider>
