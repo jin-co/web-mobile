@@ -49,9 +49,12 @@ export const GithubProvider = (props) => {
 
   const getUserRepos = async (login) => {
     setLoading()
-
+    const params = new URLSearchParams({
+      sort: 'created',
+      per_page: 10
+    })
     const res = await fetch(
-      `${process.env.REACT_APP_GITHUB_URL}/search/users?${login}/repos`
+      `${process.env.REACT_APP_GITHUB_URL}/search/users?${login}/repos/?${params}`
     )
     const data = await res.json()
     // setUsers(data)
@@ -97,6 +100,7 @@ export const GithubProvider = (props) => {
         searchUsers,
         clearUsers,
         getUser,
+        getUserRepos
       }}
     >
       {props.children}
