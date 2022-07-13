@@ -8,12 +8,21 @@ import FeedbackForm from './components/FeedbackForm'
 const App = () => {
   const [feedback, setFeedback] = useState(FeedbackData)
 
+  const addFeedback = (newFeed) => {
+    setFeedback(newFeed, ...feedback)
+  }
+
+  const deleteFeedback = () => {}
+
+  const updateFeedback = () => {}
+
+
   return (
     <>
       <Header />
       <main className="container">
         <FeedbackStats feedback={feedback} />
-        <FeedbackForm feedback={feedback} />
+        <FeedbackForm feedback={feedback} handleAdd={addFeedback}/>
         <FeedbackList feedback={feedback} />
       </main>
     </>
