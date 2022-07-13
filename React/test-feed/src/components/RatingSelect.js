@@ -6,6 +6,7 @@ const RatingSelect = ({ select }) => {
 
   const handleChange = (e) => {
     setSelected(+e.target.value)
+    select(+e.target.value)
   }
 
   return (

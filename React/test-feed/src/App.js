@@ -9,7 +9,7 @@ const App = () => {
   const [feedback, setFeedback] = useState(FeedbackData)
 
   const addFeedback = (newFeed) => {
-    setFeedback(newFeed, ...feedback)
+    setFeedback([newFeed, ...feedback])
   }
 
   const deleteFeedback = () => {}

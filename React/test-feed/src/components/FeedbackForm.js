@@ -15,8 +15,9 @@ const FeedbackForm = ({ handleAdd }) => {
     if (+e.target.value.length > 10) {
       setBtnDisabled(false)
       setMessage('')      
-      setMessage('over 10')
+      setMessage('over 10')      
     }
+    setText(e.target.value)
     console.log(e.target.value)
   }
 
@@ -28,13 +29,14 @@ const FeedbackForm = ({ handleAdd }) => {
       rating,
     }
     handleAdd(newFeed)
+    setText('')
   }
 
   return (
     <Card>
       <form action="" onSubmit={handleSubmit}>
-        <RatingSelect select={rating} />
-        <input type="text" onChange={handelInput} />
+        <RatingSelect select={(rating) => setRating(rating)} />
+        <input type="text" onChange={handelInput} value={text} />
         <Button isDisabled={btnDisabled}>Send</Button>
       </form>
       <p>{message}</p>
