@@ -6,6 +6,7 @@ import { useState } from 'react'
 import { v4 as uuid } from 'uuid'
 import { useContext } from 'react'
 import FeedbackContext from './context/FeedbackContext'
+import { useEffect } from 'react'
 
 const FeedbackForm = () => {
   const {addFeedback} = useContext(FeedbackContext)
@@ -14,6 +15,10 @@ const FeedbackForm = () => {
   const [message, setMessage] = useState('')
   const [btnDisabled, setBtnDisabled] = useState(true)
 
+  useEffect(() => {
+
+  }, [])
+  
   const handelInput = (e) => {    
     if (+e.target.value.length > 10) {
       setBtnDisabled(false)
