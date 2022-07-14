@@ -9,15 +9,18 @@ import FeedbackContext from './context/FeedbackContext'
 import { useEffect } from 'react'
 
 const FeedbackForm = () => {
-  const {addFeedback} = useContext(FeedbackContext)
+  const {addFeedback, editFeedback} = useContext(FeedbackContext)
   const [text, setText] = useState('')
   const [rating, setRating] = useState(10)
   const [message, setMessage] = useState('')
   const [btnDisabled, setBtnDisabled] = useState(true)
 
   useEffect(() => {
-
-  }, [])
+    if(editFeedback.edit) {
+      setRating(editFeedback.item.rating)
+      setText(editFeedback.item.text)
+    }
+  }, [editFeedback])
   
   const handelInput = (e) => {    
     if (+e.target.value.length > 10) {
