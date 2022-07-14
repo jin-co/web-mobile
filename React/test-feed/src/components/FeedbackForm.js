@@ -9,7 +9,7 @@ import FeedbackContext from './context/FeedbackContext'
 import { useEffect } from 'react'
 
 const FeedbackForm = () => {
-  const {addFeedback, editFeedback} = useContext(FeedbackContext)
+  const {addFeedback, editFeedback, updateFeedback} = useContext(FeedbackContext)
   const [text, setText] = useState('')
   const [rating, setRating] = useState(10)
   const [message, setMessage] = useState('')
@@ -39,7 +39,12 @@ const FeedbackForm = () => {
       text,
       rating,
     }
-    addFeedback(newFeed)
+
+    if(editFeedback.edit) {
+      updateFeedback(editFeedback.item.id, newFeed)
+    } else {      
+      addFeedback(newFeed)
+    }
     setText('')
   }
 
