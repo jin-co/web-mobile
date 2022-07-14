@@ -7,48 +7,36 @@ import FeedbackForm from './components/FeedbackForm'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import About from './components/About'
 import { FaQuestion } from 'react-icons/fa'
+import { FeedbackProvider } from './components/context/FeedbackContext'
 
 const App = () => {
-  const [feedback, setFeedback] = useState(FeedbackData)
-
-  const addFeedback = (newFeed) => {
-    setFeedback([newFeed, ...feedback])
-  }
-
-  const deleteFeedback = (id) => {
-    setFeedback(feedback.filter((f) => f.id !== id))
-  }
-
-  const updateFeedback = (id) => {}
-
   return (
-    <Router>
-      <>
-        <Header />
-        <main className="container">
-          <Routes>
-            <Route
-              exact
-              path="/"
-              element={
-                <>
-                  <FeedbackStats feedback={feedback} />
-                  <FeedbackForm feedback={feedback} handleAdd={addFeedback} />
-                  <FeedbackList
-                    feedback={feedback}
-                    handleDelete={deleteFeedback}
-                  />
-                </>
-              }
-            />
-            <Route path="/about" element={<About />} />
-          </Routes>
-        </main>
-        <Link to="/about" className='link'>
-          <FaQuestion />
-        </Link>
-      </>
-    </Router>
+    <FeedbackProvider>
+      <Router>
+        <>
+          <Header />
+          <main className="container">
+            <Routes>
+              <Route
+                exact
+                path="/"
+                element={
+                  <>
+                    <FeedbackStats />
+                    <FeedbackForm />
+                    <FeedbackList />
+                  </>
+                }
+              />
+              <Route path="/about" element={<About />} />
+            </Routes>
+          </main>
+          <Link to="/about" className="link">
+            <FaQuestion />
+          </Link>
+        </>
+      </Router>
+    </FeedbackProvider>
   )
 }
 
