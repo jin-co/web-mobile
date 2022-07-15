@@ -1,20 +1,42 @@
-import { createContext, useState } from 'react'
+import { createContext, useState, useEffect } from 'react'
 import FeedbackData from '../../data/FeedbackData'
 
 const FeedbackContext = createContext()
 
 export const FeedbackProvider = (props) => {
-  const [feedback, setFeedback] = useState(FeedbackData)
+  const [feedback, setFeedback] = useState([])
   const [editFeedback, setEditFeedback] = useState({
     item: {},
     edit: false,
   })
 
-  const addFeedback = (newFeed) => {
-    setFeedback([newFeed, ...feedback])
+  useEffect(() => {
+    fetchData()
+  }, [])
+
+  const fetchData = async () => {
+    const res = await fetch('feedback?_sort=id&_order=desc')
+    const data = await res.json()
+    setFeedback(data)
   }
 
-  const deleteFeedback = (id) => {
+  const addFeedback = async (newFeed) => {
+    const res = await fetch('feedback', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newFeed),
+    })
+
+    const data = await res.json()
+    setFeedback([newFeed, ...data])
+  }
+
+  const deleteFeedback = async (id) => {
+    await fetch('feedback/' + id, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+    })
+
     setFeedback(feedback.filter((f) => f.id !== id))
   }
 
@@ -27,7 +49,7 @@ export const FeedbackProvider = (props) => {
   const feedbackEdit = (item) => {
     setEditFeedback({
       item,
-      edit: true
+      edit: true,
     })
   }
 
