@@ -40,9 +40,16 @@ export const FeedbackProvider = (props) => {
     setFeedback(feedback.filter((f) => f.id !== id))
   }
 
-  const updateFeedback = (id, upd) => {
+  const updateFeedback = async (id, upd) => {
+    const res = await fetch('feedback/' + id, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(upd),
+    })
+
+    const data = await res.json()
     setFeedback(
-      feedback.map((item) => (item.id === id ? { ...item, ...upd } : item))
+      feedback.map((item) => (item.id === id ? { ...item, ...data } : item))
     )
   }
 
