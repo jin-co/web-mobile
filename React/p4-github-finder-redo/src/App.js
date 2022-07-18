@@ -9,7 +9,7 @@ const App = () => {
       <div className="flex flex-col justify-between h-screen">
         <Navbar />
       </div>
-      <main>
+      <main className='container mx-auto px-3 pb-12'>
         <Routes>
           <Route />
         </Routes>
