@@ -6,10 +6,8 @@ import { useContext } from 'react'
 import GithubContext from '../../context/github/GithubContext'
 
 const UserResult = () => {  
-  const { fetchUsers, loading, users } = useContext(GithubContext)
-  useEffect(() => {
-    fetchUsers()
-  }, [])  
+  const { loading, users } = useContext(GithubContext)
+  
 
   if (!loading) {
     return (
