@@ -3,7 +3,7 @@ import { useState, useContext } from 'react'
 import GithubContext from '../../context/github/GithubContext'
 
 const UserSearch = () => {
-  const { users } = useContext(GithubContext)
+  const { users, searchUsers } = useContext(GithubContext)
   const [text, setText] = useState('')
 
   const handleChange = (e) => {
@@ -16,7 +16,7 @@ const UserSearch = () => {
     if (text === '') {
       //todo -> alert
     } else {
-      //todo -> search users
+      searchUsers(text)
       setText('')
     }
   }
