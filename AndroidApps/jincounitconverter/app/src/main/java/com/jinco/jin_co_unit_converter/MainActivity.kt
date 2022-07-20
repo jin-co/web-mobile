@@ -21,7 +21,11 @@ class MainActivity : AppCompatActivity() {
     private fun setUpSpinner() {
         val units = arrayOf("feet", "meter", "cm", "feet")
         val unitAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, units)
-        binding.spUnitFrom.adapter = unitAdapter
-        binding.spUnitTo.adapter = unitAdapter
+        binding.spValueFrom.adapter = unitAdapter
+        binding.spValueTo.adapter = unitAdapter
+
+        val unitType = arrayOf("lengt", "weight")
+        val unitTypeAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, unitType)
+        binding.spUnitType.adapter = unitTypeAdapter
     }
 }
