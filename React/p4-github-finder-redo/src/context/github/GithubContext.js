@@ -8,6 +8,7 @@ const GITHUB_URL = 'https://api.github.com/'
 export const GithubProvider = (props) => {
   const initialState = {
     users: [],
+    user: {},
     loading: false,
   }
 
@@ -26,25 +27,42 @@ export const GithubProvider = (props) => {
     })
   }
 
+  const getUser = async (login) => {
+    setLoading()
+    // const params = new URLSearchParams({
+    //   q: text,
+    // })
+    const res = await fetch(GITHUB_URL + `users/${login}`)
+    if (res.status === 404) {
+      window.location = '/notfound'
+    } else {
+      const data = await res.json()
+      dispatch({
+        type: 'GET_USER',
+        payload: data,
+      })
+    }
+  }
+
   const setLoading = () =>
     dispatch({
       type: 'SET_LOADING',
     })
 
-  //test
   const clearUser = () =>
     dispatch({
       type: 'CLEAR',
     })
-  //test
 
   return (
     <GithubContext.Provider
       value={{
         users: state.users,
         loading: state.loading,
+        user: state.user,
         searchUsers,
-        clearUser
+        clearUser,
+        getUser,
       }}
     >
       {props.children}
