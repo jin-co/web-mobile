@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">jin-co-unit-converter</string>
+
+    <string-array name="unit_type">
+        <item>Length</item>
+        <item>Temperature</item>
+        <item>Area</item>
+        <item>Volume</item>
+        <item>Weight</item>
+        <item>Time</item>
+    </string-array>
+
+    <string-array name="unit_length">
+        <item>Meter</item>
+        <item>Kilometer</item>
+        <item>Centimeter</item>
+        <item>Millimeter</item>
+        <item>Mile</item>
+        <item>Yard</item>
+        <item>Foot</item>
+        <item>Inch</item>
+    </string-array>
 </resources>

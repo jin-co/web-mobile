@@ -16,6 +16,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setUpSpinner()
+
+//        binding.btnCurrency.setOnContextClickListener {
+//            binding.spUnitType.
+//        }
     }
 
     private fun setUpSpinner() {
@@ -24,8 +28,7 @@ class MainActivity : AppCompatActivity() {
         binding.spValueFrom.adapter = unitAdapter
         binding.spValueTo.adapter = unitAdapter
 
-        val unitType = arrayOf("lengt", "weight")
-        val unitTypeAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, unitType)
+        val unitTypeAdapter = ArrayAdapter.createFromResource(this, R.array.unit_type, android.R.layout.simple_spinner_dropdown_item)
         binding.spUnitType.adapter = unitTypeAdapter
     }
 }
