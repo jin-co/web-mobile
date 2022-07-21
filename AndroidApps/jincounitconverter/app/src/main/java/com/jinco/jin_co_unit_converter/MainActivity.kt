@@ -2,8 +2,10 @@ package com.jinco.jin_co_unit_converter
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.ArrayAdapter
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.core.view.isVisible
 import com.jinco.jin_co_unit_converter.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -17,9 +19,13 @@ class MainActivity : AppCompatActivity() {
 
         setUpSpinner()
 
-//        binding.btnCurrency.setOnContextClickListener {
-//            binding.spUnitType.
-//        }
+        binding.btnCurrency.setOnClickListener {
+            binding.spUnitType.isVisible = false
+        }
+
+        binding.btnUnit.setOnClickListener {
+            binding.spUnitType.isVisible = true
+        }
     }
 
     private fun setUpSpinner() {
@@ -28,7 +34,11 @@ class MainActivity : AppCompatActivity() {
         binding.spValueFrom.adapter = unitAdapter
         binding.spValueTo.adapter = unitAdapter
 
-        val unitTypeAdapter = ArrayAdapter.createFromResource(this, R.array.unit_type, android.R.layout.simple_spinner_dropdown_item)
+        val unitTypeAdapter = ArrayAdapter.createFromResource(
+            this,
+            R.array.unit_type,
+            android.R.layout.simple_spinner_dropdown_item
+        )
         binding.spUnitType.adapter = unitTypeAdapter
     }
 }
