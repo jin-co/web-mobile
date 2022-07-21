@@ -5,13 +5,15 @@ import { useParams } from 'react-router-dom'
 import { FaCodepen, FaStore, FaUserFriends, FaUsers } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import Spinner from '../components/layout/Spinner'
+import Repo from '../components/repos/Repo'
 
 const User = () => {
-  const { getUser, user, loading } = useContext(GithubContext)
+  const { getUser, user, loading, repos, getRepos } = useContext(GithubContext)
   const params = useParams()
 
   useEffect(() => {
     getUser(params.login)
+    getRepos(params.login)
   }, [])
 
   const {
@@ -32,7 +34,7 @@ const User = () => {
   } = user
 
   const websiteUrl = blog?.startsWith('http') ? blog : 'https://' + blog
-  
+
   if (loading) {
     return <Spinner />
   }
@@ -159,7 +161,7 @@ const User = () => {
           </div>
         </div>
 
-        {/* <RepoList repos={repos} /> */}
+        <Repo repos={repos} />
       </div>
     </>
   )
