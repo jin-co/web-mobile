@@ -1,8 +1,12 @@
 import React from 'react'
+import UserResults from '../components/users/UserResults'
 
-const Home = () => {
+const Home = () => {  
+
   return (
-    <div>Home</div>
+    <div>
+      <UserResults/>
+    </div>
   )
 }
 

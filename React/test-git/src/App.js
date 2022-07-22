@@ -6,12 +6,13 @@ import About from './pages/About'
 import Notfound from './pages/Notfound'
 import Footer from './components/layout/Footer'
 
-const App = () => {
+
+const App = () => {  
   return (
     <Router>
-      <div className='flex flex-col justify-between h-screen'>
+      <div className="flex flex-col justify-between h-screen">
         <Navbar />
-        <main>
+        <main className="mx-auto pb-12 container px-3">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -19,7 +20,7 @@ const App = () => {
             <Route path="/*" element={<Notfound />} />
           </Routes>
         </main>
-        <Footer/>
+        <Footer />
       </div>
     </Router>
   )
