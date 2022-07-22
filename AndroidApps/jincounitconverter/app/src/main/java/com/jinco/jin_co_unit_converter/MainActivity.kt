@@ -20,11 +20,11 @@ class MainActivity : AppCompatActivity() {
         setUpSpinner()
 
         binding.btnCurrency.setOnClickListener {
-            binding.spUnitType.isVisible = false
+            binding.spUnitType.isEnabled = false
         }
 
         binding.btnUnit.setOnClickListener {
-            binding.spUnitType.isVisible = true
+            binding.spUnitType.isEnabled = true
         }
     }
 
