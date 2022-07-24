@@ -22,6 +22,28 @@
     </string-array>
 
     <string-array name="unit_temperature">
+
+    </string-array>
+    <string-array name="unit_area">
+        <item>Sq millimeter</item>
+        <item>Sq centimeter</item>
+        <item>Sq meter</item>
+        <item>Sq mile</item>
+        <item>Sq yard</item>
+        <item>Sq foot</item>
+        <item>Sq inch</item>
+        <item>Sq rod</item>
+        <item>hectare</item>
+        <item>Are</item>
+        <item>Acre</item>
+        <item>Rood</item>
+        <item>Barn</item>
+    </string-array>
+
+    <string-array name="unit_volume"></string-array>
+    <string-array name="unit_weight"></string-array>
+
+    <string-array name="unit_time">
         <item>Millisecond</item>
         <item>Second</item>
         <item>Minute</item>
@@ -31,4 +53,6 @@
         <item>Month</item>
         <item>Year</item>
     </string-array>
+
+
 </resources>
