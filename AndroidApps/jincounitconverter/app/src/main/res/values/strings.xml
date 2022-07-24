@@ -20,4 +20,15 @@
         <item>Foot</item>
         <item>Inch</item>
     </string-array>
+
+    <string-array name="unit_temperature">
+        <item>Millisecond</item>
+        <item>Second</item>
+        <item>Minute</item>
+        <item>Hour</item>
+        <item>Day</item>
+        <item>Week</item>
+        <item>Month</item>
+        <item>Year</item>
+    </string-array>
 </resources>
