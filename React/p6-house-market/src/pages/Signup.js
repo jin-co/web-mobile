@@ -67,16 +67,16 @@ const Signup = () => {
             <Link to="/forgot-password" className="forgotPasswordLink">
               Forgot Password
             </Link>
-            <div className="signupBar">
-              <p className="singInText">Sign In</p>
-              <button className="signupButton">
+            <div className="signUpBar">
+              <p className="singUpText">Sign In</p>
+              <button className="signUpButton">
                 <ArrowRightIcon fill="#fff" width="34px" height="34px" />
               </button>
             </div>
           </form>
           //todo -> google auth
-          <Link to="/sign-up" className="registerLink">
-            Sign Up Instead
+          <Link to="/sign-in" className="registerLink">
+            Sign In Instead
           </Link>
         </main>
       </div>
