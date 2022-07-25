@@ -22,7 +22,10 @@
     </string-array>
 
     <string-array name="unit_temperature">
-
+        <item>Celsius</item>
+        <item>Fahrenheit</item>
+        <item>Kelvin</item>
+        <item>Rankine</item>
     </string-array>
     <string-array name="unit_area">
         <item>Sq millimeter</item>
@@ -41,7 +44,37 @@
     </string-array>
 
     <string-array name="unit_volume"></string-array>
-    <string-array name="unit_weight"></string-array>
+    <string-array name="unit_weight">
+        <item>Kilogram</item>
+        <item>Gram</item>
+        <item>Decigram</item>
+        <item>Centigram</item>
+        <item>Milligram</item>
+        <item>Microgram</item>
+        <item>Nanogram</item>
+        <item>Picogram</item>
+        <item>Femtogram</item>
+        <item>Dekagram</item>
+        <item>Hectogram</item>
+        <item>Megagram</item>
+        <item>Metric ton</item>
+        <item>Long ton</item>
+        <item>Short ton</item>
+        <item>Imperial ton</item>
+        <item>Metric quintal</item>
+        <item>US quintal</item>
+        <item>French quintal</item>
+        <item>Stone</item>
+        <item>Pound</item>
+        <item>Ounce</item>
+        <item>Troy ounce</item>
+        <item>Slug</item>
+        <item>Tola</item>
+        <item>Dram</item>
+        <item>Carat</item>
+        <item>Grain</item>
+        <item>Atomic mass unit</item>
+    </string-array>
 
     <string-array name="unit_time">
         <item>Millisecond</item>
