@@ -26,8 +26,6 @@ class MainActivity : AppCompatActivity() {
         binding.btnUnit.setOnClickListener {
             binding.spUnitType.isEnabled = true
         }
-
-        binding.spUnitType.onItemSelectedListener(this)
     }
 
     private fun setUpSpinner() {
