@@ -1,8 +1,12 @@
 import React from 'react'
+import Card from '../components/shared/Card'
+import { Link } from 'react-router-dom'
 
 const About = () => {
   return (
-    <div>About</div>
+    <Card>
+      <Link to="/">go back</Link>
+    </Card>
   )
 }
 
