@@ -1,14 +1,17 @@
 package com.jinco.jin_co_unit_converter
 
+import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.isVisible
 import com.jinco.jin_co_unit_converter.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         // Handle the splash screen transition.
@@ -26,6 +29,8 @@ class MainActivity : AppCompatActivity() {
         binding.btnUnit.setOnClickListener {
             binding.spUnitType.isEnabled = true
         }
+
+        binding.spUnitType.onItemSelectedListener = this
     }
 
     private fun setUpSpinner() {
@@ -40,5 +45,14 @@ class MainActivity : AppCompatActivity() {
             android.R.layout.simple_spinner_dropdown_item
         )
         binding.spUnitType.adapter = unitTypeAdapter
+    }
+
+    override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+        Log.e("test", p2.toString())
+        
+    }
+
+    override fun onNothingSelected(parent: AdapterView<*>) {
+        // Another interface callback
     }
 }
