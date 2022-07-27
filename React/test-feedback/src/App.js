@@ -9,11 +9,11 @@ const App = () => {
   const [feedback, setFeedback] = useState(FeedbackData)
   return (
     <>
-      <Header/>
-      <main className='container'>
-      
-      <FeedbackForm/>
-        <FeedbackList/>
+      <Header />
+      <main className="container">
+        <FeedbackStats feedback={feedback} />
+        <FeedbackForm feedback={feedback} />
+        <FeedbackList feedback={feedback} />
       </main>
     </>
   )
