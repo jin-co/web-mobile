@@ -3,6 +3,7 @@ import Card from './shared/Card'
 import Button from './shared/Button'
 import { useState } from 'react'
 import SelectRating from './SelectRating'
+import { v4 as uuid } from 'uuid'
 
 const FeedbackForm = () => {
   const [text, setText] = useState('')
@@ -20,12 +21,24 @@ const FeedbackForm = () => {
     }
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(rating)
+    const newFeed = {
+      id: uuid(),
+      text,
+      rating,
+    }
+  }
+
   return (
     <Card>
       <SelectRating select={(rating) => setRating(rating)} />
-      <form action="">
+      <form action="" onSubmit={handleSubmit}>
         <input type="text" onChange={handleChange} />
-        <Button isDisabled={isDisabled}>Add</Button>
+        <Button type="submit" isDisabled={isDisabled}>
+          Add
+        </Button>
       </form>
       {message}
     </Card>
