@@ -5,7 +5,7 @@ import { useState } from 'react'
 import SelectRating from './SelectRating'
 import { v4 as uuid } from 'uuid'
 
-const FeedbackForm = () => {
+const FeedbackForm = ({handleAdd}) => {
   const [text, setText] = useState('')
   const [message, setMessage] = useState('')
   const [isDisabled, setIsDisabled] = useState(true)
@@ -17,6 +17,7 @@ const FeedbackForm = () => {
       setMessage('')
     } else {
       setIsDisabled(true)
+      setText(e.target.value)
       setMessage('Over 10')
     }
   }
@@ -29,6 +30,7 @@ const FeedbackForm = () => {
       text,
       rating,
     }
+    handleAdd(newFeed)
   }
 
   return (

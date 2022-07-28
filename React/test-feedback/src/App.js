@@ -12,17 +12,14 @@ const App = () => {
   const [feedback, setFeedback] = useState(FeedbackData)
 
   const addFeed = (newFeed) => {
-
+    setFeedback([newFeed, ...feedback])
   }
 
   const deleteFeed = (id) => {
-    setFeedback(feedback.filter(f => f.id !== id))
+    setFeedback(feedback.filter((f) => f.id !== id))
   }
 
-  const updateFeed = (id, newFeed) => {
-
-  }
-
+  const updateFeed = (id, newFeed) => {}
 
   return (
     <Router>
@@ -36,7 +33,7 @@ const App = () => {
               element={
                 <>
                   <FeedbackStats feedback={feedback} />
-                  <FeedbackForm feedback={feedback} />
+                  <FeedbackForm feedback={feedback} handleAdd={addFeed} />
                   <FeedbackList feedback={feedback} handleDelete={deleteFeed} />
                 </>
               }
