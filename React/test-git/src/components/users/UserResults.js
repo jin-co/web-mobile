@@ -1,24 +1,15 @@
 import React from 'react'
 import UserItem from './UserItem'
-import { useEffect, useState } from 'react'
+import { useEffect, useContext } from 'react'
 import Spinner from '../layout/Spinner'
+import GithubContext from '../../context/GithubContext'
 
-const URL = 'https://api.github.com/'
-
-const UserResults = () => {
-  const [users, setUsers] = useState([])
-  const [loading, setLoading] = useState(true)
+const UserResults = () => {  
+  const { users, loading, fetchUsers } = useContext(GithubContext)
 
   useEffect(() => {
     fetchUsers()
   }, [])
-
-  const fetchUsers = async () => {
-    const res = await fetch(URL + 'users')
-    const data = await res.json()
-    setUsers(data)
-    setLoading(false)
-  }
 
   if (loading) {
     return <Spinner />

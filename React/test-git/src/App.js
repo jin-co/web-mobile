@@ -5,24 +5,26 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Notfound from './pages/Notfound'
 import Footer from './components/layout/Footer'
+import { GithubProvider } from './context/GithubContext'
 
-
-const App = () => {  
+const App = () => {
   return (
-    <Router>
-      <div className="flex flex-col justify-between h-screen">
-        <Navbar />
-        <main className="mx-auto pb-12 container px-3">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/notfound" element={<Notfound />} />
-            <Route path="/*" element={<Notfound />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <GithubProvider>
+      <Router>
+        <div className="flex flex-col justify-between h-screen">
+          <Navbar />
+          <main className="mx-auto pb-12 container px-3">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/notfound" element={<Notfound />} />
+              <Route path="/*" element={<Notfound />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </GithubProvider>
   )
 }
 
