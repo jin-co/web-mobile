@@ -22,7 +22,7 @@ const FeedbackForm = () => {
 
   return (
     <Card>
-      <SelectRating />
+      <SelectRating select={(rating) => setRating(rating)} />
       <form action="">
         <input type="text" onChange={handleChange} />
         <Button isDisabled={isDisabled}>Add</Button>
