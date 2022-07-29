@@ -27,6 +27,7 @@
         <item>Kelvin</item>
         <item>Rankine</item>
     </string-array>
+
     <string-array name="unit_area">
         <item>Sq millimeter</item>
         <item>Sq centimeter</item>
@@ -43,7 +44,45 @@
         <item>Barn</item>
     </string-array>
 
-    <string-array name="unit_volume"></string-array>
+    <string-array name="unit_volume">
+        <item>US ounce</item>
+        <item>US tablespoon</item>
+        <item>US teaspoon</item>
+        <item>US gill</item>
+        <item>US beer barrel</item>
+        <item>Oil barrel</item>
+        <item>Imperial bushel</item>
+        <item>Imperial peck</item>
+        <item>Imperial gallon</item>
+        <item>Imperial quart</item>
+        <item>Imperial pint</item>
+        <item>Imperial ounce</item>
+        <item>Imperial tsp</item>
+        <item>namoliter</item>
+        <item>Microliter</item>
+        <item>Milliliter</item>
+        <item>Centiliter</item>
+        <item>Deciliter</item>
+        <item>Liter</item>
+        <item>Decaliter</item>
+        <item>Hectoliter</item>
+        <item>Kiloliter</item>
+        <item>Megaliter</item>
+        <item>Cubic nanometer</item>
+        <item>Cubic millimeter</item>
+        <item>Cubic centimeter</item>
+        <item>Cubic decicmeter</item>
+        <item>Cubic meter</item>
+        <item>Cubic kilometer</item>
+        <item>Cubic foot</item>
+        <item>Cubic inch</item>
+        <item>Cubic yard</item>
+        <item>Cubic mile</item>
+        <item>Cubic rod</item>
+        <item>Cord</item>
+        <item>Hogshead</item>
+    </string-array>
+
     <string-array name="unit_weight">
         <item>Kilogram</item>
         <item>Gram</item>

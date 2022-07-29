@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         setContentView(binding.root)
 
         setUpUnitTypeSpinner()
-        setUpConvertSpinner()
 
         binding.btnCurrency.setOnClickListener {
             binding.spUnitType.isEnabled = false
@@ -32,10 +31,10 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         binding.spUnitType.onItemSelectedListener = this
     }
 
-    private fun setUpConvertSpinner() {
+    private fun setUpConvertSpinner(spinnerId:Int) {
         val unitAdapter = ArrayAdapter.createFromResource(
             this,
-            R.array.unit_length,
+            spinnerId,
             android.R.layout.simple_spinner_dropdown_item
         )
         binding.spValueFrom.adapter = unitAdapter
@@ -53,12 +52,12 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
         when (p2) {
-            0 -> Log.e("test1", R.array.unit_length.toString())
-            1 -> Log.e("test2", p2.toString())
-            2 -> Log.e("test3", p2.toString())
-            3 -> Log.e("test4", p2.toString())
-            4 -> Log.e("test5", p2.toString())
-            5 -> Log.e("test6", p2.toString())
+            0 -> setUpConvertSpinner(R.array.unit_length)
+            1 -> setUpConvertSpinner(R.array.unit_temperature)
+            2 -> setUpConvertSpinner(R.array.unit_area)
+            3 -> setUpConvertSpinner(R.array.unit_volume)
+            4 -> setUpConvertSpinner(R.array.unit_weight)
+            5 -> setUpConvertSpinner(R.array.unit_time)
         }
     }
 
