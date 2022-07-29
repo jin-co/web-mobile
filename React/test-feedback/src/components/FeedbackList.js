@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import FeedbackItem from './FeedbackItem'
 import { AnimatePresence as Animate, motion } from 'framer-motion'
 import FeedbackContext from '../context/FeedbackContext'
-import { useContext } from 'react'
 
 const FeedbackList = () => {
   const {feedback} = useContext(FeedbackContext)

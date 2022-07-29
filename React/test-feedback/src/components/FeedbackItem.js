@@ -1,9 +1,11 @@
 import React from 'react'
 import Card from './shared/Card'
 import { FaTimes, FaEdit } from 'react-icons/fa'
+import FeedbackContext from '../context/FeedbackContext'
+import { useContext } from 'react'
 
-const FeedbackItem = ({ item, handleDelete }) => {
-  
+const FeedbackItem = ({ item }) => {
+  const {deleteFeed} = useContext(FeedbackContext)
 
   return (
     <Card>
@@ -11,7 +13,7 @@ const FeedbackItem = ({ item, handleDelete }) => {
       <FaTimes
         className="close"
         color="red"
-        onClick={() => handleDelete(item.id)}
+        onClick={() => deleteFeed(item.id)}
       />
       <FaEdit className="edit" color="purple" />
       <p className="rating-display">{item.rating}</p>
