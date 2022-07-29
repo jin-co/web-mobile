@@ -1,8 +1,18 @@
 import React from 'react'
 import { useState } from 'react'
+import { useContext, useEffect } from 'react'
+import FeedbackContext from '../context/FeedbackContext'
 
 const SelectRating = ({ select }) => {
+  const {editMode} = useContext(FeedbackContext)
   const [selected, setSelected] = useState(10)
+
+  useEffect(() => {
+    if (editMode.edit) {
+      setSelected(editMode.item.rating)      
+    }
+  }, [editMode])
+
   const handleChange = (e) => {    
     setSelected(+e.target.value)
     select(+e.target.value)

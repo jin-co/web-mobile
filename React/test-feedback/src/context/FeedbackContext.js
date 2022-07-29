@@ -11,6 +11,13 @@ export const FeedbackProvider = (props) => {
     edit: false,
   })
 
+  const getEditItem = (item) => {
+    setEditMode({
+      item: item,
+      edit: true
+    })
+  }
+
   const addFeed = (newFeed) => {
     setFeedback([newFeed, ...feedback])
   }
@@ -32,7 +39,7 @@ export const FeedbackProvider = (props) => {
       value={{
         feedback,
         editMode,
-        setEditMode,
+        getEditItem,
         addFeed,
         deleteFeed,
         updateFeed,
