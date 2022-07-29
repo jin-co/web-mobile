@@ -28,8 +28,8 @@ export const FeedbackProvider = (props) => {
 
   const updateFeed = (id, newFeed) => {
     setFeedback(
-      feedback.filter((f) =>
-        f.id === id ? [...feedback, ...newFeed] : [...feedback]
+      feedback.map((f) =>
+        f.id === id ? {...f, ...newFeed} : f
       )
     )
   }
