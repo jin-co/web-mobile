@@ -34,8 +34,7 @@ const FeedbackForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log(rating)
-    const newFeed = {
-      id: uuid(),
+    const newFeed = {      
       text,
       rating,
     }
