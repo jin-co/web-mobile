@@ -1,17 +1,28 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useState } from 'react'
+import GithubContext from '../../context/GithubContext'
 
 const UserSearch = () => {
   const [text, setText] = useState('')
+  const { users, searchUser, clearResult } = useContext(GithubContext)
 
   const handleChange = (e) => {
     setText(e.target.value)
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (text === '') {
+    } else {
+      searchUser(text)
+      setText('')
+    }
+  }
+
   return (
     <div className="grid grid-cols-1 xl:grid-cols-2 mb-8 gap-8">
       <div>
-        <form action="">
+        <form action="" onSubmit={handleSubmit}>
           <div className="form-control">
             <div className="relative">
               <input
@@ -31,9 +42,11 @@ const UserSearch = () => {
           </div>
         </form>
       </div>
-      <div>
-        <button className="btn btn-ghost btn-lg">Clear</button>
-      </div>
+      {users.length > 0 && (
+        <div>
+          <button className="btn btn-ghost btn-lg" onClick={clearResult}>Clear</button>
+        </div>
+      )}
     </div>
   )
 }

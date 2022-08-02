@@ -15,6 +15,13 @@ const GithubReducer = (state, action) => {
         loading: true,
       }
 
+    case 'CLEAR_RESULT':
+      return {
+        ...state,
+        users: [],
+        loading: false,
+      }
+
     default:
       return state
   }
