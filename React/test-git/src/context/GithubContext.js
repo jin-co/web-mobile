@@ -18,6 +18,7 @@ export const GithubProvider = (props) => {
   const [state, dispatch] = useReducer(GithubReducer, initial)
 
   const fetchUsers = async () => {
+    setLoading()
     const res = await fetch(URL + 'users')
     const data = await res.json()
 
@@ -29,6 +30,7 @@ export const GithubProvider = (props) => {
     // setLoading(false)
   }
 
+  const setLoading = () => dispatch({ type: 'SET_LOADING' })
   return (
     <GithubContext.Provider
       value={{

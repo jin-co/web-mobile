@@ -5,11 +5,7 @@ import Spinner from '../layout/Spinner'
 import GithubContext from '../../context/GithubContext'
 
 const UserResults = () => {  
-  const { users, loading, fetchUsers } = useContext(GithubContext)
-
-  useEffect(() => {
-    fetchUsers()
-  }, [])
+  const { users, loading, fetchUsers } = useContext(GithubContext)  
 
   if (loading) {
     return <Spinner />
