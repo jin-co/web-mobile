@@ -28,7 +28,18 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             binding.spUnitType.isEnabled = true
         }
 
+        binding.btnSwitch.setOnClickListener {
+            switchFromTo()
+        }
+
         binding.spUnitType.onItemSelectedListener = this
+    }
+
+    private fun switchFromTo() {
+        Log.e("test", binding.spValueFrom.selectedItem.toString())
+        val fromUnitPosition = binding.spValueFrom.getPosition binding.spValueFrom.selectedItem
+        val toUnit = binding.spValueTo.selectedItem
+        binding.spValueFrom.setSelection()
     }
 
     private fun setUpConvertSpinner(spinnerId:Int) {
