@@ -8,16 +8,18 @@ import Footer from './component/layout/Footer'
 const App = () => {
   return (
     <Router>
-      <>
+      <div className="flex flex-col justify-between h-screen">
         <Header />
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/notfound" element={<Notfound />} />
-          <Route path="/*" element={<Notfound />} />
-        </Routes>
+        <main>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/notfound" element={<Notfound />} />
+            <Route path="/*" element={<Notfound />} />
+          </Routes>
+        </main>
         <Footer />
-      </>
+      </div>
     </Router>
   )
 }
