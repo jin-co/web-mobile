@@ -36,10 +36,10 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     }
 
     private fun switchFromTo() {
-        Log.e("test", binding.spValueFrom.selectedItem.toString())
-        val fromUnitPosition = binding.spValueFrom.getPosition binding.spValueFrom.selectedItem
-        val toUnit = binding.spValueTo.selectedItem
-        binding.spValueFrom.setSelection()
+        val fromUnitPosition = binding.spValueFrom.selectedItemPosition
+        val toUnitPosition = binding.spValueTo.selectedItemPosition
+        binding.spValueFrom.setSelection(toUnitPosition)
+        binding.spValueTo.setSelection(fromUnitPosition)
     }
 
     private fun setUpConvertSpinner(spinnerId:Int) {
