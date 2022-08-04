@@ -8,6 +8,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.jinco.jin_co_unit_converter.databinding.ActivityMainBinding
+import java.text.DecimalFormat
 
 class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     lateinit var binding: ActivityMainBinding
@@ -33,6 +34,18 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         }
 
         binding.spUnitType.onItemSelectedListener = this
+
+        binding.btnConvert.setOnClickListener {
+            convertUnit()
+        }
+    }
+
+    private fun convertUnit() {
+        val decimalFormat = DecimalFormat("#.###")
+        val from = binding.etFrom.text.toString().toDouble()
+        val to = binding.etTo.text.toString().toDouble()
+
+        binding.tvResult.text = "result: ${decimalFormat.format(from * to)}"
     }
 
     private fun switchFromTo() {
