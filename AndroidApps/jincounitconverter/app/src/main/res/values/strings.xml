@@ -11,14 +11,14 @@
     </string-array>
 
     <string-array name="unit_length">
+        <item>Millimeter</item>
+        <item>Centimeter</item>
         <item>Meter</item>
         <item>Kilometer</item>
-        <item>Centimeter</item>
-        <item>Millimeter</item>
-        <item>Mile</item>
-        <item>Yard</item>
-        <item>Foot</item>
         <item>Inch</item>
+        <item>Foot</item>
+        <item>Yard</item>
+        <item>Mile</item>
     </string-array>
 
     <string-array name="unit_temperature">
