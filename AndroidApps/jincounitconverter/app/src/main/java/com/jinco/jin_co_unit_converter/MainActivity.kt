@@ -76,12 +76,12 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
         when (p2) {
-            0 -> setUpConvertSpinner(R.array.unit_length)
-            1 -> setUpConvertSpinner(R.array.unit_temperature)
-            2 -> setUpConvertSpinner(R.array.unit_area)
-            3 -> setUpConvertSpinner(R.array.unit_volume)
-            4 -> setUpConvertSpinner(R.array.unit_weight)
-            5 -> setUpConvertSpinner(R.array.unit_time)
+            0 -> setUpConvertSpinner(R.array.unit_area)
+            1 -> setUpConvertSpinner(R.array.unit_length)
+            2 -> setUpConvertSpinner(R.array.unit_temperature)
+            3 -> setUpConvertSpinner(R.array.unit_time)
+            4 -> setUpConvertSpinner(R.array.unit_volume)
+            5 -> setUpConvertSpinner(R.array.unit_weight)
         }
     }
 
