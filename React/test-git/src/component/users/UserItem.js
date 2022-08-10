@@ -1,8 +1,10 @@
 import React from 'react'
 
-const UserItem = () => {
+const UserItem = ({user}) => {
   return (
-    <div>UserItem</div>
+    <div>
+    {user.login}
+    </div>
   )
 }
 
