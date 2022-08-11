@@ -9,4 +9,6 @@ class Length {
     val foot: Double = 0.0
     val yard: Double = 0.0
     val mile: Double = 0.0
+
+    get
 }

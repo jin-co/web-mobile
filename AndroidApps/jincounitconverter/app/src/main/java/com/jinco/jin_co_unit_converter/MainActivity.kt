@@ -12,6 +12,8 @@ import java.text.DecimalFormat
 
 class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     lateinit var binding: ActivityMainBinding
+    var type: String = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         // Handle the splash screen transition.
         val splashScreen = installSplashScreen()
@@ -35,6 +37,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
         binding.spUnitType.onItemSelectedListener = this
 
+        // Converts the value
         binding.btnConvert.setOnClickListener {
             convertUnit()
         }
@@ -55,7 +58,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         binding.spValueTo.setSelection(fromUnitPosition)
     }
 
-    private fun setUpConvertSpinner(spinnerId:Int) {
+    private fun setUpConvertSpinner(spinnerId: Int) {
         val unitAdapter = ArrayAdapter.createFromResource(
             this,
             spinnerId,
@@ -76,7 +79,10 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
         when (p2) {
-            0 -> setUpConvertSpinner(R.array.unit_area)
+            0 -> {
+                setUpConvertSpinner(R.array.unit_area)
+                type = p0?.selectedItem.toString()
+            }
             1 -> setUpConvertSpinner(R.array.unit_length)
             2 -> setUpConvertSpinner(R.array.unit_temperature)
             3 -> setUpConvertSpinner(R.array.unit_time)
