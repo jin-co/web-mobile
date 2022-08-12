@@ -4,7 +4,7 @@ import Card from './shared/Card'
 import Button from './shared/Button'
 import { useState } from 'react'
 
-const FeedbackForm = ({ feedback }) => {
+const FeedbackForm = ({ feedback, handleAdd }) => {
   const [text, setText] = useState('')
   const [message, setMessage] = useState('')
   const [rating, setRating] = useState(0)
@@ -12,6 +12,11 @@ const FeedbackForm = ({ feedback }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    const newFeed = {
+      text,
+      rating
+    }
+    handleAdd(newFeed)
   }
 
   const handleChange = (e) => {
@@ -21,12 +26,13 @@ const FeedbackForm = ({ feedback }) => {
     } else {
       setMessage('')
       setBtnDisabled(false)
+      setText(e.target.value)      
     }
   }
 
   return (
     <Card>
-      <RatingSelect selected={(rating) => setRating(rating)} />
+      <RatingSelect ratingSelected={(rating) => setRating(rating)} />
       <form action="" onSubmit={handleSubmit}>
         <input type="text" onChange={handleChange} />
         <Button isDisabled={btnDisabled} type='submit'>Add</Button>

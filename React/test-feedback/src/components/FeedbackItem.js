@@ -6,8 +6,12 @@ const FeedbackItem = ({ item, handleDelete }) => {
   return (
     <Card>
       <p> {item.text} </p>
-      <FaTimes className="close" color='red' onClick={() => handleDelete(item.id)} />
-      <FaEdit className="edit" color='purple' />
+      <FaTimes
+        className="close"
+        color="red"
+        onClick={() => handleDelete(item.id)}
+      />
+      <FaEdit className="edit" color="purple" />
       <p> {item.rating} </p>
     </Card>
   )
