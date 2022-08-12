@@ -81,14 +81,28 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         when (p2) {
             0 -> {
                 setUpConvertSpinner(R.array.unit_area)
-                type = p0?.selectedItem.toString()
+
             }
-            1 -> setUpConvertSpinner(R.array.unit_length)
-            2 -> setUpConvertSpinner(R.array.unit_temperature)
-            3 -> setUpConvertSpinner(R.array.unit_time)
-            4 -> setUpConvertSpinner(R.array.unit_volume)
-            5 -> setUpConvertSpinner(R.array.unit_weight)
+            1 -> {
+                setUpConvertSpinner(R.array.unit_length)
+                type = p0?.selectedItem.toString()
+                Log.e("test", type)
+            }
+            2 -> {
+                setUpConvertSpinner(R.array.unit_temperature)
+            }
+            3 -> {
+                setUpConvertSpinner(R.array.unit_time)
+            }
+            4 -> {
+                setUpConvertSpinner(R.array.unit_volume)
+            }
+            5 -> {
+                setUpConvertSpinner(R.array.unit_weight)
+            }
         }
+        type = p0?.selectedItem.toString()
+        Log.e("test", type)
     }
 
     override fun onNothingSelected(parent: AdapterView<*>) {
