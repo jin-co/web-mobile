@@ -10,13 +10,25 @@ import { FaQuestion } from 'react-icons/fa'
 const App = () => {
   const [feedback, setFeedback] = useState(FeedbackData)
 
+  const addFeed = (newFeed) => {
+    setFeedback([newFeed, ...feedback])
+  }
+
+  const deleteFeed = (id) => {
+    setFeedback(feedback.filter((f) => f.id !== id))
+  }
+
+  const updateFeed = (newFeed) => {
+    // todo
+  }
+
   return (
     <>
       <Header />
       <div className="container">
         <FeedbackStat feedback={feedback} />
-        <FeedbackForm feedback={feedback} />
-        <FeedbackList feedback={feedback} />
+        <FeedbackForm feedback={feedback} handleAdd={addFeed} />
+        <FeedbackList feedback={feedback} handleDelete={deleteFeed} />
       </div>
     </>
   )
