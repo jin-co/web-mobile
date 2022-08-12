@@ -2,9 +2,13 @@ import React from 'react'
 import RatingSelect from './RatingSelect'
 import Card from './shared/Card'
 import Button from './shared/Button'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import FeedContext from '../context/FeedContext'
 
-const FeedbackForm = ({ feedback, handleAdd }) => {
+
+const FeedbackForm = () => {
+  const { addFeed } = useContext(FeedContext)
+
   const [text, setText] = useState('')
   const [message, setMessage] = useState('')
   const [rating, setRating] = useState(0)
@@ -16,7 +20,7 @@ const FeedbackForm = ({ feedback, handleAdd }) => {
       text,
       rating
     }
-    handleAdd(newFeed)
+    addFeed(newFeed)
   }
 
   const handleChange = (e) => {
