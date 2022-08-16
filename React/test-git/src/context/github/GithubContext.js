@@ -11,7 +11,7 @@ export const GithubProvider = (props) => {
     users: [],
     loading: true
   }
-
+  
   const [state, dispatch] = useReducer(gitHubReducer, initial)
 
   useEffect(() => {
