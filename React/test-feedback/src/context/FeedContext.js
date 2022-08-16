@@ -1,15 +1,26 @@
 import React from 'react'
-import { createContext, useState } from 'react'
+import { createContext, useState, useEffect } from 'react'
 import FeedbackData from '../data/FeedbackData'
 
 const FeedContext = createContext()
+const URL = 'http://localhost:5000/feedback'
 
 export const FeedProvider  = (props) => {
-  const [feedback, setFeedback] = useState(FeedbackData)
+  const [feedback, setFeedback] = useState([])
   const [editMode, setEditMode] = useState({
     item: {},
     edit: false
   })
+
+  useEffect(() => {
+    fetchData()
+  }, [])
+
+  const fetchData = async() => {
+    const res = await fetch(URL)
+    const data = await res.json()
+    setFeedback(data)
+  }
 
   const addFeed = (newFeed) => {
     setFeedback([newFeed, ...feedback])
