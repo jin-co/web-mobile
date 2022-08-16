@@ -1,11 +1,20 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
+import FeedContext from '../context/FeedContext'
 
-const RatingSelect = ({ratingSelected}) => {
+const RatingSelect = ({ ratingSelected }) => {
   const [selected, setSelected] = useState(10)
+  const { editMode } = useContext(FeedContext)
+
+  useEffect(() => {
+    if (editMode.edit) {
+      setSelected(+editMode.item.rating)
+    }
+  }, editMode)
+
   const handleChange = (e) => {
     setSelected(+e.target.value)
-    console.log(typeof(e.target.value))
+    console.log(typeof e.target.value)
     ratingSelected(e.target.value)
   }
 
@@ -18,7 +27,7 @@ const RatingSelect = ({ratingSelected}) => {
             id={`rating - ${i + 1}`}
             value={i + 1}
             onChange={handleChange}
-            checked={selected === (i + 1) ? true : false}
+            checked={selected === i + 1 ? true : false}
           />
           <label htmlFor={`rating - ${i + 1}`}>{i + 1}</label>
         </li>

@@ -5,18 +5,18 @@ import FeedbackData from '../data/FeedbackData'
 const FeedContext = createContext()
 const URL = 'http://localhost:5000/feedback'
 
-export const FeedProvider  = (props) => {
+export const FeedProvider = (props) => {
   const [feedback, setFeedback] = useState([])
   const [editMode, setEditMode] = useState({
     item: {},
-    edit: false
+    edit: false,
   })
 
   useEffect(() => {
     fetchData()
   }, [])
 
-  const fetchData = async() => {
+  const fetchData = async () => {
     const res = await fetch(URL)
     const data = await res.json()
     setFeedback(data)
@@ -31,22 +31,29 @@ export const FeedProvider  = (props) => {
   }
 
   const updateFeed = (id, newFeed) => {
-    setFeedback(feedback.map(feed => feed.id === id ? feed : [...feedback, newFeed]))
+    setFeedback(
+      feedback.map((feed) => (feed.id === id ? feed : [...feedback, newFeed]))
+    )
   }
 
-  const getFeed = (id) => [
-
-  ]
+  const getFeed = (item) => {
+    console.log('getFeed: ', item)
+    setEditMode({ item: item, edit: true })
+    console.log('edit item: ', editMode)
+  }
 
   return (
-    <FeedContext.Provider value={{
-      feedback,
-      editMode,
-      getFeed,
-      addFeed,
-      deleteFeed,
-      updateFeed
-    }}>
+    <FeedContext.Provider
+      value={{
+        feedback,
+        editMode,
+        getFeed,
+        addFeed,
+        deleteFeed,
+        updateFeed,
+        getFeed,
+      }}
+    >
       {props.children}
     </FeedContext.Provider>
   )
