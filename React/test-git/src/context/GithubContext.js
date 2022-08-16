@@ -6,10 +6,10 @@ const URL = 'https://api.github.com/'
 
 const GithubContext = createContext()
 
-export const GithubProvider = (props) => {  
+export const GithubProvider = (props) => {
   const initial = {
     users: [],
-    loading: true
+    loading: false,
   }
 
   const [state, dispatch] = useReducer(githubReducer, initial)
@@ -19,20 +19,27 @@ export const GithubProvider = (props) => {
   }, [])
 
   const fetchUsers = async () => {
+    setLoadind()
     const res = await fetch(URL + 'users')
     const data = await res.json()
 
     dispatch({
       type: 'GET_USERS',
-      payload: data
-    })    
+      payload: data,
+    })
+  }
+
+  const setLoadind = () => {
+    dispatch({
+      type: 'SET_LOADING',
+    })
   }
 
   return (
     <GithubContext.Provider
       value={{
-        users:state.users,
-        loading:state.loading,
+        users: state.users,
+        loading: state.loading,
       }}
     >
       {props.children}
