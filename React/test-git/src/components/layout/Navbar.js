@@ -14,9 +14,7 @@ const Navbar = () => {
         <div className="flex-1">
           <div className="flex">
             <Link to='/'>Home</Link>
-            <Link to='/about'>About</Link>
-            <Link to='/notfound'></Link>
-            <Link to='/*'></Link>
+            <Link to='/about'>About</Link>            
           </div>
         </div>
       </div>
