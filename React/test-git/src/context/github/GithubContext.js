@@ -9,21 +9,24 @@ const GithubContext = createContext()
 export const GithubProvider = (props) => {
   const initial = {
     users: [],
-    loading: true
+    loading: false
   }
   
   const [state, dispatch] = useReducer(gitHubReducer, initial)
 
-  useEffect(() => {
-    fetchUsers()
-  }, [])
-
-  const fetchUsers = async () => {
-    const res = await fetch(GITHUB_URL + 'users')
-    const data = await res.json()
+  const searchUsers = async (text) => {
+    dispatch({
+      type: 'SET_LOADING',      
+    }) 
+    const params = new URLSearchParams({
+      q: text
+    })
+    const res = await fetch(GITHUB_URL + `search/users?${params}`)
+    const items = await res.json()
+    console.log(items)
     dispatch({
       type: 'GET_USERS',
-      payload: data
+      payload: items
     })    
   }
 
@@ -32,6 +35,7 @@ export const GithubProvider = (props) => {
       value={{
         users: state.users,
         loading: state.loading,
+        searchUsers
       }}
     >
       {props.children}
