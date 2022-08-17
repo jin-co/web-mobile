@@ -6,7 +6,7 @@ import { useState, useContext, useEffect } from 'react'
 import FeedContext from '../context/FeedContext'
 
 const FeedbackForm = () => {
-  const { addFeed, editMode } = useContext(FeedContext)
+  const { addFeed, editMode, updateFeed} = useContext(FeedContext)
 
   const [text, setText] = useState('')
   const [message, setMessage] = useState('')
@@ -27,7 +27,11 @@ const FeedbackForm = () => {
       text,
       rating,
     }
-    addFeed(newFeed)
+    if(editMode.eidt) {
+      updateFeed(editMode.item.id, newFeed)
+    } else {
+      addFeed(newFeed)
+    }        
   }
 
   const handleChange = (e) => {
