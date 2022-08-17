@@ -1,33 +1,29 @@
 import React from 'react'
+import axios from 'axios'
 
 const URL = 'https://api.github.com/'
+const github = axios.create({
+  baseURL: URL,
+})
 
 export const getUsers = async (text) => {
   const params = new URLSearchParams({
     q: text,
   })
-  const res = await fetch(URL + `search/users?${params}`)
-  const { items } = await res.json()
-
-  return items
+  const res = await github.get(`search/users?${params}`)    
+  return res.data.items
 }
 
-export const getUser = async (login) => {
-  const res = await fetch(URL + `users/${login}`)
-  if (res.status === 404) {
-    window.location = '/notfound'
-  } else {
-    const data = await res.json()
-    return data
-  }
-}
-
-export const getRepos = async (login) => {  
+export const getAll = async (login) => {
   const params = new URLSearchParams({
     sort: 'created',
     per_page: 10,
   })
-  const res = await fetch(URL + `users/${login}/repos?${params}`)
-  const data = await res.json()
-  return data  
+
+  const [user, repos] = await Promise.all([
+    github.get(`users/${login}`),
+    github.get(`users/${login}/repos?${params}`),
+  ])
+
+  return { user: user.data, repos: repos.data }
 }
