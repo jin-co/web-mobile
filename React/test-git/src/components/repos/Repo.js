@@ -1,8 +1,13 @@
 import React from 'react'
+import RepoItem from './RepoItem'
 
-const Repo = () => {
+const Repo = ({ repos }) => {
   return (
-    <div>Repo</div>
+    <div>
+      {repos.map((repo) => (
+        <RepoItem key={repo.id} item={repo} />
+      ))}
+    </div>
   )
 }
 
