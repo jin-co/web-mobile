@@ -9,6 +9,7 @@ const GithubContext = createContext()
 export const GithubProvider = (props) => {
   const initial = {
     users: [],
+    repos: [],
     user: {},
     loading: false,
   }
@@ -32,7 +33,7 @@ export const GithubProvider = (props) => {
   const getUser = async (login) => {
     setLoadind()
     const res = await fetch(URL + `users/${login}`)
-    if(res.status === 404) {
+    if (res.status === 404) {
       window.location = '/notfound'
     } else {
       const data = await res.json()
@@ -42,6 +43,17 @@ export const GithubProvider = (props) => {
         payload: data,
       })
     }
+  }
+
+  const getRepos = async (login) => {
+    setLoadind()
+    const res = await fetch(URL + `users/${login}/repos`)
+    const data = await res.json()
+
+    dispatch({
+      type: 'GET_REPOS',
+      payload: data,
+    })
   }
 
   const setLoadind = () => {
@@ -61,9 +73,11 @@ export const GithubProvider = (props) => {
       value={{
         users: state.users,
         user: state.user,
+        repos: state.repos,
         loading: state.loading,
         getUsers,
         getUser,
+        getRepos,
         clearUsers,
       }}
     >
