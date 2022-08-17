@@ -1,9 +1,8 @@
-import React from 'react'
 import axios from 'axios'
 
 const URL = 'https://api.github.com/'
 const github = axios.create({
-  baseURL: URL,
+  baseURL: URL,  
 })
 
 export const getUsers = async (text) => {
