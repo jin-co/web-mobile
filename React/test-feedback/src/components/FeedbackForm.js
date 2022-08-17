@@ -27,7 +27,9 @@ const FeedbackForm = () => {
       text,
       rating,
     }
-    if(editMode.eidt) {
+    if(editMode.edit) {
+      console.log('edit')
+      console.log(editMode)
       updateFeed(editMode.item.id, newFeed)
     } else {
       addFeed(newFeed)

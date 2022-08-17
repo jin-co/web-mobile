@@ -22,7 +22,7 @@ export const FeedProvider = (props) => {
     setFeedback(data)
   }
 
-  const addFeed = async (newFeed) => {    
+  const addFeed = async (newFeed) => {
     setFeedback([newFeed, ...feedback])
     const res = await fetch(URL, {
       method: 'POST',
@@ -40,16 +40,22 @@ export const FeedProvider = (props) => {
     })
   }
 
-  const updateFeed = (id, newFeed) => {
+  const updateFeed = async (id, newFeed) => {
+
+    const res = await fetch(URL + '/' + id, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newFeed),
+    })
+    const data = await res.json()
+    console.log(data)
     setFeedback(
       feedback.map((feed) => (feed.id === id ? feed : [...feedback, newFeed]))
     )
   }
 
-  const getFeed = (item) => {
-    console.log('getFeed: ', item)
-    setEditMode({ item: item, edit: true })
-    console.log('edit item: ', editMode)
+  const getFeed = (item) => {    
+    setEditMode({ item: item, edit: true })    
   }
 
   return (
