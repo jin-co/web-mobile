@@ -5,7 +5,6 @@ import Button from './shared/Button'
 import { useState, useContext, useEffect } from 'react'
 import FeedContext from '../context/FeedContext'
 
-
 const FeedbackForm = () => {
   const { addFeed, editMode } = useContext(FeedContext)
 
@@ -16,7 +15,7 @@ const FeedbackForm = () => {
 
   useEffect(() => {
     console.log('form useEffect: ', editMode)
-    if(editMode.edit) {
+    if (editMode.edit) {
       setText(editMode.item.text)
       setRating(editMode.item.rating)
     }
@@ -26,19 +25,19 @@ const FeedbackForm = () => {
     e.preventDefault()
     const newFeed = {
       text,
-      rating
+      rating,
     }
     addFeed(newFeed)
   }
 
   const handleChange = (e) => {
-    if(e.target.value.length < 10) {
+    if (e.target.value.length < 10) {
       setMessage('more than 10 char')
       setBtnDisabled(true)
     } else {
       setMessage('')
       setBtnDisabled(false)
-      setText(e.target.value)      
+      setText(e.target.value)
     }
   }
 
@@ -47,7 +46,9 @@ const FeedbackForm = () => {
       <RatingSelect ratingSelected={(rating) => setRating(rating)} />
       <form action="" onSubmit={handleSubmit}>
         <input type="text" onChange={handleChange} value={text} />
-        <Button isDisabled={btnDisabled} type='submit'>Add</Button>
+        <Button isDisabled={btnDisabled} type="submit">
+          Add
+        </Button>
       </form>
       {message}
     </Card>
