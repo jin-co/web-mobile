@@ -22,12 +22,21 @@ export const FeedProvider = (props) => {
     setFeedback(data)
   }
 
-  const addFeed = (newFeed) => {
+  const addFeed = async (newFeed) => {
     setFeedback([newFeed, ...feedback])
+    const res = await fetch(URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application-json' },
+      body: JSON.stringify(newFeed),
+    })
   }
 
-  const deleteFeed = (id) => {
+  const deleteFeed = async (id) => {
     setFeedback(feedback.filter((f) => f.id !== id))
+    await fetch(URL + '/' + id, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application-json' },
+    })
   }
 
   const updateFeed = (id, newFeed) => {

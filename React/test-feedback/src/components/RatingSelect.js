@@ -10,11 +10,10 @@ const RatingSelect = ({ ratingSelected }) => {
     if (editMode.edit) {
       setSelected(+editMode.item.rating)
     }
-  }, editMode)
+  }, [editMode])
 
   const handleChange = (e) => {
-    setSelected(+e.target.value)
-    console.log(typeof e.target.value)
+    setSelected(+e.target.value)    
     ratingSelected(e.target.value)
   }
 
@@ -27,7 +26,7 @@ const RatingSelect = ({ ratingSelected }) => {
             id={`rating - ${i + 1}`}
             value={i + 1}
             onChange={handleChange}
-            checked={selected === i + 1 ? true : false}
+            checked={selected === i + 1}
           />
           <label htmlFor={`rating - ${i + 1}`}>{i + 1}</label>
         </li>
