@@ -26,10 +26,8 @@ const FeedbackForm = () => {
     const newFeed = {
       text,
       rating,
-    }
-    if(editMode.edit) {
-      console.log('edit')
-      console.log(editMode)
+    }    
+    if(editMode.edit) {      
       updateFeed(editMode.item.id, newFeed)
     } else {
       addFeed(newFeed)
@@ -44,7 +42,7 @@ const FeedbackForm = () => {
       setMessage('')
       setBtnDisabled(false)
     }
-    setText(e.target.value)
+    setText(e.target.value)    
   }
 
   return (
