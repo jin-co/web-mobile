@@ -9,23 +9,39 @@ const GithubContext = createContext()
 export const GithubProvider = (props) => {
   const initial = {
     users: [],
+    user: {},
     loading: false,
   }
 
-  const [state, dispatch] = useReducer(githubReducer, initial)  
+  const [state, dispatch] = useReducer(githubReducer, initial)
 
   const getUsers = async (text) => {
     setLoadind()
-    const params = new URLSearchParams ({
-      q: text
+    const params = new URLSearchParams({
+      q: text,
     })
     const res = await fetch(URL + `search/users?${params}`)
-    const {items} = await res.json()
+    const { items } = await res.json()
 
     dispatch({
       type: 'GET_USERS',
       payload: items,
     })
+  }
+
+  const getUser = async (login) => {
+    setLoadind()
+    const res = await fetch(URL + `users/${login}`)
+    if(res.status === 404) {
+      window.location = '/notfound'
+    } else {
+      const data = await res.json()
+
+      dispatch({
+        type: 'GET_USER',
+        payload: data,
+      })
+    }
   }
 
   const setLoadind = () => {
@@ -44,9 +60,11 @@ export const GithubProvider = (props) => {
     <GithubContext.Provider
       value={{
         users: state.users,
+        user: state.user,
         loading: state.loading,
         getUsers,
-        clearUsers
+        getUser,
+        clearUsers,
       }}
     >
       {props.children}

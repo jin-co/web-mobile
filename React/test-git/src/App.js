@@ -8,6 +8,7 @@ import NotFound from './pages/NotFound'
 import { GithubProvider } from './context/GithubContext'
 import { AlertProvider } from './context/AlertContext'
 import Alert from './components/layout/Alert'
+import User from './components/users/User'
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
               <Routes>
                 <Route exact path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/user/:login" element={<User />} />
                 <Route path="/notfound" element={<NotFound />} />
                 <Route path="/*" element={<NotFound />} />
               </Routes>
