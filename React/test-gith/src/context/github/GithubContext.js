@@ -9,18 +9,15 @@ const URL = 'https://api.github.com/'
 export const GithubProvider = (props) => {  
   const initial = {
     users: [],
+    user: {},
     loading: false    
   }
 
-  const [state, dispatch] = useReducer(GithubReducer, initial)
+  const [state, dispatch] = useReducer(GithubReducer, initial)  
 
-  useEffect(() => {
-    fetchUsers()
-  }, [])
-
-  const fetchUsers = async () => {
+  const searchUsers = async (text) => {
     setLoading()
-    const res = await fetch(URL + 'users', {
+    const res = await fetch(URL + `search/${text}`, {
       method: 'GET',
     })
     const data = await res.json()
@@ -31,15 +28,16 @@ export const GithubProvider = (props) => {
     })    
   }
   
-  const searchUsers = async () => {
+  const searchUser = async (text) => {
     setLoading()
-    const res = await fetch(URL + 'users', {
+    const res = await fetch(URL + `search/users/${text}`, {
       method: 'GET',
     })
     const data = await res.json()
+    console.log(data)
 
     dispatch({
-      type: 'GET_USERS',
+      type: 'GET_USER',
       payload: data
     })    
   }
@@ -54,6 +52,8 @@ export const GithubProvider = (props) => {
       value={{
         users:state.users,
         loading:state.loading,
+        searchUsers,
+        searchUser,
       }}
     >
       {props.children}
