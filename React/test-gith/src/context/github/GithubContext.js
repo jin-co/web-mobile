@@ -17,19 +17,36 @@ export const GithubProvider = (props) => {
 
   const searchUsers = async (text) => {
     const params = new URLSearchParams({
-      q: text
+      q: text,
     })
     setLoading()
     const res = await fetch(URL + `search/users?${params}`, {
       method: 'GET',
     })
-    const {items} = await res.json()
-    console.log(items)
+    const { items } = await res.json()
 
     dispatch({
       type: 'GET_USERS',
       payload: items,
     })
+  }
+
+  const searchUser = async (text) => {
+    setLoading()
+    console.log('search user: ', text)
+    const res = await fetch(URL + `users/${text}`, {
+      method: 'GET',
+    })
+    if (res.status === 404) {
+      window.location = '/notfound'
+    } else {
+      const data = await res.json()
+
+      dispatch({
+        type: 'GET_USER',
+        payload: data,
+      })
+    }
   }
 
   const setLoading = () => {
@@ -48,8 +65,10 @@ export const GithubProvider = (props) => {
     <GithubContext.Provider
       value={{
         users: state.users,
+        user: state.user,
         loading: state.loading,
-        searchUsers,        
+        searchUsers,
+        searchUser,
         clearUsers,
       }}
     >
