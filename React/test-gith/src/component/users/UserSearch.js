@@ -4,11 +4,12 @@ import GithubContext from '../../context/github/GithubContext'
 
 const UserSearch = () => {
   const [text, setText] = useState('')
-  const { users, searchUsers } = useContext(GithubContext)
+  const { users, searchUsers, clearUsers } = useContext(GithubContext)
 
   const handleSubmit = (e) => {
+    e.preventDefault()
     if (text !== '') {
-      searchUsers(e.target.value)
+      searchUsers(text)
     } else {
     }
     setText('')
@@ -26,6 +27,7 @@ const UserSearch = () => {
           Search
         </button>
       </form>
+      {users.length > 0 && <button onClick={() => clearUsers()}>Clear</button>}
     </div>
   )
 }

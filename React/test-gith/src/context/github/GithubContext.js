@@ -6,54 +6,51 @@ const GithubContext = createContext()
 
 const URL = 'https://api.github.com/'
 
-export const GithubProvider = (props) => {  
+export const GithubProvider = (props) => {
   const initial = {
     users: [],
     user: {},
-    loading: false    
+    loading: false,
   }
 
-  const [state, dispatch] = useReducer(GithubReducer, initial)  
+  const [state, dispatch] = useReducer(GithubReducer, initial)
 
   const searchUsers = async (text) => {
+    const params = new URLSearchParams({
+      q: text
+    })
     setLoading()
-    const res = await fetch(URL + `search/${text}`, {
+    const res = await fetch(URL + `search/users?${params}`, {
       method: 'GET',
     })
-    const data = await res.json()
+    const {items} = await res.json()
+    console.log(items)
 
     dispatch({
       type: 'GET_USERS',
-      payload: data
-    })    
-  }
-  
-  const searchUser = async (text) => {
-    setLoading()
-    const res = await fetch(URL + `search/users/${text}`, {
-      method: 'GET',
+      payload: items,
     })
-    const data = await res.json()
-    console.log(data)
-
-    dispatch({
-      type: 'GET_USER',
-      payload: data
-    })    
   }
 
   const setLoading = () => {
     dispatch({
-      type: 'SET_LOADING'
+      type: 'SET_LOADING',
     })
   }
+
+  const clearUsers = () => {
+    dispatch({
+      type: 'CLEAR_USERS',
+    })
+  }
+
   return (
     <GithubContext.Provider
       value={{
-        users:state.users,
-        loading:state.loading,
-        searchUsers,
-        searchUser,
+        users: state.users,
+        loading: state.loading,
+        searchUsers,        
+        clearUsers,
       }}
     >
       {props.children}
