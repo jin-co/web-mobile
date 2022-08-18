@@ -1,8 +1,11 @@
 import React from 'react'
+import UserResult from '../component/users/UserResult'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <UserResult />
+    </div>
   )
 }
 

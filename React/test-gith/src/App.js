@@ -9,9 +9,9 @@ import NotFound from './pages/NotFound'
 const App = () => {
   return (
     <Router>
-      <div>
+      <div className='flex flex-col justify-between h-screen'>
         <Navbar />
-        <main>
+        <main className='container mx-auto'>
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
