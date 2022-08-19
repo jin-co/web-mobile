@@ -3,9 +3,10 @@ import { useEffect, useContext } from 'react'
 import GithubContext from '../context/github/GithubContext'
 import { FaCodepen, FaStore, FaUserFriends, FaUsers } from 'react-icons/fa'
 import Repos from '../component/repos/Repos'
+import { searchUser, getRepos } from '../context/github/GithubAction'
 
 const User = () => {
-  const { user, searchUser, repos, getRepos } = useContext(GithubContext)
+  const { user, repos, dispatch } = useContext(GithubContext)
   const params = useParams()
 
   const {
@@ -27,14 +28,29 @@ const User = () => {
 
   const websiteUrl = blog?.startsWith('http') ? blog : 'https://' + blog
 
-  useEffect(() => {
-    console.log(params.login)
-    searchUser(params.login)
-    getRepos(params.login)
+  useEffect(() => {  
+    dispatch({type:'SET_LOADING'})
+    const getAll = async() => {
+      const userData = await searchUser(params.login)
+
+      dispatch({
+        type: 'GET_USER',
+        payload: userData
+      })
+
+      const userRepoData = await getRepos(params.login)
+
+      dispatch({
+        type: 'GET_REPOS',
+        payload: userRepoData
+      })
+    }     
+    getAll() 
   }, [])
 
-  return <>
-  <div className="w-full mx-auto lg:w-10/12">
+  return (
+    <>
+      <div className="w-full mx-auto lg:w-10/12">
         <div className="mb-4">
           <Link to="/" className="btn btn-ghost">
             Back To Search
@@ -157,7 +173,8 @@ const User = () => {
 
         <Repos repos={repos} />
       </div>
-  </>
+    </>
+  )
 }
 
 export default User
