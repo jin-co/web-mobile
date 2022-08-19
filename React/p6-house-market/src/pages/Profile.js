@@ -21,7 +21,16 @@ const Profile = () => {
     navigate('/')
   }
 
-  const onSubmit = () => {}
+  const onSubmit = () => {
+    
+  }
+
+  const handleChange = (e) => {
+    setFromData((prevState) => ({
+      ...prevState,
+      [e.target.id]: e.target.value,
+    }))
+  }
 
   return (
     <div className="profile">
@@ -43,6 +52,28 @@ const Profile = () => {
           >
             {changeDetails ? 'done' : 'change'}
           </p>
+        </div>
+
+        <div className="profileCard">
+          <form action="">
+            <input
+              type="text"
+              id="name"
+              className={!changeDetails ? 'profileName' : 'profileNameActive'}
+              disabled={!changeDetails}
+              value={name}
+              onChange={handleChange}
+            />
+            
+            <input
+              type="text"
+              id="email"
+              className={!changeDetails ? 'profileEmail' : 'profileEmailActive'}
+              disabled={!changeDetails}
+              value={email}
+              onChange={handleChange}
+            />
+          </form>
         </div>
       </main>
     </div>
