@@ -3,7 +3,7 @@ import { useEffect, useContext } from 'react'
 import GithubContext from '../context/github/GithubContext'
 import { FaCodepen, FaStore, FaUserFriends, FaUsers } from 'react-icons/fa'
 import Repos from '../component/repos/Repos'
-import { searchUser, getRepos } from '../context/github/GithubAction'
+import { getAll } from '../context/github/GithubAction'
 
 const User = () => {
   const { user, repos, dispatch } = useContext(GithubContext)
@@ -28,24 +28,17 @@ const User = () => {
 
   const websiteUrl = blog?.startsWith('http') ? blog : 'https://' + blog
 
-  useEffect(() => {  
-    dispatch({type:'SET_LOADING'})
-    const getAll = async() => {
-      const userData = await searchUser(params.login)
+  useEffect(() => {
+    dispatch({ type: 'SET_LOADING' })
+    const getAll = async () => {
+      const userData = await getAll(params.login)
 
       dispatch({
-        type: 'GET_USER',
-        payload: userData
+        type: 'GET_ALL',
+        payload: userData,
       })
-
-      const userRepoData = await getRepos(params.login)
-
-      dispatch({
-        type: 'GET_REPOS',
-        payload: userRepoData
-      })
-    }     
-    getAll() 
+    }
+    getAll()
   }, [])
 
   return (
