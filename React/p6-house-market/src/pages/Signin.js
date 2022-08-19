@@ -4,7 +4,6 @@ import { Link, useNavigate } from 'react-router-dom'
 import { ReactComponent as ArrowRightIcon } from '../assets/svg/keyboardArrowRightIcon.svg'
 import visibilityIcon from '../assets/svg/visibilityIcon.svg'
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
-import { async } from '@firebase/util'
 import { toast } from 'react-toastify'
 
 const Signin = () => {
@@ -85,7 +84,6 @@ const Signin = () => {
               </button>
             </div>
           </form>
-          //todo -> google auth
           <Link to="/sign-up" className="registerLink">
             Sign Up Instead
           </Link>

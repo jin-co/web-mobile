@@ -10,7 +10,6 @@ import { doc, setDoc, serverTimestamp } from 'firebase/firestore'
 import { db } from '../firebase.config'
 import { ReactComponent as ArrowRightIcon } from '../assets/svg/keyboardArrowRightIcon.svg'
 import visibilityIcon from '../assets/svg/visibilityIcon.svg'
-import { async } from '@firebase/util'
 import { toast } from 'react-toastify'
 
 const Signup = () => {
@@ -45,7 +44,7 @@ const Signup = () => {
         displayName: name,
       })
 
-      const formDataCopy = {...formData}
+      const formDataCopy = { ...formData }
       delete formDataCopy.password
       formDataCopy.timestamp = serverTimestamp()
       await setDoc(doc(db, 'users', user.uid), formDataCopy)
@@ -108,7 +107,6 @@ const Signup = () => {
               </button>
             </div>
           </form>
-          //todo -> google auth
           <Link to="/sign-in" className="registerLink">
             Sign In Instead
           </Link>
