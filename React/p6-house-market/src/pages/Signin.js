@@ -37,6 +37,7 @@ const Signin = () => {
         navigate('/')
       }
     } catch (error) {
+      toast.error('Wrong')
     }
   }
 

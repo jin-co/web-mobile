@@ -11,6 +11,7 @@ import { db } from '../firebase.config'
 import { ReactComponent as ArrowRightIcon } from '../assets/svg/keyboardArrowRightIcon.svg'
 import visibilityIcon from '../assets/svg/visibilityIcon.svg'
 import { async } from '@firebase/util'
+import { toast } from 'react-toastify'
 
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false)
@@ -50,7 +51,9 @@ const Signup = () => {
       await setDoc(doc(db, 'users', user.uid), formDataCopy)
 
       navigate('/')
-    } catch (error) {}
+    } catch (error) {
+      toast.error('Wrong')
+    }
   }
 
   return (
