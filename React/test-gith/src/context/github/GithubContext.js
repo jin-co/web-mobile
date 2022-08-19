@@ -1,5 +1,5 @@
 import React from 'react'
-import { createContext, useReducer, useEffect } from 'react'
+import { createContext, useReducer } from 'react'
 import GithubReducer from './GithubReducer'
 
 const GithubContext = createContext()
@@ -9,6 +9,7 @@ const URL = 'https://api.github.com/'
 export const GithubProvider = (props) => {
   const initial = {
     users: [],
+    repos: [],
     user: {},
     loading: false,
   }
@@ -31,10 +32,10 @@ export const GithubProvider = (props) => {
     })
   }
 
-  const searchUser = async (text) => {
+  const searchUser = async (login) => {
     setLoading()
-    console.log('search user: ', text)
-    const res = await fetch(URL + `users/${text}`, {
+    console.log('search user: ', login)
+    const res = await fetch(URL + `users/${login}`, {
       method: 'GET',
     })
     if (res.status === 404) {
@@ -47,6 +48,23 @@ export const GithubProvider = (props) => {
         payload: data,
       })
     }
+  }
+
+  const getRepos = async (text) => {
+    const params = new URLSearchParams({
+      sort: 'created',
+      per_page: 10,
+    })
+    setLoading()
+    const res = await fetch(URL + `users/${text}/repos?${params}`, {
+      method: 'GET',
+    })
+    const data = await res.json()
+    console.log('repo data: ', data)
+    dispatch({
+      type: 'GET_REPOS',
+      payload: data,
+    })
   }
 
   const setLoading = () => {
@@ -65,11 +83,13 @@ export const GithubProvider = (props) => {
     <GithubContext.Provider
       value={{
         users: state.users,
+        repos: state.repos,
         user: state.user,
         loading: state.loading,
         searchUsers,
         searchUser,
         clearUsers,
+        getRepos,
       }}
     >
       {props.children}

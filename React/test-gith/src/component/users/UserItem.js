@@ -14,7 +14,7 @@ const UserItem = ({ item: { login, avatar_url } }) => {
       <div>
         <h3>{login}</h3>
       </div>
-      <Link to={`/users/${login}`}>Detail</Link>
+      <Link to={`/user/${login}`}>Detail</Link>
     </div>
   )
 }
