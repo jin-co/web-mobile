@@ -28,7 +28,7 @@ const Offers = () => {
         const listingRef = collection(db, 'listings')
         const q = query(
           listingRef,
-          where('type', '==', params.categoryName),
+          where('offer', '==', true),
           orderBy('timestamp', 'desc'),
           limit(10)
         )
@@ -48,15 +48,15 @@ const Offers = () => {
     }
     fetchListings()
   }, [])
+  
   return (
     <div className="category">
       <header>
         <p className="pageHeader">
-          {params.categoryName === 'rent'
-            ? 'Places for rent'
-            : 'Places for sale'}
+          Offers
         </p>
       </header>
+      
       {loading ? (
         <Spinner />
       ) : listings && listings.length > 0 ? (
@@ -74,7 +74,7 @@ const Offers = () => {
           </main>
         </>
       ) : (
-        <p>No listings for {params.categoryName}</p>
+        <p>No current offers</p>
       )}
     </div>
   )

@@ -11,6 +11,8 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import PrivateRoute from './components/PrivateRoute'
 import Category from './pages/Category'
+import Offers from './pages/Offers'
+import CreateListing from './pages/CreateListing'
 
 const App = () => {
   return (
@@ -20,12 +22,14 @@ const App = () => {
           <Route path="/" element={<Explore />} />
           <Route path="/authors" element={<Authors />} />
           <Route path="/category/:categoryName" element={<Category />} />
+          <Route path="/offers" element={<Offers />} />
           <Route path="/profile" element={<PrivateRoute />}>
             <Route path="/profile" element={<Profile />} />
           </Route>
           <Route path="/sign-up" element={<Signup />} />
           <Route path="/sign-in" element={<Signin />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/create-listing" element={<CreateListing />} />
         </Routes>
         <Navbar />
       </Router>

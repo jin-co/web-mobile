@@ -4,7 +4,9 @@ import { useEffect, useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { updateDoc, doc } from 'firebase/firestore'
 import { db } from '../firebase.config'
-import {toast} from 'react-toastify'
+import { toast } from 'react-toastify'
+import arrowRight from '../assets/svg/keyboardArrowRightIcon.svg'
+import homeIcon from '../assets/svg/homeIcon.svg'
 
 const Profile = () => {
   const auth = getAuth()
@@ -24,18 +26,18 @@ const Profile = () => {
 
   const onSubmit = async () => {
     try {
-      if(auth.currentUser.displayName !== name) {
+      if (auth.currentUser.displayName !== name) {
         await updateProfile(auth.currentUser, {
-          displayName: name
+          displayName: name,
         })
 
         const userRef = doc(db, 'users', auth.currentUser.uid)
         await updateDoc(userRef, {
-          name
+          name,
         })
       }
     } catch (error) {
-     toast.error('Failed to update profile') 
+      toast.error('Failed to update profile')
     }
   }
 
@@ -78,7 +80,7 @@ const Profile = () => {
               value={name}
               onChange={handleChange}
             />
-            
+
             <input
               type="text"
               id="email"
@@ -89,6 +91,12 @@ const Profile = () => {
             />
           </form>
         </div>
+
+        <Link to="/create-listing" className="createListing">
+          <img src={homeIcon} alt="home" />
+          <p>Sell or rent your home</p>
+          <img src={arrowRight} alt="arrow right" />
+        </Link>
       </main>
     </div>
   )
