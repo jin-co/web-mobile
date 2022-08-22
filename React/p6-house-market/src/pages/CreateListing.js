@@ -12,9 +12,10 @@ import {
 } from 'firebase/storage'
 import { db } from '../firebase.config'
 import { v4 as uuid } from 'uuid'
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
 
 const CreateListing = () => {
-  const [geolocationEnabled, setGeolocationEnabled] = useState(true)
+  const [geolocationEnabled, setGeolocationEnabled] = useState(false)
   const [loading, setLoading] = useState(false)
   const [formData, setFormData] = useState({
     type: 'rent',
@@ -53,7 +54,7 @@ const CreateListing = () => {
   const isMounted = useRef(true)
 
   useEffect(() => {
-    console.log(process.env.REACT_APP_TEST)
+    console.log(process.env.REACT_APP_TEST)    
     if (isMounted) {
       onAuthStateChanged(auth, (user) => {
         if (user) {
@@ -122,8 +123,6 @@ const CreateListing = () => {
         uploadTask.on(
           'state_changed',
           (snapshot) => {
-            // Observe state change events such as progress, pause, and resume
-            // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
             const progress =
               (snapshot.bytesTransferred / snapshot.totalBytes) * 100
             console.log('Upload is ' + progress + '% done')
@@ -137,20 +136,43 @@ const CreateListing = () => {
             }
           },
           (error) => {
-            // Handle unsuccessful uploads
+            reject(error)
           },
           () => {
-            // Handle successful uploads on complete
-            // For instance, get the download URL: https://firebasestorage.googleapis.com/...
             getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-              console.log('File available at', downloadURL)
+              resolve(downloadURL)
             })
           }
         )
       })
     }
 
+    const imgURLs = await Promise.all(
+      [...images].map((img) => storeImage(img))
+    ).catch(() => {
+      setLoading(false)
+      toast.error('Image loading failed')
+      return
+    })
+
+    const formDataCopy = {
+      ...formData,
+      imgURLs,
+      geolocation,
+      timestamp: serverTimestamp(),
+    }
+
+    delete formDataCopy.images
+    delete formDataCopy.address
+    location && (formDataCopy.location = location)
+    !formDataCopy.offer && delete formDataCopy.discountedPrice
+
+    const docRef = await addDoc(collection(db, 'listing'), formDataCopy)
+
     setLoading(false)
+    toast.success('Saved')
+
+    navigate(`/category/${formDataCopy.type}/${docRef.id}`)
   }
 
   const onMutate = (e) => {
@@ -335,7 +357,7 @@ const CreateListing = () => {
                   Latitude
                 </label>
                 <input
-                  type="text"
+                  type="number"
                   className="formInputSmall"
                   id="latitude"
                   value={latitude}
@@ -348,7 +370,7 @@ const CreateListing = () => {
                   Longitude
                 </label>
                 <input
-                  type="text"
+                  type="number"
                   className="formInputSmall"
                   id="longitude"
                   value={longitude}
