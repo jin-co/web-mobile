@@ -1,8 +1,13 @@
 import React from 'react'
+import FeedItem from './FeedItem'
 
-const FeedList = () => {
+const FeedList = ({ feed, handleDelete }) => {
   return (
-    <div>FeedList</div>
+    <>
+      {feed.map((item) => (
+        <FeedItem key={item.id} feed={item} handleDelete={handleDelete} />
+      ))}
+    </>
   )
 }
 

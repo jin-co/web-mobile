@@ -1,8 +1,9 @@
 import React from 'react'
+import Card from './layout/Card'
 
 const FeedForm = () => {
   return (
-    <div>FeedForm</div>
+    <Card>FeedForm</Card>
   )
 }
 
