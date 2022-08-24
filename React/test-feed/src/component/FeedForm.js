@@ -4,17 +4,20 @@ import Button from './layout/Button'
 import FeedSelect from './FeedSelect'
 import { useState } from 'react'
 
-const FeedForm = () => {
+const FeedForm = ({ handleAdd }) => {
   const [text, setText] = useState('')
   const [rating, setRating] = useState(10)
   const [message, setMessage] = useState('')
   const [btnDisabled, setBtnDisabled] = useState(true)
 
   const handleSubmit = (e) => {
-    if (text.length > 10) {
-    } else {
-      setMessage('Enter')
+    e.preventDefault()
+    const newFeed = {
+      text,
+      rating,
     }
+
+    handleAdd(newFeed)
   }
 
   const handleInput = (e) => {
@@ -31,9 +34,9 @@ const FeedForm = () => {
   return (
     <Card>
       <FeedSelect selected={(rating) => setRating(rating)} />
-      <form action="">
+      <form action="" onSubmit={handleSubmit}>
         <input type="text" onChange={handleInput} value={text} />
-        <Button>Add</Button>
+        <Button butDisabled={btnDisabled}>Add</Button>
       </form>
       {message}
     </Card>
