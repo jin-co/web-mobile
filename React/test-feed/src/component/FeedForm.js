@@ -11,13 +11,13 @@ const FeedForm = () => {
   const [message, setMessage] = useState('')
   const [btnDisabled, setBtnDisabled] = useState(true)
 
-  const { addFeed, getEditItem } = useContext(FeedContext)
+  const { addFeed, getEditItem, updateFeed } = useContext(FeedContext)
 
   useEffect(() => {
-    if(getEditItem.edit) {
+    if (getEditItem.edit) {
       setText(getEditItem.item.text)
       setRating(getEditItem.item.rating)
-    }    
+    }
   }, [getEditItem])
 
   const handleSubmit = (e) => {
@@ -27,7 +27,12 @@ const FeedForm = () => {
       rating,
     }
 
-    addFeed(newFeed)
+    if (getEditItem.edit) {
+      updateFeed(getEditItem.item.id, newFeed)
+    } else {
+      addFeed(newFeed)
+    }
+    setText('')
   }
 
   const handleInput = (e) => {

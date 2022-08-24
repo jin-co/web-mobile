@@ -27,7 +27,7 @@ export const FeedProvider = (props) => {
   }
 
   const updateFeed = (id, newFeed) => {
-    setFeed(feed.map((f) => f.id === id ? [...f, ...newFeed] : f))
+    setFeed(feed.map((f) => f.id === id ? {...f, ...newFeed} : f))
   }
 
   return (
