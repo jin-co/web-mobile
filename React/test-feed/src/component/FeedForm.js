@@ -2,13 +2,16 @@ import React from 'react'
 import Card from './layout/Card'
 import Button from './layout/Button'
 import FeedSelect from './FeedSelect'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import FeedContext from '../context/FeedContext'
 
-const FeedForm = ({ handleAdd }) => {
+const FeedForm = () => {
   const [text, setText] = useState('')
   const [rating, setRating] = useState(10)
   const [message, setMessage] = useState('')
   const [btnDisabled, setBtnDisabled] = useState(true)
+
+  const { feed, addFeed } = useContext(FeedContext)
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -17,7 +20,7 @@ const FeedForm = ({ handleAdd }) => {
       rating,
     }
 
-    handleAdd(newFeed)
+    addFeed(newFeed)
   }
 
   const handleInput = (e) => {
