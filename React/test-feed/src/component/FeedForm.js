@@ -8,15 +8,34 @@ const FeedForm = () => {
   const [text, setText] = useState('')
   const [rating, setRating] = useState(10)
   const [message, setMessage] = useState('')
-  const [btnEnabled, setBtnEnabled] = useState(true)
+  const [btnDisabled, setBtnDisabled] = useState(true)
+
+  const handleSubmit = (e) => {
+    if (text.length > 10) {
+    } else {
+      setMessage('Enter')
+    }
+  }
+
+  const handleInput = (e) => {
+    if (text.length > 10) {
+      setMessage('')
+      setBtnDisabled(false)
+    } else {
+      setBtnDisabled(true)
+      setMessage('Enter')
+    }
+    setText(e.target.value)
+  }
 
   return (
     <Card>
-      <FeedSelect />
+      <FeedSelect selected={(rating) => setRating(rating)} />
       <form action="">
-        <input type="text" />
+        <input type="text" onChange={handleInput} value={text} />
         <Button>Add</Button>
       </form>
+      {message}
     </Card>
   )
 }
