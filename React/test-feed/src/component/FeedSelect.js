@@ -1,8 +1,16 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect, useContext } from 'react'
+import FeedContext from '../context/FeedContext'
 
 const FeedSelect = ({ selected }) => {
   const [rating, setRating] = useState(10)
+  const { getEditItem } = useContext(FeedContext)
+
+  useEffect(() => {
+    if (getEditItem.edit) {
+      setRating(getEditItem.item.rating)
+    }
+  }, [getEditItem])
 
   const handleChange = (e) => {
     setRating(+e.target.value)

@@ -6,22 +6,42 @@ const FeedContext = createContext()
 
 export const FeedProvider = (props) => {
   const [feed, setFeed] = useState(FeedData)
+  const [getEditItem, setGetEditItem] = useState({
+    item: {},
+    edit: false,
+  })
 
   const addFeed = (newFeed) => {
     setFeed([newFeed, ...feed])
   }
 
   const deleteFeed = (id) => {
-    setFeed(feed.filter(f => f.id !== id))
+    setFeed(feed.filter((f) => f.id !== id))
+  }
+
+  const fetchEditItem = (item) => {
+    setGetEditItem({
+      item,
+      edit: true,
+    })
+  }
+
+  const updateFeed = (id, newFeed) => {
+    setFeed(feed.map((f) => f.id === id ? [...f, ...newFeed] : f))
   }
 
   return (
-    <FeedContext.Provider value={{
-      feed,
-      addFeed,
-      deleteFeed
-    }}>
-    {props.children}
+    <FeedContext.Provider
+      value={{
+        feed,
+        getEditItem,
+        addFeed,
+        deleteFeed,
+        fetchEditItem,
+        updateFeed
+      }}
+    >
+      {props.children}
     </FeedContext.Provider>
   )
 }

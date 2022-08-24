@@ -5,7 +5,7 @@ import { useContext } from 'react'
 import FeedContext from '../context/FeedContext'
 
 const FeedItem = ({ feed }) => {
-  const { deleteFeed } = useContext(FeedContext)
+  const { deleteFeed, fetchEditItem } = useContext(FeedContext)
 
   return (
     <Card>
@@ -16,7 +16,7 @@ const FeedItem = ({ feed }) => {
         color="red"
         onClick={() => deleteFeed(feed.id)}
       />
-      <FaEdit className="edit" color="purple" />
+      <FaEdit className="edit" color="purple" onClick={() => fetchEditItem(feed)} />
     </Card>
   )
 }
