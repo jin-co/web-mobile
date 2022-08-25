@@ -1,21 +1,42 @@
 import React from 'react'
-import { createContext, useState } from 'react'
+import { createContext, useState, useEffect } from 'react'
 import FeedData from '../data/FeedbackData'
 
 const FeedContext = createContext()
+const baseURL = 'http://localhost:5000/feedback/'
 
 export const FeedProvider = (props) => {
-  const [feed, setFeed] = useState(FeedData)
+  const [feed, setFeed] = useState([])
   const [getEditItem, setGetEditItem] = useState({
     item: {},
     edit: false,
   })
 
-  const addFeed = (newFeed) => {
+  useEffect(() => {
+    fetchFeeds()    
+  }, [])
+
+  const fetchFeeds = async () => {
+    const res = await fetch(baseURL, {
+      method:'GET'
+    })
+    const data = await res.json()
+    setFeed(data)
+  }
+
+  const addFeed = async (newFeed) => {
+    await fetch(baseURL, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(newFeed)
+    })
     setFeed([newFeed, ...feed])
   }
 
-  const deleteFeed = (id) => {
+  const deleteFeed = async (id) => {
+    await fetch(baseURL + id, {
+      method: 'DELETE'            
+    })    
     setFeed(feed.filter((f) => f.id !== id))
   }
 
@@ -26,8 +47,13 @@ export const FeedProvider = (props) => {
     })
   }
 
-  const updateFeed = (id, newFeed) => {
-    setFeed(feed.map((f) => f.id === id ? {...f, ...newFeed} : f))
+  const updateFeed = async (id, newFeed) => {
+    const res = await fetch(baseURL + id, {
+      method: 'PUT',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(newFeed)
+    })
+    setFeed(feed.map((f) => (f.id === id ? { ...f, ...newFeed } : f)))
   }
 
   return (
@@ -38,7 +64,7 @@ export const FeedProvider = (props) => {
         addFeed,
         deleteFeed,
         fetchEditItem,
-        updateFeed
+        updateFeed,
       }}
     >
       {props.children}
