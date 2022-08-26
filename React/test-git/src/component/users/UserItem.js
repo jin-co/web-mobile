@@ -1,9 +1,7 @@
 import React from 'react'
 
-const UserItem = () => {
-  return (
-    <div>UserItem</div>
-  )
+const UserItem = ({ user }) => {
+  return <div>{user.login}</div>
 }
 
 export default UserItem

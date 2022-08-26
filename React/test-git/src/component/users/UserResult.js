@@ -1,8 +1,15 @@
 import React from 'react'
+import UserItem from './UserItem'
 
-const UserResult = () => {
+const UserResult = ({users}) => {
   return (
-    <div>UserResult</div>
+    <>
+    {
+      users.map((user) => (
+        <UserItem key={user.id} user={user} />
+      ))
+    }
+    </>
   )
 }
 
