@@ -1,18 +1,25 @@
 import React from 'react'
 
 const gitReducer = (state, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case 'GET_USERS':
       return {
         ...state,
         users: action.payload,
-        loading: false
+        loading: false,
       }
-    
-      case 'SET_LOADING':
+
+    case 'SET_LOADING':
       return {
-        ...state,        
-        loading: true
+        ...state,
+        loading: true,
+      }
+
+    case 'CLEAR_USER':
+      return {
+        ...state,
+        users: [],
+        loading: false,
       }
     default:
       return state
