@@ -9,6 +9,7 @@ const GitContext = createContext()
 export const GitProvider = (props) => {
   const initial = {
     users: [],
+    user: {},
     loading: false,
   }
 
@@ -27,6 +28,22 @@ export const GitProvider = (props) => {
     })
   }
 
+  const getUser = async (login) => {
+    setLoading()
+    const res = await fetch(GITHUB_URL + `users/${login}`)
+
+    if(res.status === 404) {
+      window.location = '/notfound'
+    } else {
+      const data = await res.json()
+      console.log(data)
+      dispatch({
+        type: 'GET_USER',
+        payload: data
+      })      
+    }
+  }
+
   const setLoading = () => {
     dispatch({
       type: 'SET_LOADING',
@@ -43,9 +60,11 @@ export const GitProvider = (props) => {
     <GitContext.Provider
       value={{
         users: state.users,
+        user: state.users,
         loading: state.loading,
         clearUser,
         searchUsers,
+        getUser
       }}
     >
       {props.children}
