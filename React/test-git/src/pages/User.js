@@ -7,13 +7,15 @@ import Repo from '../component/repos/Repo'
 import { useParams } from 'react-router-dom'
 
 const User = () => {
-  const { getUser, user, loading, repos, getRepos } = useContext(GitContext)
+  const { getUser, user, repos, getRepos } = useContext(GitContext)
 
   const params = useParams()
 
   useEffect(() => {
     console.log('effect')
     getUser(params.login)
+    getRepos(params.login)
+    console.log(repos, user)
   }, [])
 
   const {

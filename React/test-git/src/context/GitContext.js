@@ -10,6 +10,7 @@ export const GitProvider = (props) => {
   const initial = {
     users: [],
     user: {},
+    repos: [],
     loading: false,
   }
 
@@ -32,16 +33,32 @@ export const GitProvider = (props) => {
     setLoading()
     const res = await fetch(GITHUB_URL + `users/${login}`)
 
-    if(res.status === 404) {
+    if (res.status === 404) {
       window.location = '/notfound'
     } else {
       const data = await res.json()
-      console.log(data)
+      console.log('user:', data)
       dispatch({
         type: 'GET_USER',
-        payload: data
-      })      
+        payload: data,
+      })
     }
+  }
+
+  const getRepos = async (login) => {
+    setLoading()
+    const params = new URLSearchParams({
+      sort: 'create',
+      per_page: 10,
+    })
+    const res = await fetch(GITHUB_URL + `users/${login}/repos?${params}`)
+
+    const data = await res.json()
+    console.log(data)
+    dispatch({
+      type: 'GET_REPOS',
+      payload: data,
+    })
   }
 
   const setLoading = () => {
@@ -60,11 +77,13 @@ export const GitProvider = (props) => {
     <GitContext.Provider
       value={{
         users: state.users,
-        user: state.users,
+        user: state.user,
         loading: state.loading,
+        repos: state.repos,
         clearUser,
         searchUsers,
-        getUser
+        getUser,
+        getRepos,
       }}
     >
       {props.children}
