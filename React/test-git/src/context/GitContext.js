@@ -17,7 +17,7 @@ export const GitProvider = (props) => {
   return (
     <GitContext.Provider
       value={{
-        state,
+        ...state,
         dispatch
       }}
     >
