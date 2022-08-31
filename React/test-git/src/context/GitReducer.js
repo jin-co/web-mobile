@@ -9,19 +9,12 @@ const gitReducer = (state, action) => {
         loading: false,
       }
 
-    case 'GET_USER':
+    case 'GET_USER_AND_REPOS':
       return {
         ...state,
         user: action.payload,
         loading: false,
-      }
-
-    case 'GET_REPOS':
-      return {
-        ...state,
-        repos: action.payload,
-        loading: false,
-      }
+      }    
 
     case 'SET_LOADING':
       return {
@@ -29,12 +22,6 @@ const gitReducer = (state, action) => {
         loading: true,
       }
 
-    case 'CLEAR_USER':
-      return {
-        ...state,
-        users: [],
-        loading: false,
-      }
     default:
       return state
   }
