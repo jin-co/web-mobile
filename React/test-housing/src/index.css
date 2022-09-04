@@ -171,16 +171,17 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 60px;
 }
 
 .navbarListItemName,
-.navbarListItemNameActive {
-  margin-top: 0.25rem;
+.navbarListItemNameActive {  
   font-size: 14px;
   font-weight: 600;
   color: #8f8f8f;
 }
 .navbarListItemNameActive {
+  font-size: 15px;
   color: #2c2c2c;
 }
 
