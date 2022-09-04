@@ -12,7 +12,12 @@ const SignIn = () => {
   })
   const { email, password } = formData
 
-  const handleChange = () => {}
+  const handleChange = (e) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.id]: e.target.value
+    }))
+  }
 
   return (
     <>
@@ -63,7 +68,7 @@ const SignIn = () => {
 
             {/* todo */}
 
-            <Link to='/sing-up' className='registerLink'>
+            <Link to="/sing-up" className="registerLink">
               Sing Up Instead
             </Link>
           </main>
