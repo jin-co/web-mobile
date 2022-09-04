@@ -10,6 +10,7 @@ import {
 } from 'firebase/auth'
 import { db } from '../firebase.config'
 import { doc, setDoc, serverTimestamp } from 'firebase/firestore'
+import { toase, toast } from 'react-toastify'
 
 const SignUp = () => {
   const navigate = useNavigate()
@@ -49,7 +50,9 @@ const SignUp = () => {
       await setDoc(doc(db, 'users', user.uid), formDataCopy)
 
       navigate('/')
-    } catch (error) {}
+    } catch (error) {
+      toast.error('Registration Failed')
+    }
   }
 
   return (
