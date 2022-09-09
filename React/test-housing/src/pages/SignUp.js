@@ -10,7 +10,7 @@ import {
 } from 'firebase/auth'
 import { db } from '../firebase.config'
 import { doc, setDoc, serverTimestamp } from 'firebase/firestore'
-import { toase, toast } from 'react-toastify'
+import { toast } from 'react-toastify'
 
 const SignUp = () => {
   const navigate = useNavigate()

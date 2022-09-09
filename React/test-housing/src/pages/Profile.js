@@ -1,6 +1,6 @@
 import React from 'react'
 import { getAuth, updateProfile } from 'firebase/auth'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { updateDoc, doc } from 'firebase/firestore'
 import { db } from '../firebase.config'
@@ -13,12 +13,13 @@ const Profile = () => {
     name: auth.currentUser.displayName,
     email: auth.currentUser.email,
   })
+  const navigate = useNavigate()
 
   const { name, email } = formData
 
   const onLogout = () => {
     auth.signOut()
-    navigator('/')
+    navigate('/')
   }
 
   const onSubmit = async () => {

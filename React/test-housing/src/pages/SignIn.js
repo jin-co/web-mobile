@@ -88,8 +88,8 @@ const SignIn = () => {
 
             {/* todo */}
 
-            <Link to="/sing-up" className="registerLink">
-              Sing Up Instead
+            <Link to="/sign-up" className="registerLink">
+              Sign Up Instead
             </Link>
           </main>
         </header>
