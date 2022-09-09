@@ -11,6 +11,7 @@ import {
 import { db } from '../firebase.config'
 import { doc, setDoc, serverTimestamp } from 'firebase/firestore'
 import { toast } from 'react-toastify'
+import OAuth from '../components/OAuth'
 
 const SignUp = () => {
   const navigate = useNavigate()
@@ -98,9 +99,15 @@ const SignUp = () => {
                 />
               </div>
 
-              <Link to="/forgot-password" className="forgotPasswordLink">
-                Forgot Password
-              </Link>
+              <div className='container'>
+                <Link to="/sign-in" className="forgotPasswordLink">
+                  Sign In Instead
+                </Link>
+
+                <Link to="/forgot-password" className="forgotPasswordLink">
+                  Forgot Password
+                </Link>
+              </div>
 
               <div className="signUpBar">
                 <p className="signUpText">Sign Up</p>
@@ -111,11 +118,7 @@ const SignUp = () => {
               </div>
             </form>
 
-            {/* todo */}
-
-            <Link to="/sing-in" className="registerLink">
-              Sing In Instead
-            </Link>
+            <OAuth />
           </main>
         </header>
       </div>
