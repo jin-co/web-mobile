@@ -23,6 +23,7 @@ const Category = () => {
     const fetchListings = async () => {
       try {
         const listingsRef = collection(db, 'listings')
+        console.log('test: ')
         const q = query(
           listingsRef,
           where('type', '==', params.CategoryName),
@@ -32,7 +33,8 @@ const Category = () => {
 
         const querySnap = await getDocs(q)
         const listings = []
-        querySnap.forEach((doc) => {          
+        querySnap.forEach((doc) => {
+          console.log('docs: ', doc)
           return listings.push({
             id: doc.id,
             data: doc.data(),
