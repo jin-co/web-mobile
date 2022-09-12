@@ -13,6 +13,7 @@ import {
 import { db } from '../firebase.config'
 import { toast } from 'react-toastify'
 import Spinner from '../components/Spinner'
+import ListingItem from '../components/ListingItem'
 
 const Category = () => {
   const [listings, setListings] = useState(null)
@@ -23,10 +24,9 @@ const Category = () => {
     const fetchListings = async () => {
       try {
         const listingsRef = collection(db, 'listings')
-        console.log('test: ')
         const q = query(
           listingsRef,
-          where('type', '==', params.CategoryName),
+          where('type', '==', params.categoryName),
           orderBy('timestamp', 'desc'),
           limit(10)
         )
@@ -34,7 +34,6 @@ const Category = () => {
         const querySnap = await getDocs(q)
         const listings = []
         querySnap.forEach((doc) => {
-          console.log('docs: ', doc)
           return listings.push({
             id: doc.id,
             data: doc.data(),
@@ -48,7 +47,8 @@ const Category = () => {
     }
 
     fetchListings()
-  })
+  }, [])
+
   return (
     <div className="category">
       <header>
@@ -66,7 +66,11 @@ const Category = () => {
           <main>
             <ul className="categoryListings">
               {listings.map((listing) => (
-                <h3>{listing.data}</h3>
+                <ListingItem
+                  key={listing.id}
+                  listing={listing.data}
+                  id={listing.id}
+                />
               ))}
             </ul>
           </main>
