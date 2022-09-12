@@ -26,9 +26,7 @@ const ListingItem = ({ listing, id, onDelete }) => {
               ? listing.discountedPrice
                   .toString()
                   .replace(/\B(?=(\d{3})+(?!\d))/g, '')
-              : listing.regularPrice
-                  .toString()
-                  .replace(/\B(?=(\d{3})+(?!\d))/g, '')}
+              : listing.regularPrice}
             {listing.type === 'rent' && ' / Month'}
           </p>
           <div className="categoryListingInfoDiv">
