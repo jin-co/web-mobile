@@ -1,9 +1,17 @@
 import React from 'react'
 import { useState, useEffect, useRef } from 'react'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
+import {
+  getStorage,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+} from 'firebase/storage'
 import { useNavigate } from 'react-router-dom'
 import Spinner from '../components/Spinner'
 import { toast } from 'react-toastify'
+import { db } from '../firebase.config'
+import { v4 as uuid } from 'uuid'
 
 const CreateListing = () => {
   const [geolocationEnabled, setGeolocationEnabled] = useState(true)
@@ -90,6 +98,47 @@ const CreateListing = () => {
       geoLocation.lng = longitude
       location = address
     }
+    const storeImage = async (img) => {
+      return new Promise((resolve, reject) => {
+        const storage = getStorage()
+        const fileName = `${auth.currentUser.uid}-${img.name}-${uuid()}`
+        const storageRef = ref(storage, 'images/' + fileName)
+        const uploadTask = uploadBytesResumable(storageRef, img)
+
+        uploadTask.on(
+          'state_changed',
+          (snapshot) => {
+            const progress =
+              (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+            console.log('Upload is ' + progress + '% done')
+            switch (snapshot.state) {
+              case 'paused':
+                console.log('Upload is paused')
+                break
+              case 'running':
+                console.log('Upload is running')
+                break
+            }
+          },
+          (error) => {
+            reject(error)
+          },
+          () => {
+            getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+              resolve(downloadURL)
+            })
+          }
+        )
+      })
+    }
+    const imgUrls = await Promise.all(
+      [...images].map((img) => storeImage(img))
+    ).catch(() => {
+      setLoading(false)
+      toast.error('Image loading failed')
+      return
+    })
+    console.log(imgUrls)
     setLoading(false)
   }
 
