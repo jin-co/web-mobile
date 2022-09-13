@@ -12,6 +12,7 @@ import Spinner from '../components/Spinner'
 import { toast } from 'react-toastify'
 import { db } from '../firebase.config'
 import { v4 as uuid } from 'uuid'
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
 
 const CreateListing = () => {
   const [geolocationEnabled, setGeolocationEnabled] = useState(true)
@@ -75,15 +76,15 @@ const CreateListing = () => {
       return
     }
 
-    let geoLocation = {}
+    let geolocation = {}
     let location
     if (geolocationEnabled) {
       const res = await fetch(
         `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.REACT_APP_GEO_API}`
       )
-      const data = await res.json()      
-      geoLocation.lat = data.results[0]?.geometry.location.lat ?? 0
-      geoLocation.lng = data.results[0]?.geometry.location.lng ?? 0
+      const data = await res.json()
+      geolocation.lat = data.results[0]?.geometry.location.lat ?? 0
+      geolocation.lng = data.results[0]?.geometry.location.lng ?? 0
       location =
         data.status === 'ZERO_RESULTS'
           ? undefined
@@ -94,16 +95,16 @@ const CreateListing = () => {
         return
       }
     } else {
-      geoLocation.lat = latitude
-      geoLocation.lng = longitude
+      geolocation.lat = latitude
+      geolocation.lng = longitude
       location = address
     }
-    const storeImage = async (img) => {
+    const storeImage = async (image) => {
       return new Promise((resolve, reject) => {
         const storage = getStorage()
-        const fileName = `${auth.currentUser.uid}-${img.name}-${uuid()}`
+        const fileName = `${auth.currentUser.uid}-${image.name}-${uuid()}`
         const storageRef = ref(storage, 'images/' + fileName)
-        const uploadTask = uploadBytesResumable(storageRef, img)
+        const uploadTask = uploadBytesResumable(storageRef, image)
 
         uploadTask.on(
           'state_changed',
@@ -131,15 +132,31 @@ const CreateListing = () => {
         )
       })
     }
-    const imgUrls = await Promise.all(
-      [...images].map((img) => storeImage(img))
+    const imageUrls = await Promise.all(
+      [...images].map((image) => storeImage(image))
     ).catch(() => {
       setLoading(false)
       toast.error('Image loading failed')
       return
     })
-    console.log(imgUrls)
+
+    const formDataCopy = {
+      ...formData,
+      imageUrls,
+      geolocation,
+      timestamp: serverTimestamp(),
+    }
+
+    delete formDataCopy.images
+    delete formDataCopy.address
+    location && (formDataCopy.location = location)
+    !formDataCopy.offer && delete formDataCopy.discountedPrice
+
+    const docRef = await addDoc(collection(db, 'listings'), formDataCopy)
+
     setLoading(false)
+    toast.success('New listing added')
+    navigate(`/category/${formDataCopy.type}/${docRef.id}`)
   }
 
   const onMutate = (e) => {
