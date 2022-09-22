@@ -30,8 +30,7 @@ const Listing = () => {
       const docRef = doc(db, 'listings', params.listingId)
       const docSnap = await getDoc(docRef)
 
-      if (docSnap.exists()) {
-        console.log(docSnap.data())
+      if (docSnap.exists()) {        
         setListing(docSnap.data())
         setLoading(false)
       }
