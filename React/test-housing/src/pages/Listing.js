@@ -8,9 +8,14 @@ import Spinner from '../components/Spinner'
 import shareIcon from '../assets/svg/shareIcon.svg'
 import { list } from 'firebase/storage'
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
-import SwiperCore, { Navigation, pagination, Scrollbar, A11y } from 'swiper'
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/css';
+import 'swiper/css'
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y])
 
 const Listing = () => {
   const [listing, setListing] = useState(null)
@@ -43,8 +48,10 @@ const Listing = () => {
           <SwiperSlide key={index}>
             <div
               style={{
-                background: `url("${listing.imageUrls[index]}") center no-repeat`,
+                background: `url(${listing.imageUrls[index]}) center no-repeat`,
                 backgroundSize: 'cover',
+                height: '300px',
+                width: '1000px',
               }}
               className="swiperSlideDiv"
             ></div>
