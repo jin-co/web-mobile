@@ -18,6 +18,8 @@ import ListingItem from '../components/ListingItem'
 const Category = () => {
   const [listings, setListings] = useState(null)
   const [loading, setLoading] = useState(true)
+  const [lastFetchedListing, setLastFetchedListing] = useState(null)
+
   const params = useParams()
 
   useEffect(() => {
@@ -32,6 +34,10 @@ const Category = () => {
         )
 
         const querySnap = await getDocs(q)
+
+        const lastVisible = querySnap.docs[querySnap.docs.length - 1]
+        setLastFetchedListing(lastVisible)
+
         const listings = []
         querySnap.forEach((doc) => {
           return listings.push({
@@ -48,6 +54,36 @@ const Category = () => {
 
     fetchListings()
   }, [])
+
+  const onFetchMoreListings = async () => {
+    try {
+      const listingsRef = collection(db, 'listings')
+      const q = query(
+        listingsRef,
+        where('type', '==', params.categoryName),
+        orderBy('timestamp', 'desc'),
+        startAfter(lastFetchedListing),
+        limit(10)
+      )
+
+      const querySnap = await getDocs(q)
+
+      const lastVisible = querySnap.docs[querySnap.docs.length - 1]
+      setLastFetchedListing(lastVisible)
+
+      const listings = []
+      querySnap.forEach((doc) => {
+        return listings.push({
+          id: doc.id,
+          data: doc.data(),
+        })
+      })
+      setListings((prev) => [...prev, ...listings])
+      setLoading(false)
+    } catch (error) {
+      toast.error('Fetching listing failed')
+    }
+  }
 
   return (
     <div className="category">
@@ -74,6 +110,13 @@ const Category = () => {
               ))}
             </ul>
           </main>
+          <br />
+          <br />
+          {lastFetchedListing && (
+            <p className="loadMore" onClick={onFetchMoreListings}>
+              Load more
+            </p>
+          )}
         </>
       ) : (
         <p>No listing for {params.categoryName}</p>
