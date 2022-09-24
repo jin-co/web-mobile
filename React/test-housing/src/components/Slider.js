@@ -60,8 +60,7 @@ const Slider = () => {
                 style={{
                   background: `url(${data.imageUrls[0]}) center no-repeat`,
                   backgroundSize: 'cover',
-                  height: '200px',
-                  widht: '1200px',
+                  height: '200px',                  
                 }}
               >
                 <p className="swiperSlideText">{data.name}</p>
