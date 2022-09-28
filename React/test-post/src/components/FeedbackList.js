@@ -2,11 +2,11 @@ import React from 'react'
 import { useState } from 'react'
 import FeedbackItem from '../components/FeedbackItem'
 
-const FeedbackList = ({feed}) => {  
+const FeedbackList = ({feed, handleDelete}) => {  
   return (
     <div>
       {feed.map((f) => (
-        <FeedbackItem key={f.id} feed={f} />
+        <FeedbackItem key={f.id} feed={f} handleDelete={handleDelete} />
       ))}
     </div>
   )

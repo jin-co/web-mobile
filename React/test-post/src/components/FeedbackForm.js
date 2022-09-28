@@ -1,8 +1,12 @@
 import React from 'react'
+import Button from '../layout/Button'
 
-const FeedbackForm = () => {
+const FeedbackForm = ({ feed }) => {
   return (
-    <div>FeedbackForm</div>
+    <form>
+      <input type="text" />
+      <Button type='submit' />
+    </form>
   )
 }
 

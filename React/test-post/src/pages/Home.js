@@ -7,11 +7,16 @@ import { useState } from 'react'
 
 const Home = () => {
   const [feed, setFeed] = useState(FeedbackData)
+
+  const deleteFeed = (id) => {
+    setFeed(feed.filter((f) => f.id !== id))
+  }
+
   return (
     <>
       <FeedbackStats feed={feed} />
       <FeedbackForm feed={feed} />
-      <FeedbackList feed={feed} />
+      <FeedbackList feed={feed} handleDelete={deleteFeed} />
     </>
   )
 }
