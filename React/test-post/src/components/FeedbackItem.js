@@ -1,8 +1,12 @@
 import React from 'react'
+import Card from '../layout/Card'
 
-const FeedbackItem = () => {
+const FeedbackItem = ({ feed }) => {
   return (
-    <div>FeedbackItem</div>
+    <Card>
+      <p className=''>{feed.rating}</p>
+      <p>{feed.text}</p>
+    </Card>
   )
 }
 
