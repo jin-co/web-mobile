@@ -12,10 +12,14 @@ const Home = () => {
     setFeed(feed.filter((f) => f.id !== id))
   }
 
+  const addFeed = (newFeed) => {
+    setFeed(newFeed, ...feed)
+  }
+
   return (
     <>
       <FeedbackStats feed={feed} />
-      <FeedbackForm feed={feed} />
+      <FeedbackForm feed={feed} handleAdd={addFeed} />
       <FeedbackList feed={feed} handleDelete={deleteFeed} />
     </>
   )
