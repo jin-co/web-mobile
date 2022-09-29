@@ -13,7 +13,7 @@ const Home = () => {
   }
 
   const addFeed = (newFeed) => {
-    setFeed(newFeed, ...feed)
+    setFeed([newFeed, ...feed])
   }
 
   return (

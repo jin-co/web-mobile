@@ -19,9 +19,10 @@ const FeedbackForm = ({ feed, handleAdd }) => {
   }
 
   const onChange = (e) => {
-    if (e.target.length > 10) {
+    console.log(e.target.value.length)
+    if (e.target.value.length < 10) {
       setBtnDisabled(true)
-      setMessage('enter more than 10')
+      setMessage('enter more than 10')      
     } else {
       setBtnDisabled(false)
       setMessage('')      
@@ -32,7 +33,7 @@ const FeedbackForm = ({ feed, handleAdd }) => {
   return (
     <>
       <form onSubmit={onSubmit}>
-        <input type="text" onChange={onChange} />
+        <input type="text" onChange={onChange} value={text} />
         <Button type="submit" isDisabled={btnDisabled} />
       </form>
       <p>{message}</p>
