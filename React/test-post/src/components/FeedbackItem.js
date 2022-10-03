@@ -2,7 +2,7 @@ import React from 'react'
 import Card from '../layout/Card'
 import { FaTimes, FaEdit } from 'react-icons/fa'
 
-const FeedbackItem = ({ feed, handleDelete }) => {
+const FeedbackItem = ({ feed }) => {
   return (
     <Card>    
       <p className="">{feed.rating}</p>
