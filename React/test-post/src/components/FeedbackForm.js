@@ -1,8 +1,12 @@
 import React from 'react'
 import Button from '../layout/Button'
 import { useState } from 'react'
+import { useContext } from 'react'
+import FeedContext from '../context/FeedContext'
 
-const FeedbackForm = ({ feed, handleAdd }) => {
+const FeedbackForm = () => {
+  const { feed, addFeed } = useContext(FeedContext)
+
   const [text, setText] = useState('')
   const [rating, setRating] = useState('')
   const [message, setMessage] = useState('')
@@ -10,22 +14,22 @@ const FeedbackForm = ({ feed, handleAdd }) => {
 
   const onSubmit = (e) => {
     e.preventDefault()
-    
+
     const newFeed = {
       rating,
       text,
     }
-    handleAdd(newFeed)
+    addFeed(newFeed)
   }
 
   const onChange = (e) => {
     console.log(e.target.value.length)
     if (e.target.value.length < 10) {
       setBtnDisabled(true)
-      setMessage('enter more than 10')      
+      setMessage('enter more than 10')
     } else {
       setBtnDisabled(false)
-      setMessage('')      
+      setMessage('')
     }
     setText(e.target.value)
   }

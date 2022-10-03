@@ -1,10 +1,10 @@
 import React from 'react'
-import { useState, useContext } from 'react'
+import { useContext } from 'react'
 import FeedbackItem from '../components/FeedbackItem'
 import { motion, AnimatePresence } from 'framer-motion'
 import FeedContext from '../context/FeedContext'
 
-const FeedbackList = ({ feed }) => {
+const FeedbackList = () => {
   const { feed } = useContext(FeedContext)
   return (
     <div className="feedback-list">
