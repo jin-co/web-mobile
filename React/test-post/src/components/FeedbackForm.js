@@ -15,7 +15,7 @@ const FeedbackForm = () => {
   const onSubmit = (e) => {
     e.preventDefault()
 
-    const newFeed = {
+    const newFeed = {      
       rating,
       text,
     }
