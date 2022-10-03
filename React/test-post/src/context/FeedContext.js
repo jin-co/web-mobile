@@ -1,6 +1,7 @@
 import React from 'react'
 import { createContext, useState } from 'react'
 import FeedbackData from '../data/FeedbackData'
+import { v4 as uuid } from 'uuid'
 
 const FeedContext = createContext()
 
@@ -12,6 +13,7 @@ export const FeedProvider = (props) => {
   }
 
   const addFeed = (newFeed) => {
+    newFeed.id = uuid()
     setFeed([newFeed, ...feed])
   }
 
