@@ -2,7 +2,11 @@ import React from 'react'
 
 const FeedRatings = () => {
   return (
-    <div>FeedRatings</div>
+    <div>
+      {Array.from({ length: 10 }, (_, i) => (
+        <li></li>
+      ))}
+    </div>
   )
 }
 
