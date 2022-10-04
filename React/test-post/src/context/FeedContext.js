@@ -8,6 +8,13 @@ const FeedContext = createContext()
 
 export const FeedProvider = (props) => {
   const [feed, setFeed] = useState(FeedbackData)
+  const [isEdit, setIsEdit] = useState({
+    edit: false,
+    feed: {
+      rating: 0,
+      text: ''
+    }
+  })  
 
   const initialState = {
     feeds: [feed],
@@ -26,6 +33,10 @@ export const FeedProvider = (props) => {
 
   const addFeed = (newFeed) => {
     newFeed.id = uuid()
+    setFeed([newFeed, ...feed])
+  }
+
+  const eidtFeed = (newFeed) => {    
     setFeed([newFeed, ...feed])
   }
 
