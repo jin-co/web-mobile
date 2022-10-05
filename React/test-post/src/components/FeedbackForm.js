@@ -3,6 +3,7 @@ import Button from '../layout/Button'
 import { useState } from 'react'
 import { useContext } from 'react'
 import FeedContext from '../context/FeedContext'
+import FeedRatings from './FeedRatings'
 
 const FeedbackForm = () => {
   const { feed, addFeed } = useContext(FeedContext)
@@ -15,7 +16,7 @@ const FeedbackForm = () => {
   const onSubmit = (e) => {
     e.preventDefault()
 
-    const newFeed = {      
+    const newFeed = {
       rating,
       text,
     }
@@ -36,6 +37,7 @@ const FeedbackForm = () => {
 
   return (
     <>
+      <FeedRatings />
       <form onSubmit={onSubmit}>
         <input type="text" onChange={onChange} value={text} />
         <Button type="submit" isDisabled={btnDisabled} />
