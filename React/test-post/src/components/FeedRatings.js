@@ -7,6 +7,7 @@ const FeedRatings = ({ ratingInput }) => {
 
   const handleChange = (e) => {
     setRating(+e.target.value)
+    ratingInput(+e.target.value)
   }
 
   return (

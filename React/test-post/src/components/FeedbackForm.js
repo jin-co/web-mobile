@@ -9,7 +9,7 @@ const FeedbackForm = () => {
   const { feed, addFeed } = useContext(FeedContext)
 
   const [text, setText] = useState('')
-  const [rating, setRating] = useState('')
+  const [rating, setRating] = useState(10)
   const [message, setMessage] = useState('')
   const [btnDisabled, setBtnDisabled] = useState(true)
 
@@ -37,8 +37,8 @@ const FeedbackForm = () => {
 
   return (
     <>
-      <FeedRatings />
       <form onSubmit={onSubmit}>
+        <FeedRatings ratingInput={(rating) => setRating(rating)} />
         <input type="text" onChange={onChange} value={text} />
         <Button type="submit" isDisabled={btnDisabled} />
       </form>
