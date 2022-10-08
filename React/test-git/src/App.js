@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 const App = () => {
   return (
-    <Router>
+    <Router>    
       <div className="flex flex-col justify-between h-screen">
         <Nav />
         <main className="container mx-auth px-1">
