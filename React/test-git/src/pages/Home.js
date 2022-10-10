@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react'
 const URL = 'https://api.github.com/'
 
 const Home = () => {
-  const [users, setUsers] = useState()
+  const [users, setUsers] = useState([])
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
@@ -14,6 +14,7 @@ const Home = () => {
       const res = await fetch(URL + 'users')
       const data = await res.json()
       console.log(data)
+      setUsers(data)
     }
 
     fetchUsers()
@@ -21,8 +22,8 @@ const Home = () => {
 
   return (
     <div>
-      <UserSearch users={users} />
-      <UserResult />
+      <UserSearch />
+      <UserResult users={users} />
     </div>
   )
 }
