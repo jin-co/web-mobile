@@ -7,15 +7,13 @@ import { useContext, useEffect } from 'react'
 import Repo from '../components/repos/Repo'
 
 const User = () => {
-  const { user, loading, searchUser, repos } = useContext(GitContext)
+  const { user, loading, searchUser, repos, getRepos } = useContext(GitContext)
   
   const params = useParams()
 
-  useEffect(() => {
-    console.log('param', params)
-    console.log('param login: ', params.login)
-    console.log('param id: ', params.id)
+  useEffect(() => {    
     searchUser(params.id)
+    getRepos(params.id)
   }, [])
 
   const {

@@ -26,7 +26,7 @@ const GitReducer = (state, action) => {
       return {
         ...state,
         repos: action.payload,
-        loading: true,
+        loading: false,
       }
 
     case 'CLEAR':

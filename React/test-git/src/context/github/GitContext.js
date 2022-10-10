@@ -39,6 +39,19 @@ export const GitProvider = (props) => {
     })
   }
 
+  const getRepos = async (text) => {
+    const param = new URLSearchParams({
+      sort: 'created',
+      per_page: 10
+    })
+    const res = await fetch(URL + `users/${text}/repos?${param}`)
+    const data = await res.json()
+    dispatch({
+      type:'GET_REPOS',
+      payload: data
+    })    
+  }
+
   const clearResult = () => {
     dispatch({
       type: 'CLEAR',
@@ -55,6 +68,7 @@ export const GitProvider = (props) => {
         searchUsers,
         clearResult,
         searchUser,
+        getRepos
       }}
     >
       {props.children}
