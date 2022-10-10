@@ -11,10 +11,12 @@ const Home = () => {
 
   useEffect(() => {
     const fetchUsers = async() => {
+      setLoading(true)
       const res = await fetch(URL + 'users')
       const data = await res.json()
       console.log(data)
       setUsers(data)
+      setLoading(false)
     }
 
     fetchUsers()
@@ -23,7 +25,7 @@ const Home = () => {
   return (
     <div>
       <UserSearch />
-      <UserResult users={users} />
+      <UserResult users={users} loading={loading} />
     </div>
   )
 }
