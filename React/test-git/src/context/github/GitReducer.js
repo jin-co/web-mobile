@@ -1,0 +1,20 @@
+import React from 'react'
+
+const GitReducer = (state, action) => {
+  switch (action.type) {
+    case 'FETCH_USERS':
+      return {
+        ...state,
+        users: action.payload,
+        loading: false,
+      }
+
+    case 'SET_LOADING':
+      return { ...state, loading: true }
+
+    default:
+      return state
+  }
+}
+
+export default GitReducer
