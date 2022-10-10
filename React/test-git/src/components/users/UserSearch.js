@@ -1,10 +1,12 @@
 import React from 'react'
 import GitContext from '../../context/github/GitContext'
 import { useContext, useState } from 'react'
+import AlertContext from '../../context/alert/AlertContext'
 
 const UserSearch = () => {
   const [text, setText] = useState('')
   const { users, searchUsers, clearResult } = useContext(GitContext)
+  const { setAlert } = useContext(AlertContext)
 
   const handleChange = (e) => {
     setText(e.target.value)
@@ -12,8 +14,12 @@ const UserSearch = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(text)
-    searchUsers(e.target.value)
+    if (text === '') {      
+      setAlert('enter', 'error')
+    } else {
+      searchUsers(e.target.value)
+      setText('')
+    }
   }
 
   return (
@@ -38,7 +44,10 @@ const UserSearch = () => {
       </div>
       {users.length > 0 && (
         <div>
-          <button className="btn btn-ghost btn-lg" onClick={() => clearResult()}>
+          <button
+            className="btn btn-ghost btn-lg"
+            onClick={() => clearResult()}
+          >
             Clear
           </button>
         </div>

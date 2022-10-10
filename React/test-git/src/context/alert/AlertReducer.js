@@ -2,8 +2,11 @@ import React from 'react'
 
 const AlertReducer = (state, action) => {
   switch (action.type) {
-    case '':
-      return
+    case 'SET_ALERT':
+      return action.payload
+
+    case 'UNDO_ALERT':
+      return null
 
     default:
       return state
