@@ -1,12 +1,42 @@
 import React from 'react'
 import { FaCodepen, FaStore, FaUserFriends, FaUsers } from 'react-icons/fa'
 import Spinner from '../components/layout/Spinner'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import GitContext from '../context/github/GitContext'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
+import Repo from '../components/repos/Repo'
 
 const User = () => {
-  const {loading} = useContext(GitContext)
+  const { user, loading, searchUser, repos } = useContext(GitContext)
+  
+  const params = useParams()
+
+  useEffect(() => {
+    console.log('param', params)
+    console.log('param login: ', params.login)
+    console.log('param id: ', params.id)
+    searchUser(params.id)
+  }, [])
+
+  const {
+    name,
+    type,
+    avatar_url,
+    location,
+    bio,
+    blog,
+    twitter_username,
+    login,
+    html_url,
+    followers,
+    following,
+    public_repos,
+    public_gists,
+    hireable,
+  } = user
+
+  const websiteUrl = blog?.startsWith('http') ? blog : 'https://' + blog
+
   if (loading) {
     return <Spinner />
   }
@@ -136,6 +166,7 @@ const User = () => {
         <Repo repos={repos} />
       </div>
     </>
+  )
 }
 
 export default User

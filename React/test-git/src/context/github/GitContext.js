@@ -11,6 +11,7 @@ export const GitProvider = (props) => {
   const initialState = {
     users: [],
     user: {},
+    repos: [],
     loading: false,
   }
   const [state, dispatch] = useReducer(GitReducer, initialState)
@@ -29,6 +30,15 @@ export const GitProvider = (props) => {
     })
   }
 
+  const searchUser = async (id) => {
+    const res = await fetch(URL + `users/${id}`)
+    const data = await res.json()
+    dispatch({
+      type: 'SEARCH_USER',
+      payload: data,
+    })
+  }
+
   const clearResult = () => {
     dispatch({
       type: 'CLEAR',
@@ -39,9 +49,12 @@ export const GitProvider = (props) => {
     <GitContext.Provider
       value={{
         users: state.users,
+        user: state.user,
+        repos: state.repos,
         loading: state.loading,
         searchUsers,
-        clearResult
+        clearResult,
+        searchUser,
       }}
     >
       {props.children}
