@@ -4,7 +4,7 @@ import { useContext, useState } from 'react'
 
 const UserSearch = () => {
   const [text, setText] = useState('')
-  const { searchUsers } = useContext(GitContext)
+  const { users, searchUsers, clearResult } = useContext(GitContext)
 
   const handleChange = (e) => {
     setText(e.target.value)
@@ -36,9 +36,13 @@ const UserSearch = () => {
           </div>
         </form>
       </div>
-      <div>
-        <button className='btn btn-ghost btn-lg'>Clear</button>
-      </div>
+      {users.length > 0 && (
+        <div>
+          <button className="btn btn-ghost btn-lg" onClick={() => clearResult()}>
+            Clear
+          </button>
+        </div>
+      )}
     </div>
   )
 }

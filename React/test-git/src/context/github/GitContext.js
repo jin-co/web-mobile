@@ -15,23 +15,6 @@ export const GitProvider = (props) => {
   }
   const [state, dispatch] = useReducer(GitReducer, initialState)
 
-  useEffect(() => {
-    const fetchUsers = async () => {
-      dispatch({
-        type: 'SET_LOADING',
-      })
-      const res = await fetch(URL + 'users')
-      const data = await res.json()
-
-      dispatch({
-        type: 'FETCH_USERS',
-        payload: data,
-      })
-    }
-
-    fetchUsers()
-  }, [])
-
   const searchUsers = async (login) => {
     console.log(login)
     const params = new URLSearchParams({
@@ -42,8 +25,14 @@ export const GitProvider = (props) => {
 
     dispatch({
       type: 'SEARCH_USERS',
-      payload: data
-    })    
+      payload: data.items,
+    })
+  }
+
+  const clearResult = () => {
+    dispatch({
+      type: 'CLEAR',
+    })
   }
 
   return (
@@ -52,6 +41,7 @@ export const GitProvider = (props) => {
         users: state.users,
         loading: state.loading,
         searchUsers,
+        clearResult
       }}
     >
       {props.children}
