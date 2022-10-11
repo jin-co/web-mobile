@@ -8,7 +8,7 @@ export const searchUsers = async (login) => {
   })
   const res = await fetch(URL + `search/users?${params}`)
   const data = await res.json()
-  return data  
+  return data.items  
 }
 
 export const searchUser = async (id) => {
