@@ -1,6 +1,11 @@
 // @path /api/users/register
 const registerUser = (req, res) => {
-  res.send('hhhhhhh')
+  const {name, email, password} = req.body
+  if(!name || !email || !password) {
+    res.status(400)
+    throw new Error('what!')
+  }
+
 }
 
 // @path /api/users/login
