@@ -5,15 +5,22 @@ import { Link, useParams } from 'react-router-dom'
 import GitContext from '../context/github/GitContext'
 import { useContext, useEffect } from 'react'
 import Repo from '../components/repos/Repo'
+import { getRepos, searchUser } from '../context/github/GitAction'
 
 const User = () => {
-  const { user, loading, searchUser, repos, getRepos } = useContext(GitContext)
-  
+  const { user, loading, repos } = useContext(GitContext)
+
   const params = useParams()
 
-  useEffect(() => {    
-    searchUser(params.id)
-    getRepos(params.id)
+  useEffect(() => {
+    const runRun = async () => {
+      const user = await searchUser(params.id)
+      const repo = await getRepos(params.id)
+      searchUser({ type: 'SEARCH_USER', payload: user })
+      getRepos({ type: 'GET_REPOS', payload: repo })
+    }
+
+    runRun()
   }, [])
 
   const {

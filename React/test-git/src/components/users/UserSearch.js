@@ -2,11 +2,7 @@ import React from 'react'
 import GitContext from '../../context/github/GitContext'
 import { useContext, useState } from 'react'
 import AlertContext from '../../context/alert/AlertContext'
-import {
-  searchUsers,
-  searchUser,
-  clearResult,
-} from '../../context/github/GitAction'
+import { searchUsers } from '../../context/github/GitAction'
 
 const UserSearch = () => {
   const [text, setText] = useState('')
@@ -22,9 +18,9 @@ const UserSearch = () => {
     if (text === '') {
       setAlert('enter', 'error')
     } else {
-      dispatch({type: 'SET_LOADING'})
+      dispatch({ type: 'SET_LOADING' })
       const users = await searchUsers(e.target.value)
-      dispatch({type: 'SEARCH_USERS', payload: users})
+      dispatch({ type: 'SEARCH_USERS', payload: users })      
       setText('')
     }
   }
@@ -53,7 +49,7 @@ const UserSearch = () => {
         <div>
           <button
             className="btn btn-ghost btn-lg"
-            onClick={() => dispatch({type:'CLEAR'})}
+            onClick={() => dispatch({ type: 'CLEAR' })}
           >
             Clear
           </button>

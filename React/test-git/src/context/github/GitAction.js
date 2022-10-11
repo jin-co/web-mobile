@@ -1,7 +1,8 @@
 import React from 'react'
 
-export const searchUsers = async (login) => {
-  console.log(login)
+const URL = 'https://api.github.com/'
+
+export const searchUsers = async (login) => {  
   const params = new URLSearchParams({
     q: login,
   })
@@ -13,10 +14,7 @@ export const searchUsers = async (login) => {
 export const searchUser = async (id) => {
   const res = await fetch(URL + `users/${id}`)
   const data = await res.json()
-  dispatch({
-    type: 'SEARCH_USER',
-    payload: data,
-  })
+  return data  
 }
 
 export const getRepos = async (text) => {
@@ -26,14 +24,5 @@ export const getRepos = async (text) => {
   })
   const res = await fetch(URL + `users/${text}/repos?${param}`)
   const data = await res.json()
-  dispatch({
-    type:'GET_REPOS',
-    payload: data
-  })    
-}
-
-export const clearResult = () => {
-  dispatch({
-    type: 'CLEAR',
-  })
+  return data  
 }
