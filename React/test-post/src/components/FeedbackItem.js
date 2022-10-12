@@ -5,13 +5,13 @@ import { useContext } from 'react'
 import FeedContext from '../context/FeedContext'
 
 const FeedbackItem = ({ feed }) => {
-  const {deleteFeed, editFeed} = useContext(FeedContext)
+  const {deleteFeed, updateIsEdit} = useContext(FeedContext)
   
   return (
     <Card>    
       <p className="">{feed.rating}</p>
       <FaTimes className="close" color="red" onClick={() => deleteFeed(feed.id)} />
-      <FaEdit className="edit" color="purple" onClick={() => editFeed()} />
+      <FaEdit className="edit" color="purple" onClick={() => updateIsEdit(feed)} />
       <p>{feed.text}</p>      
     </Card>
   )

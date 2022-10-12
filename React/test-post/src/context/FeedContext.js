@@ -10,10 +10,7 @@ export const FeedProvider = (props) => {
   const [feed, setFeed] = useState(FeedbackData)
   const [isEdit, setIsEdit] = useState({
     edit: false,
-    feed: {
-      rating: 0,
-      text: '',
-    },
+    feed: {},
   })
 
   const initialState = {
@@ -36,8 +33,11 @@ export const FeedProvider = (props) => {
     setFeed([newFeed, ...feed])
   }
 
-  const updateIsEdit = () => {
-    setIsEdit()
+  const updateIsEdit = (feed) => {
+    setIsEdit({
+      edit: true,
+      feed,
+    })
   }
 
   const editFeed = (id, newFeed) => {
@@ -48,9 +48,11 @@ export const FeedProvider = (props) => {
     <FeedContext.Provider
       value={{
         feed,
+        isEdit,
         addFeed,
         deleteFeed,
         editFeed,
+        updateIsEdit,
       }}
     >
       {props.children}
