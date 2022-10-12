@@ -34,6 +34,7 @@ export const FeedProvider = (props) => {
   }
 
   const updateIsEdit = (feed) => {
+    console.log(feed)
     setIsEdit({
       edit: true,
       feed,

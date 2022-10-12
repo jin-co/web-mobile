@@ -12,9 +12,9 @@ const FeedbackForm = () => {
   const [message, setMessage] = useState('')
   const [btnDisabled, setBtnDisabled] = useState(true)
 
-  useEffect(() => {
-    console.log(isEdit.edit)
+  useEffect(() => {    
     if(isEdit.edit) {
+      setBtnDisabled(false)
       setText(isEdit.item.text)
       setRating(isEdit.item.rating)
     }
