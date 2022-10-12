@@ -15,8 +15,8 @@ const FeedbackForm = () => {
   useEffect(() => {    
     if(isEdit.edit) {
       setBtnDisabled(false)
-      setText(isEdit.item.text)
-      setRating(isEdit.item.rating)
+      setText(isEdit.feed.text)
+      setRating(isEdit.feed.rating)
     }
   }, [isEdit])
 

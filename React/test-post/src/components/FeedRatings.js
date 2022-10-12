@@ -1,14 +1,22 @@
 import React from 'react'
 import Card from '../layout/Card'
-import { useState } from 'react'
+import { useState, useEffect, useContext } from 'react'
+import FeedContext from '../context/FeedContext'
 
 const FeedRatings = ({ ratingInput }) => {
   const [rating, setRating] = useState(10)
+  const { isEdit, updateIsEdit } = useContext(FeedContext)
 
   const handleChange = (e) => {
     setRating(+e.target.value)
     ratingInput(+e.target.value)
   }
+
+  useEffect(() => {
+    if (isEdit.edit) {
+      setRating(isEdit.feed.rating)
+    }
+  }, [isEdit])
 
   return (
     <ul className="rating">
