@@ -12,9 +12,9 @@ export const FeedProvider = (props) => {
     edit: false,
     feed: {
       rating: 0,
-      text: ''
-    }
-  })  
+      text: '',
+    },
+  })
 
   const initialState = {
     feeds: [feed],
@@ -27,7 +27,7 @@ export const FeedProvider = (props) => {
     setFeed(feed.filter((f) => f.id !== id))
     dispatch({
       type: 'GET_FEEDS',
-      payload: id
+      payload: id,
     })
   }
 
@@ -36,8 +36,12 @@ export const FeedProvider = (props) => {
     setFeed([newFeed, ...feed])
   }
 
-  const eidtFeed = (newFeed) => {    
-    setFeed([newFeed, ...feed])
+  const updateIsEdit = () => {
+    setIsEdit()
+  }
+
+  const editFeed = (id, newFeed) => {
+    setFeed(feed.map((f) => (f.id === id ? { ...f, ...newFeed } : f)))
   }
 
   return (
@@ -46,6 +50,7 @@ export const FeedProvider = (props) => {
         feed,
         addFeed,
         deleteFeed,
+        editFeed,
       }}
     >
       {props.children}
