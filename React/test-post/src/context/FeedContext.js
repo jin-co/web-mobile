@@ -6,26 +6,26 @@ import Reducer from './Reducer'
 
 const FeedContext = createContext()
 
-export const FeedProvider = (props) => {
-  const [feed, setFeed] = useState(FeedbackData)
+export const FeedProvider = (props) => {  
   const [isEdit, setIsEdit] = useState({
     edit: false,
     feed: {},
   })
 
   const initialState = {
-    feeds: [feed],
+    feeds: [FeedbackData],
     feed: {},
   }
 
   const [state, dispatch] = useReducer(Reducer, initialState)
 
   const deleteFeed = (id) => {
-    setFeed(feed.filter((f) => f.id !== id))
-    // dispatch({
-    //   type: 'GET_FEEDS',
-    //   payload: id,
-    // })
+    const newFeeds = state.feeds.filter((f) => f.id !== id)
+
+    dispatch({
+      type: 'GET_FEEDS',
+      payload: newFeeds,
+    })
   }
 
   const addFeed = (newFeed) => {
