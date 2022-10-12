@@ -5,7 +5,7 @@ import FeedContext from '../context/FeedContext'
 
 const FeedRatings = ({ ratingInput }) => {
   const [rating, setRating] = useState(10)
-  const { isEdit, updateIsEdit } = useContext(FeedContext)
+  const { isEdit } = useContext(FeedContext)
 
   const handleChange = (e) => {
     setRating(+e.target.value)

@@ -12,8 +12,8 @@ const FeedbackForm = () => {
   const [message, setMessage] = useState('')
   const [btnDisabled, setBtnDisabled] = useState(true)
 
-  useEffect(() => {    
-    if(isEdit.edit) {
+  useEffect(() => {
+    if (isEdit.edit) {
       setBtnDisabled(false)
       setText(isEdit.feed.text)
       setRating(isEdit.feed.rating)
@@ -22,15 +22,18 @@ const FeedbackForm = () => {
 
   const onSubmit = (e) => {
     e.preventDefault()
-
     const newFeed = {
       rating,
       text,
     }
-    addFeed(newFeed)
+    if (isEdit.edit) {
+      editFeed(isEdit.feed.id, newFeed)
+    } else {
+      addFeed(newFeed)
+    }
   }
 
-  const onChange = (e) => {    
+  const onChange = (e) => {
     if (e.target.value.length < 10) {
       setBtnDisabled(true)
       setMessage('enter more than 10')
