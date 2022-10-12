@@ -22,10 +22,10 @@ export const FeedProvider = (props) => {
 
   const deleteFeed = (id) => {
     setFeed(feed.filter((f) => f.id !== id))
-    dispatch({
-      type: 'GET_FEEDS',
-      payload: id,
-    })
+    // dispatch({
+    //   type: 'GET_FEEDS',
+    //   payload: id,
+    // })
   }
 
   const addFeed = (newFeed) => {
