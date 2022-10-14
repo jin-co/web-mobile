@@ -1,2 +1,5 @@
 const mongoose = require('mongoose')
-mongoose.connect(process.env.MONG_KEY)
+
+const dbConnect = mongoose.connect(process.env.MONG_KEY)
+
+module.exports = dbConnect
