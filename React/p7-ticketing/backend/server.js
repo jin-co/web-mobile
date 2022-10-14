@@ -7,4 +7,4 @@ app.use(express.urlencoded({ extended: false }))
 
 app.use('/api/users', require('./routers/user.router'))
 
-app.listen(port)
+app.listen(port, () => console.log('server running' + port))
