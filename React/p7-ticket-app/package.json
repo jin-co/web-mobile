@@ -24,7 +24,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "nodemon": "nodemon backend/server.js"
+    "nodemon": "nodemon backend/server.js",
+    "client": "npm start --prefix frontend"
   },
   "eslintConfig": {
     "extends": [
