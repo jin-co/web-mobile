@@ -1,7 +1,12 @@
-export const signUP = (req, res, next) => {
-
+const signUP = (req, res, next) => {
+  res('hh')
 }
 
-export const login = (req, res, next) => {
+const login = (req, res, next) => {
+  res('hh')
+}
 
+module.exports = {
+  signUP,
+  login
 }
