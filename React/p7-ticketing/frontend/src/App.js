@@ -1,8 +1,10 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import Login from './pages/Login'
+import Register from './pages/Register'
 
 function App() {
-  return (
-    <div>App</div>
-  )
+  return <div>App</div>
 }
 
-export default App;
+export default App
