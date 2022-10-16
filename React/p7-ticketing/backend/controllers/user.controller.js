@@ -1,4 +1,4 @@
-const signUP = (req, res, next) => {
+const register = (req, res, next) => {
   res('hh')
 }
 
@@ -7,6 +7,6 @@ const login = (req, res, next) => {
 }
 
 module.exports = {
-  signUP,
+  register,
   login
 }
