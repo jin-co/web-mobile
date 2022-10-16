@@ -59,7 +59,12 @@ const generateToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_KEY, { expiresIn: '30d' })
 }
 
+const getMe = asyncHandler(async () => {
+  res.send('me')
+})
+
 module.exports = {
   register,
   login,
+  getMe,
 }
