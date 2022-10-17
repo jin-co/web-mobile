@@ -15,7 +15,9 @@ const Register = () => {
 
   const { name, email, password, password2 } = formData
   const dispatch = useDispatch()
-  const {} = useSelector(state => state.auth)
+  const { user, isLoading, isSuccess, message } = useSelector(
+    (state) => state.auth
+  )
 
   const onChange = (e) => {
     setFormData((prev) => ({
@@ -28,6 +30,14 @@ const Register = () => {
     e.preventDefault()
     if (password !== password2) {
       toast.error('Passwords do not match')
+    } else {
+      const userData = {
+        name,
+        email,
+        password,
+      }
+
+      dispatch(register(userData))
     }
   }
 
