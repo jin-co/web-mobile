@@ -1,4 +1,5 @@
-const registerUser = (req, res, next) => {
+const asyncHandler = require('express-async-handler')
+const registerUser = asyncHandler(async (req, res, next) => {
   const { name, email, password } = req.body
   if (!name || !email || !password) {
     res.status(400)
@@ -6,11 +7,11 @@ const registerUser = (req, res, next) => {
   }
   console.log(req.body)
   res.send('Register')
-}
+})
 
-const loginUser = (req, res, next) => {
+const loginUser = asyncHandler(async (req, res, next) => {
   res.send('Login')
-}
+})
 
 module.exports = {
   registerUser,
