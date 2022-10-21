@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { FaUser } from 'react-icons/fa'
+import { toast } from 'react-toastify'
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -79,9 +80,7 @@ const Register = () => {
             />
           </div>
           <div className="form-group">
-            <button className="btn btn-block">
-              Submit
-            </button>
+            <button className="btn btn-block">Submit</button>
           </div>
         </form>
       </section>
