@@ -20,6 +20,13 @@ const Register = () => {
     }))
   }
 
+  const onSubmit = (e) => {
+    e.preventDefault()
+    if (password !== passwordConfirm) {
+      toast.error('password do not match')
+    }
+  }
+
   return (
     <>
       <section className="heading">
@@ -31,9 +38,10 @@ const Register = () => {
       </section>
 
       <section className="form">
-        <form>
+        <form onSubmit={onSubmit}>
           <div className="form-group">
             <input
+              required
               type="text"
               className="form-control"
               id="name"
@@ -46,6 +54,7 @@ const Register = () => {
 
           <div className="form-group">
             <input
+              required
               type="email"
               className="form-control"
               id="email"
@@ -58,6 +67,7 @@ const Register = () => {
 
           <div className="form-group">
             <input
+              required
               type="password"
               className="form-control"
               id="password"
@@ -70,6 +80,7 @@ const Register = () => {
 
           <div className="form-group">
             <input
+              required
               type="password"
               className="form-control"
               id="passwordConfirm"
