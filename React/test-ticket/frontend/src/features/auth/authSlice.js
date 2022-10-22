@@ -20,8 +20,7 @@ export const register = createAsyncThunk(
           error.response.data &&
           error.response.data.message) ||
         error.message ||
-        error.toString()
-console.log("slice: ", message)
+        error.toString()      
       return thunkAPI.rejectWithValue(message)
     }
   }
@@ -61,5 +60,5 @@ export const authSlice = createSlice({
   },
 })
 
-export const {reset} = authSlice.actions
+export const { reset } = authSlice.actions
 export default authSlice.reducer
