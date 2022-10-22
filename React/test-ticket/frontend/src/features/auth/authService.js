@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API = '/api/users'
+const API = '/api/users/'
 
 const register = async (userData) => {
   const response = await axios.post(API, userData)
