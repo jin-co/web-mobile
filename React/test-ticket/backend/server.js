@@ -5,7 +5,9 @@ const port = process.env.PORT | 5000
 const colors = require('colors')
 const errorHandler = require('./middleware/error.middleware')
 const connectDB = require('./config/db')
+
 connectDB()
+
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 

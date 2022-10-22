@@ -4,6 +4,7 @@ const User = require('../models/user')
 const jwt = require('jsonwebtoken')
 
 const registerUser = asyncHandler(async (req, res, next) => {
+  console.log("hit", req.body)
   const { name, email, password } = req.body
   if (!name || !email || !password) {
     res.status(400)
