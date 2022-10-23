@@ -18,5 +18,6 @@ app.get('', (req, res, next) => {
 })
 
 app.use('/api/users', require('./routes/user.router'))
+app.use('/api/tickets', require('./routes/ticket.router'))
 
 app.listen(port, () => console.log('server running ' + port))
