@@ -4,7 +4,7 @@ const API = '/api/users/'
 
 const register = async (userData) => {
   const response = await axios.post(API, userData)
-  if(response.data) {
+  if(response.data) {    
     localStorage.setItem('user', JSON.stringify(response.data))    
   }
 
