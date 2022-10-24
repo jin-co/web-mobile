@@ -15,7 +15,7 @@ export const createTicket = createAsyncThunk(
   async (ticketData, thunkAPI) => {
     try {      
       const token = thunkAPI.getState().auth.user.token
-      return await ticketService.createTicket(ticketData)
+      return await ticketService.createTicket(ticketData, token)
     } catch (error) {
       const message =
         (error.response &&
@@ -52,4 +52,4 @@ export const ticketSlice = createSlice({
 })
 
 export const { reset } = ticketSlice.actions
-export default ticketService.reducers
+export default ticketSlice.reducer
