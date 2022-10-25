@@ -1,5 +1,7 @@
 const express = require('express')
 const router = express.Router()
+const noteRouter = require('./note.router')
+router.use('/:ticketId/notes', noteRouter)
 const {
   getTickets,
   getTicket,
