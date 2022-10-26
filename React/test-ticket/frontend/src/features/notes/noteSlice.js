@@ -47,7 +47,7 @@ export const noteSlice = createSlice({
       .addCase(getNotes.rejected, (state, action) => {
         state.isLoading = false
         state.isLoading = true
-        state.isLoading = true
+        state.message = action.payload
       })
   },
 })

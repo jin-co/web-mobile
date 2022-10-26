@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API = 'api/tickets/'
+const API = '/api/tickets/'
 const getNotes = async (ticketId, token) => {
   const config = {
     headers: {
