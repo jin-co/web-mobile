@@ -13,9 +13,8 @@ const noteSchema = mongoose.Schema(
       ref: 'Ticket',
     },
     text: {
-      type: mongoose.Schema.Types.ObjectId,
-      required: [true, 'Add some text'],
-      ref: 'Ticket',
+      type: String,
+      required: [true, 'Add some text'],      
     },
     isStaff: {
       type: Boolean,

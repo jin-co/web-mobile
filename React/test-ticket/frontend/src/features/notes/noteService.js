@@ -4,7 +4,7 @@ const API = '/api/tickets/'
 const getNotes = async (ticketId, token) => {
   const config = {
     headers: {
-      Authorization: `Bearer ${token}`,
+      authorization: `Bearer ${token}`,
     },
   }
 
