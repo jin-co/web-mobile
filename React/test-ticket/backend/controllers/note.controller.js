@@ -44,7 +44,7 @@ const addNote = asyncHandler(async (req, res) => {
     ticket: req.params.ticketId,
     user: req.user.id,
   })
-
+  console.log('note create back called: ', note)
   res.status(200).json(note)
 })
 

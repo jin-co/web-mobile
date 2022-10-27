@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
+const protect = require('../middleware/auth.middleware')
 const noteRouter = require('./note.router')
 router.use('/:ticketId/notes', noteRouter)
-const protect = require('../middleware/auth.middleware')
 const {
   getTickets,
   getTicket,
