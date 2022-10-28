@@ -1,15 +1,19 @@
 const mongoose = require('mongoose')
 const ticketSchema = mongoose.Schema(
   {
-    user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', require: true },
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+      required: true,
+    },
     product: {
       type: String,
-      require: [true, 'Select a product'],
+      required: [true, 'Select a product'],
       enum: ['Phone', 'Max', 'Pad'],
     },
     description: {
       type: String,
-      require: [true, 'Enter a description'],
+      required: [true, 'Enter a description'],
     },
     status: {
       type: String,
