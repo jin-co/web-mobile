@@ -71,6 +71,11 @@ const deleteTicket = asyncHandler(async (req, res, next) => {
     throw new Error('Ticket not found')
   }
 
+  if (ticket.user.toString() !== req.user.id) {
+    res.status(401)
+    throw new Error('Not authorized')
+  }
+
   await ticket.remove()
 
   res.status(200).json({ success: true })
