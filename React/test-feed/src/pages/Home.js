@@ -6,12 +6,12 @@ import FeedStats from '../components/feeds/FeedStats'
 import FeedForm from '../components/feeds/FeedForm'
 
 const Home = () => {
-  const [feed, setFeed] = useState([FeedData])
+  const [feed, setFeed] = useState(FeedData)
   return (
     <div>
-      <FeedStats />
-      <FeedForm />
-      <FeedList />
+      <FeedStats feed={feed} />
+      <FeedForm feed={feed} />
+      <FeedList feed={feed} />
     </div>
   )
 }

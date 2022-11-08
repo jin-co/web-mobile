@@ -1,8 +1,12 @@
 import React from 'react'
+import Card from '../Card'
 
-const FeedItem = () => {
+const FeedItem = ({feed}) => {
   return (
-    <div>FeedItem</div>
+    <Card>
+      <p>{feed.text}</p>
+      <p>{feed.rating}</p>
+    </Card>
   )
 }
 
