@@ -1,6 +1,6 @@
 import React from 'react'
 
-const FeedForm = () => {
+const FeedForm = ({feed}) => {
   return (
     <div>FeedForm</div>
   )
