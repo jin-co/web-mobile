@@ -1,8 +1,11 @@
 import React from 'react'
+import RatingSelect from './RatingSelect'
 
-const FeedForm = ({feed}) => {
+const FeedForm = ({ feed }) => {
   return (
-    <div>FeedForm</div>
+    <div>
+      <RatingSelect />
+    </div>
   )
 }
 
