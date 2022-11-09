@@ -6,6 +6,7 @@ const RatingSelect = () => {
 
   const handleChange = (e) => {
     console.log(e.currentTarget.value)
+    console.log(e.target.value)
     setSelected(+e.currentTarget.value)
   }
 
