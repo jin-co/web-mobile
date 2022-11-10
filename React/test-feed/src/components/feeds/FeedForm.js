@@ -10,13 +10,13 @@ const FeedForm = ({ feed }) => {
   const [btnDisabled, setBtnDisabled] = useState(true)
 
   const handleInput = (e) => {
-    setText(e.target.value)    
-    console.log()
-    if (e.target.value.length < 10) {
+    setText(e.target.value)        
+    
+    if (+e.target.value.trim().length < 10) {
       setBtnDisabled(true)
     } else {
-      setBtnDisabled(false)      
-    }    
+      setBtnDisabled(false)
+    }
   }
 
   const handleSubmit = (e) => {
@@ -24,7 +24,11 @@ const FeedForm = ({ feed }) => {
   }
   return (
     <Card>
-      <RatingSelect rating={(rating) => {setRating(rating)}} />
+      <RatingSelect
+        rating={(rating) => {
+          setRating(rating)
+        }}
+      />
 
       <form action="" onSubmit={handleSubmit}>
         <input type="text" onChange={handleInput} value={text} />
