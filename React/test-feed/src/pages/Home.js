@@ -20,7 +20,7 @@ const Home = () => {
     <div>
       <FeedStats feed={feed} />
       <FeedForm feed={feed} handleAdd={addFeed} />
-      <FeedList feed={feed} />
+      <FeedList feed={feed} handleDelete={deleteFeed} />
     </div>
   )
 }
