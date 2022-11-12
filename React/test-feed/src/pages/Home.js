@@ -19,7 +19,7 @@ const Home = () => {
   return (
     <div>
       <FeedStats feed={feed} />
-      <FeedForm feed={feed} />
+      <FeedForm feed={feed} handleAdd={addFeed} />
       <FeedList feed={feed} />
     </div>
   )

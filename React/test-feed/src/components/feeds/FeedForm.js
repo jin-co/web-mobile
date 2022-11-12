@@ -3,15 +3,16 @@ import RatingSelect from './RatingSelect'
 import Card from '../Card'
 import Button from '../Button'
 import { useState } from 'react'
+import { v4 as uuid } from 'uuid'
 
-const FeedForm = ({ feed }) => {
+const FeedForm = ({ feed, handleAdd }) => {
   const [text, setText] = useState('')
   const [rating, setRating] = useState(10)
   const [btnDisabled, setBtnDisabled] = useState(true)
 
   const handleInput = (e) => {
-    setText(e.target.value)        
-    
+    setText(e.target.value)
+
     if (+e.target.value.trim().length < 10) {
       setBtnDisabled(true)
     } else {
@@ -21,6 +22,13 @@ const FeedForm = ({ feed }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    const newFeed = {
+      id: uuid(),
+      text,
+      rating,
+    }
+
+    handleAdd(newFeed)
   }
   return (
     <Card>
