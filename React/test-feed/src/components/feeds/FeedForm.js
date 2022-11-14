@@ -4,12 +4,15 @@ import Card from '../Card'
 import Button from '../Button'
 import { useState } from 'react'
 import { v4 as uuid } from 'uuid'
-import 
+import { useContext } from 'react'
+import FeedContext from '../Context/FeedContext'
 
 const FeedForm = () => {
   const [text, setText] = useState('')
   const [rating, setRating] = useState(10)
   const [btnDisabled, setBtnDisabled] = useState(true)
+
+  const { feed, addFeed } = useContext(FeedContext)
 
   const handleInput = (e) => {
     setText(e.target.value)
@@ -29,7 +32,7 @@ const FeedForm = () => {
       rating,
     }
 
-    handleAdd(newFeed)
+    addFeed(newFeed)
   }
   return (
     <Card>
