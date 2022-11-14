@@ -2,7 +2,8 @@ import React from 'react'
 import FeedItem from './FeedItem'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const FeedList = ({ feed, handleDelete }) => {
+const FeedList = () => {
+  const
   return (
     <>
       <AnimatePresence>
