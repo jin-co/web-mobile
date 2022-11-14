@@ -16,11 +16,14 @@ export const FeedProvider = (props) => {
     setFeed(feed.filter((f) => f.id !== id))
   }
 
-
   return (
-    <FeedContext.Provider value={{
-
-    }}>
+    <FeedContext.Provider
+      value={{
+        feed,
+        addFeed,
+        deleteFeed,
+      }}
+    >
       {props.children}
     </FeedContext.Provider>
   )

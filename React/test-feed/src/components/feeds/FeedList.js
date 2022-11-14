@@ -1,9 +1,11 @@
 import React from 'react'
 import FeedItem from './FeedItem'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useContext } from 'react'
+import FeedContext from '../Context/FeedContext'
 
 const FeedList = () => {
-  const
+  const { feed } = useContext(FeedContext)
   return (
     <>
       <AnimatePresence>
@@ -14,7 +16,7 @@ const FeedList = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <FeedItem key={f.id} feed={f} handleDelete={handleDelete} />
+            <FeedItem key={f.id} feed={f} />
           </motion.div>
         ))}
       </AnimatePresence>
