@@ -2,7 +2,7 @@ import React from 'react'
 import Card from '../Card'
 import { FaTimes, FaEdit } from 'react-icons/fa'
 
-const FeedItem = ({ feed, handleDelete }) => {
+const FeedItem = ({ feed }) => {
   return (
     <Card>
       <p>{feed.text}</p>
