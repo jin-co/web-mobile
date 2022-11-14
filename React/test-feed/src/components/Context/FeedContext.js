@@ -1,12 +1,12 @@
 import React from 'react'
 import { createContext } from 'react'
-import FeedData from '../data/FeedbackData'
-import { useState } from 'react'
+import FeedData from '../../data/FeedbackData'
+import { useState, useEffect } from 'react'
 
 const FeedContext = createContext()
 
 export const FeedProvider = (props) => {
-  const [feed, setFeed] = useState(FeedData)
+  const [feed, setFeed] = useState(FeedData)  
 
   const addFeed = (newFeed) => {
     setFeed([newFeed, ...feed])

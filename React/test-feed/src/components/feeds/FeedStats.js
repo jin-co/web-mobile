@@ -1,9 +1,13 @@
 import React from 'react'
+import { useContext } from 'react'
+import FeedContext from '../Context/FeedContext'
 
-const FeedStats = ({ feed }) => {
-  const average = feed.reduce((acc, cur) => {
-    return acc + cur.rating
-  }, 0) / feed.length
+const FeedStats = () => {
+  const { feed } = useContext(FeedContext)
+  const average =
+    feed.reduce((acc, cur) => {
+      return acc + cur.rating
+    }, 0) / feed.length
 
   return (
     <div>
