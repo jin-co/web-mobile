@@ -4,8 +4,9 @@ import Card from '../Card'
 import Button from '../Button'
 import { useState } from 'react'
 import { v4 as uuid } from 'uuid'
+import 
 
-const FeedForm = ({ feed, handleAdd }) => {
+const FeedForm = () => {
   const [text, setText] = useState('')
   const [rating, setRating] = useState(10)
   const [btnDisabled, setBtnDisabled] = useState(true)
