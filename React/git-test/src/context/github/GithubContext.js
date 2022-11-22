@@ -7,22 +7,25 @@ const GithubContext = createContext()
 
 export const GithubProvider = (props) => {
   const [users, setUser] = useState([])
+  const [loading, setLoading] = useState(false)
 
   const searchUsers = async (text) => {
+    setLoading(true)
     const param = new URLSearchParams({
-      q: text
+      q: text,
     })
     const res = await fetch(GITHUB_URL + 'search/users?' + param)
-    const {items} = await res.json()
-    console.log(items)
+    const { items } = await res.json()
     setUser(items)
+    setLoading(false)
   }
 
   return (
     <GithubContext.Provider
       value={{
-        searchUsers,
         users,
+        loading,
+        searchUsers,
       }}
     >
       {props.children}
