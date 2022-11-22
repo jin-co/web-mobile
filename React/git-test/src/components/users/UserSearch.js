@@ -1,14 +1,18 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import GithubContext from '../../context/github/GithubContext'
 
 const UserSearch = () => {
   const [text, setText] = useState('')
+  const { searchUsers } = useContext(GithubContext)
+
   const handleChange = (e) => {
     setText(e.target.value)
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    searchUsers(e.target.value)
   }
   return (
     <div className="grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 mb-8 gap-8">
