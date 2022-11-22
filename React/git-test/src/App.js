@@ -5,6 +5,8 @@ import Alert from './components/layout/Alert'
 import Footer from './components/layout/Footer'
 import Navbar from './components/layout/Navbar'
 import { GithubProvider } from './context/github/GithubContext'
+import User from './pages/User'
+import NotFound from './pages/NotFound'
 
 const App = () => {
   return (
@@ -18,6 +20,8 @@ const App = () => {
               <Routes>
                 <Route exact path="/" element={<Home />} />
                 <Route exact path="/about" element={<About />} />
+                <Route exact path="/user/:login" element={<User />} />
+                <Route exact path="*" element={<NotFound />} />
               </Routes>
             </main>
             <Footer />
