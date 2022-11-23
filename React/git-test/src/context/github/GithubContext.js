@@ -49,6 +49,7 @@ export const GithubProvider = (props) => {
         users,
         user,
         loading,
+        repos,
         searchUsers,
         getUser,
         getRepos,
