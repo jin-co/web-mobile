@@ -6,7 +6,9 @@ const GITHUB_URL = 'https://api.github.com/'
 const GithubContext = createContext()
 
 export const GithubProvider = (props) => {
-  const [users, setUser] = useState([])
+  const [users, setUsers] = useState([])
+  const [user, setUser] = useState({})
+  const [repos, setRepos] = useState([])
   const [loading, setLoading] = useState(false)
 
   const searchUsers = async (text) => {
@@ -16,7 +18,28 @@ export const GithubProvider = (props) => {
     })
     const res = await fetch(GITHUB_URL + 'search/users?' + param)
     const { items } = await res.json()
-    setUser(items)
+    setUsers(items)
+    setLoading(false)
+  }
+
+  const getUser = async (text) => {
+    setLoading(true)
+    const res = await fetch(GITHUB_URL + 'users/' + text)
+    const data = await res.json()
+    console.log(data)
+    setUser(data)
+    setLoading(false)
+  }
+
+  const getRepos = async (text) => {
+    setLoading(true)
+    const params = new URLSearchParams({
+      sort: 'created',
+      per_page: 10,
+    })
+    const res = await fetch(GITHUB_URL + 'users/' + text + '/repos?' + params)
+    const data = await res.json()
+    setUser(data)
     setLoading(false)
   }
 
@@ -24,8 +47,11 @@ export const GithubProvider = (props) => {
     <GithubContext.Provider
       value={{
         users,
+        user,
         loading,
         searchUsers,
+        getUser,
+        getRepos,
       }}
     >
       {props.children}
