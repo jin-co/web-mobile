@@ -86,14 +86,14 @@ const App = () => {
           </Routes>
 
           {/* navlink eg */}
-          {/* <Card>
+          <Card>
             <NavLink to="/" activeClassName="active">
               Home
             </NavLink>
             <NavLink to="/about" activeClassName="active">
               About
             </NavLink>
-          </Card> */}
+          </Card>
 
           <AboutIconLink />
         </div>

@@ -1,8 +1,14 @@
 import React from 'react'
+import { createContext, useReducer } from 'react'
 
-const AlertContext = () => {
+const AlertContext = createContext()
+
+export const AlertProvider = ({props}) => {
+
   return (
-    <div>AlertContext</div>
+    <AlertContext.Provider value={{
+
+    }}>{props.children}</AlertContext.Provider>
   )
 }
 

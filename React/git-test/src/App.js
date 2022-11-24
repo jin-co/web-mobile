@@ -7,28 +7,31 @@ import Navbar from './components/layout/Navbar'
 import { GithubProvider } from './context/github/GithubContext'
 import User from './pages/User'
 import NotFound from './pages/NotFound'
+import { AlertProvider } from './context/alert/AlertContext'
 
 const App = () => {
   return (
-    <GithubProvider>
-      <div>
-        <Router>
-          <div className="flex flex-col justify-between h-screen">
-            <Navbar />
-            <main className="container mx-auto px-3 pb-12">
-              <Alert />
-              <Routes>
-                <Route exact path="/" element={<Home />} />
-                <Route exact path="/about" element={<About />} />
-                <Route exact path="/users/:login" element={<User />} />
-                <Route exact path="*" element={<NotFound />} />
-              </Routes>
-            </main>
-            <Footer />
-          </div>
-        </Router>
-      </div>
-    </GithubProvider>
+    <AlertProvider>
+      <GithubProvider>
+        <div>
+          <Router>
+            <div className="flex flex-col justify-between h-screen">
+              <Navbar />
+              <main className="container mx-auto px-3 pb-12">
+                <Alert />
+                <Routes>
+                  <Route exact path="/" element={<Home />} />
+                  <Route exact path="/about" element={<About />} />
+                  <Route exact path="/users/:login" element={<User />} />
+                  <Route exact path="*" element={<NotFound />} />
+                </Routes>
+              </main>
+              <Footer />
+            </div>
+          </Router>
+        </div>
+      </GithubProvider>
+    </AlertProvider>
   )
 }
 
