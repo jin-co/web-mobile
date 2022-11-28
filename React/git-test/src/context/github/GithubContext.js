@@ -1,6 +1,8 @@
 import React from 'react'
 import { createContext } from 'react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useReducer } from 'react'
+import GithubReducer from './GithubReducer'
+
 const GITHUB_URL = 'https://api.github.com/'
 
 const GithubContext = createContext()
@@ -10,6 +12,12 @@ export const GithubProvider = (props) => {
   const [user, setUser] = useState({})
   const [repos, setRepos] = useState([])
   const [loading, setLoading] = useState(false)
+
+  const initial = {
+    
+  }
+
+  const [dispatch, state] = useReducer(GithubReducer, initial)
 
   const searchUsers = async (text) => {
     setLoading(true)
@@ -57,7 +65,7 @@ export const GithubProvider = (props) => {
         searchUsers,
         getUser,
         getRepos,
-        clearUser
+        clearUser,
       }}
     >
       {props.children}
