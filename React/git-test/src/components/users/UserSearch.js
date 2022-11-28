@@ -5,7 +5,7 @@ import AlertContext from '../../context/alert/AlertContext'
 
 const UserSearch = () => {
   const [text, setText] = useState('')
-  const { searchUsers } = useContext(GithubContext)
+  const { searchUsers, clearUser, users } = useContext(GithubContext)
   const { showAlert } = useContext(AlertContext)
 
   const handleChange = (e) => {
@@ -14,10 +14,12 @@ const UserSearch = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (e.target.value === '') {
+    console.log(e.target.value)
+    if (e.target.value === undefined) {
       showAlert('Enter something')
+    } else {
+      searchUsers(e.target.value)
     }
-    searchUsers(e.target.value)
   }
   return (
     <div className="grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 mb-8 gap-8">
@@ -40,13 +42,13 @@ const UserSearch = () => {
           </div>
         </form>
       </div>
-      {/* {users.length > 0 && (
+      {users.length > 0 && (
         <div>
           <button className="btn btn-ghost btn-lg" onClick={() => clearUser()}>
             Clear
           </button>
         </div>
-      )} */}
+      )}
     </div>
   )
 }

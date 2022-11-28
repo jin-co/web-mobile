@@ -1,9 +1,9 @@
 import React from 'react'
 import { useContext } from 'react'
-import GithubContext from '../../context/github/GithubContext'
+import AlertContext from '../../context/alert/AlertContext'
 
 const Alert = () => {
-  const { alert } = useContext(GithubContext)
+  const { alert } = useContext(AlertContext)
   return (
     alert !== null && (
       <p className="flex items-start mb-4 space-x-2">

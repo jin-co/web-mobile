@@ -11,8 +11,7 @@ export const AlertProvider = (props) => {
   const showAlert = (msg) => {
     dispatch({
       type: 'SHOW_ALERT',
-      payload: {
-        show: true,
+      payload: {        
         msg: msg
       },
     })

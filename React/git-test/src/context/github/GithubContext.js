@@ -43,6 +43,10 @@ export const GithubProvider = (props) => {
     setLoading(false)
   }
 
+  const clearUser = () => {
+    setUsers([])
+  }
+
   return (
     <GithubContext.Provider
       value={{
@@ -53,6 +57,7 @@ export const GithubProvider = (props) => {
         searchUsers,
         getUser,
         getRepos,
+        clearUser
       }}
     >
       {props.children}
