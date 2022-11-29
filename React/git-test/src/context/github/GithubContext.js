@@ -11,36 +11,36 @@ export const GithubProvider = (props) => {
   const [users, setUsers] = useState([])
   const [user, setUser] = useState({})
   const [repos, setRepos] = useState([])
-  const [loading, setLoading] = useState(false)
 
   const initial = {
-    
+    users: [],
+    user: {},
+    repos: [],
+    loading: false,
   }
 
   const [dispatch, state] = useReducer(GithubReducer, initial)
 
   const searchUsers = async (text) => {
-    setLoading(true)
+    setLoading()
     const param = new URLSearchParams({
       q: text,
     })
     const res = await fetch(GITHUB_URL + 'search/users?' + param)
     const { items } = await res.json()
-    setUsers(items)
-    setLoading(false)
+    dispatch({
+      type: 'GET_USERS',
+      payload: items,
+    })
   }
 
   const getUser = async (text) => {
-    setLoading(true)
     const res = await fetch(GITHUB_URL + 'users/' + text)
-    const data = await res.json()
-    console.log(data)
+    const data = await res.json()    
     setUser(data)
-    setLoading(false)
   }
 
   const getRepos = async (text) => {
-    setLoading(true)
     const params = new URLSearchParams({
       sort: 'created',
       per_page: 10,
@@ -48,20 +48,25 @@ export const GithubProvider = (props) => {
     const res = await fetch(GITHUB_URL + 'users/' + text + '/repos?' + params)
     const data = await res.json()
     setUser(data)
-    setLoading(false)
   }
 
   const clearUser = () => {
     setUsers([])
   }
 
+  const setLoading = () => {
+    dispatch({
+      type: 'SET_LOADING',
+    })
+  }
+
   return (
     <GithubContext.Provider
       value={{
-        users,
-        user,
-        loading,
-        repos,
+        users: state.users,
+        user: state.user,
+        loading: state.loading,
+        repos: state.repos,
         searchUsers,
         getUser,
         getRepos,

@@ -14,13 +14,13 @@ const UserSearch = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(e.target.value)
     if (e.target.value === undefined) {
       showAlert('Enter something')
     } else {
       searchUsers(e.target.value)
     }
   }
+
   return (
     <div className="grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 mb-8 gap-8">
       <div>
