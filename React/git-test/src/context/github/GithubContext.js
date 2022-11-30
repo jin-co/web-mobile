@@ -8,10 +8,6 @@ const GITHUB_URL = 'https://api.github.com/'
 const GithubContext = createContext()
 
 export const GithubProvider = (props) => {
-  const [users, setUsers] = useState([])
-  const [user, setUser] = useState({})
-  const [repos, setRepos] = useState([])
-
   const initial = {
     users: [],
     user: {},
@@ -36,8 +32,11 @@ export const GithubProvider = (props) => {
 
   const getUser = async (text) => {
     const res = await fetch(GITHUB_URL + 'users/' + text)
-    const data = await res.json()    
-    setUser(data)
+    const data = await res.json()
+    dispatch({
+      type: 'GET_USER',
+      payload: data,
+    })
   }
 
   const getRepos = async (text) => {
@@ -47,11 +46,17 @@ export const GithubProvider = (props) => {
     })
     const res = await fetch(GITHUB_URL + 'users/' + text + '/repos?' + params)
     const data = await res.json()
-    setUser(data)
+
+    dispatch({
+      type: 'GET_REPOS',
+      payload: data
+    })
   }
 
   const clearUser = () => {
-    setUsers([])
+    dispatch({
+      type: 'CLEAR_USERS',
+    })
   }
 
   const setLoading = () => {
