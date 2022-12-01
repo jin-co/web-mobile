@@ -5,15 +5,22 @@ import { useContext, useEffect } from 'react'
 import GithubContext from '../context/github/GithubContext'
 import Spinner from '../components/layout/Spinner'
 import { FaUsers, FaUserFriends, FaCodepen, FaStore } from 'react-icons/fa'
+import { searchUserAndRepos } from '../context/github/GithubAction'
 
 const User = () => {
-  const { getUser, user, loading, repos, getRepos } = useContext(GithubContext)
+  const { user, loading, repos, dispatch } = useContext(GithubContext)
   const params = useParams()
 
   useEffect(() => {
-    getUser(params.login)
-    getRepos(params.login)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const fetchThings = async () => {
+      const { data } = searchUserAndRepos(params.login)
+      dispatch({
+        type: '',
+        payload: data
+      })
+    }
+
+    fetchThings()
   }, [])
 
   const {
@@ -39,7 +46,7 @@ const User = () => {
     return <Spinner />
   }
   return (
-    <>    
+    <>
       <div className="w-full mx-auto lg:w-10/12">
         <div className="mb-4">
           <Link to="/" className="btn btn-ghost">
