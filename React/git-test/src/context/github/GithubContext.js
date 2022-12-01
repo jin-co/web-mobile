@@ -15,7 +15,7 @@ export const GithubProvider = (props) => {
     loading: false,
   }
 
-  const [dispatch, state] = useReducer(GithubReducer, initial)
+  const [state, dispatch] = useReducer(GithubReducer, initial)
 
   const searchUsers = async (text) => {
     setLoading()
@@ -31,6 +31,7 @@ export const GithubProvider = (props) => {
   }
 
   const getUser = async (text) => {
+    setLoading()
     const res = await fetch(GITHUB_URL + 'users/' + text)
     const data = await res.json()
     dispatch({
@@ -40,6 +41,7 @@ export const GithubProvider = (props) => {
   }
 
   const getRepos = async (text) => {
+    setLoading()
     const params = new URLSearchParams({
       sort: 'created',
       per_page: 10,

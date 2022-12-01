@@ -9,15 +9,15 @@ const UserSearch = () => {
   const { showAlert } = useContext(AlertContext)
 
   const handleChange = (e) => {
-    setText(e.target.value)
+    setText(e.target.value)    
   }
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    if (e.target.value === undefined) {
+    e.preventDefault()    
+    if (text === undefined) {
       showAlert('Enter something')
     } else {
-      searchUsers(e.target.value)
+      searchUsers(text)
     }
   }
 
