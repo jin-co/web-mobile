@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Nav from './components/Nav'
 import Explore from './pages/Explore'
 import ForgotPassword from './pages/ForgotPassword'
 import Offers from './pages/Offers'
@@ -12,12 +13,13 @@ const App = () => {
       <Router>
         <Routes>
           <Route exact path="/" element={<Explore />} />
-          <Route exact path="/offers" element={<Offers />} />
-          <Route exact path="/profile" element={<Profile />} />
-          <Route exact path="/sign-in" element={<SignIn />} />
-          <Route exact path="/sign-up" element={<SignUp />} />
-          <Route exact path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/offers" element={<Offers />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/sign-in" element={<SignIn />} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
         </Routes>
+        <Nav />
       </Router>
     </>
   )
