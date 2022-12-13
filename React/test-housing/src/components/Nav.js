@@ -1,18 +1,70 @@
 import React from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
-import { ReactComponent as offer } from '../assets/svg/localOfferIcon.svg'
-import { ReactComponent as explore } from '../assets/svg/exploreIcon.svg'
-import { ReactComponent as person } from '../assets/svg/personOutlineIcon.svg'
+import { ReactComponent as OfferIcon } from '../assets/svg/localOfferIcon.svg'
+import { ReactComponent as ExploreIcon } from '../assets/svg/exploreIcon.svg'
+import { ReactComponent as PersonOutlineIcon } from '../assets/svg/personOutlineIcon.svg'
 
 const Nav = () => {
+  const navigate = useNavigate()
+  const location = useLocation()
+  const activeRoute = (route) => {
+    if (route === location.pathname) {
+      return true
+    }
+  }
   return (
-    <div>
-      <Link to="/">Explore</Link>
-      <Link to="/offers">offers</Link>
-      <Link to="/">Home</Link>
-      <Link to="/">Home</Link>
-      <Link to="/">Home</Link>
-    </div>
+    <footer className="navbar">
+      <nav className="navbarNav">
+        <ul className="navbarListItems">
+          <li className="navbarListItem" onClick={() => navigate('/')}>
+            <ExploreIcon
+              fill={activeRoute('/') ? '#2c2c2c' : '#8f8f8f'}
+              width="36px"
+              height="36px"
+            />
+            <p
+              className={
+                activeRoute('/') ? 'navbarListItemNameActive' : 'navbarListName'
+              }
+            >
+              Explore
+            </p>
+          </li>
+          <li className="navbarListItem" onClick={() => navigate('/offers')}>
+            <OfferIcon
+              fill={activeRoute('/offers') ? '#2c2c2c' : '#8f8f8f'}
+              width="36px"
+              height="36px"
+            />
+            <p
+              className={
+                activeRoute('/offers')
+                  ? 'navbarListItemNameActive'
+                  : 'navbarListName'
+              }
+            >
+              Offers
+            </p>
+          </li>
+          <li className="navbarListItem" onClick={() => navigate('/profile')}>
+            <PersonOutlineIcon
+              fill={activeRoute('/profile') ? '#2c2c2c' : '#8f8f8f'}
+              width="36px"
+              height="36px"
+            />
+            <p
+              className={
+                activeRoute('/profile')
+                  ? 'navbarListItemNameActive'
+                  : 'navbarListName'
+              }
+            >
+              Profile
+            </p>
+          </li>
+        </ul>
+      </nav>
+    </footer>
   )
 }
 
