@@ -5,8 +5,8 @@ import { ReactComponent as ExploreIcon } from '../assets/svg/exploreIcon.svg'
 import { ReactComponent as PersonOutlineIcon } from '../assets/svg/personOutlineIcon.svg'
 
 const Nav = () => {
-  const navigate = useNavigate()
   const location = useLocation()
+  const navigate = useNavigate()
   const activeRoute = (route) => {
     if (route === location.pathname) {
       return true
