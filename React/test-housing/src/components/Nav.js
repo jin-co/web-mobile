@@ -12,10 +12,21 @@ const Nav = () => {
       return true
     }
   }
+
   return (
     <footer className="navbar">
       <nav className="navbarNav">
         <ul className="navbarListItems">
+          <li className="navbarListItem" onClick={() => navigate('/')}>
+            <ExploreIcon
+              fill={activeRoute('/') ? 'red' : 'blue'}
+              width="36px"
+              height="36px"
+            />
+            <p className={
+                activeRoute('/') ? 'navbarListItemNameActive' : 'navbarListName'
+              }>test</p>
+          </li>
           <li className="navbarListItem" onClick={() => navigate('/')}>
             <ExploreIcon
               fill={activeRoute('/') ? '#2c2c2c' : '#8f8f8f'}

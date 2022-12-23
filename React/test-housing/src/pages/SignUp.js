@@ -8,10 +8,10 @@ import {
   createUserWithEmailAndPassword,
   updateProfile,
 } from 'firebase/auth'
-import { db } from '../firebase.config'
-import { doc, setDoc, serverTimestamp } from 'firebase/firestore'
+// import { db } from '../firebase.config'
+// import { doc, setDoc, serverTimestamp } from 'firebase/firestore'
 import { toast } from 'react-toastify'
-import OAuth from '../components/OAuth'
+// import OAuth from '../components/OAuth'
 
 const SignUp = () => {
   const navigate = useNavigate()
@@ -47,8 +47,8 @@ const SignUp = () => {
 
       const formDataCopy = { ...formData }
       delete formDataCopy.password
-      formDataCopy.timestamp = serverTimestamp()
-      await setDoc(doc(db, 'users', user.uid), formDataCopy)
+      // formDataCopy.timestamp = serverTimestamp()
+      // await setDoc(doc(db, 'users', user.uid), formDataCopy)
 
       navigate('/')
     } catch (error) {
@@ -118,7 +118,7 @@ const SignUp = () => {
               </div>
             </form>
 
-            <OAuth />
+            {/* <OAuth /> */}
           </main>
         </header>
       </div>
