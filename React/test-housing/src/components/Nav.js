@@ -7,25 +7,23 @@ import { ReactComponent as PersonOutlineIcon } from '../assets/svg/personOutline
 const Nav = () => {
   const location = useLocation()
   const navigate = useNavigate()
-  const activeRoute = (route) => {
-    if (route === location.pathname) {
-      return true
-    }
+  const activeRoute = (url) => {
+    if (location.pathname === url) return true
   }
 
   return (
     <footer className="navbar">
       <nav className="navbarNav">
         <ul className="navbarListItems">
-          <li className="navbarListItem" onClick={() => navigate('/')}>
+          <li className="navbarListItem" onClick={() => navigate('/what')}>
             <ExploreIcon
-              fill={activeRoute('/') ? 'red' : 'blue'}
+              fill={activeRoute('/what') ? '#2c2c2c' : '#8f8f8f'}
               width="36px"
               height="36px"
-            />
-            <p className={
-                activeRoute('/') ? 'navbarListItemNameActive' : 'navbarListName'
-              }>test</p>
+            ></ExploreIcon>
+            <p
+            fill={activeRoute('/what') ? '#2c2c2c' : '#8f8f8f'}
+            >what</p>
           </li>
           <li className="navbarListItem" onClick={() => navigate('/')}>
             <ExploreIcon
