@@ -19,7 +19,10 @@ const SignIn = () => {
   }
 
   const handleChange = (e) => {
-    
+    setFromData((pre) => ({
+      ...pre,
+      [e.target.id]: e.target.value,
+    }))
   }
   return (
     <>
