@@ -18,7 +18,7 @@ const SignIn = () => {
     e.preventDefault()
   }
 
-  const handleChange = (e) => {
+  const handleChange = (e) => {    
     setFromData((pre) => ({
       ...pre,
       [e.target.id]: e.target.value,
@@ -55,7 +55,7 @@ const SignIn = () => {
                   alt=""
                   className="showPassword"
                   onClick={() => setShowPassword((prev) => !prev)}
-                />
+                />                
               </div>
 
               <div className="container">
