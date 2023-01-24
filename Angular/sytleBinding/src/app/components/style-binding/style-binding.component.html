@@ -1,12 +1,17 @@
-<!-- class-binding.component.html -->
+<!-- style-binding.component.html -->
 
-<div class="container" [class.bg-dark]="bgMode === 'dark'">
+<div class="container" [style.backgroundColor]="bgMode === 'dark' ? '#696969' : 'aliceblue'"
+  [style.color]="bgMode === 'light' ? '#696969' : 'aliceblue'">
   <h1>Class binding</h1>
 
-  <img src="https://source.unsplash.com/random" alt="" [ngClass]="{mobile: this.bgMode === 'dark'}">
+  <img src="https://source.unsplash.com/random" alt=""
+    [ngStyle]="{height: this.bgMode === 'dark' ? '500px' : '200px', width: this.bgMode === 'dark' ? '100% ' : '100px', objectFit: this.bgMode === 'dark' ? 'contain' : 'cover'}">
 
-  <div class="text-box" [ngClass]="{'box-style': bgMode === 'light',
-  'background': bgMode === 'light'}">
+  <div class="text-box" [ngStyle]="{
+    'color': bgMode === 'light' ? 'aliceblue' : '',
+    'font-size': bgMode === 'light' ? '1rem' : '',
+    'padding': bgMode === 'light' ? '10px 0' : '',
+  'background-color': bgMode === 'light' ? '#696969' : ''}">
 
     <p>Author</p>
     <small>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque, ut.</small>
