@@ -1,0 +1,18 @@
+<!-- class-binding.component.html -->
+
+<div class="container" [class.bg-dark]="bgMode === 'dark'">
+  <h1>Class binding</h1>
+
+  <img src="https://source.unsplash.com/random" alt="" [ngClass]="{mobile: this.bgMode === 'dark'}">
+
+  <div class="text-box" [ngClass]="{'box-style': bgMode === 'light',
+  'background': bgMode === 'light'}">
+
+    <p>Author</p>
+    <small>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque, ut.</small>
+  </div>
+
+  <!-- control button -->
+  <button style="position: fixed; top: 10px; right: 10px; font-size: 1.3rem; border-radius: 5px; border: none;"
+    (click)="bgMode === 'dark' ? bgMode = 'light' : bgMode = 'dark'">{{bgMode}} Mode</button>
+</div>
