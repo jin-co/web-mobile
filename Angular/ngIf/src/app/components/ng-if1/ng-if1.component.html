@@ -1,0 +1,9 @@
+<div class="container">
+  <hr>
+  <div class="card" *ngFor="let i of users">    
+    <h3>Name: {{i.name}}</h3>
+    <p>Pet Owner: {{i.petOwner}}</p>
+    <p *ngIf="i.petOwner">Name: {{i.petName}}</p>
+    <hr>
+  </div>  
+</div>

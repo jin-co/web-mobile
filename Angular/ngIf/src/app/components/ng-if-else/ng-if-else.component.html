@@ -1,0 +1,11 @@
+<div class="container">
+  <hr>
+  <div class="card" *ngFor="let i of users">    
+    <h3>Name: {{i.name}}</h3>
+    <p>Pet Owner: {{i.petOwner}}</p>
+    <p *ngIf="i.petOwner; else noPet">Name: {{i.petName}}</p>
+
+    <ng-template #noPet>Not a pet owner</ng-template>
+    <hr>
+  </div>  
+</div>
