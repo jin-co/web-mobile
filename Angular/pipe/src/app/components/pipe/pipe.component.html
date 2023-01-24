@@ -1,12 +1,12 @@
-<p ngNonBindable>
-  {{ interpolation }}
-</p>
+<!-- pipe.component.html -->
 
-<p ngNonBindable>
-  {{ 1 + 1 }}
-</p>
-
-<p ngNonBindable>
-  {{ (1 + 1) == 2 ? 'true' : 'false' }}
-</p>
-
+<p>{{ value | date : 'short' }}</p>
+<p>{{ value | date : 'medium' }}</p>
+<p>{{ value | date : 'long' }}</p>
+<p>{{ value | date : 'full' }}</p>
+<p>{{ value | date : 'MM-dd-yyyy' }}</p>
+<p>{{ value | date : 'M/d/yy, h:mm a' }}</p>
+<p>{{ value | date : 'shortDate' }}</p>
+<p>{{ value | date : 'longDate' }}</p>
+<p>{{ value | date : 'shortTime' }}</p>
+<p>{{ value | date : 'longTime' }}</p>

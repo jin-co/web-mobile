@@ -1,3 +1,5 @@
+// pipe.component.ts
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pipe.component.css']
 })
 export class PipeComponent implements OnInit {
-  interpolation:string = 'interpolation test'
+  value:Date = new Date()
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }
