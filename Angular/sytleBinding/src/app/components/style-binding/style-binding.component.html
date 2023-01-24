@@ -2,7 +2,7 @@
 
 <div class="container" [style.backgroundColor]="bgMode === 'dark' ? '#696969' : 'aliceblue'"
   [style.color]="bgMode === 'light' ? '#696969' : 'aliceblue'">
-  <h1>Class binding</h1>
+  <h1>Style binding</h1>
 
   <img src="https://source.unsplash.com/random" alt=""
     [ngStyle]="{height: this.bgMode === 'dark' ? '500px' : '200px', width: this.bgMode === 'dark' ? '100% ' : '100px', objectFit: this.bgMode === 'dark' ? 'contain' : 'cover'}">
