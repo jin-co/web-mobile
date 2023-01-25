@@ -1,5 +1,4 @@
 // pipe.component.ts
-
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -12,5 +11,6 @@ export class PipeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 }
