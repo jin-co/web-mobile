@@ -7,7 +7,7 @@ import { Comment } from '../models/comment';
   providedIn: 'root'
 })
 export class CommentService {
-  URL = 'https://jsonplaceholder.typicode.com/comments'    
+  URL = 'https://jsonplaceholder.typicode.com/comments/'    
   // comments:Comment[] = []
   comments = new Subject<Comment[]>
   constructor(private http:HttpClient) { }
