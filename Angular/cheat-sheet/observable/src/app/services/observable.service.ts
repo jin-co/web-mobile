@@ -9,8 +9,13 @@ export class ObservableService {
   constructor() { }
 
   showObserve(input:string) {
-    this.observe = new Observable(o => {
-      o.next(input)
+    this.observe = new Observable((observe) => {
+      console.log('something: ', this.observe)
+      observe.next(input)
     })
+  } 
+  
+  getObserve() {
+    return this.observe
   }
 }

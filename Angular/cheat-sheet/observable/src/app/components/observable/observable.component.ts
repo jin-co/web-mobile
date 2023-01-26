@@ -13,7 +13,7 @@ export class ObservableComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onClick() {
+  onClick() {      
     this.observableService.showObserve(this.input)
   }
 }
