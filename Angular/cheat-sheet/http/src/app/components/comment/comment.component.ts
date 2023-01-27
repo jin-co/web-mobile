@@ -1,3 +1,5 @@
+// comment.component.ts
+
 import { Component, OnInit } from '@angular/core';
 import { Comment } from 'src/app/models/comment';
 import { CommentService } from 'src/app/services/comment.service';
@@ -8,14 +10,15 @@ import { CommentService } from 'src/app/services/comment.service';
   styleUrls: ['./comment.component.css'],
 })
 export class CommentComponent implements OnInit {
-  comments:Comment[] = []
-  
+  comments: Comment[] = [];
+
   constructor(private commentService: CommentService) {}
 
   ngOnInit(): void {
-    this.commentService.getComments()
-    this.commentService.commentsUpdateListener().subscribe(comments => {
-      console.log(comments)
-    })
+    this.commentService.getComments();
+    this.comments = this.commentService.comments
+    // this.commentService.commentsUpdateListener().subscribe((comments) => {
+    //   console.log(comments);
+    // });
   }
 }
