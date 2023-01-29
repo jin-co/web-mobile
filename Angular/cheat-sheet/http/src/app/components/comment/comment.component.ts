@@ -15,10 +15,16 @@ export class CommentComponent implements OnInit {
   constructor(private commentService: CommentService) {}
 
   ngOnInit(): void {
-    this.commentService.getComments();
-    this.comments = this.commentService.comments
+    this.commentService.getComments().subscribe((comments) => {
+      this.comments = comments;
+    });
     // this.commentService.commentsUpdateListener().subscribe((comments) => {
-    //   console.log(comments);
+    //   console.log(comments)
+    //   this.comments = comments;
     // });
   }
+
+  onDelete(id: string | undefined) {
+    this.commentService.deleteComment(id as string);
+  }  
 }

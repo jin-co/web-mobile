@@ -1,5 +1,19 @@
+<!-- comment.component.html -->
+
+<a routerLink="/comment-add">Add</a>
 <div class="container">
-  <div class="card" *ngFor="let i of comments">
+  <div class="card"
+    style="display: flex; flex-direction: column; justify-content: space-around; height: 150px; width: 600px; font-family: Arial, Helvetica, sans-serif; padding: 10px; background-color: antiquewhite; margin: 10px auto;"
+    *ngFor="let i of comments">
     <p>{{i.id}}</p>
+    <p>{{i.body}}</p>
+    <div>
+      <p>{{i.name}}</p>
+      <p>{{i.email}}</p>
+    </div>
+    <button (click)="onDelete(i.id)">Delete</button>
+    <button>
+      <a [routerLink]="['/comment-edit', i.id]">Edit</a>
+    </button>
   </div>
 </div>

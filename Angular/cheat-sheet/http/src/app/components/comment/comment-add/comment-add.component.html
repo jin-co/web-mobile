@@ -1,0 +1,8 @@
+<!-- comment-add.component.html -->
+
+<form (submit)="onSubmit(name.value, email.value, body.value)" style="padding: 20px;">
+  <input #name ngModel style="width: 100%; font-size: 1.4rem;" type="text" placeholder="name">
+  <input #email ngModel style="width: 100%; font-size: 1.4rem;" type="text" placeholder="email">  
+  <textarea  #body ngModel style="width: 100%; font-size: 1.4rem;" placeholder="content"></textarea>
+  <button>Submit</button>
+</form>
