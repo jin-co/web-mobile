@@ -1,0 +1,8 @@
+<!-- comment-add.component.html -->
+
+<form (submit)="onSubmit(name.value, email.value, body.value)" style="padding: 20px;">
+  <input #name style="width: 100%; font-size: 1.4rem;" type="text" placeholder="name" [value]="comment.name">
+  <input #email style="width: 100%; font-size: 1.4rem;" type="text" placeholder="email" [value]="comment.email">  
+  <textarea  #body style="width: 100%; font-size: 1.4rem;" placeholder="content" [value]="comment.body"></textarea>
+  <button>Submit</button>
+</form>

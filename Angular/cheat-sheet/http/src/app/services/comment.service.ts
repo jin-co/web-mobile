@@ -41,6 +41,10 @@ export class CommentService {
     })
   }
 
+  getComment(id:string):Observable<Comment> {
+    return this.http.get<Comment>(this.URL + id)
+  }
+
   editComment(id:string, body: string, name: string, email: string) {
     const comment: Comment = {
       body: body,
