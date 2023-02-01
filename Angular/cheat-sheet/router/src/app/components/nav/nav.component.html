@@ -1,16 +1,17 @@
 <!-- nav.component.html -->
 
-<nav style="width: 100%; display: flex; align-items: center; list-style: none; justify-content: space-around; font-size: 2rem;">
+<nav
+  style="width: 100%; display: flex; align-items: center; list-style: none; justify-content: space-around; font-size: 2rem;">
   <h1>
-    <a style="text-decoration: none;" routerLink="/" routerLinkActive="active-link">
+    <a style="text-decoration: none;" routerLink="/" routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{exact:true}">
       Home
     </a>
   </h1>
   <li>
-    <a style="cursor:pointer; text-decoration: none;" routerLink="/post" routerLinkActive="active-link">Post</a>
+    <a style="cursor:pointer; text-decoration: none;" routerLink="/post" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">Post</a>
   </li>
   <li>
-    <a style="cursor:pointer; text-decoration: none;" routerLink="/about" routerLinkActive="active-link">About</a>
-  </li>  
+    <a style="cursor:pointer; text-decoration: none;" routerLink="/about" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">About</a>
+  </li>
 </nav>
-<!-- [routerLinkActiveOptions]="{exact:true}" -->
