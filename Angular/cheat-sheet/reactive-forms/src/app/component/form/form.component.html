@@ -1,0 +1,20 @@
+<!-- form.component.html -->
+
+<form (submit)="onSubmit($event)" [formGroup]="form">
+  <div>
+    <input type="text" formControlName="title">
+    <p *ngIf="form.touched && form.get('title')?.invalid">Title Required</p>
+  </div>  
+
+  <div>
+    <input type="text" formControlName="content">
+    <p *ngIf="form.touched && form.get('content')?.invalid">Minimum 10 characters</p>
+  </div>
+
+  <div>
+    <input type="email" formControlName="email">
+    <p *ngIf="form.touched && form.get('email')?.invalid">Wrong Format</p>
+  </div>
+
+  <button>Submit</button>
+</form>
