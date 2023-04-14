@@ -1,7 +1,17 @@
+import { About } from './components/About'
+import { Header } from './components/Header'
+import { Home } from './components/Home'
+import { Post } from './components/Post'
+
 function App() {
   return (
     <div>
-      <h1>Test</h1>
+      <Header />
+      <main>
+        <Home />
+        <Post />
+        <About />
+      </main>
     </div>
   )
 }
