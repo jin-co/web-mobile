@@ -1,13 +1,15 @@
 import React from 'react'
+import { FeedbackItem } from './FeedbackItem'
 
-export const FeedbackList = () => {
-  var items = [
-    {id: 1, name: 'pencil'},
-    {id: 2, name: 'eraser'},
-    {id: 3, name: 'brush'},
-  ]
-
+export const FeedbackList = (props) => {
   return (
-    <div>FeedbackList</div>
+    <div className='feedback-list'>
+      {
+        props.feed.map(m => (
+          <FeedbackItem feed={m} />
+        ))
+      }
+
+    </div>
   )
 }
