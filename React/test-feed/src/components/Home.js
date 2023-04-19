@@ -1,16 +1,20 @@
 import React from 'react'
-import { FeedbackList } from './FeedbackList'
-import { FeedbackForm } from './FeedbackForm'
 import { useState } from 'react'
-import FeedbackData from '../data/FeedbackData'
 
 export const Home = () => {
-  const [feed, SetFeed] = useState(FeedbackData)
+  const [post, setPost] = useState(1)
+
+  console.log(post);
+
+  function updatePost() {
+    setPost((pre) => {
+      return pre + 1
+    })
+  }
 
   return (
-    <div>
-      <FeedbackList feed={feed} />
-      <FeedbackForm />
-    </div>
+    <>
+      <button onClick={updatePost}>Update</button>
+    </>
   )
 }
