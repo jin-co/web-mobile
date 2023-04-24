@@ -6,11 +6,11 @@ import { Post } from './components/Post'
 function App() {
   return (
     <div>
-      {/* <Header /> */}
+      <Header />
       <main className='container'>
         <Home />
-        {/* <Post />
-        <About /> */}
+        <Post />
+        <About />
       </main>
     </div>
   )

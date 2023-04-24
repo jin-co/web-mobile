@@ -6,9 +6,14 @@ import { useState } from 'react'
 
 export const Home = () => {
   const [feed, setFeed] = useState(FeedData)
+
+  const deleteFeed = (id) => {
+    setFeed(feed.filter(i => i.id !== id))
+  }
+
   return (
     <>
-      <FeedbackList />
+      <FeedbackList feed={feed} deleteFeed={deleteFeed}/>
       <FeedbackForm feed={feed} />
     </>
   )

@@ -6,7 +6,7 @@ export const FeedbackList = (props) => {
     <div className='feedback-list'>
       {
         props.feed.map(m => (
-          <FeedbackItem key={m.id} feed={m} />
+          <FeedbackItem key={m.id} feed={m} deleteFeed={props.deleteFeed}/>
         ))
       }
 

@@ -1,13 +1,19 @@
 import React from 'react'
 import { useState } from 'react'
+import { Card } from './Shared/Card'
+import { FaTimes, FaEdit } from 'react-icons/fa'
 
-export const FeedbackItem = ({feed}) => {
-  const [rating, setRating] = useState(7)
-
+export const FeedbackItem = ({ feed, deleteFeed }) => {  
   return (
-    <div className="card">    
+    <Card>
+      <button className='close' onClick={() => deleteFeed(feed.id)}>
+        <FaTimes />
+      </button>
+      <button className='edit'>
+        <FaEdit />
+      </button>
       <div className="num-display">{feed.rating}</div>
       <div className="text-display">{feed.text}</div>
-    </div>
+    </Card>
   )
 }
