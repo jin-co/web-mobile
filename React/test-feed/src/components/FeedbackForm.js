@@ -11,8 +11,8 @@ export const FeedbackForm = ({ addFeed }) => {
 
   const handleSubmit = () => {
     let feed = {
-      text: text,
-      rating: rating
+      text,
+      rating
     }
     addFeed(feed)
   }
@@ -29,7 +29,7 @@ export const FeedbackForm = ({ addFeed }) => {
 
   return (
     <Card>
-      <form action="" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <h2>How would you rate your service with us?</h2>
         <FeedbackRatingSelect changeRating={(r) => setRating(r)} />
         <div className="input-group">
@@ -38,7 +38,7 @@ export const FeedbackForm = ({ addFeed }) => {
             onChange={onInputChange}
           />
         </div>
-        <Button isDisabled={isDisabled}>Add</Button>
+        <Button type='submit' isDisabled={isDisabled}>Add</Button>
       </form>
     </Card>
   )
