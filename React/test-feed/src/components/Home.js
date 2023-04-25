@@ -23,8 +23,8 @@ export const Home = () => {
   return (
     <>
       <FeedbackStats feed={feed} />
+      <FeedbackForm feed={feed} addFeed={addFeed} />
       <FeedbackList feed={feed} deleteFeed={deleteFeed} />
-      <FeedbackForm feed={feed} />
     </>
   )
 }
