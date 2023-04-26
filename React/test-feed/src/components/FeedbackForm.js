@@ -3,28 +3,32 @@ import { Card } from '../components/Shared/Card'
 import { FeedbackRatingSelect } from '../components/FeedbackRatingSelect'
 import { Button } from '../components/Shared/Button'
 import { useState } from 'react'
+import { v4 as uuid } from 'uuid'
 
 export const FeedbackForm = ({ addFeed }) => {
   const [isDisabled, setIsDisabled] = useState(true)
   const [rating, setRating] = useState(10)
   const [text, setText] = useState('')
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault()
     let feed = {
-      text,
-      rating
+      id: uuid(),
+      rating,
+      text
     }
-    addFeed(feed)
+    console.log(feed)
+    addFeed(feed)    
   }
 
   const onInputChange = (e) => {
     if (e.target.value.length > 10) {
-      setIsDisabled(false)
-      setText(e.target.value)
+      setIsDisabled(false)      
     } else {
       setIsDisabled(true)
-    }
-    console.log(rating)    
+    }    
+    console.log(e.target.value)
+    setText(e.target.value)
   }
 
   return (

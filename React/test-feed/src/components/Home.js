@@ -13,7 +13,7 @@ export const Home = () => {
   }
 
   const addFeed = (newFeed) => {
-    setFeed(feed.push(newFeed))
+    setFeed([newFeed, ...feed])
   }
 
   const updateFeed = (id, newFeed) => {
