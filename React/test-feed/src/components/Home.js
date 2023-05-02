@@ -4,6 +4,8 @@ import { FeedbackForm } from './FeedbackForm'
 import { FeedbackStats } from './FeedbackStats'
 import FeedData from '../data/FeedbackData'
 import { useState } from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { About } from './About'
 
 export const Home = () => {
   const [feed, setFeed] = useState(FeedData)
