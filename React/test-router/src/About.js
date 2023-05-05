@@ -1,8 +1,13 @@
 import React from 'react'
+import { Routes, Route } from 'react-router-dom'
 
 
-export const About = () => {  
+export const About = () => {
   return (
-    <div>About</div>
+    <Routes>
+      <Route path='/nested1' element={<h1>Nested 1</h1>} />
+    </Routes>
   )
 }
+
+
