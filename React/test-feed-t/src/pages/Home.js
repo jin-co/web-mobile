@@ -9,9 +9,9 @@ export const Home = () => {
   const [feed, setFeed] = useState(FeedData)
   return (
     <>
+      <FeedStat feed = {feed} />
       <FeedForm />
-      <FeedStat />
-      <FeedList />
+      <FeedList feed = {feed} />
     </>
   )
 }

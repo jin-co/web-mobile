@@ -12,11 +12,10 @@ export const FeedForm = () => {
     e.preventDefault()
   }
 
-  const handleChange = (e) => {    
+  const handleChange = (e) => {
     if (e.target.value.trim().length > 10) {
       setIsDisabled(false)
-      setText(e.target.value)
-      console.log(rating, text);
+      setText(e.target.value)      
     } else {
       setIsDisabled(true)
     }
