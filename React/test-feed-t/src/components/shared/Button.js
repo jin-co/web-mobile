@@ -1,4 +1,3 @@
-import { isDisabled } from '@testing-library/user-event/dist/utils'
 import React from 'react'
 
 export const Button = ({version, isDisabled}) => {
