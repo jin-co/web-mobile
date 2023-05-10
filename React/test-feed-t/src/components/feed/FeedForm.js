@@ -2,20 +2,27 @@ import React, { useState } from 'react'
 import { Card } from '../shared/Card'
 import { FeedRatingSelect } from './FeedRatingSelect'
 import { Button } from '../shared/Button'
+import { v4 as uuid } from 'uuid'
 
-export const FeedForm = () => {
+export const FeedForm = ({ addFeed }) => {
   const [text, setText] = useState('')
   const [rating, setRating] = useState(0)
   const [isDisabled, setIsDisabled] = useState(true)
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    const newFeed = {
+      id: uuid(),
+      text,
+      rating
+    }
+    addFeed(newFeed)
   }
 
   const handleChange = (e) => {
     if (e.target.value.trim().length > 10) {
       setIsDisabled(false)
-      setText(e.target.value)      
+      setText(e.target.value)
     } else {
       setIsDisabled(true)
     }
