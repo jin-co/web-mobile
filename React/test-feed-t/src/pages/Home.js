@@ -7,11 +7,20 @@ import { FeedStat } from '../components/feed/FeedStat'
 
 export const Home = () => {
   const [feed, setFeed] = useState(FeedData)
+
+  const addFeed = (newFeed) => {
+    setFeed([newFeed, ...feed])
+  }
+
+  const deletedFeed = (id) => {
+    setFeed(feed.filter(f => f.id !== id))
+  }
+
   return (
     <>
-      <FeedStat feed = {feed} />
-      <FeedForm />
-      <FeedList feed = {feed} />
+      <FeedStat feed={feed} />
+      <FeedForm addFeed={addFeed} />
+      <FeedList feed={feed} deleteFeed={deletedFeed} />
     </>
   )
 }
