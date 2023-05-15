@@ -1,9 +1,11 @@
 import React from 'react'
-import { useState } from 'react'
+import { useContext } from 'react'
 import { Card } from './Shared/Card'
 import { FaTimes, FaEdit } from 'react-icons/fa'
+import FeedContext from '../context/FeedContext'
 
-export const FeedbackItem = ({ feed, deleteFeed }) => {  
+export const FeedbackItem = ({ feed }) => {
+  const { deleteFeed } = useContext(FeedContext)
   return (
     <Card>
       <button className='close' onClick={() => deleteFeed(feed.id)}>

@@ -2,13 +2,16 @@ import React from 'react'
 import { Card } from '../components/Shared/Card'
 import { FeedbackRatingSelect } from '../components/FeedbackRatingSelect'
 import { Button } from '../components/Shared/Button'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { v4 as uuid } from 'uuid'
+import FeedContext from '../context/FeedContext'
 
-export const FeedbackForm = ({ addFeed }) => {
+
+export const FeedbackForm = () => {
   const [isDisabled, setIsDisabled] = useState(true)
   const [rating, setRating] = useState(10)
   const [text, setText] = useState('')
+  const { addFeed } = useContext(FeedContext)
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -18,15 +21,15 @@ export const FeedbackForm = ({ addFeed }) => {
       text
     }
     console.log(feed)
-    addFeed(feed)    
+    addFeed(feed)
   }
 
   const onInputChange = (e) => {
     if (e.target.value.length > 10) {
-      setIsDisabled(false)      
+      setIsDisabled(false)
     } else {
       setIsDisabled(true)
-    }    
+    }
     console.log(e.target.value)
     setText(e.target.value)
   }
