@@ -1,7 +1,9 @@
 import React from 'react'
 
-export const InventoryItem = () => {
+export const InventoryItem = ({inventory}) => {
   return (
-    <div>InventoryItem</div>
+    <div>
+      { inventory.name }
+    </div>
   )
 }

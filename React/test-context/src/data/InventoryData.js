@@ -1,4 +1,4 @@
-const inventory = [
+const InventoryData = [
   {
     id: 1,
     name: 'item 1',
@@ -20,3 +20,5 @@ const inventory = [
     quantity: 4,
   },
 ]
+
+export default InventoryData
