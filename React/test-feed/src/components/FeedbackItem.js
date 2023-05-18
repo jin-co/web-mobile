@@ -5,13 +5,13 @@ import { FaTimes, FaEdit } from 'react-icons/fa'
 import FeedContext from '../context/FeedContext'
 
 export const FeedbackItem = ({ feed }) => {
-  const { deleteFeed } = useContext(FeedContext)
+  const { deleteFeed, handleSetGetFeed } = useContext(FeedContext)
   return (
     <Card>
       <button className='close' onClick={() => deleteFeed(feed.id)}>
         <FaTimes />
       </button>
-      <button className='edit'>
+      <button className='edit' onClick={() => handleSetGetFeed(feed)}>
         <FaEdit />
       </button>
       <div className="num-display">{feed.rating}</div>

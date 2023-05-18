@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Card } from '../components/Shared/Card'
 import { FeedbackRatingSelect } from '../components/FeedbackRatingSelect'
 import { Button } from '../components/Shared/Button'
@@ -11,7 +11,12 @@ export const FeedbackForm = () => {
   const [isDisabled, setIsDisabled] = useState(true)
   const [rating, setRating] = useState(10)
   const [text, setText] = useState('')
-  const { addFeed } = useContext(FeedContext)
+  const { addFeed, getFeed } = useContext(FeedContext)
+
+  useEffect(() => {        
+    setText(getFeed.text)
+  }, [getFeed])
+
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -43,6 +48,7 @@ export const FeedbackForm = () => {
           <input
             placeholder="Write a review"
             onChange={onInputChange}
+            value={text}
           />
         </div>
         <Button type='submit' isDisabled={isDisabled}>Add</Button>

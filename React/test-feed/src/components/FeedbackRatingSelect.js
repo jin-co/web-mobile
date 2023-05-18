@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useState } from 'react'
+import FeedContext from '../context/FeedContext'
 
-export const FeedbackRatingSelect = ({changeRating}) => {
+export const FeedbackRatingSelect = ({ changeRating }) => {
   const [rating, setRating] = useState(10)
+  const { getFeed } = useContext(FeedContext)
+  useEffect(() => {
+    setRating(getFeed.rating)
+  }, [getFeed])
+
   const onChange = (e) => {
     setRating(+e.target.value)
     changeRating(+e.target.value)

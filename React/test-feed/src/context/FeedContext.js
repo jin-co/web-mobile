@@ -5,6 +5,11 @@ const FeedContext = createContext()
 
 export const FeedProvider = ({ children }) => {
   const [feed, setFeed] = useState(FeedData)
+  const [getFeed, setGetFeed] = useState({
+    id: null,
+    text: '',
+    rating: 0
+  })
 
   const deleteFeed = (id) => {
     setFeed(feed.filter(i => i.id !== id))
@@ -18,12 +23,18 @@ export const FeedProvider = ({ children }) => {
     setFeed(feed.map(f => f.id == id ? { ...f, ...newFeed } : { ...f }))
   }
 
+  const handleSetGetFeed = (feed) => {
+    setGetFeed(feed)    
+  }
+
   return (
     <FeedContext.Provider value={{
       feed,
+      getFeed,
       deleteFeed,
       addFeed,
-      updateFeed
+      updateFeed,
+      handleSetGetFeed
     }}>
       {children}
     </FeedContext.Provider>
