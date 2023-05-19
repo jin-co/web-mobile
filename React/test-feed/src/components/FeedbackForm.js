@@ -35,6 +35,8 @@ export const FeedbackForm = () => {
       }
       addFeed(feed)
     }
+    setText('')
+    setRating(0)
   }
 
   const onInputChange = (e) => {

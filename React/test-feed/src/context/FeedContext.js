@@ -23,6 +23,13 @@ export const FeedProvider = ({ children }) => {
   const updateFeed = (id, newFeed) => {
     console.log(id, newFeed)
     setFeed(feed.map(f => f.id == id ? { ...f, ...newFeed } : { ...f }))
+
+    setGetFeed({
+      id: null,
+      text: '',
+      rating: 0,
+      isEdit: false
+    })
   }
 
   const handleSetGetFeed = (feed) => {
@@ -31,7 +38,7 @@ export const FeedProvider = ({ children }) => {
       text: feed.text,
       rating: feed.rating,
       isEdit: true,
-    })    
+    })
   }
 
   return (
