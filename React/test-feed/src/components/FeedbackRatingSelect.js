@@ -17,7 +17,7 @@ export const FeedbackRatingSelect = ({ changeRating }) => {
   return (
     <ul className='rating'>
       {Array.from({ length: 10 }, (_, i) => (
-        <li>
+        <li key={i}>
           <input type="radio" id={`rating-${i + 1}`} value={i + 1} checked={rating == (i + 1)} onChange={onChange} />
           <label htmlFor={`rating-${i + 1}`}> {i + 1} </label>
         </li>

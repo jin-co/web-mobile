@@ -11,22 +11,30 @@ export const FeedbackForm = () => {
   const [isDisabled, setIsDisabled] = useState(true)
   const [rating, setRating] = useState(10)
   const [text, setText] = useState('')
-  const { addFeed, getFeed } = useContext(FeedContext)
+  const { addFeed, getFeed, updateFeed } = useContext(FeedContext)
 
-  useEffect(() => {        
+  useEffect(() => {
     setText(getFeed.text)
   }, [getFeed])
 
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    let feed = {
-      id: uuid(),
-      rating,
-      text
+    if (getFeed.isEdit) {
+      let feed = {        
+        rating,
+        text
+      }
+      updateFeed(getFeed.id, feed)
+    } else {
+      e.preventDefault()
+      let feed = {
+        id: uuid(),
+        rating,
+        text
+      }
+      addFeed(feed)
     }
-    console.log(feed)
-    addFeed(feed)
   }
 
   const onInputChange = (e) => {

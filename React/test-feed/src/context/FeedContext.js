@@ -8,7 +8,8 @@ export const FeedProvider = ({ children }) => {
   const [getFeed, setGetFeed] = useState({
     id: null,
     text: '',
-    rating: 0
+    rating: 0,
+    isEdit: false
   })
 
   const deleteFeed = (id) => {
@@ -20,11 +21,17 @@ export const FeedProvider = ({ children }) => {
   }
 
   const updateFeed = (id, newFeed) => {
+    console.log(id, newFeed)
     setFeed(feed.map(f => f.id == id ? { ...f, ...newFeed } : { ...f }))
   }
 
   const handleSetGetFeed = (feed) => {
-    setGetFeed(feed)    
+    setGetFeed({
+      id: feed.id,
+      text: feed.text,
+      rating: feed.rating,
+      isEdit: true,
+    })    
   }
 
   return (
