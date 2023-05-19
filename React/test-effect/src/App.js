@@ -1,11 +1,12 @@
-import React, { useEffect } from 'react'
+import { EffectProvider } from './context/EffectContext'
+import { Effect } from './components/Effect'
 
-export const App = () => {
-  useEffect(() => {
-    console.log('loop')
-  }, [])
-  
+export const App = () => {    
   return (
-    <div>App</div>
+    <EffectProvider>
+      <div>
+        <Effect />        
+      </div>
+    </EffectProvider>
   )
 }
