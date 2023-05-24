@@ -1,11 +1,6 @@
 {
   "posts": [
     {
-      "id": 1,
-      "rating": 10,
-      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur vel vitae commodi alias voluptatem est voluptatum ipsa quae."
-    },
-    {
       "id": 2,
       "rating": 9,
       "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur vel vitae commodi alias voluptatem est voluptatum ipsa quae."
@@ -14,15 +9,14 @@
       "id": 3,
       "rating": 8,
       "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur vel vitae commodi alias voluptatem est voluptatum ipsa quae."
-    }
-  ],
-  "comments": [
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "rating": 3,
+      "text": "aaaaaaaaaadaaaaaaaaaa",
+      "id": "a37ebffd-6323-4e12-b1c9-c77e02d94177"
     }
   ],
+  "comments": [],
   "profile": {
     "name": "typicode"
   }
