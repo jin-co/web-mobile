@@ -6,11 +6,11 @@ import { Home } from './pages/Home'
 import { Notfound } from './pages/Notfound'
 import { About } from './pages/About'
 import { User } from './pages/User'
-import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 export const App = () => {
   return (
-    <BrowserRouter>
+    <Router>
       <div className="flex flex-col justify-between h-screen bg-midnight">
         <Nav />
         <main className="container mx-auto px-3 pb-12">
@@ -25,6 +25,6 @@ export const App = () => {
         </main>
         <Footer />
       </div>
-    </BrowserRouter>
+    </Router>
   )
 }
