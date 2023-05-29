@@ -1,7 +1,10 @@
 import React from 'react'
+import { UserSearch } from '../components/layout/'
 
 export const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <UserSearch />
+    </div>
   )
 }
