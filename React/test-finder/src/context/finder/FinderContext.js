@@ -1,62 +1,81 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useState, useReducer } from 'react'
+import FinderReducer from './FinderReducer'
 
 const GITHUB_URL = 'https://api.github.com/'
 
 const FinderContext = createContext()
 
 export const FinderProvider = ({ children }) => {
-  const [users, setUsers] = useState([])
-  const [user, setUser] = useState({})
-  const [repos, setRepos] = useState([])
-  const [isLoading, setIsLoading] = useState(false)  
+  const initialState = {
+    users: [],
+    user: {},
+    isLoading: false,
+    repos: [],
+  }
 
-  const searchUser = async (text) => {    
-    setIsLoading(true)
+  const [state, dispatch] = useReducer(FinderReducer, initialState)
+
+  const searchUser = async (text) => {
+    setLoading()
     const params = new URLSearchParams({
       q: text
     })
     const res = await fetch(GITHUB_URL + `search/users?${params}`)
     const { items } = await res.json()
-    setUsers(items)
-    setIsLoading(false)
+    dispatch({
+      type: 'GET_USERS',
+      payload: items
+    })
   }
 
   const clearResult = () => {
-    setUsers([])
+    dispatch({
+      type: 'CLEAR_RESULT'
+    })
   }
 
   const getUser = async (login) => {
-    setIsLoading(true)
+    setLoading()
     const res = await fetch(GITHUB_URL + `users/${login}`)
     if (res.status === 404) {
       window.location = '/notfound'
     } else {
       const data = await res.json()
-      setUser(data)
+      dispatch({
+        type: 'GET_USER',
+        payload: data
+      })
     }
-    setIsLoading(false)
   }
 
   const getRepos = async (login) => {
-    setIsLoading(true)
+    setLoading()
     const params = new URLSearchParams({
       sort: 'created',
       per_page: 10
     })
     const res = await fetch(GITHUB_URL + `users/${login}/repos?${params}`)
     const data = await res.json()
-    setRepos(data)
-    setIsLoading(false)
+    dispatch({
+      type: 'GET_REPOS',
+      payload: data
+    })
+  }
+
+  const setLoading = () => {
+    dispatch({
+      type: 'SET_LOADING'
+    })
   }
 
   return (
     <FinderContext.Provider value={{
       searchUser,
       clearResult,
-      users,
-      user, getUser, getRepos,
-      repos,
-      isLoading
+      users: state.users,
+      user: state.user, getUser, getRepos,
+      repos: state.repos,
+      isLoading: state.isLoading
     }}>
       {children}
     </FinderContext.Provider>
