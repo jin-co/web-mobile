@@ -58,7 +58,8 @@ export const FinderProvider = ({ children }) => {
       searchUser,
       clearResult,
       users,
-      user, getUser, getRepos
+      user, getUser, getRepos,
+      repos
     }}>
       {children}
     </FinderContext.Provider>
