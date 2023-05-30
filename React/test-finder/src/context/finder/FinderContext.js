@@ -1,7 +1,7 @@
 import React, { createContext, useState, useReducer } from 'react'
 import FinderReducer from './FinderReducer'
 
-const GITHUB_URL = 'https://api.github.com/'
+const GITHUB_URL = process.env.REACT_APP_URL
 
 const FinderContext = createContext()
 
