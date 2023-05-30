@@ -1,19 +1,27 @@
 import React, { useContext } from 'react'
 import { useState } from 'react'
 import FinderContext from '../../../context/finder/FinderContext'
+import AlertContext from '../../../context/alert/AlertContext'
 
 export const UserSearch = () => {
   const [text, setText] = useState('')
   const { searchUser, clearResult } = useContext(FinderContext)
+  const { toggleAlert } = useContext(AlertContext)
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    searchUser(text)
+    if (text == '') {
+      console.log(text)
+      toggleAlert()
+    } else {
+      console.log('text')
+      searchUser(text)
+    }
   }
 
   const handleChange = (e) => {
     console.log(e.target.value)
-    setText(e.target.value)    
+    setText(e.target.value)
   }
 
   return (
@@ -30,7 +38,7 @@ export const UserSearch = () => {
             />
             <button
               type="submit"
-              className="absolute top-0 right-0 rounded-l-none w-36 btn btn-lg"              
+              className="absolute top-0 right-0 rounded-l-none w-36 btn btn-lg"
             >
               Go
             </button>

@@ -1,5 +1,4 @@
 import React, { createContext, useState } from 'react'
-import { useEffect } from 'react'
 
 const GITHUB_URL = 'https://api.github.com/'
 
@@ -9,24 +8,17 @@ export const FinderProvider = ({ children }) => {
   const [users, setUsers] = useState([])
   const [user, setUser] = useState({})
   const [repos, setRepos] = useState([])
-  useEffect(() => {
-    fetchData()
-  }, [])
+  const [isLoading, setIsLoading] = useState(false)  
 
-  const fetchData = async () => {
-    const res = await fetch(GITHUB_URL)
-    const data = await res.json()
-    console.log(data)
-  }
-
-  const searchUser = async (text) => {
+  const searchUser = async (text) => {    
+    setIsLoading(true)
     const params = new URLSearchParams({
       q: text
     })
     const res = await fetch(GITHUB_URL + `search/users?${params}`)
     const { items } = await res.json()
     setUsers(items)
-    console.log(items)
+    setIsLoading(false)
   }
 
   const clearResult = () => {
@@ -34,6 +26,7 @@ export const FinderProvider = ({ children }) => {
   }
 
   const getUser = async (login) => {
+    setIsLoading(true)
     const res = await fetch(GITHUB_URL + `users/${login}`)
     if (res.status === 404) {
       window.location = '/notfound'
@@ -41,9 +34,11 @@ export const FinderProvider = ({ children }) => {
       const data = await res.json()
       setUser(data)
     }
+    setIsLoading(false)
   }
 
   const getRepos = async (login) => {
+    setIsLoading(true)
     const params = new URLSearchParams({
       sort: 'created',
       per_page: 10
@@ -51,6 +46,7 @@ export const FinderProvider = ({ children }) => {
     const res = await fetch(GITHUB_URL + `users/${login}/repos?${params}`)
     const data = await res.json()
     setRepos(data)
+    setIsLoading(false)
   }
 
   return (
@@ -59,7 +55,8 @@ export const FinderProvider = ({ children }) => {
       clearResult,
       users,
       user, getUser, getRepos,
-      repos
+      repos,
+      isLoading
     }}>
       {children}
     </FinderContext.Provider>
