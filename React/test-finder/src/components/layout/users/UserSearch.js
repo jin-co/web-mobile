@@ -2,20 +2,26 @@ import React, { useContext } from 'react'
 import { useState } from 'react'
 import FinderContext from '../../../context/finder/FinderContext'
 import AlertContext from '../../../context/alert/AlertContext'
+import { searchUser } from '../../../context/finder/FinderActions'
 
 export const UserSearch = () => {
   const [text, setText] = useState('')
-  const { searchUser, clearResult } = useContext(FinderContext)
+  const { dispatch } = useContext(FinderContext)
   const { toggleAlert } = useContext(AlertContext)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    if (text == '') {
-      console.log(text)
+    if (text == '') {      
       toggleAlert()
-    } else {
-      console.log('text')
-      searchUser(text)
+    } else {      
+      dispatch({
+        type: 'SET_LOADING'
+      })
+      const items = await searchUser(text)
+      dispatch({
+        type: 'GET_USERS',
+        payload: items
+      })
     }
   }
 
@@ -47,7 +53,9 @@ export const UserSearch = () => {
       </div>
 
       <div>
-        <button className="btn btn-ghost btn-lg" onClick={() => clearResult()}>Clear</button>
+        <button className="btn btn-ghost btn-lg" onClick={() => dispatch({
+          type: 'CLEAR_RESULT'
+        })}>Clear</button>
       </div>
     </div>
   )

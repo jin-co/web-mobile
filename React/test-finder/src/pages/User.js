@@ -5,15 +5,29 @@ import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import FinderContext from '../context/finder/FinderContext'
 import { Spinner } from '../components/layout/Spinner'
+import { getUser, getRepos } from '../context/finder/FinderActions'
 
 export const User = () => {
   const params = useParams()
-  const { user, repos, getUser, getRepos, isLoading } = useContext(FinderContext)
+  const { user, repos, dispatch, isLoading } = useContext(FinderContext)
 
   useEffect(() => {
-    getUser(params.login)
-    getRepos(params.login)
+    getThings()
   }, [])
+
+  const getThings = async () => {
+    const user = await getUser(params.login)
+    dispatch({
+      type: 'GET_USER',
+      payload: user
+    })
+
+    const repos = await getRepos(params.login)
+    dispatch({
+      type: 'GET_REPOS',
+      payload: repos
+    })
+  }
 
   const {
     name,
