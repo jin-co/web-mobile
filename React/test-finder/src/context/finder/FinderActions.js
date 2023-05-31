@@ -17,6 +17,14 @@ export const searchUser = async (text) => {
   return res.data.items  
 }
 
+export const getBoth = async (login) => {
+  const [user, repos] = await Promise.all([
+    git.get(),
+    git.get()
+  ])
+  return {user:user.data, repos:repos.data}
+}
+
 export const getUser = async (login) => {  
   // const res = await fetch(GITHUB_URL + `users/${login}`)
   const res = await git.get(`users/${login}`)
