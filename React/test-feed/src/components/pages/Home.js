@@ -8,7 +8,7 @@ export const Home = () => {
   const [feed, setFeed] = useState(FeedData)
 
   const addFeed = (newFeed) => {
-    setFeed(...feed, newFeed)
+    setFeed([newFeed, ...feed])
   }
 
   const deleteFeed = (id) => {
@@ -22,8 +22,8 @@ export const Home = () => {
   return (
     <>
       <FeedStat feed={feed} />
-      <FeedForm />
-      <FeedList feed={feed} />
+      <FeedForm addFeed={addFeed} />
+      <FeedList feed={feed} deleteFeed={deleteFeed} />
     </>
   )
 }
