@@ -13,8 +13,10 @@ export const FeedForm = () => {
   const { addFeed, getFeed, updateFeed } = useContext(FeedContext)
 
   useEffect(() => {
-    setRating(getFeed.feed.rating)
-    setText(getFeed.feed.text)
+    if(getFeed.feed.isEdit) {
+      setRating(getFeed.feed.rating)
+      setText(getFeed.feed.text)
+    }
   }, [getFeed])
 
   const handleSubmit = (e) => {
