@@ -1,29 +1,41 @@
-import React, { useState } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { RatingSelect } from './RatingSelect'
 import { Card } from './shared/Card'
 import { Button } from './shared/Button'
 import { v4 as uuid } from 'uuid'
+import FeedContext from '../context/FeedContext'
 
-export const FeedForm = ({addFeed}) => {
+export const FeedForm = () => {
   const [text, setText] = useState('')
   const [rating, setRating] = useState(10)
   const [isDisabled, setIsDisabled] = useState(true)
 
+  const { addFeed, getFeed, updateFeed } = useContext(FeedContext)
+
+  useEffect(() => {
+    setRating(getFeed.feed.rating)
+    setText(getFeed.feed.text)
+  }, [getFeed])
+
   const handleSubmit = (e) => {
     e.preventDefault()
     const newFeed = {
-      id: uuid(),
       text,
       rating
     }
-    addFeed(newFeed)    
+    if (getFeed.feed.isEdit) {
+      updateFeed(getFeed.feed.id, newFeed)
+    } else {
+      newFeed.id = uuid()
+      addFeed(newFeed)
+    }
+
   }
 
   const handleChange = (e) => {
     if (e.target.value.length > 10) {
       setIsDisabled(false)
     }
-    console.log(e.target.value)
     setText(e.target.value)
   }
 
@@ -37,6 +49,7 @@ export const FeedForm = ({addFeed}) => {
             type="text"
             placeholder="Write a review"
             onChange={handleChange}
+            value={text}
           />
           <Button type="submit" isDisabled={isDisabled}>
             Send

@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { FaTimes, FaEdit } from 'react-icons/fa'
 import { Card } from './shared/Card'
+import FeedContext from '../context/FeedContext'
 
-export const FeedItem = ({ feed, deleteFeed }) => {
+export const FeedItem = ({ feed }) => {
+  const { deleteFeed, handleSetGetFeed } = useContext(FeedContext)
   return (
     <Card>
       <div className="num-display">{feed.rating}</div>
@@ -14,7 +16,7 @@ export const FeedItem = ({ feed, deleteFeed }) => {
       <FaEdit
         color="blue"
         className="edit"
-        onClick={() => { deleteFeed(feed.id) }}
+        onClick={() => { handleSetGetFeed(feed) }}
       />
       <div className="text-display">{feed.text}</div>
       {/* <button onClick={onClick}>click</button> */}
