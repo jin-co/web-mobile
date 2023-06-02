@@ -51,9 +51,6 @@ import { useLocation } from "react-router-dom";
 // };
 
 const Header = ({ title, onAdd, showAdd }) => {
-  // const onClick = () => {
-  //   console.log("heh");
-  // };
   const location = useLocation();
 
   return (
