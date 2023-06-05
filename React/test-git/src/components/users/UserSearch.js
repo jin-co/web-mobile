@@ -1,16 +1,34 @@
 import React, { useContext, useState } from 'react'
 import UserContext from '../../context/user/UserContext'
+import AlertContext from '../../context/alert/AlertContext'
+import { searchUsers, clearUser } from '../../context/user/UserAction'
 
 export const UserSearch = () => {
-  const { users, searchUsers, clearUser } = useContext(UserContext)
+  const { users, dispatch } = useContext(UserContext)
+  const { alertDispatch } = useContext(AlertContext)
   const [text, setText] = useState('')
   const handleChange = (e) => {
     setText(e.target.value)
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()    
-    searchUsers(text)
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    if (text == '') {
+      alertDispatch({
+        type: 'SET'
+      })
+    } else {
+      dispatch({
+        type: 'SET_LOADING',
+        isLoading: true
+      })
+      const users = await searchUsers(text)
+      console.log(users)
+      dispatch({
+        type: 'GET_USERS',
+        payload: users
+      })
+    }
   }
 
   return (
@@ -35,7 +53,9 @@ export const UserSearch = () => {
       </div>
       {users.length > 0 && (
         <div>
-          <button className="btn btn-ghost btn-lg" onClick={() => clearUser()}>Clear</button>
+          <button className="btn btn-ghost btn-lg" onClick={() => dispatch({
+            type: 'CLEAR_USERS'
+          })}>Clear</button>
         </div>
       )}
     </div>

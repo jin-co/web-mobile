@@ -8,14 +8,26 @@ import {
   FaCodepen,
   FaStore
 } from 'react-icons/fa'
-
-export const User = () => {  
-  const { user, repos, getUser, getRepos } = useContext(UserContext) 
-  const param = useParams() 
+import { getUser, getRepos } from '../context/user/UserAction'
+export const User = () => {
+  const { user, repos, dispatch } = useContext(UserContext)
+  const param = useParams()
 
   useEffect(() => {
-    getUser(param.login)
-    getRepos(param.login)
+    const getUserRepo = async () => {
+      const userData = await getUser(param.login)
+      const reposData = await getRepos(param.login)
+      dispatch({
+        type: 'GET_USER',
+        payload: userData
+      })
+
+      dispatch({
+        type: 'GET_REPOS',
+        payload: reposData
+      })
+    }
+    getUserRepo()
   }, [])
 
   const {
