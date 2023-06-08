@@ -8,38 +8,70 @@ import { toast } from 'react-toastify'
 import OAuth from '../components/OAuth'
 
 export const Login = () => {
+  const navigate = useNavigate()
+  const [showPassword, setShowPassword] = useState(false)
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    password: ''
+  })
+
+  const { name, email, password } = formData
+
+  const handleChange = (e) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.id]: e.target.value
+    }))
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      const auth = getAuth()
+      const user = await signInWithEmailAndPassword(auth, email, password)
+      if (user.user) {
+        navigate('/')
+      }
+    } catch (error) {
+      toast.error('Login Fail')
+    }
+  }
+
   return (
     <>
       <div className="pageContainer">
         <header>
           <p className="pageHeader">Welcome</p>
           <main>
-            <form >
+            <form onSubmit={handleSubmit}>
               <input
                 type="email"
                 className="emailInput"
                 placeholder="email"
                 id="email"
+                onChange={handleChange}
               />
 
               <div className="passwordInputDiv">
                 <input
-                  // type={showPassword ? 'text' : 'password'}
+                  type={showPassword ? 'text' : 'password'}
                   className="passwordInput"
                   placeholder="Password"
                   id="password"
+                  onChange={handleChange}
                 />
 
                 <img
                   src={visibilityIcon}
                   alt=""
                   className="showPassword"
-
+                  onClick={() => setShowPassword(!showPassword)}
                 />
               </div>
 
               <div className="container">
-                <Link to="/sign-up" className="forgotPasswordLink">
+                <Link to="/join" className="forgotPasswordLink">
                   Sign Up Instead
                 </Link>
 

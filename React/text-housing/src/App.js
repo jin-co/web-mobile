@@ -1,5 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 import { Explore } from './pages/Explore'
 import { ForgotPW } from './pages/ForgotPW'
 import { Join } from './pages/Join'
@@ -18,10 +20,11 @@ export const App = () => {
           <Route exact path='/profile' element={<Profile />} />
           <Route exact path='/join' element={<Join />} />
           <Route exact path='/login' element={<Login />} />
-          <Route exact path='/forgot-pw' element={<ForgotPW />} />
+          <Route exact path='/forgot-password' element={<ForgotPW />} />
         </Routes>
         <Nav />
       </Router>
+      <ToastContainer />
     </>
   )
 }
