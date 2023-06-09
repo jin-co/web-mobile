@@ -1,5 +1,5 @@
 import React from 'react'
-import { getAuth, updateProfile } from 'firebase/auth'
+import { getAuth, updateProfile, onAuthStateChanged } from 'firebase/auth'
 import { useState, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import {
@@ -20,6 +20,7 @@ import homeIcon from '../assets/svg/homeIcon.svg'
 
 export const Profile = () => {
   const auth = getAuth()
+  const [changeDetails, setChangeDetails] = useState(false)
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
     name: auth.currentUser.displayName,
@@ -28,14 +29,49 @@ export const Profile = () => {
 
   const { name, email } = formData
 
+  const [userReady, setUserReady] = useState(false)
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUserReady(true)
+      }
+    })
+  }, [])
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      if (auth.currentUser.displayName !== name) {
+        await updateProfile(auth.currentUser, {
+          displayName: name
+        })
+
+        const userRef = doc(db, 'users', auth.currentUser.uid)
+        await updateDoc(userRef, {
+          name
+        })
+      }
+    } catch (error) {
+      toast.error('what the')
+    }
+  }
+
+  const handleChange = (e) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.id]: e.target.value
+    }))
+  }
+
   return (
+    userReady &&
     <div className="profile">
       <header className="profileHeader">
         <p className="pageHeader">My Profile</p>
         <button className="logOut" type="button" onClick={() => {
           auth.signOut()
           navigate('/')
-          }}>
+        }}>
           Logout
         </button>
       </header>
@@ -45,9 +81,12 @@ export const Profile = () => {
           <p className="profileDetailsText">Personal Details</p>
           <p
             className="changePersonalDetails"
-            
+            onClick={() => {
+              changeDetails && handleSubmit()
+              setChangeDetails(!changeDetails)
+            }}
           >
-            {/* {changeDetails ? 'done' : 'change'} */}
+            {changeDetails ? 'done' : 'change'}
           </p>
         </div>
         <div className="profileCard">
@@ -56,13 +95,17 @@ export const Profile = () => {
               type="text"
               id="name"
               value={name}
+              className={!changeDetails ? 'profileName' : 'profileNameActive'}
+              disabled={!changeDetails}
+              onChange={handleChange}
             />
 
             <input
               type="text"
               id="email"
-              // className={!changeDetails ? 'profileEmail' : 'profileEmailActive'}
-              // disabled={!changeDetails}
+              className={!changeDetails ? 'profileEmail' : 'profileEmailActive'}
+              disabled={!changeDetails}
+              onChange={handleChange}
               value={email}
             />
           </form>

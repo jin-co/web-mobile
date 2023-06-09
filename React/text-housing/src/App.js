@@ -9,6 +9,7 @@ import { Login } from './pages/Login'
 import { Offers } from './pages/Offers'
 import { Profile } from './pages/Profile'
 import { Nav } from './components/Nav'
+import { PrivateRoute } from './components/PrivateRoute';
 
 export const App = () => {
   return (
@@ -17,7 +18,9 @@ export const App = () => {
         <Routes>
           <Route exact path='/' element={<Explore />} />
           <Route exact path='/offer' element={<Offers />} />
-          <Route exact path='/profile' element={<Profile />} />
+          <Route exact path='/profile' element={<PrivateRoute />}>
+            <Route path='/profile' element={<Profile />} />
+          </Route>
           <Route exact path='/join' element={<Join />} />
           <Route exact path='/login' element={<Login />} />
           <Route exact path='/forgot-password' element={<ForgotPW />} />
