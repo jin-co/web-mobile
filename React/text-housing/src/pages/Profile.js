@@ -33,6 +33,7 @@ export const Profile = () => {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
+        console.log(user)
         setUserReady(true)
       }
     })

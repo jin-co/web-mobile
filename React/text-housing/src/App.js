@@ -18,7 +18,7 @@ export const App = () => {
         <Routes>
           <Route exact path='/' element={<Explore />} />
           <Route exact path='/offer' element={<Offers />} />
-          <Route exact path='/profile' element={<PrivateRoute />}>
+          <Route path='/profile' element={<PrivateRoute />}>
             <Route path='/profile' element={<Profile />} />
           </Route>
           <Route exact path='/join' element={<Join />} />

@@ -5,16 +5,14 @@ import { useEffect, useState } from "react"
 export const useAuthStatus = () => {
   const [isLogged, setIsLogged] = useState(false)
   const [loading, setLoading] = useState(true)
-  const auth = getAuth()
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    const auth = getAuth()
+    onAuthStateChanged(auth, (user) => {      
       if (user) {
         setIsLogged(true)
-        setLoading(false)
       }
+      setLoading(false)
     })
-  }, [])
-  return (
-    { isLogged, loading }
-  )
+  })
+  return { isLogged, loading }
 }
