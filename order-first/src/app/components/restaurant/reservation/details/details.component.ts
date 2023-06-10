@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { Reservation } from 'src/app/models/reservation';
 import { DataReservationService } from 'src/app/services/data-reservation.service';
 import { DataRestaurantService } from 'src/app/services/data-restaurant.service';
@@ -24,16 +24,16 @@ export class DetailsComponent implements OnInit {
   }
 
   //validations
-  nameCtrl:FormControl = new FormControl(null, Validators.required)
-  dateCtrl:FormControl = new FormControl(null, Validators.required)
-  timeCtrl:FormControl = new FormControl(null, Validators.required)
-  telCtrl:FormControl = new FormControl(null, [
+  nameCtrl:UntypedFormControl = new UntypedFormControl(null, Validators.required)
+  dateCtrl:UntypedFormControl = new UntypedFormControl(null, Validators.required)
+  timeCtrl:UntypedFormControl = new UntypedFormControl(null, Validators.required)
+  telCtrl:UntypedFormControl = new UntypedFormControl(null, [
     Validators.required,
     Validators.pattern('^[0-9]{3}-[0-9]{3}-[0-9]{4}$')
   ])
-  peopleCtrl:FormControl = new FormControl(null, Validators.required)
+  peopleCtrl:UntypedFormControl = new UntypedFormControl(null, Validators.required)
 
-  inputGroup:FormGroup = new FormGroup({
+  inputGroup:UntypedFormGroup = new UntypedFormGroup({
     name: this.nameCtrl,
     date: this.dateCtrl,
     time: this.timeCtrl,

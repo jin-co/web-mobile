@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { Menu } from 'src/app/models/menu';
 import { Reservation } from 'src/app/models/reservation';
 import { DataMenuService } from 'src/app/services/data-menu.service';
@@ -36,19 +36,19 @@ export class RemoveMenuComponent implements OnInit {
   @ViewChild('menuForm') form:any
 
   // validations
-  idCtrl:FormControl = new FormControl(null, [
+  idCtrl:UntypedFormControl = new UntypedFormControl(null, [
     Validators.required,
     Validators.min(1)  
   ])
-  dishNameCtrl:FormControl = new FormControl(null, Validators.required)
-  subNameCtrl:FormControl = new FormControl(null, Validators.required)
-  imageURLCtrl:FormControl = new FormControl(null, Validators.required)
-  descriptionCtrl:FormControl = new FormControl(null, [
+  dishNameCtrl:UntypedFormControl = new UntypedFormControl(null, Validators.required)
+  subNameCtrl:UntypedFormControl = new UntypedFormControl(null, Validators.required)
+  imageURLCtrl:UntypedFormControl = new UntypedFormControl(null, Validators.required)
+  descriptionCtrl:UntypedFormControl = new UntypedFormControl(null, [
     Validators.required,
     Validators.maxLength(100)
   ])
 
-  inputGroup:FormGroup = new FormGroup({
+  inputGroup:UntypedFormGroup = new UntypedFormGroup({
     resId: this.idCtrl,
     dishName: this.dishNameCtrl,
     subName: this.subNameCtrl,
@@ -67,7 +67,7 @@ export class RemoveMenuComponent implements OnInit {
       this.menus = menuDataService.getMenus()
   }
 
-  myControl = new FormControl();
+  myControl = new UntypedFormControl();
   options: string[] = this.restaurantNames
   filteredOptions!: Observable<string[]>;
 

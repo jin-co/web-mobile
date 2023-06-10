@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { BarcodeScannerLivestreamComponent } from 'ngx-barcode-scanner';
 import { DatastoreService } from '../datastore.service';
 
@@ -18,14 +18,14 @@ export class BarcodeEntryComponent implements OnInit {
   @Output() onSelfDestruction: EventEmitter<string> = new EventEmitter<string>()
 
   // validation
-  quantityCtrl: FormControl = new FormControl(null, Validators.required)
-  barcodeCtrl: FormControl = new FormControl(null, [
+  quantityCtrl: UntypedFormControl = new UntypedFormControl(null, Validators.required)
+  barcodeCtrl: UntypedFormControl = new UntypedFormControl(null, [
     Validators.required,
     Validators.maxLength(14),
     Validators.pattern('[0-9]+')
   ])
 
-  entryGroup: FormGroup = new FormGroup({
+  entryGroup: UntypedFormGroup = new UntypedFormGroup({
     quantity: this.quantityCtrl,
     code: this.barcodeCtrl
   })
