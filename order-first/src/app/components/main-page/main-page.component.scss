@@ -11,21 +11,31 @@
         justify-content: center;
         border-radius: 10px;
         
-        .row {            
-            height: 200px;
-            width: 200px;
-            margin-bottom: 10px;
-            background-color: #000;            
-            border-radius: 5px;            
+        .row {
+          height: 200px;
+          width: 200px;
+          margin-bottom: 10px;
+          background-color: #000;
+          border-radius: 5px;
         }
-
+        
+        .row:first-child a:hover {
+          background-color: #0bbc75;
+          color: #fff;
+        }
+        
         .row:last-child {
-            background-color: #fff;
-            color: #000;
+          background-color: #fff;
+          color: #000;
         }
-
+        
         .row:last-child a {
-            color: #000;
+          color: #000;
+        }
+        
+        .row:last-child a:hover {
+          background-color: #0bbc75;
+          color: #fff;
         }
 
         a {
@@ -53,3 +63,4 @@
         z-index: 1;
     }
 }
+
