@@ -10,7 +10,8 @@ import { Offers } from './pages/Offers'
 import { Profile } from './pages/Profile'
 import { Nav } from './components/Nav'
 import { PrivateRoute } from './components/PrivateRoute';
-
+import { Category } from './pages/Category';
+import { CreateListing } from './pages/CreateListing'
 export const App = () => {
   return (
     <>
@@ -21,6 +22,8 @@ export const App = () => {
           <Route path='/profile' element={<PrivateRoute />}>
             <Route path='/profile' element={<Profile />} />
           </Route>
+          <Route path='/category/:categoryName' element={<Category />} />
+          <Route exact path='/create-listing' element={<CreateListing />} />
           <Route exact path='/join' element={<Join />} />
           <Route exact path='/login' element={<Login />} />
           <Route exact path='/forgot-password' element={<ForgotPW />} />

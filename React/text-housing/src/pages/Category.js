@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { Spinner } from '../components/Spinner'
-import { ListingItem } from '../components/ListingItem'
+import React from 'react'
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import {
   collection,
   getDocs,
@@ -12,28 +12,30 @@ import {
 } from 'firebase/firestore'
 import { db } from '../firebase.config'
 import { toast } from 'react-toastify'
+import { Spinner } from '../components/Spinner'
+import { ListingItem } from '../components/ListingItem'
 
-export const Offers = () => {
-  const [loading, setLoading] = useState(true)
+export const Category = () => {
+  const [loading, setLoading] = useState('false')
   const [listings, setListings] = useState()
 
   useEffect(() => {
-    fetchData()
+    fetchListing()
   }, [])
 
-  const fetchData = async () => {
+  const fetchListing = async () => {
     try {
       const listingRef = collection(db, 'listings')
       const q = query(
         listingRef,
-        where('offer', '==', true),
+        where('type', '==', params.categoryName),
         orderBy('timestamp', 'desc'),
         limit(10)
       )
       const querySnap = await getDocs(q)
       const listings = []
-      querySnap.forEach(doc => {
-        listings.push({
+      querySnap.forEach((doc) => {
+        return listings.push({
           id: doc.id,
           data: doc.data()
         })
@@ -41,14 +43,19 @@ export const Offers = () => {
       setListings(listings)
       setLoading(false)
     } catch (error) {
-      toast.error('Offer Fail')
+      toast.error('Failed')
     }
   }
 
+  const params = useParams()
   return (
     <div className="category">
       <header>
-        <p className="pageHeader">offers</p>
+        <p className="pageHeader">
+          {params.categoryName === 'rent'
+            ? 'Places for rent'
+            : 'Places for sale'}
+        </p>
       </header>
 
       {loading ? (
@@ -66,7 +73,6 @@ export const Offers = () => {
               ))}
             </ul>
           </main>
-
           <br />
           <br />
           {/* {lastFetchedListing && (
@@ -76,7 +82,7 @@ export const Offers = () => {
           )} */}
         </>
       ) : (
-        <p>No offers</p>
+        <p>No listing for {params.categoryName}</p>
       )}
     </div>
   )
