@@ -7,14 +7,14 @@ import { db } from '../firebase.config'
 import { Spinner } from '../components/Spinner'
 import shareIcon from '../assets/svg/shareIcon.svg'
 import { list } from 'firebase/storage'
-// import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
-// import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper'
-// import { Swiper, SwiperSlide } from 'swiper/react'
-// import 'swiper/css'
-// import 'swiper/css/navigation';
-// import 'swiper/css/pagination';
-// import 'swiper/css/scrollbar';
-
+import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css'
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y])
 export const Listing = () => {
   const [listing, setListing] = useState(null)
   const [loading, setLoading] = useState(true)
@@ -41,7 +41,7 @@ export const Listing = () => {
 
   return (
     <main>
-      {/* <Swiper slidesPerView={1} pagination={{ clickable: true }}>
+      <Swiper slidesPerView={1} pagination={{ clickable: true }}>
         {listing.imageUrls.map((urls, index) => (
           <SwiperSlide key={index}>
             <div
@@ -54,7 +54,7 @@ export const Listing = () => {
             ></div>
           </SwiperSlide>
         ))}
-      </Swiper> */}
+      </Swiper>
 
       <div
         className="shareIconDiv"
@@ -106,7 +106,7 @@ export const Listing = () => {
         <p className="listingLocationTitle">Location</p>
 
         <div className="leafletContainer">
-          {/* <MapContainer
+          <MapContainer
             style={{ height: '100%', width: '100%' }}
             center={[listing.geolocation.lat, listing.geolocation.lng]}
             zoom={13}
@@ -122,7 +122,7 @@ export const Listing = () => {
             >
               <Popup>{listing.location}</Popup>
             </Marker>
-          </MapContainer> */}
+          </MapContainer>
         </div>
 
         {auth.currentUser?.uid !== listing.userRef && (
@@ -132,7 +132,7 @@ export const Listing = () => {
           >
             Contact landlord
           </Link>
-        )}kbjin
+        )}
       </div>
     </main>
   )
