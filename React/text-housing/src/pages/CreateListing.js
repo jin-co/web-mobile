@@ -1,17 +1,20 @@
-import { getAuth, onAuthStateChanged } from "firebase/auth"
-import { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
-import { Spinner } from "../components/Spinner"
+import React from 'react'
+import { useState, useEffect, useRef } from 'react'
+import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import {
   getStorage,
   ref,
   uploadBytesResumable,
   getDownloadURL,
 } from 'firebase/storage'
+import { useNavigate } from 'react-router-dom'
+import { Spinner } from '../components/Spinner'
 import { toast } from 'react-toastify'
+import { db } from '../firebase.config'
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
 
 export const CreateListing = () => {
-  const [geolocationEnabled, setGeolocationEnabled] = useState(true)
+  const [geolocationEnabled, setGeolocationEnabled] = useState(false)
   const [loading, setLoading] = useState(false)
   const [formData, setFormData] = useState({
     type: 'rent',
@@ -78,6 +81,7 @@ export const CreateListing = () => {
       geolocation.lat = latitude
       geolocation.lng = longitude
     }
+
     const storeImage = async (image) => {
       return new Promise((resolve, reject) => {
         const storage = getStorage()
@@ -115,8 +119,22 @@ export const CreateListing = () => {
       return
     })
 
+    const formDataCopy = {
+      ...formData,
+      imageUrls,
+      geolocation,
+      timestamp: serverTimestamp()
+    }
+    formDataCopy.location = address
+    delete formDataCopy.images
+    delete formDataCopy.address
+    // location && (formDataCopy.location = location)
+    !formDataCopy.offer && delete formDataCopy.discountedPrice
+    const docRef = await addDoc(collection(db, 'listings'), formDataCopy)
 
     setLoading(false)
+    toast.success('Good')
+    navigate(`/category/${formDataCopy.type}/${docRef.id}`)
   }
 
   const onMutate = (e) => {
