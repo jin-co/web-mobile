@@ -16,7 +16,7 @@ import { db } from '../firebase.config'
 import { toast } from 'react-toastify'
 import arrowRight from '../assets/svg/keyboardArrowRightIcon.svg'
 import homeIcon from '../assets/svg/homeIcon.svg'
-
+import { ListingItem } from '../components/ListingItem'
 
 export const Profile = () => {
   const auth = getAuth()
@@ -30,14 +30,35 @@ export const Profile = () => {
   const { name, email } = formData
 
   const [userReady, setUserReady] = useState(false)
+  const [listings, setListings] = useState([])
+  const [loading, setLoading] = useState(false)
+
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        console.log(user)
         setUserReady(true)
       }
     })
+    getListings()
   }, [])
+
+  const getListings = async () => {
+    try {
+      const col = collection(db, 'listings')
+      const q = query(col, where("userRef", "==", auth.currentUser.uid))
+      const docSnap = await getDocs(q)
+      let listings = []
+      docSnap.forEach(doc => {
+        listings.push({
+          id: doc.id,
+          data: doc.data()
+        })
+      });
+      setListings(listings)
+    } catch (error) {
+
+    }
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -62,6 +83,11 @@ export const Profile = () => {
       ...prev,
       [e.target.id]: e.target.value
     }))
+  }
+
+  const onDelete = async (id) => {
+    await deleteDoc(doc(db, 'listings', id))
+    setListings(listings.filter(l => l.id !== id))
   }
 
   return (
@@ -118,7 +144,7 @@ export const Profile = () => {
           <img src={arrowRight} alt="" />
         </Link>
 
-        {/* {!loading && listings?.length > 0 && (
+        {!loading && listings?.length > 0 && (
           <>
             <p className="listingText">Your listings</p>
             <ul className="listingsList">
@@ -128,12 +154,12 @@ export const Profile = () => {
                   listing={lis.data}
                   id={lis.id}
                   onDelete={() => onDelete(lis.id)}
-                  onEdit={() => onEdit(lis.id)}
+                  onEdit={() => navigate('/edit/' + lis.id)}
                 />
               ))}
             </ul>
           </>
-        )} */}
+        )}
       </main>
     </div>
   )

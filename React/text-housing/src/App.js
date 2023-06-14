@@ -13,6 +13,7 @@ import { Category } from './pages/Category';
 import { CreateListing } from './pages/CreateListing'
 import { Listing } from './pages/Listing';
 import { Contact } from './pages/Contact';
+import { EditListing } from './pages/EditListing';
 export const App = () => {
   return (
     <>
@@ -27,6 +28,7 @@ export const App = () => {
           <Route path='/category/:categoryName/:listingId' element={<Listing />} />          
           <Route path='/contact/:landlordId' element={<Contact />} />
           <Route exact path='/create-listing' element={<CreateListing />} />
+          <Route exact path='/edit/:listingId' element={<EditListing />} />
           <Route exact path='/join' element={<Join />} />
           <Route exact path='/login' element={<Login />} />
           <Route exact path='/forgot-password' element={<ForgotPW />} />

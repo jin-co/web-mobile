@@ -14,7 +14,9 @@ import 'swiper/css'
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y])
+
 export const Listing = () => {
   const [listing, setListing] = useState(null)
   const [loading, setLoading] = useState(true)
