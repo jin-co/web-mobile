@@ -1,22 +1,39 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Card } from './shared/Card'
 import { Rating } from './Rating'
 import { Button } from './shared/Button'
 import { v4 as uuid } from 'uuid'
+import FeedContext from '../context/FeedContext'
 
-export const FeedForm = ({handleAdd}) => {
+export const FeedForm = () => {
   const [isDisabled, setIsDisabled] = useState(true)
   const [text, setText] = useState('')
   const [rating, setRating] = useState(0)
+  const { addFeed, selectedFeed, updateFeed } = useContext(FeedContext)
 
+  useEffect(() => {
+    if(selectedFeed.isEdit) {
+      setText(selectedFeed.feed.text)
+      setRating(selectedFeed.feed.rating)
+    }
+  }, [selectedFeed])
   const handleSubmit = (e) => {
     e.preventDefault()
-    const newFeed = {
-      id: uuid(),
-      text,
-      rating
-    }
-    handleAdd(newFeed)
+    if(selectedFeed.isEdit) {
+      const newFeed = {
+        id: selectedFeed.feed.id,
+        text,
+        rating
+      }
+      updateFeed(newFeed, selectedFeed.feed.id)
+    } else {
+      const newFeed = {
+        id: uuid(),
+        text,
+        rating
+      }
+      addFeed(newFeed)
+    }    
   }
 
   const handleChange = (e) => {

@@ -1,8 +1,10 @@
-import React from 'react'
+import { useContext } from 'react'
 import { FeedItem } from './FeedItem'
 import { AnimatePresence, motion } from 'framer-motion'
+import FeedContext from '../context/FeedContext'
 
-export const FeedList = ({ feed, handleDelete }) => {
+export const FeedList = () => {
+  const { feed, handleDelete } = useContext(FeedContext)
   return (
     <div>
       <AnimatePresence>
