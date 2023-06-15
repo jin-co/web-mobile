@@ -11,19 +11,19 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 export const App = () => {
   return (
     <div className="flex flex-col justify-between h-screen">
-      <Nav />
-      <main className="container mx-auto px-3 pb-12">
-        <Alert />
-        <Router>
+      <Router>
+        <Nav />
+        <main className="container mx-auto px-3 pb-12">
+          <Alert />
           <Routes>
             <Route path='' element={<Home />} />
             <Route path='/about' element={<About />} />
             <Route path='/user/:login' element={<User />} />
             <Route path='/*' element={<Notfound />} />
           </Routes>
-        </Router>
-      </main>
-      <Footer />
+        </main>
+        <Footer />
+      </Router>
     </div>
   )
 }
