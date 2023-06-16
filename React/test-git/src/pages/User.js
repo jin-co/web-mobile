@@ -5,15 +5,27 @@ import { Link } from 'react-router-dom'
 import { Spinner } from '../components/layout/Spinner'
 import { useParams } from 'react-router-dom'
 import { Repo } from '../components/repos/Repo'
+import { getUser, getRepos } from '../context/git/GitAction'
 
 export const User = () => {
   const params = useParams()
-  const { getUser, user, loading, repos, getRepos } = useContext(GitContext)
+  const { user, loading, repos, dispatch } = useContext(GitContext)
 
   useEffect(() => {
-    getUser(params.login)
-    getRepos(params.login)
-    console.log('avatar_url: ', avatar_url)
+    const getThem = async () => {
+      const user = await getUser(params.login)
+      const repos = await getRepos(params.login)
+      dispatch({
+        type: 'GET_USER',
+        payload: user
+      })
+      dispatch({
+        type: 'GET_REPOS',
+        payload: repos
+      })
+    }
+
+    getThem()
   }, [])
 
   const {
