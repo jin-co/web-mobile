@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import AlertContext from '../../context/alert/AlertContext'
 
 export const Alert = () => {
+  const { isOn } = useContext(AlertContext)
   return (
-    false && <p className="flex items-start mb-4 space-x-2">
+    isOn && <p className="flex items-start mb-4 space-x-2">
       {alert.type === 'error' && (
         <svg
           fill="none"

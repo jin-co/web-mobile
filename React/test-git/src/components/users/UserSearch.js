@@ -1,13 +1,27 @@
 import React, { useContext, useState } from 'react'
 import GitContext from '../../context/git/GitContext'
 import { getUsers } from '../../context/git/GitAction'
+import AlertContext from '../../context/alert/AlertContext'
 
 export const UserSearch = () => {
   const { users, dispatch } = useContext(GitContext)
+  const { alertDispatch } = useContext(AlertContext)
   const [text, setText] = useState('')
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    if (text === '') {
+      alertDispatch({
+        type: 'ON'
+      })
+
+      setTimeout(() => {
+        alertDispatch({
+          type: 'OFF'
+        })
+      }, 2000)
+    }
+
     const users = await getUsers(text)
     dispatch({
       type: 'GET_USERS',

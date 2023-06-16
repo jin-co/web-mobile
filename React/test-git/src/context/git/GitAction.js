@@ -16,8 +16,6 @@ export const getUser = async (login) => {
     gitBase.get('users/' + login),
     gitBase.get(`users/${login}/repos`),
   ])    
-  console.log(user, repos)
-  console.log(user.data)
   return {
     user:user.data,
     repos:repos.data

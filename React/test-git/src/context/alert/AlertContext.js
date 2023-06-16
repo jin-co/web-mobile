@@ -1,7 +1,21 @@
-import React from 'react'
+import React, { createContext, useReducer } from 'react'
+import { AlertReducer } from './AlertReducer'
 
-export const AlertContext = () => {
+const AlertContext = createContext()
+
+export const AlertProvider = ({children}) => {
+  const initialState = {
+    isOn: false
+  }
+  const [state, dispatch] = useReducer(AlertReducer, initialState)
   return (
-    <div>AlertContext</div>
+    <AlertContext.Provider value={{
+      ...state,
+      alertDispatch: dispatch
+    }}>
+      {children}
+    </AlertContext.Provider>
   )
 }
+
+export default AlertContext
