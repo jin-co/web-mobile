@@ -2,6 +2,8 @@ import React from 'react'
 
 export const Spinner = () => {
   return (
-    <div>Spinner</div>
+    <div className="loadingSpinnerContainer">
+      <div className="loadingSpinner"></div>
+    </div>
   )
 }
