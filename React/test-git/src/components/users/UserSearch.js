@@ -7,7 +7,7 @@ export const UserSearch = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    getUsers('tom')
+    getUsers(text)
   }
 
   const handleChange = (e) => {
