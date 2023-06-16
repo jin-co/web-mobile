@@ -13,15 +13,14 @@ export const User = () => {
 
   useEffect(() => {
     const getThem = async () => {
-      const user = await getUser(params.login)
-      const repos = await getRepos(params.login)
+      const data = await getUser(params.login)      
       dispatch({
         type: 'GET_USER',
-        payload: user
+        payload: data.user
       })
       dispatch({
         type: 'GET_REPOS',
-        payload: repos
+        payload: data.repos
       })
     }
 
