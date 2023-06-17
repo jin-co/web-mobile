@@ -28,7 +28,7 @@ export const Listing = () => {
 
   return (
     <></>
-    <main>
+    {/* <main>
       <Swiper slidesPerView={1} pagination={{ clickable: true }}>
         {listing.imageUrls.map((urls, index) => (
           <SwiperSlide key={index}>
@@ -122,6 +122,6 @@ export const Listing = () => {
           </Link>
         )}
       </div>
-    </main>
+    </main> */}
   )
 }
