@@ -12,6 +12,8 @@ import { Listing } from './pages/Listing'
 import { Contact } from './pages/Contact'
 import { Nav } from './components/Nav'
 import { ToastContainer } from 'react-toastify'
+import { Profile } from './pages/Profile'
+import { PrivateRoute } from './components/PrivateRoute'
 
 export const App = () => {
   return (
@@ -20,6 +22,9 @@ export const App = () => {
         <Routes>
           <Route exact path='/' element={<Explore />} />
           <Route exact path='/offers' element={<Offers />} />
+          <Route exact path='/profile' element={<PrivateRoute />}>
+            <Route exact path='/profile' element={<Profile />} />
+          </Route>
           <Route exact path='/category/:categoryName' element={<Category />} />
           <Route exact path='/forgot-password' element={<ForgotPassword />} />
           <Route exact path='/create-listing' element={<CreateListing />} />

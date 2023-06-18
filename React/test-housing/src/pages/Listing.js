@@ -6,11 +6,13 @@ import { Link, useParams } from 'react-router-dom'
 import { getAuth } from 'firebase/auth'
 import { getDoc, doc } from 'firebase/firestore'
 import { db } from '../firebase.config'
+import { Spinner } from '../components/Spinner'
 
 export const Listing = () => {
   const auth = getAuth()
   const params = useParams()
-  const [listing, setListing] = useState([])
+  const [listing, setListing] = useState(null)
+  const [isLoading, setIsLoading] = useState(true)
   const [shareLinkCopied, setShareLinkCopied] = useState(false)
 
   useEffect(() => {
@@ -20,15 +22,17 @@ export const Listing = () => {
   const fetchData = async () => {
     const docRef = doc(db, 'listings', params.listingId)
     const docSnap = await getDoc(docRef)
-    if(docSnap.exists()) {
-      setListing()
-      console.log(docSnap)
+    if (docSnap.exists()) {
+      setListing(docSnap.data())
+      setIsLoading(false)
     }
   }
 
+  if (isLoading) {
+    return <Spinner />
+  }
   return (
-    <></>
-    {/* <main>
+    <main>
       <Swiper slidesPerView={1} pagination={{ clickable: true }}>
         {listing.imageUrls.map((urls, index) => (
           <SwiperSlide key={index}>
@@ -122,6 +126,6 @@ export const Listing = () => {
           </Link>
         )}
       </div>
-    </main> */}
+    </main>
   )
 }

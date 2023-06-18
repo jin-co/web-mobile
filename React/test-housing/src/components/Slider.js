@@ -17,10 +17,8 @@ export const Slider = () => {
   const fetchData = async () => {
     const colRef = collection(db, 'listings')
     const docSnap = await getDocs(colRef)
-    console.log(docSnap)
     let listings = []
     docSnap.forEach(doc => {
-      console.log('doc', doc.data())
       listings.push({
         id: doc.id,
         data: doc.data()
