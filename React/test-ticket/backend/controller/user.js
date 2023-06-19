@@ -28,7 +28,7 @@ exports.join = asyncHandler(async (req, res, next) => {
     throw new Error('join failed')
   }
 
-  res.status(201).json({ user: user, token:generateToken(email) })
+  res.status(201).json({ user: user, token: generateToken(email) })
 })
 
 exports.login = asyncHandler(async (req, res, next) => {
@@ -49,9 +49,19 @@ exports.login = asyncHandler(async (req, res, next) => {
     throw new Error('wrong password')
   }
 
-  res.status(200).json({ user: user, token:generateToken(email) })
+  res.status(200).json({ user: user, token: generateToken(email) })
+})
+
+exports.getMe = asyncHandler(async (req, res, next) => {
+  const user = await User.findOne({ email: req.userData.email })
+  const resUser = {
+    _id: user._id,
+    name: user.name,
+    email: user.email,
+  }
+  res.status(200).json({ user: resUser })
 })
 
 function generateToken(email) {
-  return jwt.sign({email: email}, process.env.JWT, {expiresIn: '1h'})
+  return jwt.sign({ email: email }, process.env.JWT, { expiresIn: '1h' })
 }
