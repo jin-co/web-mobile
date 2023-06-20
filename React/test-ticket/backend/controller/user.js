@@ -3,15 +3,15 @@ const User = require('../models/user')
 const bcryptjs = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
-exports.join = asyncHandler(async (req, res, next) => {
+exports.join = asyncHandler(async (req, res, next) => {  
   const { name, email, password } = req.body
   if (!email || !password || !name) {
     res.status(400)
     throw new Error('all fields required')
   }
   const userExists = await User.findOne({ email })
-
   if (userExists) {
+    console.log(userExists)
     res.status(400)
     throw new Error('user exists')
   }
