@@ -8,7 +8,7 @@ const {
   removeTicket,
   updateTicket } = require('../controller/ticket')
 
-router.use('/:ticketId/note', require('./note'))
+router.use('/:id/note', require('./note'))
 
 router.route('/').get(authCheck, getTickets).post(authCheck, addTicket)
 
