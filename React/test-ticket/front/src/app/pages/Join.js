@@ -3,9 +3,6 @@ import { FaUser } from 'react-icons/fa'
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
 import { Spinner } from '../components/Spinner'
-import { useDispatch, useSelector } from 'react-redux'
-import { join, reset } from '../../features/auth/authSlice'
-
 
 export const Join = () => {
   const [formData, setFormData] = useState({
@@ -17,32 +14,8 @@ export const Join = () => {
 
   const { name, email, password, passwordConfirm } = formData
 
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-  const { user, isError, isSuccess, isLoading, message } = useSelector((state) => state.auth)
-
-  useEffect(() => {
-    if (isError) {
-      toast.error(message)
-    }
-    if (isSuccess || user) {
-      navigate('/')
-    }
-    dispatch(reset())
-  }, [])
-
   const onSubmit = (e) => {
     e.preventDefault()
-    if(password !== passwordConfirm) {
-      toast.error('PW not match')
-    } else {
-      const user = {
-        name,
-        email,
-        password
-      }      
-      dispatch(join(user))
-    }
   }
 
   const onChange = (e) => {
