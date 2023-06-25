@@ -1,5 +1,9 @@
 import React, { useState } from 'react'
 import { FaSignInAlt } from 'react-icons/fa'
+import { Spinner } from '../components/Spinner'
+import { useSelector, useDispatch } from 'react-redux'
+import { login, reset } from '../../features/auth/authSlice'
+import { useNavigate } from 'react-router-dom'
 
 export const Login = () => {
   const [formData, setFormData] = useState({
@@ -8,9 +12,19 @@ export const Login = () => {
   })
 
   const { email, password } = formData
-
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const { user, isLoading, isSuccess, isError, message } = useSelector((state) => state.auth)
   const onSubmit = (e) => {
     e.preventDefault()
+    const user = {
+      email,
+      password
+    }
+    dispatch(login(user))
+    if(isSuccess) {
+      navigate('/')
+    }
   }
 
   const onChange = (e) => {

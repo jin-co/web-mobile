@@ -1,14 +1,28 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FaSignInAlt, FaSignOutAlt, FaUser } from 'react-icons/fa'
+import { useDispatch, useSelector } from 'react-redux'
+import { logout, reset } from '../../features/auth/authSlice'
 
 export const Header = () => {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const { user, isLoading, isSuccess, isError, message } = useSelector(
+    (state) => state.auth
+  )
+
+  const onLogout = () => {
+    dispatch(logout())
+    dispatch(reset())
+    navigate('/')
+  }
+
   return (
     <header className="header">
       <div className="logo">
         <Link to="/">Support Dest</Link>
       </div>
-      {/* <ul>
+      <ul>
         {user ? (
           <li>
             <button className="btn" onClick={onLogout}>
@@ -24,14 +38,14 @@ export const Header = () => {
               </Link>
             </li>
             <li>
-              <Link to="/register">
+              <Link to="/join">
                 <FaUser />
-                Register
+                join
               </Link>
             </li>
           </>
         )}
-      </ul> */}
+      </ul>
     </header>
   )
 }

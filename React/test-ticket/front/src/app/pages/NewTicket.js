@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BackButton } from '../components/BackButton'
+import { useSelector } from 'react-redux'
 
 export const NewTicket = () => {
+  const { user } = useSelector((state) => state.auth)
+  const { isLoading, isError, isSuccess, message } = useSelector((state) => state.tickets)
+  const [name] = useState(user.name)
+  const [email] = useState(user.email)
+  const [product, setProduct] = useState('Max')
+  const [description, setDescription] = useState(user.description)
+
   const onSubmit = (e) => {
     e.preventDefault()
   }
@@ -13,7 +21,7 @@ export const NewTicket = () => {
         <p>Fill out the form below</p>
       </section>
 
-      {/* <section className="form">
+      <section className="form">
         <div className="form-group">
           <label htmlFor="name">Customer name</label>
           <input type="text" className="form-control" value={name} disabled />
@@ -52,7 +60,7 @@ export const NewTicket = () => {
             <button className="btn btn-block" type='submit'>Submit</button>
           </div>
         </form>
-      </section> */}
+      </section>
     </>
   )
 }
