@@ -1,17 +1,29 @@
 import React, { useState } from 'react'
 import { BackButton } from '../components/BackButton'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { addTicket } from '../../features/tickets/ticketSlice'
+import { useNavigate } from 'react-router-dom'
 
 export const NewTicket = () => {
   const { user } = useSelector((state) => state.auth)
-  const { isLoading, isError, isSuccess, message } = useSelector((state) => state.tickets)
+  const { isLoading, isError, isSuccess, message } = useSelector((state) => state.ticket)
   const [name] = useState(user.name)
   const [email] = useState(user.email)
   const [product, setProduct] = useState('Max')
   const [description, setDescription] = useState(user.description)
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const onSubmit = (e) => {
     e.preventDefault()
+    console.log(user.name)
+    const newTicket = {
+   
+      product,
+      description
+    }
+    dispatch(addTicket(newTicket))
+    navigate('/tickets')
   }
   return (
     <>
