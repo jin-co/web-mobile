@@ -2,9 +2,11 @@ import { useDispatch, useSelector } from "react-redux"
 import { BackButton } from "../components/BackButton"
 import Modal from 'react-modal'
 import { FaPlus } from 'react-icons/fa'
-import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useEffect, useState } from "react"
+import { useNavigate, useParams } from "react-router-dom"
 import { toast } from 'react-toastify'
+import { getTicket, closeTicket } from "../../features/tickets/ticketSlice"
+import { Spinner } from "../components/Spinner"
 
 const customStyles = {
   content: {
@@ -24,7 +26,12 @@ export const Ticket = () => {
   const [noteText, setNoteText] = useState('')
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  const {ticket} = useSelector(state => state.ticket)
+  const params = useParams()
+  const { ticket, isLoading } = useSelector(state => state.ticket)
+
+  useEffect(() => {
+    dispatch(getTicket(params.ticketId))
+  }, [])
 
   const openModal = () => {
     setModalIsOpen(true)
@@ -35,13 +42,17 @@ export const Ticket = () => {
   }
 
   const onTicketClose = () => {
-    // dispatch(closeTicket(ticketId))
+    dispatch(closeTicket(params.ticketId))
     toast.success('Ticket closed')
     navigate('/tickets')
   }
 
   const onNoteSubmit = (e) => {
 
+  }
+
+  if (isLoading) {
+    return <Spinner />
   }
 
   return (
