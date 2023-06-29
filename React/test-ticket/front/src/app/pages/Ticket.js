@@ -7,6 +7,7 @@ import { useNavigate, useParams } from "react-router-dom"
 import { toast } from 'react-toastify'
 import { getTicket, closeTicket } from "../../features/tickets/ticketSlice"
 import { Spinner } from "../components/Spinner"
+import { NoteItem } from '../components/NoteItem'
 
 const customStyles = {
   content: {
@@ -28,6 +29,7 @@ export const Ticket = () => {
   const navigate = useNavigate()
   const params = useParams()
   const { ticket, isLoading } = useSelector(state => state.ticket)
+  const { notes } = useSelector(state => state.note)
 
   useEffect(() => {
     dispatch(getTicket(params.ticketId))
@@ -115,9 +117,9 @@ export const Ticket = () => {
         </form>
       </Modal>
 
-      {/* {notes.map((note) => (
+      {notes.map((note) => (
         <NoteItem key={note._id} note={note} />
-      ))} */}
+      ))}
 
       {ticket.status !== 'closed' && (
         <button className="btn btn-block btn-danger" onClick={onTicketClose}>
