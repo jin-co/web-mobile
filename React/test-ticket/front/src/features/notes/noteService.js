@@ -1,14 +1,14 @@
 import axios from "axios";
 const URL = 'http://localhost:5000/api/ticket/'
 
-const getNotes = async (ticketId, token) => {
+const getNotes = async (ticketId, token) => {  
   const config = {
     headers: {
       authorization: 'Bearer ' + token
     }
   }
 
-  const res = await axios.get(URL + ticketId + '/note/', config)
+  const res = await axios.get(URL + ticketId + '/note', config)
   return res.data
 }
 
@@ -18,8 +18,8 @@ const addNote = async (ticketId, note, token) => {
       authorization: 'Bearer ' + token
     }
   }
-
-  const res = await axios.post(URL + ticketId + '/note/', note, config)
+  console.log(ticketId, note)
+  const res = await axios.post(URL + ticketId + '/note/', {text: note}, config)
   return res.data
 }
 

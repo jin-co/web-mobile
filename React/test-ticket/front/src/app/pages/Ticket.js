@@ -8,6 +8,7 @@ import { toast } from 'react-toastify'
 import { getTicket, closeTicket } from "../../features/tickets/ticketSlice"
 import { Spinner } from "../components/Spinner"
 import { NoteItem } from '../components/NoteItem'
+import { addNote, getNotes } from "../../features/notes/noteSlice"
 
 const customStyles = {
   content: {
@@ -33,6 +34,7 @@ export const Ticket = () => {
 
   useEffect(() => {
     dispatch(getTicket(params.ticketId))
+    dispatch(getNotes(params.ticketId))
   }, [])
 
   const openModal = () => {
@@ -50,7 +52,8 @@ export const Ticket = () => {
   }
 
   const onNoteSubmit = (e) => {
-
+    e.preventDefault()    
+    dispatch(addNote({ ticketId: params.ticketId, note: noteText }))
   }
 
   if (isLoading) {
