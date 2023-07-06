@@ -1,18 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-export const FeedRating = ({ feed }) => {
-  let avg = feed.reduce((acc, cur) => {
-    return (acc + cur.rating) / feed.length
-  }, 0)
-  avg = avg.toFixed(2)
+export const FeedRating = () => {
+  const [selected, setSelected] = useState(10)
+
+  const handleChange = (e) => {
+    setSelected(+e.target.value)
+  }
+
   return (
-    <div className="feedback-stats">
-      <p>
-        {isNaN(avg) ? 0 : avg}
-      </p>
-      <p>
-        {feed.length}
-      </p>
-    </div>
+    <ul className="rating">
+      {
+        Array.from({ length: 10 }, (_, i) => (
+          <li>
+            <input type="radio" id={i + 1} value={i + 1} onChange={handleChange} checked={selected == i + 1} />
+            <label htmlFor={i + 1}>{i + 1}</label>
+          </li>
+        ))
+      }
+    </ul>
   )
 }

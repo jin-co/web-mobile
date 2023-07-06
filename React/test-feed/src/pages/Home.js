@@ -1,19 +1,29 @@
 import React, { useEffect, useState } from 'react'
 import { FeedList } from '../components/FeedList'
 import { FeedForm } from '../components/FeedForm'
-import { FeedRating } from '../components/FeedRating'
+import { FeedStat } from '../components/FeedStat'
 import { Feed } from '../data/FeedData'
 
 export const Home = () => {
   const [feed, setFeed] = useState(Feed)
-  useEffect(() => {
-    console.log(feed)
-  }, [])
+
+  const addFeed = (newFeed) => {
+    setFeed([newFeed, ...feed])
+  }
+
+  const deleteFeed = (id) => {
+    setFeed(feed.filter(f => f.id !== id))
+  }
+
+  const updateFeed = (id, newFeed) => {
+    setFeed(feed.map(f => f.id === id ? { ...newFeed } : f))
+  }
+
   return (
     <>
-      <FeedRating feed={feed} />
+      <FeedStat feed={feed} />
       <FeedForm />
-      <FeedList feed={feed} />
+      <FeedList feed={feed} deleteFeed={deleteFeed} />
     </>
   )
 }
