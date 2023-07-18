@@ -1,17 +1,26 @@
-import { createContext, useState } from "react"
+import { createContext, useReducer, useState } from "react"
+import { GitReducer } from "./GitReducer"
 const url = process.env.REACT_APP_URL
 
 const GitContext = createContext()
 
 export const GitProvider = ({ children }) => {
-  const [users, setUsers] = useState([])
-  const [user, setUser] = useState({})
-  const [repos, setRepos] = useState([])
+  const initial = {
+    users: [],
+    user: {},
+    repos: [],
+    isLoading: false
+  }
+
+  const [state, dispatch] = useReducer(GitReducer, initial)
 
   const getUsers = async (text) => {
     const res = await fetch(url + 'search/users?q=' + text)
     const { items } = await res.json()
-    setUsers(items)
+    dispatch({
+      type: 'GET_USERS',
+      payload: items
+    })
   }
 
   const getUser = async (login) => {
@@ -20,8 +29,10 @@ export const GitProvider = ({ children }) => {
       window.location = '/notfound'
     } else {
       const data = await res.json()
-      console.log(data)
-      setUser(data)
+      dispatch({
+        type: 'GET_USER',
+        payload: data
+      })
     }
   }
 
@@ -32,14 +43,15 @@ export const GitProvider = ({ children }) => {
     })
     const res = await fetch(url + `users/${login}/repos?${params}`)
     const data = await res.json()
-    setRepos(data)
+    dispatch({
+      type: 'GET_REPOS',
+      payload: data
+    })
   }
 
   return (
     <GitContext.Provider value={{
-      users,
-      repos,
-      user,
+      ...state,
       getUsers,
       getUser,
       getRepos,
