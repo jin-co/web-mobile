@@ -3,15 +3,23 @@ import { Link, useParams } from 'react-router-dom'
 import { FaCodepen, FaStore, FaUserFriends, FaUsers } from 'react-icons/fa'
 import { useContext, useEffect } from 'react'
 import GitContext from '../context/git/GitContext'
+import { getThem } from '../context/git/GitAction'
 
 export const User = () => {
   const params = useParams()
-  const { user, getUser, getRepos, repos } = useContext(GitContext)
+  const { user, repos, dispatch } = useContext(GitContext)
 
   useEffect(() => {
-    getUser(params.login)
-    getRepos(params.login)
+    getAll()
   }, [])
+
+  const getAll = async () => {
+    const data = await getThem(params.login)
+    dispatch({
+      type: 'GET_THEM',
+      payload: data
+    })
+  }
 
   const {
     name,

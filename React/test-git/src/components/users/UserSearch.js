@@ -1,12 +1,20 @@
 import { useState, useContext } from 'react'
 import GitContext from '../../context/git/GitContext'
+import { getUsers } from '../../context/git/GitAction'
 
 export const UserSearch = () => {
   const [text, setText] = useState('')
-  const { users, getUsers } = useContext(GitContext)
-  const handleSubmit = (e) => {
+  const { users, dispatch } = useContext(GitContext)
+  const handleSubmit = async (e) => {
+    dispatch({
+      type: 'LOAD',
+    })
     e.preventDefault()
-    getUsers(text)
+    const data = await getUsers(text)
+    dispatch({
+      type: 'GET_USERS',
+      payload: data
+    })
   }
 
   const handleChange = (e) => {
@@ -36,7 +44,9 @@ export const UserSearch = () => {
       </div>
       {users.length > 0 && (
         <div>
-          <button className="btn btn-ghost btn-lg">Clear</button>
+          <button className="btn btn-ghost btn-lg" onClick={() => dispatch({
+            type: 'CLEAR'
+          })}>Clear</button>
         </div>
       )}
     </div>

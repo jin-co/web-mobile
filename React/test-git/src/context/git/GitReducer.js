@@ -9,18 +9,24 @@ export const GitReducer = (state, action) => {
         isLoading: false
       }
 
-    case 'GET_USER':
+    case 'GET_THEM':
       return {
         ...state,
-        user: action.payload,
+        user: action.payload.user,
+        repos: action.payload.repos,
         isLoading: false
       }
 
-    case 'GET_REPOS':
+    case 'LOAD':
       return {
         ...state,
-        repos: action.payload,
-        isLoading: false
+        isLoading: true
+      }
+
+    case 'CLEAR':
+      return {
+        ...state,
+        users: [],
       }
 
     default:
