@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import AlertContext from '../../context/alert/AlertContext'
 
 export const Alert = () => {
-  return (
-    <div>Alert</div>
-  )
+  const { isOpen } = useContext(AlertContext)
+
+  if(isOpen) {
+    return (
+      <div>Alert</div>
+    )
+  }  
 }
