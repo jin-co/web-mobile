@@ -11,7 +11,7 @@ import { CreateListing } from './pages/CreateListing'
 import { EditListing } from './pages/EditListing'
 import { Contact } from './pages/Contact'
 import { Listing } from './pages/Listing'
-import { PrivateRoute } from './pages/PrivateRoute'
+import { PrivateRoute } from './components/PrivateRoute'
 
 export const App = () => {
   return (
