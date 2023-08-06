@@ -12,6 +12,9 @@ import { EditListing } from './pages/EditListing'
 import { Contact } from './pages/Contact'
 import { Listing } from './pages/Listing'
 import { PrivateRoute } from './components/PrivateRoute'
+import { Nav } from './components/Nav'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 export const App = () => {
   return (
@@ -20,7 +23,7 @@ export const App = () => {
         <Routes>
           <Route exact path='/' element={<Explore />} />
           <Route exact path='/offers' element={<Offers />} />
-          <Route exact path='/category/:category-name' element={<Category />} />
+          <Route exact path='/category/:categoryName' element={<Category />} />
           <Route exact path='/profile' element={<PrivateRoute />}>
             <Route exact path='/profile' element={<Profile />} />
           </Route>
@@ -29,10 +32,12 @@ export const App = () => {
           <Route exact path='/forgot-password' element={<ForgotPassword />} />
           <Route exact path='/create-listing' element={<CreateListing />} />
           <Route exact path='/edit-listing/:listing-id' element={<EditListing />} />
-          <Route exact path='/category/:category-name/:listing-id' element={<Listing />} />
+          <Route exact path='/category/:categoryName/:listing-id' element={<Listing />} />
           <Route exact path='/contact/:landlord-id' element={<Contact />} />
         </Routes>
+        <Nav />
       </Router>
+      <ToastContainer/>
     </>
   )
 }

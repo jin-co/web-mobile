@@ -1,12 +1,27 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { collection } from 'firebase/firestore'
+import { db } from '../firebase.config'
+import {toast} from 'react-toastify'
 
 export const Category = () => {
   const params = useParams()
+  const [listings, setListings] = useState(null)
+  const [loading, setLoading] = useState(null)
+  const [lastFetched, setLastFetched] = useState(null)
+
   useEffect(() => {
-    console.log(params)
-    console.log(params.categoryName)
+    fetchListings()
   }, [])
+
+  const fetchListings = async () => {
+    try {
+      const listingRef = collection
+    } catch (error) {
+
+    }
+  }
+
   return (
     <div className="category">
       <header>
