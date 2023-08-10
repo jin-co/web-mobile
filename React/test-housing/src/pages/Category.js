@@ -10,7 +10,7 @@ export const Category = () => {
   const params = useParams()
   const [listings, setListings] = useState(null)
   const [loading, setLoading] = useState(true)
-  const [lastFetched, setLastFetched] = useState(null)
+  const [lastFetchedListing, setLastFetchedListing] = useState(null)
 
   useEffect(() => {
     fetchListings()
@@ -19,7 +19,13 @@ export const Category = () => {
   const fetchListings = async () => {
     try {
       const listingRef = collection(db, 'listings')
-      const docSnap = await getDocs(listingRef)
+      const q = query(
+        listingRef,
+        where('type', '==', params.categoryName),
+        orderBy('timestamp', 'desc'),
+        limit(10)
+      )
+      const docSnap = await getDocs(q)
       const listings = []
       console.log(docSnap)
       docSnap.forEach((doc) => {
@@ -33,6 +39,24 @@ export const Category = () => {
       setLoading(false)
     } catch (error) {
       toast.error('failed')
+    }
+  }
+
+  const onFetchMoreListings = async () => {
+    try {
+      const listingRef = collection(db, 'listings')
+      const q = query(
+        listingRef,
+        where('type', '==', params.categoryName),
+        orderBy('timestamp', 'desc'),
+        startAfter(lastFetchedListing),
+        limit(10)
+      )
+      const querySnap = await getDocs(q)
+      const lastList = querySnap.docs[querySnap.docs.length - 1]
+      setLastFetchedListing(lastFetchedListing)
+    } catch (error) {
+      toast.error('Failed')
     }
   }
 
@@ -63,11 +87,11 @@ export const Category = () => {
           </main>
           <br />
           <br />
-          {/* {lastFetchedListing && (
+          {lastFetchedListing && (
             <p className="loadMore" onClick={onFetchMoreListings}>
               Load more
             </p>
-          )} */}
+          )}
         </>
       ) : (
         <p>No listing for {params.categoryName}</p>
