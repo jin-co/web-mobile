@@ -28,6 +28,10 @@ export const Category = () => {
       const docSnap = await getDocs(q)
       const listings = []
       console.log(docSnap)
+
+      const lastList = docSnap.docs[docSnap.docs.length - 1]
+      setLastFetchedListing(lastList)
+
       docSnap.forEach((doc) => {
         console.log(doc.data())
         listings.push({
@@ -52,9 +56,20 @@ export const Category = () => {
         startAfter(lastFetchedListing),
         limit(10)
       )
-      const querySnap = await getDocs(q)
-      const lastList = querySnap.docs[querySnap.docs.length - 1]
-      setLastFetchedListing(lastFetchedListing)
+      const docSnap = await getDocs(q)
+      const lastList = docSnap.docs[docSnap.docs.length - 1]
+      setLastFetchedListing(lastList)
+
+      const listings = []
+
+      docSnap.forEach((doc) => {
+        listings.push({
+          id: doc.id,
+          data: doc.data()
+        })
+      })
+      setListings((prev) => [...prev, ...listings])
+      setLoading(false)
     } catch (error) {
       toast.error('Failed')
     }

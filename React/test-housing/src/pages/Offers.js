@@ -1,10 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Spinner } from '../components/Spinner'
-import {ListingItem} from '../components/ListingItem'
+import { ListingItem } from '../components/ListingItem'
+import { collection, getDocs } from 'firebase/firestore'
 
 export const Offers = () => {
   const loading = false
   const listings = []
+
+  useEffect(() => {
+    fetchListings()
+  }, [])
+
+  const fetchListings = async () => {
+    try {
+
+    } catch (error) {
+
+    }
+  }
+
   return (
     <div className="category">
       <header>
