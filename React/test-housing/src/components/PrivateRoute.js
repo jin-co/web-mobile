@@ -18,5 +18,5 @@ export const PrivateRoute = () => {
   }, [])
 
   if (loading) return <Spinner />
-  return loggedIn ? <Outlet /> : <Navigate to="/sing-in" />
+  return loggedIn ? <Outlet /> : <Navigate to="/sign-in" />
 }

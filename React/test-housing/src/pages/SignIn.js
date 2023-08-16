@@ -1,24 +1,33 @@
 import React, { useState } from 'react'
 import { ReactComponent as ArrowRightIcon } from '../assets/svg/keyboardArrowRightIcon.svg'
 import visibilityIcon from '../assets/svg/visibilityIcon.svg'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { OAuth } from '../components/OAuth'
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 
 export const SignIn = () => {
+  const navigate = useNavigate()
   const [showPassword, setShowPassword] = useState(false)
   const [formData, setFormData] = useState({
     email: '',
     password: ''
   })
   const { email, password } = formData
-  const handleSubmit = (e) => {
-
+  const auth = getAuth()
+  const handleSubmit = async (e) => {
+    await signInWithEmailAndPassword(auth, email, password)
   }
 
   const handleChange = (e) => {
-
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.id]: e.target.value
+    }))
   }
-
+setFormData((prev) => ({
+  ...prev,
+  [e.target.id]: e.target.value
+}))
   return (
     <>
       <div className="pageContainer">
