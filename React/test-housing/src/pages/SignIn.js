@@ -15,6 +15,7 @@ export const SignIn = () => {
   const { email, password } = formData
   const auth = getAuth()
   const handleSubmit = async (e) => {
+    e.preventDefault()
     await signInWithEmailAndPassword(auth, email, password)
   }
 
@@ -24,10 +25,7 @@ export const SignIn = () => {
       [e.target.id]: e.target.value
     }))
   }
-setFormData((prev) => ({
-  ...prev,
-  [e.target.id]: e.target.value
-}))
+
   return (
     <>
       <div className="pageContainer">
