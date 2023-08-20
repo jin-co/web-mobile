@@ -16,7 +16,11 @@ export const SignIn = () => {
   const auth = getAuth()
   const handleSubmit = async (e) => {
     e.preventDefault()
-    await signInWithEmailAndPassword(auth, email, password)
+    try {
+      const user = await signInWithEmailAndPassword(auth, email, password)      
+    } catch (error) {
+
+    }
   }
 
   const handleChange = (e) => {
