@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
+import { getAuth, signInWithEmailAndPassword, updateProfile } from 'firebase/auth'
 import { Link, useNavigate } from 'react-router-dom'
 import arrowRight from '../assets/svg/keyboardArrowRightIcon.svg'
 import homeIcon from '../assets/svg/homeIcon.svg'
 import { ListingItem } from '../components/ListingItem'
-import { collection, getDocs } from 'firebase/firestore'
+import { collection, deleteDoc, doc, getDocs } from 'firebase/firestore'
 import { db } from '../firebase.config'
 
 export const Profile = () => {
@@ -40,14 +40,19 @@ export const Profile = () => {
 
   const onLogout = () => {
     auth.signOut()
+    navigate('/')
   }
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
+    try {
+      if (auth.currentUser.displayName !== name) {
+        await updateProfile(auth.currentUser, {
+          displayName: name
+        })
+      }
+    } catch (error) {
 
-  }
-
-  const onChange = (e) => {
-
+    }
   }
 
   const handleChange = (e) => {
@@ -57,12 +62,15 @@ export const Profile = () => {
     }))
   }
 
-  const onDelete = () => {
-
+  const onDelete = async (id) => {
+    await deleteDoc(doc(db, 'listings', id))
+    const updatedListings = listings.filter(l => l.id !== id
+    )
+    setListings(updatedListings)
   }
 
-  const onEdit = () => {
-
+  const onEdit = (listingId) => {
+    navigate(`/edit-listing/${listingId}`)
   }
 
   return (
