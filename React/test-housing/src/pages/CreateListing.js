@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { v4 as uuid } from 'uuid'
 
 export const CreateListing = () => {
   const [geolocationEnabled, setGeolocationEnabled] = useState(false)
@@ -35,10 +36,23 @@ export const CreateListing = () => {
   } = formData
 
   const onMutate = (e) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.id]: e.target.value
-    }))
+    console.log(e.target.value === 'false')
+    if (e.target.value === 'false') {
+      setFormData((prev) => ({
+        ...prev,
+        [e.target.id]: false
+      }))
+    } else if (e.target.value === 'true') {
+      setFormData((prev) => ({
+        ...prev,
+        [e.target.id]: true
+      }))
+    } else {
+      setFormData((prev) => ({
+        ...prev,
+        [e.target.id]: e.target.value
+      }))
+    }
   }
 
   const onSubmit = async (e) => {
