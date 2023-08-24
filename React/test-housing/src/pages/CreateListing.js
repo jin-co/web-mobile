@@ -1,5 +1,7 @@
+import { addDoc, collection } from 'firebase/firestore'
 import React, { useState } from 'react'
 import { v4 as uuid } from 'uuid'
+import { db } from '../firebase.config'
 
 export const CreateListing = () => {
   const [geolocationEnabled, setGeolocationEnabled] = useState(false)
@@ -56,7 +58,8 @@ export const CreateListing = () => {
   }
 
   const onSubmit = async (e) => {
-
+    e.preventDefault()
+    await addDoc(collection(db, 'listings'), formData)
   }
 
   return (
