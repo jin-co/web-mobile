@@ -2,6 +2,8 @@ import { addDoc, collection } from 'firebase/firestore'
 import React, { useState } from 'react'
 import { v4 as uuid } from 'uuid'
 import { db } from '../firebase.config'
+import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { getAuth } from 'firebase/auth';
 
 export const CreateListing = () => {
   const [geolocationEnabled, setGeolocationEnabled] = useState(false)
@@ -59,6 +61,48 @@ export const CreateListing = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault()
+
+    const storeImage = async (image) => {
+      const auth = getAuth()
+      return new Promise((resolve, reject) => {
+        const storage = getStorage()
+        const fileName = `${auth.currentUser.uid}-${image.name}-${Date.now()}`
+        const storageRef = ref(storage, 'images/' + fileName)
+        const uploadTask = uploadBytesResumable(storageRef, image)
+        uploadTask.on(
+          'state_changed',
+          (snapshot) => {
+            const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+            switch (snapshot.state) {
+              case 'paused':
+                break
+              case 'running':
+                break
+            }
+          },
+          (error) => {
+            reject(error)
+          },
+          () => {
+            getDownloadURL(uploadTask.snapshot.ref).then(downloadURL => {
+              resolve(downloadURL)
+            })
+          }
+        )
+      })
+    }
+
+    const imageUrls = await Promise.all(
+      [...images].map(image => storeImage(image))
+    ).catch(() => {
+      return
+    })
+
+    const formDataCopy = {
+      ...formData,
+      imageUrls
+    }
+
     await addDoc(collection(db, 'listings'), formData)
   }
 
