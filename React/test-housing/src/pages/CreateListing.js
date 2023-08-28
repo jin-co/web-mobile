@@ -1,4 +1,4 @@
-import { addDoc, collection } from 'firebase/firestore'
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
 import React, { useState } from 'react'
 import { v4 as uuid } from 'uuid'
 import { db } from '../firebase.config'
@@ -92,6 +92,14 @@ export const CreateListing = () => {
       })
     }
 
+    let geolocation = {}
+    if (geolocationEnabled) {
+
+    } else {
+      geolocation.lat = latitude
+      geolocation.log = longitude
+    }
+
     const imageUrls = await Promise.all(
       [...images].map(image => storeImage(image))
     ).catch(() => {
@@ -100,10 +108,12 @@ export const CreateListing = () => {
 
     const formDataCopy = {
       ...formData,
-      imageUrls
+      imageUrls,
+      geolocation,
+      timestamp: serverTimestamp()
     }
 
-    await addDoc(collection(db, 'listings'), formData)
+    await addDoc(collection(db, 'listings'), formDataCopy)
   }
 
   return (
