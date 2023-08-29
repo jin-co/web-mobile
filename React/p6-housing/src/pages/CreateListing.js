@@ -98,7 +98,6 @@ const CreateListing = () => {
       geolocation.lat = latitude
       geolocation.lng = longitude
       // location = address
-
     }
     const storeImage = async (image) => {
       return new Promise((resolve, reject) => {

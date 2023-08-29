@@ -4,6 +4,7 @@ import { v4 as uuid } from 'uuid'
 import { db } from '../firebase.config'
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { getAuth } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
 export const CreateListing = () => {
   const [geolocationEnabled, setGeolocationEnabled] = useState(false)
@@ -39,8 +40,10 @@ export const CreateListing = () => {
     longitude,
   } = formData
 
+  const auth = getAuth()
+  const navigate = useNavigate()
+
   const onMutate = (e) => {
-    console.log(e.target.value === 'false')
     if (e.target.value === 'false') {
       setFormData((prev) => ({
         ...prev,
@@ -61,9 +64,7 @@ export const CreateListing = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault()
-
     const storeImage = async (image) => {
-      const auth = getAuth()
       return new Promise((resolve, reject) => {
         const storage = getStorage()
         const fileName = `${auth.currentUser.uid}-${image.name}-${Date.now()}`
@@ -92,19 +93,19 @@ export const CreateListing = () => {
       })
     }
 
+    const imageUrls = await Promise.all(
+      [...images].map(image => storeImage(image))
+    ).catch(() => {
+      return
+    })
+    
     let geolocation = {}
     if (geolocationEnabled) {
 
     } else {
       geolocation.lat = latitude
       geolocation.log = longitude
-    }
-
-    const imageUrls = await Promise.all(
-      [...images].map(image => storeImage(image))
-    ).catch(() => {
-      return
-    })
+    }    
 
     const formDataCopy = {
       ...formData,
@@ -113,7 +114,9 @@ export const CreateListing = () => {
       timestamp: serverTimestamp()
     }
 
-    await addDoc(collection(db, 'listings'), formDataCopy)
+    !formDataCopy.offer && delete formDataCopy.discountedPrice
+    const docRef = await addDoc(collection(db, 'listings'), formDataCopy)
+    navigate(`/category/${formDataCopy.type}/${docRef.id}`)
   }
 
   return (
