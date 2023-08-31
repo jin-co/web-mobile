@@ -44,6 +44,8 @@ export const CreateListing = () => {
   const navigate = useNavigate()
 
   const onMutate = (e) => {
+    console.log(e.target)
+    console.log(e.target.files)
     if (e.target.value === 'false') {
       setFormData((prev) => ({
         ...prev,
@@ -53,6 +55,11 @@ export const CreateListing = () => {
       setFormData((prev) => ({
         ...prev,
         [e.target.id]: true
+      }))
+    } else if (e.target.files) {
+      setFormData((prev) => ({
+        ...prev,
+        images: e.target.files
       }))
     } else {
       setFormData((prev) => ({
@@ -98,14 +105,14 @@ export const CreateListing = () => {
     ).catch(() => {
       return
     })
-    
+    console.log('imageUrls: ', imageUrls)
     let geolocation = {}
     if (geolocationEnabled) {
 
     } else {
       geolocation.lat = latitude
       geolocation.log = longitude
-    }    
+    }
 
     const formDataCopy = {
       ...formData,
