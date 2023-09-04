@@ -1,9 +1,9 @@
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { v4 as uuid } from 'uuid'
 import { db } from '../firebase.config'
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import { getAuth } from 'firebase/auth';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 
 export const CreateListing = () => {
@@ -43,9 +43,20 @@ export const CreateListing = () => {
   const auth = getAuth()
   const navigate = useNavigate()
 
+  // useEffect(() => {
+  //   onAuthStateChanged(auth, (user) => {
+  //     if (user) {
+  //       setFormData({
+  //         ...formData,
+  //         userRef: user.uid
+  //       })
+  //     } else {
+  //       navigate('/sign-in')
+  //     }
+  //   })
+  // }, [])
+
   const onMutate = (e) => {
-    console.log(e.target)
-    console.log(e.target.files)
     if (e.target.value === 'false') {
       setFormData((prev) => ({
         ...prev,
