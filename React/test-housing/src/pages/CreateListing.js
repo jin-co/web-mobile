@@ -132,7 +132,10 @@ export const CreateListing = () => {
       timestamp: serverTimestamp()
     }
 
-    !formDataCopy.offer && delete formDataCopy.discountedPrice
+    formDataCopy.location = address
+    delete formDataCopy.images
+    delete formDataCopy.address
+    !formDataCopy.offer && delete formDataCopy.discountedPrice    
     const docRef = await addDoc(collection(db, 'listings'), formDataCopy)
     navigate(`/category/${formDataCopy.type}/${docRef.id}`)
   }
