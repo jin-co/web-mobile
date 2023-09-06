@@ -20,6 +20,9 @@ export const Profile = () => {
   const { name, email } = formData
 
   useEffect(() => {
+    const fetchUserListings = async() => {
+      
+    }
     fetchListings()
   }, [])
 
