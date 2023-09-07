@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import arrowRight from '../assets/svg/keyboardArrowRightIcon.svg'
 import homeIcon from '../assets/svg/homeIcon.svg'
 import { ListingItem } from '../components/ListingItem'
-import { collection, deleteDoc, doc, getDocs } from 'firebase/firestore'
+import { collection, deleteDoc, doc, getDocs, orderBy, query, where } from 'firebase/firestore'
 import { db } from '../firebase.config'
 
 export const Profile = () => {
@@ -20,9 +20,27 @@ export const Profile = () => {
   const { name, email } = formData
 
   useEffect(() => {
-    const fetchUserListings = async() => {
-      
+    const fetchUserListings = async () => {
+      const listingRef = collection(db, 'listings')
+      const q = query(
+        listingRef,
+        where('userRef', '==', auth.currentUser.uid),
+        orderBy('timestamp', 'desc')
+      )
+
+      const querySnap = await getDocs(q)
+      let listings = []
+
+      querySnap.forEach((doc) => {
+        return listings.push({
+          id: doc.id,
+          data: doc.data(),
+        })
+      })
+
+      setListings(listings)
     }
+    fetchUserListings()
     fetchListings()
   }, [])
 
