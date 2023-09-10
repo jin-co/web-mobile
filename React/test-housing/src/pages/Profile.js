@@ -39,7 +39,9 @@ export const Profile = () => {
       })
 
       setListings(listings)
+      setLoading(false)
     }
+
     fetchUserListings()
     fetchListings()
   }, [])
