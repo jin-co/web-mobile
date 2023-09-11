@@ -24,14 +24,14 @@ export const Profile = () => {
       const listingRef = collection(db, 'listings')
       const q = query(
         listingRef,
-        where('userRef', '==', auth.currentUser.uid),
-        orderBy('timestamp', 'desc')
+        where('userRef', '==', auth.currentUser.uid)
       )
 
       const querySnap = await getDocs(q)
       let listings = []
 
       querySnap.forEach((doc) => {
+        console.log(doc)
         return listings.push({
           id: doc.id,
           data: doc.data(),
@@ -48,9 +48,7 @@ export const Profile = () => {
 
   const fetchListings = async () => {
     const docRef = collection(db, 'listings')
-    console.log(docRef)
     const docSnap = await getDocs(docRef)
-    console.log(docSnap)
     const listings = []
     docSnap.forEach(doc => {
       listings.push({
