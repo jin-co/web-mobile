@@ -29,15 +29,16 @@ export const Profile = () => {
 
       const querySnap = await getDocs(q)
       let listings = []
-
+console.log(querySnap)
       querySnap.forEach((doc) => {
-        console.log(doc)
-        return listings.push({
+        console.log('doc: ', doc)
+        console.log(doc.data())
+        listings.push({
           id: doc.id,
           data: doc.data(),
         })
       })
-
+      console.log(listings)
       setListings(listings)
       setLoading(false)
     }
@@ -148,7 +149,8 @@ export const Profile = () => {
           <>
             <p className="listingText">Your listings</p>
             <ul className="listingsList">
-              {listings.map((lis) => (
+              {
+                listings.map((lis) => (
                 <ListingItem
                   key={lis.id}
                   listing={lis.data}
