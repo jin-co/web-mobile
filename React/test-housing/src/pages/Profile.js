@@ -10,7 +10,7 @@ import { db } from '../firebase.config'
 export const Profile = () => {
   const auth = getAuth()
   const [changeDetails, setChangeDetails] = useState(false)
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const [listings, setListings] = useState(null)
   const [formData, setFormData] = useState({
     name: auth.currentUser.displayName,
@@ -29,7 +29,7 @@ export const Profile = () => {
 
       const querySnap = await getDocs(q)
       let listings = []
-console.log(querySnap)
+
       querySnap.forEach((doc) => {
         console.log('doc: ', doc)
         console.log(doc.data())
@@ -40,6 +40,7 @@ console.log(querySnap)
       })
       console.log(listings)
       setListings(listings)
+      console.log(listings.length)
       setLoading(false)
     }
 
