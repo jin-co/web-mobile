@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import arrowRight from '../assets/svg/keyboardArrowRightIcon.svg'
 import homeIcon from '../assets/svg/homeIcon.svg'
 import { ListingItem } from '../components/ListingItem'
-import { collection, deleteDoc, doc, getDocs, orderBy, query, where } from 'firebase/firestore'
+import { collection, deleteDoc, doc, getDocs, orderBy, query, updateDoc, where } from 'firebase/firestore'
 import { db } from '../firebase.config'
 
 export const Profile = () => {
@@ -31,21 +31,18 @@ export const Profile = () => {
       let listings = []
 
       querySnap.forEach((doc) => {
-        console.log('doc: ', doc)
-        console.log(doc.data())
         listings.push({
           id: doc.id,
           data: doc.data(),
         })
       })
-      console.log(listings)
+
       setListings(listings)
-      console.log(listings.length)
       setLoading(false)
     }
 
-    fetchUserListings()
     fetchListings()
+    fetchUserListings()
   }, [])
 
   const fetchListings = async () => {
@@ -71,6 +68,11 @@ export const Profile = () => {
       if (auth.currentUser.displayName !== name) {
         await updateProfile(auth.currentUser, {
           displayName: name
+        })
+
+        const userRef = doc(db, 'users', auth.currentUser.uid)
+        await updateDoc(userRef, {
+          name
         })
       }
     } catch (error) {
@@ -152,14 +154,14 @@ export const Profile = () => {
             <ul className="listingsList">
               {
                 listings.map((lis) => (
-                <ListingItem
-                  key={lis.id}
-                  listing={lis.data}
-                  id={lis.id}
-                  onDelete={() => onDelete(lis.id)}
-                  onEdit={() => onEdit(lis.id)}
-                />
-              ))}
+                  <ListingItem
+                    key={lis.id}
+                    listing={lis.data}
+                    id={lis.id}
+                    onDelete={() => onDelete(lis.id)}
+                    onEdit={() => onEdit(lis.id)}
+                  />
+                ))}
             </ul>
           </>
         )}
