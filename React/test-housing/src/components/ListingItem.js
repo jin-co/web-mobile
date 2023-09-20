@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import bedIcon from '../assets/svg/bedIcon.svg'
 import bathtubIcon from '../assets/svg/bathtubIcon.svg'
 import { ReactComponent as EditIcon } from '../assets/svg/editIcon.svg'
 
 export const ListingItem = ({listing, id}) => {
+  useEffect(() => {
+console.log('listing', listing)
+  }, [])
   return (
     <li className="categoryListing">
       <Link
