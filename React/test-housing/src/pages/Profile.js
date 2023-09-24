@@ -41,7 +41,7 @@ export const Profile = () => {
       setLoading(false)
     }
 
-    fetchListings()
+    // fetchListings()
     fetchUserListings()
   }, [])
 
