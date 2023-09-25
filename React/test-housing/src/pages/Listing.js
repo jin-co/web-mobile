@@ -22,6 +22,15 @@ export const Listing = () => {
   const params = useParams()
   const auth = getAuth()
 
+  useEffect(() => {
+const fetchListing = async() => {
+  console.log(params.listingId)  
+  // const docRef = doc(db, 'listings', params.listingId)
+
+}
+  }, [])
+
+
   return (
     <main>
       {/* <Swiper slidesPerView={1} pagination={{ clickable: true }}>

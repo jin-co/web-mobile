@@ -31,8 +31,8 @@ export const App = () => {
           <Route exact path='/sign-up' element={<SignUp />} />
           <Route exact path='/forgot-password' element={<ForgotPassword />} />
           <Route exact path='/create-listing' element={<CreateListing />} />
-          <Route exact path='/edit-listing/:listing-id' element={<EditListing />} />
-          <Route exact path='/category/:type/:listing-id' element={<Listing />} />
+          <Route exact path='/edit-listing/:listingId' element={<EditListing />} />
+          <Route exact path='/category/:type/:listingId' element={<Listing />} />
           <Route exact path='/contact/:landlord-id' element={<Contact />} />
         </Routes>
         <Nav />
