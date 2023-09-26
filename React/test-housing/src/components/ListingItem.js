@@ -4,10 +4,7 @@ import bedIcon from '../assets/svg/bedIcon.svg'
 import bathtubIcon from '../assets/svg/bathtubIcon.svg'
 import { ReactComponent as EditIcon } from '../assets/svg/editIcon.svg'
 
-export const ListingItem = ({listing, id}) => {
-  useEffect(() => {
-console.log('listing', listing)
-  }, [])
+export const ListingItem = ({ listing, id }) => { 
   return (
     <li className="categoryListing">
       <Link
@@ -27,8 +24,8 @@ console.log('listing', listing)
             $
             {listing.offer
               ? listing.discountedPrice
-                  .toString()
-                  .replace(/\B(?=(\d{3})+(?!\d))/g, '')
+                .toString()
+                .replace(/\B(?=(\d{3})+(?!\d))/g, '')
               : listing.regularPrice}
             {listing.type === 'rent' && ' / Month'}
           </p>

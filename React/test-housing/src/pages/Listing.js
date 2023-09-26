@@ -23,11 +23,11 @@ export const Listing = () => {
   const auth = getAuth()
 
   useEffect(() => {
-const fetchListing = async() => {
-  console.log(params.listingId)  
-  // const docRef = doc(db, 'listings', params.listingId)
+    const fetchListing = async () => {
+      console.log(params.listingId)
+      // const docRef = doc(db, 'listings', params.listingId)
 
-}
+    }
   }, [])
 
 
@@ -66,11 +66,11 @@ const fetchListing = async() => {
           {listing.name} - $
           {listing.offer
             ? listing.discountedPrice
-                .toString()
-                .replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+              .toString()
+              .replace(/\B(?=(\d{3})+(?!\d))/g, ',')
             : listing.regularPrice
-                .toString()
-                .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+              .toString()
+              .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
         </p>
         <p className="listingLocation">{listing.location}</p>
         <p className="listingType">
