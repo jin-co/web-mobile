@@ -4,7 +4,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import { getDoc, doc } from 'firebase/firestore'
 import { getAuth } from 'firebase/auth'
 import { db } from '../firebase.config'
-import Spinner from '../components/Spinner'
+import { Spinner } from '../components/Spinner'
 import shareIcon from '../assets/svg/shareIcon.svg'
 // import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 // import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper'
@@ -25,11 +25,20 @@ export const Listing = () => {
   useEffect(() => {
     const fetchListing = async () => {
       console.log(params.listingId)
-      // const docRef = doc(db, 'listings', params.listingId)
-
+      const docRef = doc(db, 'listings', params.listingId)
+      const docSnap = await getDoc(docRef)
+      if (docSnap.exists()) {
+        setListing(docSnap.data())
+        setLoading(false)
+      }
     }
+
+    fetchListing()
   }, [])
 
+  if (loading) {
+    return <Spinner />
+  }
 
   return (
     <main>
