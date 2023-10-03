@@ -1,9 +1,7 @@
 import React from 'react'
 
-function FeedItem() {
+export const FeedItem = () => {
   return (
     <div>FeedItem</div>
   )
 }
-
-export default FeedItem

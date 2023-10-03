@@ -1,9 +1,7 @@
 import React from 'react'
 
-function FeedStat() {
+export const FeedStat = () => {
   return (
     <div>FeedStat</div>
   )
 }
-
-export default FeedStat

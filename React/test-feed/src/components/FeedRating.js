@@ -1,9 +1,7 @@
 import React from 'react'
 
-function FeedRating() {
+export const FeedRating = () => {
   return (
     <div>FeedRating</div>
   )
 }
-
-export default FeedRating
