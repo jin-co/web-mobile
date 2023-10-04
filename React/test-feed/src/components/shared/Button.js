@@ -1,9 +1,13 @@
 import React from 'react'
 
-function Button() {
+export const Button = (props) => {
   return (
-    <div>Button</div>
+    <button className={`btn btn-${props.version}`}>
+      {props.children}
+    </button>
   )
 }
 
-export default Button
+Button.defaultProps = {
+  version: 'primary'
+}
