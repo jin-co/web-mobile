@@ -7,7 +7,7 @@ import Feed from '../data/Feed'
 
 export const Home = () => {
   const [feed, setFeed] = useState(Feed)
-  useEffect(() => {    
+  useEffect(() => {
     console.log(feed)
   }, [])
 
@@ -15,7 +15,7 @@ export const Home = () => {
     <div className='container'>
       <FeedStat feed={feed} />
       <FeedForm />
-      <FeedList />
+      <FeedList feed={feed} />
     </div>
   )
 }
