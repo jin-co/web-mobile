@@ -11,11 +11,15 @@ export const Home = () => {
     console.log(feed)
   }, [])
 
+  const deleteFeed = (id) => {
+    setFeed(feed.filter(f => f.id !== id))
+  }
+
   return (
     <div className='container'>
       <FeedStat feed={feed} />
       <FeedForm />
-      <FeedList feed={feed} />
+      <FeedList feed={feed} deleteFeed={deleteFeed} />
     </div>
   )
 }

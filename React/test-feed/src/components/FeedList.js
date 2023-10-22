@@ -1,12 +1,12 @@
 import React from 'react'
 import { FeedItem } from './FeedItem'
 
-export const FeedList = ({ feed }) => {
+export const FeedList = ({ feed, deleteFeed }) => {
   return (
     <div className="feedback-list">
       {
         feed.map((f) => (
-          <FeedItem feed={f} />
+          <FeedItem deleteFeed={deleteFeed} feed={f} />
         ))
       }
     </div>
