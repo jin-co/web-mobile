@@ -15,10 +15,14 @@ export const Home = () => {
     setFeed(feed.filter(f => f.id !== id))
   }
 
+  const addFeed = (newFeed) => {
+    setFeed([...newFeed, ...feed])
+  }
+
   return (
     <div className='container'>
       <FeedStat feed={feed} />
-      <FeedForm />
+      <FeedForm addFeed={addFeed} />
       <FeedList feed={feed} deleteFeed={deleteFeed} />
     </div>
   )

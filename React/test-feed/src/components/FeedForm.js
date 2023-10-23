@@ -3,28 +3,33 @@ import { FeedRatingSelect } from './FeedRatingSelect'
 import { Card } from './shared/Card'
 import { Button } from './shared/Button'
 
-export const FeedForm = () => {
+export const FeedForm = ({ addFeed }) => {
   const [text, setText] = useState('')
   const [btnDisabled, setBtnDisabled] = useState(true)
   const handleChange = (e) => {
-
+    setText(e.target.value)    
+    if (e.target.value.length > 10) {
+      setBtnDisabled(false)
+    } else {
+      setBtnDisabled(true)
+    }
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    addFeed()
   }
 
   return (
     <Card>
-      <form action="" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <h2>How would you rate your service with us?</h2>
         <FeedRatingSelect />
         <div className="input-group">
           <input
-            onChange={handleChange}
-            type="text"
+            type='text'
             value={text}
-            placeholder="Write a review"
+            onChange={handleChange}
           />
           <Button type="submit" isDisabled={btnDisabled}>
             Send
