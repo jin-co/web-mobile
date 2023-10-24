@@ -6,7 +6,7 @@ export const FeedList = ({ feed, deleteFeed }) => {
     <div className="feedback-list">
       {
         feed.map((f) => (
-          <FeedItem deleteFeed={deleteFeed} feed={f} />
+          <FeedItem key={f.id} deleteFeed={deleteFeed} feed={f} />
         ))
       }
     </div>
