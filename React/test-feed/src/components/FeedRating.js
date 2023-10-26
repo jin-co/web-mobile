@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 
-export const FeedRating = () => {
+export const FeedRating = ({formSetRating}) => {
   const [rating, setRating] = useState(10)
 
   const handleChange = (e) => {
     setRating(e.target.value)
+    formSetRating(e.target.value)
   }
 
   return (

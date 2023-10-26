@@ -6,6 +6,7 @@ import { Button } from './shared/Button'
 
 export const FeedForm = ({ addFeed }) => {
   const [text, setText] = useState('')
+  const [rating, setRating] = useState(0)
   const [btnDisabled, setBtnDisabled] = useState(true)
   const handleChange = (e) => {
     setText(e.target.value)
@@ -18,14 +19,18 @@ export const FeedForm = ({ addFeed }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    addFeed()
+    console.log(rating)
+    addFeed({
+      text,
+      rating
+    })
   }
 
   return (
     <Card>
       <form onSubmit={handleSubmit}>
         <h2>How would you rate your service with us?</h2>
-        <FeedRating />
+        <FeedRating formSetRating={(rating) => setRating(rating)} />
         <div className="input-group">
           <input
             type='text'
