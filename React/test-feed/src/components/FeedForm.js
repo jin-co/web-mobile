@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { FeedRatingSelect } from './FeedRatingSelect'
 import { FeedRating } from './FeedRating'
 import { Card } from './shared/Card'
 import { Button } from './shared/Button'
