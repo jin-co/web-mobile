@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { FeedRating } from './FeedRating'
 import { Card } from './shared/Card'
 import { Button } from './shared/Button'
+import FeedContext from '../context/FeedContext'
 
-export const FeedForm = ({ addFeed }) => {
+export const FeedForm = () => {
+  const { addFeed } = useContext(FeedContext)
   const [text, setText] = useState('')
   const [rating, setRating] = useState(0)
   const [btnDisabled, setBtnDisabled] = useState(true)
