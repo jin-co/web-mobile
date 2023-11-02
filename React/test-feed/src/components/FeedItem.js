@@ -4,7 +4,7 @@ import { Card } from './shared/Card'
 import FeedContext from '../context/FeedContext'
 
 export const FeedItem = ({ feed }) => {
-  const { deleteFeed, editFeed } = useContext(FeedContext)
+  const { deleteFeed, editFeed, handleSelectedFeed } = useContext(FeedContext)
   return (
     <Card>
       <div className="num-display">{feed.rating}</div>
@@ -16,7 +16,7 @@ export const FeedItem = ({ feed }) => {
       <FaEdit
         color="blue"
         className="edit"
-        onClick={() => editFeed()}
+        onClick={() => handleSelectedFeed(feed)}
       />
       <div className="text-display">{feed.text}</div>
       {/* <button onClick={onClick}>click</button> */}

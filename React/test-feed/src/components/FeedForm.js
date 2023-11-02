@@ -1,14 +1,24 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { FeedRating } from './FeedRating'
 import { Card } from './shared/Card'
 import { Button } from './shared/Button'
 import FeedContext from '../context/FeedContext'
 
 export const FeedForm = () => {
-  const { addFeed } = useContext(FeedContext)
+  const { addFeed, editFeed, selectEdit } = useContext(FeedContext)
   const [text, setText] = useState('')
   const [rating, setRating] = useState(0)
   const [btnDisabled, setBtnDisabled] = useState(true)
+
+  useEffect(() => {
+    console.log(selectEdit)
+    if (selectEdit.isEdit) {
+      const { feed } = selectEdit
+      setRating(feed.rating)
+      setText(feed.text)
+    }
+  }, [selectEdit])
+
   const handleChange = (e) => {
     setText(e.target.value)
     if (e.target.value.length > 10) {
