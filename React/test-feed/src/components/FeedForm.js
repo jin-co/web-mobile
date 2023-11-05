@@ -3,6 +3,7 @@ import { FeedRating } from './FeedRating'
 import { Card } from './shared/Card'
 import { Button } from './shared/Button'
 import FeedContext from '../context/FeedContext'
+import { v4 as uuid } from 'uuid'
 
 export const FeedForm = () => {
   const { addFeed, editFeed, selectEdit } = useContext(FeedContext)
@@ -30,11 +31,20 @@ export const FeedForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(rating)
-    addFeed({
-      text,
-      rating
-    })
+
+    if (selectEdit.isEdit) {
+      editFeed({
+        id: selectEdit.feed.id,
+        text,
+        rating
+      })
+    } else {
+      addFeed({
+        id: uuid(),
+        text,
+        rating
+      })
+    }
   }
 
   return (
