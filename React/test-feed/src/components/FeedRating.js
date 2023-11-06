@@ -11,7 +11,7 @@ export const FeedRating = ({formSetRating}) => {
   return (
     <ul className='rating'>
       {Array.from({ length: 10 }, (_, i) => (
-        <li>
+        <li key={i}>
           <input
             type="radio"
             value={i + 1}

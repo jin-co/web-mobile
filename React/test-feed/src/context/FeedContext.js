@@ -20,7 +20,8 @@ export const FeedContextProvider = (props) => {
   }
 
   const editFeed = (updatedFeed) => {
-    setFeed(feed.map(f => f.id == updatedFeed.id ? { ...f, updatedFeed } : { ...f }))
+    console.log(updatedFeed)
+    setFeed(feed.map(f => f.id == updatedFeed.id ? { ...f, ...updatedFeed } : f))
   }
 
   const handleSelectedFeed = (feed) => {
