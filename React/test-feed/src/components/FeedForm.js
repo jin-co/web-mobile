@@ -31,7 +31,7 @@ export const FeedForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-console.log(selectEdit.feed.id)
+    
     if (selectEdit.isEdit) {      
       editFeed({
         id: selectEdit.feed.id,
