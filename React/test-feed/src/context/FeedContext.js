@@ -1,5 +1,6 @@
 import React, { createContext, useState } from 'react'
 import Feed from '../data/Feed'
+const url = process.env.REACT_APP_API + 'feed/'
 
 const FeedContext = createContext()
 
