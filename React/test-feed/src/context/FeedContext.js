@@ -1,10 +1,13 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import Feed from '../data/Feed'
 const url = process.env.REACT_APP_API + 'feed/'
 
 const FeedContext = createContext()
 
 export const FeedContextProvider = (props) => {
+  useEffect(() => {
+    console.log(url)
+  })
   const [feed, setFeed] = useState(Feed)
   const [selectEdit, setSelectEdit] = useState({
     isEdit: false,
