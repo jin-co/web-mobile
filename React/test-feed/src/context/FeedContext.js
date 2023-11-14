@@ -6,9 +6,14 @@ const FeedContext = createContext()
 
 export const FeedContextProvider = (props) => {
   useEffect(() => {
-    console.log(url)
-  })
-  const [feed, setFeed] = useState(Feed)
+    const fetchData = async() => {
+      const res = await fetch(url)
+      const data = await res.json()
+      setFeed(data)
+    }
+    fetchData()
+  }, [])
+  const [feed, setFeed] = useState([])
   const [selectEdit, setSelectEdit] = useState({
     isEdit: false,
     feed: {
@@ -24,7 +29,6 @@ export const FeedContextProvider = (props) => {
   }
 
   const editFeed = (updatedFeed) => {
-    console.log(updatedFeed)
     setFeed(feed.map(f => f.id == updatedFeed.id ? { ...f, ...updatedFeed } : f))
   }
 

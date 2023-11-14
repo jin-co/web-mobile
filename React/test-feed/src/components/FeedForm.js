@@ -12,7 +12,6 @@ export const FeedForm = () => {
   const [btnDisabled, setBtnDisabled] = useState(true)
 
   useEffect(() => {
-    console.log(selectEdit)
     if (selectEdit.isEdit) {
       const { feed } = selectEdit
       setRating(feed.rating)
