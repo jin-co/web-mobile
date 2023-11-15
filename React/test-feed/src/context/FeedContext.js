@@ -6,7 +6,7 @@ const FeedContext = createContext()
 
 export const FeedContextProvider = (props) => {
   useEffect(() => {
-    const fetchData = async() => {
+    const fetchData = async () => {
       const res = await fetch(url)
       const data = await res.json()
       setFeed(data)
@@ -20,15 +20,32 @@ export const FeedContextProvider = (props) => {
     }
   })
 
-  const deleteFeed = (id) => {
+  const deleteFeed = async (id) => {
+    await fetch(url + id, {
+      method: 'DELETE'
+    })
     setFeed(feed.filter(f => f.id !== id))
   }
 
-  const addFeed = (newFeed) => {
+  const addFeed = async (newFeed) => {
+    await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newFeed)
+    })
     setFeed([newFeed, ...feed])
   }
 
-  const editFeed = (updatedFeed) => {
+  const editFeed = async (updatedFeed) => {
+    await fetch(url + updatedFeed.id, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(updatedFeed)
+    })
     setFeed(feed.map(f => f.id == updatedFeed.id ? { ...f, ...updatedFeed } : f))
   }
 

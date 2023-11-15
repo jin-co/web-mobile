@@ -2,8 +2,8 @@
   "Feed": [
     {
       "id": 1,
-      "rating": 10,
-      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur vel vitae commodi alias voluptatem est voluptatum ipsa quae."
+      "text": "consectetur adipisicing elit. consequuntur vel vitae commodi alias voluptatem est voluptatum ipsa quae.",
+      "rating": 10
     },
     {
       "id": 2,
@@ -11,9 +11,9 @@
       "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur vel vitae commodi alias voluptatem est voluptatum ipsa quae."
     },
     {
-      "id": 3,
-      "rating": 8,
-      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur vel vitae commodi alias voluptatem est voluptatum ipsa quae."
+      "id": "b3017bcd-a541-4e9c-b822-afe4562dd3bc",
+      "text": "hhhhhhhhhhhhhhhhhh",
+      "rating": "6"
     }
   ]
 }
