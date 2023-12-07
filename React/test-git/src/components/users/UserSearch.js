@@ -40,3 +40,7 @@ export const UserSearch = ({users}) => {
     </div>
   )
 }
+
+UserSearch.defaultProps = {
+  users: []
+}

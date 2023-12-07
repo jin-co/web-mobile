@@ -11,3 +11,7 @@ export const UserResult = ({ users }) => {
     </div>
   )
 }
+
+UserResult.defaultProps = {
+  users: []
+}
