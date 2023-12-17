@@ -1,16 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import GitContext from '../../contexts/GitContext'
 
-export const UserSearch = ({users}) => {
+export const UserSearch = ({ users }) => {
   const [text, setText] = useState('')
+  const { getUsers } = useContext(GitContext)
   const handleSubmit = (e) => {
-
+    e.preventDefault()
+    getUsers(text)
   }
 
   const handleChange = (e) => {
-
+    console.log(e.target)
+    setText(e.target.value) 
   }
 
-  
+
   return (
     <div className="grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 mb-8 gap-8">
       <div>
