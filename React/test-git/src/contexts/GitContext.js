@@ -7,10 +7,10 @@ export const GitContextProvider = (props) => {
   const [users, setUsers] = useState([])
 
   const getUsers = async (text) => {
-    const res = await fetch(GITHUB_URL)
-    const data = await res.json()
-    console.log(data)
+    const res = await fetch(GITHUB_URL + 'users/' + text)
+    const data = await res.json()    
     setUsers(data)
+    console.log(users)
   }
 
   return (

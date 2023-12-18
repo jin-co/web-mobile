@@ -9,8 +9,7 @@ export const UserSearch = ({ users }) => {
     getUsers(text)
   }
 
-  const handleChange = (e) => {
-    console.log(e.target)
+  const handleChange = (e) => {    
     setText(e.target.value) 
   }
 
