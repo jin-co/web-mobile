@@ -1,11 +1,17 @@
-import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext, useEffect } from 'react'
+import { Link, useParams } from 'react-router-dom'
 import { FaUserFriends, FaUsers, FaCodepen, FaStore } from 'react-icons/fa'
-import {Repo} from '../components/repos/Repo'
+import { Repo } from '../components/repos/Repo'
 import GitContext from '../contexts/GitContext'
 
 export const User = () => {
-  const {user, repos} = useContext(GitContext)
+  const { getUser, getRepos, user, repos } = useContext(GitContext)
+  const params = useParams()
+
+  useEffect(() => {
+    getUser(params.login)
+    getRepos(params.login)
+  }, [])
 
   const {
     name,
