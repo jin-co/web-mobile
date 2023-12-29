@@ -1,4 +1,5 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useReducer, useState } from 'react'
+import gitReducer from './GitReducer'
 
 const GitContext = createContext()
 const GITHUB_URL = 'https://api.github.com/'
@@ -8,13 +9,22 @@ export const GitContextProvider = (props) => {
   const [user, setUser] = useState({})
   const [repos, setRepos] = useState([])
 
+  const initialStatus = {
+    users: [],
+    user: {},
+    repos: []
+  }
+
+  const [state, dispatch] = useReducer(gitReducer, initialStatus)
+
   const getUsers = async (text) => {
-    console.log(text)
     const res = await fetch(GITHUB_URL + 'search/users?q=' + text)
     const data = await res.json()
-    console.log(data)
     setUsers(data.items)
-    console.log(users)
+    dispatch({
+      type: 'GET_USERS',
+      payload: data.items
+    })
   }
 
   const getUser = async (text) => {
@@ -25,7 +35,7 @@ export const GitContextProvider = (props) => {
 
   const getRepos = async (text) => {
     const params = new URLSearchParams({
-      
+
     })
     const res = await fetch(GITHUB_URL + 'users/' + text + '/repos')
     const data = await res.json()
