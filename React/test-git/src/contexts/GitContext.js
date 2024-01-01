@@ -20,7 +20,6 @@ export const GitContextProvider = (props) => {
   const getUsers = async (text) => {
     const res = await fetch(GITHUB_URL + 'search/users?q=' + text)
     const data = await res.json()
-    setUsers(data.items)
     dispatch({
       type: 'GET_USERS',
       payload: data.items
@@ -30,7 +29,10 @@ export const GitContextProvider = (props) => {
   const getUser = async (text) => {
     const res = await fetch(GITHUB_URL + 'users/' + text)
     const data = await res.json()
-    setUser(data)
+    dispatch({
+      type: 'GET_USER',
+      payload: data
+    })
   }
 
   const getRepos = async (text) => {
@@ -38,9 +40,11 @@ export const GitContextProvider = (props) => {
 
     })
     const res = await fetch(GITHUB_URL + 'users/' + text + '/repos')
-    const data = await res.json()
-    console.log('repos', data)
-    setRepos(data)
+    const data = await res.json()        
+    dispatch({
+      type: 'GET_REPOS',
+      payload: data
+    })
   }
 
   return (
@@ -48,9 +52,7 @@ export const GitContextProvider = (props) => {
       getUsers,
       getUser,
       getRepos,
-      users,
-      user,
-      repos
+      ...state
     }}>
       {props.children}
     </GitContext.Provider>
