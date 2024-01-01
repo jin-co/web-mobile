@@ -5,12 +5,14 @@ import { getUsers } from '../../contexts/GtiAction'
 export const UserSearch = () => {
   const [text, setText] = useState('')
   const { dispatch, users } = useContext(GitContext)
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    dispatch({
+    console.log(getUsers(text))
+    await dispatch({
       type: 'GET_USERS',
-      payload: getUsers(text)
+      payload: await getUsers(text)
     })
+    console.log(users)
   }
 
   const handleChange = (e) => {

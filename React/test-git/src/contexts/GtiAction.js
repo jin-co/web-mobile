@@ -1,8 +1,10 @@
 const GITHUB_URL = 'https://api.github.com/'
 
 export const getUsers = async (text) => {
+  console.log(text)
   const res = await fetch(GITHUB_URL + 'search/users?q=' + text)
   const data = await res.json()
+  console.log(data.items)
   return data
 }
 
