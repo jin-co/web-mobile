@@ -1,16 +1,20 @@
 import React, { useState, useContext } from 'react'
 import GitContext from '../../contexts/GitContext'
+import { getUsers } from '../../contexts/GtiAction'
 
-export const UserSearch = ({ users }) => {
+export const UserSearch = () => {
   const [text, setText] = useState('')
-  const { getUsers } = useContext(GitContext)
+  const { dispatch, users } = useContext(GitContext)
   const handleSubmit = (e) => {
     e.preventDefault()
-    getUsers(text)
+    dispatch({
+      type: 'GET_USERS',
+      payload: getUsers(text)
+    })
   }
 
-  const handleChange = (e) => {    
-    setText(e.target.value) 
+  const handleChange = (e) => {
+    setText(e.target.value)
   }
 
 
