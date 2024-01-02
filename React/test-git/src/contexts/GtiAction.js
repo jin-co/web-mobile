@@ -1,11 +1,14 @@
+import axios from 'axios'
+
 const GITHUB_URL = 'https://api.github.com/'
+const axiosURL = axios.create({
+  baseURL: GITHUB_URL,
+  headers: {}
+})
 
 export const getUsers = async (text) => {
-  console.log(text)
-  const res = await fetch(GITHUB_URL + 'search/users?q=' + text)
-  const data = await res.json()
-  console.log(data.items)
-  return data
+  const res = axiosURL.get('search/users?q=' + text)    
+  return res.data.items
 }
 
 export const getUser = async (text) => {

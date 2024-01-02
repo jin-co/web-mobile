@@ -6,13 +6,11 @@ export const UserSearch = () => {
   const [text, setText] = useState('')
   const { dispatch, users } = useContext(GitContext)
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    console.log(getUsers(text))
-    await dispatch({
+    e.preventDefault()    
+    dispatch({
       type: 'GET_USERS',
       payload: await getUsers(text)
-    })
-    console.log(users)
+    })    
   }
 
   const handleChange = (e) => {
