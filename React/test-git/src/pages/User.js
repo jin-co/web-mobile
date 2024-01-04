@@ -3,23 +3,18 @@ import { Link, useParams } from 'react-router-dom'
 import { FaUserFriends, FaUsers, FaCodepen, FaStore } from 'react-icons/fa'
 import { Repo } from '../components/repos/Repo'
 import GitContext from '../contexts/GitContext'
-import { getUser, getRepos } from '../contexts/GtiAction'
+import { getUserRepos } from '../contexts/GtiAction'
 
 export const User = () => {
   const { dispatch, user, repos } = useContext(GitContext)
   const params = useParams()
 
-  useEffect(() => {
+  useEffect(() => {    
     const getUserAndRepo = async () => {
       dispatch({
-        type: 'GET_USER',
-        payload: await getUser(params.login)
-      })
-
-      dispatch({
-        type: 'GET_REPOS',
-        payload: await getRepos(params.login)
-      })
+        type: 'GET_USER_REPOS',
+        payload: await getUserRepos(params.login)
+      })      
     }
 
     getUserAndRepo()

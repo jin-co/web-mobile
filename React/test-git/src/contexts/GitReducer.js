@@ -5,16 +5,12 @@ const gitReducer = (state, action) => {
         ...state,
         users: action.payload
       }
-    case 'GET_USER':
+    case 'GET_USER_REPOS':
       return {
         ...state,
-        user: action.payload
-      }
-    case 'GET_REPOS':
-      return {
-        ...state,
-        repos: action.payload
-      }
+        user: action.payload.user,
+        repos: action.payload.repos
+      }    
     case 'CLEAR':
       return {
         ...state,
