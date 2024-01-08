@@ -7,7 +7,8 @@ const axiosURL = axios.create({
 })
 
 export const getUsers = async (text) => {
-  const res = axiosURL.get('search/users?q=' + text)
+  const res = await axiosURL.get('search/users?q=' + text)
+  console.log(res.data)
   return res.data.items
 }
 
