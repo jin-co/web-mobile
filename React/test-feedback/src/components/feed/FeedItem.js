@@ -1,7 +1,8 @@
 import React from 'react'
+import { Card } from '../shared/Card'
 
-export const FeedItem = () => {
+export const FeedItem = ({ feed }) => {
   return (
-    <div>FeedItem</div>
+    <Card>FeedItem</Card>
   )
 }
