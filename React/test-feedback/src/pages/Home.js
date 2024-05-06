@@ -6,12 +6,20 @@ import { FeedForm } from '../components/feed/FeedForm'
 
 export const Home = () => {
   const [feed, setFeed] = useState(Feedback)
-  
+
+  const deleteFeed = (id) => {
+    setFeed(feed.filter(f => f.id != id))
+  }
+
+  const addFeed = (feed) => {
+    setFeed(feed.push(feed))
+  }
+
   return (
     <div className="container">
-      <FeedForm />
-      <FeedStats />
-      <FeedList feed={feed} />
+      <FeedForm addFeed = {addFeed} />
+      <FeedStats feed={feed} />
+      <FeedList feed={feed} deleteFeed={deleteFeed} />
     </div>
   )
 }
