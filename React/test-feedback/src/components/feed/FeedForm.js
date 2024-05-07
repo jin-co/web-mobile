@@ -4,9 +4,14 @@ import { Button } from '../shared/Button'
 import { Card } from '../shared/Card'
 
 export const FeedForm = (props) => {
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+  }
+
   return (
     <Card>
-      <form >
+      <form onSubmit={handleSubmit} >
         <h2>How would you rate your service with us?</h2>
         <FeedRating />
         <div className="input-group">
@@ -16,7 +21,7 @@ export const FeedForm = (props) => {
 
             placeholder="Write a review"
           />
-          <Button >
+          <Button type={'submit'} >
             Send
           </Button>
         </div>

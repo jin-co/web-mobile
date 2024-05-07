@@ -1,7 +1,9 @@
 import React from 'react'
 
-export const Button = () => {
+export const Button = (props, { version = 'secondary', type = 'button' }) => {
   return (
-    <div>Button</div>
+    <button type={type} disabled={props.isDisabled} className={`btn btn-${version}`}>
+      {props.children}
+    </button>
   )
 }
