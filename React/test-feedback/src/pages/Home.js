@@ -12,6 +12,7 @@ export const Home = () => {
   }
 
   const addFeed = (feed) => {
+    console.log(feed)
     setFeed(feed.push(feed))
   }
 
