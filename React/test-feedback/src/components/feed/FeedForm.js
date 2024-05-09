@@ -29,11 +29,15 @@ export const FeedForm = (props) => {
     }
   }
 
+  const handleRating = (e) => {
+    console.log(e)
+  }
+
   return (
     <Card>
       <form onSubmit={handleSubmit} >
         <h2>How would you rate your service with us?</h2>
-        <FeedRating onChange={(e) => setRating(e.rating)} />
+        <FeedRating setRating = {(rating) => setRating(rating)} />
         <div className="input-group">
           <input
             onChange={handleChange}
@@ -41,7 +45,7 @@ export const FeedForm = (props) => {
             value={text}
             placeholder="Write a review"
           />
-          <Button type={'submit'} isDisabled={isDisabled} >
+          <Button type = 'submit' isDisabled={isDisabled} >
             Send
           </Button>
         </div>

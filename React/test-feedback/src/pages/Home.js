@@ -11,9 +11,8 @@ export const Home = () => {
     setFeed(feed.filter(f => f.id != id))
   }
 
-  const addFeed = (feed) => {
-    console.log(feed)
-    setFeed(feed.push(feed))
+  const addFeed = (newFeed) => {    
+    setFeed([newFeed, ...feed])
   }
 
   return (
