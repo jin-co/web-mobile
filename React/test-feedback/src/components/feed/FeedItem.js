@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Card } from '../shared/Card'
 import { FaTimes } from 'react-icons/fa'
+import FeedContext from '../../context/FeedContext'
 
-export const FeedItem = ({ item, deleteFeed }) => {
+export const FeedItem = ({ item }) => {
+  const { deleteFeed } = useContext(FeedContext)
   return (
     <Card>
       <div className="num-display">{item.rating}</div>

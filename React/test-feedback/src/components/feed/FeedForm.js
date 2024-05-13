@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { FeedRating } from './FeedRating'
 import { Button } from '../shared/Button'
 import { Card } from '../shared/Card'
 import { v4 as uuid } from 'uuid'
+import FeedContext from '../../context/FeedContext'
 
 export const FeedForm = (props) => {
+  const { addFeed } = useContext(FeedContext)
   const [text, setText] = useState('')
   const [rating, setRating] = useState(0)
   const [isDisabled, setIsDisabled] = useState(true)
@@ -17,7 +19,7 @@ export const FeedForm = (props) => {
       text,
       rating
     }
-    props.addFeed(newFeed)
+    addFeed(newFeed)
   }
 
   const handleChange = (e) => {
@@ -37,7 +39,7 @@ export const FeedForm = (props) => {
     <Card>
       <form onSubmit={handleSubmit} >
         <h2>How would you rate your service with us?</h2>
-        <FeedRating setRating = {(rating) => setRating(rating)} />
+        <FeedRating setRating={(rating) => setRating(rating)} />
         <div className="input-group">
           <input
             onChange={handleChange}
@@ -45,7 +47,7 @@ export const FeedForm = (props) => {
             value={text}
             placeholder="Write a review"
           />
-          <Button type = 'submit' isDisabled={isDisabled} >
+          <Button type='submit' isDisabled={isDisabled} >
             Send
           </Button>
         </div>
