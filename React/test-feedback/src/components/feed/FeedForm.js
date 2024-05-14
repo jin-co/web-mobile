@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { FeedRating } from './FeedRating'
 import { Button } from '../shared/Button'
 import { Card } from '../shared/Card'
@@ -6,20 +6,33 @@ import { v4 as uuid } from 'uuid'
 import FeedContext from '../../context/FeedContext'
 
 export const FeedForm = (props) => {
-  const { addFeed } = useContext(FeedContext)
+  const { addFeed, isEdit, editFeed, selectedEditFeed } = useContext(FeedContext)
   const [text, setText] = useState('')
   const [rating, setRating] = useState(0)
   const [isDisabled, setIsDisabled] = useState(true)
 
-  const handleSubmit = (e) => {
-    console.log('ss')
-    e.preventDefault()
-    const newFeed = {
-      id: uuid(),
-      text,
-      rating
+  useEffect(() => {
+    console.log(isEdit, selectedEditFeed)
+    if(isEdit) {
+      setText(selectedEditFeed.text)
+      setRating(selectedEditFeed.rating)
     }
-    addFeed(newFeed)
+  }, [])
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    if(isEdit) {
+      
+      editFeed()
+    } else {
+      const newFeed = {
+        id: uuid(),
+        text,
+        rating
+      }
+      addFeed(newFeed)
+    }    
   }
 
   const handleChange = (e) => {
@@ -29,10 +42,6 @@ export const FeedForm = (props) => {
     } else {
       setIsDisabled(true)
     }
-  }
-
-  const handleRating = (e) => {
-    console.log(e)
   }
 
   return (
