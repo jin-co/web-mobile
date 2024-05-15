@@ -12,19 +12,28 @@ export const FeedForm = (props) => {
   const [isDisabled, setIsDisabled] = useState(true)
 
   useEffect(() => {
-    console.log(isEdit, selectedEditFeed)
-    if(isEdit) {
+    console.log('selectedEditFeed: ', selectedEditFeed, isEdit)
+    if (isEdit) {
       setText(selectedEditFeed.text)
       setRating(selectedEditFeed.rating)
+      setIsDisabled(false)
+    } else {
+      setText('')
+      setRating(10)
+      setIsDisabled(true)
     }
-  }, [])
+  }, [selectedEditFeed])
 
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    if(isEdit) {
-      
-      editFeed()
+    if (isEdit) {
+      const updatedFeed = {
+        id: selectedEditFeed.id,
+        text,
+        rating
+      }
+      editFeed(updatedFeed)
     } else {
       const newFeed = {
         id: uuid(),
@@ -32,7 +41,7 @@ export const FeedForm = (props) => {
         rating
       }
       addFeed(newFeed)
-    }    
+    }
   }
 
   const handleChange = (e) => {
@@ -48,7 +57,7 @@ export const FeedForm = (props) => {
     <Card>
       <form onSubmit={handleSubmit} >
         <h2>How would you rate your service with us?</h2>
-        <FeedRating setRating={(rating) => setRating(rating)} />
+        <FeedRating rating={rating} setRating={(rating) => setRating(rating)} />
         <div className="input-group">
           <input
             onChange={handleChange}

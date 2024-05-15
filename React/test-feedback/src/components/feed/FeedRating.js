@@ -1,13 +1,16 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 export const FeedRating = (props) => {
-  // const [rating, setRating] = useState()
   const [selected, setSelected] = useState(10)
 
-  const handleChange = (e) => {    
+  const handleChange = (e) => {
     setSelected(e.target.value)
     props.setRating(e.target.value)
   }
+
+  useEffect(() => {
+    setSelected(props.rating)
+  }, [props.rating])
 
   return (
     <ul className='rating'>

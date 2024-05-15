@@ -21,19 +21,19 @@ export const FeedProvider = ({ children }) => {
   }
 
   const handleEditFeedSelected = (feed) => {
-    console.log(feed)
     setSelectedEditFeed(feed)
     setIsEdit(true)
-    console.log(selectedEditFeed, isEdit)
   }
 
   const addFeed = (newFeed) => {
     setFeed([newFeed, ...feed])
   }
 
-  const editFeed = () => {
-    setFeed(feed.map(f => f.id == selectedEditFeed.id ? { ...selectedEditFeed } : f))
+  const editFeed = (updatedFeed) => {
+    console.log(updatedFeed)
+    setFeed(feed.map(f => f.id == updatedFeed.id ? { ...updatedFeed } : f))
     setIsEdit(false)
+    setSelectedEditFeed(null)
   }
 
   return (
@@ -41,6 +41,7 @@ export const FeedProvider = ({ children }) => {
       value={{
         feed,
         isEdit,
+        selectedEditFeed,
         addFeed,
         deleteFeed,
         handleEditFeedSelected,
