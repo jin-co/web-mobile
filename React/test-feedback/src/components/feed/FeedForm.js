@@ -11,8 +11,7 @@ export const FeedForm = (props) => {
   const [rating, setRating] = useState(0)
   const [isDisabled, setIsDisabled] = useState(true)
 
-  useEffect(() => {
-    console.log('selectedEditFeed: ', selectedEditFeed, isEdit)
+  useEffect(() => {    
     if (isEdit) {
       setText(selectedEditFeed.text)
       setRating(selectedEditFeed.rating)

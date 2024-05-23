@@ -1,6 +1,8 @@
 import React, { createContext, useEffect, useState } from 'react'
 import Feedback from '../data/FeedData'
 
+const ULR = 'http://localhost:2040/Feed'
+
 const FeedContext = createContext()
 
 export const FeedProvider = ({ children }) => {
@@ -13,8 +15,15 @@ export const FeedProvider = ({ children }) => {
   })
 
   useEffect(() => {
-
+    getFeeds()    
   }, [])
+
+  const getFeeds = async () => {
+    const res = await fetch(URL)
+    console.log(res)
+    const data = await res.json()
+    console.log(data)
+  }
 
   const deleteFeed = (id) => {
     setFeed(feed.filter(f => f.id != id))
@@ -29,8 +38,7 @@ export const FeedProvider = ({ children }) => {
     setFeed([newFeed, ...feed])
   }
 
-  const editFeed = (updatedFeed) => {
-    console.log(updatedFeed)
+  const editFeed = (updatedFeed) => {    
     setFeed(feed.map(f => f.id == updatedFeed.id ? { ...updatedFeed } : f))
     setIsEdit(false)
     setSelectedEditFeed(null)
