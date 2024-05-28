@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react'
 import Feedback from '../data/FeedData'
 
-const ULR = 'http://localhost:2040/Feed'
+const URL = 'http://localhost:2040/Feed'
 
 const FeedContext = createContext()
 
@@ -15,18 +15,22 @@ export const FeedProvider = ({ children }) => {
   })
 
   useEffect(() => {
-    getFeeds()    
+    getFeeds()
   }, [])
 
   const getFeeds = async () => {
-    const res = await fetch(URL)    
+    const res = await fetch(URL + '?_sort=id')
     console.log('res: ', res)
     const data = await res.json()
     console.log(data)
+    setFeed(data)
   }
 
-  const deleteFeed = (id) => {
-    setFeed(feed.filter(f => f.id != id))
+  const deleteFeed = async (id) => {
+    setFeed(feed.filter(f => f.id !== id))
+    await fetch(URL + id, {
+      method: 'delete'
+    })
   }
 
   const handleEditFeedSelected = (feed) => {
@@ -34,12 +38,19 @@ export const FeedProvider = ({ children }) => {
     setIsEdit(true)
   }
 
-  const addFeed = (newFeed) => {
+  const addFeed = async (newFeed) => {
     setFeed([newFeed, ...feed])
+    await fetch(URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newFeed)
+    })
   }
 
-  const editFeed = (updatedFeed) => {    
-    setFeed(feed.map(f => f.id == updatedFeed.id ? { ...updatedFeed } : f))
+  const editFeed = (updatedFeed) => {
+    setFeed(feed.map(f => f.id === updatedFeed.id ? { ...updatedFeed } : f))
     setIsEdit(false)
     setSelectedEditFeed(null)
   }

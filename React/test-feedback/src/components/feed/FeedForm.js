@@ -21,7 +21,7 @@ export const FeedForm = (props) => {
       setRating(10)
       setIsDisabled(true)
     }
-  }, [selectedEditFeed])
+  }, [selectedEditFeed, isEdit])
 
   const handleSubmit = (e) => {
     e.preventDefault()

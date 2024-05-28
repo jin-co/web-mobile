@@ -17,7 +17,7 @@ export const FeedRating = (props) => {
       {
         Array.from({ length: 10 }, (_, i) => (
           <li key={i}>
-            <input type="radio" value={i + 1} id={i + 1} checked={selected == i + 1} onChange={handleChange} />
+            <input type="radio" value={i + 1} id={i + 1} checked={selected === i + 1} onChange={handleChange} />
             <label htmlFor={i + 1}>{i + 1}</label>
           </li>
         )

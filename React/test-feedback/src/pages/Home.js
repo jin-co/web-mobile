@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import { FeedList } from '../components/feed/FeedList'
 import { FeedStats } from '../components/feed/FeedStats'
 import { FeedForm } from '../components/feed/FeedForm'
