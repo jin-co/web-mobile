@@ -20,9 +20,7 @@ export const FeedProvider = ({ children }) => {
 
   const getFeeds = async () => {
     const res = await fetch(URL + '?_sort=id')
-    console.log('res: ', res)
     const data = await res.json()
-    console.log(data)
     setFeed(data)
   }
 
@@ -39,6 +37,8 @@ export const FeedProvider = ({ children }) => {
   }
 
   const addFeed = async (newFeed) => {
+    console.log(new Date().toLocaleString('en-US', { hour12: false }))
+    newFeed.createDtm = new Date().toLocaleString('en-US', { hour12: false })
     setFeed([newFeed, ...feed])
     await fetch(URL, {
       method: 'POST',
