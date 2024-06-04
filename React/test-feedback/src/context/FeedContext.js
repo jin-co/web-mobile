@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react'
 import Feedback from '../data/FeedData'
 
-const URL = 'http://localhost:2040/Feed'
+const URL = 'http://localhost:2040/Feed/'
 
 const FeedContext = createContext()
 
@@ -19,15 +19,16 @@ export const FeedProvider = ({ children }) => {
   }, [])
 
   const getFeeds = async () => {
-    const res = await fetch(URL + '?_sort=id')
+    const res = await fetch(URL + '?_sort=createDtm&_order=desc')
     const data = await res.json()
+    console.log(data)
     setFeed(data)
   }
 
   const deleteFeed = async (id) => {
     setFeed(feed.filter(f => f.id !== id))
     await fetch(URL + id, {
-      method: 'delete'
+      method: 'DELETE'
     })
   }
 
